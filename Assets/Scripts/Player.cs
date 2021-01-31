@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTest2 : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
@@ -15,7 +15,7 @@ public class EnemyTest2 : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("arg j'ai pris " + damage + " de dégats");
+        Debug.Log("arg j'ai pris " + damage + " de dégats = PLAYER");
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
@@ -25,6 +25,6 @@ public class EnemyTest2 : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("arg je suis mor");
+        Debug.Log("arg je suis mor PLAYER");
     }
 }
