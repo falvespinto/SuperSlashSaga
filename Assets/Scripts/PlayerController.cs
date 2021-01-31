@@ -67,11 +67,6 @@ public class PlayerController : MonoBehaviour
                 j.Recenter();
             }
 
-            if (j.GetButtonDown(Joycon.Button.DPAD_RIGHT))
-            { 
-                j.SetRumble(160, 320, 0.6f, 200);
-            }
-            stick = j.GetStick();
 
             // Gyro values: x, y, z axis values (in radians per second)
             gyroscop = j.GetGyro();
@@ -81,7 +76,31 @@ public class PlayerController : MonoBehaviour
 
             orientation = j.GetVector();
 
-            m_Rigidbody.velocity = new Vector2(Sign(j.GetStick()[0])*m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
+            if ((accel.z < -1 || accel.z > 1) && !isPunching)
+            {
+                isPunching = true;
+                Punch();
+            }
+
+            if (j.GetButtonDown(Joycon.Button.DPAD_RIGHT))
+            { 
+                j.SetRumble(160, 320, 0.6f, 200);
+            }
+
+            j = m_Joycons[1];
+            m_Rigidbody.velocity = new Vector2(Sign(j.GetStick()[0]) * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
+            if (Sign(j.GetStick()[0]) != 0)
+            {
+                ChangeAnimationState(m_Run);
+            }
+            else
+            {
+                ChangeAnimationState(m_Idle);
+            }
+            stick = j.GetStick();
+
+
+            
 
         }
         float hInput = Input.GetAxis("Horizontal");
