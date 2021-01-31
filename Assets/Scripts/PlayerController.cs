@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 accel;
     public int jc_ind = 0;
     public Quaternion orientation;
+    public bool isJoyconPluggued;
 
     [SerializeField] public float m_TranslationSpeed; // Vitesse de déplacement
     private void Awake()
@@ -40,19 +41,59 @@ public class PlayerController : MonoBehaviour
         gyroscop = new Vector3(0, 0, 0);
         accel = new Vector3(0, 0, 0);
         m_Joycons = JoyconManager.Instance.j;
-        if (m_Joycons.Count < jc_ind+1)
+        if (m_Joycons.Count < jc_ind + 1)
         {
+<<<<<<< HEAD
            
+=======
+            isJoyconPluggued = false;
+        }
+        else
+        {
+            isJoyconPluggued = true;
+>>>>>>> master
         }
     }
 
     void Update()
     {
-        float hInput = Input.GetAxis("Horizontal");
-        if (!isPunching)
+
+        if (isJoyconPluggued)
         {
-            m_Rigidbody.velocity = new Vector2(hInput * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
-            if (hInput != 0f)
+            Joycon j = m_Joycons[jc_ind];
+            if (j.GetButtonDown(Joycon.Button.SHOULDER_2))
+            {
+                Debug.Log("1");
+                // GetStick returns a 2-element vector with x/y joystick components
+                Debug.Log(string.Format("Stick x: {0:N} Stick y: {1:N}", j.GetStick()[0], j.GetStick()[1]));
+
+                // Joycon has no magnetometer, so it cannot accurately determine its yaw value. Joycon.Recenter allows the user to reset the yaw value.
+                j.Recenter();
+            }
+
+
+            // Gyro values: x, y, z axis values (in radians per second)
+            gyroscop = j.GetGyro();
+
+            // Accel values:  x, y, z axis values (in Gs)
+            accel = j.GetAccel();
+
+            orientation = j.GetVector();
+
+            if ((accel.z < -1 || accel.z > 1) && !isPunching)
+            {
+                isPunching = true;
+                Punch();
+            }
+
+            if (j.GetButtonDown(Joycon.Button.DPAD_RIGHT))
+            { 
+                j.SetRumble(160, 320, 0.6f, 200);
+            }
+
+            j = m_Joycons[1];
+            m_Rigidbody.velocity = new Vector2(Sign(j.GetStick()[0]) * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
+            if (Sign(j.GetStick()[0]) != 0)
             {
                 ChangeAnimationState(m_Run);
             }
@@ -60,6 +101,33 @@ public class PlayerController : MonoBehaviour
             {
                 ChangeAnimationState(m_Idle);
             }
+            stick = j.GetStick();
+
+
+            
+
+        }
+        float hInput = Input.GetAxis("Horizontal");
+        if (!isPunching)
+        {
+            if (isJoyconPluggued)
+            {
+                
+            }
+            else
+            {
+                m_Rigidbody.velocity = new Vector2(hInput * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
+                if (hInput != 0f)
+                {
+                    ChangeAnimationState(m_Run);
+                }
+                else
+                {
+                    ChangeAnimationState(m_Idle);
+                }
+            }
+            
+
         }
 
 
