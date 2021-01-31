@@ -16,6 +16,16 @@ public class PlayerController : MonoBehaviour
     const string m_Punch = "Punch";
     const string m_Idle = "Idle";
 
+
+    // Variables en rapport avec l'utilisation des JoyCons
+
+    private List<Joycon> m_Joycons;
+    public float[] stick;
+    public Vector3 gyroscop;
+    public Vector3 accel;
+    public int jc_ind = 0;
+    public Quaternion orientation;
+
     [SerializeField] public float m_TranslationSpeed; // Vitesse de déplacement
     private void Awake()
     {
@@ -25,6 +35,15 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         isPunching = false;
+
+        // setup des variables en rapport avec les joycons
+        gyroscop = new Vector3(0, 0, 0);
+        accel = new Vector3(0, 0, 0);
+        m_Joycons = JoyconManager.Instance.j;
+        if (m_Joycons.Count < jc_ind+1)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()
