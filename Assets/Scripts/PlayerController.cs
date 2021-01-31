@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
         m_Joycons = JoyconManager.Instance.j;
         if (m_Joycons.Count < jc_ind+1)
         {
-            Destroy(gameObject);
+           
         }
     }
 

@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemyTest2 : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
+    public float maxHealth = 100;
+    public float currentHealth;
     public HealthBar healthBar;
     void Start()
     {
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         Debug.Log("arg j'ai pris " + damage + " de dégats");

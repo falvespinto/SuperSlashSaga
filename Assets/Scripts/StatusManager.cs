@@ -5,36 +5,40 @@ using UnityEngine;
 public class StatusManager : MonoBehaviour
 {
     public Player health;
-    public int burn ;
+    public float burn ;
     public HealthBar healthBarManager;
     private bool isBurning;
+    private Coroutine PlayBurn;
 
     private void Start()
     {
         isBurning = false;
+        PlayBurn = null;
     }
 
     public void ApplyBurn()
     {
-        isBurning = true;
-        StopCoroutine(Burn());
-        StartCoroutine(Burn());
+        if (!isBurning)
+        { 
+            isBurning = true;
+            PlayBurn = StartCoroutine(Burn());
+        }
     }
     public void StopBurn()
     {
         isBurning = false;
+        if(PlayBurn != null)
+        {
+            StopCoroutine(PlayBurn);
+        }
     }
     IEnumerator Burn()
     {
-        
-        while (health.GetComponent<Player>().currentHealth > 0 && isBurning == true)
-        {
-                burn = 5;
+            while (health.GetComponent<Player>().currentHealth > 0)
+            {
+                yield return new WaitForSeconds(0.5f);
+                burn = 2.5f;
                 health.GetComponent<Player>().TakeDamage(burn);
-                Debug.Log("arg j'ai pris " + 5 + " de dégats");
-                yield return new WaitForSeconds(1f);
-        }
-        
-
+            }
     }
 }
