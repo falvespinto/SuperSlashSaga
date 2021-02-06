@@ -773,6 +773,25 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 687181024}
+--- !u!114 &150582384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150582375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e9a7c67c26e1b469fbe69adf8a597e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttacking: 0
+  punch: {fileID: 0}
+  lightComboState: 0
+  m_Rigidbody: {fileID: 0}
+  default_Combo_Timer: 2
+  current_Combo_Timer: 0
+  isInCombo: 0
 --- !u!1 &298074629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2507,6 +2526,10 @@ PrefabInstance:
     - target: {fileID: 1022140375493792, guid: c7ec0cf439a55fa47bb3d344c1d4616c, type: 3}
       propertyPath: m_Name
       value: WaterController
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022140375493792, guid: c7ec0cf439a55fa47bb3d344c1d4616c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4855301043233920, guid: c7ec0cf439a55fa47bb3d344c1d4616c, type: 3}
       propertyPath: m_LocalPosition.x
