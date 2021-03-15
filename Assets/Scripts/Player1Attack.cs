@@ -39,7 +39,7 @@ public class Player1Attack : MonoBehaviour
 
         ResetComboState();
 
-        if (Input.GetKeyDown(KeyCode.O) && !isAttacking)
+       /* if (Input.GetKeyDown(KeyCode.O) && !isAttacking)
         {
             isAttacking = true;
             isInCombo = true;
@@ -84,7 +84,7 @@ public class Player1Attack : MonoBehaviour
             // Joue le coup lourd
             Debug.Log("Coup lourd");
             StartCoroutine(CurrentAttackComplete(5f));
-        }
+        }*/
     }
 
     IEnumerator CurrentAttackComplete(float time)

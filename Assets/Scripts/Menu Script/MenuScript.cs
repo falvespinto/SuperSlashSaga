@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
-public class MainMenu : MonoBehaviour
+public class MenuScript : MonoBehaviour
 {
     public GameObject Point;
-
+  
     private int SelectedButton = 1;
     [SerializeField]
     private int NumberOfButtons;
@@ -16,24 +16,21 @@ public class MainMenu : MonoBehaviour
     public Transform ButtonPosition2;
     public Transform ButtonPosition3;
     public Transform ButtonPosition4;
-    public Transform ButtonPosition5;
 
-    void Start()
+    
+    private void OnPlay()
     {
-        FindObjectOfType<AudioManager>().Play("MusiqueMenu");
+        if (SelectedButton == 1)
+        {
+            // When the button with the pointer is clicked, this piece of script is activated
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else if (SelectedButton == 2)
+        {
+            // When the button with the pointer is clicked, this piece of script is activated
+            Application.Quit();
+        }
     }
-
-    public void VersusGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-        Debug.Log("Quit");
-    }
-
     private void OnButtonUp()
     {
         // Checks if the pointer needs to move down or up, in this case the poiter moves up one button
@@ -54,7 +51,6 @@ public class MainMenu : MonoBehaviour
         MoveThePointer();
         return;
     }
-
     private void MoveThePointer()
     {
         // Moves the pointer
@@ -75,5 +71,5 @@ public class MainMenu : MonoBehaviour
             Point.transform.position = ButtonPosition4.position;
         }
     }
-
+    
 }
