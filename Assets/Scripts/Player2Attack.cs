@@ -2,14 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum LightComboState
-{
-    NONE,
-    LIGHT_1,
-    LIGHT_2
-}
 
-public class PlayerAttack : MonoBehaviour
+
+public class Player2Attack : MonoBehaviour
 {
 
     public bool isAttacking;
@@ -48,7 +43,7 @@ public class PlayerAttack : MonoBehaviour
             current_Combo_Timer = default_Combo_Timer;
             lightComboState++;
 
-            if ((int) lightComboState >= 3)
+            if ((int)lightComboState >= 3)
             {
                 StartCoroutine(CurrentAttackComplete(0.7f));
                 return;
@@ -58,7 +53,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 // Joue attaque 1 du combo de coup légé
                 Debug.Log("Coup léger 1");
-                
+
                 StartCoroutine(CurrentAttackComplete(0.7f));
 
             }
@@ -106,7 +101,7 @@ public class PlayerAttack : MonoBehaviour
                 isInCombo = false;
                 current_Combo_Timer = default_Combo_Timer;
             }
-         }
+        }
     }
 
 }

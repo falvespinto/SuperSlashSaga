@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        Debug.Log("Je prend des dégats");
         healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
         {
