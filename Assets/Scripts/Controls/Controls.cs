@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,10 +12,10 @@ public class Controls : MonoBehaviour
 
     private Rigidbody m_Rigidbody;
     private Transform m_Transform;
-    public Animator m_Animator;
-    public bool isPunching;
     private string m_AnimationCurrentState; // l'animation en cours
     public Attack punch;
+    public Animator m_Animator;
+    public bool isPunching;
     // temporaire 
     const string m_Run = "Run";
     const string m_Punch = "Punch";
@@ -33,12 +34,21 @@ public class Controls : MonoBehaviour
 
     float moveSpeed = 10f; // Vitesse de déplacement
 
+    [SerializeField]
+    private int playerIndex = 0;
+
 
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Transform = GetComponent<Transform>();
     }
+
+    public int GetPlayerIndex()
+    {
+        return playerIndex;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,7 +85,7 @@ public class Controls : MonoBehaviour
 
     }
 
-    private void OnMove(InputValue value)
+    public void OnMove(InputValue value)
     {
         i_movement = value.Get<Vector2>();
     }
