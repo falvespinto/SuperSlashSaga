@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class MenuScript : MonoBehaviour
 {
-    public GameObject Point;
+    public GameObject Point, optionsMenu, mainMenu;
   
     private int SelectedButton = 1;
     [SerializeField]
@@ -16,8 +17,12 @@ public class MenuScript : MonoBehaviour
     public Transform ButtonPosition2;
     public Transform ButtonPosition3;
     public Transform ButtonPosition4;
+    public Transform ButtonPosition5;
+    public Transform ButtonPosition6;
+    public Transform ButtonPosition7;
 
-    
+
+
     private void OnPlay()
     {
         if (SelectedButton == 1)
@@ -28,7 +33,45 @@ public class MenuScript : MonoBehaviour
         else if (SelectedButton == 2)
         {
             // When the button with the pointer is clicked, this piece of script is activated
+            Debug.Log("Campagne");
+        }
+        else if (SelectedButton == 3)
+        {
+            // When the button with the pointer is clicked, this piece of script is activated
+            Debug.Log("Online");
+        }
+        else if (SelectedButton == 4)
+        {
+            // When the button with the pointer is clicked, this piece of script is activated
+            Debug.Log("Options");
+            mainMenu.SetActive(false);
+            optionsMenu.SetActive(true);
+            Point.transform.position = ButtonPosition6.position;
+            SelectedButton = 6;
+
+        }
+        else if (SelectedButton == 5)
+        {
+            // When the button with the pointer is clicked, this piece of script is activated
             Application.Quit();
+            Debug.Log("Quit");
+        }
+
+        else if (SelectedButton == 6)
+        {
+            // When the button with the pointer is clicked, this piece of script is activated
+            Debug.Log("Slide");
+        }
+
+
+        else if (SelectedButton == 7)
+        {
+            // When the button with the pointer is clicked, this piece of script is activated
+            Debug.Log("Back");
+            optionsMenu.SetActive(false);
+            mainMenu.SetActive(true);
+            Point.transform.position = ButtonPosition1.position;
+            SelectedButton = 1;
         }
     }
     private void OnButtonUp()
@@ -69,6 +112,18 @@ public class MenuScript : MonoBehaviour
         else if (SelectedButton == 4)
         {
             Point.transform.position = ButtonPosition4.position;
+        }
+        else if (SelectedButton == 5)
+        {
+            Point.transform.position = ButtonPosition5.position;
+        }
+        else if (SelectedButton == 6)
+        {
+            Point.transform.position = ButtonPosition6.position;
+        }
+        else if (SelectedButton == 7)
+        {
+            Point.transform.position = ButtonPosition7.position;
         }
     }
     
