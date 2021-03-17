@@ -35,12 +35,12 @@ public class MenuScript : MonoBehaviour
         if (SelectedButton == 1)
         {
             // When the button with the pointer is clicked, this piece of script is activated
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Debug.Log("Campagne");
         }
         else if (SelectedButton == 2)
         {
             // When the button with the pointer is clicked, this piece of script is activated
-            Debug.Log("Campagne");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else if (SelectedButton == 3)
         {
@@ -116,23 +116,28 @@ public class MenuScript : MonoBehaviour
         if (SelectedButton == 1)
         {
             Point.transform.position = ButtonPosition1.position;
+            FindObjectOfType<AudioManager>().Play("percution");
         }
         else if (SelectedButton == 2)
         {
             Point.transform.position = ButtonPosition2.position;
+            FindObjectOfType<AudioManager>().Play("percution");
         }
         else if (SelectedButton == 3)
         {
             Point.transform.position = ButtonPosition3.position;
+            FindObjectOfType<AudioManager>().Play("percution");
         }
         else if (SelectedButton == 4)
         {
             Point.transform.position = ButtonPosition4.position;
+            FindObjectOfType<AudioManager>().Play("percution");
             verificationMenu = false;
         }
         else if (SelectedButton == 5)
         {
             Point.transform.position = ButtonPosition5.position;
+            FindObjectOfType<AudioManager>().Play("percution");
             verificationMenu = true;
             verificationOption = false;
         }
@@ -140,11 +145,13 @@ public class MenuScript : MonoBehaviour
         {
             verificationOption = true;
             Point.transform.position = ButtonPosition6.position;
+            FindObjectOfType<AudioManager>().Play("percution");
             verificationMenu = false;
         }
         else if (SelectedButton == 7)
         {
             Point.transform.position = ButtonPosition7.position;
+            FindObjectOfType<AudioManager>().Play("percution");
             verificationOption = false;
         }
     }
