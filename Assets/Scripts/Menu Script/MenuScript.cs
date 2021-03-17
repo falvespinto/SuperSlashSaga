@@ -12,6 +12,8 @@ public class MenuScript : MonoBehaviour
     private int SelectedButton = 1;
     [SerializeField]
     private int NumberOfButtons;
+    private bool verificationMenu = false;
+    private bool verificationOption = false;
 
     public Transform ButtonPosition1;
     public Transform ButtonPosition2;
@@ -21,6 +23,11 @@ public class MenuScript : MonoBehaviour
     public Transform ButtonPosition6;
     public Transform ButtonPosition7;
 
+
+    void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("MusiqueMenu");
+    }
 
 
     private void OnPlay()
@@ -46,6 +53,7 @@ public class MenuScript : MonoBehaviour
             Debug.Log("Options");
             mainMenu.SetActive(false);
             optionsMenu.SetActive(true);
+            verificationOption = true;
             Point.transform.position = ButtonPosition6.position;
             SelectedButton = 6;
 
@@ -61,6 +69,7 @@ public class MenuScript : MonoBehaviour
         {
             // When the button with the pointer is clicked, this piece of script is activated
             Debug.Log("Slide");
+
         }
 
 
@@ -73,26 +82,33 @@ public class MenuScript : MonoBehaviour
             Point.transform.position = ButtonPosition1.position;
             SelectedButton = 1;
         }
+
     }
     private void OnButtonUp()
     {
         // Checks if the pointer needs to move down or up, in this case the poiter moves up one button
-        if (SelectedButton > 1)
+        if (verificationOption == false)
         {
-            SelectedButton -= 1;
+            if (SelectedButton > 1)
+            {
+                SelectedButton -= 1;
+            }
+            MoveThePointer();
+            return;
         }
-        MoveThePointer();
-        return;
     }
     private void OnButtonDown()
     {
         // Checks if the pointer needs to move down or up, in this case the poiter moves down one button
-        if (SelectedButton < NumberOfButtons)
+        if (verificationMenu == false)
         {
-            SelectedButton += 1;
+            if (SelectedButton < NumberOfButtons)
+            {
+                SelectedButton += 1;
+            }
+            MoveThePointer();
+            return;
         }
-        MoveThePointer();
-        return;
     }
     private void MoveThePointer()
     {
@@ -112,18 +128,24 @@ public class MenuScript : MonoBehaviour
         else if (SelectedButton == 4)
         {
             Point.transform.position = ButtonPosition4.position;
+            verificationMenu = false;
         }
         else if (SelectedButton == 5)
         {
             Point.transform.position = ButtonPosition5.position;
+            verificationMenu = true;
+            verificationOption = false;
         }
         else if (SelectedButton == 6)
         {
+            verificationOption = true;
             Point.transform.position = ButtonPosition6.position;
+            verificationMenu = false;
         }
         else if (SelectedButton == 7)
         {
             Point.transform.position = ButtonPosition7.position;
+            verificationOption = false;
         }
     }
     

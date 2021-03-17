@@ -889,7 +889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26, y: 34}
+  m_AnchoredPosition: {x: 28, y: 34}
   m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &812441212
@@ -1417,8 +1417,8 @@ GameObject:
   - component: {fileID: 1221017855}
   - component: {fileID: 1221017854}
   - component: {fileID: 1221017853}
-  - component: {fileID: 1221017858}
   - component: {fileID: 1221017857}
+  - component: {fileID: 1221017858}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1594,7 +1594,7 @@ MonoBehaviour:
   sounds:
   - name: MusiqueMenu
     clip: {fileID: 8300000, guid: 77cf2c24d1fbe104085b75e3534fea3d, type: 3}
-    volume: 0.534
+    volume: 0.208
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -2809,9 +2809,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnDown: {fileID: 2144340285}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -3272,8 +3272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
+    m_Mode: 4
+    m_SelectOnUp: {fileID: 1679045968}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
