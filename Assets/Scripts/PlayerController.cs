@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
             
 
         }
-        float hInput = Input.GetAxis("Horizontal");
+        float hInput = Input.GetAxis("HorizontalJoystick1");
         if (!isPunching)
         {
             if (isJoyconPluggued)
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !isPunching)
+        if (Input.GetButtonDown("Fire1Joystick1") && !isPunching)
         {
             isPunching = true;
             Punch();
