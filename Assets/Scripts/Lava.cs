@@ -12,6 +12,7 @@ public class Lava : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        if (other.GetComponent<StatusManager>() != null)
             other.GetComponent<StatusManager>().StopBurn();
     }
 }
