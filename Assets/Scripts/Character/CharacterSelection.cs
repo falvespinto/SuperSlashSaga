@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour
 {
+    PlayerSetupMenuController playersetup;
     public CharactersModel[] charactersModels;
     public Transform spotp1;
     public Transform spotp2;
@@ -36,12 +37,8 @@ public class CharacterSelection : MonoBehaviour
     }
 
 
+
      public void OnClickButton(int currentButton)
      {
-        var gamepad = Gamepad.current;
-        Debug.Log(gamepad);
-         charactersP1[previousButton].SetActive(false);
-         charactersP1[currentButton].SetActive(true);
-         previousButton = currentButton;  
-     }
+    }
 }

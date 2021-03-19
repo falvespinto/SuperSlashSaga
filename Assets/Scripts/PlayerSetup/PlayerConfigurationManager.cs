@@ -10,7 +10,13 @@ public class PlayerConfigurationManager : MonoBehaviour
     private List<PlayerConfiguration> playerConfigs;
     [SerializeField]
     private int MaxPlayers = 2;
-    
+    [SerializeField]
+    private GameObject canvasPanel;
+    [SerializeField]
+    private GameObject cursorP1;
+    [SerializeField]
+    private GameObject cursorP2;
+
     public static PlayerConfigurationManager Instance { 
         get;
         private set;
@@ -40,7 +46,10 @@ public class PlayerConfigurationManager : MonoBehaviour
         playerConfigs[index].IsReady = true;
         if(playerConfigs.Count == MaxPlayers && playerConfigs.All(p => p.IsReady == true))
         {
-            SceneManager.LoadScene("CharacterSelection");
+            canvasPanel.SetActive(false);
+            cursorP1.SetActive(true);
+            cursorP2.SetActive(true);
+
         }
     }
 
