@@ -40,7 +40,7 @@ public class MenuScript : MonoBehaviour
         else if (SelectedButton == 2)
         {
             // When the button with the pointer is clicked, this piece of script is activated
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("CharacterSelection");
         }
         else if (SelectedButton == 3)
         {

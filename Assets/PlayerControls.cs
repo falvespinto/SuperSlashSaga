@@ -83,10 +83,6 @@ public class PlayerControls : MonoBehaviour
     public void Selected()
     {
         Debug.Log("oui");
-        if (button != null)
-        {
-            button.GetComponent<CharacterSelection>().OnClickButton(button.GetComponent<ChampSelectButton>().index);
-            Debug.Log(button.GetComponent<ChampSelectButton>().index);
-        }
+
     }
 }

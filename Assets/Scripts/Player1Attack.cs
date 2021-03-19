@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum LightComboState
-{
-    NONE,
-    LIGHT_1,
-    LIGHT_2
-}
+
 
 
 
