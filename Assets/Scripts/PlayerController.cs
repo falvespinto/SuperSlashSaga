@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using System.Runtime;
 public class PlayerController : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public int jc_ind = 0;
     public Quaternion orientation;
     public bool isJoyconPluggued;
+    private Vector2 movementInput;
 
     private AnimationClip clip;
 
@@ -66,57 +68,57 @@ public class PlayerController : MonoBehaviour
     {
         isAttacking = m_PlayerAttack.isAttacking;
         isRunAttacking = m_PlayerAttack.isRunAttacking;
-        if (isJoyconPluggued)
-        {
-            Joycon j = m_Joycons[jc_ind];
-            if (j.GetButtonDown(Joycon.Button.SHOULDER_2))
-            {
-                Debug.Log("1");
-                // GetStick returns a 2-element vector with x/y joystick components
-                Debug.Log(string.Format("Stick x: {0:N} Stick y: {1:N}", j.GetStick()[0], j.GetStick()[1]));
+//        if (isJoyconPluggued)
+//        {
+//            Joycon j = m_Joycons[jc_ind];
+//            if (j.GetButtonDown(Joycon.Button.SHOULDER_2))
+//            {
+//                Debug.Log("1");
+//                // GetStick returns a 2-element vector with x/y joystick components
+//                Debug.Log(string.Format("Stick x: {0:N} Stick y: {1:N}", j.GetStick()[0], j.GetStick()[1]));
 
-                // Joycon has no magnetometer, so it cannot accurately determine its yaw value. Joycon.Recenter allows the user to reset the yaw value.
-                j.Recenter();
-            }
+//                // Joycon has no magnetometer, so it cannot accurately determine its yaw value. Joycon.Recenter allows the user to reset the yaw value.
+//                j.Recenter();
+//            }
 
 
-            // Gyro values: x, y, z axis values (in radians per second)
-            gyroscop = j.GetGyro();
+//            // Gyro values: x, y, z axis values (in radians per second)
+//            gyroscop = j.GetGyro();
 
-            // Accel values:  x, y, z axis values (in Gs)
-            accel = j.GetAccel();
+//            // Accel values:  x, y, z axis values (in Gs)
+//            accel = j.GetAccel();
 
-            orientation = j.GetVector();
+//            orientation = j.GetVector();
 
-            if ((accel.z < -1 || accel.z > 1) && !isAttacking)
-            {
-                isAttacking = true;
-//                Attack();
-            }
+//            if ((accel.z < -1 || accel.z > 1) && !isAttacking)
+//            {
+//                isAttacking = true;
+////                Attack();
+//            }
 
-            if (j.GetButtonDown(Joycon.Button.DPAD_RIGHT))
-            { 
-                j.SetRumble(160, 320, 0.6f, 200);
-            }
+//            if (j.GetButtonDown(Joycon.Button.DPAD_RIGHT))
+//            { 
+//                j.SetRumble(160, 320, 0.6f, 200);
+//            }
 
-            j = m_Joycons[1];
-            m_Rigidbody.velocity = new Vector2(Sign(j.GetStick()[0]) * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
-            if (Sign(j.GetStick()[0]) != 0)
-            {
-                //ChangeAnimationState(m_Run);
+//            j = m_Joycons[1];
+//            m_Rigidbody.velocity = new Vector2(Sign(j.GetStick()[0]) * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
+//            if (Sign(j.GetStick()[0]) != 0)
+//            {
+//                //ChangeAnimationState(m_Run);
                 
-            }
-            else
-            {
-                //ChangeAnimationState(m_Idle);
-            }
-            stick = j.GetStick();
+//            }
+//            else
+//            {
+//                //ChangeAnimationState(m_Idle);
+//            }
+//            stick = j.GetStick();
 
 
             
 
-        }
-        float hInput = Input.GetAxis("Horizontal");
+//        }
+
         if (!isAttacking)
         {
             if (isJoyconPluggued)
@@ -127,11 +129,11 @@ public class PlayerController : MonoBehaviour
             {
                 if (!isRunAttacking)
                 {
-                    m_Rigidbody.velocity = new Vector2(hInput * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
+                    m_Rigidbody.velocity = new Vector2(movementInput.x * m_TranslationSpeed, 0); // déplacements horizontaux
                 }
-                if (hInput != 0f)
+                if (movementInput.x != 0f)
                 {
-                    if (hInput > 0)
+                    if (movementInput.x > 0)
                     {
                         if (!isRunAttacking)
                         {
@@ -189,11 +191,13 @@ public class PlayerController : MonoBehaviour
 
         //}
 
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            m_Animator.SetTrigger("IsRangingSonArme");
-        }
+        //if (Input.GetKeyDown(KeyCode.N))
+        //{
+        //    m_Animator.SetTrigger("IsRangingSonArme");
+        //}
     }
+
+    public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
 
     // retourne 1 si number superrieur à 0 retourne -1 si inférieur à 0 retourne 0 si = 0
     int Sign(float number)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public enum LightComboState
 {
@@ -41,6 +42,17 @@ public class PlayerAttack : MonoBehaviour
     public float runLightAtkTime;
     public float runLightAtk2Time;
 
+    public bool lightAttackButtonPressed;
+    public bool heavyAttackButtonPressed;
+    public bool paradeButtonPressed;
+    public bool paradeButtonReleased;
+
+    private bool canLight;
+    private bool canHeavy;
+    private bool canParade;
+
+    private bool neverPared;
+
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -51,11 +63,20 @@ public class PlayerAttack : MonoBehaviour
         UpdateAnimClipTimes();
         default_Combo_Timer = lightAttackTime + light2AttackTime-1.2f;
         default_Combo_Timer_Run = runLightAtkTime + runLightAtk2Time;
+        canLight = true;
+        canHeavy = true;
+        canParade = true;
         isInCombo = false;
         isAttacking = false;
         isRunAttacking = false;
         lightComboState = LightComboState.NONE;
         current_Combo_Timer = default_Combo_Timer;
+        lightAttackButtonPressed = false;
+        heavyAttackButtonPressed = false;
+        paradeButtonPressed = false;
+        paradeButtonReleased = false;
+        neverPared = true;
+        
     }
 
     private void Update()
@@ -63,9 +84,9 @@ public class PlayerAttack : MonoBehaviour
 
         ResetComboState();
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking && !isParing && !isRunAttacking)
+        if (lightAttackButtonPressed && !isAttacking && !isParing && !isRunAttacking)
         {
-
+            lightAttackButtonPressed = false;
             if ((int)lightComboState >= 2 || lightComboState == null || (int)runLightComboState >= 2 || runLightComboState == null)
             {
 
@@ -153,8 +174,9 @@ public class PlayerAttack : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.H) && !isAttacking && !isParing && !isRunAttacking)
+        if (heavyAttackButtonPressed && !isAttacking && !isParing && !isRunAttacking)
         {
+            heavyAttackButtonPressed = false;
             isAttacking = true;
             // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
             Debug.Log("is attacking heavy");
@@ -165,15 +187,16 @@ public class PlayerAttack : MonoBehaviour
             Invoke("AttackComplete", heavyAttackTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.P) && !isAttacking && !isParing && !isRunAttacking)
+        if (paradeButtonPressed && !isAttacking && !isParing && !isRunAttacking)
         {
+
             isParing = true;
             Debug.Log("is Paring");
             m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
             m_Animator.SetBool("IsParing", true);
         }
 
-        if (Input.GetKeyUp(KeyCode.P) && !isAttacking && isParing && !isRunAttacking)
+        if (!paradeButtonPressed && !isAttacking && isParing && !isRunAttacking)
         {
             isParing = false;
             Debug.Log("has stopped paring");
@@ -181,7 +204,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    void AttackComplete()
+    public void AttackComplete()
     {
         Debug.Log("testeuu");
         isAttacking = false;
@@ -242,9 +265,51 @@ public class PlayerAttack : MonoBehaviour
         isParing = false;
         m_Animator.SetBool("IsParing", false);
         m_Animator.SetTrigger("CounterAttack");
-        
-        
+        paradeButtonPressed = false;
+
+
         Debug.Log("bonjour");
+    }
+
+    public void LightAttackButton(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            Debug.Log("pressedLight");
+            lightAttackButtonPressed = true;
+        }
+        else if (ctx.canceled)
+        {
+            Debug.Log("releasedLight");
+            lightAttackButtonPressed = false;
+        }
+
+    }
+    public void HeavyAttackButton(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            Debug.Log("pressedHeavy");
+            heavyAttackButtonPressed = true;
+        }
+        else if (ctx.canceled)
+        {
+            Debug.Log("releasedHeavy");
+            heavyAttackButtonPressed = false;
+        }
+    }
+    public void ParadeButtonPressed(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            Debug.Log("pressedParade");
+            paradeButtonPressed = true;
+        }
+        else if (ctx.canceled)
+        {
+            Debug.Log("releasedParade");
+            paradeButtonPressed = false;
+        }
     }
 
 }

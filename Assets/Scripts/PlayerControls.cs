@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class PlayerControls : MonoBehaviour
 {
     public float speed = 5;
-    private UnityEngine.Vector2 movementInput;
+    private Vector2 movementInput;
     public int index;
     private PlayerControls[] test;
     public GameObject button;

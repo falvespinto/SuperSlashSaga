@@ -33,6 +33,30 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""LightAttackPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""1b941d8e-280d-4613-9bee-046f95104ebc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""HeavyAttackPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""3b506320-0e56-4a71-89b6-918f0bddf650"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ParadePressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""c3505972-6f57-470c-8f77-30306a2a2286"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -134,6 +158,72 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""419cceff-929e-4132-afe8-1ee340c35bc8"",
+                    ""path"": ""<Keyboard>/numpad1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LightAttackPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cc732e64-7f4c-443d-a956-cdbb248cb22d"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LightAttackPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6bc4a02e-5017-420c-8e73-b6c2f689358a"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HeavyAttackPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b910dc05-cb78-45b8-be8f-870afb7cb854"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HeavyAttackPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12e65f03-e20e-4926-8aba-a51fe501e624"",
+                    ""path"": ""<Keyboard>/numpad3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ParadePressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""079af214-0fb2-4938-9ce2-7c1badc54567"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ParadePressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -144,6 +234,9 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Select = m_Gameplay.FindAction("Select", throwIfNotFound: true);
+        m_Gameplay_LightAttackPressed = m_Gameplay.FindAction("LightAttackPressed", throwIfNotFound: true);
+        m_Gameplay_HeavyAttackPressed = m_Gameplay.FindAction("HeavyAttackPressed", throwIfNotFound: true);
+        m_Gameplay_ParadePressed = m_Gameplay.FindAction("ParadePressed", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -195,12 +288,18 @@ public class @Controls : IInputActionCollection, IDisposable
     private IGameplayActions m_GameplayActionsCallbackInterface;
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_Select;
+    private readonly InputAction m_Gameplay_LightAttackPressed;
+    private readonly InputAction m_Gameplay_HeavyAttackPressed;
+    private readonly InputAction m_Gameplay_ParadePressed;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
         public GameplayActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @Select => m_Wrapper.m_Gameplay_Select;
+        public InputAction @LightAttackPressed => m_Wrapper.m_Gameplay_LightAttackPressed;
+        public InputAction @HeavyAttackPressed => m_Wrapper.m_Gameplay_HeavyAttackPressed;
+        public InputAction @ParadePressed => m_Wrapper.m_Gameplay_ParadePressed;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -216,6 +315,15 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Select.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSelect;
                 @Select.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSelect;
                 @Select.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSelect;
+                @LightAttackPressed.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLightAttackPressed;
+                @LightAttackPressed.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLightAttackPressed;
+                @LightAttackPressed.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLightAttackPressed;
+                @HeavyAttackPressed.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnHeavyAttackPressed;
+                @HeavyAttackPressed.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnHeavyAttackPressed;
+                @HeavyAttackPressed.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnHeavyAttackPressed;
+                @ParadePressed.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnParadePressed;
+                @ParadePressed.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnParadePressed;
+                @ParadePressed.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnParadePressed;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -226,6 +334,15 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Select.started += instance.OnSelect;
                 @Select.performed += instance.OnSelect;
                 @Select.canceled += instance.OnSelect;
+                @LightAttackPressed.started += instance.OnLightAttackPressed;
+                @LightAttackPressed.performed += instance.OnLightAttackPressed;
+                @LightAttackPressed.canceled += instance.OnLightAttackPressed;
+                @HeavyAttackPressed.started += instance.OnHeavyAttackPressed;
+                @HeavyAttackPressed.performed += instance.OnHeavyAttackPressed;
+                @HeavyAttackPressed.canceled += instance.OnHeavyAttackPressed;
+                @ParadePressed.started += instance.OnParadePressed;
+                @ParadePressed.performed += instance.OnParadePressed;
+                @ParadePressed.canceled += instance.OnParadePressed;
             }
         }
     }
@@ -234,5 +351,8 @@ public class @Controls : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
+        void OnLightAttackPressed(InputAction.CallbackContext context);
+        void OnHeavyAttackPressed(InputAction.CallbackContext context);
+        void OnParadePressed(InputAction.CallbackContext context);
     }
 }
