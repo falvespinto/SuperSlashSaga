@@ -8,15 +8,16 @@ public class PlayerController : MonoBehaviour
     private Rigidbody m_Rigidbody;
     private Transform m_Transform;
     public Animator m_Animator;
-    public bool isPunching;
+    private bool isAttacking;
+    private bool isRunAttacking;
     private string m_AnimationCurrentState; // l'animation en cours
     public Attack punch;
     // temporaire 
     const string m_Run = "Run";
     const string m_Punch = "Punch";
     const string m_Idle = "Idle";
-
-
+    private PlayerAttack m_PlayerAttack;
+    public bool isRunning = false;
     // Variables en rapport avec l'utilisation des JoyCons
 
     private List<Joycon> m_Joycons;
@@ -27,16 +28,24 @@ public class PlayerController : MonoBehaviour
     public Quaternion orientation;
     public bool isJoyconPluggued;
 
+    private AnimationClip clip;
+
+
+    // Temps d'une animation
+    float lightAttackTime;
+
     [SerializeField] public float m_TranslationSpeed; // Vitesse de déplacement
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Transform = GetComponent<Transform>();
+        m_PlayerAttack = GetComponent<PlayerAttack>();
     }
     void Start()
     {
-        isPunching = false;
-
+        isAttacking = false;
+        isRunAttacking = false;
+        UpdateAnimClipTimes();
         // setup des variables en rapport avec les joycons
         gyroscop = new Vector3(0, 0, 0);
         accel = new Vector3(0, 0, 0);
@@ -55,7 +64,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
+        isAttacking = m_PlayerAttack.isAttacking;
+        isRunAttacking = m_PlayerAttack.isRunAttacking;
         if (isJoyconPluggued)
         {
             Joycon j = m_Joycons[jc_ind];
@@ -78,10 +88,10 @@ public class PlayerController : MonoBehaviour
 
             orientation = j.GetVector();
 
-            if ((accel.z < -1 || accel.z > 1) && !isPunching)
+            if ((accel.z < -1 || accel.z > 1) && !isAttacking)
             {
-                isPunching = true;
-                Punch();
+                isAttacking = true;
+//                Attack();
             }
 
             if (j.GetButtonDown(Joycon.Button.DPAD_RIGHT))
@@ -93,11 +103,12 @@ public class PlayerController : MonoBehaviour
             m_Rigidbody.velocity = new Vector2(Sign(j.GetStick()[0]) * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
             if (Sign(j.GetStick()[0]) != 0)
             {
-                ChangeAnimationState(m_Run);
+                //ChangeAnimationState(m_Run);
+                
             }
             else
             {
-                ChangeAnimationState(m_Idle);
+                //ChangeAnimationState(m_Idle);
             }
             stick = j.GetStick();
 
@@ -106,7 +117,7 @@ public class PlayerController : MonoBehaviour
 
         }
         float hInput = Input.GetAxis("Horizontal");
-        if (!isPunching)
+        if (!isAttacking)
         {
             if (isJoyconPluggued)
             {
@@ -114,14 +125,48 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                m_Rigidbody.velocity = new Vector2(hInput * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
+                if (!isRunAttacking)
+                {
+                    m_Rigidbody.velocity = new Vector2(hInput * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
+                }
                 if (hInput != 0f)
                 {
-                    ChangeAnimationState(m_Run);
+                    if (hInput > 0)
+                    {
+                        if (!isRunAttacking)
+                        {
+                            m_Animator.SetBool("IsRunning", true);
+                        }
+                        else
+                        {
+                            m_Animator.SetBool("IsRunning", false);
+                        }
+                        
+                        m_Animator.SetBool("IsWalking", false);
+                        isRunning = true;
+                    }
+                    else
+                    {
+                        isRunning = false;
+                        if (!isRunAttacking)
+                        {
+                            m_Animator.SetBool("IsWalking", true);
+                        }
+                        else
+                        {
+                            m_Animator.SetBool("IsWalking", false);
+                        }
+                        
+                        m_Animator.SetBool("IsRunning", false);
+                    }
+                    //ChangeAnimationState(m_Run);
                 }
                 else
                 {
-                    ChangeAnimationState(m_Idle);
+                    // ChangeAnimationState(m_Idle);
+                    isRunning = false;
+                    m_Animator.SetBool("IsWalking", false);
+                    m_Animator.SetBool("IsRunning", false);
                 }
             }
             
@@ -129,11 +174,24 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !isPunching)
-        {
-            isPunching = true;
-            Punch();
+        //if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
+        //{
+        //    isAttacking = true;
+        //    Attack("light");
 
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.M) && !isAttacking)
+        //{
+
+        //    isAttacking = true;
+        //    Attack("heavy");
+
+        //}
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            m_Animator.SetTrigger("IsRangingSonArme");
         }
     }
 
@@ -164,16 +222,35 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void Punch()
+    void Attack(string attack)
     {
-        // Question importante : les Animation events sont ils fiables ? Si non, peut être un simple setActive dans ce script serait plus performant ? 
-        // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
-        Debug.Log("is Punching");
-        m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
-        punch.damage = Random.Range(1, 20);
-        ChangeAnimationState(m_Punch);
-        Invoke("PunchComplete", 0.7f);
-        //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
+
+        switch (attack)
+        {
+            case "light":
+// Question importante : les Animation events sont ils fiables ? Si non, peut être un simple setActive dans ce script serait plus performant ? 
+// Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
+                Debug.Log("is attacking light");
+                m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
+                punch.damage = 10;
+// ChangeAnimationState(m_Punch);
+                m_Animator.SetTrigger("LightAttack");
+                Invoke("AttackComplete", lightAttackTime);
+//m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
+                break;
+            case "heavy":
+// Question importante : les Animation events sont ils fiables ? Si non, peut être un simple setActive dans ce script serait plus performant ? 
+// Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
+                Debug.Log("is attacking heavy");
+                m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
+                punch.damage = 20;
+// ChangeAnimationState(m_Punch);
+                m_Animator.SetTrigger("HeavyAttack");
+                Invoke("AttackComplete", lightAttackTime);
+//m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
+                break;
+        }
+
     }
 
     // Gestion des animations avec le code
@@ -187,9 +264,26 @@ public class PlayerController : MonoBehaviour
         m_AnimationCurrentState = newState;
     }
 
-    void PunchComplete()
+    void AttackComplete()
     {
-        isPunching = false;
-        ChangeAnimationState(m_Idle);
+        isAttacking = false;
+       // ChangeAnimationState(m_Idle);
     }
+
+
+    public void UpdateAnimClipTimes()
+    {
+        AnimationClip[] clips = m_Animator.runtimeAnimatorController.animationClips;
+        foreach (AnimationClip clip in clips)
+        {
+            switch (clip.name)
+            {
+                case "Light":
+                    lightAttackTime = clip.length;
+                    break;
+            }
+        }
+    }
+
 }
+
