@@ -2662,8 +2662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 150582377}
-  isAttacking: 0
   punch: {fileID: 1335297932}
+  isRunning: 0
   stick: []
   gyroscop: {x: 0, y: 0, z: 0}
   accel: {x: 0, y: 0, z: 0}
@@ -2785,6 +2785,7 @@ MonoBehaviour:
   lightComboState: 0
   m_Rigidbody: {fileID: 682670700}
   default_Combo_Timer: 2
+  default_Combo_Timer_Run: 2
   current_Combo_Timer: 0
   m_Animator: {fileID: 0}
   isInCombo: 0
@@ -8384,7 +8385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a87873fc9c1694b4f9a12b3359d96b2f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a87873fc9c1694b4f9a12b3359d96b2f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
