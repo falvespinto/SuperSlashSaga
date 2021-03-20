@@ -27,6 +27,7 @@ public class PlayerControls : MonoBehaviour
     }
     private void Start()
     {
+        FindObjectOfType<AudioManager>().Play("selectionPerso");
         prefab.transform.SetParent(GameObject.Find("Canvas").transform);
         prefab.transform.position = GameObject.Find("Row1_1").transform.position;
         test = GameObject.FindObjectsOfType<PlayerControls>();
@@ -81,7 +82,8 @@ public class PlayerControls : MonoBehaviour
             {
                 GameObject.FindObjectOfType<StartGame>().P2 = this;
             }
-            
+            FindObjectOfType<AudioManager>().Play("ajoutJoueur");
+
         }
     }
     public void OnTriggerEnter2D(Collider2D collider)
