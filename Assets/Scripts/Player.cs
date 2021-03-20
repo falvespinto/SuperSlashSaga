@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     public int maxHealth = 100;
     public float currentHealth;
+    public int playerIndex;
+    public LayerMask hurtBox;
     public HealthBar healthBar;
     public PlayerAttack playerAttack;
     void Awake()

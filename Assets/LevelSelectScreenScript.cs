@@ -15,7 +15,7 @@ public class LevelSelectScreenScript : MonoBehaviour
     const int rows = 2;
 
     Vector2 positionIndex;
-    GameObject currentSlot;
+    public GameObject currentSlot;
 
     bool isMoving = false;
 

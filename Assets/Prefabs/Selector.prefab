@@ -87,13 +87,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8943298c4d1efa441b2f4f29bd02d4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   index: 0
   button: {fileID: 0}
   prefab: {fileID: 5608946902676620278}
+  hasSelected: 0
   playersIcons:
   - {fileID: 2800000, guid: 929f7c3985fe3f84b8f9de1568813cfd, type: 3}
   - {fileID: 2800000, guid: 298b156e28adc4d40b082243eb813632, type: 3}
+  isInit: 0
 --- !u!114 &-2217939168109372958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +110,7 @@ MonoBehaviour:
   selector: {fileID: 0}
   row1: []
   row2: []
+  currentSlot: {fileID: 0}
 --- !u!114 &1095962771060706981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,13 +154,13 @@ MonoBehaviour:
     m_ActionName: Gameplay/Move[/XInputControllerWindows/leftStick,/Keyboard/z,/Keyboard/s,/Keyboard/q,/Keyboard/d,/XInputControllerWindows/dpad]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 5593927978462030104}
+        m_TargetAssemblyTypeName: PlayerControls, Assembly-CSharp
+        m_MethodName: OnSelect
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -166,6 +168,18 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7304d985-2b44-4162-bdfb-d83af267e1ed
     m_ActionName: Gameplay/Select[/XInputControllerWindows/buttonSouth,/Keyboard/g]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1b941d8e-280d-4613-9bee-046f95104ebc
+    m_ActionName: Gameplay/LightAttackPressed[/Keyboard/numpad1,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3b506320-0e56-4a71-89b6-918f0bddf650
+    m_ActionName: Gameplay/HeavyAttackPressed[/Keyboard/numpad2,/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c3505972-6f57-470c-8f77-30306a2a2286
+    m_ActionName: Gameplay/ParadePressed[/Keyboard/numpad3,/XInputControllerWindows/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay

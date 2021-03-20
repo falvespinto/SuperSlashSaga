@@ -5,5 +5,5 @@ using UnityEngine;
 public class LevelSelectItemScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    public string levelID;
+    public string name;
 }
