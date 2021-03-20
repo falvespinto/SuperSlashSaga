@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class Player : MonoBehaviour
     public LayerMask hurtBox;
     public HealthBar healthBar;
     public PlayerAttack playerAttack;
+    public static int winner;
     void Awake()
     {
         playerAttack = GetComponent<PlayerAttack>();
@@ -38,6 +41,16 @@ public class Player : MonoBehaviour
     }
     void Die()
     {
+        SceneManager.LoadScene("MenuVictoire");
         Debug.Log("arg je suis mor PLAYER");
+        if (playerIndex == 1)
+        {
+            winner = 1;
+        }
+        else
+        {
+            winner = 2;
+        }
+        
     }
 }
