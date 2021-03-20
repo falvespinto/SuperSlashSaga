@@ -45,7 +45,7 @@ public class StartGame : MonoBehaviour
         }
         else
         {
-            Debug.Log("bah y'a rien d'autre chakal");
+            Debug.Log("bah y'a rien d'autre chakal, Molière");
         }
 
         if (P2.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Yuetsu")
@@ -55,7 +55,7 @@ public class StartGame : MonoBehaviour
         }
         else
         {
-            Debug.Log("bah y'a rien d'autre chakal");
+            Debug.Log("bah y'a rien d'autre chakal, Molière");
         }
 
         SceneManager.LoadScene(0);

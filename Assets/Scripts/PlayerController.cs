@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     public Quaternion orientation;
     public bool isJoyconPluggued;
     private Vector2 movementInput;
+    public bool isParing;
+
+    public int runningDirection;
 
     private AnimationClip clip;
 
@@ -62,12 +65,23 @@ public class PlayerController : MonoBehaviour
             isJoyconPluggued = true;
 
         }
+
+        if (GetComponent<Player>().playerIndex == 0)
+        {
+            runningDirection = 1;
+        }
+        else
+        {
+            runningDirection = -1;
+        }
+
     }
 
     void Update()
     {
         isAttacking = m_PlayerAttack.isAttacking;
         isRunAttacking = m_PlayerAttack.isRunAttacking;
+        isParing = m_PlayerAttack.isParing;
 //        if (isJoyconPluggued)
 //        {
 //            Joycon j = m_Joycons[jc_ind];
@@ -119,7 +133,7 @@ public class PlayerController : MonoBehaviour
 
 //        }
 
-        if (!isAttacking)
+        if (!isAttacking && !isParing)
         {
             if (isJoyconPluggued)
             {
@@ -133,7 +147,7 @@ public class PlayerController : MonoBehaviour
                 }
                 if (movementInput.x != 0f)
                 {
-                    if (movementInput.x > 0)
+                    if (movementInput.x*runningDirection > 0)
                     {
                         if (!isRunAttacking)
                         {
@@ -226,36 +240,36 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void Attack(string attack)
-    {
+//    void Attack(string attack)
+//    {
 
-        switch (attack)
-        {
-            case "light":
-// Question importante : les Animation events sont ils fiables ? Si non, peut être un simple setActive dans ce script serait plus performant ? 
-// Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
-                Debug.Log("is attacking light");
-                m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
-                punch.damage = 10;
-// ChangeAnimationState(m_Punch);
-                m_Animator.SetTrigger("LightAttack");
-                Invoke("AttackComplete", lightAttackTime);
-//m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
-                break;
-            case "heavy":
-// Question importante : les Animation events sont ils fiables ? Si non, peut être un simple setActive dans ce script serait plus performant ? 
-// Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
-                Debug.Log("is attacking heavy");
-                m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
-                punch.damage = 20;
-// ChangeAnimationState(m_Punch);
-                m_Animator.SetTrigger("HeavyAttack");
-                Invoke("AttackComplete", lightAttackTime);
-//m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
-                break;
-        }
+//        switch (attack)
+//        {
+//            case "light":
+//// Question importante : les Animation events sont ils fiables ? Si non, peut être un simple setActive dans ce script serait plus performant ? 
+//// Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
+//                Debug.Log("is attacking light");
+//                m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
+//                punch.damage = 10;
+//// ChangeAnimationState(m_Punch);
+//                m_Animator.SetTrigger("LightAttack");
+//                Invoke("AttackComplete", lightAttackTime);
+////m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
+//                break;
+//            case "heavy":
+//// Question importante : les Animation events sont ils fiables ? Si non, peut être un simple setActive dans ce script serait plus performant ? 
+//// Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
+//                Debug.Log("is attacking heavy");
+//                m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
+//                punch.damage = 20;
+//// ChangeAnimationState(m_Punch);
+//                m_Animator.SetTrigger("HeavyAttack");
+//                Invoke("AttackComplete", lightAttackTime);
+////m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
+//                break;
+//        }
 
-    }
+//    }
 
     // Gestion des animations avec le code
     // Permet de lancer une animation instantannément
@@ -268,11 +282,11 @@ public class PlayerController : MonoBehaviour
         m_AnimationCurrentState = newState;
     }
 
-    void AttackComplete()
-    {
-        isAttacking = false;
-       // ChangeAnimationState(m_Idle);
-    }
+    //void AttackComplete()
+    //{
+    //    isAttacking = false;
+    //   // ChangeAnimationState(m_Idle);
+    //}
 
 
     public void UpdateAnimClipTimes()

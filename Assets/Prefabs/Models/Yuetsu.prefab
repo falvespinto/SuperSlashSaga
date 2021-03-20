@@ -74,7 +74,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!65 &881055891806932355
 BoxCollider:
@@ -103,10 +103,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  playerIndex: 0
   hurtBox:
     serializedVersion: 2
     m_Bits: 256
-  playerIndex: 0
   healthBar: {fileID: 0}
   playerAttack: {fileID: 7284774351294079306}
 --- !u!114 &881055891806932353
@@ -176,6 +176,8 @@ MonoBehaviour:
   jc_ind: 0
   orientation: {x: 0, y: 0, z: 0, w: 0}
   isJoyconPluggued: 0
+  isParing: 0
+  runningDirection: 0
   m_TranslationSpeed: 70
 --- !u!114 &881055891806932476
 MonoBehaviour:

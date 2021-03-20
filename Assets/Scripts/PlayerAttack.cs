@@ -242,13 +242,13 @@ public class PlayerAttack : MonoBehaviour
             switch (clip.name)
             {
                 case "Light1Yuetsu":
-                    lightAttackTime = clip.length;
+                    lightAttackTime = clip.length/1.5f;
                     break;
                 case "HeavyYuetsu":
                     heavyAttackTime = clip.length;
                     break;
                 case "Light2Yuetsu":
-                    light2AttackTime = clip.length;
+                    light2AttackTime = clip.length/1.5f;
                     break;
                 case "RunLightAtkYuetsu":
                     runLightAtkTime = clip.length;
