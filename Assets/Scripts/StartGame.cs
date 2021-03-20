@@ -58,7 +58,7 @@ public class StartGame : MonoBehaviour
             Debug.Log("bah y'a rien d'autre chakal, Molière");
         }
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("SampleScene");
 
     }
 }
