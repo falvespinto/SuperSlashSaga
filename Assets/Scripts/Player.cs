@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
     }
     void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = maxHealth;
+
         FindObjectOfType<AudioManager>().Play("combat");
     }
     public void TakeDamage(float damage)
