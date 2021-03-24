@@ -38,7 +38,7 @@ public class StatusManager : MonoBehaviour
             {
                 yield return new WaitForSeconds(0.5f);
                 burn = 2.5f;
-                health.GetComponent<Player>().TakeDamage(burn);
+                health.GetComponent<Player>().TakeDamage(burn,"terrain");
             }
     }
 }
