@@ -109,6 +109,10 @@ MonoBehaviour:
     m_Bits: 256
   healthBar: {fileID: 0}
   playerAttack: {fileID: 7284774351294079306}
+  playerController: {fileID: 0}
+  GuardBreakTime: 0
+  isTakingDamage: 0
+  animator: {fileID: 6724074370243391515}
 --- !u!114 &881055891806932353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 6724074370243391515}
+  player: {fileID: 881055891806932359}
   punch: {fileID: 881055891555643736}
+  m_PlayerAttack: {fileID: 7284774351294079306}
   isRunning: 0
   stick: []
   gyroscop: {x: 0, y: 0, z: 0}
@@ -527,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   halfExtent: 0
   damage: 5
+  attackType: 
 --- !u!1 &881055892073508084
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class Attack : MonoBehaviour
 {
     public float halfExtent;
     public int damage;
+    public string attackType;
     private Collider col;
 
     private void Start()
@@ -21,10 +22,11 @@ public class Attack : MonoBehaviour
         {
             for (int i = 0; i < hit.Length; i++)
             {
-                
-                hit[i].GetComponentInParent<Player>().TakeDamage(damage);
+
+                hit[i].GetComponentInParent<Player>().TakeDamage(damage, attackType);
                 Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
                 Debug.Log(hit[i].gameObject.layer);
+
             }
             gameObject.SetActive(false);
         }

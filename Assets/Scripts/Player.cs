@@ -12,21 +12,48 @@ public class Player : MonoBehaviour
     public LayerMask hurtBox;
     public HealthBar healthBar;
     public PlayerAttack playerAttack;
+    public PlayerController playerController;
     public static int winner;
+    public float GuardBreakTime;
+    public bool isTakingDamage;
+    private Rigidbody m_rigidbody;
+    public Animator animator;
     void Awake()
     {
         playerAttack = GetComponent<PlayerAttack>();
+        playerController = GetComponent<PlayerController>();
+        m_rigidbody = GetComponent<Rigidbody>();
     }
     void Start()
     {
-        currentHealth = maxHealth;
+        UpdateAnimClipTimes();
+        currentHealth = maxHealth;
+        isTakingDamage = false;
         FindObjectOfType<AudioManager>().Play("combat");
     }
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, string attackType)
     {
         if (playerAttack.isParing)
         {
-            playerAttack.AttackedWhileParing();
+            if (attackType == "Heavy")
+            {
+                isTakingDamage = true;
+                Invoke("ResetIsTakingDamage", GuardBreakTime);
+                animator.SetTrigger("Guard_Break");
+                m_rigidbody.velocity = new Vector2(0f, m_rigidbody.velocity.y); // déplacements horizontaux bloqués
+                currentHealth -= damage * 1.1f;
+                healthBar.SetHealth(currentHealth);
+                if (currentHealth <= 0)
+                {
+                    animator.SetTrigger("Dead");
+                    Invoke("Die", 3f);
+                }
+            }
+            else
+            {
+                playerAttack.AttackedWhileParing();
+            }
+
         }
         else
         {
@@ -34,10 +61,10 @@ public class Player : MonoBehaviour
             healthBar.SetHealth(currentHealth);
             if (currentHealth <= 0)
             {
-                Die();
+                animator.SetTrigger("Dead");
+                Invoke("Die", 3f);
             }
         }
-
     }
     void Die()
     {
@@ -51,6 +78,23 @@ public class Player : MonoBehaviour
         {
             winner = 2;
         }
-        
+    }
+    void ResetIsTakingDamage()
+    {
+        isTakingDamage = false;
+    }
+
+    public void UpdateAnimClipTimes()
+    {
+        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+        foreach (AnimationClip clip in clips)
+        {
+            switch (clip.name)
+            {
+                case "Guard_BreakYuetsu":
+                    GuardBreakTime = clip.length / 1.5f;
+                    break;
+            }
+        }
     }
 }
