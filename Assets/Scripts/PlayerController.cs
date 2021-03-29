@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody m_Rigidbody;
     private Transform m_Transform;
     public Animator m_Animator;
+    public Player player;
     private bool isAttacking;
     private bool isRunAttacking;
     private string m_AnimationCurrentState; // l'animation en cours
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
     const string m_Run = "Run";
     const string m_Punch = "Punch";
     const string m_Idle = "Idle";
-    private PlayerAttack m_PlayerAttack;
+    public PlayerAttack m_PlayerAttack;
     public bool isRunning = false;
     // Variables en rapport avec l'utilisation des JoyCons
 
@@ -44,13 +45,11 @@ public class PlayerController : MonoBehaviour
     {
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Transform = GetComponent<Transform>();
-        m_PlayerAttack = GetComponent<PlayerAttack>();
     }
     void Start()
     {
         isAttacking = false;
         isRunAttacking = false;
-        UpdateAnimClipTimes();
         // setup des variables en rapport avec les joycons
         gyroscop = new Vector3(0, 0, 0);
         accel = new Vector3(0, 0, 0);
@@ -66,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (GetComponent<Player>().playerIndex == 0)
+        if (player.playerIndex == 0)
         {
             runningDirection = 1;
         }
@@ -82,62 +81,113 @@ public class PlayerController : MonoBehaviour
         isAttacking = m_PlayerAttack.isAttacking;
         isRunAttacking = m_PlayerAttack.isRunAttacking;
         isParing = m_PlayerAttack.isParing;
-//        if (isJoyconPluggued)
-//        {
-//            Joycon j = m_Joycons[jc_ind];
-//            if (j.GetButtonDown(Joycon.Button.SHOULDER_2))
-//            {
-//                Debug.Log("1");
-//                // GetStick returns a 2-element vector with x/y joystick components
-//                Debug.Log(string.Format("Stick x: {0:N} Stick y: {1:N}", j.GetStick()[0], j.GetStick()[1]));
 
-//                // Joycon has no magnetometer, so it cannot accurately determine its yaw value. Joycon.Recenter allows the user to reset the yaw value.
-//                j.Recenter();
-//            }
+        if (isJoyconPluggued)
+        {
+            Joycon j = m_Joycons[jc_ind];
+            if (j.GetButtonDown(Joycon.Button.SHOULDER_2))
+            {
+                Debug.Log("1");
+                // GetStick returns a 2-element vector with x/y joystick components
+                Debug.Log(string.Format("Stick x: {0:N} Stick y: {1:N}", j.GetStick()[0], j.GetStick()[1]));
 
-
-//            // Gyro values: x, y, z axis values (in radians per second)
-//            gyroscop = j.GetGyro();
-
-//            // Accel values:  x, y, z axis values (in Gs)
-//            accel = j.GetAccel();
-
-//            orientation = j.GetVector();
-
-//            if ((accel.z < -1 || accel.z > 1) && !isAttacking)
-//            {
-//                isAttacking = true;
-////                Attack();
-//            }
-
-//            if (j.GetButtonDown(Joycon.Button.DPAD_RIGHT))
-//            { 
-//                j.SetRumble(160, 320, 0.6f, 200);
-//            }
-
-//            j = m_Joycons[1];
-//            m_Rigidbody.velocity = new Vector2(Sign(j.GetStick()[0]) * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
-//            if (Sign(j.GetStick()[0]) != 0)
-//            {
-//                //ChangeAnimationState(m_Run);
-                
-//            }
-//            else
-//            {
-//                //ChangeAnimationState(m_Idle);
-//            }
-//            stick = j.GetStick();
+                // Joycon has no magnetometer, so it cannot accurately determine its yaw value. Joycon.Recenter allows the user to reset the yaw value.
+                j.Recenter();
+            }
 
 
-            
+            // Gyro values: x, y, z axis values (in radians per second)
+            gyroscop = j.GetGyro();
 
-//        }
+            // Accel values:  x, y, z axis values (in Gs)
+            accel = j.GetAccel();
 
-        if (!isAttacking && !isParing)
+            orientation = j.GetVector();
+
+            if ((accel.z < -1 || accel.z > 1) && !isAttacking)
+            {
+                isAttacking = true;
+                //Attack();
+            }
+
+            if (j.GetButtonDown(Joycon.Button.DPAD_RIGHT))
+            {
+                j.SetRumble(160, 320, 0.6f, 200);
+            }
+
+            j = m_Joycons[1];
+            m_Rigidbody.velocity = new Vector2(Sign(j.GetStick()[0]) * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
+            if (Sign(j.GetStick()[0]) != 0)
+            {
+                //ChangeAnimationState(m_Run);
+
+                isParing = m_PlayerAttack.isParing;
+
+
+                //        if (isJoyconPluggued)
+                //        {
+                //            Joycon j = m_Joycons[jc_ind];
+                //            if (j.GetButtonDown(Joycon.Button.SHOULDER_2))
+                //            {
+                //                Debug.Log("1");
+                //                // GetStick returns a 2-element vector with x/y joystick components
+                //                Debug.Log(string.Format("Stick x: {0:N} Stick y: {1:N}", j.GetStick()[0], j.GetStick()[1]));
+
+                //                // Joycon has no magnetometer, so it cannot accurately determine its yaw value. Joycon.Recenter allows the user to reset the yaw value.
+                //                j.Recenter();
+                //            }
+
+
+                //            // Gyro values: x, y, z axis values (in radians per second)
+                //            gyroscop = j.GetGyro();
+
+                //            // Accel values:  x, y, z axis values (in Gs)
+                //            accel = j.GetAccel();
+
+                //            orientation = j.GetVector();
+
+                //            if ((accel.z < -1 || accel.z > 1) && !isAttacking)
+                //            {
+                //                isAttacking = true;
+                ////                Attack();
+                //            }
+
+                //            if (j.GetButtonDown(Joycon.Button.DPAD_RIGHT))
+                //            { 
+                //                j.SetRumble(160, 320, 0.6f, 200);
+                //            }
+
+                //            j = m_Joycons[1];
+                //            m_Rigidbody.velocity = new Vector2(Sign(j.GetStick()[0]) * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
+                //            if (Sign(j.GetStick()[0]) != 0)
+                //            {
+                //                //ChangeAnimationState(m_Run);
+
+
+
+                //            }
+                //            else
+                //            {
+                //                //ChangeAnimationState(m_Idle);
+                //            }
+                //            stick = j.GetStick();
+
+
+
+
+
+                //        }
+
+
+            }
+
+            //        }
+        }
+        if (!isAttacking && !isParing && !player.isTakingDamage)
         {
             if (isJoyconPluggued)
             {
-                
+
             }
             else
             {
@@ -147,7 +197,7 @@ public class PlayerController : MonoBehaviour
                 }
                 if (movementInput.x != 0f)
                 {
-                    if (movementInput.x*runningDirection > 0)
+                    if (movementInput.x * runningDirection > 0)
                     {
                         if (!isRunAttacking)
                         {
@@ -157,7 +207,7 @@ public class PlayerController : MonoBehaviour
                         {
                             m_Animator.SetBool("IsRunning", false);
                         }
-                        
+
                         m_Animator.SetBool("IsWalking", false);
                         isRunning = true;
                     }
@@ -172,7 +222,7 @@ public class PlayerController : MonoBehaviour
                         {
                             m_Animator.SetBool("IsWalking", false);
                         }
-                        
+
                         m_Animator.SetBool("IsRunning", false);
                     }
                     //ChangeAnimationState(m_Run);
@@ -185,30 +235,9 @@ public class PlayerController : MonoBehaviour
                     m_Animator.SetBool("IsRunning", false);
                 }
             }
-            
+
 
         }
-
-
-        //if (Input.GetKeyDown(KeyCode.Mouse0) && !isAttacking)
-        //{
-        //    isAttacking = true;
-        //    Attack("light");
-
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.M) && !isAttacking)
-        //{
-
-        //    isAttacking = true;
-        //    Attack("heavy");
-
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.N))
-        //{
-        //    m_Animator.SetTrigger("IsRangingSonArme");
-        //}
     }
 
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
@@ -232,76 +261,5 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-
-    private void FixedUpdate()
-    {
-
-
-    }
-
-//    void Attack(string attack)
-//    {
-
-//        switch (attack)
-//        {
-//            case "light":
-//// Question importante : les Animation events sont ils fiables ? Si non, peut être un simple setActive dans ce script serait plus performant ? 
-//// Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
-//                Debug.Log("is attacking light");
-//                m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
-//                punch.damage = 10;
-//// ChangeAnimationState(m_Punch);
-//                m_Animator.SetTrigger("LightAttack");
-//                Invoke("AttackComplete", lightAttackTime);
-////m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
-//                break;
-//            case "heavy":
-//// Question importante : les Animation events sont ils fiables ? Si non, peut être un simple setActive dans ce script serait plus performant ? 
-//// Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
-//                Debug.Log("is attacking heavy");
-//                m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
-//                punch.damage = 20;
-//// ChangeAnimationState(m_Punch);
-//                m_Animator.SetTrigger("HeavyAttack");
-//                Invoke("AttackComplete", lightAttackTime);
-////m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
-//                break;
-//        }
-
-//    }
-
-    // Gestion des animations avec le code
-    // Permet de lancer une animation instantannément
-    void ChangeAnimationState(string newState)
-    {
-        if (m_AnimationCurrentState == newState) return; // Cette ligne empêche une animation de se supplenter elle même.
-
-        m_Animator.Play(newState);
-
-        m_AnimationCurrentState = newState;
-    }
-
-    //void AttackComplete()
-    //{
-    //    isAttacking = false;
-    //   // ChangeAnimationState(m_Idle);
-    //}
-
-
-    public void UpdateAnimClipTimes()
-    {
-        AnimationClip[] clips = m_Animator.runtimeAnimatorController.animationClips;
-        foreach (AnimationClip clip in clips)
-        {
-            switch (clip.name)
-            {
-                case "Light":
-                    lightAttackTime = clip.length;
-                    break;
-            }
-        }
-    }
-
 }
 
