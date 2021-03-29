@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 842343379010824801}
   - component: {fileID: 6724074370243391515}
-  - component: {fileID: 881055891806932354}
   - component: {fileID: 881055891806932355}
+  - component: {fileID: 5636439361527713050}
   - component: {fileID: 881055891806932359}
   - component: {fileID: 881055891806932353}
   - component: {fileID: 7284774351294079306}
@@ -38,6 +38,7 @@ Transform:
   m_Children:
   - {fileID: 5179359592569228021}
   - {fileID: 3460922333745810764}
+  - {fileID: 3213370748262575025}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -60,22 +61,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!54 &881055891806932354
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 70732113550766299}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 124
-  m_CollisionDetection: 0
 --- !u!65 &881055891806932355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89,6 +74,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100, y: 175, z: 30}
   m_Center: {x: 0, y: 90, z: 0}
+--- !u!143 &5636439361527713050
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70732113550766299}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 168.8
+  m_Radius: 26
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 84, z: 0}
 --- !u!114 &881055891806932359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,8 +186,11 @@ MonoBehaviour:
   orientation: {x: 0, y: 0, z: 0, w: 0}
   isJoyconPluggued: 0
   isParing: 0
-  runningDirection: 0
-  m_TranslationSpeed: 70
+  gravity: 0.1
+  controller: {fileID: 5636439361527713050}
+  turnSmoothTime: 0.1
+  cam: {fileID: 0}
+  m_TranslationSpeed: 0.25
 --- !u!114 &881055891806932476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +299,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c3505972-6f57-470c-8f77-30306a2a2286
     m_ActionName: Gameplay/Parade[/Keyboard/numpad3,/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1de33edc-8d30-47e0-a16c-1f286c90034f
+    m_ActionName: Gameplay/MouseLook[/Mouse/delta]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -1666,6 +1676,36 @@ Transform:
   - {fileID: 6763289674201086178}
   m_Father: {fileID: 661688066561711589}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4343035644328295519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3213370748262575025}
+  m_Layer: 8
+  m_Name: Camera Look Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3213370748262575025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4343035644328295519}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 143, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 842343379010824801}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4464197543587905426
 GameObject:

@@ -31,19 +31,24 @@ public class PlayerController : MonoBehaviour
     public bool isJoyconPluggued;
     private Vector2 movementInput;
     public bool isParing;
-
-    public int runningDirection;
+    private Vector3 direction;
+    private Vector3 moveDirection;
+    public float gravity;
 
     private AnimationClip clip;
+    public CharacterController controller;
 
+    public float turnSmoothTime = 0.1f;
+    private float turnSmoothVelocity;
 
     // Temps d'une animation
     float lightAttackTime;
+    public Transform cam;
 
     [SerializeField] public float m_TranslationSpeed; // Vitesse de déplacement
     private void Awake()
     {
-        m_Rigidbody = GetComponent<Rigidbody>();
+  //      m_Rigidbody = GetComponent<Rigidbody>();
         m_Transform = GetComponent<Transform>();
     }
     void Start()
@@ -65,15 +70,6 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (player.playerIndex == 0)
-        {
-            runningDirection = 1;
-        }
-        else
-        {
-            runningDirection = -1;
-        }
-
     }
 
     void Update()
@@ -81,6 +77,8 @@ public class PlayerController : MonoBehaviour
         isAttacking = m_PlayerAttack.isAttacking;
         isRunAttacking = m_PlayerAttack.isRunAttacking;
         isParing = m_PlayerAttack.isParing;
+        moveDirection = new Vector3();
+
 
         if (isJoyconPluggued)
         {
@@ -116,7 +114,7 @@ public class PlayerController : MonoBehaviour
             }
 
             j = m_Joycons[1];
-            m_Rigidbody.velocity = new Vector2(Sign(j.GetStick()[0]) * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
+       //     m_Rigidbody.velocity = new Vector2(Sign(j.GetStick()[0]) * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
             if (Sign(j.GetStick()[0]) != 0)
             {
                 //ChangeAnimationState(m_Run);
@@ -193,12 +191,19 @@ public class PlayerController : MonoBehaviour
             {
                 if (!isRunAttacking)
                 {
-                    m_Rigidbody.velocity = new Vector2(movementInput.x * m_TranslationSpeed, 0); // déplacements horizontaux
-                }
-                if (movementInput.x != 0f)
-                {
-                    if (movementInput.x * runningDirection > 0)
+                    direction = new Vector3(movementInput.x, 0f, movementInput.y).normalized;
+                    if (direction.magnitude >= 0.1f)
                     {
+                        float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+                        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+                        transform.rotation = Quaternion.Euler(0f, angle, 0f);
+                        moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                        moveDirection *= m_TranslationSpeed;
+                    }
+                }
+                if (movementInput.x != 0f || movementInput.y != 0f)
+                {
+                    
                         if (!isRunAttacking)
                         {
                             m_Animator.SetBool("IsRunning", true);
@@ -210,34 +215,22 @@ public class PlayerController : MonoBehaviour
 
                         m_Animator.SetBool("IsWalking", false);
                         isRunning = true;
-                    }
-                    else
-                    {
-                        isRunning = false;
-                        if (!isRunAttacking)
-                        {
-                            m_Animator.SetBool("IsWalking", true);
-                        }
-                        else
-                        {
-                            m_Animator.SetBool("IsWalking", false);
-                        }
-
-                        m_Animator.SetBool("IsRunning", false);
-                    }
                     //ChangeAnimationState(m_Run);
                 }
                 else
                 {
                     // ChangeAnimationState(m_Idle);
                     isRunning = false;
-                    m_Animator.SetBool("IsWalking", false);
                     m_Animator.SetBool("IsRunning", false);
                 }
             }
 
 
         }
+
+        moveDirection.y -= gravity;
+        controller.Move(moveDirection);
+
     }
 
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
