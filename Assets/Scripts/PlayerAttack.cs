@@ -36,6 +36,7 @@ public class PlayerAttack : MonoBehaviour
     public PlayerController playerController;
     public bool isParing;
     private Player player;
+    public Transform target;
 
     public float lightAttackTime;
     public float heavyAttackTime;
@@ -56,14 +57,14 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        m_Rigidbody = GetComponent<Rigidbody>();
+        //   m_Rigidbody = GetComponent<Rigidbody>();
         playerController = GetComponent<PlayerController>();
         player = GetComponent<Player>();
     }
     public void Start()
     {
         UpdateAnimClipTimes();
-        default_Combo_Timer = lightAttackTime + light2AttackTime-1.2f;
+        default_Combo_Timer = lightAttackTime + light2AttackTime - 1.2f;
         default_Combo_Timer_Run = runLightAtkTime + runLightAtk2Time;
         canLight = true;
         canHeavy = true;
@@ -98,8 +99,8 @@ public class PlayerAttack : MonoBehaviour
                 {
 
                     isInCombo = true;
-                    m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
-                                                                                    // Si on veut avoir un timer différent entre chaques combo, il faut bouger l'afféctation du current combo timer dans les if ci-dessous et affecter current combo timer avec des valeurs paramétrés au préalable
+                    //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
+                    // Si on veut avoir un timer différent entre chaques combo, il faut bouger l'afféctation du current combo timer dans les if ci-dessous et affecter current combo timer avec des valeurs paramétrés au préalable
 
 
                     if (playerController.isRunning)
@@ -109,9 +110,10 @@ public class PlayerAttack : MonoBehaviour
                         runLightComboState++;
                         if (runLightComboState == RunLightComboState.RUN_LIGHT_1)
                         {
+                            LookAtTarget();
                             // Joue attaque 1 du combo de coup légé pendant un sprint
                             Debug.Log("Run light atk 1");
-                            m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux bloqués
+                            //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux bloqués
                             swordAttacks.damage = 5;
                             swordAttacks.attackType = "Light";
                             m_Animator.SetBool("RunLightAttack", true);
@@ -121,8 +123,9 @@ public class PlayerAttack : MonoBehaviour
 
                         if (runLightComboState == RunLightComboState.RUN_LIGHT_2)
                         {
+                            LookAtTarget();
                             Debug.Log("Run light atk 2");
-                            m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux bloqués
+                            // m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux bloqués
                             swordAttacks.damage = 7;
                             swordAttacks.attackType = "Light";
                             m_Animator.SetBool("RunLightAttack2", true);
@@ -143,9 +146,10 @@ public class PlayerAttack : MonoBehaviour
                         lightComboState++;
                         if (lightComboState == LightComboState.LIGHT_1)
                         {
+                            LookAtTarget();
                             // Joue attaque 1 du combo de coup légé
                             Debug.Log("is attacking light");
-                            m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux bloqués
+                            //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux bloqués
                             swordAttacks.damage = 7;
                             swordAttacks.attackType = "Light";
                             // ChangeAnimationState(m_Punch);
@@ -159,9 +163,10 @@ public class PlayerAttack : MonoBehaviour
 
                         if (lightComboState == LightComboState.LIGHT_2)
                         {
+                            LookAtTarget();
                             // Joue attaque 1 du combo de coup légé
                             Debug.Log("is attacking light 2");
-                            m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
+                            //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
                             swordAttacks.damage = 8;
                             swordAttacks.attackType = "Light";
                             // ChangeAnimationState(m_Punch);
@@ -184,11 +189,12 @@ public class PlayerAttack : MonoBehaviour
 
             if (heavyAttackButtonPressed && !isAttacking && !isParing && !isRunAttacking)
             {
+                LookAtTarget();
                 heavyAttackButtonPressed = false;
                 isAttacking = true;
                 // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
                 Debug.Log("is attacking heavy");
-                m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
+                // m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
                 swordAttacks.damage = 20;
                 swordAttacks.attackType = "Heavy";
                 // ChangeAnimationState(m_Punch);
@@ -196,38 +202,14 @@ public class PlayerAttack : MonoBehaviour
                 Invoke("AttackComplete", heavyAttackTime);
             }
 
-
-            if (heavyAttackButtonPressed && !isAttacking && !isParing && !isRunAttacking)
-            {
-                heavyAttackButtonPressed = false;
-                isAttacking = true;
-                // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
-                Debug.Log("is attacking heavy");
-                m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
-                swordAttacks.damage = 20;
-                // ChangeAnimationState(m_Punch);
-                m_Animator.SetTrigger("HeavyAttack");
-                Invoke("AttackComplete", heavyAttackTime);
-            }
-
             if (paradeButtonPressed && !isAttacking && !isParing && !isRunAttacking)
             {
-
+                LookAtTarget();
                 isParing = true;
                 Debug.Log("is Paring");
-                m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
+                //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
                 m_Animator.SetBool("IsParing", true);
             }
-
-
-            if (!paradeButtonPressed && !isAttacking && isParing && !isRunAttacking)
-                if (paradeButtonPressed && !isAttacking && !isParing && !isRunAttacking)
-                {
-                    isParing = true;
-                    Debug.Log("is Paring");
-                    m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
-                    m_Animator.SetBool("IsParing", true);
-                }
 
             if (!paradeButtonPressed && !isAttacking && isParing && !isRunAttacking)
             {
@@ -271,7 +253,7 @@ public class PlayerAttack : MonoBehaviour
                 isInCombo = false;
                 current_Combo_Timer = default_Combo_Timer;
             }
-         }
+        }
     }
     public void UpdateAnimClipTimes()
     {
@@ -281,13 +263,13 @@ public class PlayerAttack : MonoBehaviour
             switch (clip.name)
             {
                 case "Light1Yuetsu":
-                    lightAttackTime = clip.length/1.5f;
+                    lightAttackTime = clip.length / 1.5f;
                     break;
                 case "HeavyYuetsu":
                     heavyAttackTime = clip.length;
                     break;
                 case "Light2Yuetsu":
-                    light2AttackTime = clip.length/1.5f;
+                    light2AttackTime = clip.length / 1.5f;
                     break;
                 case "RunLightAtkYuetsu":
                     runLightAtkTime = clip.length;
@@ -350,6 +332,14 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("releasedParade");
             paradeButtonPressed = false;
         }
+    }
+
+    public void LookAtTarget()
+    {
+        Vector3 dir = target.position - transform.position;
+        dir.Normalize();
+        dir.y = 0;
+        transform.rotation = Quaternion.LookRotation(dir);
     }
 
 }
