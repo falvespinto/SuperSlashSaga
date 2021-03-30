@@ -63,4 +63,23 @@ public class AudioManager : MonoBehaviour
             schange.source.volume = volume;
         }
     }
+    public void IncreaseVolume(float volume)
+    {
+        Debug.Log(sounds);
+        foreach (Sound schange in sounds)
+        {
+            Debug.Log(schange.source.volume);
+            schange.source.volume += volume;
+        }
+    }
+
+    public void DecreaseVolume(float volume)
+    {
+        foreach (Sound schange in sounds)
+        {
+            Debug.Log(schange.source.volume);
+            schange.source.volume -= volume;
+        }
+    }
+
 }

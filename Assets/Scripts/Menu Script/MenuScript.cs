@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.Audio;
+
 
 public class MenuScript : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class MenuScript : MonoBehaviour
     private int NumberOfButtons;
     private bool verificationMenu = false;
     private bool verificationOption = false;
+    AudioManager musique = new AudioManager();
 
     public Transform ButtonPosition1;
     public Transform ButtonPosition2;
@@ -22,6 +25,7 @@ public class MenuScript : MonoBehaviour
     public Transform ButtonPosition5;
     public Transform ButtonPosition6;
     public Transform ButtonPosition7;
+    public Transform ButtonPosition8;
 
 
     void Start()
@@ -65,15 +69,21 @@ public class MenuScript : MonoBehaviour
             Debug.Log("Quit");
         }
 
-        else if (SelectedButton == 6)
+       else if (SelectedButton == 6)
         {
             // When the button with the pointer is clicked, this piece of script is activated
-            Debug.Log("Slide");
-
+            Debug.Log("Augmentation");
+            musique.IncreaseVolume(0.1f);
         }
 
-
         else if (SelectedButton == 7)
+        {
+            // When the button with the pointer is clicked, this piece of script is activated
+            Debug.Log("Descente");
+            musique.DecreaseVolume(0.1f);
+        }
+
+        else if (SelectedButton == 8)
         {
             // When the button with the pointer is clicked, this piece of script is activated
             Debug.Log("Back");
@@ -145,15 +155,21 @@ public class MenuScript : MonoBehaviour
         {
             verificationOption = true;
             Point.transform.position = ButtonPosition6.position;
-            FindObjectOfType<AudioManager>().Play("percution");
             verificationMenu = false;
         }
         else if (SelectedButton == 7)
         {
+            verificationOption = false;
             Point.transform.position = ButtonPosition7.position;
+        }
+
+        else if (SelectedButton == 8)
+        {
+            Point.transform.position = ButtonPosition8.position;
             FindObjectOfType<AudioManager>().Play("percution");
             verificationOption = false;
         }
+
     }
     
 }
