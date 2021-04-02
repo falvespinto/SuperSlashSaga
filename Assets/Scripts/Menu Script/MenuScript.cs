@@ -14,8 +14,8 @@ public class MenuScript : MonoBehaviour
     private int SelectedButton = 1;
     [SerializeField]
     private int NumberOfButtons;
-    private bool verificationMenu = false;
-    private bool verificationOption = false;
+    public bool verificationMenu = false;
+    public bool verificationOption = false;
     AudioManager musique = new AudioManager();
 
     public Transform ButtonPosition1;
@@ -80,6 +80,8 @@ public class MenuScript : MonoBehaviour
                 Debug.Log("Back");
                 optionsMenu.SetActive(false);
                 mainMenu.SetActive(true);
+                verificationOption = false;
+                verificationMenu = false;
                 Point.transform.position = ButtonPosition1.position;
                 SelectedButton = 1;
             }
@@ -123,6 +125,7 @@ public class MenuScript : MonoBehaviour
             }
         }
     }
+
 
     public void MoveThePointer()
     {

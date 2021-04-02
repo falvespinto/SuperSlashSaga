@@ -10,9 +10,14 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
     public Sound[] randomSounds;
     private Sound randomSound;
+
+    public bool verifIncreased = false;
+    public bool verifDecreased = false;
+    public bool cooldown = false;
+
     void Awake()
     {
-        foreach(Sound s in sounds)
+        foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
@@ -29,7 +34,7 @@ public class AudioManager : MonoBehaviour
             rs.source.volume = rs.volume;
             rs.source.pitch = rs.pitch;
             rs.source.loop = rs.loop;
-   
+
         }
 
     }
@@ -46,10 +51,10 @@ public class AudioManager : MonoBehaviour
         randomSound.source.Play();
     }
 
-    public void Play (string name)
+    public void Play(string name)
     {
-       Sound s = Array.Find(sounds, sound => sound.name == name);
-       s.source.Play();
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.Play();
     }
     public void Stop(string name)
     {
@@ -65,21 +70,40 @@ public class AudioManager : MonoBehaviour
     }
     public void IncreaseVolume(float volume)
     {
-        Debug.Log(sounds);
-        foreach (Sound schange in sounds)
+        if (cooldown == false)
         {
-            Debug.Log(schange.source.volume);
-            schange.source.volume += volume;
+            cooldown = true;
+            Invoke("setCooldown", 0.3f);
+            verifIncreased = true;
+            Debug.Log(sounds);
+            foreach (Sound schange in sounds)
+            {
+                Debug.Log(schange.source.volume);
+                schange.source.volume += volume;
+            }
         }
+        verifIncreased = false;
     }
+
 
     public void DecreaseVolume(float volume)
     {
-        foreach (Sound schange in sounds)
+        if (cooldown == false)
         {
-            Debug.Log(schange.source.volume);
-            schange.source.volume -= volume;
+            cooldown = true;
+            Invoke("setCooldown", 0.3f);
+            verifDecreased = true;
+            foreach (Sound schange in sounds)
+            {
+                Debug.Log(schange.source.volume);
+                schange.source.volume -= volume;
+            }
         }
+        verifDecreased = false;
+    }
+    private void setCooldown()
+    {
+        cooldown = false;
     }
 
 }
