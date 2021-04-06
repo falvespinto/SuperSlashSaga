@@ -5,25 +5,30 @@ using UnityEngine.UI;
 
 public class BarreSon : MonoBehaviour
 {
-    AudioManager musique = new AudioManager();
-    static Image Barre;
+    public Slider slider;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        slider.value = 100;
+        slider.maxValue = 100;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(musique.verifIncreased)
-        {
-            Barre.fillAmount += 0.1f;
-            
-        }
-        else if(musique.verifDecreased)
-        {
-            Barre.fillAmount -= 0.1f;
-        }
+
+    }
+
+    public void IncreasedSlider()
+    {
+        Debug.Log("augmente ?");
+        slider.value += 10;
+    }
+
+    public void DecreasedSlider()
+    {
+        Debug.Log("diminue ?");
+        slider.value -= 10;
     }
 }

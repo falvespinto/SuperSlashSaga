@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public bool verifIncreased = false;
     public bool verifDecreased = false;
     public bool cooldown = false;
+    public BarreSon son;
 
     void Awake()
     {
@@ -74,15 +75,14 @@ public class AudioManager : MonoBehaviour
         {
             cooldown = true;
             Invoke("setCooldown", 0.3f);
-            verifIncreased = true;
             Debug.Log(sounds);
+            son.IncreasedSlider();
             foreach (Sound schange in sounds)
             {
                 Debug.Log(schange.source.volume);
                 schange.source.volume += volume;
             }
         }
-        verifIncreased = false;
     }
 
 
@@ -92,14 +92,13 @@ public class AudioManager : MonoBehaviour
         {
             cooldown = true;
             Invoke("setCooldown", 0.3f);
-            verifDecreased = true;
+            son.DecreasedSlider();
             foreach (Sound schange in sounds)
             {
                 Debug.Log(schange.source.volume);
                 schange.source.volume -= volume;
             }
         }
-        verifDecreased = false;
     }
     private void setCooldown()
     {
