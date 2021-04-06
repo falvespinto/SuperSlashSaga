@@ -75,6 +75,8 @@ public class PlayerAttack : MonoBehaviour
 
     private bool neverPared;
 
+    public CharacterController controller;
+
     private void Awake()
     {
         //   m_Rigidbody = GetComponent<Rigidbody>();
@@ -170,7 +172,8 @@ public class PlayerAttack : MonoBehaviour
                         lightComboState++;
                         if (lightComboState == LightComboState.LIGHT_1)
                         {
-                            LookAtTarget();
+                            playerController.isRunning = false;
+                            Vector3 direction = LookAtTarget();
                             // Joue attaque 1 du combo de coup légé
                             Debug.Log("is attacking light");
                             //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux bloqués
@@ -178,7 +181,8 @@ public class PlayerAttack : MonoBehaviour
                             swordAttacks.attackType = "Light";
                             // ChangeAnimationState(m_Punch);
                             m_Animator.SetTrigger("LightAttack");
-                            Invoke("AttackComplete", lightAttackTime - 0.75f);
+                            StartCoroutine(ForwardAttack(lightAttackTime-0.6f,direction, 0.05f));
+                            Invoke("AttackComplete", lightAttackTime - 0.6f);
                             Debug.Log(lightAttackTime);
                             //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
 
@@ -187,7 +191,8 @@ public class PlayerAttack : MonoBehaviour
 
                         if (lightComboState == LightComboState.LIGHT_2)
                         {
-                            LookAtTarget();
+                            playerController.isRunning = false;
+                            Vector3 direction = LookAtTarget();
                             // Joue attaque 1 du combo de coup légé
                             Debug.Log("is attacking light 2");
                             //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
@@ -195,6 +200,7 @@ public class PlayerAttack : MonoBehaviour
                             swordAttacks.attackType = "Light";
                             // ChangeAnimationState(m_Punch);
                             m_Animator.SetTrigger("LightAttack2");
+                            StartCoroutine(ForwardAttack(light2AttackTime-0.5f, direction, 0.05f));
                             Debug.Log(light2AttackTime);
                             Invoke("AttackComplete", light2AttackTime);
                             //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
@@ -318,6 +324,7 @@ public class PlayerAttack : MonoBehaviour
 
             if (heavyAttackButtonPressed && !isAttacking && !isParing && !isRunAttacking)
             {
+                playerController.isRunning = false;
                 LookAtTarget();
                 heavyAttackButtonPressed = false;
                 isAttacking = true;
@@ -328,7 +335,7 @@ public class PlayerAttack : MonoBehaviour
                 swordAttacks.attackType = "Heavy";
                 // ChangeAnimationState(m_Punch);
                 m_Animator.SetTrigger("HeavyAttack");
-                Invoke("AttackComplete", heavyAttackTime);
+                Invoke("AttackComplete", heavyAttackTime-0.7f);
             }
 
             if (bottomHeavyAttackButtonPressed && !isAttacking && !isParing && !isRunAttacking)
@@ -536,12 +543,23 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    public void LookAtTarget()
+    public Vector3 LookAtTarget()
     {
         Vector3 dir = target.position - transform.position;
         dir.Normalize();
         dir.y = 0;
         transform.rotation = Quaternion.LookRotation(dir);
+        return dir;
+    }
+
+    IEnumerator ForwardAttack(float attackTime, Vector3 direction, float attackSpeed)
+    {
+        float startTime = Time.time;
+        while (Time.time < startTime + attackTime)
+        {
+            controller.Move(direction * attackSpeed);
+            yield return null;
+        }
     }
 
 }
