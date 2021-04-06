@@ -52,6 +52,22 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "BottomLightAttackPressed",
+                    "type": "Button",
+                    "id": "0d6b1aee-9ef1-4100-96df-aeeb63acec6a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "BottomHeavyAttackPressed",
+                    "type": "Button",
+                    "id": "425d73c4-c162-4470-b01f-399a8dd9163d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -239,6 +255,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "LookAround",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3540a509-d399-4ab0-965f-4d557e5e4b2c",
+                    "path": "<Keyboard>/numpad4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BottomLightAttackPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8ebe812-2617-462e-8f54-45f7f6c6840a",
+                    "path": "<Keyboard>/numpad5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BottomHeavyAttackPressed",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

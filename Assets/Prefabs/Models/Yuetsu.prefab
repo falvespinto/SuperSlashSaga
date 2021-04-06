@@ -116,6 +116,7 @@ MonoBehaviour:
   GuardBreakTime: 0
   isTakingDamage: 0
   animator: {fileID: 6724074370243391515}
+  target: {fileID: 0}
 --- !u!114 &881055891806932353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +154,7 @@ MonoBehaviour:
   isInCombo: 0
   playerController: {fileID: 881055891806932352}
   isParing: 0
+  target: {fileID: 0}
   lightAttackTime: 0
   heavyAttackTime: 0
   light2AttackTime: 0
@@ -160,6 +162,8 @@ MonoBehaviour:
   runLightAtk2Time: 0
   lightAttackButtonPressed: 0
   heavyAttackButtonPressed: 0
+  bottomLightAttackButtonPressed: 0
+  bottomHeavyAttackButtonPressed: 0
   paradeButtonPressed: 0
   paradeButtonReleased: 0
 --- !u!114 &881055891806932352
@@ -303,6 +307,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 1de33edc-8d30-47e0-a16c-1f286c90034f
     m_ActionName: Gameplay/MouseLook[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7284774351294079306}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: BottomLightAttackButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0d6b1aee-9ef1-4100-96df-aeeb63acec6a
+    m_ActionName: Gameplay/BottomLightAttackPressed[/Keyboard/numpad4]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7284774351294079306}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: BottomHeavyAttackButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 425d73c4-c162-4470-b01f-399a8dd9163d
+    m_ActionName: Gameplay/BottomHeavyAttackPressed[/Keyboard/numpad5]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay

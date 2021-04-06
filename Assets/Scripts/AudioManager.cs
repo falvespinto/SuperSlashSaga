@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
     public Sound[] randomSounds;
     private Sound randomSound;
+    PlayerControls controls;
     void Awake()
     {
         foreach(Sound s in sounds)
@@ -62,5 +63,9 @@ public class AudioManager : MonoBehaviour
         {
             schange.source.volume = volume;
         }
+    }
+    void ButtonRight(float volume)
+    {
+        volume += 0.1f;
     }
 }

@@ -992,7 +992,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394157923}
-  m_LocalRotation: {x: 0.018467272, y: 0.9271542, z: -0.046104517, w: 0.37137377}
+  m_LocalRotation: {x: 0.01846727, y: 0.9271542, z: -0.046104517, w: 0.37137377}
   m_LocalPosition: {x: 0.0000076293945, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5132,6 +5132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Yuetsu v3 test 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9e2d4475540e52447b2f18b116df9393, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7665145628554419184, guid: 9e2d4475540e52447b2f18b116df9393, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5800,8 +5804,11 @@ MonoBehaviour:
   swordAttacks: {fileID: 881055891555643736, guid: 94cc4fdf0e334034d9373a194c756d09, type: 3}
   lightComboState: 0
   runLightComboState: 0
+  bottomLightComboState: 0
+  runBottomLightComboState: 0
   default_Combo_Timer: 2
   default_Combo_Timer_Run: 2
+  default_BottomCombo_Timer: 2
   current_Combo_Timer: 0
   m_Animator: {fileID: 6724074370243391515, guid: 94cc4fdf0e334034d9373a194c756d09, type: 3}
   isInCombo: 0
@@ -5811,10 +5818,14 @@ MonoBehaviour:
   lightAttackTime: 0
   heavyAttackTime: 0
   light2AttackTime: 0
+  bottomLightAttackTime: 0
+  bottomLight2AttackTime: 0
   runLightAtkTime: 0
   runLightAtk2Time: 0
   lightAttackButtonPressed: 0
   heavyAttackButtonPressed: 0
+  bottomLightAttackButtonPressed: 0
+  bottomHeavyAttackButtonPressed: 0
   paradeButtonPressed: 0
   paradeButtonReleased: 0
 --- !u!114 &2037781924
@@ -5929,6 +5940,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 1de33edc-8d30-47e0-a16c-1f286c90034f
     m_ActionName: Gameplay/MouseLook[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0d6b1aee-9ef1-4100-96df-aeeb63acec6a
+    m_ActionName: Gameplay/BottomLightAttackPressed[/Keyboard/numpad4]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 425d73c4-c162-4470-b01f-399a8dd9163d
+    m_ActionName: Gameplay/BottomHeavyAttackPressed[/Keyboard/numpad5]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
