@@ -224,9 +224,13 @@ public class PlayerController : MonoBehaviour
                     m_Animator.SetBool("IsRunning", false);
                 }
             }
-
-
         }
+        else
+        {
+            isRunning = false;
+            m_Animator.SetBool("IsRunning", false);
+        }
+
 
         moveDirection.y -= gravity;
         controller.Move(moveDirection);
