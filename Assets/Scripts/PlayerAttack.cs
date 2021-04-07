@@ -182,7 +182,7 @@ public class PlayerAttack : MonoBehaviour
                             // ChangeAnimationState(m_Punch);
                             m_Animator.SetTrigger("LightAttack");
                             StartCoroutine(ForwardAttack(lightAttackTime-0.6f,direction, 0.05f));
-                            Invoke("AttackComplete", lightAttackTime - 0.6f);
+                            Invoke("AttackComplete", lightAttackTime - 0.7f);
                             Debug.Log(lightAttackTime);
                             //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
 
