@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using Random = UnityEngine.Random;
 
 public class AudioManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
     public Sound[] randomSounds;
     private Sound randomSound;
+    PlayerControls controls;
     void Awake()
     {
         foreach(Sound s in sounds)
@@ -18,6 +20,7 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+
 
         }
         foreach (Sound rs in randomSounds)
@@ -32,9 +35,9 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    void Start()
+    void Update()
     {
-        //Play("Main Theme");
+
     }
 
     public void RandomPlay()
@@ -53,5 +56,16 @@ public class AudioManager : MonoBehaviour
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Stop();
+    }
+    public void UpdateVolume(float volume)
+    {
+        foreach (Sound schange in sounds)
+        {
+            schange.source.volume = volume;
+        }
+    }
+    void ButtonRight(float volume)
+    {
+        volume += 0.1f;
     }
 }

@@ -14,33 +14,41 @@ public class LoadCharacter : MonoBehaviour
     {
         int selectedCharacterP1 = PlayerPrefs.GetInt("SelectedCharacterP1");
         int selectedCharacterP2 = PlayerPrefs.GetInt("SelectedCharacterP2");
-
         GameObject prefabP1 = characterPrefabs[selectedCharacterP1];
-        GameObject P1 = Instantiate(prefabP1, spawnPointP1.position, Quaternion.Euler(0f,90f,0f));
-        P1.GetComponent<Player>().healthBar = GameObject.FindObjectOfType<HealthP1>().GetComponent<HealthBar>();
-        P1.GetComponent<Player>().playerIndex = 0;
-        P1.GetComponent<Player>().hurtBox = 1 << LayerMask.NameToLayer("HurtBox2");
+        GameObject P1 = Instantiate(prefabP1, spawnPointP1.position, Quaternion.Euler(0f, 0f, 0f));
+        P1.GetComponentInChildren<Player>().healthBar = GameObject.FindObjectOfType<HealthP1>().GetComponentInChildren<HealthBar>();
+        P1.GetComponentInChildren<Player>().playerIndex = 0;
+        P1.GetComponentInChildren<Player>().hurtBox = 1 << LayerMask.NameToLayer("HurtBox2");
+        P1.GetComponentInChildren<PlayerController>().cam = GameObject.Find("P1 Camera").transform;
         SetLayerRecursively(P1,8);
-        Debug.Log(P1.GetComponent<Player>().hurtBox.value);
+        P1.GetComponentInChildren<LockCamera>().gameObject.layer = LayerMask.NameToLayer("P1Cam");
         InputUser.PerformPairingWithDevice(
             StartGame.P1Device,
-            P1.GetComponent<PlayerInput>().user,
+            P1.GetComponentInChildren<PlayerInput>().user,
             InputUserPairingOptions.UnpairCurrentDevicesFromUser
             );
-
         GameObject prefabP2 = characterPrefabs[selectedCharacterP2];
-        GameObject P2 = Instantiate(prefabP2, spawnPointP2.position, Quaternion.Euler(0f, -90f, 0f));
-        P2.GetComponent<Player>().healthBar = GameObject.FindObjectOfType<HealthP2>().GetComponent<HealthBar>();
-        P2.GetComponent<Player>().hurtBox = 1 << LayerMask.NameToLayer("HurtBox");
-        Debug.Log(P2.GetComponent<Player>().hurtBox.value);
-        P2.GetComponent<Player>().playerIndex = 1;
+        GameObject P2 = Instantiate(prefabP2, spawnPointP2.position, Quaternion.Euler(0f, 0f, 0f));
+        P2.GetComponentInChildren<Player>().healthBar = GameObject.FindObjectOfType<HealthP2>().GetComponentInChildren<HealthBar>();
+        Debug.Log(P2.GetComponentInChildren<Player>().hurtBox.value);
+        P2.GetComponentInChildren<Player>().playerIndex = 1;
+        P2.GetComponentInChildren<Player>().hurtBox = 1 << LayerMask.NameToLayer("HurtBox");
+        P2.GetComponentInChildren<PlayerController>().cam = GameObject.Find("P2 Camera").transform;
         SetLayerRecursively(P2, 9);
+        P2.GetComponentInChildren<LockCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
+        Debug.Log(StartGame.P2Device);
         InputUser.PerformPairingWithDevice(
             StartGame.P2Device,
-            P2.GetComponent<PlayerInput>().user,
+            P2.GetComponentInChildren<PlayerInput>().user,
             InputUserPairingOptions.UnpairCurrentDevicesFromUser
             );
 
+        P1.GetComponentInChildren<Player>().target = P2.GetComponentInChildren<Player>().transform;
+        P1.GetComponentInChildren<PlayerAttack>().target = P2.GetComponentInChildren<Player>().transform;
+        P1.GetComponentInChildren<CameraTargetLock>().target = P2.GetComponentInChildren<Player>().transform;
+        P2.GetComponentInChildren<Player>().target = P1.GetComponentInChildren<Player>().transform;
+        P2.GetComponentInChildren<PlayerAttack>().target = P1.GetComponentInChildren<Player>().transform;
+        P2.GetComponentInChildren<CameraTargetLock>().target = P1.GetComponentInChildren<Player>().transform;
     }
 
     void SetLayerRecursively(GameObject obj, int newLayer)

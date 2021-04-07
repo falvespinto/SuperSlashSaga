@@ -44,6 +44,30 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "LookAround",
+                    "type": "PassThrough",
+                    "id": "1de33edc-8d30-47e0-a16c-1f286c90034f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "BottomLightAttackPressed",
+                    "type": "Button",
+                    "id": "0d6b1aee-9ef1-4100-96df-aeeb63acec6a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "BottomHeavyAttackPressed",
+                    "type": "Button",
+                    "id": "425d73c4-c162-4470-b01f-399a8dd9163d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -209,6 +233,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "ParadePressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f9533f10-a52d-420d-a00c-ee6739f2daca",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LookAround",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39588081-60b8-4a71-acae-6e368a5bbfe7",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LookAround",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3540a509-d399-4ab0-965f-4d557e5e4b2c",
+                    "path": "<Keyboard>/numpad4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BottomLightAttackPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8ebe812-2617-462e-8f54-45f7f6c6840a",
+                    "path": "<Keyboard>/numpad5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BottomHeavyAttackPressed",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

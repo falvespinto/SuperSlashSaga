@@ -17,7 +17,7 @@ public class Attack : MonoBehaviour
     {
 
         Collider[] hit = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, gameObject.GetComponentInParent<Player>().hurtBox);
-        Debug.Log(gameObject.GetComponentInParent<Player>().playerIndex);
+        //Debug.Log(gameObject.GetComponentInParent<Player>().playerIndex);
         if (hit.Length > 0)
         {
             for (int i = 0; i < hit.Length; i++)

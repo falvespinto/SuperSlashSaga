@@ -57,6 +57,30 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""LookAround"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""1de33edc-8d30-47e0-a16c-1f286c90034f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""BottomLightAttackPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""0d6b1aee-9ef1-4100-96df-aeeb63acec6a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""BottomHeavyAttackPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""425d73c4-c162-4470-b01f-399a8dd9163d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -224,6 +248,50 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""ParadePressed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f9533f10-a52d-420d-a00c-ee6739f2daca"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LookAround"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39588081-60b8-4a71-acae-6e368a5bbfe7"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LookAround"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3540a509-d399-4ab0-965f-4d557e5e4b2c"",
+                    ""path"": ""<Keyboard>/numpad4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BottomLightAttackPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b8ebe812-2617-462e-8f54-45f7f6c6840a"",
+                    ""path"": ""<Keyboard>/numpad5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BottomHeavyAttackPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -237,6 +305,9 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Gameplay_LightAttackPressed = m_Gameplay.FindAction("LightAttackPressed", throwIfNotFound: true);
         m_Gameplay_HeavyAttackPressed = m_Gameplay.FindAction("HeavyAttackPressed", throwIfNotFound: true);
         m_Gameplay_ParadePressed = m_Gameplay.FindAction("ParadePressed", throwIfNotFound: true);
+        m_Gameplay_LookAround = m_Gameplay.FindAction("LookAround", throwIfNotFound: true);
+        m_Gameplay_BottomLightAttackPressed = m_Gameplay.FindAction("BottomLightAttackPressed", throwIfNotFound: true);
+        m_Gameplay_BottomHeavyAttackPressed = m_Gameplay.FindAction("BottomHeavyAttackPressed", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -291,6 +362,9 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_LightAttackPressed;
     private readonly InputAction m_Gameplay_HeavyAttackPressed;
     private readonly InputAction m_Gameplay_ParadePressed;
+    private readonly InputAction m_Gameplay_LookAround;
+    private readonly InputAction m_Gameplay_BottomLightAttackPressed;
+    private readonly InputAction m_Gameplay_BottomHeavyAttackPressed;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
@@ -300,6 +374,9 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @LightAttackPressed => m_Wrapper.m_Gameplay_LightAttackPressed;
         public InputAction @HeavyAttackPressed => m_Wrapper.m_Gameplay_HeavyAttackPressed;
         public InputAction @ParadePressed => m_Wrapper.m_Gameplay_ParadePressed;
+        public InputAction @LookAround => m_Wrapper.m_Gameplay_LookAround;
+        public InputAction @BottomLightAttackPressed => m_Wrapper.m_Gameplay_BottomLightAttackPressed;
+        public InputAction @BottomHeavyAttackPressed => m_Wrapper.m_Gameplay_BottomHeavyAttackPressed;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -324,6 +401,15 @@ public class @Controls : IInputActionCollection, IDisposable
                 @ParadePressed.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnParadePressed;
                 @ParadePressed.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnParadePressed;
                 @ParadePressed.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnParadePressed;
+                @LookAround.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLookAround;
+                @LookAround.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLookAround;
+                @LookAround.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLookAround;
+                @BottomLightAttackPressed.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBottomLightAttackPressed;
+                @BottomLightAttackPressed.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBottomLightAttackPressed;
+                @BottomLightAttackPressed.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBottomLightAttackPressed;
+                @BottomHeavyAttackPressed.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBottomHeavyAttackPressed;
+                @BottomHeavyAttackPressed.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBottomHeavyAttackPressed;
+                @BottomHeavyAttackPressed.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBottomHeavyAttackPressed;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -343,6 +429,15 @@ public class @Controls : IInputActionCollection, IDisposable
                 @ParadePressed.started += instance.OnParadePressed;
                 @ParadePressed.performed += instance.OnParadePressed;
                 @ParadePressed.canceled += instance.OnParadePressed;
+                @LookAround.started += instance.OnLookAround;
+                @LookAround.performed += instance.OnLookAround;
+                @LookAround.canceled += instance.OnLookAround;
+                @BottomLightAttackPressed.started += instance.OnBottomLightAttackPressed;
+                @BottomLightAttackPressed.performed += instance.OnBottomLightAttackPressed;
+                @BottomLightAttackPressed.canceled += instance.OnBottomLightAttackPressed;
+                @BottomHeavyAttackPressed.started += instance.OnBottomHeavyAttackPressed;
+                @BottomHeavyAttackPressed.performed += instance.OnBottomHeavyAttackPressed;
+                @BottomHeavyAttackPressed.canceled += instance.OnBottomHeavyAttackPressed;
             }
         }
     }
@@ -354,5 +449,8 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnLightAttackPressed(InputAction.CallbackContext context);
         void OnHeavyAttackPressed(InputAction.CallbackContext context);
         void OnParadePressed(InputAction.CallbackContext context);
+        void OnLookAround(InputAction.CallbackContext context);
+        void OnBottomLightAttackPressed(InputAction.CallbackContext context);
+        void OnBottomHeavyAttackPressed(InputAction.CallbackContext context);
     }
 }

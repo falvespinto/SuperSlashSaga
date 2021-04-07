@@ -18,11 +18,12 @@ public class Player : MonoBehaviour
     public bool isTakingDamage;
     private Rigidbody m_rigidbody;
     public Animator animator;
+    public Transform target;
     void Awake()
     {
         playerAttack = GetComponent<PlayerAttack>();
         playerController = GetComponent<PlayerController>();
-        m_rigidbody = GetComponent<Rigidbody>();
+        //m_rigidbody = GetComponent<Rigidbody>();
     }
     void Start()
     {
@@ -33,6 +34,10 @@ public class Player : MonoBehaviour
     }
     public void TakeDamage(float damage, string attackType)
     {
+        Vector3 dir = target.position - transform.position;
+        dir.Normalize();
+        dir.y = 0;
+        transform.rotation = Quaternion.LookRotation(dir);
         if (playerAttack.isParing)
         {
             if (attackType == "Heavy")
@@ -40,7 +45,7 @@ public class Player : MonoBehaviour
                 isTakingDamage = true;
                 Invoke("ResetIsTakingDamage", GuardBreakTime);
                 animator.SetTrigger("Guard_Break");
-                m_rigidbody.velocity = new Vector2(0f, m_rigidbody.velocity.y); // déplacements horizontaux bloqués
+               // m_rigidbody.velocity = new Vector2(0f, m_rigidbody.velocity.y); // déplacements horizontaux bloqués
                 currentHealth -= damage * 1.1f;
                 healthBar.SetHealth(currentHealth);
                 if (currentHealth <= 0)
