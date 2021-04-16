@@ -65,6 +65,14 @@ public class @InputForMenu : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""A"",
+                    ""type"": ""Button"",
+                    ""id"": ""84454796-9d58-457c-a726-bdf3e063596c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -144,6 +152,17 @@ public class @InputForMenu : IInputActionCollection, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2a0c51c7-451f-4aa4-bcb8-60482dfd9534"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""A"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -158,6 +177,7 @@ public class @InputForMenu : IInputActionCollection, IDisposable
         m_menu_ButtonRight = m_menu.FindAction("ButtonRight", throwIfNotFound: true);
         m_menu_ButtonLeft = m_menu.FindAction("ButtonLeft", throwIfNotFound: true);
         m_menu_Pause = m_menu.FindAction("Pause", throwIfNotFound: true);
+        m_menu_A = m_menu.FindAction("A", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -213,6 +233,7 @@ public class @InputForMenu : IInputActionCollection, IDisposable
     private readonly InputAction m_menu_ButtonRight;
     private readonly InputAction m_menu_ButtonLeft;
     private readonly InputAction m_menu_Pause;
+    private readonly InputAction m_menu_A;
     public struct MenuActions
     {
         private @InputForMenu m_Wrapper;
@@ -223,6 +244,7 @@ public class @InputForMenu : IInputActionCollection, IDisposable
         public InputAction @ButtonRight => m_Wrapper.m_menu_ButtonRight;
         public InputAction @ButtonLeft => m_Wrapper.m_menu_ButtonLeft;
         public InputAction @Pause => m_Wrapper.m_menu_Pause;
+        public InputAction @A => m_Wrapper.m_menu_A;
         public InputActionMap Get() { return m_Wrapper.m_menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -250,6 +272,9 @@ public class @InputForMenu : IInputActionCollection, IDisposable
                 @Pause.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnPause;
+                @A.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnA;
+                @A.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnA;
+                @A.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnA;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -272,6 +297,9 @@ public class @InputForMenu : IInputActionCollection, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @A.started += instance.OnA;
+                @A.performed += instance.OnA;
+                @A.canceled += instance.OnA;
             }
         }
     }
@@ -284,5 +312,6 @@ public class @InputForMenu : IInputActionCollection, IDisposable
         void OnButtonRight(InputAction.CallbackContext context);
         void OnButtonLeft(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnA(InputAction.CallbackContext context);
     }
 }
