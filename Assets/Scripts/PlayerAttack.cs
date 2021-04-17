@@ -77,6 +77,7 @@ public class PlayerAttack : MonoBehaviour
 
     public CharacterController controller;
 
+    private bool heavyCanAutoCancel;
     private void Awake()
     {
         //   m_Rigidbody = GetComponent<Rigidbody>();
@@ -105,6 +106,7 @@ public class PlayerAttack : MonoBehaviour
         paradeButtonPressed = false;
         paradeButtonReleased = false;
         neverPared = true;
+        heavyCanAutoCancel = true;
     }
 
     private void Update()
@@ -324,23 +326,29 @@ public class PlayerAttack : MonoBehaviour
 
             if (heavyAttackButtonPressed && !isAttacking && !isParing && !isRunAttacking)
             {
-                playerController.isRunning = false;
-                LookAtTarget();
-                heavyAttackButtonPressed = false;
-                isAttacking = true;
-                // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
-                Debug.Log("is attacking heavy");
-                // m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
-                swordAttacks.damage = 20;
-                swordAttacks.attackType = "Heavy";
-                // ChangeAnimationState(m_Punch);
-                m_Animator.SetTrigger("HeavyAttack");
-                Invoke("AttackComplete", heavyAttackTime-0.7f);
+                if (heavyCanAutoCancel)
+                {
+                    playerController.isRunning = false;
+                    Vector3 direction = LookAtTarget();
+                    heavyAttackButtonPressed = false;
+                    isAttacking = true;
+                    // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
+                    Debug.Log("is attacking heavy");
+                    // m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
+                    swordAttacks.damage = 20;
+                    swordAttacks.attackType = "Heavy";
+                    // ChangeAnimationState(m_Punch);
+                    m_Animator.SetTrigger("HeavyAttack");
+                    StartCoroutine(ForwardAttack(0.2f, direction, 0.30f));
+                    //StartCoroutine(AttackAutoCancel(heavyAttackTime, heavyCanAutoCancel));
+                    Invoke("AttackComplete", heavyAttackTime - 0.7f);
+                    
+                }
             }
 
             if (bottomHeavyAttackButtonPressed && !isAttacking && !isParing && !isRunAttacking)
             {
-                LookAtTarget();
+                Vector3 direction = LookAtTarget();
                 bottomHeavyAttackButtonPressed = false;
                 isAttacking = true;
                 // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
@@ -352,6 +360,7 @@ public class PlayerAttack : MonoBehaviour
                 // ChangeAnimationState(m_Punch);
                 // à changer
                 m_Animator.SetTrigger("BottomHeavyAttack");
+                StartCoroutine(ForwardAttack(heavyAttackTime - 0.5f, direction, 0.05f));
                 Invoke("AttackComplete", heavyAttackTime-0.5f);
             }
 
@@ -561,5 +570,12 @@ public class PlayerAttack : MonoBehaviour
             yield return null;
         }
     }
+
+    //IEnumerator AttackAutoCancel(float time, bool canAuto)
+    //{
+    //    canAuto = false;
+    //    yield return new WaitForSeconds(time);
+    //    canAuto = true;
+    //}
 
 }
