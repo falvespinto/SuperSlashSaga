@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4658396772323584712}
   - component: {fileID: 7931514618702925098}
-  - component: {fileID: 2912713054204129567}
   - component: {fileID: 5593927978462030104}
   - component: {fileID: -2217939168109372958}
   - component: {fileID: 1095962771060706981}
+  - component: {fileID: 8908695387174615781}
   m_Layer: 5
   m_Name: Selector
   m_TagString: Untagged
@@ -48,33 +48,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5608946902676620278}
   m_CullTransparentMesh: 0
---- !u!114 &2912713054204129567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5608946902676620278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 0
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 929f7c3985fe3f84b8f9de1568813cfd, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!114 &5593927978462030104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,11 +62,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   button: {fileID: 0}
+  champSelect: {fileID: 0}
   prefab: {fileID: 5608946902676620278}
   hasSelected: 0
   playersIcons:
-  - {fileID: 2800000, guid: 929f7c3985fe3f84b8f9de1568813cfd, type: 3}
-  - {fileID: 2800000, guid: 298b156e28adc4d40b082243eb813632, type: 3}
+  - {fileID: 21300000, guid: 929f7c3985fe3f84b8f9de1568813cfd, type: 3}
+  - {fileID: 21300000, guid: 298b156e28adc4d40b082243eb813632, type: 3}
   isInit: 0
 --- !u!114 &-2217939168109372958
 MonoBehaviour:
@@ -180,8 +154,50 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c3505972-6f57-470c-8f77-30306a2a2286
     m_ActionName: Gameplay/ParadePressed[/Keyboard/numpad3,/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1de33edc-8d30-47e0-a16c-1f286c90034f
+    m_ActionName: Gameplay/LookAround[/Mouse/delta,/XInputControllerWindows/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0d6b1aee-9ef1-4100-96df-aeeb63acec6a
+    m_ActionName: Gameplay/BottomLightAttackPressed[/Keyboard/numpad4]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 425d73c4-c162-4470-b01f-399a8dd9163d
+    m_ActionName: Gameplay/BottomHeavyAttackPressed[/Keyboard/numpad5]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8908695387174615781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608946902676620278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 929f7c3985fe3f84b8f9de1568813cfd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
