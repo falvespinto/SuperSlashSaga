@@ -4,16 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.Audio;
+
 
 public class MenuScript : MonoBehaviour
 {
     public GameObject Point, optionsMenu, mainMenu;
-  
+
     private int SelectedButton = 1;
     [SerializeField]
     private int NumberOfButtons;
-    private bool verificationMenu = false;
-    private bool verificationOption = false;
+    public bool verificationMenu = false;
+    public bool verificationOption = false;
+    AudioManager musique = new AudioManager();
 
     public Transform ButtonPosition1;
     public Transform ButtonPosition2;
@@ -21,7 +24,8 @@ public class MenuScript : MonoBehaviour
     public Transform ButtonPosition4;
     public Transform ButtonPosition5;
     public Transform ButtonPosition6;
-    public Transform ButtonPosition7;
+
+    public bool cooldown = false;
 
 
     void Start()
@@ -30,87 +34,100 @@ public class MenuScript : MonoBehaviour
     }
 
 
-    private void OnPlay()
+    public void Play()
     {
-        if (SelectedButton == 1)
+        if (cooldown == false)
         {
-            // When the button with the pointer is clicked, this piece of script is activated
-            Debug.Log("Campagne");
-        }
-        else if (SelectedButton == 2)
-        {
-            // When the button with the pointer is clicked, this piece of script is activated
-            SceneManager.LoadScene("CharacterSelection");
-        }
-        else if (SelectedButton == 3)
-        {
-            // When the button with the pointer is clicked, this piece of script is activated
-            Debug.Log("Online");
-        }
-        else if (SelectedButton == 4)
-        {
-            // When the button with the pointer is clicked, this piece of script is activated
-            Debug.Log("Options");
-            mainMenu.SetActive(false);
-            optionsMenu.SetActive(true);
-            verificationOption = true;
-            Point.transform.position = ButtonPosition6.position;
-            SelectedButton = 6;
+            cooldown = true;
+            Invoke("setCooldown", 0.3f);
 
-        }
-        else if (SelectedButton == 5)
-        {
-            // When the button with the pointer is clicked, this piece of script is activated
-            Application.Quit();
-            Debug.Log("Quit");
-        }
+            if (SelectedButton == 1)
+            {
+                // When the button with the pointer is clicked, this piece of script is activated
+                Debug.Log("Campagne");
+            }
+            else if (SelectedButton == 2)
+            {
+                // When the button with the pointer is clicked, this piece of script is activated
+                SceneManager.LoadScene("CharacterSelection");
+            }
+            else if (SelectedButton == 3)
+            {
+                // When the button with the pointer is clicked, this piece of script is activated
+                Debug.Log("Online");
+            }
+            else if (SelectedButton == 4)
+            {
+                // When the button with the pointer is clicked, this piece of script is activated
+                Debug.Log("Options");
+                mainMenu.SetActive(false);
+                optionsMenu.SetActive(true);
+                verificationOption = true;
+                Point.transform.position = ButtonPosition6.position;
+                SelectedButton = 6;
 
-        else if (SelectedButton == 6)
-        {
-            // When the button with the pointer is clicked, this piece of script is activated
-            Debug.Log("Slide");
+            }
+            else if (SelectedButton == 5)
+            {
+                // When the button with the pointer is clicked, this piece of script is activated
+                Application.Quit();
+                Debug.Log("Quit");
+            }
 
-        }
-
-
-        else if (SelectedButton == 7)
-        {
-            // When the button with the pointer is clicked, this piece of script is activated
-            Debug.Log("Back");
-            optionsMenu.SetActive(false);
-            mainMenu.SetActive(true);
-            Point.transform.position = ButtonPosition1.position;
-            SelectedButton = 1;
+            else if (SelectedButton == 6)
+            {
+                // When the button with the pointer is clicked, this piece of script is activated
+                Debug.Log("Back");
+                optionsMenu.SetActive(false);
+                mainMenu.SetActive(true);
+                verificationOption = false;
+                verificationMenu = false;
+                Point.transform.position = ButtonPosition1.position;
+                SelectedButton = 1;
+            }
         }
 
     }
-    private void OnButtonUp()
+    public void ButtonUp()
     {
         // Checks if the pointer needs to move down or up, in this case the poiter moves up one button
         if (verificationOption == false)
         {
-            if (SelectedButton > 1)
+
+            if (cooldown == false)
             {
-                SelectedButton -= 1;
+                cooldown = true;
+                Invoke("setCooldown", 0.3f);
+                if (SelectedButton > 1)
+                {
+                    SelectedButton -= 1;
+                }
+                MoveThePointer();
+                return;
             }
-            MoveThePointer();
-            return;
         }
     }
-    private void OnButtonDown()
+    public void ButtonDown()
     {
         // Checks if the pointer needs to move down or up, in this case the poiter moves down one button
         if (verificationMenu == false)
         {
-            if (SelectedButton < NumberOfButtons)
+            if (cooldown == false)
             {
-                SelectedButton += 1;
+                cooldown = true;
+                Invoke("setCooldown", 0.3f);
+                if (SelectedButton < NumberOfButtons)
+                {
+                    SelectedButton += 1;
+                }
+                MoveThePointer();
+                return;
             }
-            MoveThePointer();
-            return;
         }
     }
-    private void MoveThePointer()
+
+
+    public void MoveThePointer()
     {
         // Moves the pointer
         if (SelectedButton == 1)
@@ -143,17 +160,16 @@ public class MenuScript : MonoBehaviour
         }
         else if (SelectedButton == 6)
         {
-            verificationOption = true;
             Point.transform.position = ButtonPosition6.position;
-            FindObjectOfType<AudioManager>().Play("percution");
-            verificationMenu = false;
-        }
-        else if (SelectedButton == 7)
-        {
-            Point.transform.position = ButtonPosition7.position;
             FindObjectOfType<AudioManager>().Play("percution");
             verificationOption = false;
         }
+
     }
-    
+
+    private void setCooldown()
+    {
+        cooldown = false;
+    }
+
 }

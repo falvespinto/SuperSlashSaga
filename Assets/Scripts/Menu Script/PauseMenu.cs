@@ -20,6 +20,7 @@ public class PauseMenu : MonoBehaviour
     public Transform ButtonPosition4;
 
     public static bool GameIsPaused = false;
+    public bool cooldown = false;
 
 
     void Start()
@@ -27,32 +28,37 @@ public class PauseMenu : MonoBehaviour
         //FindObjectOfType<AudioManager>().Play("MusiqueMenu");
     }
 
-    private void OnPlay()
+    public void Play()
     {
-        if (SelectedButton == 1)
+        if (cooldown == false)
         {
-            // When the button with the pointer is clicked, this piece of script is activated
-            Debug.Log("Resume");
-            Resume();
-        }
-        else if (SelectedButton == 2)
-        {
-            // When the button with the pointer is clicked, this piece of script is activated
-            Debug.Log("Selection perso");
-            Time.timeScale = 1f;
-            SceneManager.LoadScene("CharacterSelection");
-        }
-        else if (SelectedButton == 3)
-        {
-            // When the button with the pointer is clicked, this piece of script is activated
-            Debug.Log("Option");
-        }
-        else if (SelectedButton == 4)
-        {
-            // When the button with the pointer is clicked, this piece of script is activated
-            Debug.Log("RetourMenu");
-            Time.timeScale = 1f;
-            SceneManager.LoadScene("Menu Principal");
+            cooldown = true;
+            Invoke("setCooldown", 0.3f);
+            if (SelectedButton == 1)
+            {
+                // When the button with the pointer is clicked, this piece of script is activated
+                Debug.Log("Resume");
+                Resume();
+            }
+            else if (SelectedButton == 2)
+            {
+                // When the button with the pointer is clicked, this piece of script is activated
+                Debug.Log("Selection perso");
+                Time.timeScale = 1f;
+                SceneManager.LoadScene("CharacterSelection");
+            }
+            else if (SelectedButton == 3)
+            {
+                // When the button with the pointer is clicked, this piece of script is activated
+                Debug.Log("Option");
+            }
+            else if (SelectedButton == 4)
+            {
+                // When the button with the pointer is clicked, this piece of script is activated
+                Debug.Log("RetourMenu");
+                Time.timeScale = 1f;
+                SceneManager.LoadScene("Menu Principal");
+            }
         }
 
     }
@@ -62,20 +68,21 @@ public class PauseMenu : MonoBehaviour
 
     }
 
-    private void OnPause()
+    public void pause()
     {
-        Menu.SetActive(false);
-        if (GameIsPaused)
-        {
-            pauseMenu.SetActive(false);
-            Resume();
-            Menu.SetActive(true);
-        }
-        else
-        {
-            pauseMenu.SetActive(true);
-            Pause();
-        }
+            Menu.SetActive(false);
+
+            if (GameIsPaused)
+            {
+                pauseMenu.SetActive(false);
+                Resume();
+                Menu.SetActive(true);
+            }
+            else
+            {
+                pauseMenu.SetActive(true);
+                Pause();
+            }
     }
 
     void Resume()
@@ -87,37 +94,38 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
 
 
-    private void OnButtonUp()
+    public void ButtonUp()
     {
-        if(GameIsPaused)
+        if (GameIsPaused)
         {
-            // Checks if the pointer needs to move down or up, in this case the poiter moves up one button
-            if (SelectedButton > 1)
-            {
-                SelectedButton -= 1;
-            }
-            MoveThePointer();
-            return;
+                // Checks if the pointer needs to move down or up, in this case the poiter moves up one button
+                if (SelectedButton > 1)
+                {
+                    SelectedButton -= 1;
+                }
+                MoveThePointer();
+                return;
         }
-        
+
 
     }
-    private void OnButtonDown()
+    public void ButtonDown()
     {
-        if(GameIsPaused)
+        if (GameIsPaused)
         {
-            // Checks if the pointer needs to move down or up, in this case the poiter moves down one button
-            if (SelectedButton < NumberOfButtons)
-            {
-                SelectedButton += 1;
-            }
-            MoveThePointer();
-            return;
+                // Checks if the pointer needs to move down or up, in this case the poiter moves down one button
+                if (SelectedButton < NumberOfButtons)
+                {
+                    SelectedButton += 1;
+                }
+                MoveThePointer();
+                return;
         }
     }
 
@@ -144,5 +152,9 @@ public class PauseMenu : MonoBehaviour
             Point.transform.position = ButtonPosition4.position;
             FindObjectOfType<AudioManager>().Play("percution");
         }
+    }
+    private void setCooldown()
+    {
+        cooldown = false;
     }
 }
