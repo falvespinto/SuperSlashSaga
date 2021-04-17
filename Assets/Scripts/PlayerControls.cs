@@ -16,7 +16,7 @@ public class PlayerControls : MonoBehaviour
     public GameObject prefab;
     private GameObject instantiatePrefab;
     public bool hasSelected;
-    public Texture[] playersIcons;
+    public Sprite[] playersIcons;
     public bool isInit = false;
     private void Awake()
     {
@@ -38,7 +38,7 @@ public class PlayerControls : MonoBehaviour
         else
         {
             index = 1;
-            gameObject.GetComponent<RawImage>().texture = playersIcons[1];
+            gameObject.GetComponent<Image>().sprite = playersIcons[1];
         }
         Invoke("Init", 0.1f);
         Debug.Log(index);
