@@ -181,7 +181,7 @@ public class PlayerController : MonoBehaviour
 
             //        }
         }
-        if (!isAttacking && !isParing && !player.isTakingDamage)
+        if (!isAttacking && !isParing && !player.isTakingDamage && !player.isInCombo)
         {
             if (isJoyconPluggued)
             {

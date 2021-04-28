@@ -9,6 +9,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
     void RightHandAttackOn()
     {
+        Debug.Log("attack on");
         m_RightHandAttackPoint.SetActive(true);
     }
 
