@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 direction;
     private Vector3 moveDirection;
     public float gravity;
+    public UltimateAttack ultimate;
 
     private AnimationClip clip;
     public CharacterController controller;
@@ -44,15 +45,20 @@ public class PlayerController : MonoBehaviour
     // Temps d'une animation
     float lightAttackTime;
     public Transform cam;
+    public PlayerData playerData;
 
     [SerializeField] public float m_TranslationSpeed; // Vitesse de déplacement
     private void Awake()
     {
   //      m_Rigidbody = GetComponent<Rigidbody>();
         m_Transform = GetComponent<Transform>();
+        playerData = GetComponentInParent<PlayerData>();
+        ultimate = GetComponent<UltimateAttack>();
+        
     }
     void Start()
     {
+        cam = playerData.camera;
         isAttacking = false;
         isRunAttacking = false;
         // setup des variables en rapport avec les joycons
@@ -181,7 +187,7 @@ public class PlayerController : MonoBehaviour
 
             //        }
         }
-        if (!isAttacking && !isParing && !player.isTakingDamage && !player.isInCombo)
+        if (!isAttacking && !isParing && !player.isTakingDamage && !player.isInCombo && !ultimate.isPerformingUltimate)
         {
             if (isJoyconPluggued)
             {

@@ -81,6 +81,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Ultimate"",
+                    ""type"": ""Button"",
+                    ""id"": ""04fd6ece-39d7-4342-8211-cf6accd8df4b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -314,6 +322,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""BottomHeavyAttackPressed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ab86e67-4599-4eea-8294-17ca11f04251"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ultimate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -330,6 +349,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Gameplay_LookAround = m_Gameplay.FindAction("LookAround", throwIfNotFound: true);
         m_Gameplay_BottomLightAttackPressed = m_Gameplay.FindAction("BottomLightAttackPressed", throwIfNotFound: true);
         m_Gameplay_BottomHeavyAttackPressed = m_Gameplay.FindAction("BottomHeavyAttackPressed", throwIfNotFound: true);
+        m_Gameplay_Ultimate = m_Gameplay.FindAction("Ultimate", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -387,6 +407,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_LookAround;
     private readonly InputAction m_Gameplay_BottomLightAttackPressed;
     private readonly InputAction m_Gameplay_BottomHeavyAttackPressed;
+    private readonly InputAction m_Gameplay_Ultimate;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
@@ -399,6 +420,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @LookAround => m_Wrapper.m_Gameplay_LookAround;
         public InputAction @BottomLightAttackPressed => m_Wrapper.m_Gameplay_BottomLightAttackPressed;
         public InputAction @BottomHeavyAttackPressed => m_Wrapper.m_Gameplay_BottomHeavyAttackPressed;
+        public InputAction @Ultimate => m_Wrapper.m_Gameplay_Ultimate;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -432,6 +454,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @BottomHeavyAttackPressed.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBottomHeavyAttackPressed;
                 @BottomHeavyAttackPressed.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBottomHeavyAttackPressed;
                 @BottomHeavyAttackPressed.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBottomHeavyAttackPressed;
+                @Ultimate.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnUltimate;
+                @Ultimate.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnUltimate;
+                @Ultimate.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnUltimate;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -460,6 +485,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @BottomHeavyAttackPressed.started += instance.OnBottomHeavyAttackPressed;
                 @BottomHeavyAttackPressed.performed += instance.OnBottomHeavyAttackPressed;
                 @BottomHeavyAttackPressed.canceled += instance.OnBottomHeavyAttackPressed;
+                @Ultimate.started += instance.OnUltimate;
+                @Ultimate.performed += instance.OnUltimate;
+                @Ultimate.canceled += instance.OnUltimate;
             }
         }
     }
@@ -474,5 +502,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnLookAround(InputAction.CallbackContext context);
         void OnBottomLightAttackPressed(InputAction.CallbackContext context);
         void OnBottomHeavyAttackPressed(InputAction.CallbackContext context);
+        void OnUltimate(InputAction.CallbackContext context);
     }
 }

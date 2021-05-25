@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 public enum LightComboState
 {
@@ -55,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
     public bool isParing;
     private Player player;
     public Transform target;
-
+    public PlayerData playerData;
     public float lightAttackTime;
     public float heavyAttackTime;
     public float light2AttackTime;
@@ -72,7 +73,8 @@ public class PlayerAttack : MonoBehaviour
     public bool bottomHeavyAttackButtonPressed;
     public bool paradeButtonPressed;
     public bool paradeButtonReleased;
-
+    private Rect posCam;
+    private Rect posCamOpponent;
     public GameObject playerHit;
 
     private bool canLight;
@@ -84,9 +86,12 @@ public class PlayerAttack : MonoBehaviour
     public CharacterController controller;
 
     private bool heavyCanAutoCancel;
+
+    public GameObject vfxSword;
     private void Awake()
     {
         //   m_Rigidbody = GetComponent<Rigidbody>();
+        playerData = GetComponentInParent<PlayerData>();
         playerController = GetComponent<PlayerController>();
         player = GetComponent<Player>();
     }
@@ -113,15 +118,19 @@ public class PlayerAttack : MonoBehaviour
         paradeButtonReleased = false;
         neverPared = true;
         heavyCanAutoCancel = true;
+        target = playerData.target;
     }
 
     private void Update()
     {
+        if (target == null)
+        {
+            target = playerData.target;
+        }
         ResetComboState();
 
         if (!player.isTakingDamage)
         {
-
             if (lightAttackButtonPressed && !isAttacking && !isParing && !isRunAttacking)
             {
                 lightAttackButtonPressed = false;
@@ -218,11 +227,11 @@ public class PlayerAttack : MonoBehaviour
                             Debug.Log(light3AttackTime);
                             StartCoroutine(ForwardAttack(0.2f, direction, 0.3f));
                             Invoke("AttackComplete", light3AttackTime - 0.7f);
+                            playerHit = null;
                         }
 
                         if (lightComboState == LightComboState.LIGHT_4)
                         {
-                            playerHit = null;
                             playerController.isRunning = false;
                             Vector3 direction = LookAtTarget();
                             Debug.Log("is attacking light 4");
@@ -230,8 +239,10 @@ public class PlayerAttack : MonoBehaviour
                             m_Animator.SetTrigger("LightAttackCombo");
                             Invoke("AttackComplete", lightComboAttackTime);
                             swordAttacks.damage = 4;
-                            swordAttacks.attackType = "Combo";
+                            swordAttacks.attackType = "Light";
                             //StartCoroutine(ComboWorkflow());
+                            Invoke("CheckPerformFullCombo", 1f);
+
                         }
 
                         if (lightComboState == LightComboState.NONE)
@@ -244,7 +255,13 @@ public class PlayerAttack : MonoBehaviour
                 }
 
             }
+            else
+            {
+                if (!isParing && !isRunAttacking)
+                {
 
+                }
+            }
 
             if (bottomLightAttackButtonPressed && !isAttacking && !isParing && !isRunAttacking)
             {
@@ -530,6 +547,18 @@ public class PlayerAttack : MonoBehaviour
         }
 
     }
+    public void UltimateAttackButton(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            if (!player.isTakingDamage && !isAttacking && !isParing && !isRunAttacking && !playerController.isRunning)
+            {
+                LookAtTarget();
+                GetComponent<UltimateAttack>().PerformUltimateAttack();
+            }
+            
+        }
+    }
     public void HeavyAttackButton(InputAction.CallbackContext ctx)
     {
         if (ctx.started)
@@ -611,38 +640,35 @@ public class PlayerAttack : MonoBehaviour
     //}
 
 
-    public void PerformFirstHitCombo()
+    public void CheckPerformFullCombo()
     {
-        swordAttacks.damage = 4;
-        swordAttacks.attackType = "Combo";
-
-        if (playerHit.GetComponent<Animator>() != null)
+        Debug.Log("test");
+        if (lightComboState == LightComboState.LIGHT_4 && playerHit != null)
         {
-            playerHit.GetComponent<Animator>().SetTrigger("GetHitFromYuetsu1");
-        }
-
-    }
-
-
-    public void PerformSecondHitCombo()
-    {
-        swordAttacks.damage = 4;
-        swordAttacks.attackType = "Combo";
-
-        if (playerHit.GetComponent<Animator>() != null)
-        {
-            playerHit.GetComponent<Animator>().SetTrigger("GetHitFromYuetsu2");
+            isAttacking = true;
+            playerController.isRunning = false;
+            StartCoroutine(InfuseSword(0.15f));
+            StartCoroutine(FullScreenCamera(7.5f));
+            Invoke("AttackComplete", 3.45f);
+            GetComponent<TimeLineController>().PerformFullCombo(m_Animator, playerHit.GetComponent<Animator>(), playerData.cam.GetComponent<CinemachineBrain>());
         }
     }
 
-    public void PerformThirdHitCombo()
+    public IEnumerator FullScreenCamera(float time)
     {
+        posCam = playerData.cam.rect;
+        posCamOpponent = playerData.target.GetComponentInParent<PlayerData>().cam.rect;
+        playerData.cam.rect = new Rect(0f, 0f, 1f, 1f);
+        playerData.target.GetComponentInParent<PlayerData>().cam.rect = new Rect(0f, 0f, 0f, 0f);
+        yield return new WaitForSeconds(time);
+        playerData.cam.rect = posCam;
+        playerData.target.GetComponentInParent<PlayerData>().cam.rect = posCamOpponent;
+    }
 
-        if (playerHit.GetComponent<Animator>() != null)
-        {
-            playerHit.GetComponent<Animator>().SetTrigger("GetHitFromYuetsu3");
-        }
-        playerHit = null;
+    public IEnumerator InfuseSword(float time)
+    {
+        yield return new WaitForSeconds(time);
+        vfxSword.SetActive(true);
     }
 
 }

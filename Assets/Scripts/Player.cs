@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     public float currentHealth;
     public int playerIndex;
-    public LayerMask hurtBox;
     public HealthBar healthBar;
     public PlayerAttack playerAttack;
     public PlayerController playerController;
@@ -21,10 +20,15 @@ public class Player : MonoBehaviour
     public Animator animator;
     public Transform target;
     public bool isInCombo;
+    public PlayerData playerData;
     void Awake()
     {
+        playerData = GetComponentInParent<PlayerData>();
         playerAttack = GetComponent<PlayerAttack>();
         playerController = GetComponent<PlayerController>();
+        healthBar = playerData.healthBar;
+        playerIndex = playerData.playerIndex;
+        //GetComponentInParent<PlayerData>().target = GetComponentInParent<PlayerData>().playerTarget.GetComponentInChildren<Player>().transform;
         //m_rigidbody = GetComponent<Rigidbody>();
     }
     void Start()
@@ -34,6 +38,14 @@ public class Player : MonoBehaviour
         isTakingDamage = false;
         isInCombo = false;
         FindObjectOfType<AudioManager>().Play("combat");
+        target = playerData.target;
+    }
+    void Update()
+    {
+        if (target == null)
+        {
+            target = playerData.target;
+        }
     }
     public void TakeDamage(float damage, string attackType)
     {
@@ -67,6 +79,7 @@ public class Player : MonoBehaviour
         {
             if (attackType == "Combo")
             {
+                isTakingDamage = true;
                 currentHealth -= damage;
                 healthBar.SetHealth(currentHealth);
             }
