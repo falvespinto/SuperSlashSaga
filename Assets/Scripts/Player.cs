@@ -9,20 +9,26 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     public float currentHealth;
     public int playerIndex;
-    public LayerMask hurtBox;
     public HealthBar healthBar;
     public PlayerAttack playerAttack;
     public PlayerController playerController;
     public static int winner;
     public float GuardBreakTime;
     public bool isTakingDamage;
+    public float GetHitTime;
     private Rigidbody m_rigidbody;
     public Animator animator;
     public Transform target;
+    public bool isInCombo;
+    public PlayerData playerData;
     void Awake()
     {
+        playerData = GetComponentInParent<PlayerData>();
         playerAttack = GetComponent<PlayerAttack>();
         playerController = GetComponent<PlayerController>();
+        healthBar = playerData.healthBar;
+        playerIndex = playerData.playerIndex;
+        //GetComponentInParent<PlayerData>().target = GetComponentInParent<PlayerData>().playerTarget.GetComponentInChildren<Player>().transform;
         //m_rigidbody = GetComponent<Rigidbody>();
     }
     void Start()
@@ -30,7 +36,16 @@ public class Player : MonoBehaviour
         UpdateAnimClipTimes();
         currentHealth = maxHealth;
         isTakingDamage = false;
+        isInCombo = false;
         FindObjectOfType<AudioManager>().Play("combat");
+        target = playerData.target;
+    }
+    void Update()
+    {
+        if (target == null)
+        {
+            target = playerData.target;
+        }
     }
     public void TakeDamage(float damage, string attackType)
     {
@@ -62,12 +77,27 @@ public class Player : MonoBehaviour
         }
         else
         {
-            currentHealth -= damage;
-            healthBar.SetHealth(currentHealth);
-            if (currentHealth <= 0)
+            if (attackType == "Combo")
             {
-                animator.SetTrigger("Dead");
-                Invoke("Die", 3f);
+                isTakingDamage = true;
+                currentHealth -= damage;
+                healthBar.SetHealth(currentHealth);
+            }
+            else
+            {
+                isTakingDamage = true;
+                Invoke("ResetIsTakingDamage", GetHitTime);
+                currentHealth -= damage;
+                healthBar.SetHealth(currentHealth);
+                if (currentHealth <= 0)
+                {
+                    animator.SetTrigger("Dead");
+                    Invoke("Die", 3f);
+                }
+                else
+                {
+                    animator.SetTrigger("GetHit");
+                }
             }
         }
     }
@@ -98,6 +128,9 @@ public class Player : MonoBehaviour
             {
                 case "Guard_BreakYuetsu":
                     GuardBreakTime = clip.length / 1.5f;
+                    break;
+                case "GetHitYuetsu":
+                    GetHitTime = clip.length;
                     break;
             }
         }

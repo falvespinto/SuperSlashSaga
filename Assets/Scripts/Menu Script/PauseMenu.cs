@@ -33,7 +33,7 @@ public class PauseMenu : MonoBehaviour
         if (cooldown == false)
         {
             cooldown = true;
-            Invoke("setCooldown", 0.3f);
+            StartCoroutine(setCooldown());
             if (SelectedButton == 1)
             {
                 // When the button with the pointer is clicked, this piece of script is activated
@@ -76,7 +76,7 @@ public class PauseMenu : MonoBehaviour
             {
                 pauseMenu.SetActive(false);
                 Resume();
-                Menu.SetActive(true);
+                //Menu.SetActive(true);
             }
             else
             {
@@ -104,13 +104,19 @@ public class PauseMenu : MonoBehaviour
     {
         if (GameIsPaused)
         {
-                // Checks if the pointer needs to move down or up, in this case the poiter moves up one button
+            // Checks if the pointer needs to move down or up, in this case the poiter moves up one button
+            if (cooldown == false)
+            {
+                cooldown = true;
+                StartCoroutine(setCooldown());
                 if (SelectedButton > 1)
                 {
                     SelectedButton -= 1;
                 }
                 MoveThePointer();
                 return;
+
+            }
         }
 
 
@@ -119,13 +125,18 @@ public class PauseMenu : MonoBehaviour
     {
         if (GameIsPaused)
         {
-                // Checks if the pointer needs to move down or up, in this case the poiter moves down one button
+            // Checks if the pointer needs to move down or up, in this case the poiter moves down one button
+            if (cooldown == false)
+            {
+                cooldown = true;
+                StartCoroutine(setCooldown());
                 if (SelectedButton < NumberOfButtons)
                 {
                     SelectedButton += 1;
                 }
                 MoveThePointer();
                 return;
+            }
         }
     }
 
@@ -153,8 +164,9 @@ public class PauseMenu : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("percution");
         }
     }
-    private void setCooldown()
+    private IEnumerator setCooldown()
     {
+        yield return new WaitForSecondsRealtime(0.3f);
         cooldown = false;
     }
 }

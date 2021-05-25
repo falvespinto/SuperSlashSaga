@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 public enum LightComboState
 {
     NONE,
     LIGHT_1,
-    LIGHT_2
+    LIGHT_2,
+    LIGHT_3,
+    LIGHT_4
 }
 
 public enum RunLightComboState
@@ -53,10 +56,12 @@ public class PlayerAttack : MonoBehaviour
     public bool isParing;
     private Player player;
     public Transform target;
-
+    public PlayerData playerData;
     public float lightAttackTime;
     public float heavyAttackTime;
     public float light2AttackTime;
+    public float light3AttackTime;
+    public float lightComboAttackTime;
     public float bottomLightAttackTime;
     public float bottomLight2AttackTime;
     public float runLightAtkTime;
@@ -68,6 +73,9 @@ public class PlayerAttack : MonoBehaviour
     public bool bottomHeavyAttackButtonPressed;
     public bool paradeButtonPressed;
     public bool paradeButtonReleased;
+    private Rect posCam;
+    private Rect posCamOpponent;
+    public GameObject playerHit;
 
     private bool canLight;
     private bool canHeavy;
@@ -78,16 +86,19 @@ public class PlayerAttack : MonoBehaviour
     public CharacterController controller;
 
     private bool heavyCanAutoCancel;
+
+    public GameObject vfxSword;
     private void Awake()
     {
         //   m_Rigidbody = GetComponent<Rigidbody>();
+        playerData = GetComponentInParent<PlayerData>();
         playerController = GetComponent<PlayerController>();
         player = GetComponent<Player>();
     }
     public void Start()
     {
         UpdateAnimClipTimes();
-        default_Combo_Timer = lightAttackTime + light2AttackTime - 1.2f;
+        default_Combo_Timer = light3AttackTime;
         default_Combo_Timer_Run = runLightAtkTime + runLightAtk2Time;
         default_BottomCombo_Timer = bottomLightAttackTime + bottomLight2AttackTime - 1.2f;
         canLight = true;
@@ -107,19 +118,23 @@ public class PlayerAttack : MonoBehaviour
         paradeButtonReleased = false;
         neverPared = true;
         heavyCanAutoCancel = true;
+        target = playerData.target;
     }
 
     private void Update()
     {
+        if (target == null)
+        {
+            target = playerData.target;
+        }
         ResetComboState();
 
         if (!player.isTakingDamage)
         {
-
             if (lightAttackButtonPressed && !isAttacking && !isParing && !isRunAttacking)
             {
                 lightAttackButtonPressed = false;
-                if ((int)lightComboState >= 2 || lightComboState == null || (int)runLightComboState >= 2 || runLightComboState == null)
+                if ((int)lightComboState >= 4 || lightComboState == null || (int)runLightComboState >= 2 || runLightComboState == null)
                 {
 
                 }
@@ -140,7 +155,6 @@ public class PlayerAttack : MonoBehaviour
                         {
                             LookAtTarget();
                             // Joue attaque 1 du combo de coup légé pendant un sprint
-                            Debug.Log("Run light atk 1");
                             //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux bloqués
                             swordAttacks.damage = 5;
                             swordAttacks.attackType = "Light";
@@ -152,7 +166,6 @@ public class PlayerAttack : MonoBehaviour
                         if (runLightComboState == RunLightComboState.RUN_LIGHT_2)
                         {
                             LookAtTarget();
-                            Debug.Log("Run light atk 2");
                             // m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux bloqués
                             swordAttacks.damage = 7;
                             swordAttacks.attackType = "Light";
@@ -177,7 +190,6 @@ public class PlayerAttack : MonoBehaviour
                             playerController.isRunning = false;
                             Vector3 direction = LookAtTarget();
                             // Joue attaque 1 du combo de coup légé
-                            Debug.Log("is attacking light");
                             //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux bloqués
                             swordAttacks.damage = 7;
                             swordAttacks.attackType = "Light";
@@ -185,7 +197,6 @@ public class PlayerAttack : MonoBehaviour
                             m_Animator.SetTrigger("LightAttack");
                             StartCoroutine(ForwardAttack(lightAttackTime-0.6f,direction, 0.05f));
                             Invoke("AttackComplete", lightAttackTime - 0.7f);
-                            Debug.Log(lightAttackTime);
                             //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
 
 
@@ -196,16 +207,42 @@ public class PlayerAttack : MonoBehaviour
                             playerController.isRunning = false;
                             Vector3 direction = LookAtTarget();
                             // Joue attaque 1 du combo de coup légé
-                            Debug.Log("is attacking light 2");
                             //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
                             swordAttacks.damage = 8;
                             swordAttacks.attackType = "Light";
                             // ChangeAnimationState(m_Punch);
                             m_Animator.SetTrigger("LightAttack2");
                             StartCoroutine(ForwardAttack(light2AttackTime-0.5f, direction, 0.05f));
-                            Debug.Log(light2AttackTime);
-                            Invoke("AttackComplete", light2AttackTime);
+                            Invoke("AttackComplete", light2AttackTime - 0.3f);
                             //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
+                        }
+
+                        if (lightComboState == LightComboState.LIGHT_3)
+                        {
+                            playerController.isRunning = false;
+                            Vector3 direction = LookAtTarget();
+                            swordAttacks.damage = 8;
+                            swordAttacks.attackType = "Light";
+                            m_Animator.SetTrigger("LightAttack3");
+                            Debug.Log(light3AttackTime);
+                            StartCoroutine(ForwardAttack(0.2f, direction, 0.3f));
+                            Invoke("AttackComplete", light3AttackTime - 0.7f);
+                            playerHit = null;
+                        }
+
+                        if (lightComboState == LightComboState.LIGHT_4)
+                        {
+                            playerController.isRunning = false;
+                            Vector3 direction = LookAtTarget();
+                            Debug.Log("is attacking light 4");
+                            Debug.Log(lightComboAttackTime);
+                            m_Animator.SetTrigger("LightAttackCombo");
+                            Invoke("AttackComplete", lightComboAttackTime);
+                            swordAttacks.damage = 4;
+                            swordAttacks.attackType = "Light";
+                            //StartCoroutine(ComboWorkflow());
+                            Invoke("CheckPerformFullCombo", 1f);
+
                         }
 
                         if (lightComboState == LightComboState.NONE)
@@ -218,7 +255,13 @@ public class PlayerAttack : MonoBehaviour
                 }
 
             }
+            else
+            {
+                if (!isParing && !isRunAttacking)
+                {
 
+                }
+            }
 
             if (bottomLightAttackButtonPressed && !isAttacking && !isParing && !isRunAttacking)
             {
@@ -468,6 +511,12 @@ public class PlayerAttack : MonoBehaviour
                 case "BottomHeavy":
                     lightAttackTime = clip.length / 1.5f;
                     break;
+                case "Light3Yuetsu":
+                    light3AttackTime = clip.length;
+                    break;
+                case "LightComboYuetsu":
+                    lightComboAttackTime = clip.length;
+                    break;
             }
         }
     }
@@ -497,6 +546,18 @@ public class PlayerAttack : MonoBehaviour
             lightAttackButtonPressed = false;
         }
 
+    }
+    public void UltimateAttackButton(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            if (!player.isTakingDamage && !isAttacking && !isParing && !isRunAttacking && !playerController.isRunning)
+            {
+                LookAtTarget();
+                GetComponent<UltimateAttack>().PerformUltimateAttack();
+            }
+            
+        }
     }
     public void HeavyAttackButton(InputAction.CallbackContext ctx)
     {
@@ -577,5 +638,37 @@ public class PlayerAttack : MonoBehaviour
     //    yield return new WaitForSeconds(time);
     //    canAuto = true;
     //}
+
+
+    public void CheckPerformFullCombo()
+    {
+        Debug.Log("test");
+        if (lightComboState == LightComboState.LIGHT_4 && playerHit != null)
+        {
+            isAttacking = true;
+            playerController.isRunning = false;
+            StartCoroutine(InfuseSword(0.15f));
+            StartCoroutine(FullScreenCamera(7.5f));
+            Invoke("AttackComplete", 3.45f);
+            GetComponent<TimeLineController>().PerformFullCombo(m_Animator, playerHit.GetComponent<Animator>(), playerData.cam.GetComponent<CinemachineBrain>());
+        }
+    }
+
+    public IEnumerator FullScreenCamera(float time)
+    {
+        posCam = playerData.cam.rect;
+        posCamOpponent = playerData.target.GetComponentInParent<PlayerData>().cam.rect;
+        playerData.cam.rect = new Rect(0f, 0f, 1f, 1f);
+        playerData.target.GetComponentInParent<PlayerData>().cam.rect = new Rect(0f, 0f, 0f, 0f);
+        yield return new WaitForSeconds(time);
+        playerData.cam.rect = posCam;
+        playerData.target.GetComponentInParent<PlayerData>().cam.rect = posCamOpponent;
+    }
+
+    public IEnumerator InfuseSword(float time)
+    {
+        yield return new WaitForSeconds(time);
+        vfxSword.SetActive(true);
+    }
 
 }

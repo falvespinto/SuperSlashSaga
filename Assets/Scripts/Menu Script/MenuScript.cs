@@ -59,12 +59,12 @@ public class MenuScript : MonoBehaviour
             else if (SelectedButton == 4)
             {
                 // When the button with the pointer is clicked, this piece of script is activated
-                Debug.Log("Options");
-                mainMenu.SetActive(false);
-                optionsMenu.SetActive(true);
-                verificationOption = true;
-                Point.transform.position = ButtonPosition6.position;
-                SelectedButton = 6;
+                //Debug.Log("Options");
+                //mainMenu.SetActive(false);
+                //optionsMenu.SetActive(true);
+                //verificationOption = true;
+                //Point.transform.position = ButtonPosition6.position;
+                //SelectedButton = 6;
 
             }
             else if (SelectedButton == 5)
