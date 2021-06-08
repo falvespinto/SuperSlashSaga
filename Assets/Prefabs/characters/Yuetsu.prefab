@@ -9303,6 +9303,10 @@ GameObject:
   - component: {fileID: 5213051265402555225}
   - component: {fileID: 2055994996855387593}
   - component: {fileID: 6398469234460920061}
+  - component: {fileID: 2457199042296732721}
+  - component: {fileID: 2812597217123706708}
+  - component: {fileID: 3433924704099936633}
+  - component: {fileID: 6176119686797423047}
   m_Layer: 8
   m_Name: Yuetsu
   m_TagString: Untagged
@@ -9627,6 +9631,9 @@ MonoBehaviour:
   bottomLight2AttackTime: 0
   runLightAtkTime: 0
   runLightAtk2Time: 0
+  lightAttack: {fileID: 2457199042296732721}
+  heavyAttack: {fileID: 2812597217123706708}
+  parade: {fileID: 3433924704099936633}
   lightAttackButtonPressed: 0
   heavyAttackButtonPressed: 0
   bottomLightAttackButtonPressed: 0
@@ -9694,6 +9701,96 @@ MonoBehaviour:
   attackDamage: 50
   ultimateDuration: 3.4
   timeline: {fileID: 7142872204813282743}
+  isPerformingUltimate: 0
+  isOnCooldown: 0
+--- !u!114 &2457199042296732721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735330714013134415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaab3608fc8b624b90c76b626943655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightAttackTime: 0
+  heavyAttackTime: 0
+  light2AttackTime: 0
+  light3AttackTime: 0
+  lightComboAttackTime: 0
+  bottomLightAttackTime: 0
+  bottomLight2AttackTime: 0
+  playerData: {fileID: 0}
+  default_Combo_Timer: 2
+  default_BottomCombo_Timer: 2
+  current_Combo_Timer: 0
+  isAttacking: 0
+  lightComboState: 0
+  bottomLightComboState: 0
+  isParing: 0
+  isInCombo: 0
+  playerController: {fileID: 0}
+  controller: {fileID: 0}
+  vfxSword: {fileID: 8983980246677935597}
+--- !u!114 &2812597217123706708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735330714013134415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429c68e68ccf6b348b55aa9619587a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttacking: 0
+  isParing: 0
+  heavyAttackTime: 0
+  controller: {fileID: 0}
+  playerData: {fileID: 0}
+  playerController: {fileID: 0}
+  lightAttackTime: 0
+--- !u!114 &3433924704099936633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735330714013134415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501c62379c47e8a4fa719ffdfd92a13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paradeButtonPressed: 0
+  paradeButtonReleased: 0
+  isParing: 0
+  isAttacking: 0
+  isRunAttacking: 0
+  playerController: {fileID: 0}
+  playerAttack: {fileID: 0}
+  target: {fileID: 0}
+  playerData: {fileID: 0}
+--- !u!114 &6176119686797423047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735330714013134415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5050f13fd9f47e4fa4ff92d17947052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  positionParticles: {x: 0, y: 0, z: 0}
+  attackDamage: 0
+  ultimateDuration: 0
+  timeline: {fileID: 0}
   isPerformingUltimate: 0
   isOnCooldown: 0
 --- !u!1 &6840588005767388474
@@ -11052,14 +11149,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
---- !u!4 &9720066872501008 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1516322998706628453, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
-  m_PrefabInstance: {fileID: 1524899356451865717}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8983980246677935597 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7603208177342239128, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
+  m_PrefabInstance: {fileID: 1524899356451865717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9720066872501008 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1516322998706628453, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
   m_PrefabInstance: {fileID: 1524899356451865717}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4899512496128025933
@@ -11275,14 +11372,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
---- !u!1 &7377882960567890114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2710342198397900175, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
-  m_PrefabInstance: {fileID: 4899512496128025933}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7377882960567890125 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2710342198397900160, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
+  m_PrefabInstance: {fileID: 4899512496128025933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7377882960567890114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2710342198397900175, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
   m_PrefabInstance: {fileID: 4899512496128025933}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5645591272268076340

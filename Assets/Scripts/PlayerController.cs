@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     public Animator m_Animator;
     public Player player;
     private bool isAttacking;
-    private bool isRunAttacking;
     private string m_AnimationCurrentState; // l'animation en cours
     public Attack punch;
     // temporaire 
@@ -60,7 +59,6 @@ public class PlayerController : MonoBehaviour
     {
         cam = playerData.camera;
         isAttacking = false;
-        isRunAttacking = false;
         // setup des variables en rapport avec les joycons
         gyroscop = new Vector3(0, 0, 0);
         accel = new Vector3(0, 0, 0);
@@ -81,7 +79,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         isAttacking = m_PlayerAttack.isAttacking;
-        isRunAttacking = m_PlayerAttack.isRunAttacking;
         isParing = m_PlayerAttack.isParing;
         moveDirection = new Vector3();
 
@@ -195,8 +192,6 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (!isRunAttacking)
-                {
                     direction = new Vector3(movementInput.x, 0f, movementInput.y).normalized;
                     if (direction.magnitude >= 0.1f)
                     {
@@ -206,21 +201,11 @@ public class PlayerController : MonoBehaviour
                         moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
                         moveDirection *= m_TranslationSpeed;
                     }
-                }
                 if (movementInput.x != 0f || movementInput.y != 0f)
                 {
-                    
-                        if (!isRunAttacking)
-                        {
-                            m_Animator.SetBool("IsRunning", true);
-                        }
-                        else
-                        {
-                            m_Animator.SetBool("IsRunning", false);
-                        }
-
-                        m_Animator.SetBool("IsWalking", false);
-                        isRunning = true;
+                    m_Animator.SetBool("IsRunning", true);
+                    m_Animator.SetBool("IsWalking", false);
+                    isRunning = true;
                     //ChangeAnimationState(m_Run);
                 }
                 else
