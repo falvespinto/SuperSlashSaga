@@ -89,6 +89,22 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""test"",
+                    ""type"": ""Button"",
+                    ""id"": ""b781e722-57e0-410a-a976-2c1c51880a52"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""test2"",
+                    ""type"": ""Button"",
+                    ""id"": ""025eaf4f-8414-43b5-a50e-cf1169bdb56b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -333,6 +349,50 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Ultimate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""faa5492f-821f-4822-b31b-37a7a9faad52"",
+                    ""path"": ""<Keyboard>/u"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""test"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bd78b32d-a6c9-4d8a-969a-7481b2882a90"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""test"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e622afb8-c761-4c5f-a975-2c0f5d318a57"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""test2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""21c06baf-c773-4449-b2c6-bd7e704f5cd6"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""test2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -350,6 +410,8 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Gameplay_BottomLightAttackPressed = m_Gameplay.FindAction("BottomLightAttackPressed", throwIfNotFound: true);
         m_Gameplay_BottomHeavyAttackPressed = m_Gameplay.FindAction("BottomHeavyAttackPressed", throwIfNotFound: true);
         m_Gameplay_Ultimate = m_Gameplay.FindAction("Ultimate", throwIfNotFound: true);
+        m_Gameplay_test = m_Gameplay.FindAction("test", throwIfNotFound: true);
+        m_Gameplay_test2 = m_Gameplay.FindAction("test2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -408,6 +470,8 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_BottomLightAttackPressed;
     private readonly InputAction m_Gameplay_BottomHeavyAttackPressed;
     private readonly InputAction m_Gameplay_Ultimate;
+    private readonly InputAction m_Gameplay_test;
+    private readonly InputAction m_Gameplay_test2;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
@@ -421,6 +485,8 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @BottomLightAttackPressed => m_Wrapper.m_Gameplay_BottomLightAttackPressed;
         public InputAction @BottomHeavyAttackPressed => m_Wrapper.m_Gameplay_BottomHeavyAttackPressed;
         public InputAction @Ultimate => m_Wrapper.m_Gameplay_Ultimate;
+        public InputAction @test => m_Wrapper.m_Gameplay_test;
+        public InputAction @test2 => m_Wrapper.m_Gameplay_test2;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -457,6 +523,12 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Ultimate.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnUltimate;
                 @Ultimate.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnUltimate;
                 @Ultimate.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnUltimate;
+                @test.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTest;
+                @test.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTest;
+                @test.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTest;
+                @test2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTest2;
+                @test2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTest2;
+                @test2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTest2;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -488,6 +560,12 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Ultimate.started += instance.OnUltimate;
                 @Ultimate.performed += instance.OnUltimate;
                 @Ultimate.canceled += instance.OnUltimate;
+                @test.started += instance.OnTest;
+                @test.performed += instance.OnTest;
+                @test.canceled += instance.OnTest;
+                @test2.started += instance.OnTest2;
+                @test2.performed += instance.OnTest2;
+                @test2.canceled += instance.OnTest2;
             }
         }
     }
@@ -503,5 +581,7 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnBottomLightAttackPressed(InputAction.CallbackContext context);
         void OnBottomHeavyAttackPressed(InputAction.CallbackContext context);
         void OnUltimate(InputAction.CallbackContext context);
+        void OnTest(InputAction.CallbackContext context);
+        void OnTest2(InputAction.CallbackContext context);
     }
 }

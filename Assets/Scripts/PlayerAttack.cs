@@ -72,7 +72,6 @@ public class PlayerAttack : MonoBehaviour
     public bool bottomLightAttackButtonPressed;
     public bool bottomHeavyAttackButtonPressed;
     public bool paradeButtonPressed;
-    public bool paradeButtonReleased;
     private Rect posCam;
     private Rect posCamOpponent;
     public GameObject playerHit;
@@ -115,7 +114,6 @@ public class PlayerAttack : MonoBehaviour
         bottomLightAttackButtonPressed = false;
         bottomHeavyAttackButtonPressed = false;
         paradeButtonPressed = false;
-        paradeButtonReleased = false;
         neverPared = true;
         heavyCanAutoCancel = true;
         target = playerData.target;
@@ -622,7 +620,7 @@ public class PlayerAttack : MonoBehaviour
         return dir;
     }
 
-    IEnumerator ForwardAttack(float attackTime, Vector3 direction, float attackSpeed)
+    public IEnumerator ForwardAttack(float attackTime, Vector3 direction, float attackSpeed)
     {
         float startTime = Time.time;
         while (Time.time < startTime + attackTime)
@@ -669,6 +667,21 @@ public class PlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         vfxSword.SetActive(true);
+    }
+
+    public void Rush(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            m_Animator.SetBool("ChargeRush", true);
+        }
+        if (ctx.canceled)
+        {
+            Vector3 direction = LookAtTarget();
+            StartCoroutine(ForwardAttack(0.12f, direction, 5f));
+            m_Animator.SetBool("ChargeRush", false);
+            m_Animator.SetBool("Rush", true);
+        }
     }
 
 }
