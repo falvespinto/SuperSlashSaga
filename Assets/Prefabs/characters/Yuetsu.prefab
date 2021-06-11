@@ -469,7 +469,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118464929693949814}
   m_LocalRotation: {x: -0.003389948, y: 0.65591985, z: 0.0029457924, w: 0.75481725}
-  m_LocalPosition: {x: -0.00002325501, y: -0.000006976502, z: 2.2177705e-12}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2985393210522622298}
@@ -1479,8 +1479,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.023517132, y: -0.5178897, z: -0.24173164}
-    m_Extent: {x: 3.1533182, y: 0.5446101, z: 4.446384}
+    m_Center: {x: -0.0023758411, y: -1.815182, z: -0.24681091}
+    m_Extent: {x: 2.6401007, y: 2.040582, z: 4.4514637}
   m_DirtyAABB: 0
 --- !u!1 &1964806641548699120
 GameObject:
@@ -2390,8 +2390,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0.9545655, z: -0.0007972121}
-    m_Extent: {x: 0.25795096, y: 4.5626693, z: 0.32816952}
+    m_Center: {x: 0, y: 0.9513092, z: -0.0007972121}
+    m_Extent: {x: 0.25795096, y: 4.5659256, z: 0.32816952}
   m_DirtyAABB: 0
 --- !u!183 &3658591606355092189
 Cloth:
@@ -8223,7 +8223,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4268787783617653170}
-  m_LocalRotation: {x: -0.000007726249, y: 0.99965584, z: 0.026231268, w: 0.00029444683}
+  m_LocalRotation: {x: -0.00000772625, y: 0.9996559, z: 0.026231272, w: 0.0002944469}
   m_LocalPosition: {x: -0.00002325501, y: -0.000006976502, z: 2.2177705e-12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8510,6 +8510,60 @@ Transform:
   m_Father: {fileID: 8995204548177632777}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5266523612718449793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8888424074732013733}
+  - component: {fileID: 4117428083098753359}
+  m_Layer: 0
+  m_Name: UltimateFinalTimeLine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8888424074732013733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5266523612718449793}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -367.99185, y: 109.82202, z: 41.788685}
+  m_LocalScale: {x: 13.123013, y: 13.123014, z: 13.123013}
+  m_Children: []
+  m_Father: {fileID: 2430065138829903224}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &4117428083098753359
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5266523612718449793}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: d37e60f68cd1ca543b9b8f8d18cb6e3e, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 961410749847449202, guid: d37e60f68cd1ca543b9b8f8d18cb6e3e, type: 2}
+    value: {fileID: 6424907266442389020}
+  - key: {fileID: 753379985878834022, guid: d37e60f68cd1ca543b9b8f8d18cb6e3e, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -6579948632297873495, guid: d37e60f68cd1ca543b9b8f8d18cb6e3e, type: 2}
+    value: {fileID: 8480724950652166703}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &5268341420252682531
 GameObject:
   m_ObjectHideFlags: 0
@@ -9302,11 +9356,11 @@ GameObject:
   - component: {fileID: 1718854034453120485}
   - component: {fileID: 5213051265402555225}
   - component: {fileID: 2055994996855387593}
-  - component: {fileID: 6398469234460920061}
   - component: {fileID: 2457199042296732721}
   - component: {fileID: 2812597217123706708}
   - component: {fileID: 3433924704099936633}
-  - component: {fileID: 6176119686797423047}
+  - component: {fileID: 1498282575589081782}
+  - component: {fileID: 2076040904416851659}
   m_Layer: 8
   m_Name: Yuetsu
   m_TagString: Untagged
@@ -9335,7 +9389,7 @@ Transform:
   - {fileID: 7377882960567890125}
   - {fileID: 4034106001949687177}
   - {fileID: 1230394003040031481}
-  - {fileID: 7746361986493967581}
+  - {fileID: 8888424074732013733}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -9675,7 +9729,6 @@ MonoBehaviour:
   paradeButtonPressed: 0
   playerHit: {fileID: 0}
   controller: {fileID: 4576790369941818661}
-  vfxSword: {fileID: 8983980246677935597}
 --- !u!114 &1718854034453120485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9717,44 +9770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullCombo: {fileID: 5866170471648547685}
-  finalUlt: {fileID: 6401468734346028932}
---- !u!114 &2076040904416851659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6735330714013134415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ff5209c637e31349b75ec3dbe7bb5b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterRenderer: {fileID: 1343679269043940804}
-  katanaRenderer: {fileID: 16617180242557644}
-  capeRenderer: {fileID: 360449678566896648}
-  flashMaterial: {fileID: 2100000, guid: 481db41420a320c41988c71fb3b4ebd7, type: 2}
-  flashActif: 0
-  flashInactif: 0
---- !u!114 &1498282575589081782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6735330714013134415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5050f13fd9f47e4fa4ff92d17947052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 5
-  positionParticles: {x: 0, y: 0, z: 0}
-  attackDamage: 30
-  ultimateDuration: 3.4
-  timeline: {fileID: 7142872204813282743}
-  isPerformingUltimate: 0
-  isOnCooldown: 0
+  finalUlt: {fileID: 4117428083098753359}
 --- !u!114 &2457199042296732721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9826,7 +9842,7 @@ MonoBehaviour:
   playerAttack: {fileID: 0}
   target: {fileID: 0}
   playerData: {fileID: 0}
---- !u!114 &6176119686797423047
+--- !u!114 &1498282575589081782
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9838,13 +9854,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5050f13fd9f47e4fa4ff92d17947052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0
+  cooldown: 5
   positionParticles: {x: 0, y: 0, z: 0}
-  attackDamage: 0
-  ultimateDuration: 0
-  timeline: {fileID: 0}
+  attackDamage: 30
+  ultimateDuration: 3.4
+  timeline: {fileID: 7142872204813282743}
   isPerformingUltimate: 0
   isOnCooldown: 0
+  effectTime: 2.8
+  areaOfEffect: {fileID: 8485676900357151032}
+  attackType: IngageUltimate
+  beforeEffectTime: 0.6
+  playerHit: {fileID: 0}
+--- !u!114 &2076040904416851659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735330714013134415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff5209c637e31349b75ec3dbe7bb5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterRenderer: {fileID: 1343679269043940804}
+  katanaRenderer: {fileID: 16617180242557644}
+  capeRenderer: {fileID: 360449678566896648}
+  flashMaterial: {fileID: 2100000, guid: 481db41420a320c41988c71fb3b4ebd7, type: 2}
+  flashActif: 0
+  flashInactif: 0
 --- !u!1 &6840588005767388474
 GameObject:
   m_ObjectHideFlags: 0
@@ -16399,14 +16438,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
---- !u!4 &7377882960567890125 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2710342198397900160, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
-  m_PrefabInstance: {fileID: 4899512496128025933}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7377882960567890114 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2710342198397900175, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
+  m_PrefabInstance: {fileID: 4899512496128025933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7377882960567890125 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2710342198397900160, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
   m_PrefabInstance: {fileID: 4899512496128025933}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5645591272268076340
@@ -16510,13 +16549,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
---- !u!4 &5866170471648547684 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2247852219198785104, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
-  m_PrefabInstance: {fileID: 5645591272268076340}
-  m_PrefabAsset: {fileID: 0}
 --- !u!320 &5866170471648547685 stripped
 PlayableDirector:
   m_CorrespondingSourceObject: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
+  m_PrefabInstance: {fileID: 5645591272268076340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5866170471648547684 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2247852219198785104, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
   m_PrefabInstance: {fileID: 5645591272268076340}
   m_PrefabAsset: {fileID: 0}
