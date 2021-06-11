@@ -15,11 +15,11 @@ D:/Super Slash Saga/SuperSlashSaga
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60010
+54288
 Successfully changed project path to: D:/Super Slash Saga/SuperSlashSaga
 D:/Super Slash Saga/SuperSlashSaga
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 74.72 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 86.71 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.2f1 (068178b99f32)
 [Subsystems] Discovering subsystems at path D:/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
@@ -36,50 +36,50 @@ Initialize mono
 Mono path[0] = 'D:/2020.2.2f1/Editor/Data/Managed'
 Mono path[1] = 'D:/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56788
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56372
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001716 seconds.
+Registered in 0.001134 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 61.29 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 71.62 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.113 seconds
+- Completed reload, in  1.330 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004466 seconds.
+Registered in 0.002193 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 73.15 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 81.23 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.826 seconds
+- Completed reload, in  1.720 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.85 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.33 seconds
+Refreshing native plugins compatible for Editor in 0.95 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3781 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 182.6 MB.
-System memory in use after: 182.8 MB.
+System memory in use before: 182.8 MB.
+System memory in use after: 183.0 MB.
 
 Unloading 133 unused Assets to reduce memory usage. Loaded Objects now: 4254.
-Total: 6.144800 ms (FindLiveObjects: 1.239100 ms CreateObjectMapping: 0.373000 ms MarkObjects: 4.288600 ms  DeleteObjects: 0.240400 ms)
+Total: 3.979900 ms (FindLiveObjects: 0.755200 ms CreateObjectMapping: 0.265300 ms MarkObjects: 2.746300 ms  DeleteObjects: 0.209900 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/PlayerController.cs
-  artifactKey: Guid(63cb1e5de3d387049a4425f08d7ae846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PlayerController.cs using Guid(63cb1e5de3d387049a4425f08d7ae846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'daa0f1fbc207004d39243faba082adc2') in 0.045728 seconds
-  Import took 0.051864 seconds .
+  path: Assets/Scripts/UltimateAttack.cs
+  artifactKey: Guid(f5050f13fd9f47e4fa4ff92d17947052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UltimateAttack.cs using Guid(f5050f13fd9f47e4fa4ff92d17947052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '105a652a6d5aa26e4779a39efe0054c0') in 0.117734 seconds
+  Import took 0.178156 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
