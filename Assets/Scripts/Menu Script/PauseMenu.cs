@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject Point, pauseMenu, Menu;
+    public GameObject Point, pauseMenu, optionsMenu;
     private int SelectedButton = 1;
     [SerializeField]
     private int NumberOfButtons;
@@ -51,6 +51,8 @@ public class PauseMenu : MonoBehaviour
             {
                 // When the button with the pointer is clicked, this piece of script is activated
                 Debug.Log("Option");
+                pauseMenu.SetActive(false);
+                optionsMenu.SetActive(true);
             }
             else if (SelectedButton == 4)
             {
