@@ -9302,8 +9302,11 @@ GameObject:
   - component: {fileID: 1718854034453120485}
   - component: {fileID: 5213051265402555225}
   - component: {fileID: 2055994996855387593}
-  - component: {fileID: 2076040904416851659}
-  - component: {fileID: 1498282575589081782}
+  - component: {fileID: 6398469234460920061}
+  - component: {fileID: 2457199042296732721}
+  - component: {fileID: 2812597217123706708}
+  - component: {fileID: 3433924704099936633}
+  - component: {fileID: 6176119686797423047}
   m_Layer: 8
   m_Name: Yuetsu
   m_TagString: Untagged
@@ -9662,6 +9665,9 @@ MonoBehaviour:
   bottomLight2AttackTime: 0
   runLightAtkTime: 0
   runLightAtk2Time: 0
+  lightAttack: {fileID: 2457199042296732721}
+  heavyAttack: {fileID: 2812597217123706708}
+  parade: {fileID: 3433924704099936633}
   lightAttackButtonPressed: 0
   heavyAttackButtonPressed: 0
   bottomLightAttackButtonPressed: 0
@@ -9749,65 +9755,96 @@ MonoBehaviour:
   timeline: {fileID: 7142872204813282743}
   isPerformingUltimate: 0
   isOnCooldown: 0
-  effectTime: 2.8
-  areaOfEffect: {fileID: 8485676900357151032}
-  attackType: IngageUltimate
-  beforeEffectTime: 0.6
-  playerHit: {fileID: 0}
---- !u!1 &6764913668538478954
-GameObject:
+--- !u!114 &2457199042296732721
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7746361986493967581}
-  - component: {fileID: 6401468734346028932}
-  m_Layer: 0
-  m_Name: UltimateFinalTimeLine
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7746361986493967581
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6764913668538478954}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -350.51413, y: 2.1938689, z: 276.8197}
-  m_LocalScale: {x: 13.123013, y: 13.123014, z: 13.123013}
-  m_Children: []
-  m_Father: {fileID: 2430065138829903224}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!320 &6401468734346028932
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6764913668538478954}
+  m_GameObject: {fileID: 6735330714013134415}
   m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: d37e60f68cd1ca543b9b8f8d18cb6e3e, type: 2}
-  m_InitialState: 0
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 961410749847449202, guid: d37e60f68cd1ca543b9b8f8d18cb6e3e, type: 2}
-    value: {fileID: 6424907266442389020}
-  - key: {fileID: 753379985878834022, guid: d37e60f68cd1ca543b9b8f8d18cb6e3e, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -6579948632297873495, guid: d37e60f68cd1ca543b9b8f8d18cb6e3e, type: 2}
-    value: {fileID: 8480724950652166703}
-  m_ExposedReferences:
-    m_References: []
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaab3608fc8b624b90c76b626943655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightAttackTime: 0
+  heavyAttackTime: 0
+  light2AttackTime: 0
+  light3AttackTime: 0
+  lightComboAttackTime: 0
+  bottomLightAttackTime: 0
+  bottomLight2AttackTime: 0
+  playerData: {fileID: 0}
+  default_Combo_Timer: 2
+  default_BottomCombo_Timer: 2
+  current_Combo_Timer: 0
+  isAttacking: 0
+  lightComboState: 0
+  bottomLightComboState: 0
+  isParing: 0
+  isInCombo: 0
+  playerController: {fileID: 0}
+  controller: {fileID: 0}
+  vfxSword: {fileID: 8983980246677935597}
+--- !u!114 &2812597217123706708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735330714013134415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429c68e68ccf6b348b55aa9619587a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttacking: 0
+  isParing: 0
+  heavyAttackTime: 0
+  controller: {fileID: 0}
+  playerData: {fileID: 0}
+  playerController: {fileID: 0}
+  lightAttackTime: 0
+--- !u!114 &3433924704099936633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735330714013134415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501c62379c47e8a4fa719ffdfd92a13f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paradeButtonPressed: 0
+  paradeButtonReleased: 0
+  isParing: 0
+  isAttacking: 0
+  isRunAttacking: 0
+  playerController: {fileID: 0}
+  playerAttack: {fileID: 0}
+  target: {fileID: 0}
+  playerData: {fileID: 0}
+--- !u!114 &6176119686797423047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735330714013134415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5050f13fd9f47e4fa4ff92d17947052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  positionParticles: {x: 0, y: 0, z: 0}
+  attackDamage: 0
+  ultimateDuration: 0
+  timeline: {fileID: 0}
+  isPerformingUltimate: 0
+  isOnCooldown: 0
 --- !u!1 &6840588005767388474
 GameObject:
   m_ObjectHideFlags: 0
@@ -16362,14 +16399,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
---- !u!1 &7377882960567890114 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2710342198397900175, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
-  m_PrefabInstance: {fileID: 4899512496128025933}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7377882960567890125 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2710342198397900160, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
+  m_PrefabInstance: {fileID: 4899512496128025933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7377882960567890114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2710342198397900175, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
   m_PrefabInstance: {fileID: 4899512496128025933}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5645591272268076340

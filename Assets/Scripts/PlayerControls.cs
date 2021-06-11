@@ -18,26 +18,42 @@ public class PlayerControls : MonoBehaviour
     public bool hasSelected;
     public Sprite[] playersIcons;
     public bool isInit = false;
+    public GameObject spawnPositionJ1;
+    public GameObject spawnPositionJ2;
+    public GameObject yuetsuPrefab;
+    private GameObject currentPrefabSpawn;
+    private GameObject characterSpawn;
+    private bool isSpawnableJ1;
+    private bool isSpawnableJ2;
+    private int indexJ1;
+    private int indexJ2;
+
     private void Awake()
     {
         champSelect = GetComponent<LevelSelectScreenScript>();
         champSelect.selector = gameObject;
         hasSelected = false;
+        currentPrefabSpawn = null;
+        isSpawnableJ1 = true;
+        isSpawnableJ2 = true;
 
-    }
-    private void Start()
-    {
         FindObjectOfType<AudioManager>().Play("selectionPerso");
         prefab.transform.SetParent(GameObject.Find("Canvas").transform);
         prefab.transform.position = GameObject.Find("Row1_1").transform.position;
+        
+    }
+    private void Start()
+    {
         test = GameObject.FindObjectsOfType<PlayerControls>();
         if (test.Length <= 1)
         {
             index = 0;
+            indexJ1 = 1;
         }
         else
         {
             index = 1;
+            indexJ2 = 1;
             gameObject.GetComponent<Image>().sprite = playersIcons[1];
         }
         Invoke("Init", 0.1f);
@@ -70,6 +86,28 @@ public class PlayerControls : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
 
     public void OnSelect(InputAction.CallbackContext ctx) {
+
+        if (indexJ1 == 1 && isSpawnableJ1 == true)
+        {
+            InstanciateJ1(yuetsuPrefab);
+            if (currentPrefabSpawn != characterSpawn)
+            {
+                currentPrefabSpawn = characterSpawn;
+                isSpawnableJ1 = false;
+            }
+        }
+        else if (indexJ2 == 1 && isSpawnableJ2 == true)
+        {
+
+            InstanciateJ2(yuetsuPrefab);
+            if (currentPrefabSpawn != characterSpawn)
+            {
+                currentPrefabSpawn = characterSpawn;
+                isSpawnableJ2 = false;
+            }
+
+        }
+        
         if (ctx.canceled && isInit)
         {
             hasSelected = true;
@@ -77,15 +115,17 @@ public class PlayerControls : MonoBehaviour
             if (index == 0)
             {
                 GameObject.FindObjectOfType<StartGame>().P1 = this;
-            }
+            } 
+                    
+            
             else if (index == 1)
             {
                 GameObject.FindObjectOfType<StartGame>().P2 = this;
             }
             FindObjectOfType<AudioManager>().Play("ajoutJoueur");
-
         }
     }
+    
     public void OnTriggerEnter2D(Collider2D collider)
     {
             if(collider.GetComponent<PlayerControls>() != null)
@@ -104,5 +144,20 @@ public class PlayerControls : MonoBehaviour
     {
         isInit = true;
     }
-
+    public GameObject InstanciateJ1(GameObject character)
+    {
+        characterSpawn = Instantiate(character) as GameObject;
+        characterSpawn.transform.position = spawnPositionJ1.transform.position;
+        characterSpawn.transform.rotation = spawnPositionJ1.transform.rotation;
+        characterSpawn.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        return characterSpawn;
+    }
+    public GameObject InstanciateJ2(GameObject character)
+    {
+        characterSpawn = Instantiate(character) as GameObject;
+        characterSpawn.transform.position = spawnPositionJ2.transform.position;
+        characterSpawn.transform.rotation = spawnPositionJ2.transform.rotation;
+        characterSpawn.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        return characterSpawn;
+    }
 }

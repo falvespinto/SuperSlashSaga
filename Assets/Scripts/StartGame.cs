@@ -68,4 +68,5 @@ public class StartGame : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
 
     }
+
 }

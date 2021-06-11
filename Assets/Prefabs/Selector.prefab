@@ -69,6 +69,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 929f7c3985fe3f84b8f9de1568813cfd, type: 3}
   - {fileID: 21300000, guid: 298b156e28adc4d40b082243eb813632, type: 3}
   isInit: 0
+  spawnPositionJ1: {fileID: 7551623047261680034, guid: 9e72bbab328058546bdcde2b92885295, type: 3}
+  spawnPositionJ2: {fileID: 3217749860078268085, guid: 6f01bf3c4d7e1ab458ccac89c8dd6445, type: 3}
+  yuetsuPrefab: {fileID: 6735330714013134415, guid: a276f77faec753d49a3ae99b4f4ea614, type: 3}
 --- !u!114 &-2217939168109372958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +169,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 425d73c4-c162-4470-b01f-399a8dd9163d
     m_ActionName: Gameplay/BottomHeavyAttackPressed[/Keyboard/numpad5]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 04fd6ece-39d7-4342-8211-cf6accd8df4b
+    m_ActionName: Gameplay/Ultimate[/XInputControllerWindows/buttonWest]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
