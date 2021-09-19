@@ -469,7 +469,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118464929693949814}
   m_LocalRotation: {x: -0.003389948, y: 0.65591985, z: 0.0029457924, w: 0.75481725}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.00002325501, y: -0.000006976502, z: 2.2177705e-12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2985393210522622298}
@@ -8223,7 +8223,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4268787783617653170}
-  m_LocalRotation: {x: -0.00000772625, y: 0.9996559, z: 0.026231272, w: 0.0002944469}
+  m_LocalRotation: {x: -0.000007726249, y: 0.99965584, z: 0.026231268, w: 0.00029444683}
   m_LocalPosition: {x: -0.00002325501, y: -0.000006976502, z: 2.2177705e-12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9357,10 +9357,14 @@ GameObject:
   - component: {fileID: 5213051265402555225}
   - component: {fileID: 2055994996855387593}
   - component: {fileID: 2457199042296732721}
+  - component: {fileID: 7266148757124352407}
   - component: {fileID: 2812597217123706708}
   - component: {fileID: 3433924704099936633}
   - component: {fileID: 1498282575589081782}
   - component: {fileID: 2076040904416851659}
+  - component: {fileID: 2604814792385289352}
+  - component: {fileID: 4279532176956108145}
+  - component: {fileID: 4593959836220969311}
   m_Layer: 8
   m_Name: Yuetsu
   m_TagString: Untagged
@@ -9390,6 +9394,7 @@ Transform:
   - {fileID: 4034106001949687177}
   - {fileID: 1230394003040031481}
   - {fileID: 8888424074732013733}
+  - {fileID: 5414027471314886385}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -9473,6 +9478,18 @@ MonoBehaviour:
       - m_Target: {fileID: 5700466228983503251}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7266148757124352407}
+        m_TargetAssemblyTypeName: Dash, Assembly-CSharp
+        m_MethodName: ControllerDirection
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9590,9 +9607,9 @@ MonoBehaviour:
     m_ActionName: Gameplay/Ultimate[/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 691353372036688036}
-        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
-        m_MethodName: Rush
+      - m_Target: {fileID: 7266148757124352407}
+        m_TargetAssemblyTypeName: Dash, Assembly-CSharp
+        m_MethodName: dashButton
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9620,6 +9637,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 025eaf4f-8414-43b5-a50e-cf1169bdb56b
     m_ActionName: Gameplay/test2[/Keyboard/i,/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2604814792385289352}
+        m_TargetAssemblyTypeName: Projectile, Assembly-CSharp
+        m_MethodName: PrepareFire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 461af858-ad79-4e7c-bb64-e5a4c1e4248c
+    m_ActionName: Gameplay/Projectile[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4279532176956108145}
+        m_TargetAssemblyTypeName: Permutation, Assembly-CSharp
+        m_MethodName: pressedPermutaion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 06d5c27b-4ffb-439e-8cdd-1a85583e8f44
+    m_ActionName: Gameplay/Permutation[/XInputControllerWindows/leftTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -9640,22 +9689,22 @@ MonoBehaviour:
   m_Animator: {fileID: 6424907266442389020}
   player: {fileID: 3661976246809478957}
   punch: {fileID: 5423345930418498532}
+  firstTimeRunning: 0
   m_PlayerAttack: {fileID: 691353372036688036}
   isRunning: 0
-  stick: []
-  gyroscop: {x: 0, y: 0, z: 0}
-  accel: {x: 0, y: 0, z: 0}
-  jc_ind: 0
   orientation: {x: 0, y: 0, z: 0, w: 0}
   isJoyconPluggued: 0
   isParing: 0
+  moveDirection: {x: 0, y: 0, z: 0}
   gravity: 0.1
   ultimate: {fileID: 0}
+  dashState: {fileID: 0}
+  projectile: {fileID: 0}
   controller: {fileID: 4576790369941818661}
   turnSmoothTime: 0.1
   cam: {fileID: 9915995195940552}
   playerData: {fileID: 0}
-  m_TranslationSpeed: 0.5
+  m_TranslationSpeed: 1.5
 --- !u!114 &3661976246809478957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9681,6 +9730,9 @@ MonoBehaviour:
   target: {fileID: 0}
   isInCombo: 0
   playerData: {fileID: 0}
+  canPermute: 0
+  isInEnemyCombo: 0
+  isDead: 0
 --- !u!114 &691353372036688036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9802,6 +9854,26 @@ MonoBehaviour:
   playerController: {fileID: 0}
   controller: {fileID: 0}
   vfxSword: {fileID: 8983980246677935597}
+--- !u!114 &7266148757124352407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735330714013134415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6229e264bba0d749a23ad8b29b5a688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSpeed: 1
+  dashDuration: 0.575
+  isDashing: 0
+  dashDirection: {x: 0, y: 0, z: 0}
+  cam: {fileID: 9915995195940552}
+  moveDirection: {x: 0, y: 0, z: 0}
+  turnSmoothTime: 0.1
+  m_animator: {fileID: 6424907266442389020}
 --- !u!114 &2812597217123706708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9884,6 +9956,66 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: 481db41420a320c41988c71fb3b4ebd7, type: 2}
   flashActif: 0
   flashInactif: 0
+--- !u!114 &2604814792385289352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735330714013134415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdaf4b1bd434ced4db19c5829c4c4bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 3825648699393291987, guid: 8d0ba17fa07551f459adb3fad2aa8761, type: 3}
+  projectileSpawnPoint: {fileID: 5414027471314886385}
+  projectileSpeed: 120
+  lifeTime: 3
+  playerAttack: {fileID: 691353372036688036}
+  isShooting: 0
+  coolDown: 4
+  m_animator: {fileID: 6424907266442389020}
+  timeBeforeShoot: 0.06
+  canShoot: 0
+  isShootingCooldown: 0.5
+--- !u!114 &4279532176956108145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735330714013134415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be4aa668cc585f4680e07dcaec9458c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeAfterPermute: 1
+  canPermute: 0
+  player: {fileID: 3661976246809478957}
+  playerData: {fileID: 0}
+  permutationOffSet: 20
+  characterController: {fileID: 4576790369941818661}
+--- !u!114 &4593959836220969311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6735330714013134415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8203d3afe60bc9f439e671430ca4147f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isJoyconPluggued: 0
+  stick: []
+  gyroscop: {x: 0, y: 0, z: 0}
+  accel: {x: 0, y: 0, z: 0}
+  movementInput: {x: 0, y: 0}
+  jc_ind: 0
+  orientation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6840588005767388474
 GameObject:
   m_ObjectHideFlags: 0
@@ -15903,6 +16035,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3344ae1a7d1551844a1e75d2cb175eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8599820348085829263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5414027471314886385}
+  m_Layer: 8
+  m_Name: ProjectileSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5414027471314886385
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8599820348085829263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 102.7, z: 56.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2430065138829903224}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8742274603996476145
 GameObject:
   m_ObjectHideFlags: 0
@@ -16549,13 +16711,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
---- !u!320 &5866170471648547685 stripped
-PlayableDirector:
-  m_CorrespondingSourceObject: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
-  m_PrefabInstance: {fileID: 5645591272268076340}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5866170471648547684 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2247852219198785104, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
+  m_PrefabInstance: {fileID: 5645591272268076340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!320 &5866170471648547685 stripped
+PlayableDirector:
+  m_CorrespondingSourceObject: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
   m_PrefabInstance: {fileID: 5645591272268076340}
   m_PrefabAsset: {fileID: 0}

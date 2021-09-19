@@ -96,10 +96,12 @@ public class LightAttack : MonoBehaviour
                         playerAttack.m_Animator.SetTrigger("LightAttack");
                         StartCoroutine(playerAttack.ForwardAttack(lightAttackTime - 0.6f, direction, 0.05f));
                         Invoke("AttackComplete", lightAttackTime - 0.7f);
-                        //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
+                        FindObjectOfType<AudioManager>().Play("epee");
+                        
+                    //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
 
 
-                    }
+                }
 
                     if (lightComboState == LightComboState.LIGHT_2)
                     {
@@ -113,8 +115,9 @@ public class LightAttack : MonoBehaviour
                         playerAttack.m_Animator.SetTrigger("LightAttack2");
                         StartCoroutine(playerAttack.ForwardAttack(light2AttackTime - 0.5f, direction, 0.05f));
                         Invoke("AttackComplete", light2AttackTime - 0.3f);
-                        //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
-                    }
+                        FindObjectOfType<AudioManager>().Play("epee");
+                    //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
+                }
 
                     if (lightComboState == LightComboState.LIGHT_3)
                     {
@@ -127,7 +130,8 @@ public class LightAttack : MonoBehaviour
                         StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
                         Invoke("AttackComplete", light3AttackTime - 0.7f);
                         playerAttack.playerHit = null;
-                    }
+                        FindObjectOfType<AudioManager>().Play("epee");
+                }
 
                     if (lightComboState == LightComboState.LIGHT_4)
                     {
@@ -141,8 +145,8 @@ public class LightAttack : MonoBehaviour
                         playerAttack.swordAttacks.attackType = "Light";
                         //StartCoroutine(ComboWorkflow());
                         Invoke("CheckPerformFullCombo", 1f);
-
-                    }
+                        FindObjectOfType<AudioManager>().Play("epee");
+                }
 
                     if (lightComboState == LightComboState.NONE)
                     {
@@ -287,7 +291,8 @@ public class LightAttack : MonoBehaviour
             playerController.isRunning = false;
             StartCoroutine(InfuseSword(0.15f));
             StartCoroutine(playerAttack.FullScreenCamera(7.5f));
-            Invoke("AttackComplete", 3.45f);
+            Invoke("AttackComplete", 7.5f);
+            StartCoroutine(playerAttack.playerHit.GetComponent<Player>().goInEnemyCombo(7.5f));
             GetComponent<TimeLineController>().PerformFullCombo(playerAttack.m_Animator, playerAttack.playerHit.GetComponent<Animator>(), playerData.cam.GetComponent<CinemachineBrain>());
         }
     }

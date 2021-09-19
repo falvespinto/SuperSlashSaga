@@ -105,6 +105,22 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Projectile"",
+                    ""type"": ""Button"",
+                    ""id"": ""461af858-ad79-4e7c-bb64-e5a4c1e4248c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Permutation"",
+                    ""type"": ""Button"",
+                    ""id"": ""06d5c27b-4ffb-439e-8cdd-1a85583e8f44"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -113,7 +129,7 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""id"": ""ac5d42fd-fcb1-4d75-ae61-25110d16db82"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone"",
                     ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": false,
@@ -308,17 +324,6 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""28e44299-2eb5-46a9-9c2f-6314c64333f8"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BottomLightAttackPressed"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""b8ebe812-2617-462e-8f54-45f7f6c6840a"",
                     ""path"": ""<Keyboard>/numpad5"",
                     ""interactions"": """",
@@ -343,6 +348,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""3ab86e67-4599-4eea-8294-17ca11f04251"",
                     ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ultimate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9c761e0b-db17-4108-9552-45ef52c7c2ea"",
+                    ""path"": ""<Keyboard>/numpad9"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -393,6 +409,39 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""test2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cbfba962-0e44-4fe3-a3d1-1e0ac981dbc6"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Projectile"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""23ddf009-8e3d-46ff-ac88-02091618781e"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Projectile"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64d77611-9cf5-4194-863a-25d20bec897a"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Permutation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -412,6 +461,8 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Gameplay_Ultimate = m_Gameplay.FindAction("Ultimate", throwIfNotFound: true);
         m_Gameplay_test = m_Gameplay.FindAction("test", throwIfNotFound: true);
         m_Gameplay_test2 = m_Gameplay.FindAction("test2", throwIfNotFound: true);
+        m_Gameplay_Projectile = m_Gameplay.FindAction("Projectile", throwIfNotFound: true);
+        m_Gameplay_Permutation = m_Gameplay.FindAction("Permutation", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -472,6 +523,8 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Ultimate;
     private readonly InputAction m_Gameplay_test;
     private readonly InputAction m_Gameplay_test2;
+    private readonly InputAction m_Gameplay_Projectile;
+    private readonly InputAction m_Gameplay_Permutation;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
@@ -487,6 +540,8 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Ultimate => m_Wrapper.m_Gameplay_Ultimate;
         public InputAction @test => m_Wrapper.m_Gameplay_test;
         public InputAction @test2 => m_Wrapper.m_Gameplay_test2;
+        public InputAction @Projectile => m_Wrapper.m_Gameplay_Projectile;
+        public InputAction @Permutation => m_Wrapper.m_Gameplay_Permutation;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -529,6 +584,12 @@ public class @Controls : IInputActionCollection, IDisposable
                 @test2.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTest2;
                 @test2.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTest2;
                 @test2.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTest2;
+                @Projectile.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnProjectile;
+                @Projectile.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnProjectile;
+                @Projectile.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnProjectile;
+                @Permutation.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPermutation;
+                @Permutation.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPermutation;
+                @Permutation.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPermutation;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -566,6 +627,12 @@ public class @Controls : IInputActionCollection, IDisposable
                 @test2.started += instance.OnTest2;
                 @test2.performed += instance.OnTest2;
                 @test2.canceled += instance.OnTest2;
+                @Projectile.started += instance.OnProjectile;
+                @Projectile.performed += instance.OnProjectile;
+                @Projectile.canceled += instance.OnProjectile;
+                @Permutation.started += instance.OnPermutation;
+                @Permutation.performed += instance.OnPermutation;
+                @Permutation.canceled += instance.OnPermutation;
             }
         }
     }
@@ -583,5 +650,7 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnUltimate(InputAction.CallbackContext context);
         void OnTest(InputAction.CallbackContext context);
         void OnTest2(InputAction.CallbackContext context);
+        void OnProjectile(InputAction.CallbackContext context);
+        void OnPermutation(InputAction.CallbackContext context);
     }
 }

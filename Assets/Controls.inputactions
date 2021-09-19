@@ -92,6 +92,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Projectile",
+                    "type": "Button",
+                    "id": "461af858-ad79-4e7c-bb64-e5a4c1e4248c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Permutation",
+                    "type": "Button",
+                    "id": "06d5c27b-4ffb-439e-8cdd-1a85583e8f44",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -100,7 +116,7 @@
                     "id": "ac5d42fd-fcb1-4d75-ae61-25110d16db82",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "StickDeadzone",
                     "groups": "",
                     "action": "Move",
                     "isComposite": false,
@@ -295,17 +311,6 @@
                 },
                 {
                     "name": "",
-                    "id": "28e44299-2eb5-46a9-9c2f-6314c64333f8",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "BottomLightAttackPressed",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "b8ebe812-2617-462e-8f54-45f7f6c6840a",
                     "path": "<Keyboard>/numpad5",
                     "interactions": "",
@@ -330,6 +335,17 @@
                     "name": "",
                     "id": "3ab86e67-4599-4eea-8294-17ca11f04251",
                     "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ultimate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9c761e0b-db17-4108-9552-45ef52c7c2ea",
+                    "path": "<Keyboard>/numpad9",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -378,6 +394,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "test2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cbfba962-0e44-4fe3-a3d1-1e0ac981dbc6",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Projectile",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "23ddf009-8e3d-46ff-ac88-02091618781e",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Projectile",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64d77611-9cf5-4194-863a-25d20bec897a",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Permutation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

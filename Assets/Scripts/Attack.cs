@@ -43,7 +43,7 @@ public class Attack : MonoBehaviour
                 hit[i].GetComponentInParent<Player>().TakeDamage(damage, attackType);
                 Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
                 Debug.Log(hit[i].gameObject.layer);
-                player.playerHit = hit[i].gameObject;
+                player.playerHit = hit[i].GetComponentInParent<Player>().gameObject;
                 gameObject.SetActive(false);
                 break;
             }

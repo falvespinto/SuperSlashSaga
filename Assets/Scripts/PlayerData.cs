@@ -9,6 +9,7 @@ public class PlayerData : MonoBehaviour
     public Camera cam;
     public HealthBar healthBar;
     public LayerMask enemyLayer;
+    public LayerMask playerLayer;
     public GameObject playerTarget;
     public Transform target;
 

@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool isAttacking;
     private string m_AnimationCurrentState; // l'animation en cours
     public Attack punch;
+    public bool firstTimeRunning;
     // temporaire 
     const string m_Run = "Run";
     const string m_Punch = "Punch";
@@ -21,19 +22,18 @@ public class PlayerController : MonoBehaviour
     public bool isRunning = false;
     // Variables en rapport avec l'utilisation des JoyCons
 
-    private List<Joycon> m_Joycons;
-    public float[] stick;
-    public Vector3 gyroscop;
-    public Vector3 accel;
-    public int jc_ind = 0;
     public Quaternion orientation;
     public bool isJoyconPluggued;
     private Vector2 movementInput;
     public bool isParing;
     private Vector3 direction;
-    private Vector3 moveDirection;
+    public Vector3 moveDirection;
     public float gravity;
     public UltimateAttack ultimate;
+    public Dash dashState;
+    public Projectile projectile;
+    //public JoyconController joyconController;
+
 
     private AnimationClip clip;
     public CharacterController controller;
@@ -53,29 +53,28 @@ public class PlayerController : MonoBehaviour
         m_Transform = GetComponent<Transform>();
         playerData = GetComponentInParent<PlayerData>();
         ultimate = GetComponent<UltimateAttack>();
-        
+        dashState = GetComponent<Dash>();
+        projectile = GetComponent<Projectile>();
     }
     void Start()
     {
+        firstTimeRunning = true;
         cam = playerData.camera;
         isAttacking = false;
         // setup des variables en rapport avec les joycons
-        gyroscop = new Vector3(0, 0, 0);
-        accel = new Vector3(0, 0, 0);
-        m_Joycons = JoyconManager.Instance.j;
-        if (m_Joycons.Count < jc_ind + 1)
-        {
-
-            isJoyconPluggued = false;
-        }
-        else
-        {
-            isJoyconPluggued = true;
-
-        }
+        //gyroscop = new Vector3(0, 0, 0);
+        //accel = new Vector3(0, 0, 0);
+        //m_Joycons = JoyconManager.Instance.j;
+        //if (m_Joycons.Count < jc_ind + 1)
+        //{
+        //    isJoyconPluggued = false;
+        //}
+        //else
+        //{
+        //    isJoyconPluggued = true;
+        //}
 
     }
-
     void Update()
     {
         isAttacking = m_PlayerAttack.isAttacking;
@@ -85,136 +84,18 @@ public class PlayerController : MonoBehaviour
 
         if (isJoyconPluggued)
         {
-            Joycon j = m_Joycons[jc_ind];
-            if (j.GetButtonDown(Joycon.Button.SHOULDER_2))
-            {
-                Debug.Log("1");
-                // GetStick returns a 2-element vector with x/y joystick components
-                Debug.Log(string.Format("Stick x: {0:N} Stick y: {1:N}", j.GetStick()[0], j.GetStick()[1]));
 
-                // Joycon has no magnetometer, so it cannot accurately determine its yaw value. Joycon.Recenter allows the user to reset the yaw value.
-                j.Recenter();
-            }
-
-
-            // Gyro values: x, y, z axis values (in radians per second)
-            gyroscop = j.GetGyro();
-
-            // Accel values:  x, y, z axis values (in Gs)
-            accel = j.GetAccel();
-
-            orientation = j.GetVector();
-
-            if ((accel.z < -1 || accel.z > 1) && !isAttacking)
-            {
-                isAttacking = true;
-                //Attack();
-            }
-
-            if (j.GetButtonDown(Joycon.Button.DPAD_RIGHT))
-            {
-                j.SetRumble(160, 320, 0.6f, 200);
-            }
-
-            j = m_Joycons[1];
-       //     m_Rigidbody.velocity = new Vector2(Sign(j.GetStick()[0]) * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
-            if (Sign(j.GetStick()[0]) != 0)
-            {
-                //ChangeAnimationState(m_Run);
-
-                isParing = m_PlayerAttack.isParing;
-
-
-                //        if (isJoyconPluggued)
-                //        {
-                //            Joycon j = m_Joycons[jc_ind];
-                //            if (j.GetButtonDown(Joycon.Button.SHOULDER_2))
-                //            {
-                //                Debug.Log("1");
-                //                // GetStick returns a 2-element vector with x/y joystick components
-                //                Debug.Log(string.Format("Stick x: {0:N} Stick y: {1:N}", j.GetStick()[0], j.GetStick()[1]));
-
-                //                // Joycon has no magnetometer, so it cannot accurately determine its yaw value. Joycon.Recenter allows the user to reset the yaw value.
-                //                j.Recenter();
-                //            }
-
-
-                //            // Gyro values: x, y, z axis values (in radians per second)
-                //            gyroscop = j.GetGyro();
-
-                //            // Accel values:  x, y, z axis values (in Gs)
-                //            accel = j.GetAccel();
-
-                //            orientation = j.GetVector();
-
-                //            if ((accel.z < -1 || accel.z > 1) && !isAttacking)
-                //            {
-                //                isAttacking = true;
-                ////                Attack();
-                //            }
-
-                //            if (j.GetButtonDown(Joycon.Button.DPAD_RIGHT))
-                //            { 
-                //                j.SetRumble(160, 320, 0.6f, 200);
-                //            }
-
-                //            j = m_Joycons[1];
-                //            m_Rigidbody.velocity = new Vector2(Sign(j.GetStick()[0]) * m_TranslationSpeed, m_Rigidbody.velocity.y); // déplacements horizontaux
-                //            if (Sign(j.GetStick()[0]) != 0)
-                //            {
-                //                //ChangeAnimationState(m_Run);
-
-
-
-                //            }
-                //            else
-                //            {
-                //                //ChangeAnimationState(m_Idle);
-                //            }
-                //            stick = j.GetStick();
-
-
-
-
-
-                //        }
-
-
-            }
-
-            //        }
         }
-        if (!isAttacking && !isParing && !player.isTakingDamage && !player.isInCombo && !ultimate.isPerformingUltimate)
+        if (!isAttacking && !isParing && !player.isTakingDamage && !player.isInCombo && !ultimate.isPerformingUltimate && !dashState.isDashing && !projectile.isShooting && !player.isInEnemyCombo && !player.isDead)
         {
-            if (isJoyconPluggued)
-            {
-
-            }
-            else
-            {
-                    direction = new Vector3(movementInput.x, 0f, movementInput.y).normalized;
-                    if (direction.magnitude >= 0.1f)
-                    {
-                        float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-                        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-                        transform.rotation = Quaternion.Euler(0f, angle, 0f);
-                        moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-                        moveDirection *= m_TranslationSpeed;
-                    }
-                if (movementInput.x != 0f || movementInput.y != 0f)
-                {
-                    m_Animator.SetBool("IsRunning", true);
-                    m_Animator.SetBool("IsWalking", false);
-                    isRunning = true;
-                    //ChangeAnimationState(m_Run);
-                }
-                else
-                {
-                    // ChangeAnimationState(m_Idle);
-                    isRunning = false;
-                    m_Animator.SetBool("IsRunning", false);
-                }
-            }
+            //if (joyconController.isJoyconPluggued)
+            //{
+            //    Movement(joyconController.movementInput);
+            //}
+            //else
+            //{
+                Movement(movementInput);
+            //}
         }
         else
         {
@@ -231,22 +112,50 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
 
     // retourne 1 si number superrieur à 0 retourne -1 si inférieur à 0 retourne 0 si = 0
-    int Sign(float number)
+    public void Movement(Vector2 movementInputs)
     {
-        if (number == 0)
+        // Attention c'est vraiment moche a modifier bientôt
+        //if (playerData.playerIndex == 1)
+        //{
+        //    direction = new Vector3(-movementInputs.x, 0f, -movementInputs.y);
+        //}
+        //else
+        //{
+            direction = new Vector3(movementInputs.x, 0f, movementInputs.y);
+        //}
+        if (direction.magnitude >= 0.1f)
         {
-            return 0;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            //float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+
+            transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+            moveDirection = direction.x * cam.right + direction.z * cam.forward;//Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            moveDirection.y = 0f;
+            moveDirection *= m_TranslationSpeed;
+
+        }
+        if (movementInputs.x != 0f || movementInputs.y != 0f)
+        {
+            m_Animator.SetBool("IsRunning", true);
+            m_Animator.SetBool("IsWalking", false);
+            isRunning = true;
+            if (firstTimeRunning)
+            {
+                FindObjectOfType<AudioManager>().Play("deplacement");
+                firstTimeRunning = false;
+            }
+            //ChangeAnimationState(m_Run);
         }
         else
         {
-            if (number > 0)
+            if (!firstTimeRunning)
             {
-                return 1;
+                FindObjectOfType<AudioManager>().Stop("deplacement");
             }
-            else
-            {
-                return -1;
-            }
+            firstTimeRunning = true;
+            // ChangeAnimationState(m_Idle);
+            isRunning = false;
+            m_Animator.SetBool("IsRunning", false);
         }
     }
 }

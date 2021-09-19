@@ -50,6 +50,7 @@ public class HeavyAttack : MonoBehaviour
                 StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.30f));
                 //StartCoroutine(AttackAutoCancel(heavyAttackTime, heavyCanAutoCancel));
                 Invoke("AttackComplete", heavyAttackTime - 0.7f);
+                FindObjectOfType<AudioManager>().Play("epee");
 
             }
         }
@@ -69,6 +70,7 @@ public class HeavyAttack : MonoBehaviour
             playerAttack.m_Animator.SetTrigger("BottomHeavyAttack");
             StartCoroutine(playerAttack.ForwardAttack(heavyAttackTime - 0.5f, direction, 0.05f));
             Invoke("AttackComplete", heavyAttackTime - 0.5f);
+            FindObjectOfType<AudioManager>().Play("epee");
         }
     }
 

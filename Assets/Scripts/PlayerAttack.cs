@@ -83,7 +83,7 @@ public class PlayerAttack : MonoBehaviour
     private bool canParade;
 
     private bool neverPared;
-
+    private UltimateAttack ultimateAttack;
     public CharacterController controller;
 
     private bool heavyCanAutoCancel;
@@ -93,6 +93,7 @@ public class PlayerAttack : MonoBehaviour
         playerData = GetComponentInParent<PlayerData>();
         playerController = GetComponent<PlayerController>();
         player = GetComponent<Player>();
+        ultimateAttack = GetComponent<UltimateAttack>();
     }
     public void Start()
     {
@@ -203,8 +204,9 @@ public class PlayerAttack : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!player.isTakingDamage && !isAttacking && !isParing && !isRunAttacking && !playerController.isRunning)
+            if (!player.isTakingDamage && !isAttacking && !isParing && !isRunAttacking && !playerController.isRunning && !ultimateAttack.isPerformingUltimate)
             {
+                FindObjectOfType<AudioManager>().Play("ultimate");
                 LookAtTarget();
                 GetComponent<UltimateAttack>().PerformUltimateAttack();
             }

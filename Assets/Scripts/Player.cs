@@ -21,8 +21,13 @@ public class Player : MonoBehaviour
     public Transform target;
     public bool isInCombo;
     public PlayerData playerData;
+    public bool canPermute;
+    public bool isInEnemyCombo;
+    public bool isDead;
     void Awake()
     {
+        isDead = false;
+        isInEnemyCombo = false;
         playerData = GetComponentInParent<PlayerData>();
         playerAttack = GetComponent<PlayerAttack>();
         playerController = GetComponent<PlayerController>();
@@ -37,6 +42,7 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         isTakingDamage = false;
         isInCombo = false;
+        canPermute = false;
         FindObjectOfType<AudioManager>().Play("combat");
         target = playerData.target;
     }
@@ -85,6 +91,7 @@ public class Player : MonoBehaviour
             }
             else
             {
+                StartCoroutine(willPermute());
                 isTakingDamage = true;
                 Invoke("ResetIsTakingDamage", GetHitTime);
                 currentHealth -= damage;
@@ -92,12 +99,14 @@ public class Player : MonoBehaviour
                 if (currentHealth <= 0)
                 {
                     animator.SetTrigger("Dead");
+                    isDead = true;
                     Invoke("Die", 3f);
                 }
                 else
                 {
                     animator.SetTrigger("GetHit");
                 }
+
             }
         }
     }
@@ -135,4 +144,20 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    public IEnumerator willPermute()
+    {
+        canPermute = true;
+        yield return new WaitForSeconds(1f);
+        canPermute = false;
+    }
+
+    public IEnumerator goInEnemyCombo(float time)
+    {
+        isInEnemyCombo = true;
+        yield return new WaitForSeconds(time);
+        isInEnemyCombo = false;
+
+    }
+
 }

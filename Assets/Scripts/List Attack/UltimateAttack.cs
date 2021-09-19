@@ -53,8 +53,8 @@ public class UltimateAttack : MonoBehaviour
 
         if (startFullWhenReady && !isPerformingUltimate)
         {
-            startFullWhenReady = false;
-            PerformFullUltimate();
+            //startFullWhenReady = false;
+            //PerformFullUltimate();
         }
 
     }
