@@ -63,11 +63,13 @@ MonoBehaviour:
   index: 0
   button: {fileID: 0}
   champSelect: {fileID: 0}
+  isIA: 0
   prefab: {fileID: 5608946902676620278}
   hasSelected: 0
   playersIcons:
   - {fileID: 21300000, guid: 929f7c3985fe3f84b8f9de1568813cfd, type: 3}
   - {fileID: 21300000, guid: 298b156e28adc4d40b082243eb813632, type: 3}
+  - {fileID: 21300000, guid: 68fb14db3b888e04abe8c8a1bfa0b9da, type: 3}
   isInit: 0
   spawnPositionJ1: {fileID: 3146089634876387828, guid: 9e72bbab328058546bdcde2b92885295, type: 3}
   spawnPositionJ2: {fileID: 5046832037328770243, guid: 6f01bf3c4d7e1ab458ccac89c8dd6445, type: 3}
@@ -181,6 +183,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 025eaf4f-8414-43b5-a50e-cf1169bdb56b
     m_ActionName: Gameplay/test2[/Keyboard/i,/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 461af858-ad79-4e7c-bb64-e5a4c1e4248c
+    m_ActionName: Gameplay/Projectile[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 06d5c27b-4ffb-439e-8cdd-1a85583e8f44
+    m_ActionName: Gameplay/Permutation[/XInputControllerWindows/leftTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay

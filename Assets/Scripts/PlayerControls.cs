@@ -6,6 +6,11 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// RAF Si possible trouver comment changer le device affecté a l'instance de cette classe.
+/// Sinon créer une var qui prend ia.PlayerControls
+/// </summary>
 public class PlayerControls : MonoBehaviour
 {
     private Vector2 movementInput;
@@ -13,6 +18,7 @@ public class PlayerControls : MonoBehaviour
     private PlayerControls[] test;
     public GameObject button;
     public LevelSelectScreenScript champSelect;
+    public IAmanager managerIA;
     public GameObject prefab;
     private GameObject instantiatePrefab;
     public bool hasSelected;
@@ -22,11 +28,15 @@ public class PlayerControls : MonoBehaviour
     public GameObject spawnPositionJ2;
     public GameObject yuetsuPrefab;
     private GameObject currentPrefabSpawn;
+    private GameObject iaPrefabSpawn;
     private GameObject characterSpawn;
     private bool isSpawnableJ1;
     private bool isSpawnableJ2;
+    private bool isSpawnableIA;
     private int indexJ1;
     private int indexJ2;
+    private int indexIA;
+    private GameObject ia;
 
     private void Awake()
     {
@@ -34,9 +44,11 @@ public class PlayerControls : MonoBehaviour
         champSelect.selector = gameObject;
         hasSelected = false;
         currentPrefabSpawn = null;
+        iaPrefabSpawn = null;
         isSpawnableJ1 = true;
         isSpawnableJ2 = true;
-
+        isSpawnableIA = true;
+        managerIA = FindObjectOfType<IAmanager>();
         FindObjectOfType<AudioManager>().Play("selectionPerso");
         prefab.transform.SetParent(GameObject.Find("Canvas").transform);
         prefab.transform.position = GameObject.Find("Row1_1").transform.position;
@@ -50,11 +62,21 @@ public class PlayerControls : MonoBehaviour
             index = 0;
             indexJ1 = 1;
         }
+
         else
         {
-            index = 1;
-            indexJ2 = 1;
-            gameObject.GetComponent<Image>().sprite = playersIcons[1];
+            if (managerIA.bIsIA)
+            {
+                index = 1;
+                indexIA = 1;
+                gameObject.GetComponent<Image>().sprite = playersIcons[2];
+            }
+            else{
+                index = 1;
+                indexJ2 = 1;
+                gameObject.GetComponent<Image>().sprite = playersIcons[1];
+            }
+
         }
         Invoke("Init", 0.1f);
         Debug.Log(index);
@@ -82,39 +104,66 @@ public class PlayerControls : MonoBehaviour
                 champSelect.MoveSelector("down");
             }
         }
+        if (hasSelected && isInit && index == 0 && managerIA.bIsIA && ia != null && !ia.GetComponent<PlayerControls>().hasSelected)
+        {
+            if (movementInput.x > 0)
+            {
+                ia.GetComponent<PlayerControls>().champSelect.MoveSelector("right"); 
+            }
+            else if (movementInput.x < 0)
+            {
+                ia.GetComponent<PlayerControls>().champSelect.MoveSelector("left");
+            }
+            else if (movementInput.y > 0)
+            {
+                ia.GetComponent<PlayerControls>().champSelect.MoveSelector("up");
+            }
+            else if (movementInput.y < 0)
+            {
+                ia.GetComponent<PlayerControls>().champSelect.MoveSelector("down");
+            }
+        }
     }
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
 
     public void OnSelect(InputAction.CallbackContext ctx) {
-
-        if (indexJ1 == 1 && isSpawnableJ1 == true)
-        {
-            InstanciateJ1(yuetsuPrefab);
-            if (currentPrefabSpawn != characterSpawn)
-            {
-                currentPrefabSpawn = characterSpawn;
-                isSpawnableJ1 = false;
-            }
-        }
-        else if (indexJ2 == 1 && isSpawnableJ2 == true)
+        if (isInit && !hasSelected)
         {
 
-            InstanciateJ2(yuetsuPrefab);
-            if (currentPrefabSpawn != characterSpawn)
+            if (indexJ1 == 1 && isSpawnableJ1 == true)
             {
-                currentPrefabSpawn = characterSpawn;
-                isSpawnableJ2 = false;
+                InstanciateJ1(yuetsuPrefab);
+                if (currentPrefabSpawn != characterSpawn)
+                {
+                    currentPrefabSpawn = characterSpawn;
+                    isSpawnableJ1 = false;
+                }
+            }
+            else if (indexJ2 == 1 && isSpawnableJ2 == true)
+            {
+
+                InstanciateJ2(yuetsuPrefab);
+                if (currentPrefabSpawn != characterSpawn)
+                {
+                    currentPrefabSpawn = characterSpawn;
+                    isSpawnableJ2 = false;
+                }
+
             }
 
-        }
-        
+        Debug.Log(isInit);
         if (ctx.canceled && isInit)
         {
             hasSelected = true;
             Debug.Log("perso a été select" + champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name);
+
             if (index == 0)
             {
                 GameObject.FindObjectOfType<StartGame>().P1 = this;
+                if (managerIA.bIsIA)
+                {
+                       ia = Instantiate(managerIA.selector);
+                }
             } 
                     
             
@@ -123,6 +172,11 @@ public class PlayerControls : MonoBehaviour
                 GameObject.FindObjectOfType<StartGame>().P2 = this;
             }
             FindObjectOfType<AudioManager>().Play("ajoutJoueur");
+        }
+        }
+        else if (isInit && hasSelected && managerIA.bIsIA && ia != null)
+        {
+            ia.GetComponent<PlayerControls>().SelectIA();
         }
     }
     
@@ -160,4 +214,21 @@ public class PlayerControls : MonoBehaviour
         characterSpawn.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         return characterSpawn;
     }
+
+    void SelectIA()
+    {
+        if (managerIA.bIsIA && isSpawnableIA && indexIA == 1 && !hasSelected)
+        {
+            InstanciateJ2(yuetsuPrefab);
+            if (iaPrefabSpawn != characterSpawn)
+            {
+                iaPrefabSpawn = characterSpawn;
+                isSpawnableIA = false;
+                GameObject.FindObjectOfType<StartGame>().P2 = this;
+                hasSelected = true;
+            }
+        }
+    }
+
+
 }
