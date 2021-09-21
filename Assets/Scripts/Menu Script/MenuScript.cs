@@ -64,7 +64,7 @@ public class MenuScript : MonoBehaviour
             else if (SelectedButton == 3)
             {
                 // Utilisation du bouton Twitch
-                Debug.Log("Online");
+                Debug.Log("Twitch");
             }
             else if (SelectedButton == 4)
             {
@@ -99,11 +99,13 @@ public class MenuScript : MonoBehaviour
             else if (SelectedButton == 7)
             {
                 //Utilisation du bouton nouvelle campagne
+                Debug.Log("nouveau");
                 //SceneManager.LoadScene("CharacterSelection");
             }
 
             else if (SelectedButton == 8)
             {
+                Debug.Log("continuer");
                 //utilisation du bouton continuer campagne
                 //SceneManager.LoadScene("CharacterSelection");
             }
@@ -113,7 +115,7 @@ public class MenuScript : MonoBehaviour
                 //utilisation du bouton back campagne
                 campagneMenu.SetActive(false);
                 mainMenu.SetActive(true);
-                campagneOption = false;
+                verificationCampagne = false;
                 verificationMenu = false;
                 Point.transform.position = ButtonPosition1.position;
                 SelectedButton = 1;
