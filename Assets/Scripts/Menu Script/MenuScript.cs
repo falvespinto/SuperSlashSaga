@@ -9,13 +9,14 @@ using UnityEngine.Audio;
 
 public class MenuScript : MonoBehaviour
 {
-    public GameObject Point, optionsMenu, mainMenu;
+    public GameObject Point, optionsMenu, mainMenu ,campagneMenu;
 
     private int SelectedButton = 1;
     [SerializeField]
     private int NumberOfButtons;
     public bool verificationMenu = false;
     public bool verificationOption = false;
+    public bool verificationCampagne = false;
     AudioManager musique = new AudioManager();
 
     public Transform ButtonPosition1;
@@ -24,6 +25,9 @@ public class MenuScript : MonoBehaviour
     public Transform ButtonPosition4;
     public Transform ButtonPosition5;
     public Transform ButtonPosition6;
+    public Transform ButtonPosition7;
+    public Transform ButtonPosition8;
+    public Transform ButtonPosition9;
 
     public bool cooldown = false;
 
@@ -43,22 +47,28 @@ public class MenuScript : MonoBehaviour
 
             if (SelectedButton == 1)
             {
-                // When the button with the pointer is clicked, this piece of script is activated
+                //Utilisation du bouton campagne
                 Debug.Log("Campagne");
+                mainMenu.SetActive(false);
+                campagneMenu.SetActive(true);
+                verificationCampagne = true;
+                Point.transform.position = ButtonPosition7.position;
+                SelectedButton = 7;
+
             }
             else if (SelectedButton == 2)
             {
-                // When the button with the pointer is clicked, this piece of script is activated
+                //utilisation du bouton versus
                 SceneManager.LoadScene("CharacterSelection");
             }
             else if (SelectedButton == 3)
             {
-                // When the button with the pointer is clicked, this piece of script is activated
+                // Utilisation du bouton Twitch
                 Debug.Log("Online");
             }
             else if (SelectedButton == 4)
             {
-                // When the button with the pointer is clicked, this piece of script is activated
+                // Selection du bouton Option
                 Debug.Log("Options");
                 mainMenu.SetActive(false);
                 optionsMenu.SetActive(true);
@@ -69,18 +79,41 @@ public class MenuScript : MonoBehaviour
             }
             else if (SelectedButton == 5)
             {
-                // When the button with the pointer is clicked, this piece of script is activated
+                // utilisation du bouton Quitter
                 Application.Quit();
                 Debug.Log("Quit");
             }
 
             else if (SelectedButton == 6)
             {
-                // When the button with the pointer is clicked, this piece of script is activated
+                //Utilisation du bouton back des options
                 Debug.Log("Back");
                 optionsMenu.SetActive(false);
                 mainMenu.SetActive(true);
                 verificationOption = false;
+                verificationMenu = false;
+                Point.transform.position = ButtonPosition1.position;
+                SelectedButton = 1;
+            }
+
+            else if (SelectedButton == 7)
+            {
+                //Utilisation du bouton nouvelle campagne
+                //SceneManager.LoadScene("CharacterSelection");
+            }
+
+            else if (SelectedButton == 8)
+            {
+                //utilisation du bouton continuer campagne
+                //SceneManager.LoadScene("CharacterSelection");
+            }
+
+            else if (SelectedButton == 9)
+            {
+                //utilisation du bouton back campagne
+                campagneMenu.SetActive(false);
+                mainMenu.SetActive(true);
+                campagneOption = false;
                 verificationMenu = false;
                 Point.transform.position = ButtonPosition1.position;
                 SelectedButton = 1;
@@ -164,7 +197,23 @@ public class MenuScript : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("percution");
             verificationOption = false;
         }
-
+        else if (SelectedButton == 7)
+        {
+            Point.transform.position = ButtonPosition7.position;
+            FindObjectOfType<AudioManager>().Play("percution");
+            verificationCampagne = true;
+        }
+        else if (SelectedButton == 8)
+        {
+            Point.transform.position = ButtonPosition8.position;
+            FindObjectOfType<AudioManager>().Play("percution");
+        }
+        else if (SelectedButton == 9)
+        {
+            Point.transform.position = ButtonPosition9.position;
+            FindObjectOfType<AudioManager>().Play("percution");
+            verificationCampagne = false;
+        }
     }
 
     private void setCooldown()
