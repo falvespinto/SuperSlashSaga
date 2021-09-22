@@ -9,7 +9,7 @@ using UnityEngine.Audio;
 
 public class MenuScript : MonoBehaviour
 {
-    public GameObject Point, optionsMenu, mainMenu ,campagneMenu;
+    public GameObject Point, optionsMenu, mainMenu ,campagneMenu, versusMenu, streamMenu;
 
     private int SelectedButton = 1;
     [SerializeField]
@@ -17,6 +17,8 @@ public class MenuScript : MonoBehaviour
     public bool verificationMenu = false;
     public bool verificationOption = false;
     public bool verificationCampagne = false;
+    public bool verificationVersus = false;
+    public bool verificationStream = false;
     AudioManager musique = new AudioManager();
 
     public Transform ButtonPosition1;

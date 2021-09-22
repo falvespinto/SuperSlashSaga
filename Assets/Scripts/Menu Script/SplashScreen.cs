@@ -14,7 +14,7 @@ public class SplashScreen : MonoBehaviour
     void Start()
     {
        StartCoroutine(clignotement());
-       
+      
     }
 
     // Update is called once per frame
