@@ -11,7 +11,7 @@ public class LoadCharacter : MonoBehaviour
     public Transform spawnPointP2;
     public Transform player1;
     public Transform player2;
-
+    
     void Start()
     {
         int selectedCharacterP1 = PlayerPrefs.GetInt("selectedCharacterP1");
@@ -33,6 +33,7 @@ public class LoadCharacter : MonoBehaviour
             );
         GameObject prefabP2 = characterPrefabs[selectedCharacterP2];
         GameObject P2 = Instantiate(prefabP2, spawnPointP2.position, Quaternion.Euler(0f, 0f, 0f), player2);
+        
         //P2.GetComponentInChildren<Player>().healthBar = GameObject.FindObjectOfType<HealthP2>().GetComponentInChildren<HealthBar>();
         //Debug.Log(P2.GetComponentInChildren<Player>().hurtBox.value);
         //P2.GetComponentInChildren<Player>().playerIndex = 1;

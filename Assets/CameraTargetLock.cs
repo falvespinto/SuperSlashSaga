@@ -11,7 +11,7 @@ public class CameraTargetLock : MonoBehaviour
 
     void Awake()
     {
-        playerData = GetComponentInParent<PlayerData>();
+        playerData = GetComponentInParent<PlayerData>(;
     }
     void Start()
     {
