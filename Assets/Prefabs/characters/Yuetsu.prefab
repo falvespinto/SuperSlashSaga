@@ -468,7 +468,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118464929693949814}
-  m_LocalRotation: {x: -0.003389948, y: 0.65591985, z: 0.0029457924, w: 0.75481725}
+  m_LocalRotation: {x: -0.003389948, y: 0.65591985, z: 0.002945791, w: 0.75481725}
   m_LocalPosition: {x: -0.00002325501, y: -0.000006976502, z: 2.2177705e-12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8223,7 +8223,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4268787783617653170}
-  m_LocalRotation: {x: -0.000007726249, y: 0.99965584, z: 0.026231268, w: 0.00029444683}
+  m_LocalRotation: {x: -0.00000772625, y: 0.9996559, z: 0.026231272, w: 0.0002944469}
   m_LocalPosition: {x: -0.00002325501, y: -0.000006976502, z: 2.2177705e-12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -10415,7 +10415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7671682373172657486}
   m_LocalRotation: {x: 0.0000029737123, y: 0.999949, z: -0.010098483, w: 0.0002945363}
-  m_LocalPosition: {x: -0.00002325501, y: -0.000006976502, z: 2.2177705e-12}
+  m_LocalPosition: {x: -0.00004651002, y: -0.000010464753, z: 4.435541e-12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5841745718039721708}
@@ -16667,12 +16667,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
       propertyPath: m_SceneBindings.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
       propertyPath: m_SceneBindings.Array.data[2].key
       value: 
       objectReference: {fileID: -4710905689064446167, guid: af46972232a9b6440a95686a47a476ea, type: 2}
+    - target: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
+      propertyPath: m_SceneBindings.Array.data[3].key
+      value: 
+      objectReference: {fileID: 7241508269870566790, guid: af46972232a9b6440a95686a47a476ea, type: 2}
     - target: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
       propertyPath: m_ExposedReferences.m_References.Array.size
       value: 4
