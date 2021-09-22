@@ -15,11 +15,11 @@ C:/SuperSlash/SuperSlashSaga
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51308
+49637
 Successfully changed project path to: C:/SuperSlash/SuperSlashSaga
 C:/SuperSlash/SuperSlashSaga
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 70.34 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 71.26 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.2f1 (068178b99f32)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
@@ -36,148 +36,66 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56608
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56132
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001091 seconds.
+Registered in 0.001326 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 71.80 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 77.96 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.885 seconds
+- Completed reload, in  0.909 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001368 seconds.
+Registered in 0.001705 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 76.39 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 89.82 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.148 seconds
+- Completed reload, in  1.226 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.77 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3796 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 169.2 MB.
-System memory in use after: 169.4 MB.
+System memory in use before: 169.3 MB.
+System memory in use after: 169.5 MB.
 
 Unloading 134 unused Assets to reduce memory usage. Loaded Objects now: 4241.
-Total: 2.981200 ms (FindLiveObjects: 0.395900 ms CreateObjectMapping: 0.255100 ms MarkObjects: 2.139300 ms  DeleteObjects: 0.190100 ms)
+Total: 3.272000 ms (FindLiveObjects: 0.397300 ms CreateObjectMapping: 0.273000 ms MarkObjects: 2.401700 ms  DeleteObjects: 0.199300 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scripts/MultiTargetCamera.cs
-  artifactKey: Guid(a003420603c58c84aa04afef5dd9d1f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MultiTargetCamera.cs using Guid(a003420603c58c84aa04afef5dd9d1f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2b3c2aa22d2fb699feda226752287d1') in 0.024355 seconds
-  Import took 0.036418 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001422 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.76 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.858 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3626 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 160.2 MB.
-System memory in use after: 160.4 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 4243.
-Total: 9.450600 ms (FindLiveObjects: 1.261900 ms CreateObjectMapping: 0.921300 ms MarkObjects: 7.123900 ms  DeleteObjects: 0.139500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001417 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.841 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.84 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3626 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 160.2 MB.
-System memory in use after: 160.4 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 4245.
-Total: 2.628500 ms (FindLiveObjects: 0.318400 ms CreateObjectMapping: 0.164800 ms MarkObjects: 2.064100 ms  DeleteObjects: 0.080500 ms)
+  path: Assets/Materials/Terrain Mat/Plaine Mat/Sol Mat.mat
+  artifactKey: Guid(8795f4bd06e72d0498415d0a370a724f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Sol Mat.mat using Guid(8795f4bd06e72d0498415d0a370a724f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aae798f98e3c649c6c519da60ee76385') in 0.200921 seconds
+  Import took 0.206699 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 921.658688 seconds.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f67f6df313bccb3e42d237201e56397') in 0.018429 seconds
-  Import took 0.023936 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 82.485106 seconds.
-  path: Assets/Materials/Terrain Mat/Plaine Mat/Sol Plaine 1.psd
-  artifactKey: Guid(e14744bdabbb2664da707d24fbc4a50a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Terrain Mat/Plaine Mat/Sol Plaine 1.psd using Guid(e14744bdabbb2664da707d24fbc4a50a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27b0e7f82ff68a7369c70fb4828a466c') in 0.085116 seconds
-  Import took 0.091734 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 43.151713 seconds.
+  Time since last request: 0.000217 seconds.
   path: Assets/Materials/Terrain Mat/Plaine Mat/Sol Plaine.psd
   artifactKey: Guid(dc0d1777a70e810428bc5495ccfc0ceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Terrain Mat/Plaine Mat/Sol Plaine.psd using Guid(dc0d1777a70e810428bc5495ccfc0ceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97b4c3e9b6c41e47deec45bd66bc1020') in 0.019001 seconds
-  Import took 0.024023 seconds .
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Sol Plaine.psd using Guid(dc0d1777a70e810428bc5495ccfc0ceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b8d35fe91f83793564e3655a2883a73') in 0.026085 seconds
+  Import took 0.031183 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.002826 seconds.
+  Time since last request: 0.003148 seconds.
   path: Assets/Materials/Terrain Mat/Plaine Mat/Sol Plaine.psd
   artifactKey: Guid(dc0d1777a70e810428bc5495ccfc0ceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Terrain Mat/Plaine Mat/Sol Plaine.psd using Guid(dc0d1777a70e810428bc5495ccfc0ceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97b4c3e9b6c41e47deec45bd66bc1020') in 0.020950 seconds
-  Import took 0.026517 seconds .
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Sol Plaine.psd using Guid(dc0d1777a70e810428bc5495ccfc0ceb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b8d35fe91f83793564e3655a2883a73') in 0.014636 seconds
+  Import took 0.020084 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -8204,10 +8204,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a003420603c58c84aa04afef5dd9d1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets:
-  - {fileID: 0}
-  - {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
+  playersTransforms: []
+  offset: {x: 0, y: 8.51, z: 0}
+  smoothTime: 0.5
+  test: {x: 0, y: 0, z: 0}
+  minZoom: -240
+  maxZoom: -215
+  zoomLimiter: 5
 --- !u!114 &975384281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9783,7 +9786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 0
   camera: {fileID: 0}
-  cam: {fileID: 963194227}
+  cam: {fileID: 975384283}
   healthBar: {fileID: 687181024}
   enemyLayer:
     serializedVersion: 2
@@ -11131,7 +11134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 1
   camera: {fileID: 0}
-  cam: {fileID: 1516428599}
+  cam: {fileID: 975384283}
   healthBar: {fileID: 861036794}
   enemyLayer:
     serializedVersion: 2
