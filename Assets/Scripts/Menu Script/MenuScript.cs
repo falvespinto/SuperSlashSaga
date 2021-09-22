@@ -14,11 +14,11 @@ public class MenuScript : MonoBehaviour
     private int SelectedButton = 1;
     [SerializeField]
     private int NumberOfButtons;
-    public bool verificationMenu = false;
-    public bool verificationOption = false;
-    public bool verificationCampagne = false;
-    public bool verificationVersus = false;
-    public bool verificationStream = false;
+    private bool verificationMenu = false;
+    private bool verificationOption = false;
+    private bool verificationCampagne = false;
+    private bool verificationVersus = false;
+    private bool verificationStream = false;
     AudioManager musique = new AudioManager();
 
     public Transform ButtonPosition1;
@@ -61,12 +61,16 @@ public class MenuScript : MonoBehaviour
             else if (SelectedButton == 2)
             {
                 //utilisation du bouton versus
-                SceneManager.LoadScene("CharacterSelection");
+                Debug.Log("Versus");
+                mainMenu.SetActive(false);
+                versusMenu.SetActive(true);
             }
             else if (SelectedButton == 3)
             {
                 // Utilisation du bouton Twitch
                 Debug.Log("Twitch");
+                mainMenu.SetActive(false);
+                streamMenu.SetActive(true);
             }
             else if (SelectedButton == 4)
             {
