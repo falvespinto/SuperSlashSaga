@@ -13,13 +13,15 @@ public class SplashScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       StartCoroutine(clignotement());
        
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        StartCoroutine(clignotement());
+        
+        
     }
 
     public void OnStart()
@@ -29,10 +31,17 @@ public class SplashScreen : MonoBehaviour
 
     IEnumerator clignotement()
     {
-        boutton.SetActive(true);
-        yield return new WaitForSeconds(1);
-        boutton.SetActive(false);
-        yield return new WaitForSeconds(1);
+        while(true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            boutton.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            boutton.SetActive(false);
+        }
+        
     }
+
+
+
 
 }
