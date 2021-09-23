@@ -108,7 +108,7 @@ public class MultiTargetCamera : MonoBehaviour
         targetVerticalAngle = Mathf.Clamp(lookRotation.eulerAngles.x, minVerticalAngle, maxVerticalAngle);
 
 
-        targetRotation = Quaternion.LookRotation(planarDirection) * Quaternion.Euler(targetVerticalAngle,0,0);
+        targetRotation = Quaternion.LookRotation(planarDirection); //* Quaternion.Euler(targetVerticalAngle,0,0);
 
         Quaternion newRotation = Quaternion.Slerp(cam.transform.rotation, targetRotation, Time.deltaTime * rotationSharpness);
         cam.transform.rotation = newRotation;
