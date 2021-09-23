@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 
 public class AudioManager : MonoBehaviour
 {
+    //playoneshot 
     public Sound[] sounds;
     public Sound[] randomSounds;
     private Sound randomSound;

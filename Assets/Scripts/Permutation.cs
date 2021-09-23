@@ -19,6 +19,7 @@ public class Permutation : MonoBehaviour
     public void pressedPermutaion()
     {
         StartCoroutine(willPermute());
+        
     }
 
 

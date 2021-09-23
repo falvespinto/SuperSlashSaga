@@ -11,7 +11,7 @@ public class CameraTargetLock : MonoBehaviour
 
     void Awake()
     {
-        playerData = GetComponentInParent<PlayerData>(;
+        playerData = GetComponentInParent<PlayerData>();
     }
     void Start()
     {
@@ -23,6 +23,7 @@ public class CameraTargetLock : MonoBehaviour
         {
             target = playerData.target;
         }
+
         Vector3 dir = target.position - transform.position;
         dir.Normalize();
         dir.y = 0;
