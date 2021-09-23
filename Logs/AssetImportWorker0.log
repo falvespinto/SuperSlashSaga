@@ -1,614 +1,276 @@
 Using pre-set license
 Built from '2020.2/release' branch; Version is '2020.2.2f1 (068178b99f32) revision 426360'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Enterprise; OS build 19042.985; Version 2009; 64bit' Language: 'fr' Physical Memory: 16323 MB
+OS: 'Windows 10 Pro; OS build 19041.1237; Version 2004; 64bit' Language: 'fr' Physical Memory: 65369 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-D:\2020.2.2f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/Super Slash Saga/SuperSlashSaga
+C:/SuperSlash/SuperSlashSaga
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56039
-Successfully changed project path to: D:/Super Slash Saga/SuperSlashSaga
-D:/Super Slash Saga/SuperSlashSaga
+64716
+Successfully changed project path to: C:/SuperSlash/SuperSlashSaga
+C:/SuperSlash/SuperSlashSaga
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 73.27 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 64.41 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.2f1 (068178b99f32)
-[Subsystems] Discovering subsystems at path D:/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Super Slash Saga/SuperSlashSaga/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/SuperSlash/SuperSlashSaga/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 2080 (ID=0x1e87)
+    Renderer: NVIDIA GeForce RTX 2080 (ID=0x1e82)
     Vendor:   
     VRAM:     8010 MB
-    Driver:   27.21.14.6627
+    Driver:   30.0.14.7155
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
-Mono path[0] = 'D:/2020.2.2f1/Editor/Data/Managed'
-Mono path[1] = 'D:/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'D:/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56492
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56988
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000891 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001143 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 57.73 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 67.52 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.039 seconds
+- Completed reload, in  0.790 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001288 seconds.
+Registered in 0.001255 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 60.75 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 76.07 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.176 seconds
+- Completed reload, in  1.076 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.73 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3735 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 175.0 MB.
-System memory in use after: 175.3 MB.
+Unloading 3797 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 169.7 MB.
+System memory in use after: 169.9 MB.
 
-Unloading 131 unused Assets to reduce memory usage. Loaded Objects now: 4200.
-Total: 5.257900 ms (FindLiveObjects: 1.240700 ms CreateObjectMapping: 0.358800 ms MarkObjects: 3.428800 ms  DeleteObjects: 0.227300 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Shaders/AnimeRender_Renderer.asset
-  artifactKey: Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/AnimeRender_Renderer.asset using Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b74f2d67c519a2cfd05e0c14a4cc257d') in 0.114011 seconds
-  Import took 0.120831 seconds .
+Unloading 134 unused Assets to reduce memory usage. Loaded Objects now: 4242.
+Total: 2.769200 ms (FindLiveObjects: 0.451600 ms CreateObjectMapping: 0.231700 ms MarkObjects: 1.872400 ms  DeleteObjects: 0.212700 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000190 seconds.
-  path: Assets/Shaders/Outline.shadersubgraph
-  artifactKey: Guid(739506a01f7ccd84db9180497708e1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/Outline.shadersubgraph using Guid(739506a01f7ccd84db9180497708e1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2318cbe8e5d5cc9daa27ec41937d4e38') in 0.005068 seconds
-  Import took 0.010861 seconds .
+  path: Assets/Musique/SSS_Victoire_Fond.png
+  artifactKey: Guid(f98552aaae5e9344fae37408590e3a48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Musique/SSS_Victoire_Fond.png using Guid(f98552aaae5e9344fae37408590e3a48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c07ae739f3d43ca8785ef2c2c183e184') in 0.073274 seconds
+  Import took 0.078256 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000181 seconds.
-  path: Assets/Shaders/AnimeRender.asset
-  artifactKey: Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/AnimeRender.asset using Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efea7f8543dc4b3331fa6059562a903a') in 0.015907 seconds
-  Import took 0.023878 seconds .
+  Time since last request: 0.000218 seconds.
+  path: Assets/Musique/SSS_Victoire_J1.png
+  artifactKey: Guid(265a955c1a16a9348a633e0fc618104d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Musique/SSS_Victoire_J1.png using Guid(265a955c1a16a9348a633e0fc618104d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94fd52fadc9cd386a5f8e51330ecaa27') in 0.012279 seconds
+  Import took 0.017275 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000831 seconds.
-  path: Assets/Shaders/Test.mat
-  artifactKey: Guid(6768a894c479a3b4aa93a3ebe174be61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/Test.mat using Guid(6768a894c479a3b4aa93a3ebe174be61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a290f5510a41850c425d89a050ab0d4') in 0.252593 seconds
-  Import took 0.259707 seconds .
+  Time since last request: 0.000260 seconds.
+  path: Assets/Musique/SSS_Victoire_J2.png
+  artifactKey: Guid(50e317a606c767c46b20c7fec1a3df91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Musique/SSS_Victoire_J2.png using Guid(50e317a606c767c46b20c7fec1a3df91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba59d38d8485c2a71aeafd1f84922545') in 0.012138 seconds
+  Import took 0.017371 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000386 seconds.
-  path: Assets/Shaders/YuetsuSwordShader.mat
-  artifactKey: Guid(356e21ac3696a9b439508301326e8ca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/YuetsuSwordShader.mat using Guid(356e21ac3696a9b439508301326e8ca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c26d67181d4bd85ee33dc0565679e4b9') in 0.040873 seconds
-  Import took 0.048083 seconds .
+  Time since last request: 0.000257 seconds.
+  path: Assets/Musique/Musique-de-combat.mp3
+  artifactKey: Guid(46800b35826f27543be3cdc0ed5b13ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Musique/Musique-de-combat.mp3 using Guid(46800b35826f27543be3cdc0ed5b13ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7b62a7e93ff21c7f91254a34ec0d8f7') in 0.042111 seconds
+  Import took 0.047185 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Musique/Non_dit_1.ogg
+  artifactKey: Guid(45fbaddbf31549a4683e844f89062af8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Musique/Non_dit_1.ogg using Guid(45fbaddbf31549a4683e844f89062af8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '694857fbd9c4094f15b8aebd1f4c1c3b') in 0.011336 seconds
+  Import took 0.015959 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Musique/Musique-guitare-en-plus-loop.mp3
+  artifactKey: Guid(77cf2c24d1fbe104085b75e3534fea3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Musique/Musique-guitare-en-plus-loop.mp3 using Guid(77cf2c24d1fbe104085b75e3534fea3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb2a2c65c3486f14d905454691984aaf') in 0.009372 seconds
+  Import took 0.014885 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/Musique/caverne.ogg
+  artifactKey: Guid(344a897643e27d943901d95efb783c06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Musique/caverne.ogg using Guid(344a897643e27d943901d95efb783c06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e25116a97d705e331c228b93b165fd24') in 0.009299 seconds
+  Import took 0.014222 seconds .
 
 ========================================================================
 Received Prepare
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.81 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.69 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 55 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 104.2 MB.
-System memory in use after: 104.4 MB.
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 91.2 MB.
+System memory in use after: 91.5 MB.
 
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 4289.
-Total: 3.000300 ms (FindLiveObjects: 0.607200 ms CreateObjectMapping: 0.283500 ms MarkObjects: 2.091300 ms  DeleteObjects: 0.017200 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 93.854576 seconds.
-  path: Assets/Shaders/AnimeRender.asset
-  artifactKey: Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/AnimeRender.asset using Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a6960ca67d32c37d94b9cfa549ebedb') in 0.009450 seconds
-  Import took 0.015979 seconds .
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 4254.
+Total: 2.751800 ms (FindLiveObjects: 0.385400 ms CreateObjectMapping: 0.206000 ms MarkObjects: 2.097000 ms  DeleteObjects: 0.062500 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000263 seconds.
-  path: Assets/Shaders/AnimeRender_Renderer.asset
-  artifactKey: Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/AnimeRender_Renderer.asset using Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '650469c3b69f0cb219d4500096991c66') in 0.002502 seconds
-  Import took 0.008572 seconds .
+  Time since last request: 187.380499 seconds.
+  path: Assets/Scripts/MultiTargetCamera.cs
+  artifactKey: Guid(a003420603c58c84aa04afef5dd9d1f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MultiTargetCamera.cs using Guid(a003420603c58c84aa04afef5dd9d1f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aca677670f693cf9524c01b0698a29d7') in 0.007928 seconds
+  Import took 0.014055 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000273 seconds.
-  path: Assets/Shaders/Outline.shadersubgraph
-  artifactKey: Guid(739506a01f7ccd84db9180497708e1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/Outline.shadersubgraph using Guid(739506a01f7ccd84db9180497708e1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a8ab77c863f24dd43f28dfd35f2660f') in 0.001600 seconds
-  Import took 0.007407 seconds .
+  Time since last request: 0.014329 seconds.
+  path: Assets/Scripts/MultiTargetCamera.cs
+  artifactKey: Guid(a003420603c58c84aa04afef5dd9d1f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MultiTargetCamera.cs using Guid(a003420603c58c84aa04afef5dd9d1f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aca677670f693cf9524c01b0698a29d7') in 0.003393 seconds
+  Import took 0.008645 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.022763 seconds.
-  path: Assets/Shaders/AnimeRender.asset
-  artifactKey: Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/AnimeRender.asset using Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a6960ca67d32c37d94b9cfa549ebedb') in 0.002351 seconds
-  Import took 0.008471 seconds .
+  Time since last request: 23.288560 seconds.
+  path: Assets/Scripts/MultiTargetCamera.cs
+  artifactKey: Guid(a003420603c58c84aa04afef5dd9d1f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MultiTargetCamera.cs using Guid(a003420603c58c84aa04afef5dd9d1f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69d719378cf2c7ef8dc18adf97a74747') in 0.002025 seconds
+  Import took 0.007170 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 24.766238 seconds.
-  path: Assets/VFX/Flash.mat
-  artifactKey: Guid(481db41420a320c41988c71fb3b4ebd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/VFX/Flash.mat using Guid(481db41420a320c41988c71fb3b4ebd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f16079417d9975f7ea030ce56adfa5b5') in 0.171888 seconds
-  Import took 0.177847 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000222 seconds.
-  path: Assets/VFX/SlashForwardFX.vfx
-  artifactKey: Guid(f6a88488871b8e0458972140eea6a90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/VFX/SlashForwardFX.vfx using Guid(f6a88488871b8e0458972140eea6a90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad57dccf400e16bf83e74c62d41283aa') in 0.005629 seconds
-  Import took 0.013093 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000186 seconds.
-  path: Assets/VFX/Flash.mat
-  artifactKey: Guid(481db41420a320c41988c71fb3b4ebd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/VFX/Flash.mat using Guid(481db41420a320c41988c71fb3b4ebd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f16079417d9975f7ea030ce56adfa5b5') in 0.007853 seconds
-  Import took 0.016676 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001054 seconds.
-  path: Assets/VFX/YuetsuUltimate.vfx
-  artifactKey: Guid(d054a8427759b0f4a948f48d3d535723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/VFX/YuetsuUltimate.vfx using Guid(d054a8427759b0f4a948f48d3d535723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0fd59efce0903e45029ba95d77ac254') in 0.009895 seconds
-  Import took 0.018672 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000352 seconds.
-  path: Assets/VFX/SlashForwardFX.vfx
-  artifactKey: Guid(f6a88488871b8e0458972140eea6a90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/VFX/SlashForwardFX.vfx using Guid(f6a88488871b8e0458972140eea6a90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad57dccf400e16bf83e74c62d41283aa') in 0.005308 seconds
-  Import took 0.015852 seconds .
+  Time since last request: 3.002197 seconds.
+  path: Assets/Scripts/MultiTargetCamera.cs
+  artifactKey: Guid(a003420603c58c84aa04afef5dd9d1f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MultiTargetCamera.cs using Guid(a003420603c58c84aa04afef5dd9d1f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ecb22c01e7a5600dadd7f3518f3a656') in 0.001429 seconds
+  Import took 0.007661 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001459 seconds.
+Registered in 0.001405 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.70 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.72 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.177 seconds
+- Completed reload, in  0.822 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.63 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.78 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3628 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 177.4 MB.
-System memory in use after: 177.6 MB.
+Unloading 3626 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 162.9 MB.
+System memory in use after: 163.1 MB.
 
-Unloading 127 unused Assets to reduce memory usage. Loaded Objects now: 4331.
-Total: 3.324700 ms (FindLiveObjects: 0.475200 ms CreateObjectMapping: 0.268000 ms MarkObjects: 2.462300 ms  DeleteObjects: 0.118200 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 123.394698 seconds.
-  path: Assets/VFX/YuetsuUltimate.vfx
-  artifactKey: Guid(d054a8427759b0f4a948f48d3d535723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/VFX/YuetsuUltimate.vfx using Guid(d054a8427759b0f4a948f48d3d535723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8890d1c6241f93a8d42733726ddc6b0e') in 0.027839 seconds
-  Import took 0.039510 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.969567 seconds.
-  path: Assets/VFX/YuetsuUltimate.vfx
-  artifactKey: Guid(d054a8427759b0f4a948f48d3d535723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/VFX/YuetsuUltimate.vfx using Guid(d054a8427759b0f4a948f48d3d535723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '898dc25820f0093a2aca2eb2d2d59a2b') in 0.007873 seconds
-  Import took 0.017598 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.010488 seconds.
-  path: Assets/VFX/YuetsuUltimate.vfx
-  artifactKey: Guid(d054a8427759b0f4a948f48d3d535723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/VFX/YuetsuUltimate.vfx using Guid(d054a8427759b0f4a948f48d3d535723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '898dc25820f0093a2aca2eb2d2d59a2b') in 0.007903 seconds
-  Import took 0.018220 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 205.362475 seconds.
-  path: Assets/VFX/SlashForwardFX.vfx
-  artifactKey: Guid(f6a88488871b8e0458972140eea6a90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/VFX/SlashForwardFX.vfx using Guid(f6a88488871b8e0458972140eea6a90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c7863faaf60dd73d10b491a4e93a8b6') in 0.005345 seconds
-  Import took 0.012573 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000242 seconds.
-  path: Assets/VFX/YuetsuUltimate.vfx
-  artifactKey: Guid(d054a8427759b0f4a948f48d3d535723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/VFX/YuetsuUltimate.vfx using Guid(d054a8427759b0f4a948f48d3d535723) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01aef8149d3005b18d80eb674ea028a8') in 0.007373 seconds
-  Import took 0.014422 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.963117 seconds.
-  path: Assets/Prefabs/character.prefab
-  artifactKey: Guid(88ed0dfd26d499b448c3b6d176028c34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/character.prefab using Guid(88ed0dfd26d499b448c3b6d176028c34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdfc3378adec9ff527587c2f284d9f1f') in 0.021956 seconds
-  Import took 0.032772 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000229 seconds.
-  path: Assets/Prefabs/Level Transfer.prefab
-  artifactKey: Guid(1c7dad393c09e11459c13c3a84c16f03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Level Transfer.prefab using Guid(1c7dad393c09e11459c13c3a84c16f03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da475d48ec628ca59b21d66a7312be6a') in 0.004776 seconds
-  Import took 0.012667 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001577 seconds.
-  path: Assets/Prefabs/Selector.prefab
-  artifactKey: Guid(71773de1c00f5e346821c4aac08099cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Selector.prefab using Guid(71773de1c00f5e346821c4aac08099cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '840b6deed448a8274a27db6d752fa910') in 0.046375 seconds
-  Import took 0.064924 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000397 seconds.
-  path: Assets/Prefabs/PlayerConfigurationManager.prefab
-  artifactKey: Guid(a85caf5be5ec3584d94c725c0a96adfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/PlayerConfigurationManager.prefab using Guid(a85caf5be5ec3584d94c725c0a96adfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78fcf40942e0d686c737cca0b7d05d18') in 0.006128 seconds
-  Import took 0.013583 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000164 seconds.
-  path: Assets/Prefabs/Yuetsu_v4_no_cape.fbx
-  artifactKey: Guid(eab7152bb8a33784aa9bc9a4917540a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Yuetsu_v4_no_cape.fbx using Guid(eab7152bb8a33784aa9bc9a4917540a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '431d7f6d5895c2695402483796d15b67') in 0.384859 seconds
-  Import took 0.391322 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000208 seconds.
-  path: Assets/Prefabs/CharacterSpawnP1.prefab
-  artifactKey: Guid(9e72bbab328058546bdcde2b92885295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/CharacterSpawnP1.prefab using Guid(9e72bbab328058546bdcde2b92885295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10d4b5aa854d8eb1fe5facca3a22b125') in 0.009194 seconds
-  Import took 0.016345 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000590 seconds.
-  path: Assets/Prefabs/PlayerConfiguration.prefab
-  artifactKey: Guid(29a90556fe05e2e4885d2a1eb347cb93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/PlayerConfiguration.prefab using Guid(29a90556fe05e2e4885d2a1eb347cb93) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Error loading the file 'Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset'. File is either empty or corrupted, please verify the file contents.
-
- -> (artifact id: 'e00a55dc2ea371a85cf5e202eb80eee9') in 0.029650 seconds
-  Import took 0.037257 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000194 seconds.
-  path: Assets/Prefabs/PlayerSetupMenu.prefab
-  artifactKey: Guid(f2fc4ded1bf55314e81f298dfa1c953a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/PlayerSetupMenu.prefab using Guid(f2fc4ded1bf55314e81f298dfa1c953a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bab38db9cff691d7063e399ef1da54fb') in 0.006821 seconds
-  Import took 0.014259 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000189 seconds.
-  path: Assets/Prefabs/CharacterSpawnP2.prefab
-  artifactKey: Guid(6f01bf3c4d7e1ab458ccac89c8dd6445) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/CharacterSpawnP2.prefab using Guid(6f01bf3c4d7e1ab458ccac89c8dd6445) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad8a23b8410bd78681abc6bc6cc09566') in 0.004463 seconds
-  Import took 0.016392 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000267 seconds.
-  path: Assets/Prefabs/New Sprite.prefab
-  artifactKey: Guid(b67a0434da2be424090cdf75dde170e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/New Sprite.prefab using Guid(b67a0434da2be424090cdf75dde170e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f278f07f7d5821f02c97979d8b32587') in 0.006000 seconds
-  Import took 0.013276 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000173 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(f8026d319446af04ab0fdc0cd48322b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(f8026d319446af04ab0fdc0cd48322b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dce1d64b34180a1297def6ee3ef7f37') in 0.012661 seconds
-  Import took 0.019681 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.877941 seconds.
-  path: Assets/Prefabs/characters
-  artifactKey: Guid(b3240603eb4907340bf0e15fc57fa80c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters using Guid(b3240603eb4907340bf0e15fc57fa80c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '107b36b8bb7c07af7d4bd5f8743095ca') in 0.001787 seconds
-  Import took 0.008702 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.048062 seconds.
-  path: Assets/Prefabs/characters/Yuetsu 1.prefab
-  artifactKey: Guid(a276f77faec753d49a3ae99b4f4ea614) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Yuetsu 1.prefab using Guid(a276f77faec753d49a3ae99b4f4ea614) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1d565723f9ad0fccf55f9323999d6bf') in 0.144658 seconds
-  Import took 0.152820 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000282 seconds.
-  path: Assets/Prefabs/characters/YuetsuAvatar.asset
-  artifactKey: Guid(033b008d3f176d244aa9e70eab78b719) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/YuetsuAvatar.asset using Guid(033b008d3f176d244aa9e70eab78b719) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '889860cdcf360c0ad2804f3089df15aa') in 0.003360 seconds
-  Import took 0.008935 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000344 seconds.
-  path: Assets/Prefabs/characters/YuetsuPlayer.prefab
-  artifactKey: Guid(c1b8d6da67c9ecc4c80195d64c63902b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/YuetsuPlayer.prefab using Guid(c1b8d6da67c9ecc4c80195d64c63902b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Yuetsu_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '42901f495d97ea49aa5dbe162d8df90e') in 0.779585 seconds
-  Import took 0.793985 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000208 seconds.
-  path: Assets/Prefabs/characters/Yuetsu_v4_no_cape.prefab
-  artifactKey: Guid(2eeb077cec2a0e24398e7c338d5b3ae0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Yuetsu_v4_no_cape.prefab using Guid(2eeb077cec2a0e24398e7c338d5b3ae0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5e64dcc647a0668a162dda815801a9e') in 0.046759 seconds
-  Import took 0.053063 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Assets/Prefabs/characters/Yuetsu.prefab
-  artifactKey: Guid(8edea63c9655fd547b2e5e294c70e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Yuetsu.prefab using Guid(8edea63c9655fd547b2e5e294c70e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Yuetsu_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'ff75dea40dbf456905f3e6824ed3675c') in 0.741308 seconds
-  Import took 0.753609 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000424 seconds.
-  path: Assets/Prefabs/characters/Yuetsu_Katana.prefab
-  artifactKey: Guid(d90aa065997238a4e9480ac8ffc672ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Yuetsu_Katana.prefab using Guid(d90aa065997238a4e9480ac8ffc672ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71a543b807205223d92b70f6b80bab63') in 0.023321 seconds
-  Import took 0.029215 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000203 seconds.
-  path: Assets/Prefabs/characters/YuetsuPlayer 1.prefab
-  artifactKey: Guid(31a1f5e854e53b04591e9778081bf6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/YuetsuPlayer 1.prefab using Guid(31a1f5e854e53b04591e9778081bf6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3325425fa642078e52254405ebf3b334') in 0.051132 seconds
-  Import took 0.063686 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 24.480681 seconds.
-  path: Assets/Prefabs/characters/Yuetsu.prefab
-  artifactKey: Guid(8edea63c9655fd547b2e5e294c70e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Yuetsu.prefab using Guid(8edea63c9655fd547b2e5e294c70e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Yuetsu_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '3843158e7fb1eaa20e32fed40c217407') in 1.357198 seconds
-  Import took 1.388844 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000200 seconds.
-  path: Assets/Prefabs/characters/YuetsuPlayer.prefab
-  artifactKey: Guid(c1b8d6da67c9ecc4c80195d64c63902b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/YuetsuPlayer.prefab using Guid(c1b8d6da67c9ecc4c80195d64c63902b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Yuetsu_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '4333ecfe4f3ee82ae3288b0d0a4ef005') in 0.871627 seconds
-  Import took 0.886043 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.429003 seconds.
-  path: Assets/Prefabs/characters/Yuetsu.prefab
-  artifactKey: Guid(8edea63c9655fd547b2e5e294c70e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Yuetsu.prefab using Guid(8edea63c9655fd547b2e5e294c70e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Yuetsu_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '9e488f9f684bd366b9753000ed57d234') in 0.815161 seconds
-  Import took 0.829586 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.766736 seconds.
-  path: Assets/Prefabs/characters/Yuetsu.prefab
-  artifactKey: Guid(8edea63c9655fd547b2e5e294c70e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Yuetsu.prefab using Guid(8edea63c9655fd547b2e5e294c70e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Yuetsu_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '33180a3cfb50a98d0d6c1324b8c4ca01') in 0.787958 seconds
-  Import took 0.802748 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000208 seconds.
-  path: Assets/Prefabs/characters/YuetsuPlayer.prefab
-  artifactKey: Guid(c1b8d6da67c9ecc4c80195d64c63902b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/YuetsuPlayer.prefab using Guid(c1b8d6da67c9ecc4c80195d64c63902b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Yuetsu_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'f2e3d0295f58708f1838aa5300929168') in 0.752696 seconds
-  Import took 0.765234 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.723344 seconds.
-  path: Assets/Prefabs/TimeLines/YuetsuFullCombo.prefab
-  artifactKey: Guid(fa642a2cbf9644249ad4654cecb0acdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/TimeLines/YuetsuFullCombo.prefab using Guid(fa642a2cbf9644249ad4654cecb0acdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7be83d8de4dffaef390adcababae97a6') in 0.178547 seconds
-  Import took 0.186816 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.413845 seconds.
-  path: Assets/Timeline/ComboYuetsu.playable
-  artifactKey: Guid(af46972232a9b6440a95686a47a476ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Timeline/ComboYuetsu.playable using Guid(af46972232a9b6440a95686a47a476ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2856b8ae1dad244e0e12a113fea35219') in 0.182357 seconds
-  Import took 0.189823 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000306 seconds.
-  path: Assets/Timeline/UltimateYuetsuTimeline.playable
-  artifactKey: Guid(308e84fa3df0be443a72b302fc4dca46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Timeline/UltimateYuetsuTimeline.playable using Guid(308e84fa3df0be443a72b302fc4dca46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55552d7e41640a9df6f48667b0e79510') in 0.103898 seconds
-  Import took 0.112283 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000194 seconds.
-  path: Assets/Timeline/UltimateYuetsuCinematique.playable
-  artifactKey: Guid(d37e60f68cd1ca543b9b8f8d18cb6e3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Timeline/UltimateYuetsuCinematique.playable using Guid(d37e60f68cd1ca543b9b8f8d18cb6e3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0f8102b12a8c9abba1bffd1f5f63eeb') in 0.101151 seconds
-  Import took 0.107365 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.989611 seconds.
-  path: Assets/Timeline/ComboYuetsu.playable
-  artifactKey: Guid(af46972232a9b6440a95686a47a476ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Timeline/ComboYuetsu.playable using Guid(af46972232a9b6440a95686a47a476ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '854bc88adfa033254e808f89d543b16d') in 0.196525 seconds
-  Import took 0.203016 seconds .
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 4256.
+Total: 2.932400 ms (FindLiveObjects: 0.475400 ms CreateObjectMapping: 0.243800 ms MarkObjects: 2.124000 ms  DeleteObjects: 0.088200 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.001478 seconds.
+Registered in 0.001746 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.76 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.235 seconds
+- Completed reload, in  0.889 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.62 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 0.78 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3627 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 190.2 MB.
-System memory in use after: 190.4 MB.
+Unloading 3626 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 163.0 MB.
+System memory in use after: 163.2 MB.
 
-Unloading 131 unused Assets to reduce memory usage. Loaded Objects now: 4375.
-Total: 3.764700 ms (FindLiveObjects: 0.574100 ms CreateObjectMapping: 0.214700 ms MarkObjects: 2.769700 ms  DeleteObjects: 0.203900 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 4258.
+Total: 2.937300 ms (FindLiveObjects: 0.367400 ms CreateObjectMapping: 0.228600 ms MarkObjects: 2.277200 ms  DeleteObjects: 0.063000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001595 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.919 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.83 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3626 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 163.0 MB.
+System memory in use after: 163.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 4260.
+Total: 2.612800 ms (FindLiveObjects: 0.313900 ms CreateObjectMapping: 0.229100 ms MarkObjects: 2.004600 ms  DeleteObjects: 0.064100 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
