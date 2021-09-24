@@ -16087,17 +16087,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playersTransforms: []
   offset: {x: 0, y: 8.51, z: 0}
-  smoothTime: 0.5
-  test: {x: 0, y: 0, z: 0}
+  smoothTime: 0.1
+  finalPosition: {x: 0, y: 0, z: 0}
   planarDirection: {x: 0, y: 0, z: 0}
   targetRotation: {x: 0, y: 0, z: 0, w: 0}
   minZoom: -240
   maxZoom: -215
   zoomLimiter: 5
+  defualtHorizontalAngleFree: 45
+  fixedDistanceToPlayer: 30
+  fixedDistanceToPlayerFree: -30
+  maxDistanceBeforeSwap: 30
   rotationSharpness: 25
   defaultVerticalAngle: 20
-  minVerticalAngle: -90
-  maxVerticalAngle: 90
+  verticalAngle: 1
   maxRangeBeforeSwitch: 0
 --- !u!114 &975384281
 MonoBehaviour:
