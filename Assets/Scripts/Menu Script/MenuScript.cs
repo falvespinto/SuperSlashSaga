@@ -9,7 +9,7 @@ using UnityEngine.Audio;
 
 public class MenuScript : MonoBehaviour
 {
-    public GameObject Point, optionsMenu, mainMenu ,campagneMenu, versusMenu, streamMenu;
+    public GameObject pointMenu, optionsMenu, mainMenu ,campagneMenu, versusMenu, streamMenu;
 
     private int SelectedButton = 1;
     [SerializeField]
@@ -54,7 +54,7 @@ public class MenuScript : MonoBehaviour
                 mainMenu.SetActive(false);
                 campagneMenu.SetActive(true);
                 verificationCampagne = true;
-                Point.transform.position = ButtonPosition7.position;
+                pointMenu.transform.position = ButtonPosition7.position;
                 SelectedButton = 7;
 
             }
@@ -79,7 +79,7 @@ public class MenuScript : MonoBehaviour
                 mainMenu.SetActive(false);
                 optionsMenu.SetActive(true);
                 verificationOption = true;
-                Point.transform.position = ButtonPosition6.position;
+                pointMenu.transform.position = ButtonPosition6.position;
                 SelectedButton = 6;
 
             }
@@ -98,7 +98,7 @@ public class MenuScript : MonoBehaviour
                 mainMenu.SetActive(true);
                 verificationOption = false;
                 verificationMenu = false;
-                Point.transform.position = ButtonPosition1.position;
+                pointMenu.transform.position = ButtonPosition1.position;
                 SelectedButton = 1;
             }
 
@@ -123,7 +123,7 @@ public class MenuScript : MonoBehaviour
                 mainMenu.SetActive(true);
                 verificationCampagne = false;
                 verificationMenu = false;
-                Point.transform.position = ButtonPosition1.position;
+                pointMenu.transform.position = ButtonPosition1.position;
                 SelectedButton = 1;
             }
         }
@@ -173,52 +173,52 @@ public class MenuScript : MonoBehaviour
         // Moves the pointer
         if (SelectedButton == 1)
         {
-            Point.transform.position = ButtonPosition1.position;
+            pointMenu.transform.position = ButtonPosition1.position;
             FindObjectOfType<AudioManager>().Play("percution");
         }
         else if (SelectedButton == 2)
         {
-            Point.transform.position = ButtonPosition2.position;
+            pointMenu.transform.position = ButtonPosition2.position;
             FindObjectOfType<AudioManager>().Play("percution");
         }
         else if (SelectedButton == 3)
         {
-            Point.transform.position = ButtonPosition3.position;
+            pointMenu.transform.position = ButtonPosition3.position;
             FindObjectOfType<AudioManager>().Play("percution");
         }
         else if (SelectedButton == 4)
         {
-            Point.transform.position = ButtonPosition4.position;
+            pointMenu.transform.position = ButtonPosition4.position;
             FindObjectOfType<AudioManager>().Play("percution");
             verificationMenu = false;
         }
         else if (SelectedButton == 5)
         {
-            Point.transform.position = ButtonPosition5.position;
+            pointMenu.transform.position = ButtonPosition5.position;
             FindObjectOfType<AudioManager>().Play("percution");
             verificationMenu = true;
             verificationOption = false;
         }
         else if (SelectedButton == 6)
         {
-            Point.transform.position = ButtonPosition6.position;
+            pointMenu.transform.position = ButtonPosition6.position;
             FindObjectOfType<AudioManager>().Play("percution");
             verificationOption = false;
         }
         else if (SelectedButton == 7)
         {
-            Point.transform.position = ButtonPosition7.position;
+            pointMenu.transform.position = ButtonPosition7.position;
             FindObjectOfType<AudioManager>().Play("percution");
             verificationCampagne = true;
         }
         else if (SelectedButton == 8)
         {
-            Point.transform.position = ButtonPosition8.position;
+            pointMenu.transform.position = ButtonPosition8.position;
             FindObjectOfType<AudioManager>().Play("percution");
         }
         else if (SelectedButton == 9)
         {
-            Point.transform.position = ButtonPosition9.position;
+            pointMenu.transform.position = ButtonPosition9.position;
             FindObjectOfType<AudioManager>().Play("percution");
             verificationCampagne = false;
         }
