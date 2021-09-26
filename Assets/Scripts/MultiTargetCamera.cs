@@ -7,8 +7,10 @@ public class MultiTargetCamera : MonoBehaviour
 {
     public Transform[] playersTransforms;
     public Vector3 offset;
+    public Vector3 camPositionOffSet;
     private Vector3 velocity;
-    public float smoothTime = .5f;
+    public float shortSmoothTime = .5f;
+    public float longSmoothTime = 5f;
     private GameObject[] allPlayers;
     private Camera cam;
     public Vector3 finalPosition;
@@ -18,6 +20,11 @@ public class MultiTargetCamera : MonoBehaviour
     public float minZoom = -240f;
     public float maxZoom = -215f;
     public float zoomLimiter = 5f;
+    private string camState;
+    public float smoothTime;
+
+    public float angleOffSet = 15f;
+    public float distanceBehindLockOffSet = 10f;
 
     public float defualtHorizontalAngleFree = 45f;
 
@@ -31,6 +38,9 @@ public class MultiTargetCamera : MonoBehaviour
 
 
     public float maxRangeBeforeSwitch;
+
+    private const string LONG_DISTANCE = "longue distance";
+    private const string SHORT_DISTANCE = "courte distance";
 
     //private float xMin, xMax, yMin, yMax;
 
@@ -53,7 +63,6 @@ public class MultiTargetCamera : MonoBehaviour
 
     private void LateUpdate()
     {
-        GetAngleCam();
         if (playersTransforms.Length == 0)
         {
             return;
@@ -97,31 +106,49 @@ public class MultiTargetCamera : MonoBehaviour
         //
 
 
-
+        //Debug.Log(GetGreatestDistance());
 
         if (GetGreatestDistance() >= maxDistanceBeforeSwap)
         {
-            finalPosition = new Vector3(GetClosestPlayerToCamera().x + fixedDistanceToPlayerFree, newPosition.y, GetClosestPlayerToCamera().z - fixedDistanceToPlayer);
+            if (camState == LONG_DISTANCE)
+            {
+                smoothTime = shortSmoothTime;
+            }
+            else
+            {
+                smoothTime = longSmoothTime;
+            }
+            finalPosition = GetCamPos();// new Vector3(GetClosestPlayerToCamera().x + fixedDistanceToPlayerFree, newPosition.y, GetClosestPlayerToCamera().z - fixedDistanceToPlayer);
+            camState = LONG_DISTANCE;
+
+
         }
         else
         {
+            if (camState == SHORT_DISTANCE)
+            {
+                smoothTime = shortSmoothTime;
+            }
+            else
+            {
+                smoothTime = longSmoothTime;
+            }
             finalPosition = new Vector3(newPosition.x, newPosition.y, GetClosestPlayerToCamera().z - fixedDistanceToPlayer);
+            camState = SHORT_DISTANCE;
         }
-        Vector3 direction = (GetClosestPlayerToCamera() - GetFarthestPlayer()).normalized;
-        GetAngleBehingClosest(GetClosestPlayerToCamera() + direction*10);
         transform.position = Vector3.SmoothDamp(transform.position, finalPosition, ref velocity, smoothTime);
         
     }
 
     float GetGreatestDistance()
     {
-        var bounds = new Bounds(playersTransforms[0].position, Vector3.zero);
-        for (int i = 0; i < playersTransforms.Length; i++)
-        {
-            bounds.Encapsulate(playersTransforms[i].position);
-        }
+        //var bounds = new Bounds(playersTransforms[0].position, Vector3.zero);
+        //for (int i = 0; i < playersTransforms.Length; i++)
+        //{
+        //    bounds.Encapsulate(playersTransforms[i].position);
+        //}
 
-        return bounds.size.x;
+        return Vector3.Distance(playersTransforms[0].position, playersTransforms[1].position);
     }
 
     Vector3 GetCenterPoint()
@@ -202,21 +229,34 @@ public class MultiTargetCamera : MonoBehaviour
         return farthestPlayer.position;
     }
 
-    Vector3 GetAngleCam()
+    Vector3 GetCamPos()
     {
-        Vector3 direction = (playersTransforms[0].position - playersTransforms[1].position).normalized;
-        Debug.DrawLine(GetCenterPoint(), GetCenterPoint() + direction * 100, Color.red,0.1f);
-        Quaternion spreadAngle = Quaternion.AngleAxis(-15, new Vector3(0, 1, 0));
-        Vector3 newDirection = spreadAngle * direction;
-        Debug.DrawLine(GetCenterPoint(), GetCenterPoint() + newDirection * 100, Color.red, 0.1f);
-        return newDirection;
+        Vector3 direcBehind = (GetClosestPlayerToCamera() - GetFarthestPlayer()).normalized;
+        Vector3 positionBehind = GetClosestPlayerToCamera() + direcBehind * distanceBehindLockOffSet;
+        Debug.DrawLine(GetCenterPoint(), GetCenterPoint() + direcBehind * 100, Color.red,0.1f);
+        Quaternion spreadAngle = Quaternion.AngleAxis(-angleOffSet, new Vector3(0, 1, 0));
+        Vector3 newDirectionBehind = spreadAngle * direcBehind;
+        Debug.DrawLine(GetCenterPoint(), GetCenterPoint() + newDirectionBehind * 100, Color.red, 0.1f);
+
+
+        Vector3 perpDirection = Vector3.Cross(direcBehind, Vector3.up).normalized;
+        Debug.DrawLine(positionBehind, positionBehind + perpDirection * 100, Color.blue, 0.1f);
+        Vector3 intersectionPoint = new Vector3();
+
+        LineLineIntersection(out intersectionPoint, GetCenterPoint(), newDirectionBehind, positionBehind, perpDirection);
+
+        intersectionPoint += camPositionOffSet; 
+
+        return intersectionPoint;
+
+
     }
 
     Vector3 GetAngleBehingClosest(Vector3 pos)
     {
         Vector3 direction = (GetClosestPlayerToCamera() - GetFarthestPlayer()).normalized;
-        Vector3 perp = Vector3.Cross(direction, Vector3.up).normalized;
-        Debug.DrawLine(pos, pos + perp * 100, Color.blue, 0.1f);
+        Vector3 perpDirection = Vector3.Cross(direction, Vector3.up).normalized;
+        
         //Debug.DrawLine(pos, pos + Vector3.up.normalized * 100, Color.blue, 0.1f);
         //Debug.DrawLine(pos, pos + Vector3.right.normalized * 100, Color.black, 0.1f);
         //Debug.DrawLine(pos, pos + Vector3.down.normalized * 100, Color.green, 0.1f);
@@ -224,5 +264,29 @@ public class MultiTargetCamera : MonoBehaviour
         return new Vector3();
 
     }
-    //void 
+
+
+    bool LineLineIntersection(out Vector3 intersection,Vector3 point1, Vector3 direction1, Vector3 point2, Vector3 direction2)
+    {
+        Vector3 direction3 = point2 - point1;
+        Vector3 crossVec1and2 = Vector3.Cross(direction1, direction2);
+        Vector3 crossVec3and2 = Vector3.Cross(direction3, direction2);
+
+        float planarFactor = Vector3.Dot(direction3, crossVec1and2);
+
+        if (Mathf.Abs(planarFactor) < 1f && crossVec1and2.sqrMagnitude > 0.0001f)
+        {
+            float s = Vector3.Dot(crossVec3and2, crossVec1and2) / crossVec1and2.sqrMagnitude;
+            intersection = point1 + (direction1 * s);
+            Debug.Log("true");
+            return true;
+        }
+        else
+        {
+            intersection = Vector3.zero;
+            Debug.Log("false");
+            return false;
+        }
+    }
+
 }
