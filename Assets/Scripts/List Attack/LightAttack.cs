@@ -290,7 +290,7 @@ public class LightAttack : MonoBehaviour
             playerAttack.isAttacking = true;
             playerController.isRunning = false;
             StartCoroutine(InfuseSword(0.15f));
-            StartCoroutine(playerAttack.FullScreenCamera(7.5f));
+            StartCoroutine(playerAttack.SwitchCamera(7.5f));
             Invoke("AttackComplete", 7.5f);
             StartCoroutine(playerAttack.playerHit.GetComponent<Player>().goInEnemyCombo(7.5f));
             GetComponent<TimeLineController>().PerformFullCombo(playerAttack.m_Animator, playerAttack.playerHit.GetComponent<Animator>(), playerData.cam.GetComponent<CinemachineBrain>());

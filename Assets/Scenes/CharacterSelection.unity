@@ -1280,6 +1280,40 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 65702495048144492, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
   m_PrefabInstance: {fileID: 1482502006}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1297902848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297902847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1297902849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,6 +1438,50 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 323.95038
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 34.63361
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -50.464
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9975418
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.004480232
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.06993103
+      objectReference: {fileID: 0}
+    - target: {fileID: -2021178655527167927, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00031408016
+      objectReference: {fileID: 0}
+    - target: {fileID: -1853094968961178454, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
+      propertyPath: field of view
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: -1853094968961178454, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
+      propertyPath: m_FocalLength
+      value: 32.96973
+      objectReference: {fileID: 0}
+    - target: {fileID: -1853094968961178454, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
+      propertyPath: far clip plane
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: -1853094968961178454, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -447275898630060098, guid: a1857b192252c394ebdb8309dbf22202, type: 3}
       propertyPath: m_LocalScale.x

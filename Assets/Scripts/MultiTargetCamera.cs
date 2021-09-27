@@ -137,7 +137,7 @@ public class MultiTargetCamera : MonoBehaviour
             camState = SHORT_DISTANCE;
         }
         transform.position = Vector3.SmoothDamp(transform.position, finalPosition, ref velocity, smoothTime);
-        
+        Debug.Log(smoothTime);
     }
 
     float GetGreatestDistance()
