@@ -6,16 +6,26 @@ public class Projectile : MonoBehaviour
 {
     public ProjectileBehavior projectilePrefab;
     public Transform projectileSpawnPoint;
-    public float projectileSpeed = 20;
+    public float projectileSpeed = 20f;
     public float lifeTime = 3;
     private PlayerData playerData;
     public PlayerAttack playerAttack;
     public bool isShooting;
+    public Vector3 hauteurTarget;
+    public float maxTurnSpeed = 60f;
     public float coolDown;
     public Animator m_animator;
     public float timeBeforeShoot;
     public bool canShoot;
     public float isShootingCooldown;
+    public List<ProjectileBehavior> currentProjectiles = new List<ProjectileBehavior>();
+
+
+    private void Awake()
+    {
+        playerData = GetComponentInParent<PlayerData>();
+    }
+
     void Start()
     {
         playerData = gameObject.GetComponentInParent<PlayerData>();
@@ -24,9 +34,9 @@ public class Projectile : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        FollowTarget();
     }
     
     public void PrepareFire()
@@ -56,13 +66,13 @@ public class Projectile : MonoBehaviour
 
         projectile.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
 
-        projectile.GetComponent<Rigidbody>().AddForce(projectileSpawnPoint.forward * projectileSpeed, ForceMode.VelocityChange);
-
+        currentProjectiles.Add(projectile);
         StartCoroutine(DestroyBulletAfterTime(projectile));
     }
     private IEnumerator DestroyBulletAfterTime(ProjectileBehavior projectile)
     {
         yield return new WaitForSeconds(lifeTime);
+        currentProjectiles.Remove(projectile);
         Destroy(projectile);
     }
 
@@ -80,5 +90,19 @@ public class Projectile : MonoBehaviour
         canShoot = false;
         yield return new WaitForSeconds(coolDown);
         canShoot = true;
+    }
+
+    private void FollowTarget()
+    {
+        foreach (var projectile in currentProjectiles)
+        {
+            projectile.transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
+            Vector3 directionToTarget = playerData.target.position - (projectile.transform.position + hauteurTarget);
+            Vector3 newdirectionToTarget = new Vector3(directionToTarget.x, projectile.transform.position.y, directionToTarget.z);
+            Vector3 currentDirection = projectile.transform.forward;
+            Vector3 resultingDirection = Vector3.RotateTowards(currentDirection, directionToTarget.normalized, maxTurnSpeed * Mathf.Deg2Rad * Time.deltaTime, 1f);
+            projectile.transform.rotation = Quaternion.LookRotation(resultingDirection);
+        }
+        
     }
 }
