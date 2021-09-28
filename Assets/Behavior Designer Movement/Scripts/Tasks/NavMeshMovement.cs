@@ -25,7 +25,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         /// </summary>
         public override void OnAwake()
         {
-            navMeshAgent = GetComponent<NavMeshAgent>();
+            
         }
 
         /// <summary>
@@ -33,6 +33,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         /// </summary>
         public override void OnStart()
         {
+            navMeshAgent = GetComponent<NavMeshAgent>();
             navMeshAgent.speed = speed.Value;
             navMeshAgent.angularSpeed = angularSpeed.Value;
             navMeshAgent.isStopped = false;

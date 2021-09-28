@@ -40,8 +40,7 @@ public class LoadCharacter : MonoBehaviour
         //P2.GetComponentInChildren<Player>().hurtBox = 1 << LayerMask.NameToLayer("HurtBox");
         //P2.GetComponentInChildren<PlayerController>().cam = GameObject.Find("P2 Camera").transform;
         SetLayerRecursively(P2, 9);
-        P2.GetComponentInChildren<LockCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
-        P2.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
+        
         
         if (StartGame.managerIA.bIsIA)
         {
@@ -49,6 +48,8 @@ public class LoadCharacter : MonoBehaviour
         }
         else
         {
+            P2.GetComponentInChildren<LockCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
+            P2.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
             Debug.Log(StartGame.P2Device);
             InputUser.PerformPairingWithDevice(
             StartGame.P2Device,
