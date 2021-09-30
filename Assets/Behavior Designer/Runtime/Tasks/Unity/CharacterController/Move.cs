@@ -10,7 +10,6 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityCharacterController
         public SharedGameObject targetGameObject;
         [Tooltip("The amount to move")]
         public SharedVector3 motion;
-
         private CharacterController characterController;
         private GameObject prevGameObject;
 
@@ -29,12 +28,10 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityCharacterController
                 Debug.LogWarning("CharacterController is null");
                 return TaskStatus.Failure;
             }
-
             characterController.Move(motion.Value);
 
             return TaskStatus.Success;
         }
-
         public override void OnReset()
         {
             targetGameObject = null;
