@@ -155,7 +155,7 @@ RectTransform:
   m_LocalScale: {x: 1.4324676, y: 1.4506, z: 1.4506}
   m_Children: []
   m_Father: {fileID: 359044290}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -295,7 +295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &220203527
 RectTransform:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ RectTransform:
   m_GameObject: {fileID: 220203526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.6636643, z: 1}
   m_Children: []
   m_Father: {fileID: 1841426036}
   m_RootOrder: 1
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c4da83170b5914b408328662d049b803, type: 3}
+  m_Texture: {fileID: 2800000, guid: f278d7e961cb0294f8333be72c8ec35c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -378,6 +378,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1917629453}
+  - {fileID: 821577167}
   - {fileID: 1814711018}
   - {fileID: 135354737}
   - {fileID: 1931736845}
@@ -499,7 +500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &756371520
 RectTransform:
   m_ObjectHideFlags: 0
@@ -509,7 +510,7 @@ RectTransform:
   m_GameObject: {fileID: 756371519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.663664, z: 1}
   m_Children: []
   m_Father: {fileID: 1841426036}
   m_RootOrder: 2
@@ -539,7 +540,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c4da83170b5914b408328662d049b803, type: 3}
+  m_Texture: {fileID: 2800000, guid: 18fafd2bb375c564ca55751b5d41c22c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -554,6 +555,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756371519}
   m_CullTransparentMesh: 1
+--- !u!1 &821577164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 821577167}
+  - component: {fileID: 821577166}
+  - component: {fileID: 821577165}
+  m_Layer: 5
+  m_Name: nameDaiki
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &821577165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821577164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8396226, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 9e5ec23f835e37f4caeab231e2ac3373, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Daiki
+--- !u!222 &821577166
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821577164}
+  m_CullTransparentMesh: 1
+--- !u!224 &821577167
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821577164}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.4506, y: 1.4506, z: 1.4506}
+  m_Children: []
+  m_Father: {fileID: 359044290}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 283.2, y: -93}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1400887720
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,10 +779,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3bfc04f775a9b343b2cfd9400216c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tNameText: {fileID: 1917629454}
+  tNameText: {fileID: 1917629452}
+  dNameText: {fileID: 821577164}
   tDialogueText: {fileID: 1814711019}
   gGameObjectStart: {fileID: 1931736844}
   gGameObjectContinue: {fileID: 135354736}
+  yuestu: {fileID: 220203526}
+  daiki: {fileID: 756371519}
 --- !u!4 &1460792864
 Transform:
   m_ObjectHideFlags: 0
@@ -744,15 +827,15 @@ RectTransform:
   m_GameObject: {fileID: 1814711017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.537183, y: 2.7524862, z: 2.7524862}
+  m_LocalScale: {x: 1, y: 1, z: 2.7524862}
   m_Children: []
   m_Father: {fileID: 359044290}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -28, y: -163}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -98, y: -166.48543}
+  m_SizeDelta: {x: 570.95, y: 107.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814711019
 MonoBehaviour:
@@ -775,8 +858,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 27
+    m_Font: {fileID: 12800000, guid: 9e5ec23f835e37f4caeab231e2ac3373, type: 3}
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -984,12 +1067,12 @@ GameObject:
   - component: {fileID: 1917629455}
   - component: {fileID: 1917629454}
   m_Layer: 5
-  m_Name: name
+  m_Name: nameYuestu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1917629453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1022,7 +1105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.51776004, g: 0, b: 0.5377358, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1030,19 +1113,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 9e5ec23f835e37f4caeab231e2ac3373, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Yuetsu
 --- !u!222 &1917629455
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1083,12 +1166,12 @@ RectTransform:
   m_LocalScale: {x: 1.4324676, y: 1.4506, z: 1.4506}
   m_Children: []
   m_Father: {fileID: 359044290}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 284, y: -187.2}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 307.36655, y: -187.2}
+  m_SizeDelta: {x: 127.3759, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1931736846
 MonoBehaviour:
@@ -1161,9 +1244,15 @@ MonoBehaviour:
   dDialogue:
     sName: Yuetsu
     sSentences:
-    - oui c'est vrai que flo bon voila
-    - oui tu as raison c'est bien ce que je pense...
-    - mais alors damien quel bon ta compris...
+    - 'Yuetsu :
+
+      Cette endroit est parfait pour faire un entrainement'
+    - 'Yuetsu :
+
+      Hmm je vois quelqu''un arriver'
+    - 'Daiki :
+
+      Yueeeestu viens m''affronter'
 --- !u!114 &1931736848
 MonoBehaviour:
   m_ObjectHideFlags: 0
