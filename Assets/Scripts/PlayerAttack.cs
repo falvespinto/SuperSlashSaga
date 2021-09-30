@@ -81,7 +81,7 @@ public class PlayerAttack : MonoBehaviour
     private bool canLight;
     private bool canHeavy;
     private bool canParade;
-
+    private ComboCamera comboCam;
     private bool neverPared;
     private UltimateAttack ultimateAttack;
     public CharacterController controller;
@@ -94,10 +94,12 @@ public class PlayerAttack : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         player = GetComponent<Player>();
         ultimateAttack = GetComponent<UltimateAttack>();
+        comboCam = GetComponentInChildren<ComboCamera>();
+        
     }
     public void Start()
     {
-        
+        comboCam.gameObject.SetActive(false);
         default_Combo_Timer = light3AttackTime;
         default_Combo_Timer_Run = runLightAtkTime + runLightAtk2Time;
         default_BottomCombo_Timer = bottomLightAttackTime + bottomLight2AttackTime - 1.2f;
@@ -230,15 +232,14 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
-    public IEnumerator FullScreenCamera(float time)
+    public IEnumerator SwitchCamera(float time)
     {
-        posCam = playerData.cam.rect;
-        posCamOpponent = playerData.target.GetComponentInParent<PlayerData>().cam.rect;
-        playerData.cam.rect = new Rect(0f, 0f, 1f, 1f);
-        playerData.target.GetComponentInParent<PlayerData>().cam.rect = new Rect(0f, 0f, 0f, 0f);
+        playerData.cam.enabled = false;
+        comboCam.gameObject.SetActive(true); //comboCam.enabled = true;
         yield return new WaitForSeconds(time);
-        playerData.cam.rect = posCam;
-        playerData.target.GetComponentInParent<PlayerData>().cam.rect = posCamOpponent;
+        comboCam.gameObject.SetActive(false); //comboCam.enabled = false;
+        playerData.cam.enabled = true;
+
     }
     public IEnumerator ForwardAttack(float attackTime, Vector3 direction, float attackSpeed)
     {

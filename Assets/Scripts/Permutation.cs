@@ -10,6 +10,9 @@ public class Permutation : MonoBehaviour
     public PlayerData playerData;
     public float permutationOffSet;
     public CharacterController characterController;
+    public GameObject VFXPrefab;
+    public Vector3 offSet;
+    public float backwardOffSet;
 
     private void Awake()
     {
@@ -33,6 +36,7 @@ public class Permutation : MonoBehaviour
     public void Permute()
     {
         // Will permute
+        Instantiate(VFXPrefab, transform.position + offSet - transform.forward * backwardOffSet , transform.rotation);
         Debug.Log("Would have permuted");
         characterController.enabled = false;
         Vector3 newPos = playerData.target.position - playerData.target.forward * permutationOffSet;
@@ -42,6 +46,7 @@ public class Permutation : MonoBehaviour
 
     private void Update()
     {
+        Debug.DrawLine(transform.position, transform.position + transform.forward * 100, Color.blue);
         if (player.canPermute && canPermute)
         {
             Permute();
