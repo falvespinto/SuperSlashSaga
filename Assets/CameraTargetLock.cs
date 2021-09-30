@@ -23,6 +23,7 @@ public class CameraTargetLock : MonoBehaviour
         {
             target = playerData.target;
         }
+
         Vector3 dir = target.position - transform.position;
         dir.Normalize();
         dir.y = 0;

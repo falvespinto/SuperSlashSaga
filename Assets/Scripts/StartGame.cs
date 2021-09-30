@@ -15,11 +15,13 @@ public class StartGame : MonoBehaviour
     public static InputUser P2User;
     public static InputDevice P1Device;
     public static InputDevice P2Device;
+    public static IAmanager managerIA;
     void Start()
     {
         P1HasSelected = false;
         P2HasSelected = false;
         hasStartedGame = false;
+        managerIA = FindObjectOfType<IAmanager>();
     }
 
     // Update is called once per frame
@@ -52,8 +54,8 @@ public class StartGame : MonoBehaviour
         {
             Debug.Log("bah y'a rien d'autre chakal, Molière");
         }
-
-        if (P2.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Yuetsu")
+        
+        if (P2.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Yuetsu" && !managerIA.bIsIA)
         {
             PlayerPrefs.SetInt("selectedCharacterP2", 0);
             P2User = P2.champSelect.GetComponent<PlayerInput>().user;
@@ -62,7 +64,7 @@ public class StartGame : MonoBehaviour
         }
         else
         {
-            Debug.Log("bah y'a rien d'autre chakal, Molière");
+            PlayerPrefs.SetInt("selectedCharacterP2", 1);
         }
 
         SceneManager.LoadScene("SampleScene");

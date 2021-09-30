@@ -108,13 +108,13 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentSlope: 0
+    agentClimb: 0.47
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
-    manualCellSize: 0
-    cellSize: 0.16666667
+    manualCellSize: 1
+    cellSize: 0.16
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: cb72cd5edf98b2446ab3a5b142ca6d00, type: 2}
 --- !u!1 &69062778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,7 +1983,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654262745}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 29.6, y: 101.21751, z: -174.08}
+  m_LocalPosition: {x: 29.6, y: 100.3, z: -174.08}
   m_LocalScale: {x: 0.07620201, y: 0.076202, z: 0.07620201}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8282,8 +8282,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.0033900903, y: -0.6559198, z: -0.002945914, w: -0.75481725}
-  m_LocalPosition: {x: -61.28341, y: 32.458996, z: -33.904655}
+  m_LocalRotation: {x: 0.0033899092, y: -0.6559198, z: -0.0029457586, w: -0.75481725}
+  m_LocalPosition: {x: -275.4124, y: 137.01093, z: 71.61719}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8454,7 +8454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011565116}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 73.37, y: 101.2175, z: -174.17}
+  m_LocalPosition: {x: 73.37, y: 100.3, z: -174.17}
   m_LocalScale: {x: 9.526685, y: 9.526683, z: 9.526685}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8839,6 +8839,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f5236d37d5d6d4e4a9a5226c3c3c8244, type: 3}
       propertyPath: m_Name
       value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f5236d37d5d6d4e4a9a5226c3c3c8244, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5236d37d5d6d4e4a9a5226c3c3c8244, type: 3}
@@ -10620,8 +10624,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516428595}
-  m_LocalRotation: {x: 0.00339009, y: -0.6559198, z: -0.0029459142, w: -0.75481725}
-  m_LocalPosition: {x: -61.28341, y: 32.458996, z: -33.904655}
+  m_LocalRotation: {x: 0.00338991, y: -0.6559198, z: -0.0029457575, w: -0.75481725}
+  m_LocalPosition: {x: -275.4124, y: 137.01093, z: 71.61719}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11187,6 +11191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterPrefabs:
   - {fileID: 6735330714013134415, guid: 8edea63c9655fd547b2e5e294c70e625, type: 3}
+  - {fileID: 19284678875869424, guid: 2ae3b7279b681ca429d0bb80e1ba3288, type: 3}
   spawnPointP1: {fileID: 654262746}
   spawnPointP2: {fileID: 1011565117}
   player1: {fileID: 1255808041}
