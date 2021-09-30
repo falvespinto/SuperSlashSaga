@@ -44,6 +44,13 @@ public class LightAttack : MonoBehaviour
     public GameObject vfxSword;
     private Rect posCam;
     private Rect posCamOpponent;
+
+
+    //Times
+    public float timeBeforeCancelLight1;
+    public float timeBeforeCancelLight2;
+    public float timeBeforeCancelLight3;
+
     private void Awake()
     {
         //   m_Rigidbody = GetComponent<Rigidbody>();
@@ -95,7 +102,7 @@ public class LightAttack : MonoBehaviour
                         // ChangeAnimationState(m_Punch);
                         playerAttack.m_Animator.SetTrigger("LightAttack");
                         StartCoroutine(playerAttack.ForwardAttack(lightAttackTime - 0.6f, direction, 0.05f));
-                        Invoke("AttackComplete", lightAttackTime - 0.7f);
+                        Invoke("AttackComplete", timeBeforeCancelLight1);
                         FindObjectOfType<AudioManager>().Play("epee");
                         
                     //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
@@ -114,7 +121,7 @@ public class LightAttack : MonoBehaviour
                         // ChangeAnimationState(m_Punch);
                         playerAttack.m_Animator.SetTrigger("LightAttack2");
                         StartCoroutine(playerAttack.ForwardAttack(light2AttackTime - 0.5f, direction, 0.05f));
-                        Invoke("AttackComplete", light2AttackTime - 0.3f);
+                        Invoke("AttackComplete", timeBeforeCancelLight2);
                         FindObjectOfType<AudioManager>().Play("epee");
                     //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
                 }
@@ -128,7 +135,7 @@ public class LightAttack : MonoBehaviour
                         playerAttack.m_Animator.SetTrigger("LightAttack3");
                         Debug.Log(light3AttackTime);
                         StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
-                        Invoke("AttackComplete", light3AttackTime - 0.7f);
+                        Invoke("AttackComplete", timeBeforeCancelLight3);
                         playerAttack.playerHit = null;
                         FindObjectOfType<AudioManager>().Play("epee");
                 }
@@ -299,7 +306,6 @@ public class LightAttack : MonoBehaviour
     // A remplacer par une coroutine plus tard
     public void AttackComplete()
     {
-        Debug.Log("testeuu");
         playerAttack.isAttacking = false;
     }
 }

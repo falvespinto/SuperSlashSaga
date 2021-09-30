@@ -9774,6 +9774,7 @@ MonoBehaviour:
   canPermute: 0
   isInEnemyCombo: 0
   isDead: 0
+  permutation: {fileID: 4279532176956108145}
 --- !u!114 &691353372036688036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9895,6 +9896,9 @@ MonoBehaviour:
   playerController: {fileID: 0}
   controller: {fileID: 0}
   vfxSword: {fileID: 8983980246677935597}
+  timeBeforeCancelLight1: 0.7
+  timeBeforeCancelLight2: 0.7
+  timeBeforeCancelLight3: 0.7
 --- !u!114 &7266148757124352407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9934,6 +9938,7 @@ MonoBehaviour:
   playerData: {fileID: 0}
   playerController: {fileID: 0}
   lightAttackTime: 0
+  timeBeforeCancelHeavy: 0
 --- !u!114 &3433924704099936633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10042,6 +10047,8 @@ MonoBehaviour:
   permutationOffSet: 20
   characterController: {fileID: 4576790369941818661}
   VFXPrefab: {fileID: 216313935524729590, guid: 712158b720027c34fbe6582bf9d8ab41, type: 3}
+  offSet: {x: 0, y: 5, z: 0}
+  backwardOffSet: 2
 --- !u!114 &4593959836220969311
 MonoBehaviour:
   m_ObjectHideFlags: 0

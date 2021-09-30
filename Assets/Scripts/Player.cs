@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public bool canPermute;
     public bool isInEnemyCombo;
     public bool isDead;
+    public Permutation permutation;
     void Awake()
     {
         isDead = false;
@@ -92,21 +93,23 @@ public class Player : MonoBehaviour
             else
             {
                 StartCoroutine(willPermute());
-                isTakingDamage = true;
-                Invoke("ResetIsTakingDamage", GetHitTime);
-                currentHealth -= damage;
-                healthBar.SetHealth(currentHealth);
-                if (currentHealth <= 0)
+                if (!permutation.canPermute)
                 {
-                    animator.SetTrigger("Dead");
-                    isDead = true;
-                    Invoke("Die", 3f);
+                    isTakingDamage = true;
+                    Invoke("ResetIsTakingDamage", GetHitTime);
+                    currentHealth -= damage;
+                    healthBar.SetHealth(currentHealth);
+                    if (currentHealth <= 0)
+                    {
+                        animator.SetTrigger("Dead");
+                        isDead = true;
+                        Invoke("Die", 3f);
+                    }
+                    else
+                    {
+                        animator.SetTrigger("GetHit");
+                    }
                 }
-                else
-                {
-                    animator.SetTrigger("GetHit");
-                }
-
             }
         }
     }

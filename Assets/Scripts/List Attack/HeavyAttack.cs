@@ -14,6 +14,7 @@ public class HeavyAttack : MonoBehaviour
     public PlayerController playerController;
     private PlayerAttack playerAttack;
     public float lightAttackTime;
+    public float timeBeforeCancelHeavy;
     public void Awake()
     {
         playerData = GetComponentInParent<PlayerData>();
@@ -35,24 +36,20 @@ public class HeavyAttack : MonoBehaviour
         // A revoir (constante)(attackType)(vite)(stp)
         if (!playerAttack.isAttacking && !playerAttack.isParing && !playerAttack.isRunAttacking && attackType == "normal")
         {
-            if (heavyCanAutoCancel)
-            {
-                playerController.isRunning = false;
-                Vector3 direction = playerAttack.LookAtTarget();
-                playerAttack.isAttacking = true;
-                // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
-                Debug.Log("is attacking heavy");
-                // m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
-                playerAttack.swordAttacks.damage = 20;
-                playerAttack.swordAttacks.attackType = "Heavy";
-                // ChangeAnimationState(m_Punch);
-                playerAttack.m_Animator.SetTrigger("HeavyAttack");
-                StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.30f));
-                //StartCoroutine(AttackAutoCancel(heavyAttackTime, heavyCanAutoCancel));
-                Invoke("AttackComplete", heavyAttackTime - 0.7f);
-                FindObjectOfType<AudioManager>().Play("epee");
-
-            }
+            playerController.isRunning = false;
+            Vector3 direction = playerAttack.LookAtTarget();
+            playerAttack.isAttacking = true;
+            // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
+            Debug.Log("is attacking heavy");
+            // m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
+            playerAttack.swordAttacks.damage = 20;
+            playerAttack.swordAttacks.attackType = "Heavy";
+            // ChangeAnimationState(m_Punch);
+            playerAttack.m_Animator.SetTrigger("HeavyAttack");
+            StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.30f));
+            //StartCoroutine(AttackAutoCancel(heavyAttackTime, heavyCanAutoCancel));
+            Invoke("AttackComplete", timeBeforeCancelHeavy);
+            FindObjectOfType<AudioManager>().Play("epee");
         }
 
         if (!playerAttack.isAttacking && !playerAttack.isParing && !playerAttack.isRunAttacking && attackType == "bottom")
