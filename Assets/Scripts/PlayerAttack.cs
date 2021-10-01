@@ -146,6 +146,7 @@ public class PlayerAttack : MonoBehaviour
         swordAttacks.damage = 30;
         swordAttacks.attackType = "Paring";
         isParing = false;
+        parade.shield.SetActive(false);
         m_Animator.SetBool("IsParing", false);
         m_Animator.SetTrigger("CounterAttack");
         paradeButtonPressed = false;
