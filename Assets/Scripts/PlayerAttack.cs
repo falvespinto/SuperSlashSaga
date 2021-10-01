@@ -208,7 +208,6 @@ public class PlayerAttack : MonoBehaviour
         {
             if (!player.isTakingDamage && !isAttacking && !isParing && !isRunAttacking && !playerController.isRunning && !ultimateAttack.isPerformingUltimate)
             {
-                FindObjectOfType<AudioManager>().Play("ultimate");
                 LookAtTarget();
                 GetComponent<UltimateAttack>().PerformUltimateAttack();
             }
