@@ -145,13 +145,14 @@ public class MenuScript : MonoBehaviour
             else if (SelectedButton == 10)
             {
                 //utilisation du bouton jcj
-                SceneManager.LoadScene("CharacterSelection");      
+                SceneManager.LoadScene("CharacterSelection 1");      
             }
 
             else if (SelectedButton == 11)
             {
                 //utilisation du bouton jce
                 Debug.Log("JCE");
+                SceneManager.LoadScene("CharacterSelectionIA");
             }
 
             else if (SelectedButton == 12)
