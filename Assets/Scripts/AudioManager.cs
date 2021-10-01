@@ -9,8 +9,6 @@ public class AudioManager : MonoBehaviour
 {
     //playoneshot 
     public Sound[] sounds;
-    public Sound[] randomSounds;
-    private Sound randomSound;
 
     public bool verifIncreased = false;
     public bool verifDecreased = false;
@@ -29,29 +27,10 @@ public class AudioManager : MonoBehaviour
 
 
         }
-        foreach (Sound rs in randomSounds)
-        {
-            rs.source = gameObject.AddComponent<AudioSource>();
-            rs.source.clip = rs.clip;
-            rs.source.volume = rs.volume;
-            rs.source.pitch = rs.pitch;
-            rs.source.loop = rs.loop;
-
-        }
 
     }
 
-    void Update()
-    {
 
-    }
-
-    public void RandomPlay()
-    {
-        int index = Random.Range(0, randomSounds.Length);
-        randomSound = randomSounds[index];
-        randomSound.source.Play();
-    }
 
     public void Play(string name)
     {

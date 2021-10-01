@@ -103,7 +103,8 @@ public class LightAttack : MonoBehaviour
                         playerAttack.m_Animator.SetTrigger("LightAttack");
                         StartCoroutine(playerAttack.ForwardAttack(lightAttackTime - 0.6f, direction, 0.05f));
                         Invoke("AttackComplete", timeBeforeCancelLight1);
-                        FindObjectOfType<AudioManager>().Play("epee");
+                        player.playerAudio.playSoundLeger();
+                        
                         
                     //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
 
@@ -122,7 +123,7 @@ public class LightAttack : MonoBehaviour
                         playerAttack.m_Animator.SetTrigger("LightAttack2");
                         StartCoroutine(playerAttack.ForwardAttack(light2AttackTime - 0.5f, direction, 0.05f));
                         Invoke("AttackComplete", timeBeforeCancelLight2);
-                        FindObjectOfType<AudioManager>().Play("epee");
+                        player.playerAudio.playSoundLeger();
                     //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
                 }
 
@@ -137,7 +138,8 @@ public class LightAttack : MonoBehaviour
                         StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
                         Invoke("AttackComplete", timeBeforeCancelLight3);
                         playerAttack.playerHit = null;
-                        FindObjectOfType<AudioManager>().Play("epee");
+                        player.playerAudio.playSoundLeger();
+
                 }
 
                     if (lightComboState == LightComboState.LIGHT_4)
@@ -152,7 +154,8 @@ public class LightAttack : MonoBehaviour
                         playerAttack.swordAttacks.attackType = "Light";
                         //StartCoroutine(ComboWorkflow());
                         Invoke("CheckPerformFullCombo", 1f);
-                        FindObjectOfType<AudioManager>().Play("epee");
+                        player.playerAudio.playSoundLeger();
+
                 }
 
                     if (lightComboState == LightComboState.NONE)

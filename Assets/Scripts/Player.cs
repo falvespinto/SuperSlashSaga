@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     public bool isInEnemyCombo;
     public bool isDead;
     public Permutation permutation;
+    public PlayerAudioManager playerAudio;
     void Awake()
     {
         isDead = false;
