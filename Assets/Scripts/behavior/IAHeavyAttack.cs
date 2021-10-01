@@ -3,30 +3,30 @@ using BehaviorDesigner.Runtime.Tasks;
 using BehaviorDesigner.Runtime;
 
 
-public class IALight : Action
+public class IAHeavy : Action
 {
 
     private GameObject prevGameObject;
     public SharedGameObject targetGameObject;
-    public LightAttackIA lightAttackIA;
+    public HeavyAttackIA heavyAttackIA;
     public override void OnStart()
     {
         var currentGameObject = GetDefaultGameObject(targetGameObject.Value);
         if (currentGameObject != prevGameObject)
         {
-            lightAttackIA = currentGameObject.GetComponent<LightAttackIA>();
+            heavyAttackIA = currentGameObject.GetComponent<HeavyAttackIA>();
             prevGameObject = currentGameObject;
         }
     }
     public override TaskStatus OnUpdate()
     {
-        if (lightAttackIA == null)
+        if (heavyAttackIA == null)
         {
             Debug.LogWarning("Animator is null");
             return TaskStatus.Failure;
         }
 
-        lightAttackIA.PerformedLightAttack("normal");
+        heavyAttackIA.PerformedHeavyAttack("normal");
 
         return TaskStatus.Success;
     }

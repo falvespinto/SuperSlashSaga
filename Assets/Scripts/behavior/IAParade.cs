@@ -3,30 +3,37 @@ using BehaviorDesigner.Runtime.Tasks;
 using BehaviorDesigner.Runtime;
 
 
-public class IALight : Action
+public class IAParade : Action
 {
 
     private GameObject prevGameObject;
     public SharedGameObject targetGameObject;
-    public LightAttackIA lightAttackIA;
+    public ParadeIA paradeIA;
+    public SharedBool isParing;
     public override void OnStart()
     {
         var currentGameObject = GetDefaultGameObject(targetGameObject.Value);
         if (currentGameObject != prevGameObject)
         {
-            lightAttackIA = currentGameObject.GetComponent<LightAttackIA>();
+            paradeIA = currentGameObject.GetComponent<ParadeIA>();
             prevGameObject = currentGameObject;
         }
     }
     public override TaskStatus OnUpdate()
     {
-        if (lightAttackIA == null)
+        if (paradeIA == null)
         {
             Debug.LogWarning("Animator is null");
             return TaskStatus.Failure;
         }
-
-        lightAttackIA.PerformedLightAttack("normal");
+        if (isParing.Value)
+        {
+            paradeIA.InitializedParadeAttack();
+        }
+        else
+        {
+            paradeIA.FinalizedParadeAttack();
+        }
 
         return TaskStatus.Success;
     }

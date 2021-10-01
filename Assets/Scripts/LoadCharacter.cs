@@ -44,10 +44,14 @@ public class LoadCharacter : MonoBehaviour
         
         if (StartGame.managerIA.bIsIA)
         {
-            //Do nothing. ;)
+            P1.GetComponentInChildren<Attack>().isIA = true;
+            P2.GetComponentInChildren<Attack>().isIA = true;
         }
         else
         {
+            P1.GetComponentInChildren<Attack>().isIA = false;
+            P2.GetComponentInChildren<Attack>().isIA = false;
+
             P2.GetComponentInChildren<LockCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
             P2.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
             Debug.Log(StartGame.P2Device);

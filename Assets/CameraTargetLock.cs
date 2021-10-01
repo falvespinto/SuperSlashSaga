@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraTargetLock : MonoBehaviour
 {
     PlayerData playerData;
+    IAmanager iaManager;
     public Transform follow;
     public Transform target;
     public int yOffSet;
@@ -12,6 +13,7 @@ public class CameraTargetLock : MonoBehaviour
     void Awake()
     {
         playerData = GetComponentInParent<PlayerData>();
+        iaManager = GetComponentInParent<IAmanager>();
     }
     void Start()
     {

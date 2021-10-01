@@ -9,10 +9,13 @@ public class Attack : MonoBehaviour
     public string attackType;
     private Collider col;
     public PlayerAttack player;
+    public PlayerAttackIA playerIA;
+    public bool isIA;
 
     private void Start()
     {
         col = GetComponent<Collider>();
+        
     }
     void Update()
     {
@@ -40,12 +43,26 @@ public class Attack : MonoBehaviour
         {
             for (int i = 0; i < hit.Length; i++)
             {
-                hit[i].GetComponentInParent<Player>().TakeDamage(damage, attackType);
+                if(isIA && GetComponentInParent<PlayerData>().playerIndex == 0)
+                {
+                    hit[i].GetComponentInParent<IA>().TakeDamage(damage, attackType);
+                    player.playerHit = hit[i].GetComponentInParent<IA>().gameObject;
+                    gameObject.SetActive(false);
+                    break;
+                }
+                else if(isIA && GetComponentInParent<PlayerData>().playerIndex == 1)
+                {
+                    hit[i].GetComponentInParent<Player>().TakeDamage(damage, attackType);
+                    playerIA.playerHit = hit[i].GetComponentInParent<Player>().gameObject;
+                    gameObject.SetActive(false);
+                    break;
+                }
+                /*hit[i].GetComponentInParent<Player>().TakeDamage(damage, attackType);
                 Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
                 Debug.Log(hit[i].gameObject.layer);
                 player.playerHit = hit[i].GetComponentInParent<Player>().gameObject;
                 gameObject.SetActive(false);
-                break;
+                break;*/
             }
         }
     }
