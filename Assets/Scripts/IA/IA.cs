@@ -1,17 +1,16 @@
-ï»¿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class IA : MonoBehaviour
 {
     public int maxHealth = 100;
     public float currentHealth;
     public int playerIndex;
     public HealthBar healthBar;
-    public PlayerAttack playerAttack;
-    public PlayerController playerController;
+    public PlayerAttackIA playerAttackIA;
     public static int winner;
     public float GuardBreakTime;
     public bool isTakingDamage;
@@ -24,14 +23,12 @@ public class Player : MonoBehaviour
     public bool canPermute;
     public bool isInEnemyCombo;
     public bool isDead;
-    public Permutation permutation;
     void Awake()
     {
         isDead = false;
         isInEnemyCombo = false;
         playerData = GetComponentInParent<PlayerData>();
-        playerAttack = GetComponent<PlayerAttack>();
-        playerController = GetComponent<PlayerController>();
+        playerAttackIA = GetComponent<PlayerAttackIA>();
         healthBar = playerData.healthBar;
         playerIndex = playerData.playerIndex;
         //GetComponentInParent<PlayerData>().target = GetComponentInParent<PlayerData>().playerTarget.GetComponentInChildren<Player>().transform;
@@ -60,14 +57,14 @@ public class Player : MonoBehaviour
         dir.Normalize();
         dir.y = 0;
         transform.rotation = Quaternion.LookRotation(dir);
-        if (playerAttack.isParing)
+        if (playerAttackIA.isParing)
         {
             if (attackType == "Heavy")
             {
                 isTakingDamage = true;
                 Invoke("ResetIsTakingDamage", GuardBreakTime);
                 animator.SetTrigger("Guard_Break");
-                // m_rigidbody.velocity = new Vector2(0f, m_rigidbody.velocity.y); // dÃ©placements horizontaux bloquÃ©s
+                // m_rigidbody.velocity = new Vector2(0f, m_rigidbody.velocity.y); // déplacements horizontaux bloqués
                 currentHealth -= damage * 1.1f;
                 healthBar.SetHealth(currentHealth);
                 if (currentHealth <= 0)
@@ -78,7 +75,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                playerAttack.AttackedWhileParing();
+                playerAttackIA.AttackedWhileParing();
             }
 
         }
@@ -93,23 +90,21 @@ public class Player : MonoBehaviour
             else
             {
                 StartCoroutine(willPermute());
-                if (!permutation.canPermute)
+                isTakingDamage = true;
+                Invoke("ResetIsTakingDamage", GetHitTime);
+                currentHealth -= damage;
+                healthBar.SetHealth(currentHealth);
+                if (currentHealth <= 0)
                 {
-                    isTakingDamage = true;
-                    Invoke("ResetIsTakingDamage", GetHitTime);
-                    currentHealth -= damage;
-                    healthBar.SetHealth(currentHealth);
-                    if (currentHealth <= 0)
-                    {
-                        animator.SetTrigger("Dead");
-                        isDead = true;
-                        Invoke("Die", 3f);
-                    }
-                    else
-                    {
-                        animator.SetTrigger("GetHit");
-                    }
+                    animator.SetTrigger("Dead");
+                    isDead = true;
+                    Invoke("Die", 3f);
                 }
+                else
+                {
+                    animator.SetTrigger("GetHit");
+                }
+
             }
         }
     }

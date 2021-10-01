@@ -95,8 +95,8 @@ public class LightAttack : MonoBehaviour
                     {
                         playerController.isRunning = false;
                         Vector3 direction = playerAttack.LookAtTarget();
-                        // Joue attaque 1 du combo de coup légé
-                        //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux bloqués
+                        // Joue attaque 1 du combo de coup lï¿½gï¿½
+                        //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // dï¿½placements horizontaux bloquï¿½s
                         playerAttack.swordAttacks.damage = 7;
                         playerAttack.swordAttacks.attackType = "Light";
                         // ChangeAnimationState(m_Punch);
@@ -114,8 +114,8 @@ public class LightAttack : MonoBehaviour
                     {
                         playerController.isRunning = false;
                         Vector3 direction = playerAttack.LookAtTarget();
-                        // Joue attaque 1 du combo de coup légé
-                        //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
+                        // Joue attaque 1 du combo de coup lï¿½gï¿½
+                        //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // dï¿½placements horizontaux
                         playerAttack.swordAttacks.damage = 8;
                         playerAttack.swordAttacks.attackType = "Light";
                         // ChangeAnimationState(m_Punch);
@@ -140,27 +140,27 @@ public class LightAttack : MonoBehaviour
                         FindObjectOfType<AudioManager>().Play("epee");
                 }
 
-                    if (lightComboState == LightComboState.LIGHT_4)
-                    {
-                        playerController.isRunning = false;
-                        Vector3 direction = playerAttack.LookAtTarget();
-                        Debug.Log("is attacking light 4");
-                        Debug.Log(lightComboAttackTime);
-                        playerAttack.m_Animator.SetTrigger("LightAttackCombo");
-                        Invoke("AttackComplete", lightComboAttackTime);
-                        playerAttack.swordAttacks.damage = 4;
-                        playerAttack.swordAttacks.attackType = "Light";
-                        //StartCoroutine(ComboWorkflow());
-                        Invoke("CheckPerformFullCombo", 1f);
-                        FindObjectOfType<AudioManager>().Play("epee");
+                if (lightComboState == LightComboState.LIGHT_4)
+                {
+                    playerController.isRunning = false;
+                    Vector3 direction = playerAttack.LookAtTarget();
+                    Debug.Log("is attacking light 4");
+                    Debug.Log(lightComboAttackTime);
+                    playerAttack.m_Animator.SetTrigger("LightAttackCombo");
+                    Invoke("AttackComplete", lightComboAttackTime);
+                    playerAttack.swordAttacks.damage = 4;
+                    playerAttack.swordAttacks.attackType = "Light";
+                    //StartCoroutine(ComboWorkflow());
+                    Invoke("CheckPerformFullCombo", 1f);
+                    FindObjectOfType<AudioManager>().Play("epee");
                 }
 
-                    if (lightComboState == LightComboState.NONE)
-                    {
+                if (lightComboState == LightComboState.NONE)
+                {
 
-                    }
-                    Debug.Log(lightComboState);
-                
+                }
+                Debug.Log(lightComboState);
+
 
             }
 
@@ -182,49 +182,49 @@ public class LightAttack : MonoBehaviour
             else
             {
                 playerAttack.isInCombo = true;
-                //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
-                // Si on veut avoir un timer différent entre chaques combo, il faut bouger l'afféctation du current combo timer dans les if ci-dessous et affecter current combo timer avec des valeurs paramétrés au préalable
+                //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // dï¿½placements horizontaux
+                // Si on veut avoir un timer diffï¿½rent entre chaques combo, il faut bouger l'affï¿½ctation du current combo timer dans les if ci-dessous et affecter current combo timer avec des valeurs paramï¿½trï¿½s au prï¿½alable
                 playerAttack.isAttacking = true;
                 current_Combo_Timer = default_Combo_Timer;
-                    lightComboState++;
-                    if (lightComboState == LightComboState.LIGHT_1)
-                    {
-                        playerAttack.LookAtTarget();
-                        // Joue attaque 1 du combo de coup légé
-                        Debug.Log("is attacking light");
-                        //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux bloqués
-                        playerAttack.swordAttacks.damage = 7;
-                        playerAttack.swordAttacks.attackType = "Light";
-                        // ChangeAnimationState(m_Punch);
-                        playerAttack.m_Animator.SetTrigger("BottomLightAttack");
-                        Invoke("AttackComplete", lightAttackTime - 0.75f);
-                        Debug.Log(lightAttackTime);
-                        //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
+                lightComboState++;
+                if (lightComboState == LightComboState.LIGHT_1)
+                {
+                    playerAttack.LookAtTarget();
+                    // Joue attaque 1 du combo de coup lï¿½gï¿½
+                    Debug.Log("is attacking light");
+                    //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // dï¿½placements horizontaux bloquï¿½s
+                    playerAttack.swordAttacks.damage = 7;
+                    playerAttack.swordAttacks.attackType = "Light";
+                    // ChangeAnimationState(m_Punch);
+                    playerAttack.m_Animator.SetTrigger("BottomLightAttack");
+                    Invoke("AttackComplete", lightAttackTime - 0.75f);
+                    Debug.Log(lightAttackTime);
+                    //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
 
 
-                    }
+                }
 
-                    if (lightComboState == LightComboState.LIGHT_2)
-                    {
-                        playerAttack.LookAtTarget();
-                        // Joue attaque 1 du combo de coup légé
-                        Debug.Log("is attacking light 2");
-                        //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
-                        playerAttack.swordAttacks.damage = 8;
-                        playerAttack.swordAttacks.attackType = "Light";
-                        // ChangeAnimationState(m_Punch);
-                        playerAttack.m_Animator.SetTrigger("LightAttack2");
-                        Debug.Log(light2AttackTime);
-                        Invoke("AttackComplete", light2AttackTime);
-                        //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
-                    }
+                if (lightComboState == LightComboState.LIGHT_2)
+                {
+                    playerAttack.LookAtTarget();
+                    // Joue attaque 1 du combo de coup lï¿½gï¿½
+                    Debug.Log("is attacking light 2");
+                    //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // dï¿½placements horizontaux
+                    playerAttack.swordAttacks.damage = 8;
+                    playerAttack.swordAttacks.attackType = "Light";
+                    // ChangeAnimationState(m_Punch);
+                    playerAttack.m_Animator.SetTrigger("LightAttack2");
+                    Debug.Log(light2AttackTime);
+                    Invoke("AttackComplete", light2AttackTime);
+                    //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
+                }
 
-                    if (lightComboState == LightComboState.NONE)
-                    {
+                if (lightComboState == LightComboState.NONE)
+                {
 
-                    }
-                    Debug.Log(lightComboState);
-                
+                }
+                Debug.Log(lightComboState);
+
 
             }
 
