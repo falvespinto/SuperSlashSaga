@@ -40,17 +40,25 @@ public class LoadCharacter : MonoBehaviour
         //P2.GetComponentInChildren<Player>().hurtBox = 1 << LayerMask.NameToLayer("HurtBox");
         //P2.GetComponentInChildren<PlayerController>().cam = GameObject.Find("P2 Camera").transform;
         SetLayerRecursively(P2, 9);
-        
-        
+
+
         if (StartGame.managerIA.bIsIA)
         {
+            P1.GetComponent<PlayerAttack>().swordAttacks.gameObject.SetActive(true);
+            P2.GetComponent<PlayerAttackIA>().swordAttacks.gameObject.SetActive(true);
             P1.GetComponentInChildren<Attack>().isIA = true;
             P2.GetComponentInChildren<Attack>().isIA = true;
+            P1.GetComponent<PlayerAttack>().swordAttacks.gameObject.SetActive(false);
+            P2.GetComponent<PlayerAttackIA>().swordAttacks.gameObject.SetActive(false);
         }
         else
         {
+            P1.GetComponent<PlayerAttack>().swordAttacks.gameObject.SetActive(true);
+            P2.GetComponent<PlayerAttack>().swordAttacks.gameObject.SetActive(true);
             P1.GetComponentInChildren<Attack>().isIA = false;
             P2.GetComponentInChildren<Attack>().isIA = false;
+            P1.GetComponent<PlayerAttack>().swordAttacks.gameObject.SetActive(false);
+            P2.GetComponent<PlayerAttack>().swordAttacks.gameObject.SetActive(false);
 
             P2.GetComponentInChildren<LockCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
             P2.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");

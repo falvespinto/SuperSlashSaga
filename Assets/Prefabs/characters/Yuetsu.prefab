@@ -8851,7 +8851,7 @@ Transform:
   m_LocalScale: {x: 191.79686, y: 191.79688, z: 191.79686}
   m_Children: []
   m_Father: {fileID: 2430065138829903224}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1479045980251855705
 MeshFilter:
@@ -10153,6 +10153,7 @@ Transform:
   - {fileID: 8888424074732013733}
   - {fileID: 5414027471314886385}
   - {fileID: 8692123214646702960}
+  - {fileID: 8971681932534659945}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -10491,6 +10492,7 @@ MonoBehaviour:
   canPermute: 0
   isInEnemyCombo: 0
   isDead: 0
+  parade: {fileID: 3433924704099936633}
   permutation: {fileID: 4279532176956108145}
   playerAudio: {fileID: 2828686833500551628}
 --- !u!114 &691353372036688036
@@ -17294,14 +17296,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
---- !u!4 &9720066872501008 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1516322998706628453, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
-  m_PrefabInstance: {fileID: 1524899356451865717}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8983980246677935597 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7603208177342239128, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
+  m_PrefabInstance: {fileID: 1524899356451865717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9720066872501008 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1516322998706628453, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
   m_PrefabInstance: {fileID: 1524899356451865717}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4899512496128025933

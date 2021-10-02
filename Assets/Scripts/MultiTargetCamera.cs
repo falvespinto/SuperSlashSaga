@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class MultiTargetCamera : MonoBehaviour
 {
-    public Transform[] playersTransforms;
+    public List<Transform> playersTransforms;
     public Vector3 offset;
     public Vector3 camPositionOffSet;
     private Vector3 velocity;
@@ -55,7 +55,7 @@ public class MultiTargetCamera : MonoBehaviour
 
     private void Update()
     {
-        if (playersTransforms.Length != 2)
+        if (playersTransforms.Count != 2)
         {
             playersTransforms = GetAllPlayersTransforms(playersTransforms);
         }
@@ -63,7 +63,7 @@ public class MultiTargetCamera : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (playersTransforms.Length == 0)
+        if (playersTransforms.Count == 0)
         {
             return;
         }
@@ -153,25 +153,29 @@ public class MultiTargetCamera : MonoBehaviour
 
     Vector3 GetCenterPoint()
     {
-        if (playersTransforms.Length == 1)
+        if (playersTransforms.Count == 1)
         {
             return playersTransforms[0].position;
         }
 
         var bounds = new Bounds(playersTransforms[0].position, Vector3.zero);
-        for (int i = 0; i < playersTransforms.Length; i++)
+        for (int i = 0; i < playersTransforms.Count; i++)
         {
             bounds.Encapsulate(playersTransforms[i].position);
         }
         return bounds.center;
     }
-    Transform[] GetAllPlayersTransforms(Transform[] players)
+    List<Transform> GetAllPlayersTransforms(List<Transform> players)
     {
         allPlayers = GameObject.FindGameObjectsWithTag("Player");
-        players = new Transform[allPlayers.Length];
+        players = new List<Transform>();
         for (int i = 0; i < allPlayers.Length; i++)
         {
-            players[i] = allPlayers[i].transform;
+            players.Add(allPlayers[i].transform);
+        }
+        if (players.Count < 2)
+        {
+            players.Add(GameObject.FindGameObjectWithTag("IA").transform);
         }
         return players;
     }
@@ -197,7 +201,7 @@ public class MultiTargetCamera : MonoBehaviour
         //    }
         //}
 
-        for (int i = 0; i < playersTransforms.Length; i++)
+        for (int i = 0; i < playersTransforms.Count; i++)
         {
             float distance = Vector3.Distance(playersTransforms[i].position,cam.transform.position);
             if (distance < closestDistance)
@@ -216,7 +220,7 @@ public class MultiTargetCamera : MonoBehaviour
         Transform farthestPlayer = null;
         float farthestDistance = 0;
 
-        for (int i = 0; i < playersTransforms.Length; i++)
+        for (int i = 0; i < playersTransforms.Count; i++)
         {
             float distance = Vector3.Distance(playersTransforms[i].position, cam.transform.position);
             if (distance > farthestDistance)

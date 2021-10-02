@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public bool canPermute;
     public bool isInEnemyCombo;
     public bool isDead;
+    public Parade parade;
     public Permutation permutation;
     public PlayerAudioManager playerAudio;
     void Awake()
@@ -67,6 +68,7 @@ public class Player : MonoBehaviour
                 isTakingDamage = true;
                 Invoke("ResetIsTakingDamage", GuardBreakTime);
                 animator.SetTrigger("Guard_Break");
+                parade.shield.SetActive(false);
                 // m_rigidbody.velocity = new Vector2(0f, m_rigidbody.velocity.y); // déplacements horizontaux bloqués
                 currentHealth -= damage * 1.1f;
                 healthBar.SetHealth(currentHealth);
