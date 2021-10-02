@@ -55,7 +55,6 @@ public class Projectile : MonoBehaviour
     public IEnumerator Fire()
     {
         yield return new WaitForSeconds(timeBeforeShoot);
-        FindObjectOfType<AudioManager>().Play("epee");
         ProjectileBehavior projectile = Instantiate(projectilePrefab);
         projectile.playerData = playerData;
         Physics.IgnoreCollision(projectile.GetComponent<Collider>(),

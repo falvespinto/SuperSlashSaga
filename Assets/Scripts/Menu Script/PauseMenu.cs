@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject Point, pauseMenu, Menu;
+    public GameObject Point, PointMenu, pauseMenu, Menu;
     private int SelectedButton = 1;
     [SerializeField]
     private int NumberOfButtons;
@@ -18,6 +18,8 @@ public class PauseMenu : MonoBehaviour
     public Transform ButtonPosition2;
     public Transform ButtonPosition3;
     public Transform ButtonPosition4;
+    public Transform ButtonPosition5;
+    public Transform ButtonPosition6;
 
     public static bool GameIsPaused = false;
     public bool cooldown = false;
@@ -50,14 +52,38 @@ public class PauseMenu : MonoBehaviour
             else if (SelectedButton == 3)
             {
                 // When the button with the pointer is clicked, this piece of script is activated
-                Debug.Log("Option");
+                Debug.Log("Commande");
+                Time.timeScale = 1f;
             }
             else if (SelectedButton == 4)
+            {
+                // When the button with the pointer is clicked, this piece of script is activated
+                Debug.Log("Option");
+                Menu.SetActive(true);
+                pauseMenu.SetActive(false);
+                Point.SetActive(false);
+                PointMenu.SetActive(true);
+                SelectedButton = 6;
+                PointMenu.transform.position = ButtonPosition6.position;
+            }
+            else if (SelectedButton == 5)
             {
                 // When the button with the pointer is clicked, this piece of script is activated
                 Debug.Log("RetourMenu");
                 Time.timeScale = 1f;
                 SceneManager.LoadScene("Menu Principal");
+            }
+            else if (SelectedButton == 6)
+            {
+                // When the button with the pointer is clicked, this piece of script is activated
+                Debug.Log("Retour");
+                Time.timeScale = 1f;
+                Menu.SetActive(false);
+                pauseMenu.SetActive(true);
+                Point.SetActive(true);
+                PointMenu.SetActive(false);
+                SelectedButton = 1;
+                Point.transform.position = ButtonPosition1.position;
             }
         }
 
@@ -65,22 +91,17 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-
+       
     }
 
     public void pause()
     {
-            Menu.SetActive(false);
-
             if (GameIsPaused)
             {
-                pauseMenu.SetActive(false);
-                Resume();
-                //Menu.SetActive(true);
+                Resume();    
             }
             else
             {
-                pauseMenu.SetActive(true);
                 Pause();
             }
     }
@@ -94,7 +115,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-
+        pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
@@ -146,23 +167,30 @@ public class PauseMenu : MonoBehaviour
         if (SelectedButton == 1)
         {
             Point.transform.position = ButtonPosition1.position;
-            FindObjectOfType<AudioManager>().Play("percution");
         }
         else if (SelectedButton == 2)
         {
             Point.transform.position = ButtonPosition2.position;
-            FindObjectOfType<AudioManager>().Play("percution");
         }
         else if (SelectedButton == 3)
         {
             Point.transform.position = ButtonPosition3.position;
-            FindObjectOfType<AudioManager>().Play("percution");
         }
         else if (SelectedButton == 4)
         {
             Point.transform.position = ButtonPosition4.position;
-            FindObjectOfType<AudioManager>().Play("percution");
         }
+
+        else if (SelectedButton == 5)
+        {
+            Point.transform.position = ButtonPosition5.position;
+        }
+
+        else if (SelectedButton == 6)
+        {
+            PointMenu.transform.position = ButtonPosition6.position;
+        }
+
     }
     private IEnumerator setCooldown()
     {

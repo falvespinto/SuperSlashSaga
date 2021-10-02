@@ -11,7 +11,7 @@ C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/SuperSlash/SuperSlashSaga
+D:/SSS/SuperSlashSaga
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
@@ -23,7 +23,7 @@ Refreshing native plugins compatible for Editor in 78.35 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.2f1 (068178b99f32)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/SuperSlash/SuperSlashSaga/Assets
+[Subsystems] Discovering subsystems at path D:/SSS/SuperSlashSaga/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -2918,14 +2918,12 @@ Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.81 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+Unloading 4386 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 181.2 MB.
+System memory in use after: 181.4 MB.
 
-[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 4843.
+Total: 2.612900 ms (FindLiveObjects: 0.355500 ms CreateObjectMapping: 0.183100 ms MarkObjects: 1.916100 ms  DeleteObjects: 0.156900 ms)
 
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.

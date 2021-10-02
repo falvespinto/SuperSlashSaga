@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     public bool isInEnemyCombo;
     public bool isDead;
     public Permutation permutation;
+    public PlayerAudioManager playerAudio;
     void Awake()
     {
         isDead = false;
@@ -44,7 +45,6 @@ public class Player : MonoBehaviour
         isTakingDamage = false;
         isInCombo = false;
         canPermute = false;
-        FindObjectOfType<AudioManager>().Play("combat");
         target = playerData.target;
     }
     void Update()

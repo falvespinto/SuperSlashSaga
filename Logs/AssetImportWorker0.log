@@ -11,7 +11,7 @@ C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/SuperSlash/SuperSlashSaga
+D:/SSS/SuperSlashSaga
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
@@ -23,7 +23,7 @@ Refreshing native plugins compatible for Editor in 80.19 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.2f1 (068178b99f32)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/SuperSlash/SuperSlashSaga/Assets
+[Subsystems] Discovering subsystems at path D:/SSS/SuperSlashSaga/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -137,14 +137,10 @@ Received Import Request.
   artifactKey: Guid(c1b8d6da67c9ecc4c80195d64c63902b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Prefabs/characters/YuetsuPlayer.prefab using Guid(c1b8d6da67c9ecc4c80195d64c63902b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Yuetsu_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 
 [C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
 
@@ -158,14 +154,10 @@ Received Import Request.
   artifactKey: Guid(8edea63c9655fd547b2e5e294c70e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Prefabs/characters/Yuetsu.prefab using Guid(8edea63c9655fd547b2e5e294c70e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Yuetsu_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 
 [C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
 
@@ -258,7 +250,13 @@ UnityEditor.GameObjectInspector:GetPreviewData ()
 UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
 UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
 
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
+========================================================================
+Received Import Request.
+  Time since last request: 64.513214 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd7715c7a9307fd7d5a81b964caf9725') in 0.001642 seconds
+  Import took 0.008321 seconds .
 
  -> (artifact id: 'b262d4833ce81fba0fc60d4e1856da64') in 0.862011 seconds
   Import took 0.874086 seconds .

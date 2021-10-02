@@ -141,17 +141,12 @@ public class PlayerController : MonoBehaviour
             isRunning = true;
             if (firstTimeRunning)
             {
-                FindObjectOfType<AudioManager>().Play("deplacement");
                 firstTimeRunning = false;
             }
             //ChangeAnimationState(m_Run);
         }
         else
         {
-            if (!firstTimeRunning)
-            {
-                FindObjectOfType<AudioManager>().Stop("deplacement");
-            }
             firstTimeRunning = true;
             // ChangeAnimationState(m_Idle);
             isRunning = false;
