@@ -92,7 +92,7 @@ public class LightAttackIA : MonoBehaviour
                     playerAttackIA.m_Animator.SetTrigger("LightAttack");
                     StartCoroutine(playerAttackIA.ForwardAttack(lightAttackTime - 0.6f, direction, 0.05f));
                     Invoke("AttackComplete", lightAttackTime - 0.7f);
-                    FindObjectOfType<AudioManager>().Play("epee");
+
 
                     //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
 
@@ -110,7 +110,6 @@ public class LightAttackIA : MonoBehaviour
                     playerAttackIA.m_Animator.SetTrigger("LightAttack2");
                     StartCoroutine(playerAttackIA.ForwardAttack(light2AttackTime - 0.5f, direction, 0.05f));
                     Invoke("AttackComplete", light2AttackTime - 0.3f);
-                    FindObjectOfType<AudioManager>().Play("epee");
                     //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
                 }
 
@@ -124,7 +123,7 @@ public class LightAttackIA : MonoBehaviour
                     StartCoroutine(playerAttackIA.ForwardAttack(0.2f, direction, 0.3f));
                     Invoke("AttackComplete", light3AttackTime - 0.7f);
                     playerAttackIA.playerHit = null;
-                    FindObjectOfType<AudioManager>().Play("epee");
+
                 }
 
                 if (lightComboState == LightComboState.LIGHT_4)
@@ -138,7 +137,6 @@ public class LightAttackIA : MonoBehaviour
                     playerAttackIA.swordAttacks.attackType = "Light";
                     //StartCoroutine(ComboWorkflow());
                     Invoke("CheckPerformFullCombo", 1f);
-                    FindObjectOfType<AudioManager>().Play("epee");
                 }
 
                 if (lightComboState == LightComboState.NONE)
@@ -282,7 +280,7 @@ public class LightAttackIA : MonoBehaviour
         {
             playerAttackIA.isAttacking = true;
             StartCoroutine(InfuseSword(0.15f));
-            StartCoroutine(playerAttackIA.FullScreenCamera(7.5f));
+            StartCoroutine(playerAttackIA.SwitchCamera(7.5f));
             Invoke("AttackComplete", 7.5f);
             StartCoroutine(playerAttackIA.playerHit.GetComponent<Player>().goInEnemyCombo(7.5f));
             GetComponent<TimeLineController>().PerformFullCombo(playerAttackIA.m_Animator, playerAttackIA.playerHit.GetComponent<Animator>(), playerData.cam.GetComponent<CinemachineBrain>());

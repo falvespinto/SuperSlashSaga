@@ -50,6 +50,8 @@ public class LoadCharacter : MonoBehaviour
             P2.GetComponentInChildren<Attack>().isIA = true;
             P1.GetComponent<PlayerAttack>().swordAttacks.gameObject.SetActive(false);
             P2.GetComponent<PlayerAttackIA>().swordAttacks.gameObject.SetActive(false);
+            P2.GetComponentInChildren<LockCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
+            P2.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
         }
         else
         {

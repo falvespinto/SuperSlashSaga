@@ -46,7 +46,6 @@ public class HeavyAttackIA : MonoBehaviour
                 StartCoroutine(playerAttackIA.ForwardAttack(0.2f, direction, 0.30f));
                 //StartCoroutine(AttackAutoCancel(heavyAttackTime, heavyCanAutoCancel));
                 Invoke("AttackComplete", heavyAttackTime - 0.7f);
-                FindObjectOfType<AudioManager>().Play("epee");
 
             }
         }
