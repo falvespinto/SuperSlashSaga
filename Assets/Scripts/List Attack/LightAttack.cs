@@ -102,8 +102,10 @@ public class LightAttack : MonoBehaviour
                         // ChangeAnimationState(m_Punch);
                         playerAttack.m_Animator.SetTrigger("LightAttack");
                         StartCoroutine(playerAttack.ForwardAttack(lightAttackTime - 0.6f, direction, 0.05f));
-                        Invoke("AttackComplete", timeBeforeCancelLight1);
-                        player.playerAudio.playSoundLeger();
+                        Invoke("AttackComplete", timeBeforeCancelLight1);
+
+                        player.playerAudio.playSoundLeger();
+
                         
                         
                     //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
@@ -122,7 +124,8 @@ public class LightAttack : MonoBehaviour
                         // ChangeAnimationState(m_Punch);
                         playerAttack.m_Animator.SetTrigger("LightAttack2");
                         StartCoroutine(playerAttack.ForwardAttack(light2AttackTime - 0.5f, direction, 0.05f));
-                        Invoke("AttackComplete", timeBeforeCancelLight2);
+                        Invoke("AttackComplete", timeBeforeCancelLight2);
+
                         player.playerAudio.playSoundLeger();
                     //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
                 }
@@ -137,9 +140,12 @@ public class LightAttack : MonoBehaviour
                         Debug.Log(light3AttackTime);
                         StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
                         Invoke("AttackComplete", timeBeforeCancelLight3);
-                        playerAttack.playerHit = null;
-                        player.playerAudio.playSoundLeger();
-
+                        playerAttack.playerHit = null;
+
+                        player.playerAudio.playSoundLeger();
+
+
+
                 }
 
                     if (lightComboState == LightComboState.LIGHT_4)
@@ -153,9 +159,12 @@ public class LightAttack : MonoBehaviour
                         playerAttack.swordAttacks.damage = 4;
                         playerAttack.swordAttacks.attackType = "Light";
                         //StartCoroutine(ComboWorkflow());
-                        Invoke("CheckPerformFullCombo", 1f);
-                        player.playerAudio.playSoundLeger();
-
+                        Invoke("CheckPerformFullCombo", 1f);
+
+                        player.playerAudio.playSoundLeger();
+
+
+
                 }
 
                 if (lightComboState == LightComboState.NONE)

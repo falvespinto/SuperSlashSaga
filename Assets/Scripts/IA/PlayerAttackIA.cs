@@ -83,7 +83,7 @@ public class PlayerAttackIA : MonoBehaviour
 
     private bool neverPared;
     private UltimateAttack ultimateAttack;
-
+    private ComboCamera comboCam;
     private bool heavyCanAutoCancel;
     private void Awake()
     {
@@ -91,10 +91,11 @@ public class PlayerAttackIA : MonoBehaviour
         playerData = GetComponentInParent<PlayerData>();
         player = GetComponent<Player>();
         ultimateAttack = GetComponent<UltimateAttack>();
+        comboCam = GetComponentInChildren<ComboCamera>();
     }
     public void Start()
     {
-
+        comboCam.gameObject.SetActive(false);
         default_Combo_Timer = light3AttackTime;
         default_Combo_Timer_Run = runLightAtkTime + runLightAtk2Time;
         default_BottomCombo_Timer = bottomLightAttackTime + bottomLight2AttackTime - 1.2f;
@@ -225,7 +226,17 @@ public class PlayerAttackIA : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(dir);
         return dir;
     }
+    public IEnumerator SwitchCamera(float time)
+    {
+        playerData.cam.enabled = false;
+        comboCam.gameObject.SetActive(true); //comboCam.enabled = true;
+        lightAttackIA.isInCombo = true;
+        yield return new WaitForSeconds(time);
+        comboCam.gameObject.SetActive(false); //comboCam.enabled = false;
+        playerData.cam.enabled = true;
+        lightAttackIA.isInCombo = false;
 
+    }
 
     public IEnumerator FullScreenCamera(float time)
     {

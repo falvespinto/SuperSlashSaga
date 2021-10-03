@@ -41,7 +41,6 @@ public class IA : MonoBehaviour
         isTakingDamage = false;
         isInCombo = false;
         canPermute = false;
-        FindObjectOfType<AudioManager>().Play("combat");
         target = playerData.target;
     }
     void Update()
