@@ -173,7 +173,7 @@ public class MultiTargetCamera : MonoBehaviour
         {
             players.Add(allPlayers[i].transform);
         }
-        if (players.Count < 2)
+        if (players.Count == 1)
         {
             players.Add(GameObject.FindGameObjectWithTag("IA").transform);
         }

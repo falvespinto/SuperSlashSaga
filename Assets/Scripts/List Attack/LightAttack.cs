@@ -87,8 +87,8 @@ public class LightAttack : MonoBehaviour
             else
             {
 
-                playerAttack.isInCombo = true;
-                playerAttack.isAttacking = true;
+                    playerAttack.isInCombo = true;
+                    playerAttack.isAttacking = true;
                     current_Combo_Timer = default_Combo_Timer;
                     lightComboState++;
                     if (lightComboState == LightComboState.LIGHT_1)

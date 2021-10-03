@@ -15,9 +15,13 @@ public class ProjectileBehavior : MonoBehaviour
             if (col.GetComponentInParent<PlayerData>().playerLayer == playerData.enemyLayer)
             {
                 col.GetComponentInParent<Player>().TakeDamage(projectileDamage, attackType);
-            }
-            Destroy(gameObject);
+                gameObject.SetActive(false);
+            }  
         }
         
+    }
+    void OnDisable()
+    {
+        Destroy(gameObject);
     }
 }

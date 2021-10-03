@@ -1629,8 +1629,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.023517132, y: -0.5178897, z: -0.24173164}
-    m_Extent: {x: 3.1533182, y: 0.5446101, z: 4.446384}
+    m_Center: {x: 0.023017406, y: -0.40047473, z: -0.24143505}
+    m_Extent: {x: 3.1531606, y: 0.6668032, z: 4.446087}
   m_DirtyAABB: 0
 --- !u!1 &1964806641548699120
 GameObject:
@@ -2581,8 +2581,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0.9545655, z: -0.0007972121}
-    m_Extent: {x: 0.25795096, y: 4.5626693, z: 0.32816952}
+    m_Center: {x: 0, y: 0.9555211, z: -0.0007972121}
+    m_Extent: {x: 0.25795096, y: 4.5617137, z: 0.32816952}
   m_DirtyAABB: 0
 --- !u!183 &3658591606355092189
 Cloth:
@@ -10121,7 +10121,6 @@ GameObject:
   - component: {fileID: 2076040904416851659}
   - component: {fileID: 2604814792385289352}
   - component: {fileID: 4279532176956108145}
-  - component: {fileID: 4593959836220969311}
   m_Layer: 8
   m_Name: Yuetsu
   m_TagString: Player
@@ -10184,7 +10183,7 @@ CharacterController:
   m_Height: 167.6
   m_Radius: 26
   m_SlopeLimit: 45
-  m_StepOffset: 0.1
+  m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 84, z: 0}
@@ -10445,25 +10444,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cb1e5de3d387049a4425f08d7ae846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Animator: {fileID: 6424907266442389020}
+  animator: {fileID: 6424907266442389020}
   player: {fileID: 3661976246809478957}
   punch: {fileID: 5423345930418498532}
   firstTimeRunning: 0
-  m_PlayerAttack: {fileID: 691353372036688036}
+  playerAttack: {fileID: 691353372036688036}
   isRunning: 0
-  orientation: {x: 0, y: 0, z: 0, w: 0}
-  isJoyconPluggued: 0
   isParing: 0
   moveDirection: {x: 0, y: 0, z: 0}
   gravity: 0.1
   ultimate: {fileID: 0}
   dashState: {fileID: 0}
   projectile: {fileID: 0}
+  rotationSpeed: 300
   controller: {fileID: 4576790369941818661}
   turnSmoothTime: 0.1
   cam: {fileID: 9915995195940552}
   playerData: {fileID: 0}
-  m_TranslationSpeed: 0.3
+  translationSpeed: 0.3
 --- !u!114 &3661976246809478957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10770,25 +10768,6 @@ MonoBehaviour:
   VFXPrefab: {fileID: 216313935524729590, guid: 712158b720027c34fbe6582bf9d8ab41, type: 3}
   offSet: {x: 0, y: 5, z: 0}
   backwardOffSet: 2
---- !u!114 &4593959836220969311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6735330714013134415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8203d3afe60bc9f439e671430ca4147f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isJoyconPluggued: 0
-  stick: []
-  gyroscop: {x: 0, y: 0, z: 0}
-  accel: {x: 0, y: 0, z: 0}
-  movementInput: {x: 0, y: 0}
-  jc_ind: 0
-  orientation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6840588005767388474
 GameObject:
   m_ObjectHideFlags: 0
@@ -17296,14 +17275,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
---- !u!1 &8983980246677935597 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7603208177342239128, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
-  m_PrefabInstance: {fileID: 1524899356451865717}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9720066872501008 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1516322998706628453, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
+  m_PrefabInstance: {fileID: 1524899356451865717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8983980246677935597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7603208177342239128, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
   m_PrefabInstance: {fileID: 1524899356451865717}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4899512496128025933
@@ -17826,13 +17805,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
---- !u!4 &5866170471648547684 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2247852219198785104, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
-  m_PrefabInstance: {fileID: 5645591272268076340}
-  m_PrefabAsset: {fileID: 0}
 --- !u!320 &5866170471648547685 stripped
 PlayableDirector:
   m_CorrespondingSourceObject: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
+  m_PrefabInstance: {fileID: 5645591272268076340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5866170471648547684 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2247852219198785104, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
   m_PrefabInstance: {fileID: 5645591272268076340}
   m_PrefabAsset: {fileID: 0}

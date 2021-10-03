@@ -80,7 +80,11 @@ public class Player : MonoBehaviour
             }
             else
             {
-                playerAttack.AttackedWhileParing();
+                if (attackType != "Combo")
+                {
+                    playerAttack.AttackedWhileParing();
+                }
+                
             }
 
         }
