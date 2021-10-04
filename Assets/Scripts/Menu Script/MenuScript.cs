@@ -14,11 +14,6 @@ public class MenuScript : MonoBehaviour
     private int SelectedButton = 1;
     [SerializeField]
     private int NumberOfButtons;
-    private bool verificationMenu = false;
-    private bool verificationOption = false;
-    private bool verificationCampagne = false;
-    private bool verificationVersus = false;
-    private bool verificationStream = false;
     AudioManager musique = new AudioManager();
 
     public Transform ButtonPosition1;
@@ -40,6 +35,9 @@ public class MenuScript : MonoBehaviour
     public Transform ButtonPosition17;
 
     public bool cooldown = false;
+    private bool verifMenuDown = false;
+    private bool verifMenuUp = false;
+
 
 
     void Start()
@@ -64,6 +62,7 @@ public class MenuScript : MonoBehaviour
                 pointMenu.SetActive(false);
                 pointCampagne.SetActive(true);
                 SelectedButton = 7;
+                verifMenuUp = true;
 
             }
             else if (SelectedButton == 2)
@@ -75,6 +74,7 @@ public class MenuScript : MonoBehaviour
                 pointMenu.SetActive(false);
                 pointVersus.SetActive(true);
                 SelectedButton = 10;
+                verifMenuUp = true;
             }
             else if (SelectedButton == 3)
             {
@@ -85,6 +85,7 @@ public class MenuScript : MonoBehaviour
                 pointMenu.SetActive(false);
                 pointStream.SetActive(true);
                 SelectedButton = 14;
+                verifMenuUp = true;
             }
             else if (SelectedButton == 4)
             {
@@ -95,6 +96,8 @@ public class MenuScript : MonoBehaviour
                 pointMenu.SetActive(false);
                 pointOption.SetActive(true);
                 SelectedButton = 6;
+                verifMenuDown = true;
+                verifMenuUp = true;
 
             }
             else if (SelectedButton == 5)
@@ -115,6 +118,8 @@ public class MenuScript : MonoBehaviour
                 SelectedButton = 1;
                 pointMenu.transform.position = ButtonPosition1.position;
                 pointOption.transform.position = ButtonPosition6.position;
+                verifMenuDown = false;
+                verifMenuUp = false;
             }
 
             else if (SelectedButton == 7)
@@ -140,6 +145,7 @@ public class MenuScript : MonoBehaviour
                 pointMenu.transform.position = ButtonPosition1.position;
                 SelectedButton = 1;
                 pointCampagne.transform.position = ButtonPosition15.position;
+                verifMenuDown = false;
             }
 
             else if (SelectedButton == 10)
@@ -172,6 +178,7 @@ public class MenuScript : MonoBehaviour
                 SelectedButton = 1;
                 pointMenu.transform.position = ButtonPosition1.position;
                 pointVersus.transform.position = ButtonPosition7.position;
+                verifMenuDown = false;
 
             }
 
@@ -204,6 +211,7 @@ public class MenuScript : MonoBehaviour
                 SelectedButton = 1;
                 pointMenu.transform.position = ButtonPosition1.position;
                 pointStream.transform.position = ButtonPosition11.position;
+                verifMenuDown = false;
             }
 
 
@@ -218,12 +226,15 @@ public class MenuScript : MonoBehaviour
             {
                 cooldown = true;
                 Invoke("setCooldown", 0.3f);
-                if (SelectedButton > 1)
+                if(verifMenuUp == false)
                 {
-                    SelectedButton -= 1;
+                    if (SelectedButton > 1)
+                    {
+                        SelectedButton -= 1;
+                    }
+                    MoveThePointer();
+                    return;
                 }
-                MoveThePointer();
-                return;
             }
     }
     public void ButtonDown()
@@ -233,12 +244,15 @@ public class MenuScript : MonoBehaviour
             {
                 cooldown = true;
                 Invoke("setCooldown", 0.3f);
-                if (SelectedButton < NumberOfButtons)
+                if(verifMenuDown == false)
                 {
-                    SelectedButton += 1;
+                    if (SelectedButton < NumberOfButtons)
+                    {
+                        SelectedButton += 1;
+                    }
+                    MoveThePointer();
+                    return;
                 }
-                MoveThePointer();
-                return;
             }
     }
 
@@ -250,11 +264,13 @@ public class MenuScript : MonoBehaviour
         {
             pointMenu.transform.position = ButtonPosition1.position;
             FindObjectOfType<AudioManager>().Play("percution");
+            verifMenuUp = true;
         }
         else if (SelectedButton == 2)
         {     
             pointMenu.transform.position = ButtonPosition2.position;
             FindObjectOfType<AudioManager>().Play("percution");
+            verifMenuUp = false;
         }
         else if (SelectedButton == 3)
         {
@@ -280,63 +296,68 @@ public class MenuScript : MonoBehaviour
         {
             pointCampagne.transform.position = ButtonPosition15.position;
             FindObjectOfType<AudioManager>().Play("percution");
+            verifMenuUp = true;
         }
         else if (SelectedButton == 8)
         {
             pointCampagne.transform.position = ButtonPosition16.position;
             FindObjectOfType<AudioManager>().Play("percution");
+            verifMenuDown = false;
+            verifMenuUp = false;
         }
         else if (SelectedButton == 9)
         {
             pointCampagne.transform.position = ButtonPosition17.position;
             FindObjectOfType<AudioManager>().Play("percution");
+            verifMenuDown = true;
         }
         else if (SelectedButton == 10)
         {
             pointVersus.transform.position = ButtonPosition7.position;
             FindObjectOfType<AudioManager>().Play("percution");
+            verifMenuUp = true;
         }
         else if (SelectedButton == 11)
         {
             pointVersus.transform.position = ButtonPosition8.position;
             FindObjectOfType<AudioManager>().Play("percution");
-            verificationCampagne = false;
+            verifMenuUp = false;
         }
         else if (SelectedButton == 12)
         {
             pointVersus.transform.position = ButtonPosition9.position;
             FindObjectOfType<AudioManager>().Play("percution");
-            verificationCampagne = false;
+            verifMenuDown = false;
         }
         else if (SelectedButton == 13)
         {
             pointVersus.transform.position = ButtonPosition10.position;
             FindObjectOfType<AudioManager>().Play("percution");
-            verificationCampagne = false;
+            verifMenuDown = true;
         }
         else if (SelectedButton == 14)
         {
             pointStream.transform.position = ButtonPosition11.position;
             FindObjectOfType<AudioManager>().Play("percution");
-            verificationCampagne = false;
+            verifMenuUp = true;
         }
         else if (SelectedButton == 15)
         {
             pointStream.transform.position = ButtonPosition12.position;
             FindObjectOfType<AudioManager>().Play("percution");
-            verificationCampagne = false;
+            verifMenuUp = false;
         }
         else if (SelectedButton == 16)
         {
             pointStream.transform.position = ButtonPosition13.position;
             FindObjectOfType<AudioManager>().Play("percution");
-            verificationCampagne = false;
+            verifMenuDown = false;
         }
         else if (SelectedButton == 17)
         {
             pointStream.transform.position = ButtonPosition14.position;
             FindObjectOfType<AudioManager>().Play("percution");
-            verificationCampagne = false;
+            verifMenuDown = true;
         }
     }
 
