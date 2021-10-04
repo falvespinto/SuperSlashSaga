@@ -17,6 +17,9 @@ public class Dash : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
     public Animator m_animator;
+    public PlayerAttack playerAttack;
+    public UltimateAttack ultimateAttack;
+    public Player player;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,11 +35,10 @@ public class Dash : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!isDashing)
+            if (!isDashing && !playerAttack.isAttacking && !playerAttack.isParing && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
             {
                 StartCoroutine(DashMovement());
             }
-            
         }
     }
 
@@ -51,7 +53,7 @@ public class Dash : MonoBehaviour
         while (Time.time < startTime + dashDuration)
         {
             Debug.Log("dashMovement");
-            controller.Move(transform.forward * dashSpeed);
+            controller.Move(transform.forward * dashSpeed * Time.deltaTime);
             yield return null;
         }
         //yield return new WaitForSeconds(0.25f);

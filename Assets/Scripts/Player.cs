@@ -32,7 +32,6 @@ public class Player : MonoBehaviour
         isDead = false;
         isInEnemyCombo = false;
         playerData = GetComponentInParent<PlayerData>();
-        playerAttack = GetComponent<PlayerAttack>();
         playerController = GetComponent<PlayerController>();
         healthBar = playerData.healthBar;
         playerIndex = playerData.playerIndex;

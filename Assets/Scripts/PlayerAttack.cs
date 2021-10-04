@@ -54,7 +54,7 @@ public class PlayerAttack : MonoBehaviour
     public bool isInCombo;
     public PlayerController playerController;
     public bool isParing;
-    private Player player;
+    public Player player;
     public Transform target;
     public PlayerData playerData;
     public float lightAttackTime;
@@ -81,9 +81,9 @@ public class PlayerAttack : MonoBehaviour
     private bool canLight;
     private bool canHeavy;
     private bool canParade;
-    private ComboCamera comboCam;
+    public ComboCamera comboCam;
     private bool neverPared;
-    private UltimateAttack ultimateAttack;
+    public UltimateAttack ultimateAttack;
     public CharacterController controller;
 
     private bool heavyCanAutoCancel;
@@ -92,10 +92,6 @@ public class PlayerAttack : MonoBehaviour
         //   m_Rigidbody = GetComponent<Rigidbody>();
         playerData = GetComponentInParent<PlayerData>();
         playerController = GetComponent<PlayerController>();
-        player = GetComponent<Player>();
-        ultimateAttack = GetComponent<UltimateAttack>();
-        comboCam = GetComponentInChildren<ComboCamera>();
-        
     }
     public void Start()
     {
@@ -207,7 +203,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!player.isTakingDamage && !isAttacking && !isParing && !isRunAttacking && !playerController.isRunning && !ultimateAttack.isPerformingUltimate)
+            if (!player.isTakingDamage && !isAttacking && !isParing && !isRunAttacking && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
             {
                 LookAtTarget();
                 GetComponent<UltimateAttack>().PerformUltimateAttack();
@@ -239,16 +235,22 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(time);
         comboCam.gameObject.SetActive(false); //comboCam.enabled = false;
         playerData.cam.enabled = true;
+        player.isInCombo = false;
+        playerHit.GetComponent<Player>().isInCombo = false;
 
     }
     public IEnumerator ForwardAttack(float attackTime, Vector3 direction, float attackSpeed)
     {
-        float startTime = Time.time;
-        while (Time.time < startTime + attackTime)
+        if (!ultimateAttack.isPerformingUltimate)
         {
-            controller.Move(direction * attackSpeed);
-            yield return null;
+            float startTime = Time.time;
+            while (Time.time < startTime + attackTime)
+            {
+                controller.Move(direction * attackSpeed);
+                yield return null;
+            }
         }
+
     }
 
 

@@ -34,9 +34,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         playerData = GetComponentInParent<PlayerData>();
-        ultimate = GetComponent<UltimateAttack>();
-        dashState = GetComponent<Dash>();
-        projectile = GetComponent<Projectile>();
     }
     void Start()
     {

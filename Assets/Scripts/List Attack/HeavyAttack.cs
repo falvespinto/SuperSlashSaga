@@ -10,17 +10,14 @@ public class HeavyAttack : MonoBehaviour
     public float heavyAttackTime;
     public CharacterController controller;
     public PlayerData playerData;
-    private Player player;
+    public Player player;
     public PlayerController playerController;
-    private PlayerAttack playerAttack;
+    public PlayerAttack playerAttack;
     public float lightAttackTime;
     public float timeBeforeCancelHeavy;
     public void Awake()
     {
         playerData = GetComponentInParent<PlayerData>();
-        playerController = GetComponent<PlayerController>();
-        player = GetComponent<Player>();
-        playerAttack = GetComponent<PlayerAttack>();
     }
     public void Start()
     {
@@ -34,7 +31,7 @@ public class HeavyAttack : MonoBehaviour
     public void PerformedHeavyAttack(string attackType)
     {
         // A revoir (constante)(attackType)(vite)(stp)
-        if (!playerAttack.isAttacking && !playerAttack.isParing && !playerAttack.isRunAttacking && attackType == "normal")
+        if (!playerAttack.isAttacking && !playerAttack.isParing && !playerAttack.isRunAttacking && attackType == "normal" && !player.isInCombo)
         {
             playerController.isRunning = false;
             Vector3 direction = playerAttack.LookAtTarget();

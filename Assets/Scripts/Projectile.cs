@@ -19,6 +19,7 @@ public class Projectile : MonoBehaviour
     public bool canShoot;
     public float isShootingCooldown;
     public List<ProjectileBehavior> currentProjectiles = new List<ProjectileBehavior>();
+    public Player player;
 
 
     private void Awake()
@@ -41,7 +42,7 @@ public class Projectile : MonoBehaviour
     
     public void PrepareFire()
     {
-        if (canShoot)
+        if (canShoot && !player.isInCombo && !playerAttack.isAttacking)
         {
             m_animator.SetBool("projectile", true);
             playerAttack.LookAtTarget();

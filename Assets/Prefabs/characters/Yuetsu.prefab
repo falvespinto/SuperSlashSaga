@@ -1629,8 +1629,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.023017406, y: -0.40047473, z: -0.24143505}
-    m_Extent: {x: 3.1531606, y: 0.6668032, z: 4.446087}
+    m_Center: {x: 0.023517132, y: -0.5178897, z: -0.24173164}
+    m_Extent: {x: 3.1533182, y: 0.5446101, z: 4.446384}
   m_DirtyAABB: 0
 --- !u!1 &1964806641548699120
 GameObject:
@@ -2581,8 +2581,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0.9555211, z: -0.0007972121}
-    m_Extent: {x: 0.25795096, y: 4.5617137, z: 0.32816952}
+    m_Center: {x: 0, y: 0.9545655, z: -0.0007972121}
+    m_Extent: {x: 0.25795096, y: 4.5626693, z: 0.32816952}
   m_DirtyAABB: 0
 --- !u!183 &3658591606355092189
 Cloth:
@@ -10453,12 +10453,11 @@ MonoBehaviour:
   isParing: 0
   moveDirection: {x: 0, y: 0, z: 0}
   gravity: 0.1
-  ultimate: {fileID: 0}
-  dashState: {fileID: 0}
-  projectile: {fileID: 0}
+  ultimate: {fileID: 1498282575589081782}
+  dashState: {fileID: 7266148757124352407}
+  projectile: {fileID: 2604814792385289352}
   rotationSpeed: 300
   controller: {fileID: 4576790369941818661}
-  turnSmoothTime: 0.1
   cam: {fileID: 9915995195940552}
   playerData: {fileID: 0}
   translationSpeed: 0.3
@@ -10520,6 +10519,7 @@ MonoBehaviour:
   isInCombo: 0
   playerController: {fileID: 5700466228983503251}
   isParing: 0
+  player: {fileID: 3661976246809478957}
   target: {fileID: 0}
   playerData: {fileID: 0}
   lightAttackTime: 0
@@ -10540,6 +10540,8 @@ MonoBehaviour:
   bottomHeavyAttackButtonPressed: 0
   paradeButtonPressed: 0
   playerHit: {fileID: 0}
+  comboCam: {fileID: 3356098305863934095}
+  ultimateAttack: {fileID: 1498282575589081782}
   controller: {fileID: 4576790369941818661}
 --- !u!114 &1718854034453120485
 MonoBehaviour:
@@ -10602,6 +10604,8 @@ MonoBehaviour:
   lightComboAttackTime: 0
   bottomLightAttackTime: 0
   bottomLight2AttackTime: 0
+  player: {fileID: 3661976246809478957}
+  playerAttack: {fileID: 691353372036688036}
   playerData: {fileID: 0}
   default_Combo_Timer: 2
   default_BottomCombo_Timer: 2
@@ -10610,7 +10614,7 @@ MonoBehaviour:
   lightComboState: 0
   bottomLightComboState: 0
   isParing: 0
-  isInCombo: 0
+  isLightAttacking: 0
   playerController: {fileID: 0}
   controller: {fileID: 0}
   vfxSword: {fileID: 8983980246677935597}
@@ -10629,7 +10633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6229e264bba0d749a23ad8b29b5a688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 1
+  dashSpeed: 100
   dashDuration: 0.575
   isDashing: 0
   dashDirection: {x: 0, y: 0, z: 0}
@@ -10637,6 +10641,9 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0, z: 0}
   turnSmoothTime: 0.1
   m_animator: {fileID: 6424907266442389020}
+  playerAttack: {fileID: 691353372036688036}
+  ultimateAttack: {fileID: 1498282575589081782}
+  player: {fileID: 3661976246809478957}
 --- !u!114 &2812597217123706708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10652,9 +10659,11 @@ MonoBehaviour:
   isAttacking: 0
   isParing: 0
   heavyAttackTime: 0
-  controller: {fileID: 0}
+  controller: {fileID: 4576790369941818661}
   playerData: {fileID: 0}
-  playerController: {fileID: 0}
+  player: {fileID: 3661976246809478957}
+  playerController: {fileID: 5700466228983503251}
+  playerAttack: {fileID: 691353372036688036}
   lightAttackTime: 0
   timeBeforeCancelHeavy: 1.2
 --- !u!114 &3433924704099936633
@@ -10674,10 +10683,12 @@ MonoBehaviour:
   isParing: 0
   isAttacking: 0
   isRunAttacking: 0
-  playerController: {fileID: 0}
-  playerAttack: {fileID: 0}
+  playerController: {fileID: 5700466228983503251}
+  playerAttack: {fileID: 691353372036688036}
   target: {fileID: 0}
   playerData: {fileID: 0}
+  player: {fileID: 3661976246809478957}
+  ultimateAttack: {fileID: 1498282575589081782}
   shield: {fileID: 4731849227761291643}
 --- !u!114 &1498282575589081782
 MonoBehaviour:
@@ -10747,6 +10758,7 @@ MonoBehaviour:
   canShoot: 0
   isShootingCooldown: 0.5
   currentProjectiles: []
+  player: {fileID: 3661976246809478957}
 --- !u!114 &4279532176956108145
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,8 +13,9 @@ public class Parade : MonoBehaviour
     public PlayerAttack playerAttack;
     public Transform target;
     public PlayerData playerData;
-    private Player player;
+    public Player player;
     private bool neverPared;
+    public UltimateAttack ultimateAttack;
     public GameObject shield;
     public void Awake()
     {
@@ -40,7 +41,7 @@ public class Parade : MonoBehaviour
 
     public void InitializedParadeAttack()
     {
-        if (!playerAttack.isAttacking && !playerAttack.isParing && !playerAttack.isRunAttacking)
+        if (!playerAttack.isAttacking && !playerAttack.isParing && !playerAttack.isRunAttacking && !player.isInCombo && !ultimateAttack.isPerformingUltimate)
         {
             shield.SetActive(true);
             playerAttack.LookAtTarget();
