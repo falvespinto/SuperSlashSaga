@@ -60,6 +60,38 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "JoyRight",
+                    "type": "Button",
+                    "id": "75746d3b-dff6-4598-9f53-046e491c189d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "JoyLeft",
+                    "type": "Button",
+                    "id": "1bcb5843-4092-4bf7-94af-9559b7f19b84",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "JoyUp",
+                    "type": "Button",
+                    "id": "f6ec2831-99b8-4806-82a3-319476436376",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "JoyDown",
+                    "type": "Button",
+                    "id": "09261068-6e8a-4847-ae95-ccfa54b50558",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -148,6 +180,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "A",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e53ff7a0-1905-47b7-89d5-0c5fa9967c43",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoyRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9733ac2f-996f-437e-8f82-e8968e8bdf33",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoyLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cd50efe8-eb1a-49ef-bbb7-7800c3b02e1b",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoyUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "542c7f6e-e730-4462-a143-06a015874214",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoyDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -37,6 +37,7 @@ public class MenuScript : MonoBehaviour
     public bool cooldown = false;
     private bool verifMenuDown = false;
     private bool verifMenuUp = false;
+    public bool optionActive = false;
 
 
 
@@ -98,8 +99,9 @@ public class MenuScript : MonoBehaviour
                 SelectedButton = 6;
                 verifMenuDown = true;
                 verifMenuUp = true;
-
+                optionActive = true;
             }
+
             else if (SelectedButton == 5)
             {
                 // utilisation du bouton Quitter
@@ -120,7 +122,8 @@ public class MenuScript : MonoBehaviour
                 pointOption.transform.position = ButtonPosition6.position;
                 verifMenuDown = false;
                 verifMenuUp = false;
-            }
+                optionActive = false;
+}
 
             else if (SelectedButton == 7)
             {
@@ -281,11 +284,13 @@ public class MenuScript : MonoBehaviour
         {
             pointMenu.transform.position = ButtonPosition4.position;
             FindObjectOfType<AudioManager>().Play("percution");
+            verifMenuDown = false;
         }
         else if (SelectedButton == 5)
         {
             pointMenu.transform.position = ButtonPosition5.position;
             FindObjectOfType<AudioManager>().Play("percution");
+            verifMenuDown = true;
         }
         else if (SelectedButton == 6)
         {

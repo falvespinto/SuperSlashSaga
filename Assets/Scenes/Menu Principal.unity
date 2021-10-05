@@ -184,7 +184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 510b6de38752a7e43a9cf1a070fd3c85, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3082c0aaff34e7447b87de0d794939bc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -929,7 +929,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7b2e0fdaecc3c27409c18d00f3ab0b3a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc5114819e1be3b45a0030f2910658d5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a16b7996405bcc24eb5dbbd5b474c9fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 04f99e7f3778c1448bf15352d4d2f4eb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2309,6 +2309,7 @@ MonoBehaviour:
   ButtonPosition16: {fileID: 1486309480}
   ButtonPosition17: {fileID: 1059906323}
   cooldown: 0
+  optionActive: 0
 --- !u!114 &1221017858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2336,6 +2337,18 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1261861107}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: IncreaseVolume
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1221017857}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
         m_MethodName: ButtonUp
@@ -2352,6 +2365,18 @@ MonoBehaviour:
     m_ActionName: menu/ButtonUp[/XInputControllerWindows/dpad/up]
   - m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1261861107}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: DecreaseVolume
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1221017857}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
         m_MethodName: ButtonDown
@@ -2384,10 +2409,10 @@ MonoBehaviour:
     m_ActionName: menu/Play[/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1261861107}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: IncreaseVolume
-        m_Mode: 4
+      - m_Target: {fileID: 1221017857}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: ButtonDown
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2400,10 +2425,10 @@ MonoBehaviour:
     m_ActionName: menu/ButtonRight[/XInputControllerWindows/dpad/right]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1261861107}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: DecreaseVolume
-        m_Mode: 4
+      - m_Target: {fileID: 1221017857}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: ButtonUp
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2422,6 +2447,94 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 84454796-9d58-457c-a726-bdf3e063596c
     m_ActionName: menu/A
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1221017857}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 75746d3b-dff6-4598-9f53-046e491c189d
+    m_ActionName: menu/JoyRight
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1221017857}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: ButtonUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1bcb5843-4092-4bf7-94af-9559b7f19b84
+    m_ActionName: menu/JoyLeft
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1221017857}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: ButtonUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1261861107}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: IncreaseVolume
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f6ec2831-99b8-4806-82a3-319476436376
+    m_ActionName: menu/JoyUp[/XInputControllerWindows/leftStick/up]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1221017857}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: ButtonDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1261861107}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: DecreaseVolume
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 09261068-6e8a-4847-ae95-ccfa54b50558
+    m_ActionName: menu/JoyDown[/XInputControllerWindows/leftStick/down]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: menu
@@ -2657,6 +2770,7 @@ MonoBehaviour:
   verifDecreased: 0
   cooldown: 0
   son: {fileID: 1244279860}
+  menuScript: {fileID: 1221017857}
 --- !u!4 &1261861108
 Transform:
   m_ObjectHideFlags: 0
@@ -5098,7 +5212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a52d00eb5bf2f274f9aba89440a106ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1b5bfec7e770e274598484fc250e9c72, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
