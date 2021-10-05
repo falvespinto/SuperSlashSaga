@@ -11,7 +11,7 @@ public class LoadCharacter : MonoBehaviour
     public Transform spawnPointP2;
     public Transform player1;
     public Transform player2;
-    
+    public CorpsTexture corpsTexture;
     void Start()
     {
         int selectedCharacterP1 = PlayerPrefs.GetInt("selectedCharacterP1");
@@ -61,9 +61,10 @@ public class LoadCharacter : MonoBehaviour
             P2.GetComponentInChildren<Attack>().isIA = false;
             P1.GetComponent<PlayerAttack>().swordAttacks.gameObject.SetActive(false);
             P2.GetComponent<PlayerAttack>().swordAttacks.gameObject.SetActive(false);
-
             P2.GetComponentInChildren<LockCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
             P2.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
+            P2.GetComponentInChildren<CorpsTexture>().GetComponent<Renderer>().material = P2.GetComponentInChildren<CorpsTexture>().materialYuetsu;
+            P2.GetComponentInChildren<Cape>().GetComponentInChildren<test>().GetComponentInChildren<test1>().GetComponentInChildren<test2>().GetComponentInChildren<test3>().GetComponentInChildren<CapeMat>().GetComponent<Renderer>().material = P2.GetComponentInChildren<Cape>().material;
             Debug.Log(StartGame.P2Device);
             InputUser.PerformPairingWithDevice(
             StartGame.P2Device,
