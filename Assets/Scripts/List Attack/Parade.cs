@@ -41,19 +41,16 @@ public class Parade : MonoBehaviour
 
     public void InitializedParadeAttack()
     {
-        if (!playerAttack.isAttacking && !playerAttack.isParing && !playerAttack.isRunAttacking && !player.isInCombo && !ultimateAttack.isPerformingUltimate)
-        {
-            shield.SetActive(true);
-            playerAttack.LookAtTarget();
-            playerAttack.isParing = true;
-            Debug.Log("is Paring");
-            //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
-            playerAttack.m_Animator.SetBool("IsParing", true);
-        }
+        shield.SetActive(true);
+        playerAttack.LookAtTarget();
+        playerAttack.isParing = true;
+        Debug.Log("is Paring");
+        //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
+        playerAttack.m_Animator.SetBool("IsParing", true);
     }
     public void FinalizedParadeAttack()
     {
-        if (!playerAttack.isAttacking && playerAttack.isParing && !playerAttack.isRunAttacking)
+        if (!playerAttack.isAttacking && playerAttack.isParing)
         {
             shield.SetActive(false);
             playerAttack.isParing = false;

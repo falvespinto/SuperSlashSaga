@@ -27,6 +27,11 @@ public class Player : MonoBehaviour
     public Parade parade;
     public Permutation permutation;
     public PlayerAudioManager playerAudio;
+
+    public float hurtTimeHeavy;
+    public float hurtTimeLight;
+    public float hurtTimeUltimate;
+
     void Awake()
     {
         isDead = false;
@@ -64,6 +69,7 @@ public class Player : MonoBehaviour
         {
             if (attackType == "Heavy")
             {
+                StartCoroutine(ResetIsTakingDamage(GuardBreakTime));
                 isTakingDamage = true;
                 Invoke("ResetIsTakingDamage", GuardBreakTime);
                 animator.SetTrigger("Guard_Break");
@@ -79,7 +85,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                if (attackType != "Combo")
+                if (attackType != "Combo" && attackType != "Ultimate")
                 {
                     playerAttack.AttackedWhileParing();
                 }
@@ -91,7 +97,6 @@ public class Player : MonoBehaviour
         {
             if (attackType == "Combo")
             {
-                isTakingDamage = true;
                 currentHealth -= damage;
                 healthBar.SetHealth(currentHealth);
             }
@@ -100,8 +105,19 @@ public class Player : MonoBehaviour
                 StartCoroutine(willPermute());
                 if (!permutation.canPermute)
                 {
-                    isTakingDamage = true;
-                    Invoke("ResetIsTakingDamage", GetHitTime);
+                    switch (attackType)
+                    {
+                        case "Heavy":
+                            StartCoroutine(ResetIsTakingDamage(hurtTimeHeavy));
+                            break;
+                        case "Light":
+                            StartCoroutine(ResetIsTakingDamage(hurtTimeLight));
+                            break;
+                        case "Ultimate":
+                            StartCoroutine(ResetIsTakingDamage(hurtTimeUltimate));
+                            break;
+
+                    }
                     currentHealth -= damage;
                     healthBar.SetHealth(currentHealth);
                     if (currentHealth <= 0)
@@ -131,8 +147,10 @@ public class Player : MonoBehaviour
             winner = 2;
         }
     }
-    void ResetIsTakingDamage()
+    public IEnumerator ResetIsTakingDamage(float hurtTime)
     {
+        isTakingDamage = true;
+        yield return new WaitForSeconds(hurtTime);
         isTakingDamage = false;
     }
 
@@ -167,5 +185,7 @@ public class Player : MonoBehaviour
         isInEnemyCombo = false;
 
     }
+
+
 
 }

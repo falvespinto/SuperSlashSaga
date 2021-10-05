@@ -11,6 +11,7 @@ public class Attack : MonoBehaviour
     public PlayerAttack player;
     public PlayerAttackIA playerIA;
     public bool isIA = false;
+    public float stunTime;
 
     private void Start()
     {

@@ -1643,8 +1643,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.023517132, y: -0.5178897, z: -0.24173164}
-    m_Extent: {x: 3.1533182, y: 0.5446101, z: 4.446384}
+    m_Center: {x: 0.023017406, y: -0.39611375, z: -0.24143505}
+    m_Extent: {x: 3.1531606, y: 0.6711073, z: 4.446087}
   m_DirtyAABB: 0
 --- !u!114 &5815276694518363544
 MonoBehaviour:
@@ -2633,8 +2633,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0.9545655, z: -0.0007972121}
-    m_Extent: {x: 0.25795096, y: 4.5626693, z: 0.32816952}
+    m_Center: {x: 0, y: 0.9555211, z: -0.0007972121}
+    m_Extent: {x: 0.25795096, y: 4.5617137, z: 0.32816952}
   m_DirtyAABB: 0
 --- !u!183 &3658591606355092189
 Cloth:
@@ -10571,6 +10571,9 @@ MonoBehaviour:
   parade: {fileID: 3433924704099936633}
   permutation: {fileID: 4279532176956108145}
   playerAudio: {fileID: 2828686833500551628}
+  hurtTimeHeavy: 0.9
+  hurtTimeLight: 0.7
+  hurtTimeUltimate: 3
 --- !u!114 &691353372036688036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10584,7 +10587,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttacking: 0
-  isRunAttacking: 0
   swordAttacks: {fileID: 5423345930418498532}
   lightComboState: 0
   runLightComboState: 0
@@ -10790,9 +10792,10 @@ MonoBehaviour:
   isOnCooldown: 0
   effectTime: 2.8
   areaOfEffect: {fileID: 8485676900357151032}
-  attackType: IngageUltimate
+  attackType: Ultimate
   beforeEffectTime: 0.6
   playerHit: {fileID: 0}
+  hurtTime: 3
 --- !u!114 &2076040904416851659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17212,6 +17215,7 @@ MonoBehaviour:
   player: {fileID: 691353372036688036}
   playerIA: {fileID: 0}
   isIA: 0
+  stunTime: 0
 --- !u!1 &8932255942567921446
 GameObject:
   m_ObjectHideFlags: 0
@@ -17736,7 +17740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2710342198397900174, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2710342198397900174, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
       propertyPath: m_Materials.Array.data[0]

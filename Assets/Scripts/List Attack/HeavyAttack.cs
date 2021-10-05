@@ -25,13 +25,12 @@ public class HeavyAttack : MonoBehaviour
         heavyCanAutoCancel = true;
     }
     private void Update()
-    {
-        
+    {   
     }
     public void PerformedHeavyAttack(string attackType)
     {
         // A revoir (constante)(attackType)(vite)(stp)
-        if (!playerAttack.isAttacking && !playerAttack.isParing && !playerAttack.isRunAttacking && attackType == "normal" && !player.isInCombo)
+        if (!playerAttack.isAttacking && !playerAttack.isParing && attackType == "normal" && !player.isInCombo)
         {
             playerController.isRunning = false;
             Vector3 direction = playerAttack.LookAtTarget();
@@ -48,7 +47,7 @@ public class HeavyAttack : MonoBehaviour
             Invoke("AttackComplete", timeBeforeCancelHeavy);
         }
 
-        if (!playerAttack.isAttacking && !playerAttack.isParing && !playerAttack.isRunAttacking && attackType == "bottom")
+        if (attackType == "bottom")
         {
             Vector3 direction = playerAttack.LookAtTarget();
             playerAttack.isAttacking = true;

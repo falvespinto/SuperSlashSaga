@@ -22,6 +22,7 @@ public class UltimateAttack : MonoBehaviour
     public GameObject playerHit;
     private bool startFullWhenReady;
     private PlayerAttack playerAttack;
+    public float hurtTime;
     private testUltiVFX playerFX;
 
     private void Awake()
@@ -39,6 +40,7 @@ public class UltimateAttack : MonoBehaviour
             {
                 for (int i = 0; i < hit.Length; i++)
                 {
+                    hit[i].GetComponentInParent<Player>().hurtTimeUltimate = hurtTime;
                     hit[i].GetComponentInParent<Player>().TakeDamage(attackDamage, attackType);
                     Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
                     Debug.Log(hit[i].gameObject.layer);

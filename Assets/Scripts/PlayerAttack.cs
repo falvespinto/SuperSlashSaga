@@ -37,7 +37,6 @@ public class PlayerAttack : MonoBehaviour
 {
 
     public bool isAttacking;
-    public bool isRunAttacking;
     public Attack swordAttacks;
     public LightComboState lightComboState;
     public RunLightComboState runLightComboState;
@@ -104,7 +103,6 @@ public class PlayerAttack : MonoBehaviour
         canParade = true;
         isInCombo = false;
         isAttacking = false;
-        isRunAttacking = false;
         lightComboState = LightComboState.NONE;
         bottomLightComboState = BottomLightComboState.NONE;
         current_Combo_Timer = default_Combo_Timer;
@@ -124,18 +122,12 @@ public class PlayerAttack : MonoBehaviour
         {
             target = playerData.target;
         }
-        //else
-        //{
-        //    isParing = false;
-        //    m_Animator.SetBool("IsParing", false);
-        //}
     }
 
     public void AttackComplete()
     {
         Debug.Log("testeuu");
         isAttacking = false;
-        isRunAttacking = false;
     }
     public void AttackedWhileParing()
     {
@@ -154,15 +146,10 @@ public class PlayerAttack : MonoBehaviour
         if (ctx.started)
         {
             Debug.Log("pressedLight");
-            lightAttack.PerformedLightAttack("normal");
-        }
-    }
-    public void BottomLightAttackButton(InputAction.CallbackContext ctx)
-    {
-        if (ctx.started)
-        {
-            Debug.Log("pressedBottomLight");
-            lightAttack.PerformedLightAttack("bottom");
+            if (!player.isInCombo && !player.isTakingDamage && !isAttacking && !isParing && !ultimateAttack.isPerformingUltimate)
+            {
+                lightAttack.PerformedLightAttack("normal");
+            }
         }
     }
 
@@ -171,19 +158,15 @@ public class PlayerAttack : MonoBehaviour
         if (ctx.started)
         {
             Debug.Log("pressedHeavy");
-            heavyAttack.PerformedHeavyAttack("normal");
+            if (isAttacking && isParing && !player.isInCombo && !player.isTakingDamage && !ultimateAttack.isPerformingUltimate)
+            {
+                heavyAttack.PerformedHeavyAttack("normal");
+            }
+            
             
         }
     }
 
-    public void BottomHeavyAttackButton(InputAction.CallbackContext ctx)
-    {
-        if (ctx.started)
-        {
-            Debug.Log("pressedBottomHeavy");
-            heavyAttack.PerformedHeavyAttack("bottom");
-        }
-    }
     public void ParadeButtonPressed(InputAction.CallbackContext ctx)
     {
         if (ctx.started)
@@ -203,7 +186,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!player.isTakingDamage && !isAttacking && !isParing && !isRunAttacking && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
+            if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
             {
                 LookAtTarget();
                 GetComponent<UltimateAttack>().PerformUltimateAttack();
