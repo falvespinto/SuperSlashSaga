@@ -10506,6 +10506,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 06d5c27b-4ffb-439e-8cdd-1a85583e8f44
     m_ActionName: Gameplay/Permutation[/XInputControllerWindows/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3661976246809478957}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: ChargeUpMana
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7f25855d-d268-4b71-ba42-af78ac4a64f9
+    m_ActionName: Gameplay/ManaUp[/Keyboard/numpad8]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -10556,6 +10572,7 @@ MonoBehaviour:
   currentHealth: 0
   playerIndex: 0
   healthBar: {fileID: 0}
+  manabar: {fileID: 0}
   playerAttack: {fileID: 691353372036688036}
   playerController: {fileID: 5700466228983503251}
   GuardBreakTime: 0
@@ -10574,6 +10591,7 @@ MonoBehaviour:
   hurtTimeHeavy: 0.9
   hurtTimeLight: 0.7
   hurtTimeUltimate: 3
+  manaUp: 0
 --- !u!114 &691353372036688036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10796,6 +10814,8 @@ MonoBehaviour:
   beforeEffectTime: 0.6
   playerHit: {fileID: 0}
   hurtTime: 3
+  player: {fileID: 0}
+  manaBar: {fileID: 0}
 --- !u!114 &2076040904416851659
 MonoBehaviour:
   m_ObjectHideFlags: 0

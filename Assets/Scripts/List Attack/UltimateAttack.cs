@@ -24,11 +24,16 @@ public class UltimateAttack : MonoBehaviour
     private PlayerAttack playerAttack;
     public float hurtTime;
     private testUltiVFX playerFX;
+    public PlayerData player;
+    private PlayerData playerData;
+    public ManaBar manaBar;
 
     private void Awake()
     {
         playerAttack = GetComponent<PlayerAttack>();
         playerFX = GetComponent<testUltiVFX>();
+        playerData = GetComponentInParent<PlayerData>();
+        manaBar = playerData.manabar;
     }
     private void Update()
     {
@@ -62,8 +67,9 @@ public class UltimateAttack : MonoBehaviour
     }
     public void PerformUltimateAttack()
     {
-        if (!isPerformingUltimate && !isOnCooldown)
+        if (!isPerformingUltimate && !isOnCooldown && manaBar.mana >= 50)
         {
+            manaBar.SetMana(manaBar.mana - 50);
             StartCoroutine(isPerformingUltimateAttackReset());
             timeline.Play();
             StartCoroutine(DealDamage());

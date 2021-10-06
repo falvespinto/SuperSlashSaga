@@ -108,6 +108,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ManaUp",
+                    "type": "Button",
+                    "id": "7f25855d-d268-4b71-ba42-af78ac4a64f9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -427,6 +435,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Permutation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a05ffd42-abfe-418d-996f-8f29e908a735",
+                    "path": "<Keyboard>/numpad8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ManaUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -121,6 +121,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ManaUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""7f25855d-d268-4b71-ba42-af78ac4a64f9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -442,6 +450,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Permutation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a05ffd42-abfe-418d-996f-8f29e908a735"",
+                    ""path"": ""<Keyboard>/numpad8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ManaUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -463,6 +482,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Gameplay_test2 = m_Gameplay.FindAction("test2", throwIfNotFound: true);
         m_Gameplay_Projectile = m_Gameplay.FindAction("Projectile", throwIfNotFound: true);
         m_Gameplay_Permutation = m_Gameplay.FindAction("Permutation", throwIfNotFound: true);
+        m_Gameplay_ManaUp = m_Gameplay.FindAction("ManaUp", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -525,6 +545,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_test2;
     private readonly InputAction m_Gameplay_Projectile;
     private readonly InputAction m_Gameplay_Permutation;
+    private readonly InputAction m_Gameplay_ManaUp;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
@@ -542,6 +563,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @test2 => m_Wrapper.m_Gameplay_test2;
         public InputAction @Projectile => m_Wrapper.m_Gameplay_Projectile;
         public InputAction @Permutation => m_Wrapper.m_Gameplay_Permutation;
+        public InputAction @ManaUp => m_Wrapper.m_Gameplay_ManaUp;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -590,6 +612,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Permutation.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPermutation;
                 @Permutation.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPermutation;
                 @Permutation.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPermutation;
+                @ManaUp.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnManaUp;
+                @ManaUp.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnManaUp;
+                @ManaUp.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnManaUp;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -633,6 +658,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Permutation.started += instance.OnPermutation;
                 @Permutation.performed += instance.OnPermutation;
                 @Permutation.canceled += instance.OnPermutation;
+                @ManaUp.started += instance.OnManaUp;
+                @ManaUp.performed += instance.OnManaUp;
+                @ManaUp.canceled += instance.OnManaUp;
             }
         }
     }
@@ -652,5 +680,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnTest2(InputAction.CallbackContext context);
         void OnProjectile(InputAction.CallbackContext context);
         void OnPermutation(InputAction.CallbackContext context);
+        void OnManaUp(InputAction.CallbackContext context);
     }
 }

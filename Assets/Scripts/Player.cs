@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Player : MonoBehaviour
     public float currentHealth;
     public int playerIndex;
     public HealthBar healthBar;
+    public ManaBar manabar;
     public PlayerAttack playerAttack;
     public PlayerController playerController;
     public static int winner;
@@ -27,10 +29,12 @@ public class Player : MonoBehaviour
     public Parade parade;
     public Permutation permutation;
     public PlayerAudioManager playerAudio;
-
+    
     public float hurtTimeHeavy;
     public float hurtTimeLight;
     public float hurtTimeUltimate;
+
+    public bool manaUp = false;
 
     void Awake()
     {
@@ -39,12 +43,12 @@ public class Player : MonoBehaviour
         playerData = GetComponentInParent<PlayerData>();
         playerController = GetComponent<PlayerController>();
         healthBar = playerData.healthBar;
+        manabar = playerData.manabar;
         playerIndex = playerData.playerIndex;
-        //GetComponentInParent<PlayerData>().target = GetComponentInParent<PlayerData>().playerTarget.GetComponentInChildren<Player>().transform;
-        //m_rigidbody = GetComponent<Rigidbody>();
     }
     void Start()
     {
+
         UpdateAnimClipTimes();
         currentHealth = maxHealth;
         isTakingDamage = false;
@@ -59,6 +63,14 @@ public class Player : MonoBehaviour
             target = playerData.target;
         }
     }
+    private void FixedUpdate()
+    {
+        if (manaUp)
+        {
+            manabar.SetMana(manabar.mana + 1);
+        }
+    }
+
     public void TakeDamage(float damage, string attackType)
     {
         Vector3 dir = target.position - transform.position;
@@ -186,6 +198,17 @@ public class Player : MonoBehaviour
 
     }
 
+    public void ChargeUpMana(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            manaUp = true;
+        }
+        if (ctx.canceled)
+        {
+            manaUp = false;
+        }
+    }
 
 
 }
