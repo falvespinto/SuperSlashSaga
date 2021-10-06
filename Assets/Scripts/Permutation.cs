@@ -19,6 +19,10 @@ public class Permutation : MonoBehaviour
         canPermute = false;
         playerData = GetComponentInParent<PlayerData>();
     }
+    private void Start()
+    {
+        StartCoroutine(AddPermutation());
+    }
     public void pressedPermutaion()
     {
         StartCoroutine(willPermute());
@@ -36,12 +40,16 @@ public class Permutation : MonoBehaviour
     public void Permute()
     {
         // Will permute
-        Instantiate(VFXPrefab, transform.position + offSet - transform.forward * backwardOffSet , transform.rotation);
-        Debug.Log("Would have permuted");
-        characterController.enabled = false;
-        Vector3 newPos = playerData.target.position - playerData.target.forward * permutationOffSet;
-        transform.position = newPos;
-        characterController.enabled = true;
+        if (playerData.permutationBar.remainingPermutation >= 1)
+        {
+            playerData.permutationBar.SetPermutation(playerData.permutationBar.remainingPermutation - 1);
+            Instantiate(VFXPrefab, transform.position + offSet - transform.forward * backwardOffSet , transform.rotation);
+            Debug.Log("Would have permuted");
+            characterController.enabled = false;
+            Vector3 newPos = playerData.target.position - playerData.target.forward * permutationOffSet;
+            transform.position = newPos;
+            characterController.enabled = true;
+        }
     }
 
     private void Update()
@@ -53,5 +61,12 @@ public class Permutation : MonoBehaviour
             player.canPermute = false;
             canPermute = false;
         }
+    }
+
+    public IEnumerator AddPermutation()
+    {
+        yield return new WaitForSeconds(15f);
+        playerData.permutationBar.SetPermutation(playerData.permutationBar.remainingPermutation + 1);
+        StartCoroutine(AddPermutation());
     }
 }

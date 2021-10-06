@@ -9,6 +9,7 @@ public class PlayerData : MonoBehaviour
     public Camera cam;
     public HealthBar healthBar;
     public ManaBar manabar;
+    public PermutationBar permutationBar;
     public LayerMask enemyLayer;
     public LayerMask playerLayer;
     public GameObject playerTarget;
@@ -19,7 +20,6 @@ public class PlayerData : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
         camera = cam.transform;
     }
     private void Start()

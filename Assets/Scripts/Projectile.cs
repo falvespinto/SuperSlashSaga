@@ -20,6 +20,7 @@ public class Projectile : MonoBehaviour
     public float isShootingCooldown;
     public List<ProjectileBehavior> currentProjectiles = new List<ProjectileBehavior>();
     public Player player;
+    public UltimateAttack ultimateAttack;
 
 
     private void Awake()
@@ -42,7 +43,7 @@ public class Projectile : MonoBehaviour
     
     public void PrepareFire()
     {
-        if (canShoot && !player.isInCombo && !playerAttack.isAttacking)
+        if (canShoot && !player.isInCombo && !playerAttack.isAttacking && !ultimateAttack.isPerformingUltimate)
         {
             m_animator.SetBool("projectile", true);
             playerAttack.LookAtTarget();

@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     public float hurtTimeLight;
     public float hurtTimeUltimate;
 
+    public Sprite faceSprite;
+
     public bool manaUp = false;
 
     void Awake()

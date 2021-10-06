@@ -158,7 +158,7 @@ public class PlayerAttack : MonoBehaviour
         if (ctx.started)
         {
             Debug.Log("pressedHeavy");
-            if (isAttacking && isParing && !player.isInCombo && !player.isTakingDamage && !ultimateAttack.isPerformingUltimate)
+            if (!isAttacking && !isParing && !player.isInCombo && !player.isTakingDamage && !ultimateAttack.isPerformingUltimate)
             {
                 heavyAttack.PerformedHeavyAttack("normal");
             }
