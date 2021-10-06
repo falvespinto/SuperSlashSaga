@@ -10427,19 +10427,7 @@ MonoBehaviour:
     m_ActionId: 425d73c4-c162-4470-b01f-399a8dd9163d
     m_ActionName: Gameplay/BottomHeavyAttackPressed[/Keyboard/numpad5]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 691353372036688036}
-        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
-        m_MethodName: UltimateAttackButton
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 04fd6ece-39d7-4342-8211-cf6accd8df4b
     m_ActionName: Gameplay/Ultimate[/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
@@ -10862,6 +10850,7 @@ MonoBehaviour:
   isShootingCooldown: 0.5
   currentProjectiles: []
   player: {fileID: 3661976246809478957}
+  ultimateAttack: {fileID: 0}
 --- !u!114 &4279532176956108145
 MonoBehaviour:
   m_ObjectHideFlags: 0

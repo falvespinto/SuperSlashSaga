@@ -120,8 +120,6 @@ public class MultiTargetCamera : MonoBehaviour
             }
             finalPosition = GetCamPos();// new Vector3(GetClosestPlayerToCamera().x + fixedDistanceToPlayerFree, newPosition.y, GetClosestPlayerToCamera().z - fixedDistanceToPlayer);
             camState = LONG_DISTANCE;
-
-
         }
         else
         {
@@ -238,22 +236,36 @@ public class MultiTargetCamera : MonoBehaviour
         Vector3 direcBehind = (GetClosestPlayerToCamera() - GetFarthestPlayer()).normalized;
         Vector3 positionBehind = GetClosestPlayerToCamera() + direcBehind * distanceBehindLockOffSet;
         Debug.DrawLine(GetCenterPoint(), GetCenterPoint() + direcBehind * 100, Color.red,0.1f);
-        Quaternion spreadAngle = Quaternion.AngleAxis(-angleOffSet, new Vector3(0, 1, 0));
-        Vector3 newDirectionBehind = spreadAngle * direcBehind;
-        Debug.DrawLine(GetCenterPoint(), GetCenterPoint() + newDirectionBehind * 100, Color.red, 0.1f);
-
+        Quaternion spreadAngleRight = Quaternion.AngleAxis(-angleOffSet, new Vector3(0, 1, 0));
+        Quaternion spreadAngleLeft = Quaternion.AngleAxis(angleOffSet, new Vector3(0, 1, 0));
+        Vector3 newDirectionBehindRight = spreadAngleRight * direcBehind;
+        Vector3 newDirectionBehindLeft =  spreadAngleLeft * direcBehind;
+        Debug.DrawLine(GetCenterPoint(), GetCenterPoint() + newDirectionBehindRight * 100, Color.red, 0.1f);
+        Debug.DrawLine(GetCenterPoint(), GetCenterPoint() + newDirectionBehindLeft * 100, Color.cyan, 0.1f);
 
         Vector3 perpDirection = Vector3.Cross(direcBehind, Vector3.up).normalized;
         Debug.DrawLine(positionBehind, positionBehind + perpDirection * 100, Color.blue, 0.1f);
-        Vector3 intersectionPoint = new Vector3();
+        Debug.DrawLine(positionBehind, positionBehind - perpDirection * 100, Color.green, 0.1f);
+        Vector3 intersectionPointRight = new Vector3();
+        Vector3 intersectionPointLeft = new Vector3();
 
-        LineLineIntersection(out intersectionPoint, GetCenterPoint(), newDirectionBehind, positionBehind, perpDirection);
+        LineLineIntersection(out intersectionPointRight, GetCenterPoint(), newDirectionBehindRight, positionBehind, perpDirection);
+        LineLineIntersection(out intersectionPointLeft, GetCenterPoint(), newDirectionBehindLeft, positionBehind, -perpDirection);
 
-        intersectionPoint += camPositionOffSet; 
+        intersectionPointRight += camPositionOffSet;
+        intersectionPointLeft += camPositionOffSet;
 
-        return intersectionPoint;
+        float distanceRight = Vector3.Distance(cam.transform.position, intersectionPointRight);
+        float distanceLeft = Vector3.Distance(cam.transform.position, intersectionPointLeft);
 
-
+        if (Vector3.Distance(cam.transform.position, intersectionPointRight) < Vector3.Distance(cam.transform.position, intersectionPointLeft))
+        {
+            return intersectionPointRight;
+        }
+        else
+        {
+            return intersectionPointLeft;
+        }
     }
 
     Vector3 GetAngleBehingClosest(Vector3 pos)
