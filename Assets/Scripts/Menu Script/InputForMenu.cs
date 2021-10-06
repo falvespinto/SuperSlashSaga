@@ -73,6 +73,38 @@ public class @InputForMenu : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""JoyRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""75746d3b-dff6-4598-9f53-046e491c189d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""JoyLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""1bcb5843-4092-4bf7-94af-9559b7f19b84"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""JoyUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""f6ec2831-99b8-4806-82a3-319476436376"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""JoyDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""09261068-6e8a-4847-ae95-ccfa54b50558"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -163,6 +195,50 @@ public class @InputForMenu : IInputActionCollection, IDisposable
                     ""action"": ""A"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e53ff7a0-1905-47b7-89d5-0c5fa9967c43"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoyRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9733ac2f-996f-437e-8f82-e8968e8bdf33"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoyLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cd50efe8-eb1a-49ef-bbb7-7800c3b02e1b"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoyUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""542c7f6e-e730-4462-a143-06a015874214"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoyDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -178,6 +254,10 @@ public class @InputForMenu : IInputActionCollection, IDisposable
         m_menu_ButtonLeft = m_menu.FindAction("ButtonLeft", throwIfNotFound: true);
         m_menu_Pause = m_menu.FindAction("Pause", throwIfNotFound: true);
         m_menu_A = m_menu.FindAction("A", throwIfNotFound: true);
+        m_menu_JoyRight = m_menu.FindAction("JoyRight", throwIfNotFound: true);
+        m_menu_JoyLeft = m_menu.FindAction("JoyLeft", throwIfNotFound: true);
+        m_menu_JoyUp = m_menu.FindAction("JoyUp", throwIfNotFound: true);
+        m_menu_JoyDown = m_menu.FindAction("JoyDown", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -234,6 +314,10 @@ public class @InputForMenu : IInputActionCollection, IDisposable
     private readonly InputAction m_menu_ButtonLeft;
     private readonly InputAction m_menu_Pause;
     private readonly InputAction m_menu_A;
+    private readonly InputAction m_menu_JoyRight;
+    private readonly InputAction m_menu_JoyLeft;
+    private readonly InputAction m_menu_JoyUp;
+    private readonly InputAction m_menu_JoyDown;
     public struct MenuActions
     {
         private @InputForMenu m_Wrapper;
@@ -245,6 +329,10 @@ public class @InputForMenu : IInputActionCollection, IDisposable
         public InputAction @ButtonLeft => m_Wrapper.m_menu_ButtonLeft;
         public InputAction @Pause => m_Wrapper.m_menu_Pause;
         public InputAction @A => m_Wrapper.m_menu_A;
+        public InputAction @JoyRight => m_Wrapper.m_menu_JoyRight;
+        public InputAction @JoyLeft => m_Wrapper.m_menu_JoyLeft;
+        public InputAction @JoyUp => m_Wrapper.m_menu_JoyUp;
+        public InputAction @JoyDown => m_Wrapper.m_menu_JoyDown;
         public InputActionMap Get() { return m_Wrapper.m_menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -275,6 +363,18 @@ public class @InputForMenu : IInputActionCollection, IDisposable
                 @A.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnA;
                 @A.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnA;
                 @A.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnA;
+                @JoyRight.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyRight;
+                @JoyRight.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyRight;
+                @JoyRight.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyRight;
+                @JoyLeft.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyLeft;
+                @JoyLeft.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyLeft;
+                @JoyLeft.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyLeft;
+                @JoyUp.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyUp;
+                @JoyUp.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyUp;
+                @JoyUp.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyUp;
+                @JoyDown.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyDown;
+                @JoyDown.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyDown;
+                @JoyDown.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyDown;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -300,6 +400,18 @@ public class @InputForMenu : IInputActionCollection, IDisposable
                 @A.started += instance.OnA;
                 @A.performed += instance.OnA;
                 @A.canceled += instance.OnA;
+                @JoyRight.started += instance.OnJoyRight;
+                @JoyRight.performed += instance.OnJoyRight;
+                @JoyRight.canceled += instance.OnJoyRight;
+                @JoyLeft.started += instance.OnJoyLeft;
+                @JoyLeft.performed += instance.OnJoyLeft;
+                @JoyLeft.canceled += instance.OnJoyLeft;
+                @JoyUp.started += instance.OnJoyUp;
+                @JoyUp.performed += instance.OnJoyUp;
+                @JoyUp.canceled += instance.OnJoyUp;
+                @JoyDown.started += instance.OnJoyDown;
+                @JoyDown.performed += instance.OnJoyDown;
+                @JoyDown.canceled += instance.OnJoyDown;
             }
         }
     }
@@ -313,5 +425,9 @@ public class @InputForMenu : IInputActionCollection, IDisposable
         void OnButtonLeft(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnA(InputAction.CallbackContext context);
+        void OnJoyRight(InputAction.CallbackContext context);
+        void OnJoyLeft(InputAction.CallbackContext context);
+        void OnJoyUp(InputAction.CallbackContext context);
+        void OnJoyDown(InputAction.CallbackContext context);
     }
 }

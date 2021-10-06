@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public bool verifDecreased = false;
     public bool cooldown = false;
     public BarreSon son;
+    public MenuScript menuScript;
 
     void Awake()
     {
@@ -51,7 +52,7 @@ public class AudioManager : MonoBehaviour
     }
     public void IncreaseVolume(float volume)
     {
-        if (cooldown == false)
+        if (!cooldown && menuScript.optionActive)
         {
             cooldown = true;
             Invoke("setCooldown", 0.3f);
@@ -68,7 +69,7 @@ public class AudioManager : MonoBehaviour
 
     public void DecreaseVolume(float volume)
     {
-        if (cooldown == false)
+        if (!cooldown && menuScript.optionActive)
         {
             cooldown = true;
             Invoke("setCooldown", 0.3f);
