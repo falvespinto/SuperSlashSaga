@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 5608946902676620278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.08323681, y: 0.084290445, z: 0.084290445}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2048, y: 2048}
+  m_SizeDelta: {x: 800, y: 1600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7931514618702925098
 CanvasRenderer:
@@ -67,8 +67,8 @@ MonoBehaviour:
   prefab: {fileID: 5608946902676620278}
   hasSelected: 0
   playersIcons:
-  - {fileID: 21300000, guid: d8a2297f228c62d4fa96732b953a2e53, type: 3}
-  - {fileID: 21300000, guid: 5fbc9ee6f39524e4598095bc9242f9f5, type: 3}
+  - {fileID: 21300000, guid: 72697703b634adb4e92518c40dbc85af, type: 3}
+  - {fileID: 21300000, guid: 431b52c5bd0d55a4ea71eb938993db6b, type: 3}
   - {fileID: 21300000, guid: 238727f2c166b1f4399f982e197e3e6f, type: 3}
   isInit: 0
   spawnPositionJ1: {fileID: 2968574753165891576, guid: f7e20af64c92c884f9b862956b32bcad, type: 3}
@@ -196,6 +196,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 06d5c27b-4ffb-439e-8cdd-1a85583e8f44
     m_ActionName: Gameplay/Permutation[/XInputControllerWindows/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7f25855d-d268-4b71-ba42-af78ac4a64f9
+    m_ActionName: Gameplay/ManaUp[/Keyboard/numpad8,/XInputControllerWindows/leftShoulder]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay

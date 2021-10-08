@@ -67,6 +67,7 @@ public class PlayerControls : MonoBehaviour
         {
             index = 0;
             indexJ1 = 1;
+            gameObject.GetComponent<Image>().sprite = playersIcons[0];
         }
 
         else

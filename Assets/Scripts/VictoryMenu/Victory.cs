@@ -19,8 +19,7 @@ public class Victory : MonoBehaviour
     public GameObject j2;
     void Start()
     {
-        winner = 1;
-        //winner = Player.winner;
+        winner = Player.winner;
         if(winner == 1)
         {
             GameObject.Find("joueur2").SetActive(false);
@@ -45,7 +44,6 @@ public class Victory : MonoBehaviour
             j1.transform.localScale = positionLooser.localScale;
             Instantiate(j1);
         }
-        FindObjectOfType<AudioManager>().Play("ambiance");
     }
 
 
