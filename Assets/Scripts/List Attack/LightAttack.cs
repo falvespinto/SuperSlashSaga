@@ -44,6 +44,7 @@ public class LightAttack : MonoBehaviour
     public GameObject vfxSword;
     private Rect posCam;
     private Rect posCamOpponent;
+    public Vector3 playerHitPositionOffSet;
 
 
     //Times
@@ -133,9 +134,6 @@ public class LightAttack : MonoBehaviour
                         playerAttack.playerHit = null;
 
                         player.playerAudio.playSoundLeger();
-
-
-
                 }
 
                     if (lightComboState == LightComboState.LIGHT_4)
@@ -231,7 +229,10 @@ public class LightAttack : MonoBehaviour
             playerController.isRunning = false;
             playerAttack.playerHit.GetComponent<Player>().isInCombo = true;
             player.isInCombo = true;
-            yield return new WaitForSeconds(0.5f);
+            playerAttack.playerHit.GetComponent<PlayerController>().enabled = false;
+            
+            playerAttack.playerHit.GetComponent<PlayerController>().enabled = true;
+            yield return new WaitForSeconds(0.3f);
             StartCoroutine(InfuseSword(0.15f));
             StartCoroutine(playerAttack.SwitchCamera(7.5f));
             Invoke("AttackComplete", 7.5f);
