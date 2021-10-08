@@ -11,6 +11,7 @@ D:\2020.2.2f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
+<<<<<<< refs/remotes/origin/Valentin
 D:/Super Slash Saga/SuperSlashSaga
 -logFile
 Logs/AssetImportWorker0.log
@@ -24,6 +25,21 @@ Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.2f1 (068178b99f32)
 [Subsystems] Discovering subsystems at path D:/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path D:/Super Slash Saga/SuperSlashSaga/Assets
+=======
+D:/SSS/SuperSlashSaga
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+59649
+Successfully changed project path to: D:/SSS/SuperSlashSaga
+D:/SSS/SuperSlashSaga
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 71.59 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.2f1 (068178b99f32)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/SSS/SuperSlashSaga/Assets
+>>>>>>> Bruitage
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -33,6 +49,7 @@ Direct3D:
     Driver:   30.0.14.7212
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
+<<<<<<< refs/remotes/origin/Valentin
 Mono path[0] = 'D:/2020.2.2f1/Editor/Data/Managed'
 Mono path[1] = 'D:/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
@@ -43,11 +60,24 @@ Register platform support module: D:/2020.2.2f1/Editor/Data/PlaybackEngines/Wind
 Registered in 0.001043 seconds.
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 101.10 ms, found 1 plugins.
+=======
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56652
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001309 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 77.36 ms, found 1 plugins.
+>>>>>>> Bruitage
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
+<<<<<<< refs/remotes/origin/Valentin
 - Completed reload, in  1.299 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
@@ -55,16 +85,30 @@ Registered in 0.002485 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 91.16 ms, found 1 plugins.
+=======
+- Completed reload, in  0.874 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001606 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 80.04 ms, found 1 plugins.
+>>>>>>> Bruitage
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
+<<<<<<< refs/remotes/origin/Valentin
 - Completed reload, in  1.550 seconds
+=======
+- Completed reload, in  1.192 seconds
+>>>>>>> Bruitage
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+<<<<<<< refs/remotes/origin/Valentin
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
 Refreshing native plugins compatible for Editor in 1.01 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
@@ -539,5 +583,23 @@ System memory in use after: 217.8 MB.
 
 Unloading 133 unused Assets to reduce memory usage. Loaded Objects now: 5067.
 Total: 17.060600 ms (FindLiveObjects: 2.568600 ms CreateObjectMapping: 4.939400 ms MarkObjects: 8.976400 ms  DeleteObjects: 0.569700 ms)
+=======
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.81 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4412 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 183.9 MB.
+System memory in use after: 184.0 MB.
+
+Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 4877.
+Total: 3.317400 ms (FindLiveObjects: 0.464500 ms CreateObjectMapping: 0.294500 ms MarkObjects: 2.340800 ms  DeleteObjects: 0.216400 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scripts/List Attack/HeavyAttack.cs
+  artifactKey: Guid(429c68e68ccf6b348b55aa9619587a31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/List Attack/HeavyAttack.cs using Guid(429c68e68ccf6b348b55aa9619587a31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47500a5fde74a06199e24e57fe7cf89a') in 0.021633 seconds
+  Import took 0.027670 seconds .
+>>>>>>> Bruitage
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
