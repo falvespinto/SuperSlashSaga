@@ -72,7 +72,7 @@ AudioSource:
   m_GameObject: {fileID: 122623157812926644}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7018893669071216429, guid: 70c0bc398da0f2b49bcc55cbe6d03647, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -8421,7 +8421,7 @@ AudioSource:
   m_GameObject: {fileID: 4008590824562720084}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7018893669071216429, guid: 70c0bc398da0f2b49bcc55cbe6d03647, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -8771,7 +8771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coupLeger: {fileID: 3532801720958284773}
-  coupLourd: {fileID: 0}
+  coupLourd: {fileID: 4510965326018426752}
   parade: {fileID: 0}
   kunai: {fileID: 0}
   ultimate: {fileID: 0}
@@ -9041,7 +9041,7 @@ AudioSource:
   m_GameObject: {fileID: 5012789582488847452}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7018893669071216429, guid: 70c0bc398da0f2b49bcc55cbe6d03647, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -9609,7 +9609,7 @@ AudioSource:
   m_GameObject: {fileID: 5923428496245303766}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7018893669071216429, guid: 70c0bc398da0f2b49bcc55cbe6d03647, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -11469,7 +11469,7 @@ AudioSource:
   m_GameObject: {fileID: 8008109346616097778}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7018893669071216429, guid: 70c0bc398da0f2b49bcc55cbe6d03647, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -11570,8 +11570,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playOnEnable: 0
   source: {fileID: 896188278111766395}
-  audioClips: []
-  pitchBounds: {x: 1, y: 1}
+  audioClips:
+  - {fileID: 8300000, guid: 924b269f46ca56e41ba8ad471a093e9a, type: 3}
+  - {fileID: 8300000, guid: 886d5a3dbd87e194caefd34ae0b1c220, type: 3}
+  pitchBounds: {x: 0.8, y: 1}
 --- !u!1 &8093409432636781624
 GameObject:
   m_ObjectHideFlags: 0

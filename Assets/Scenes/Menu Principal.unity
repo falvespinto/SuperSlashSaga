@@ -2337,10 +2337,10 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1261861107}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: IncreaseVolume
-        m_Mode: 4
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2365,10 +2365,10 @@ MonoBehaviour:
     m_ActionName: menu/ButtonUp[/XInputControllerWindows/dpad/up]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1261861107}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: DecreaseVolume
-        m_Mode: 4
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2411,7 +2411,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1221017857}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: ButtonDown
+        m_MethodName: ButtonLeft
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2421,19 +2421,43 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1261861106}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 06cdd631-125f-4dc9-bf7e-d36bb9990c1c
     m_ActionName: menu/ButtonRight[/XInputControllerWindows/dpad/right]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1221017857}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: ButtonUp
+        m_MethodName: ButtonRight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0.1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1261861106}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2451,7 +2475,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1221017857}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ButtonLeft
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2467,7 +2491,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1221017857}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: ButtonUp
+        m_MethodName: ButtonRight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5024,7 +5048,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 622b822e5ce8d4c418a1ec0f552ef6ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 754be148bd6f1894cbbe2003dd6d29a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5107,15 +5131,15 @@ RectTransform:
   m_GameObject: {fileID: 1984562531}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 6.6000023}
-  m_LocalScale: {x: 30.458836, y: 13.78565, z: 3.8321872}
+  m_LocalScale: {x: 34.439804, y: 15.587435, z: 4.333054}
   m_Children: []
   m_Father: {fileID: 251788283}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 311, y: 109}
-  m_SizeDelta: {x: 40.17932, y: 39.656494}
+  m_AnchoredPosition: {x: 297.68616, y: 104.19055}
+  m_SizeDelta: {x: 39.3051, y: 38.9587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2015742149
 GameObject:

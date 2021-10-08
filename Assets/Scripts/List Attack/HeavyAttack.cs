@@ -15,6 +15,10 @@ public class HeavyAttack : MonoBehaviour
     public PlayerAttack playerAttack;
     public float lightAttackTime;
     public float timeBeforeCancelHeavy;
+
+    private bool cooldown = false;
+
+
     public void Awake()
     {
         playerData = GetComponentInParent<PlayerData>();
@@ -45,7 +49,10 @@ public class HeavyAttack : MonoBehaviour
             StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.30f));
             //StartCoroutine(AttackAutoCancel(heavyAttackTime, heavyCanAutoCancel));
             Invoke("AttackComplete", timeBeforeCancelHeavy);
+            StartCoroutine(setCooldown());
+            player.playerAudio.playSoundLourd();
         }
+
 
         if (attackType == "bottom")
         {
@@ -62,6 +69,8 @@ public class HeavyAttack : MonoBehaviour
             playerAttack.m_Animator.SetTrigger("BottomHeavyAttack");
             StartCoroutine(playerAttack.ForwardAttack(heavyAttackTime - 0.5f, direction, 0.05f));
             Invoke("AttackComplete", heavyAttackTime - 0.5f);
+            StartCoroutine(setCooldown());
+            player.playerAudio.playSoundLourd();
         }
     }
 
@@ -88,5 +97,12 @@ public class HeavyAttack : MonoBehaviour
     {
         Debug.Log("testeuu");
         playerAttack.isAttacking = false;
+    }
+
+    private IEnumerator setCooldown()
+    {
+        yield return new WaitForSecondsRealtime(5.0f);
+        Debug.Log("j'attend");
+        cooldown = false;
     }
 }
