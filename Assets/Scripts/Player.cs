@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     public Parade parade;
     public Permutation permutation;
     public PlayerAudioManager playerAudio;
-    
+    public GameObject HitVFXPrefab;
     public float hurtTimeHeavy;
     public float hurtTimeLight;
     public float hurtTimeUltimate;
@@ -79,6 +79,7 @@ public class Player : MonoBehaviour
         dir.Normalize();
         dir.y = 0;
         transform.rotation = Quaternion.LookRotation(dir);
+        Instantiate(HitVFXPrefab, transform.position, transform.rotation);
         if (playerAttack.isParing)
         {
             if (attackType == "Heavy")

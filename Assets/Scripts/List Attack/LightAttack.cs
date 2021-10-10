@@ -14,13 +14,7 @@ public class LightAttack : MonoBehaviour
         LIGHT_4
     }
 
-    public enum BottomLightComboState
-    {
-        NONE,
-        BOTTOM_LIGHT_1,
-        BOTTOM_LIGHT_2
-    }
-
+    #region Variables
     public float lightAttackTime;
     public float heavyAttackTime;
     public float light2AttackTime;
@@ -45,12 +39,15 @@ public class LightAttack : MonoBehaviour
     private Rect posCam;
     private Rect posCamOpponent;
     public Vector3 playerHitPositionOffSet;
+    public bool canProceedCombo = false;
+    #endregion
 
 
     //Times
     public float timeBeforeCancelLight1;
     public float timeBeforeCancelLight2;
     public float timeBeforeCancelLight3;
+    public float timeBeforeCancelLight4;
 
     private void Awake()
     {
@@ -75,6 +72,8 @@ public class LightAttack : MonoBehaviour
     {
         ResetComboState();
     }
+
+    #region PerformedLightAttack method
     public void PerformedLightAttack(string attackType)
     {
         if (attackType == "normal")
@@ -85,72 +84,82 @@ public class LightAttack : MonoBehaviour
             }
             else
             {
-                    isLightAttacking = true;
-                    playerAttack.isAttacking = true;
-                    current_Combo_Timer = default_Combo_Timer;
-                    lightComboState++;
-                    if (lightComboState == LightComboState.LIGHT_1)
+                isLightAttacking = true;
+                playerAttack.isAttacking = true;
+                current_Combo_Timer = default_Combo_Timer;
+                lightComboState++;
+                if (lightComboState == LightComboState.LIGHT_1)
+                {
+                    playerAttack.playerHit = null;
+                    playerController.isRunning = false;
+                    Vector3 direction = playerAttack.LookAtTarget();
+                    // Joue attaque 1 du combo de coup l�g�
+                    //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // d�placements horizontaux bloqu�s
+                    playerAttack.swordAttacks.damage = 7;
+                    playerAttack.swordAttacks.attackType = "Light";
+                    // ChangeAnimationState(m_Punch);
+                    playerAttack.m_Animator.SetTrigger("LightAttack");
+                    StartCoroutine(playerAttack.ForwardAttack(lightAttackTime - 0.6f, direction, 0.05f));
+                    Invoke("AttackComplete", timeBeforeCancelLight1);
+                    StartCoroutine(CanProceedCombo(timeBeforeCancelLight1));
+                    player.playerAudio.playSoundLeger();
+                }
+
+                if (lightComboState == LightComboState.LIGHT_2)
+                {
+                    playerAttack.playerHit = null;
+                    playerController.isRunning = false;
+                    Vector3 direction = playerAttack.LookAtTarget();
+                    // Joue attaque 1 du combo de coup léger
+                    //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
+                    playerAttack.swordAttacks.damage = 8;
+                    playerAttack.swordAttacks.attackType = "Light";
+                    // ChangeAnimationState(m_Punch);
+                    playerAttack.m_Animator.SetTrigger("LightAttack2");
+                    StartCoroutine(playerAttack.ForwardAttack(light2AttackTime - 0.5f, direction, 0.05f));
+                    Invoke("AttackComplete", timeBeforeCancelLight2);
+                    if (canProceedCombo)
                     {
-                        playerController.isRunning = false;
-                        Vector3 direction = playerAttack.LookAtTarget();
-                        // Joue attaque 1 du combo de coup l�g�
-                        //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // d�placements horizontaux bloqu�s
-                        playerAttack.swordAttacks.damage = 7;
-                        playerAttack.swordAttacks.attackType = "Light";
-                        // ChangeAnimationState(m_Punch);
-                        playerAttack.m_Animator.SetTrigger("LightAttack");
-                        StartCoroutine(playerAttack.ForwardAttack(lightAttackTime - 0.6f, direction, 0.05f));
-                        Invoke("AttackComplete", timeBeforeCancelLight1);
-                        player.playerAudio.playSoundLeger();
+                        StartCoroutine(CanProceedCombo(timeBeforeCancelLight2));
                     }
-
-                    if (lightComboState == LightComboState.LIGHT_2)
-                    {
-                        playerController.isRunning = false;
-                        Vector3 direction = playerAttack.LookAtTarget();
-                        // Joue attaque 1 du combo de coup léger
-                        //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
-                        playerAttack.swordAttacks.damage = 8;
-                        playerAttack.swordAttacks.attackType = "Light";
-                        // ChangeAnimationState(m_Punch);
-                        playerAttack.m_Animator.SetTrigger("LightAttack2");
-                        StartCoroutine(playerAttack.ForwardAttack(light2AttackTime - 0.5f, direction, 0.05f));
-                        Invoke("AttackComplete", timeBeforeCancelLight2);
-
-                        player.playerAudio.playSoundLeger();
+                    player.playerAudio.playSoundLeger();
                     //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
                 }
 
-                    if (lightComboState == LightComboState.LIGHT_3)
+                if (lightComboState == LightComboState.LIGHT_3)
+                {
+                    playerAttack.playerHit = null;
+                    playerController.isRunning = false;
+                    Vector3 direction = playerAttack.LookAtTarget();
+                    playerAttack.swordAttacks.damage = 8;
+                    playerAttack.swordAttacks.attackType = "Light";
+                    playerAttack.m_Animator.SetTrigger("LightAttack3");
+                    Debug.Log(light3AttackTime);
+                    StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
+                    Invoke("AttackComplete", timeBeforeCancelLight3);
+                    if (canProceedCombo)
                     {
-                        playerController.isRunning = false;
-                        Vector3 direction = playerAttack.LookAtTarget();
-                        playerAttack.swordAttacks.damage = 8;
-                        playerAttack.swordAttacks.attackType = "Light";
-                        playerAttack.m_Animator.SetTrigger("LightAttack3");
-                        Debug.Log(light3AttackTime);
-                        StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
-                        Invoke("AttackComplete", timeBeforeCancelLight3);
-                        playerAttack.playerHit = null;
-
-                        player.playerAudio.playSoundLeger();
+                        StartCoroutine(CanProceedCombo(timeBeforeCancelLight2));
+                    }
+                    player.playerAudio.playSoundLeger();
                 }
 
-                    if (lightComboState == LightComboState.LIGHT_4)
-                    {
-                        playerController.isRunning = false;
-                        Vector3 direction = playerAttack.LookAtTarget();
-                        Debug.Log("is attacking light 4");
-                        Debug.Log(lightComboAttackTime);
-                        playerAttack.m_Animator.SetTrigger("LightAttackCombo");
-                        Invoke("AttackComplete", lightComboAttackTime);
-                        playerAttack.swordAttacks.damage = 4;
-                        playerAttack.swordAttacks.attackType = "Light";
-                        //StartCoroutine(ComboWorkflow());
-                        
-                        //Invoke("CheckPerformFullCombo", 0f);
-                        StartCoroutine(CheckPerformFullCombo());
-                        player.playerAudio.playSoundLeger();
+                if (lightComboState == LightComboState.LIGHT_4)
+                {
+                    playerController.isRunning = false;
+                    Vector3 direction = playerAttack.LookAtTarget();
+                    Debug.Log("is attacking light 4");
+                    Debug.Log(lightComboAttackTime);
+                    playerAttack.m_Animator.SetTrigger("LightAttackCombo");
+                    Invoke("AttackComplete", timeBeforeCancelLight3);
+                    playerAttack.swordAttacks.damage = 4;
+                    playerAttack.swordAttacks.attackType = "Light";
+                    //StartCoroutine(ComboWorkflow());
+
+                    //Invoke("CheckPerformFullCombo", 0f);
+                    player.playerAudio.playSoundLeger();
+                    StartCoroutine(CheckPerformFullCombo());
+                    
 
 
 
@@ -174,7 +183,8 @@ public class LightAttack : MonoBehaviour
             }
         }
 
-    }
+    } 
+    #endregion
 
     public void UpdateAnimClipTimes()
     {
@@ -223,15 +233,24 @@ public class LightAttack : MonoBehaviour
     public IEnumerator CheckPerformFullCombo()
     {
         Debug.Log("test");
-        if (lightComboState == LightComboState.LIGHT_4 && playerAttack.playerHit != null)
+        if (lightComboState == LightComboState.LIGHT_4 && playerAttack.playerHit != null && canProceedCombo)
         {
             playerAttack.isAttacking = true;
             playerController.isRunning = false;
             playerAttack.playerHit.GetComponent<Player>().isInCombo = true;
             player.isInCombo = true;
-            playerAttack.playerHit.GetComponent<PlayerController>().enabled = false;
-            
-            playerAttack.playerHit.GetComponent<PlayerController>().enabled = true;
+            playerAttack.playerHit.GetComponent<CharacterController>().enabled = false;
+            controller.enabled = false;
+            Vector3 positionAtk = GameObject.Find("ReplacePointAtk").transform.position;
+            Quaternion rotationAtk = GameObject.Find("ReplacePointAtk").transform.rotation;
+            transform.position = positionAtk;
+            transform.rotation = rotationAtk;
+            Vector3 positionRcv = GameObject.Find("ReplacePointRcv").transform.position;
+            Quaternion rotationRcv = GameObject.Find("ReplacePointRcv").transform.rotation;
+            playerAttack.playerHit.transform.position = positionRcv;
+            playerAttack.playerHit.transform.rotation = rotationRcv;
+            controller.enabled = true;
+            playerAttack.playerHit.GetComponent<CharacterController>().enabled = true;
             yield return new WaitForSeconds(0.3f);
             StartCoroutine(InfuseSword(0.15f));
             StartCoroutine(playerAttack.SwitchCamera(7.5f));
@@ -244,5 +263,18 @@ public class LightAttack : MonoBehaviour
     public void AttackComplete()
     {
         playerAttack.isAttacking = false;
+    }
+
+    public IEnumerator CanProceedCombo(float time)
+    {
+        yield return new WaitForSeconds(time);
+        if (playerAttack.playerHit != null)
+        {
+            canProceedCombo = true;
+        }
+        else
+        {
+            canProceedCombo = false;
+        }
     }
 }
