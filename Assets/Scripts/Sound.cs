@@ -12,6 +12,7 @@ public class Sound
     public float pitch;
     public bool loop;
     [SerializeField] public AudioSource source = default;
+    [SerializeField] public AudioMixerGroup mixer;
 
 
 }
