@@ -1116,7 +1116,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9816d96086537ad469e618056e83f7b8, type: 2}
+  - {fileID: 2100000, guid: ee3ed26ccda3cf5438241f6255811119, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1146,8 +1146,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.03632021, y: -0.6841445, z: -0.37862206}
-    m_Extent: {x: 4.963132, y: 1.1437258, z: 6.9999504}
+    m_Center: {x: 0.030860424, y: -0.6796275, z: -0.3172245}
+    m_Extent: {x: 4.1381025, y: 0.71469265, z: 5.834996}
   m_DirtyAABB: 0
 --- !u!114 &1937568017947071363
 MonoBehaviour:
@@ -1705,8 +1705,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 1.5040455, z: -0.001255393}
-    m_Extent: {x: 0.4062118, y: 7.184291, z: 0.5167886}
+    m_Center: {x: 0, y: 1.2526789, z: -0.0010461211}
+    m_Extent: {x: 0.3385095, y: 5.987602, z: 0.43065763}
   m_DirtyAABB: 0
 --- !u!183 &3658591606355092189
 Cloth:
@@ -8267,7 +8267,7 @@ GameObject:
   - component: {fileID: 5213051265402555225}
   - component: {fileID: 2055994996855387593}
   m_Layer: 8
-  m_Name: Yuetsu 2
+  m_Name: Yuetsu Victory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8280,15 +8280,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6735330714013134415}
-  m_LocalRotation: {x: -0, y: 0.967153, z: -0, w: -0.2541949}
-  m_LocalPosition: {x: 53.5, y: -33.3, z: 69.3}
-  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
+  m_LocalRotation: {x: -0.009553323, y: 0.9833163, z: 0.054179568, w: 0.17338528}
+  m_LocalPosition: {x: -47.9, y: -75.2, z: 59.7}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 3392900774262723520}
   - {fileID: 7035403771398401106}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -139, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6424907266442389020
 Animator:
   serializedVersion: 3
@@ -8299,12 +8299,18 @@ Animator:
   m_GameObject: {fileID: 6735330714013134415}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 033b008d3f176d244aa9e70eab78b719, type: 2}
-  m_Controller: {fileID: 9100000, guid: d95c6d7a69991ee4a9cf960524571a2e, type: 2}
+  m_Controller: {fileID: 9100000, guid: ffd6139044adbff4c86358ff12cc6698, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+    'mixamorig:LeftHandThumb2'\n\tTransform 'mixamorig:LeftHandIndex1'\n\tTransform
+    'mixamorig:RightHandRing2'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform
+    'mixamorig:LeftHandThumb3'\n\tTransform 'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tand
+    more ...\n\tFrom animation clip 'Golf Drive'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -8839,7 +8845,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 56b2f2398a207f746b9426c89522eefe, type: 2}
+  - {fileID: 2100000, guid: 20e2ef0399789bb46bb32bd8e0864d07, type: 2}
   - {fileID: 2100000, guid: 233ceebcbb1b80d4aae070080b015f0a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

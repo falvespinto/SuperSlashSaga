@@ -57,6 +57,7 @@ public class LevelSelectScreenScript : MonoBehaviour
                 if (positionIndex.x < cols-1)
                 {
                     positionIndex.x += 1;
+
                 }
                 
             }
