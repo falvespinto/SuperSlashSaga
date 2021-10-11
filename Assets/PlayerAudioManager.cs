@@ -16,6 +16,8 @@ public class PlayerAudioManager : MonoBehaviour
     private OneShotAudio kunai;
     [SerializeField]
     private OneShotAudio ultimate;
+    [SerializeField]
+    private OneShotAudio impact;
 
 
     public void playSoundLeger()
@@ -39,6 +41,10 @@ public class PlayerAudioManager : MonoBehaviour
     public void playSoundUltimate()
     {
         ultimate.PlayTheSound();
+    }
+    public void playSoundImpact()
+    {
+        impact.PlayTheSound();
     }
 
     void Start()

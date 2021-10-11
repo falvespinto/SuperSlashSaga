@@ -30,9 +30,11 @@ public class Player : MonoBehaviour
     public Permutation permutation;
     public PlayerAudioManager playerAudio;
     public GameObject HitVFXPrefab;
+    public GameObject HitHeavyPrefab;
     public float hurtTimeHeavy;
     public float hurtTimeLight;
     public float hurtTimeUltimate;
+    public Vector3 offset;
 
     public Sprite faceSprite;
 
@@ -75,11 +77,15 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage, string attackType)
     {
+        
         Vector3 dir = target.position - transform.position;
         dir.Normalize();
         dir.y = 0;
         transform.rotation = Quaternion.LookRotation(dir);
-        Instantiate(HitVFXPrefab, transform.position, transform.rotation);
+
+        
+        
+
         if (playerAttack.isParing)
         {
             if (attackType == "Heavy")
@@ -110,6 +116,23 @@ public class Player : MonoBehaviour
         }
         else
         {
+
+            if (attackType == "Heavy")
+            {
+
+                GameObject vfxHeavy = Instantiate(HitHeavyPrefab, transform.position + offset, transform.rotation);
+                vfxHeavy.transform.localScale *= 8;
+
+                playerAudio.playSoundLourd();
+                playerAudio.playSoundImpact();
+            }
+            if (attackType == "Light")
+            {
+                GameObject vfxLight = Instantiate(HitVFXPrefab, transform.position + offset, transform.rotation);
+                vfxLight.transform.localScale *= 7;
+                playerAudio.playSoundImpact();
+            }
+
             if (attackType == "Combo")
             {
                 currentHealth -= damage;
