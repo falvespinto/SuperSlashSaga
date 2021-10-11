@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     public float hurtTimeHeavy;
     public float hurtTimeLight;
     public float hurtTimeUltimate;
+    public Vector3 offSet;
 
     public Sprite faceSprite;
 
@@ -79,7 +80,7 @@ public class Player : MonoBehaviour
         dir.Normalize();
         dir.y = 0;
         transform.rotation = Quaternion.LookRotation(dir);
-        Instantiate(HitVFXPrefab, transform.position, transform.rotation);
+        Instantiate(HitVFXPrefab, transform.position + offSet, transform.rotation);
         if (playerAttack.isParing)
         {
             if (attackType == "Heavy")
@@ -110,6 +111,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+
             if (attackType == "Combo")
             {
                 currentHealth -= damage;

@@ -10,6 +10,7 @@ public class Attack : MonoBehaviour
     private Collider col;
     public PlayerAttack player;
     public PlayerAttackIA playerIA;
+    public UltimateAttack ultimateAttack;
     public bool isIA = false;
     public float stunTime;
 
@@ -64,6 +65,10 @@ public class Attack : MonoBehaviour
                     Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
                     Debug.Log(hit[i].gameObject.layer);
                     player.playerHit = hit[i].GetComponentInParent<Player>().gameObject;
+                    if (attackType == "Engage")
+                    {
+                        ultimateAttack.performFullUltimate = true;
+                    }
                     gameObject.SetActive(false);
                     break;
                 }

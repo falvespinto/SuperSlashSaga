@@ -10427,7 +10427,19 @@ MonoBehaviour:
     m_ActionId: 425d73c4-c162-4470-b01f-399a8dd9163d
     m_ActionName: Gameplay/BottomHeavyAttackPressed[/Keyboard/numpad5]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1498282575589081782}
+        m_TargetAssemblyTypeName: UltimateAttack, Assembly-CSharp
+        m_MethodName: PerformUltimateAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 04fd6ece-39d7-4342-8211-cf6accd8df4b
     m_ActionName: Gameplay/Ultimate[/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
@@ -10809,6 +10821,7 @@ MonoBehaviour:
   hurtTime: 3
   player: {fileID: 0}
   manaBar: {fileID: 0}
+  performFullUltimate: 0
 --- !u!114 &2076040904416851659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17228,6 +17241,7 @@ MonoBehaviour:
   attackType: 
   player: {fileID: 691353372036688036}
   playerIA: {fileID: 0}
+  ultimateAttack: {fileID: 0}
   isIA: 0
   stunTime: 0
 --- !u!1 &8932255942567921446

@@ -27,7 +27,10 @@ public class UltimateAttack : MonoBehaviour
     public PlayerData player;
     private PlayerData playerData;
     public ManaBar manaBar;
+    public bool performFullUltimate = false;
 
+    public float attackTimeEngage = 0.5f;
+    public float attackSpeedEngage = 0.5f;
     private void Awake()
     {
         playerAttack = GetComponent<PlayerAttack>();
@@ -37,6 +40,12 @@ public class UltimateAttack : MonoBehaviour
     }
     private void Update()
     {
+        if (performFullUltimate)
+        {
+            performFullUltimate = false;
+
+            //Faire l'ult
+        }
         if (isDealingDamages)
         {
             areaOfEffect.gameObject.SetActive(true);
@@ -70,10 +79,16 @@ public class UltimateAttack : MonoBehaviour
         if (!isPerformingUltimate && !isOnCooldown && manaBar.mana >= 50)
         {
             manaBar.SetMana(manaBar.mana - 50);
+            Vector3 direction = playerAttack.LookAtTarget();
+            StartCoroutine(playerAttack.ForwardAttack(attackTimeEngage, direction, attackSpeedEngage));
+            playerAttack.m_Animator.applyRootMotion = false;
+            playerAttack.swordAttacks.damage = 0;
+            playerAttack.swordAttacks.attackType = "Engage";
+            playerAttack.m_Animator.SetTrigger("EngageUltYuetsu");
+            playerAttack.m_Animator.applyRootMotion = true;
             StartCoroutine(isPerformingUltimateAttackReset());
-            timeline.Play();
-            StartCoroutine(DealDamage());
-
+            //timeline.Play();
+            //StartCoroutine(DealDamage());
         }
     }
 
@@ -124,6 +139,21 @@ public class UltimateAttack : MonoBehaviour
         yield return new WaitForSeconds(0.816666666666666f);
         playerFX.stopFlash();
 
+
+    }
+
+    public IEnumerator ForwardAttack(float attackTime, Vector3 direction, float attackSpeed)
+    {
+        if (!isPerformingUltimate)
+        {
+
+            float startTime = Time.time;
+            while (Time.time < startTime + attackTime)
+            {
+                playerAttack.controller.Move(direction * attackSpeed);
+                yield return null;
+            }
+        }
 
     }
 
