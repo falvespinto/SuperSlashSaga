@@ -17,6 +17,8 @@ public class Victory : MonoBehaviour
     public Transform positionLooser;
     public GameObject j1;
     public GameObject j2;
+    public Animator animatorWinner;
+    public Animator animatorLooser;
     void Start()
     {
         winner = 1;
@@ -27,10 +29,12 @@ public class Victory : MonoBehaviour
             j1.transform.position = positionWinner.position;
             j1.transform.rotation = positionWinner.rotation;
             j1.transform.localScale = positionWinner.localScale;
+            animatorWinner = j1.GetComponent<Animator>();
             Instantiate(j1);
             j2.transform.position = positionLooser.position;
             j2.transform.rotation = positionLooser.rotation;
             j2.transform.localScale = positionLooser.localScale;
+            animatorLooser = j2.GetComponent<Animator>();
             Instantiate(j2);
         }
         else
@@ -39,10 +43,12 @@ public class Victory : MonoBehaviour
             j2.transform.position = positionWinner.position;
             j2.transform.rotation = positionWinner.rotation;
             j2.transform.localScale = positionWinner.localScale;
+            animatorWinner = j2.GetComponent<Animator>();
             Instantiate(j2);
             j1.transform.position = positionLooser.position;
             j1.transform.rotation = positionLooser.rotation;
             j1.transform.localScale = positionLooser.localScale;
+            animatorLooser = j1.GetComponent<Animator>();
             Instantiate(j1);
         }
     }
