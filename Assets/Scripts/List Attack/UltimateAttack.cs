@@ -28,6 +28,8 @@ public class UltimateAttack : MonoBehaviour
     private PlayerData playerData;
     public ManaBar manaBar;
     public bool performFullUltimate = false;
+    public bool isEngaging = false;
+    public bool hasTouched = false;
 
     public float attackTimeEngage = 0.5f;
     public float attackSpeedEngage = 0.5f;
@@ -40,10 +42,11 @@ public class UltimateAttack : MonoBehaviour
     }
     private void Update()
     {
+        Debug.DrawRay(transform.position + new Vector3(0,7,0), transform.forward * 10, Color.red);
         if (performFullUltimate)
         {
             performFullUltimate = false;
-
+            
             //Faire l'ult
         }
         if (isDealingDamages)
@@ -66,6 +69,18 @@ public class UltimateAttack : MonoBehaviour
                 }
             }
         }
+        
+        if (isEngaging)
+        {
+            RaycastHit hit;
+            Ray ray = new Ray(transform.position + new Vector3(0, 7, 0), transform.forward * 10);
+            if (Physics.Raycast(ray, out hit, 1f, gameObject.GetComponentInParent<PlayerData>().enemyLayer))
+            {
+                Debug.Log("Ultimate ENGAGE : touché");
+                hasTouched = true;
+                isEngaging = false;
+            }
+        }
 
         if (startFullWhenReady && !isPerformingUltimate)
         {
@@ -80,7 +95,7 @@ public class UltimateAttack : MonoBehaviour
         {
             manaBar.SetMana(manaBar.mana - 50);
             Vector3 direction = playerAttack.LookAtTarget();
-            StartCoroutine(playerAttack.ForwardAttack(attackTimeEngage, direction, attackSpeedEngage));
+            StartCoroutine(ForwardEngageAttack(attackTimeEngage, direction, attackSpeedEngage));
             playerAttack.m_Animator.applyRootMotion = false;
             playerAttack.swordAttacks.damage = 0;
             playerAttack.swordAttacks.attackType = "Engage";
@@ -94,9 +109,11 @@ public class UltimateAttack : MonoBehaviour
 
     IEnumerator isPerformingUltimateAttackReset()
     {
+        isEngaging = true;
         isPerformingUltimate = true;
         yield return new WaitForSeconds(ultimateDuration);
         isPerformingUltimate = false;
+        isEngaging = false;
     }
     IEnumerator Cooldown()
     {
@@ -122,8 +139,6 @@ public class UltimateAttack : MonoBehaviour
         GetComponentInParent<PlayerData>().gameObject.transform.position = GameObject.Find("UltPointYuetsuAtk").transform.position;
         playerHit.GetComponentInParent<PlayerData>().gameObject.transform.position = GameObject.Find("UltPointYuetsuDef").transform.position;
         GetComponent<TimeLineController>().PerformFinalUlt(playerHit.GetComponent<Animator>());
-
-
     }
     public IEnumerator waitBeforeFinalUlt()
     {
@@ -142,20 +157,29 @@ public class UltimateAttack : MonoBehaviour
 
     }
 
-    public IEnumerator ForwardAttack(float attackTime, Vector3 direction, float attackSpeed)
+    public IEnumerator ForwardEngageAttack(float attackTime, Vector3 direction, float attackSpeed)
     {
         if (!isPerformingUltimate)
         {
-
             float startTime = Time.time;
             while (Time.time < startTime + attackTime)
             {
+                if (hasTouched)
+                {
+                    hasTouched = false;
+                    break;
+                }
                 playerAttack.controller.Move(direction * attackSpeed);
                 yield return null;
             }
         }
-
     }
 
+    public IEnumerator ProcFullUlt()
+    {
+        Time.timeScale = 0.05f;
+        yield return new WaitForSeconds(3f);
+        Time.timeScale = 1f;
+    }
 
 }

@@ -17,7 +17,6 @@ public class Attack : MonoBehaviour
     private void Start()
     {
         col = GetComponent<Collider>();
-        
     }
     void Update()
     {
@@ -65,6 +64,10 @@ public class Attack : MonoBehaviour
                     Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
                     Debug.Log(hit[i].gameObject.layer);
                     player.playerHit = hit[i].GetComponentInParent<Player>().gameObject;
+                    if (attackType == "Engage")
+                    {
+                        //StartCoroutine(ultimateAttack.ProcFullUlt());
+                    }
                     gameObject.SetActive(false);
                     break;
                 }
