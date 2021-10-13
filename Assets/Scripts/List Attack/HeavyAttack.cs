@@ -50,7 +50,7 @@ public class HeavyAttack : MonoBehaviour
             //StartCoroutine(AttackAutoCancel(heavyAttackTime, heavyCanAutoCancel));
             Invoke("AttackComplete", timeBeforeCancelHeavy);
             StartCoroutine(setCooldown());
-            player.playerAudio.playSoundLourd();
+          //  player.playerAudio.playSoundLourd();
         }
 
 
@@ -70,7 +70,7 @@ public class HeavyAttack : MonoBehaviour
             StartCoroutine(playerAttack.ForwardAttack(heavyAttackTime - 0.5f, direction, 0.05f));
             Invoke("AttackComplete", heavyAttackTime - 0.5f);
             StartCoroutine(setCooldown());
-            player.playerAudio.playSoundLourd();
+           // player.playerAudio.playSoundLourd();
         }
     }
 
@@ -106,10 +106,5 @@ public class HeavyAttack : MonoBehaviour
         cooldown = false;
     }
 
-    private IEnumerator setCooldown()
-    {
-        yield return new WaitForSecondsRealtime(5.0f);
-        Debug.Log("j'attend");
-        cooldown = false;
-    }
+
 }
