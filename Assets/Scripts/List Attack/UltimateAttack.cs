@@ -187,9 +187,15 @@ public class UltimateAttack : MonoBehaviour
 
     public IEnumerator ProcFullUlt()
     {
-        Time.timeScale = 0.05f;
-        yield return new WaitForSeconds(3f);
+        playerData.blurPanel.SetActive(true);
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(0.2f);
         Time.timeScale = 1f;
+        playerData.blurPanel.SetActive(false);
+    }
+
+    public void HandleFullUlt() {
+        StartCoroutine(ProcFullUlt());
     }
 
 }

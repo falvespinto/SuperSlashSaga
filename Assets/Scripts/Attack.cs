@@ -66,7 +66,7 @@ public class Attack : MonoBehaviour
                     player.playerHit = hit[i].GetComponentInParent<Player>().gameObject;
                     if (attackType == "Engage")
                     {
-                        //StartCoroutine(ultimateAttack.ProcFullUlt());
+                        ultimateAttack.HandleFullUlt();
                     }
                     gameObject.SetActive(false);
                     break;
