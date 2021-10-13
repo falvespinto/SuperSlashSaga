@@ -15,41 +15,39 @@ public class Victory : MonoBehaviour
     private int winner;
     public Transform positionWinner;
     public Transform positionLooser;
-    public GameObject j1;
-    public GameObject j2;
-    public Animator animatorWinner;
-    public Animator animatorLooser;
+    public GameObject winnerJ1;
+    public GameObject winnerJ2;
+    public GameObject looserJ1;
+    public GameObject looserJ2;
+    private Animator animatorWinner;
+    private Animator animatorLooser;
+
     void Start()
     {
-        winner = 1;
-        //winner = Player.winner;
+        winner = Player.winner;
         if(winner == 1)
         {
             GameObject.Find("joueur2").SetActive(false);
-            j1.transform.position = positionWinner.position;
-            j1.transform.rotation = positionWinner.rotation;
-            j1.transform.localScale = positionWinner.localScale;
-            animatorWinner = j1.GetComponent<Animator>();
-            Instantiate(j1);
-            j2.transform.position = positionLooser.position;
-            j2.transform.rotation = positionLooser.rotation;
-            j2.transform.localScale = positionLooser.localScale;
-            animatorLooser = j2.GetComponent<Animator>();
-            Instantiate(j2);
+            winnerJ1.transform.position = positionWinner.position;
+            winnerJ1.transform.rotation = positionWinner.rotation;
+            winnerJ1.transform.localScale = positionWinner.localScale;
+            Instantiate(winnerJ1);
+            looserJ2.transform.position = positionLooser.position;
+            looserJ2.transform.rotation = positionLooser.rotation;
+            looserJ2.transform.localScale = positionLooser.localScale;
+            Instantiate(looserJ2);
         }
         else
         {
             GameObject.Find("joueur1").SetActive(false);
-            j2.transform.position = positionWinner.position;
-            j2.transform.rotation = positionWinner.rotation;
-            j2.transform.localScale = positionWinner.localScale;
-            animatorWinner = j2.GetComponent<Animator>();
-            Instantiate(j2);
-            j1.transform.position = positionLooser.position;
-            j1.transform.rotation = positionLooser.rotation;
-            j1.transform.localScale = positionLooser.localScale;
-            animatorLooser = j1.GetComponent<Animator>();
-            Instantiate(j1);
+            winnerJ2.transform.position = positionWinner.position;
+            winnerJ2.transform.rotation = positionWinner.rotation;
+            winnerJ2.transform.localScale = positionWinner.localScale;
+            Instantiate(winnerJ2);
+            looserJ1.transform.position = positionLooser.position;
+            looserJ1.transform.rotation = positionLooser.rotation;
+            looserJ1.transform.localScale = positionLooser.localScale;
+            Instantiate(looserJ1);
         }
     }
 
