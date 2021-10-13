@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
@@ -12,10 +13,13 @@ public class DialogueManager : MonoBehaviour
     public Text tDialogueText;
     public GameObject gGameObjectStart;
     public GameObject gGameObjectContinue;
+    public GameObject gGameObjectFinir;
     public Queue<string> qSentences;
 
     public GameObject yuestu;
     public GameObject daiki;
+
+    private int chapitre = 0;
 
 
     // Start is called before the first frame update
@@ -32,6 +36,11 @@ public class DialogueManager : MonoBehaviour
         }
         gGameObjectStart.SetActive(false);
         gGameObjectContinue.SetActive(true);
+        if(qSentences.Count == 1 )
+        {
+            gGameObjectContinue.SetActive(false);
+            gGameObjectFinir.SetActive(true);
+        }
         DisplayNextSentence();
     }
     public void DisplayNextSentence()
@@ -43,22 +52,63 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         string sentence = qSentences.Dequeue();
-        if(sentence.Contains("Yuetsu :"))
+        if(sentence.Contains("Yuetsu1 :"))
         {
-            sentence = sentence.Remove(0,8);
+            sentence = sentence.Remove(0,9);
             dNameText.SetActive(false);
             tNameText.SetActive(true);
             daiki.SetActive(false);
             yuestu.SetActive(true);
+            chapitre = 1;
         }
-        else if(sentence.Contains("Daiki :"))
+        else if(sentence.Contains("Daiki1 :"))
         {
-            sentence = sentence.Remove(0,7);
+            sentence = sentence.Remove(0,8);
             tNameText.SetActive(false);
             dNameText.SetActive(true);
             yuestu.SetActive(false);
             daiki.SetActive(true);
+            chapitre = 1;
         }
+
+        if (sentence.Contains("Yuetsu2 :"))
+        {
+            sentence = sentence.Remove(0, 9);
+            dNameText.SetActive(false);
+            tNameText.SetActive(true);
+            daiki.SetActive(false);
+            yuestu.SetActive(true);
+            chapitre = 2;
+        }
+        else if (sentence.Contains("Daiki2 :"))
+        {
+            sentence = sentence.Remove(0, 8);
+            tNameText.SetActive(false);
+            dNameText.SetActive(true);
+            yuestu.SetActive(false);
+            daiki.SetActive(true);
+            chapitre = 2;
+        }
+
+        if (sentence.Contains("Yuetsu3 :"))
+        {
+            sentence = sentence.Remove(0, 9);
+            dNameText.SetActive(false);
+            tNameText.SetActive(true);
+            daiki.SetActive(false);
+            yuestu.SetActive(true);
+            chapitre = 3;
+        }
+        else if (sentence.Contains("Daiki3 :"))
+        {
+            sentence = sentence.Remove(0, 8);
+            tNameText.SetActive(false);
+            dNameText.SetActive(true);
+            yuestu.SetActive(false);
+            daiki.SetActive(true);
+            chapitre = 3;
+        }
+
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
@@ -75,5 +125,9 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("end");
+        if(chapitre == 1)
+        {
+            SceneManager.LoadScene("CharacterSelectionIA");
+        }
     }
 }

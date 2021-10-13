@@ -102,6 +102,7 @@ public class Player : MonoBehaviour
                 if (attackType != "Combo" && attackType != "Ultimate")
                 {
                     playerAttack.AttackedWhileParing();
+                    playerAudio.playSoundParade();
                 }
                 
             }
