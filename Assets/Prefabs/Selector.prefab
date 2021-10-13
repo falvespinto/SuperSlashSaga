@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8943298c4d1efa441b2f4f29bd02d4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialisationBandeau: {fileID: 0}
   index: 0
   button: {fileID: 0}
   champSelect: {fileID: 0}
@@ -69,7 +70,7 @@ MonoBehaviour:
   playersIcons:
   - {fileID: 21300000, guid: 72697703b634adb4e92518c40dbc85af, type: 3}
   - {fileID: 21300000, guid: 6d02f7226f8b2d045abf4ce439e38e10, type: 3}
-  - {fileID: 21300000, guid: 238727f2c166b1f4399f982e197e3e6f, type: 3}
+  - {fileID: 21300000, guid: 8bcd84784e31b614dba7700ef9fb4e72, type: 3}
   isInit: 0
   spawnPositionJ1: {fileID: 2968574753165891576, guid: f7e20af64c92c884f9b862956b32bcad, type: 3}
   spawnPositionJ2: {fileID: 5046832037328770243, guid: 6f01bf3c4d7e1ab458ccac89c8dd6445, type: 3}
@@ -77,8 +78,10 @@ MonoBehaviour:
   spawnValidationJ2: {fileID: 2968574753165891576, guid: 1fc6d2ee40b173e4aa7fdf5d856d8e97, type: 3}
   yuetsuPrefab: {fileID: 6735330714013134415, guid: a276f77faec753d49a3ae99b4f4ea614, type: 3}
   yuetsuPrefabJ2: {fileID: 6735330714013134415, guid: 159e8553e72ce814d80d71140c35185f, type: 3}
-  validationJ1: {fileID: 187507849208885987, guid: b5be757958d885640863d157aecf1159, type: 3}
-  validationJ2: {fileID: 160186214732432505, guid: 6c2c1607674cd8b41b97ff70c6c1356d, type: 3}
+  startPlayer1: {fileID: 0}
+  startPlayer2: {fileID: 0}
+  isSpawnableJ1: 0
+  isSpawnableJ2: 0
 --- !u!114 &-2217939168109372958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,7 +273,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d8a2297f228c62d4fa96732b953a2e53, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8bcd84784e31b614dba7700ef9fb4e72, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
