@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManagerManette : MonoBehaviour
 {
     //RAF changer d'image pour que ca aille avec le dialogue ET peut etre mettre en sombre l'image du personnage qui ne parle pas
     //RAF faire fonctionner la manette pour que quand on appuie sur A ca change de ligne de dialogue et quand on a plus de dialogue ca change de scene
@@ -20,6 +21,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject daiki;
 
     private int chapitre = 0;
+    private int i = 0;
+    public Dialogue dialogue;
 
 
     // Start is called before the first frame update
@@ -27,6 +30,35 @@ public class DialogueManager : MonoBehaviour
     {
         qSentences = new Queue<string>();
     }
+
+
+    public void Play(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started)
+        {
+            i++;
+            if (i == 1)
+            {
+
+                qSentences.Clear();
+                foreach (string sentence in dialogue.sSentences)
+                {
+                    qSentences.Enqueue(sentence);
+                }
+                gGameObjectStart.SetActive(false);
+                gGameObjectContinue.SetActive(true);
+                Debug.Log("Start");
+                DisplayNextSentence();
+            }
+            if (i >= 2)
+            {
+                DisplayNextSentence();
+                Debug.Log("Continue");
+            }
+        }
+    }
+
+
     public void StartDialogue(Dialogue dialogue)
     {
         qSentences.Clear();
@@ -50,6 +82,7 @@ public class DialogueManager : MonoBehaviour
         if (qSentences.Count == 0)
         {
             EndDialogue();
+            // RAF changer de scene car fin du dialogue
             return;
         }
         string sentence = qSentences.Dequeue();

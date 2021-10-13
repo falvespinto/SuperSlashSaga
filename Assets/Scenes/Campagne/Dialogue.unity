@@ -940,7 +940,7 @@ MonoBehaviour:
   tDialogueText: {fileID: 1814711019}
   gGameObjectStart: {fileID: 1931736844}
   gGameObjectContinue: {fileID: 135354736}
-  gGameObjectFinir: {fileID: 0}
+  gGameObjectFinir: {fileID: 1183481281}
   yuestu: {fileID: 220203526}
   daiki: {fileID: 756371519}
 --- !u!4 &1460792864
@@ -1122,6 +1122,8 @@ GameObject:
   - component: {fileID: 1841426035}
   - component: {fileID: 1841426034}
   - component: {fileID: 1841426033}
+  - component: {fileID: 1841426038}
+  - component: {fileID: 1841426037}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1212,6 +1214,124 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1841426037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841426032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8473597413708d45911c4a71173825b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tNameText: {fileID: 1917629452}
+  dNameText: {fileID: 821577164}
+  tDialogueText: {fileID: 1814711019}
+  gGameObjectStart: {fileID: 1931736844}
+  gGameObjectContinue: {fileID: 135354736}
+  gGameObjectFinir: {fileID: 1183481281}
+  yuestu: {fileID: 220203526}
+  daiki: {fileID: 756371519}
+  dialogue:
+    sName: 
+    sSentences:
+    - 'Yuetsu1 :
+
+      Cette endroit est parfait pour faire un entrainement'
+    - 'Yuetsu1 :
+
+      Hmm je vois quelqu''un arriver'
+    - 'Daiki1 :
+
+      Yueeeestu viens m''affronter'
+--- !u!114 &1841426038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841426032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: e6abb072d146aa24692b9d304b36c526, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 59c9d5fe-6b2b-417d-8487-73ac66c562b5
+    m_ActionName: menu/ButtonUp[/XInputControllerWindows/dpad/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b832d2e7-2d33-413f-923a-4369ddd309eb
+    m_ActionName: menu/ButtonDown[/XInputControllerWindows/dpad/down]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1841426037}
+        m_TargetAssemblyTypeName: DialogueManagerManette, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8429a372-4fcc-4432-9a8a-c91a9fdc3931
+    m_ActionName: menu/Play[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 06cdd631-125f-4dc9-bf7e-d36bb9990c1c
+    m_ActionName: menu/ButtonRight[/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7f74231c-68f2-4185-8eb6-963d3ba49ca4
+    m_ActionName: menu/ButtonLeft[/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 20917f78-d21e-4836-8ba3-eb6b0fc7d958
+    m_ActionName: menu/Pause[/XInputControllerWindows/start,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 84454796-9d58-457c-a726-bdf3e063596c
+    m_ActionName: menu/A[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 75746d3b-dff6-4598-9f53-046e491c189d
+    m_ActionName: menu/JoyRight[/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1bcb5843-4092-4bf7-94af-9559b7f19b84
+    m_ActionName: menu/JoyLeft[/XInputControllerWindows/leftStick/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f6ec2831-99b8-4806-82a3-319476436376
+    m_ActionName: menu/JoyUp[/XInputControllerWindows/leftStick/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 09261068-6e8a-4847-ae95-ccfa54b50558
+    m_ActionName: menu/JoyDown[/XInputControllerWindows/leftStick/down]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: menu
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1917629452
 GameObject:
   m_ObjectHideFlags: 0
