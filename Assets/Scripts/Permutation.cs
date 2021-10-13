@@ -54,7 +54,7 @@ public class Permutation : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawLine(transform.position, transform.position + transform.forward * 100, Color.blue);
+        //Debug.DrawLine(transform.position, transform.position + transform.forward * 100, Color.blue);
         if (player.canPermute && canPermute && !player.isInCombo)
         {
             Permute();

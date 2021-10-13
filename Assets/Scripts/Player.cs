@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     public float hurtTimeHeavy;
     public float hurtTimeLight;
     public float hurtTimeUltimate;
-    public Vector3 offset;
+    public Vector3 offSet;
 
     public Sprite faceSprite;
 
@@ -82,10 +82,7 @@ public class Player : MonoBehaviour
         dir.Normalize();
         dir.y = 0;
         transform.rotation = Quaternion.LookRotation(dir);
-
-        
-        
-
+        Instantiate(HitVFXPrefab, transform.position + offSet, transform.rotation);
         if (playerAttack.isParing)
         {
             if (attackType == "Heavy")
@@ -118,22 +115,6 @@ public class Player : MonoBehaviour
         else
         {
 
-            if (attackType == "Heavy")
-            {
-
-                GameObject vfxHeavy = Instantiate(HitHeavyPrefab, transform.position + offset, transform.rotation);
-                vfxHeavy.transform.localScale *= 8;
-
-                playerAudio.playSoundLourd();
-                playerAudio.playSoundImpact();
-            }
-            if (attackType == "Light")
-            {
-                GameObject vfxLight = Instantiate(HitVFXPrefab, transform.position + offset, transform.rotation);
-                vfxLight.transform.localScale *= 7;
-                playerAudio.playSoundImpact();
-            }
-
             if (attackType == "Combo")
             {
                 currentHealth -= damage;
@@ -152,7 +133,7 @@ public class Player : MonoBehaviour
                         case "Light":
                             StartCoroutine(ResetIsTakingDamage(hurtTimeLight));
                             break;
-                        case "Ultimate":
+                        case "Engage":
                             StartCoroutine(ResetIsTakingDamage(hurtTimeUltimate));
                             break;
 

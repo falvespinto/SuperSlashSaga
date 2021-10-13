@@ -39,7 +39,6 @@ public class LightAttack : MonoBehaviour
     private Rect posCam;
     private Rect posCamOpponent;
     public Vector3 playerHitPositionOffSet;
-    public bool canProceedCombo = false;
     #endregion
 
 
@@ -101,7 +100,6 @@ public class LightAttack : MonoBehaviour
                     playerAttack.m_Animator.SetTrigger("LightAttack");
                     StartCoroutine(playerAttack.ForwardAttack(lightAttackTime - 0.6f, direction, 0.05f));
                     Invoke("AttackComplete", timeBeforeCancelLight1);
-                    StartCoroutine(CanProceedCombo(timeBeforeCancelLight1));
                     player.playerAudio.playSoundLeger();
                 }
 
@@ -118,10 +116,6 @@ public class LightAttack : MonoBehaviour
                     playerAttack.m_Animator.SetTrigger("LightAttack2");
                     StartCoroutine(playerAttack.ForwardAttack(light2AttackTime - 0.5f, direction, 0.05f));
                     Invoke("AttackComplete", timeBeforeCancelLight2);
-                    if (canProceedCombo)
-                    {
-                        StartCoroutine(CanProceedCombo(timeBeforeCancelLight2));
-                    }
                     player.playerAudio.playSoundLeger();
                     //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
                 }
@@ -137,10 +131,6 @@ public class LightAttack : MonoBehaviour
                     Debug.Log(light3AttackTime);
                     StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
                     Invoke("AttackComplete", timeBeforeCancelLight3);
-                    if (canProceedCombo)
-                    {
-                        StartCoroutine(CanProceedCombo(timeBeforeCancelLight2));
-                    }
                     player.playerAudio.playSoundLeger();
                 }
 
@@ -233,7 +223,7 @@ public class LightAttack : MonoBehaviour
     public IEnumerator CheckPerformFullCombo()
     {
         Debug.Log("test");
-        if (lightComboState == LightComboState.LIGHT_4 && playerAttack.playerHit != null && canProceedCombo)
+        if (lightComboState == LightComboState.LIGHT_4 && playerAttack.playerHit != null)
         {
             playerAttack.isAttacking = true;
             playerController.isRunning = false;
@@ -263,18 +253,5 @@ public class LightAttack : MonoBehaviour
     public void AttackComplete()
     {
         playerAttack.isAttacking = false;
-    }
-
-    public IEnumerator CanProceedCombo(float time)
-    {
-        yield return new WaitForSeconds(time);
-        if (playerAttack.playerHit != null)
-        {
-            canProceedCombo = true;
-        }
-        else
-        {
-            canProceedCombo = false;
-        }
     }
 }

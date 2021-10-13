@@ -82,7 +82,7 @@ public class TwitchChat : MonoBehaviour
                 _writer.Flush();
                 return;
             }
-
+            
             if (message.Contains("PRIVMSG"))
             {
                 var splitPoint = message.IndexOf("!", 1);
