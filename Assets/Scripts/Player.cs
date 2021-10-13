@@ -130,7 +130,7 @@ public class Player : MonoBehaviour
                         case "Light":
                             StartCoroutine(ResetIsTakingDamage(hurtTimeLight));
                             break;
-                        case "Ultimate":
+                        case "Engage":
                             StartCoroutine(ResetIsTakingDamage(hurtTimeUltimate));
                             break;
 

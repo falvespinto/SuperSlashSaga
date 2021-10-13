@@ -7,17 +7,17 @@ using UnityEngine.Playables;
 public class UltimateAttack : MonoBehaviour
 {
 
+    public const string ATTACK_TYPE = "Engage";
+    public const float attackDamage = 25;
+
     public float cooldown;
     public Vector3 positionParticles;
-    public float attackDamage;
     public float ultimateDuration;
     public PlayableDirector timeline;
     public bool isPerformingUltimate = false;
     public bool isOnCooldown = false;
     public float effectTime;
     private bool isDealingDamages = false;
-    public Collider areaOfEffect;
-    public string attackType;
     public float beforeEffectTime;
     public GameObject playerHit;
     private bool startFullWhenReady;
@@ -30,6 +30,7 @@ public class UltimateAttack : MonoBehaviour
     public bool performFullUltimate = false;
     public bool isEngaging = false;
     public bool hasTouched = false;
+    public Collider engageArea;
 
     public float attackTimeEngage = 0.5f;
     public float attackSpeedEngage = 0.5f;
@@ -51,34 +52,43 @@ public class UltimateAttack : MonoBehaviour
         }
         if (isDealingDamages)
         {
-            areaOfEffect.gameObject.SetActive(true);
-            Collider[] hit = Physics.OverlapBox(areaOfEffect.bounds.center, areaOfEffect.bounds.extents, areaOfEffect.transform.rotation, gameObject.GetComponentInParent<PlayerData>().enemyLayer);
+            //areaOfEffect.gameObject.SetActive(true);
+            //Collider[] hit = Physics.OverlapBox(areaOfEffect.bounds.center, areaOfEffect.bounds.extents, areaOfEffect.transform.rotation, gameObject.GetComponentInParent<PlayerData>().enemyLayer);
+            //if (hit.Length > 0)
+            //{
+            //    for (int i = 0; i < hit.Length; i++)
+            //    {
+            //        hit[i].GetComponentInParent<Player>().hurtTimeUltimate = hurtTime;
+            //        hit[i].GetComponentInParent<Player>().TakeDamage(attackDamage, attackType);
+            //        Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
+            //        Debug.Log(hit[i].gameObject.layer);
+            //        playerHit = hit[i].gameObject;
+            //        isDealingDamages = false;
+            //        startFullWhenReady = true;
+            //        areaOfEffect.gameObject.SetActive(false);
+            //        break;
+            //    }
+            //}
+        }
+        
+        if (isEngaging)
+        {
+            engageArea.gameObject.SetActive(true);
+            Collider[] hit = Physics.OverlapBox(engageArea.bounds.center, engageArea.bounds.extents, engageArea.transform.rotation, gameObject.GetComponentInParent<PlayerData>().enemyLayer);
             if (hit.Length > 0)
             {
                 for (int i = 0; i < hit.Length; i++)
                 {
                     hit[i].GetComponentInParent<Player>().hurtTimeUltimate = hurtTime;
-                    hit[i].GetComponentInParent<Player>().TakeDamage(attackDamage, attackType);
                     Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
                     Debug.Log(hit[i].gameObject.layer);
                     playerHit = hit[i].gameObject;
-                    isDealingDamages = false;
-                    startFullWhenReady = true;
-                    areaOfEffect.gameObject.SetActive(false);
+                    hasTouched = true;
+                    isEngaging = false;
+                    Debug.Log("Ultimate ENGAGE : touché");
+                    engageArea.gameObject.SetActive(false);
                     break;
                 }
-            }
-        }
-        
-        if (isEngaging)
-        {
-            RaycastHit hit;
-            Ray ray = new Ray(transform.position + new Vector3(0, 7, 0), transform.forward * 10);
-            if (Physics.Raycast(ray, out hit, 1f, gameObject.GetComponentInParent<PlayerData>().enemyLayer))
-            {
-                Debug.Log("Ultimate ENGAGE : touché");
-                hasTouched = true;
-                isEngaging = false;
             }
         }
 
@@ -98,7 +108,7 @@ public class UltimateAttack : MonoBehaviour
             StartCoroutine(ForwardEngageAttack(attackTimeEngage, direction, attackSpeedEngage));
             playerAttack.m_Animator.applyRootMotion = false;
             playerAttack.swordAttacks.damage = 0;
-            playerAttack.swordAttacks.attackType = "Engage";
+            playerAttack.swordAttacks.attackType = ATTACK_TYPE;
             playerAttack.m_Animator.SetTrigger("EngageUltYuetsu");
             playerAttack.m_Animator.applyRootMotion = true;
             StartCoroutine(isPerformingUltimateAttackReset());
@@ -128,7 +138,7 @@ public class UltimateAttack : MonoBehaviour
         isDealingDamages = true;
         yield return new WaitForSeconds(effectTime);
         isDealingDamages = false;
-        areaOfEffect.gameObject.SetActive(false);
+        engageArea.gameObject.SetActive(false);
     }
 
     public void PerformFullUltimate()
