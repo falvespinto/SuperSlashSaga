@@ -24,7 +24,6 @@ public class LevelSelectScreenScript : MonoBehaviour
 
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("fondSonore");
         row1.Add(GameObject.Find("Row1_1"));
         row1.Add(GameObject.Find("Row1_2"));
         row1.Add(GameObject.Find("Row1_3"));
@@ -57,6 +56,7 @@ public class LevelSelectScreenScript : MonoBehaviour
                 if (positionIndex.x < cols-1)
                 {
                     positionIndex.x += 1;
+
                 }
                 
             }

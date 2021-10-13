@@ -39,9 +39,9 @@ public class HeavyAttack : MonoBehaviour
             playerController.isRunning = false;
             Vector3 direction = playerAttack.LookAtTarget();
             playerAttack.isAttacking = true;
-            // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
+            // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut ï¿½tre plus performant ?
             Debug.Log("is attacking heavy");
-            // m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
+            // m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les dï¿½placements horizontaux
             playerAttack.swordAttacks.damage = 20;
             playerAttack.swordAttacks.attackType = "Heavy";
             // ChangeAnimationState(m_Punch);
@@ -50,7 +50,7 @@ public class HeavyAttack : MonoBehaviour
             //StartCoroutine(AttackAutoCancel(heavyAttackTime, heavyCanAutoCancel));
             Invoke("AttackComplete", timeBeforeCancelHeavy);
             StartCoroutine(setCooldown());
-            
+            player.playerAudio.playSoundLourd();
         }
 
 
@@ -58,19 +58,19 @@ public class HeavyAttack : MonoBehaviour
         {
             Vector3 direction = playerAttack.LookAtTarget();
             playerAttack.isAttacking = true;
-            // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut être plus performant ?
+            // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut ï¿½tre plus performant ?
             Debug.Log("is attacking bottom heavy");
-            // m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les déplacements horizontaux
+            // m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les dï¿½placements horizontaux
             playerAttack.swordAttacks.damage = 20;
-            // à changer pê
+            // ï¿½ changer pï¿½
             playerAttack.swordAttacks.attackType = "Heavy";
             // ChangeAnimationState(m_Punch);
-            // à changer
+            // ï¿½ changer
             playerAttack.m_Animator.SetTrigger("BottomHeavyAttack");
             StartCoroutine(playerAttack.ForwardAttack(heavyAttackTime - 0.5f, direction, 0.05f));
             Invoke("AttackComplete", heavyAttackTime - 0.5f);
             StartCoroutine(setCooldown());
-            
+            player.playerAudio.playSoundLourd();
         }
     }
 
@@ -97,6 +97,13 @@ public class HeavyAttack : MonoBehaviour
     {
         Debug.Log("testeuu");
         playerAttack.isAttacking = false;
+    }
+
+    private IEnumerator setCooldown()
+    {
+        yield return new WaitForSecondsRealtime(5.0f);
+        Debug.Log("j'attend");
+        cooldown = false;
     }
 
     private IEnumerator setCooldown()

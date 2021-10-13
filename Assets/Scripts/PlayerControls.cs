@@ -13,6 +13,7 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerControls : MonoBehaviour
 {
+    public initialisationBandeau initialisationBandeau;
     private Vector2 movementInput;
     public int index;
     private PlayerControls[] test;
@@ -30,22 +31,24 @@ public class PlayerControls : MonoBehaviour
     public GameObject spawnValidationJ2;
     public GameObject yuetsuPrefab;
     public GameObject yuetsuPrefabJ2;
+    public GameObject startPlayer1;
+    public GameObject startPlayer2;
     private GameObject currentPrefabSpawn;
     private GameObject iaPrefabSpawn;
     private GameObject characterSpawn;
     private GameObject validationSpawn;
-    private bool isSpawnableJ1;
-    private bool isSpawnableJ2;
+    public bool isSpawnableJ1;
+    public bool isSpawnableJ2;
     private bool isSpawnableIA;
     private int indexJ1;
     private int indexJ2;
     private int indexIA;
     private GameObject ia;
-    public GameObject validationJ1;
-    public GameObject validationJ2;
 
     private void Awake()
     {
+        startPlayer1 = GameObject.Find("press start j1");
+        startPlayer2 = GameObject.Find("press start j2");
         champSelect = GetComponent<LevelSelectScreenScript>();
         champSelect.selector = gameObject;
         hasSelected = false;
@@ -55,6 +58,7 @@ public class PlayerControls : MonoBehaviour
         isSpawnableJ2 = true;
         isSpawnableIA = true;
         managerIA = FindObjectOfType<IAmanager>();
+        initialisationBandeau = FindObjectOfType<initialisationBandeau>();
         FindObjectOfType<AudioManager>().Play("selectionPerso");
         prefab.transform.SetParent(GameObject.Find("Canvas").transform);
         prefab.transform.position = GameObject.Find("Row1_1").transform.position;
@@ -67,6 +71,9 @@ public class PlayerControls : MonoBehaviour
         {
             index = 0;
             indexJ1 = 1;
+            gameObject.GetComponentInChildren<Image>().sprite = playersIcons[0];
+            gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            Destroy(startPlayer1);
         }
 
         else
@@ -75,12 +82,15 @@ public class PlayerControls : MonoBehaviour
             {
                 index = 1;
                 indexIA = 1;
-                gameObject.GetComponent<Image>().sprite = playersIcons[2];
+                gameObject.GetComponentInChildren<Image>().sprite = playersIcons[2];
+                gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             }
             else{
                 index = 1;
                 indexJ2 = 1;
-                gameObject.GetComponent<Image>().sprite = playersIcons[1];
+                gameObject.GetComponentInChildren<Image>().sprite = playersIcons[1];
+                gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                Destroy(startPlayer2);
             }
 
         }
@@ -133,14 +143,14 @@ public class PlayerControls : MonoBehaviour
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
 
     public void OnSelect(InputAction.CallbackContext ctx) {
+        
         if (isInit && !hasSelected)
         {
-
+            
             if (indexJ1 == 1 && isSpawnableJ1 == true)
             {
-
                 InstanciateJ1(yuetsuPrefab);
-
+                initialisationBandeau.validationJ1.SetActive(true);
                 if (currentPrefabSpawn != characterSpawn)
                 {
                     currentPrefabSpawn = characterSpawn;
@@ -149,8 +159,20 @@ public class PlayerControls : MonoBehaviour
             }
             else if (indexJ2 == 1 && isSpawnableJ2 == true)
             {
-                validationJ2.SetActive(true);
                 InstanciateJ2(yuetsuPrefabJ2);
+                initialisationBandeau.validationJ2.SetActive(true);
+                if (currentPrefabSpawn != characterSpawn)
+                {
+
+                    currentPrefabSpawn = characterSpawn;
+                    isSpawnableJ2 = false;
+                }
+
+            }
+            else if (indexIA == 1)
+            {
+                InstanciateJ2(yuetsuPrefabJ2);
+                initialisationBandeau.validationJ2.SetActive(true);
                 if (currentPrefabSpawn != characterSpawn)
                 {
 
@@ -160,7 +182,7 @@ public class PlayerControls : MonoBehaviour
 
             }
 
-        Debug.Log(isInit);
+            Debug.Log(isInit);
         if (ctx.canceled && isInit)
         {
             hasSelected = true;
@@ -213,8 +235,6 @@ public class PlayerControls : MonoBehaviour
         characterSpawn.transform.position = spawnPositionJ1.transform.position;
         characterSpawn.transform.rotation = spawnPositionJ1.transform.rotation;
         characterSpawn.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        validationSpawn = Instantiate(validationJ1) as GameObject;
-        validationSpawn.transform.position = spawnValidationJ1.transform.position;
         return characterSpawn;
     }
     public GameObject InstanciateJ2(GameObject character)
@@ -223,8 +243,6 @@ public class PlayerControls : MonoBehaviour
         characterSpawn.transform.position = spawnPositionJ2.transform.position;
         characterSpawn.transform.rotation = spawnPositionJ2.transform.rotation;
         characterSpawn.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        validationSpawn = Instantiate(validationJ2) as GameObject;
-        validationSpawn.transform.position = spawnValidationJ2.transform.position;
         return characterSpawn;
     }
 

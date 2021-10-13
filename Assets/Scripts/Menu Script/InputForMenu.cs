@@ -143,6 +143,17 @@ public class @InputForMenu : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""99269095-b758-4db2-8dcf-38ebb3fe01da"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Play"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""087d9f6d-3077-48cb-874c-8cff77ad4bd9"",
                     ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",

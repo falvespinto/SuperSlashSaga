@@ -14,7 +14,9 @@ public class MenuScript : MonoBehaviour
     private int SelectedButton = 1;
     [SerializeField]
     private int NumberOfButtons;
-    AudioManager musique = new AudioManager();
+    //AudioManager musique = new AudioManager();
+    public MenuAudioManager menuAudio;
+
 
     public Transform ButtonPosition1;
     public Transform ButtonPosition2;
@@ -44,7 +46,7 @@ public class MenuScript : MonoBehaviour
 
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("MusiqueMenu");
+        //FindObjectOfType<AudioManager>().Play("MusiqueMenu");
     }
 
 
@@ -330,54 +332,61 @@ public class MenuScript : MonoBehaviour
         if (SelectedButton == 1)
         {
             pointMenu.transform.position = ButtonPosition1.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //  FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuUp = true;
             droite = false;
         }
         else if (SelectedButton == 2)
         {     
             pointMenu.transform.position = ButtonPosition2.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //   FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuUp = false;
             droite = false;
         }
         else if (SelectedButton == 3)
         {
             pointMenu.transform.position = ButtonPosition3.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //   FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             droite = false;
         }
         else if (SelectedButton == 4)
         {
             pointMenu.transform.position = ButtonPosition4.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //   FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuDown = false;
             droite = false;
         }
         else if (SelectedButton == 5)
         {
             pointMenu.transform.position = ButtonPosition5.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //   FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuDown = true;
             droite = false;
         }
         else if (SelectedButton == 6)
         {
             pointOption.transform.position = ButtonPosition6.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //   FindObjectOfType<AudioManager>().Play("percution");
             droite = true;
         }
         else if (SelectedButton == 7)
         {
             pointCampagne.transform.position = ButtonPosition15.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //  FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuUp = true;
             droite = true;
         }
         else if (SelectedButton == 8)
         {
             pointCampagne.transform.position = ButtonPosition16.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //  FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuDown = false;
             verifMenuUp = false;
             droite = true;
@@ -385,63 +394,72 @@ public class MenuScript : MonoBehaviour
         else if (SelectedButton == 9)
         {
             pointCampagne.transform.position = ButtonPosition17.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //   FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuDown = true;
             droite = true;
         }
         else if (SelectedButton == 10)
         {
             pointVersus.transform.position = ButtonPosition7.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //  FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuUp = true;
             droite = true;
         }
         else if (SelectedButton == 11)
         {
             pointVersus.transform.position = ButtonPosition8.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //   FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuUp = false;
             droite = true;
         }
         else if (SelectedButton == 12)
         {
             pointVersus.transform.position = ButtonPosition9.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //   FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuDown = false;
             droite = true;
         }
         else if (SelectedButton == 13)
         {
             pointVersus.transform.position = ButtonPosition10.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //   FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuDown = true;
             droite = true;
         }
         else if (SelectedButton == 14)
         {
             pointStream.transform.position = ButtonPosition11.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //  FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuUp = true;
             droite = true;
         }
         else if (SelectedButton == 15)
         {
             pointStream.transform.position = ButtonPosition12.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //  FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuUp = false;
             droite = true;
         }
         else if (SelectedButton == 16)
         {
             pointStream.transform.position = ButtonPosition13.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //  FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuDown = false;
             droite = true;
         }
         else if (SelectedButton == 17)
         {
             pointStream.transform.position = ButtonPosition14.position;
-            FindObjectOfType<AudioManager>().Play("percution");
+            //    FindObjectOfType<AudioManager>().Play("percution");
+            menuAudio.playSoundPercution();
             verifMenuDown = true;
             droite = true;
         }

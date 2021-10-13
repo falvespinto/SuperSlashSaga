@@ -1146,8 +1146,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.030860424, y: -0.6796275, z: -0.3172245}
-    m_Extent: {x: 4.1381025, y: 0.71469265, z: 5.834996}
+    m_Center: {x: 0.03632021, y: -0.6841445, z: -0.37862206}
+    m_Extent: {x: 4.963132, y: 1.1437258, z: 6.9999504}
   m_DirtyAABB: 0
 --- !u!114 &1937568017947071363
 MonoBehaviour:
@@ -1705,8 +1705,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 1.2526789, z: -0.0010461211}
-    m_Extent: {x: 0.3385095, y: 5.987602, z: 0.43065763}
+    m_Center: {x: 0, y: 1.5040455, z: -0.001255393}
+    m_Extent: {x: 0.4062118, y: 7.184291, z: 0.5167886}
   m_DirtyAABB: 0
 --- !u!183 &3658591606355092189
 Cloth:
@@ -8280,15 +8280,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6735330714013134415}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 13.74}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalRotation: {x: -0, y: 0.967153, z: -0, w: -0.2541949}
+  m_LocalPosition: {x: 53.5, y: -33.3, z: 69.3}
+  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
   m_Children:
   - {fileID: 3392900774262723520}
   - {fileID: 7035403771398401106}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -139, z: 0}
 --- !u!95 &6424907266442389020
 Animator:
   serializedVersion: 3
@@ -9112,6 +9112,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerIA: {fileID: 0}
   isIA: 0
+  stunTime: 0
 --- !u!1 &8932255942567921446
 GameObject:
   m_ObjectHideFlags: 0
