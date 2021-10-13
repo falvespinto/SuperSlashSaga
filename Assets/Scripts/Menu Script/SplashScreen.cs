@@ -13,14 +13,14 @@ public class SplashScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       StartCoroutine(clignotement());
-      
+        StartCoroutine(clignotement());
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+       
         
     }
 
