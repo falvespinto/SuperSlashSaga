@@ -1,17 +1,34 @@
 Using pre-set license
 Built from '2020.2/release' branch; Version is '2020.2.2f1 (068178b99f32) revision 426360'; Using compiler version '192528614'; Build Type 'Release'
+<<<<<<< refs/remotes/origin/Valentin
 OS: 'Windows 10 Enterprise; OS build 19043.1348; Version 2009; 64bit' Language: 'fr' Physical Memory: 16323 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
 D:\2020.2.2f1\Editor\Unity.exe
+=======
+<<<<<<< refs/remotes/origin/Valentin
+OS: 'Windows 10 Pro; OS build 19041.1348; Version 2004; 64bit' Language: 'fr' Physical Memory: 65369 MB
+=======
+OS: 'Windows 10 Education; OS build 19043.1237; Version 2009; 64bit' Language: 'fr' Physical Memory: 16289 MB
+>>>>>>> Re-Import ALL
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\Unity\2020.2.2f1\Editor\Unity.exe
+>>>>>>> Re-Import ALL
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
+<<<<<<< refs/remotes/origin/Valentin
 D:/Super Slash Saga/SuperSlashSaga
+=======
+<<<<<<< refs/remotes/origin/Valentin
+D:/SuperSlash/SuperSlashSaga
+>>>>>>> Re-Import ALL
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
@@ -22,6 +39,7 @@ Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 153.34 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.2f1 (068178b99f32)
+<<<<<<< refs/remotes/origin/Valentin
 [Subsystems] Discovering subsystems at path D:/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path D:/Super Slash Saga/SuperSlashSaga/Assets
 GfxDevice: creating device client; threaded=0
@@ -37,18 +55,72 @@ Mono path[0] = 'D:/2020.2.2f1/Editor/Data/Managed'
 Mono path[1] = 'D:/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56060
+=======
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/SuperSlash/SuperSlashSaga/Assets
+=======
+C:/Users/X-trem/Documents/Unity/Depot Local/SuperSlashSaga
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+63087
+Successfully changed project path to: C:/Users/X-trem/Documents/Unity/Depot Local/SuperSlashSaga
+C:/Users/X-trem/Documents/Unity/Depot Local/SuperSlashSaga
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 155.13 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.2f1 (068178b99f32)
+[Subsystems] Discovering subsystems at path D:/Unity/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/X-trem/Documents/Unity/Depot Local/SuperSlashSaga/Assets
+>>>>>>> Re-Import ALL
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
+    Vendor:   
+    VRAM:     8088 MB
+    Driver:   30.0.14.9613
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Initialize mono
+<<<<<<< refs/remotes/origin/Valentin
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56572
+>>>>>>> Re-Import ALL
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Registered in 0.000957 seconds.
 Native extension for WindowsStandalone target not found
+<<<<<<< refs/remotes/origin/Valentin
 Refreshing native plugins compatible for Editor in 144.90 ms, found 1 plugins.
+=======
+Refreshing native plugins compatible for Editor in 100.18 ms, found 1 plugins.
+=======
+Mono path[0] = 'D:/Unity/2020.2.2f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Unity/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56548
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.031495 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 128.12 ms, found 1 plugins.
+>>>>>>> Re-Import ALL
+>>>>>>> Re-Import ALL
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
+<<<<<<< refs/remotes/origin/Valentin
 - Completed reload, in  1.353 seconds
+=======
+<<<<<<< refs/remotes/origin/Valentin
+- Completed reload, in  0.870 seconds
+>>>>>>> Re-Import ALL
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
 Registered in 0.003662 seconds.
@@ -3182,8 +3254,242 @@ Unloading 4318 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 264.8 MB.
 System memory in use after: 265.2 MB.
 
+<<<<<<< refs/remotes/origin/Valentin
 Unloading 138 unused Assets to reduce memory usage. Loaded Objects now: 5585.
 Total: 5.080900 ms (FindLiveObjects: 0.650000 ms CreateObjectMapping: 0.357300 ms MarkObjects: 3.920500 ms  DeleteObjects: 0.151500 ms)
+=======
+ -> (artifact id: 'c76f3a914b473e9f10d1ed47fdac6f75') in 0.961414 seconds
+  Import took 0.971575 seconds .
+=======
+- Completed reload, in  8.210 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.012562 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 138.53 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+AnimeRender_Renderer is missing RendererFeatures
+This could be due to missing scripts or compile error.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+UnityEngine.Rendering.Universal.ScriptableRendererData:ValidateRendererFeatures () (at Library/PackageCache/com.unity.render-pipelines.universal@10.2.2/Runtime/ScriptableRendererData.cs:135)
+UnityEngine.Rendering.Universal.ScriptableRendererData:OnValidate () (at Library/PackageCache/com.unity.render-pipelines.universal@10.2.2/Runtime/ScriptableRendererData.cs:59)
+UnityEngine.Rendering.GraphicsSettings:get_currentRenderPipeline ()
+UnityEditor.CustomEditorAttributes:FindCustomEditorTypeByType (System.Type,bool)
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:591)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Library/PackageCache/com.unity.render-pipelines.universal@10.2.2/Runtime/ScriptableRendererData.cs Line: 135)
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.055 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 1.87 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4545 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 248.9 MB.
+System memory in use after: 249.2 MB.
+
+Unloading 137 unused Assets to reduce memory usage. Loaded Objects now: 5048.
+Total: 4.942500 ms (FindLiveObjects: 0.504600 ms CreateObjectMapping: 0.248400 ms MarkObjects: 3.934500 ms  DeleteObjects: 0.253200 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/Sol Mat.mat
+  artifactKey: Guid(8795f4bd06e72d0498415d0a370a724f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Sol Mat.mat using Guid(8795f4bd06e72d0498415d0a370a724f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2de4035e9674fb53d8858980e1089835') in 0.667845 seconds
+  Import took 0.687567 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000725 seconds.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/Sol Plaine.png
+  artifactKey: Guid(b1d0b04d47285644aabaedc3ec735d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Sol Plaine.png using Guid(b1d0b04d47285644aabaedc3ec735d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46bce6afe21f74d91a589a5b6cb52a78') in 0.160362 seconds
+  Import took 0.172438 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/grass-images-png-4-Transparent-Images-Free-228x171.png
+  artifactKey: Guid(e3a68c2ec4e39df4fa0703add6fbbccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/grass-images-png-4-Transparent-Images-Free-228x171.png using Guid(e3a68c2ec4e39df4fa0703add6fbbccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9057c5d905b14216bcd547d33d6e6a9b') in 0.039824 seconds
+  Import took 0.049099 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/tree.png
+  artifactKey: Guid(181f6e0e414c40241850c9dfe4ec66a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/tree.png using Guid(181f6e0e414c40241850c9dfe4ec66a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca2cf6afdc7e64c2960bb09fef05a573') in 0.026889 seconds
+  Import took 0.038426 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/Sol Plaine 1.png
+  artifactKey: Guid(f0a7ff994260f4647a45ab709cd80156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Sol Plaine 1.png using Guid(f0a7ff994260f4647a45ab709cd80156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd9905ea76b332c275bb8f5d53efdf04') in 0.026954 seconds
+  Import took 0.038551 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/Background MontainsTree.png
+  artifactKey: Guid(8b5ebbc2ee89ef34db351d76e78bff30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Background MontainsTree.png using Guid(8b5ebbc2ee89ef34db351d76e78bff30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f07001f012a89d3fb113d24e60761336') in 0.027696 seconds
+  Import took 0.040080 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/—Pngtree—purple rock clip art_5830704.png
+  artifactKey: Guid(7d9a9a1f96aecc041866206663517db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/—Pngtree—purple rock clip art_5830704.png using Guid(7d9a9a1f96aecc041866206663517db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd37ec05c9b27049a8e8989c1793aa556') in 0.026384 seconds
+  Import took 0.036881 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/Sol Mat 1.mat
+  artifactKey: Guid(8382ce68c94193b4a9b23790a5fa688d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Sol Mat 1.mat using Guid(8382ce68c94193b4a9b23790a5fa688d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef8a2a0171542951751b97b4af808678') in 0.031422 seconds
+  Import took 0.043530 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/NewLayer.terrainlayer
+  artifactKey: Guid(68f79ffc78da65d438f0b3640e45dfff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/NewLayer.terrainlayer using Guid(68f79ffc78da65d438f0b3640e45dfff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da892ede1de1e409923c83d945bd0769') in 0.097862 seconds
+  Import took 0.109022 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 255.481967 seconds.
+  path: Assets/Shaders/AnimeRender.asset
+  artifactKey: Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/AnimeRender.asset using Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '864eccf9b5bdaf4bbd0282ba9fe1aebb') in 0.013466 seconds
+  Import took 0.029650 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Shaders/AnimeRender_Renderer.asset
+  artifactKey: Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/AnimeRender_Renderer.asset using Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) AnimeRender_Renderer is missing RendererFeatures
+This could be due to missing scripts or compile error.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+UnityEngine.Rendering.Universal.ScriptableRendererData:ValidateRendererFeatures () (at Library/PackageCache/com.unity.render-pipelines.universal@10.2.2/Runtime/ScriptableRendererData.cs:135)
+UnityEngine.Rendering.Universal.ScriptableRendererData:OnValidate () (at Library/PackageCache/com.unity.render-pipelines.universal@10.2.2/Runtime/ScriptableRendererData.cs:59)
+
+(Filename: Library/PackageCache/com.unity.render-pipelines.universal@10.2.2/Runtime/ScriptableRendererData.cs Line: 135)
+
+ -> (artifact id: '58acff085152d09aa6d17001d95fa05b') in 0.012104 seconds
+  Import took 0.023874 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Shaders/Outline.shadersubgraph
+  artifactKey: Guid(739506a01f7ccd84db9180497708e1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/Outline.shadersubgraph using Guid(739506a01f7ccd84db9180497708e1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c1af505cdf357f375f5bccabb8e56dc') in 0.014704 seconds
+  Import took 0.025534 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Shaders/Shield.mat
+  artifactKey: Guid(57acc3c1dfc021b4781a97a3a4c32bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/Shield.mat using Guid(57acc3c1dfc021b4781a97a3a4c32bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '904bc9607841cb430e963bb3145de7e6') in 0.857673 seconds
+  Import took 0.866848 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Shaders
+  artifactKey: Guid(c175890935c0b6f4288bdad7919ad123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders using Guid(c175890935c0b6f4288bdad7919ad123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95f8813f9613abbeb5405552bb0fb012') in 0.008239 seconds
+  Import took 0.019184 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Shaders/AnimeRender_Renderer.asset
+  artifactKey: Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/AnimeRender_Renderer.asset using Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) AnimeRender_Renderer is missing RendererFeatures
+This could be due to missing scripts or compile error.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+UnityEngine.Rendering.Universal.ScriptableRendererData:ValidateRendererFeatures () (at Library/PackageCache/com.unity.render-pipelines.universal@10.2.2/Runtime/ScriptableRendererData.cs:135)
+UnityEngine.Rendering.Universal.ScriptableRendererData:OnValidate () (at Library/PackageCache/com.unity.render-pipelines.universal@10.2.2/Runtime/ScriptableRendererData.cs:59)
+
+(Filename: Library/PackageCache/com.unity.render-pipelines.universal@10.2.2/Runtime/ScriptableRendererData.cs Line: 135)
+
+ -> (artifact id: '58acff085152d09aa6d17001d95fa05b') in 0.007987 seconds
+  Import took 0.017071 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Shaders
+  artifactKey: Guid(c175890935c0b6f4288bdad7919ad123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders using Guid(c175890935c0b6f4288bdad7919ad123) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95f8813f9613abbeb5405552bb0fb012') in 0.003439 seconds
+  Import took 0.015175 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Shaders/AnimeRender.asset
+  artifactKey: Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/AnimeRender.asset using Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) AnimeRender_Renderer is missing RendererFeatures
+This could be due to missing scripts or compile error.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object,UnityEngine.Object)
+UnityEngine.Debug:LogError (object,UnityEngine.Object)
+UnityEngine.Rendering.Universal.ScriptableRendererData:ValidateRendererFeatures () (at Library/PackageCache/com.unity.render-pipelines.universal@10.2.2/Runtime/ScriptableRendererData.cs:135)
+UnityEngine.Rendering.Universal.ScriptableRendererData:OnValidate () (at Library/PackageCache/com.unity.render-pipelines.universal@10.2.2/Runtime/ScriptableRendererData.cs:59)
+
+(Filename: Library/PackageCache/com.unity.render-pipelines.universal@10.2.2/Runtime/ScriptableRendererData.cs Line: 135)
+
+ -> (artifact id: '864eccf9b5bdaf4bbd0282ba9fe1aebb') in 0.006742 seconds
+  Import took 0.018588 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Shaders/New Flare.flare
+  artifactKey: Guid(38a81ebd02afc864ba1ee82805513594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/New Flare.flare using Guid(38a81ebd02afc864ba1ee82805513594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45d89806f4dbc77131f677f405f593f9') in 0.010403 seconds
+  Import took 0.021521 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Shaders/MeteorMaterial.mat
+  artifactKey: Guid(e549a321174672247bf5001b9b73af30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shaders/MeteorMaterial.mat using Guid(e549a321174672247bf5001b9b73af30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3c2237cefccae57bf732958fb5af69e') in 1.314669 seconds
+  Import took 1.328957 seconds .
+>>>>>>> Re-Import ALL
+>>>>>>> Re-Import ALL
 
 AssetImportParameters requested are different than current active one (requested -> active):
   requireTextureImportCompression: false -> true
