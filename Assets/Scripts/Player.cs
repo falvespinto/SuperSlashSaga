@@ -69,10 +69,7 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (manaUp)
-        {
-            manabar.SetMana(manabar.mana + 1);
-        }
+        if (manaUp) manabar.SetMana(manabar.mana + 1);
     }
 
     public void TakeDamage(float damage, string attackType)
@@ -158,14 +155,15 @@ public class Player : MonoBehaviour
     {
         SceneManager.LoadScene("MenuVictoire");
         Debug.Log("arg je suis mor PLAYER");
-        if (playerIndex == 1)
-        {
-            winner = 1;
-        }
-        else
-        {
-            winner = 2;
-        }
+        winner = playerIndex == 1 ? 1 : 2;
+        //if (playerIndex == 1)
+        //{
+        //    winner = 1;
+        //}
+        //else
+        //{
+        //    winner = 2;
+        //}
     }
     public IEnumerator ResetIsTakingDamage(float hurtTime)
     {

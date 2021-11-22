@@ -39,7 +39,6 @@ public class TwitchChat : MonoBehaviour
             Password = "oauth:obvbopsvqm8775nhgah0hfopqagd2p"
         };
         Connect(credentials, new CommandCollection());
-            
     }
     // FIN FIX
 

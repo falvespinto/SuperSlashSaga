@@ -12,7 +12,6 @@ public class TwitchDisplayMessageCommand : MonoBehaviour, ITwitchCommandHandler
         {
             PopUpUI.Instance.SetMessage(text);
             PopUpUI.Instance.Show();
-
         }
 
     }

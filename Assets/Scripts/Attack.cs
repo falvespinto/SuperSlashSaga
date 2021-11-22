@@ -14,9 +14,10 @@ public class Attack : MonoBehaviour
     public bool isIA = false;
     public float stunTime;
 
-    private void Start()
+    private void Awake()
     {
         col = GetComponent<Collider>();
+        ultimateAttack = GetComponentInParent<UltimateAttack>();
     }
     void Update()
     {
@@ -64,10 +65,7 @@ public class Attack : MonoBehaviour
                     Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
                     Debug.Log(hit[i].gameObject.layer);
                     player.playerHit = hit[i].GetComponentInParent<Player>().gameObject;
-                    if (attackType == "Engage")
-                    {
-                        ultimateAttack.HandleFullUlt();
-                    }
+                    if (attackType == "Engage") ultimateAttack.HandleFullUlt();
                     gameObject.SetActive(false);
                     break;
                 }

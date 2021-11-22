@@ -21,15 +21,17 @@ public struct TwitchCredentials
     public string Password;
 }
 
+
+
 public class CommandCollection
 {
     private Dictionary<string, ITwitchCommandHandler> _commands;
-
     public CommandCollection()
     {
         _commands = new Dictionary<string, ITwitchCommandHandler>();
         _commands.Add(TwitchCommands.CommandMessage, new TwitchDisplayMessageCommand());
-       // m_commands.Add(TwitchCommands.CommandDamage, ) class dmg
+        _commands.Add(TwitchCommands.CommandDamage, new TwitchDmgCommand());
+        // m_commands.Add(TwitchCommands.CommandDamage, ) class dmg
     }
     public bool HasCommand(string command)
     {

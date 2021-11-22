@@ -91,6 +91,7 @@ public class PlayerAttack : MonoBehaviour
         //   m_Rigidbody = GetComponent<Rigidbody>();
         playerData = GetComponentInParent<PlayerData>();
         playerController = GetComponent<PlayerController>();
+        ultimateAttack = GetComponent<UltimateAttack>();
     }
     public void Start()
     {
@@ -118,17 +119,11 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (target == null)
-        {
-            target = playerData.target;
-        }
+        if (target == null) target = playerData.target;
     }
 
-    public void AttackComplete()
-    {
-        Debug.Log("testeuu");
-        isAttacking = false;
-    }
+    public void AttackComplete() => isAttacking = false;
+
     public void AttackedWhileParing()
     {
         swordAttacks.damage = 30;
@@ -189,7 +184,7 @@ public class PlayerAttack : MonoBehaviour
             if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
             {
                 LookAtTarget();
-                GetComponent<UltimateAttack>().PerformUltimateAttack();
+                ultimateAttack.PerformUltimateAttack();
             }
 
         }

@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public Player player;
     private bool isAttacking;
-    public Attack punch;
     public bool firstTimeRunning;
     public PlayerAttack playerAttack;
     public bool isRunning = false;
@@ -25,8 +24,6 @@ public class PlayerController : MonoBehaviour
 
     public CharacterController controller;
 
-    // Temps d'une animation
-    float lightAttackTime;
     public Transform cam;
     public PlayerData playerData;
 
@@ -34,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         playerData = GetComponentInParent<PlayerData>();
+        ultimate = GetComponent<UltimateAttack>();
     }
     void Start()
     {
@@ -57,8 +55,8 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsRunning", false);
         }
 
+        if (!player.isTakingDamage) moveDirection.y -= gravity;
 
-        moveDirection.y -= gravity;
         controller.Move(moveDirection);
 
     }
@@ -83,10 +81,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsRunning", true);
             animator.SetBool("IsWalking", false);
             isRunning = true;
-            if (firstTimeRunning)
-            {
-                firstTimeRunning = false;
-            }
+            if (firstTimeRunning) firstTimeRunning = false;
         }
         else
         {

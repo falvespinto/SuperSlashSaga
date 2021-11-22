@@ -243,9 +243,9 @@ public class LightAttack : MonoBehaviour
             playerAttack.playerHit.GetComponent<CharacterController>().enabled = true;
             yield return new WaitForSeconds(0.3f);
             StartCoroutine(InfuseSword(0.15f));
-            StartCoroutine(playerAttack.SwitchCamera(7.5f));
-            Invoke("AttackComplete", 7.5f);
-            StartCoroutine(playerAttack.playerHit.GetComponent<Player>().goInEnemyCombo(7.5f));
+            StartCoroutine(playerAttack.SwitchCamera(4.02f));
+            Invoke("AttackComplete", 4.02f);
+            StartCoroutine(playerAttack.playerHit.GetComponent<Player>().goInEnemyCombo(4.02f));
             GetComponent<TimeLineController>().PerformFullCombo(playerAttack.m_Animator, playerAttack.playerHit.GetComponent<Animator>(), playerData.cam.GetComponent<CinemachineBrain>());
         }
     }

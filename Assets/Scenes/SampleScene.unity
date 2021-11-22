@@ -297,6 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8576314}
   - component: {fileID: 8576313}
+  - component: {fileID: 8576315}
   m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
@@ -335,6 +336,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8576315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8576312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a88daa2bca52ca478c94fbcb88e13af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &34028324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,7 +2609,9 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6942,7 +6957,19 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8794,6 +8821,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &802539129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 802539130}
+  m_Layer: 0
+  m_Name: ReplacePointUltYuetsuRcv
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &802539130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802539129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 100.3, z: -130.37}
+  m_LocalScale: {x: 0.07620201, y: 0.076202, z: 0.07620201}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &803924135
 GameObject:
   m_ObjectHideFlags: 0
@@ -16856,7 +16913,6 @@ GameObject:
   - component: {fileID: 975384282}
   - component: {fileID: 975384281}
   - component: {fileID: 975384280}
-  - component: {fileID: 975384285}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -16995,18 +17051,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &975384285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 975384279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &975533622
 GameObject:
   m_ObjectHideFlags: 3
@@ -21828,6 +21872,7 @@ GameObject:
   - component: {fileID: 1390820472}
   - component: {fileID: 1390820473}
   - component: {fileID: 1390820474}
+  - component: {fileID: 1390820475}
   m_Layer: 0
   m_Name: TwitchManager
   m_TagString: Untagged
@@ -21873,6 +21918,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418f105a332fa6d45b30a7f6e03d9efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1390820475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390820471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26578552b9a7c704f919e3a59159f7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  J1: {fileID: 1255808040}
+  J2: {fileID: 1735635068}
+  damage: 10
 --- !u!1 &1395374816
 GameObject:
   m_ObjectHideFlags: 0
@@ -22397,6 +22457,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1416730362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1416730363}
+  m_Layer: 0
+  m_Name: ReplacePointUltYuetsuAtk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1416730363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416730362}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -1, y: 100.3, z: -101.55}
+  m_LocalScale: {x: 0.07620201, y: 0.076202, z: 0.07620201}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1417150285
 GameObject:
   m_ObjectHideFlags: 0
@@ -22513,7 +22603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1417882697
@@ -26297,6 +26387,7 @@ MonoBehaviour:
   corpsTexture: {fileID: 0}
   faceP1: {fileID: 612019605}
   faceP2: {fileID: 132703195}
+  prefabP2: {fileID: 0}
 --- !u!4 &1748704411
 Transform:
   m_ObjectHideFlags: 0

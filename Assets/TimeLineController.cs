@@ -11,10 +11,12 @@ public class TimeLineController : MonoBehaviour
     public PlayableDirector fullCombo;
     public PlayableDirector finalUlt;
     private PlayerAttack playerAttack;
+    private UltimateAttack ultimateAttack;
 
     private void Awake()
     {
         playerAttack = GetComponent<PlayerAttack>();
+        ultimateAttack = GetComponent<UltimateAttack>();
     }
 
     public void PerformFullCombo(Animator attaquant, Animator defenseur, CinemachineBrain camera)
@@ -41,6 +43,8 @@ public class TimeLineController : MonoBehaviour
     public void PerformFinalUlt(Animator def)
     {
         TimelineAsset timeline = (TimelineAsset)finalUlt.playableAsset;
+        StartCoroutine(ultimateAttack.SwitchCamera((float)timeline.duration));
+        StartCoroutine(ultimateAttack.HasProcFullUlt((float)timeline.duration));
         foreach (var track in timeline.GetOutputTracks())
         {
             if (track.name == "Def")
@@ -48,9 +52,7 @@ public class TimeLineController : MonoBehaviour
                 finalUlt.SetGenericBinding(track, def);
             }
         }
-        fullCombo.Stop();
         finalUlt.Play();
-        StartCoroutine(waitBeforeDash(6.05f));
     }
     public IEnumerator waitBeforeDash(float time)
     {

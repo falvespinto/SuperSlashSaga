@@ -18,12 +18,15 @@ public class Dash : MonoBehaviour
     private float turnSmoothVelocity;
     public Animator m_animator;
     public PlayerAttack playerAttack;
-    public UltimateAttack ultimateAttack;
+    public float infuseTime = 1.5f;
+    private UltimateAttack ultimateAttack;
+    public bool isInfusing = false;
     public Player player;
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        ultimateAttack = GetComponent<UltimateAttack>();
     }
 
     // Update is called once per frame
@@ -59,6 +62,12 @@ public class Dash : MonoBehaviour
         //yield return new WaitForSeconds(0.25f);
         isDashing = false;
         m_animator.SetBool("isDashing", false);
+    }
+
+    public IEnumerator Infuse() {
+        isInfusing = true;
+        yield return new WaitForSeconds(infuseTime);
+        isInfusing = false;
     }
 }
 
