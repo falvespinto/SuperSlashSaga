@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject yuestu;
     public GameObject daiki;
+    public GameObject pereDaiki;
 
     private int chapitre = 0;
 
