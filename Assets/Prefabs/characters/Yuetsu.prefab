@@ -10450,7 +10450,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6458853253114896690}
-  m_LocalRotation: {x: -0, y: -0.9969981, z: 0, w: -0.07742535}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -230.22952, y: -272.51657, z: 194.91223}
   m_LocalScale: {x: 13.123013, y: 13.123014, z: 13.123013}
   m_Children: []
@@ -10955,13 +10955,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig:LeftFoot'\n\tTransform 'mixamorig:LeftHandThumb2'\n\tTransform
-    'mixamorig:LeftHandIndex1'\n\tTransform 'mixamorig:LeftHandPinky2'\n\tTransform
-    'mixamorig:RightHandRing2'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform
-    'mixamorig:LeftHandThumb3'\n\tTransform 'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tand
-    more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -11271,7 +11265,7 @@ MonoBehaviour:
   hurtTimeHeavy: 1.5
   hurtTimeLight: 1
   hurtTimeUltimate: 3
-  offSet: {x: 0, y: 0, z: 0}
+  offSet: {x: 0, y: 7, z: 0}
   faceSprite: {fileID: 21300000, guid: fa04051b2c276d549b268999e0c75f6e, type: 3}
   manaUp: 0
 --- !u!114 &691353372036688036
@@ -11424,6 +11418,8 @@ MonoBehaviour:
   turnSmoothTime: 0.1
   m_animator: {fileID: 6424907266442389020}
   playerAttack: {fileID: 691353372036688036}
+  infuseTime: 1.5
+  isInfusing: 0
   player: {fileID: 3661976246809478957}
 --- !u!114 &2812597217123706708
 MonoBehaviour:
@@ -12260,7 +12256,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playOnEnable: 0
   source: {fileID: 896188278111766395}
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: 000db41785a38b24a8eb32a98b897cc2, type: 3}
   pitchBounds: {x: 1, y: 1}
 --- !u!1 &8031029232877496807
 GameObject:

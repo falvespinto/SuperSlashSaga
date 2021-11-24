@@ -14,7 +14,6 @@ public class MenuScript : MonoBehaviour
     private int SelectedButton = 1;
     [SerializeField]
     private int NumberOfButtons;
-    //AudioManager musique = new AudioManager();
     public MenuAudioManager menuAudio;
 
 

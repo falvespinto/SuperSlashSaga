@@ -74,12 +74,23 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage, string attackType)
     {
-        
+
+        if (attackType == "Light")
+        {
+            Instantiate(HitVFXPrefab, transform.position + offSet, transform.rotation);
+            playerAudio.playSoundImpact();
+        }
+        else if(attackType == "Heavy")
+        {
+            Instantiate(HitHeavyPrefab, transform.position + offSet, transform.rotation);
+            playerAudio.playSoundLourd();
+        }
+
         Vector3 dir = target.position - transform.position;
         dir.Normalize();
         dir.y = 0;
         transform.rotation = Quaternion.LookRotation(dir);
-        Instantiate(HitVFXPrefab, transform.position + offSet, transform.rotation);
+        
         if (playerAttack.isParing)
         {
             if (attackType == "Heavy")

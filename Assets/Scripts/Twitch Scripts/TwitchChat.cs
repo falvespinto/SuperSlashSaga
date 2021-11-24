@@ -34,8 +34,8 @@ public class TwitchChat : MonoBehaviour
     {
         TwitchCredentials credentials = new TwitchCredentials
         {
-            ChannelName = "Elixyy",
-            Username = "Elixyy",
+            ChannelName = "Ellixyy",
+            Username = "Ellixyy",
             Password = "oauth:obvbopsvqm8775nhgah0hfopqagd2p"
         };
         Connect(credentials, new CommandCollection());

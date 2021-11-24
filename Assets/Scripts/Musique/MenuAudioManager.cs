@@ -6,11 +6,18 @@ public class MenuAudioManager : MonoBehaviour
 {
     [SerializeField]
     private OneShotAudio percution;
+    [SerializeField]
+    private OneShotAudio selection;
 
 
     public void playSoundPercution()
     {
         percution.PlayTheSound();
+    }
+
+    public void playSoundSelection()
+    {
+        selection.PlayTheSound();
     }
 
     // Start is called before the first frame update

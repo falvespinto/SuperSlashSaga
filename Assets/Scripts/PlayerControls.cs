@@ -21,6 +21,7 @@ public class PlayerControls : MonoBehaviour
     public LevelSelectScreenScript champSelect;
     public IAmanager managerIA;
     public GameObject prefab;
+    public MenuAudioManager menuAudio;
     private GameObject instantiatePrefab;
     public bool hasSelected;
     public Sprite[] playersIcons;
@@ -45,6 +46,8 @@ public class PlayerControls : MonoBehaviour
     private int indexIA;
     private GameObject ia;
 
+
+
     private void Awake()
     {
         startPlayer1 = GameObject.Find("press start j1");
@@ -59,7 +62,7 @@ public class PlayerControls : MonoBehaviour
         isSpawnableIA = true;
         managerIA = FindObjectOfType<IAmanager>();
         initialisationBandeau = FindObjectOfType<initialisationBandeau>();
-        FindObjectOfType<AudioManager>().Play("selectionPerso");
+        menuAudio.playSoundSelection();
         prefab.transform.SetParent(GameObject.Find("Canvas").transform);
         prefab.transform.position = GameObject.Find("Row1_1").transform.position;
     }
