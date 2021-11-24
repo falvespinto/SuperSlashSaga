@@ -27,7 +27,7 @@ namespace BehaviorDesigner.Runtime.Formations.Tasks
             // Prevent the agents from overlapping by generating a new offset until there are no overlaps. The maxAttempts value will prevent an infinite loop
             // from being generated if there are no non-overlap positions because the radius is too small.
             var overlapping = false;
-            var offset = Random.insideUnitCircle * radius.Value;
+            var offset = UnityEngine.Random.insideUnitCircle * radius.Value;
             var maxAttempts = offsets.Count * maxPlacementAttempts.Value;
             var attempts = 0;
             do {

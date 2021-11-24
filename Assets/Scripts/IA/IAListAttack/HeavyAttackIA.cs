@@ -9,7 +9,7 @@ public class HeavyAttackIA : MonoBehaviour
     private bool heavyCanAutoCancel;
     public float heavyAttackTime;
     public PlayerData playerData;
-    private Player player;
+    public Player player;
     private PlayerAttackIA playerAttackIA;
     public float lightAttackTime;
     public void Awake()

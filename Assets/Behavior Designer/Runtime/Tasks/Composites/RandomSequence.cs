@@ -28,7 +28,7 @@ namespace BehaviorDesigner.Runtime.Tasks
         {
             // If specified, use the seed provided.
             if (useSeed) {
-                Random.InitState(seed);
+                UnityEngine.Random.InitState(seed);
             }
 
             // Add the index of each child to a list to make the Fischer-Yates shuffle possible.
@@ -91,7 +91,7 @@ namespace BehaviorDesigner.Runtime.Tasks
         {
             // Use Fischer-Yates shuffle to randomize the child index order.
             for (int i = childIndexList.Count; i > 0; --i) {
-                int j = Random.Range(0, i);
+                int j = UnityEngine.Random.Range(0, i);
                 int index = childIndexList[j];
                 childrenExecutionOrder.Push(index);
                 childIndexList[j] = childIndexList[i - 1];

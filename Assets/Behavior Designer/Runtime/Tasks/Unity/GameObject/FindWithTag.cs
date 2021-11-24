@@ -18,7 +18,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject
         {
             if (random.Value) {
                 var gameObjects = GameObject.FindGameObjectsWithTag(tag.Value);
-                storeValue.Value = gameObjects[Random.Range(0, gameObjects.Length)];
+                storeValue.Value = gameObjects[UnityEngine.Random.Range(0, gameObjects.Length)];
             } else {
                 storeValue.Value = GameObject.FindWithTag(tag.Value);
             }

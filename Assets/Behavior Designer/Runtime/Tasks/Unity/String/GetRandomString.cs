@@ -14,7 +14,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.UnityString
 
         public override TaskStatus OnUpdate()
         {
-            storeResult.Value = source[Random.Range(0, source.Length)].Value;
+            storeResult.Value = source[UnityEngine.Random.Range(0, source.Length)].Value;
 
             return TaskStatus.Success;
         }

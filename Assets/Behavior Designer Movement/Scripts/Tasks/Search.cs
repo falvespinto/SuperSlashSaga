@@ -63,7 +63,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
                 if (maxPauseDuration.Value > 0) {
                     if (destinationReachTime == -1) {
                         destinationReachTime = Time.time;
-                        pauseTime = Random.Range(minPauseDuration.Value, maxPauseDuration.Value);
+                        pauseTime = UnityEngine.Random.Range(minPauseDuration.Value, maxPauseDuration.Value);
                     }
                     if (destinationReachTime + pauseTime <= Time.time) {
                         // Only reset the time if a destination has been set.
@@ -105,8 +105,8 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
             var attempts = targetRetries.Value;
             var destination = transform.position;
             while (!validDestination && attempts > 0) {
-                direction = direction + Random.insideUnitSphere * wanderRate.Value;
-                destination = transform.position + direction.normalized * Random.Range(minWanderDistance.Value, maxWanderDistance.Value);
+                direction = direction + UnityEngine.Random.insideUnitSphere * wanderRate.Value;
+                destination = transform.position + direction.normalized * UnityEngine.Random.Range(minWanderDistance.Value, maxWanderDistance.Value);
                 validDestination = SamplePosition(destination);
                 attempts--;
             }

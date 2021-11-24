@@ -18,9 +18,9 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.Math
         public override TaskStatus OnUpdate()
         {
             if (inclusive) {
-                storeResult.Value = Random.Range(min.Value, max.Value);
+                storeResult.Value = UnityEngine.Random.Range(min.Value, max.Value);
             } else {
-                storeResult.Value = Random.Range(min.Value, max.Value - 0.00001f);
+                storeResult.Value = UnityEngine.Random.Range(min.Value, max.Value - 0.00001f);
             }
             return TaskStatus.Success;
         }

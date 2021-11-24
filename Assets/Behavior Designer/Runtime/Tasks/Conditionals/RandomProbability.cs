@@ -16,14 +16,14 @@ namespace BehaviorDesigner.Runtime.Tasks
         {
             // If specified, use the seed provided.
             if (useSeed.Value) {
-                Random.InitState(seed.Value);
+                UnityEngine.Random.InitState(seed.Value);
             }
         }
 
         public override TaskStatus OnUpdate()
         {
             // Return success if random value is less than the success probability. Otherwise return failure.
-            float randomValue = Random.value;
+            float randomValue = UnityEngine.Random.value;
             if (randomValue < successProbability.Value) {
                 return TaskStatus.Success;
             }

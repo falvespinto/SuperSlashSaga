@@ -88,7 +88,7 @@ public class IdleChanger1 : MonoBehaviour
 			//ランダム判定スイッチオンの場合
 			if (_random) {
 				// ランダムシードを取り出し、その大きさによってフラグ設定をする
-				float _seed = Random.Range (-1f, 1f);
+				float _seed = UnityEngine.Random.Range (-1f, 1f);
 				if (_seed <= -_threshold) {
 					anim.SetBool ("Back", true);
 				} else if (_seed >= _threshold) {

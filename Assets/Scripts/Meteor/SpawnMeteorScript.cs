@@ -25,12 +25,12 @@ public class SpawnMeteorScript : MonoBehaviour {
 			for (int i = 0; i < quantity; i++) {
 				var startPos = startPoint.transform.position;
 				if(radius != 0)
-					startPos = new Vector3 (startPoint.transform.position.x + Random.Range (-radius, radius), startPoint.transform.position.y + Random.Range (-radius, radius), startPoint.transform.position.z + Random.Range (-radius, radius));					
+					startPos = new Vector3 (startPoint.transform.position.x + UnityEngine.Random.Range (-radius, radius), startPoint.transform.position.y + UnityEngine.Random.Range (-radius, radius), startPoint.transform.position.z + UnityEngine.Random.Range (-radius, radius));					
 				GameObject objVFX = Instantiate (vfx, startPos, Quaternion.identity) as GameObject;
 				objVFX.transform.localScale *= scale;
 				var endPos = endPoint.transform.position;
 				if(radius != 0)
-					endPos = new Vector3 (endPoint.transform.position.x + Random.Range (-radius, radius), endPoint.transform.position.y + Random.Range (-radius, radius), endPoint.transform.position.z + Random.Range (-radius, radius));
+					endPos = new Vector3 (endPoint.transform.position.x + UnityEngine.Random.Range (-radius, radius), endPoint.transform.position.y + UnityEngine.Random.Range (-radius, radius), endPoint.transform.position.z + UnityEngine.Random.Range (-radius, radius));
 				RotateTo (objVFX, endPos);
 
 				yield return new WaitForSeconds (rateDelay);

@@ -26,7 +26,7 @@ namespace BehaviorDesigner.Runtime.Formations.Tasks
             // Randomly select a new offset. This offset will be relative to the last transform so no overlap checks need to be done.
             var offset = Vector3.zero;
             if (agents.Count > 1) {
-                offset.Set(Random.Range(minSeparation.Value.x, maxSeparation.Value.x), 0, Random.Range(minSeparation.Value.y, maxSeparation.Value.y));
+                offset.Set(UnityEngine.Random.Range(minSeparation.Value.x, maxSeparation.Value.x), 0, UnityEngine.Random.Range(minSeparation.Value.y, maxSeparation.Value.y));
             }
             offsets.Add(offset);
         }

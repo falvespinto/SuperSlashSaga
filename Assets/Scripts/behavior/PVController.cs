@@ -2,7 +2,7 @@ using UnityEngine;
 using BehaviorDesigner.Runtime.Tasks;
 using BehaviorDesigner.Runtime;
 
-public class isDead : Conditional
+public class PVController : Conditional
 {
     public Player playerhealth;
 
@@ -13,14 +13,14 @@ public class isDead : Conditional
     }
     public override TaskStatus OnUpdate()
     {
-        if (playerhealth.currentHealth > 0)
+        if (playerhealth.currentHealth <= 35)
         {
             return TaskStatus.Success;
         }
         else
         {
             return TaskStatus.Failure;
-        }
+        };
     }
 
 }

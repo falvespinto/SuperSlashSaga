@@ -11,7 +11,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Unity.Math
 
         public override TaskStatus OnUpdate()
         {
-            storeResult.Value = Random.value < 0.5f;
+            storeResult.Value = UnityEngine.Random.value < 0.5f;
             return TaskStatus.Success;
         }
     }

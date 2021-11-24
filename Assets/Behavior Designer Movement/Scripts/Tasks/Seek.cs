@@ -1,9 +1,4 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Users;
-using UnityEngine;
 
 namespace BehaviorDesigner.Runtime.Tasks.Movement
 {

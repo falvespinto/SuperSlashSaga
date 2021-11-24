@@ -27,7 +27,7 @@ namespace BehaviorDesigner.Runtime.Tasks
             // Remember the start time.
             startTime = Time.time;
             if (randomWait.Value) {
-                waitDuration = Random.Range(randomWaitMin.Value, randomWaitMax.Value);
+                waitDuration = UnityEngine.Random.Range(randomWaitMin.Value, randomWaitMax.Value);
             } else {
                 waitDuration = waitTime.Value;
             }

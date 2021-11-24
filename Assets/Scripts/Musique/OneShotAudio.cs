@@ -15,8 +15,8 @@ public class OneShotAudio : MonoBehaviour {
 
     public void PlayTheSound() {
 		if (audioClips.Length > 0) {
-            source.pitch = Random.Range(pitchBounds.x, pitchBounds.y);
-            AudioClip clip = audioClips[Random.Range(0, audioClips.Length)];
+            source.pitch = UnityEngine.Random.Range(pitchBounds.x, pitchBounds.y);
+            AudioClip clip = audioClips[UnityEngine.Random.Range(0, audioClips.Length)];
             source?.PlayOneShot(clip);
 		}
 	}

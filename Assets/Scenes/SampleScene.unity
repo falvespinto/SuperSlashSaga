@@ -17017,8 +17017,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 10
+  far clip plane: 100000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -21930,9 +21930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26578552b9a7c704f919e3a59159f7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  J1: {fileID: 1255808040}
-  J2: {fileID: 1735635068}
-  damage: 10
 --- !u!1 &1395374816
 GameObject:
   m_ObjectHideFlags: 0

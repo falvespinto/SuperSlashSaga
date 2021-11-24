@@ -55,7 +55,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
                             // prevent the same waypoint from being selected
                             var newWaypointIndex = waypointIndex;
                             while (newWaypointIndex == waypointIndex) {
-                                newWaypointIndex = Random.Range(0, waypoints.Value.Count);
+                                newWaypointIndex = UnityEngine.Random.Range(0, waypoints.Value.Count);
                             }
                             waypointIndex = newWaypointIndex;
                         }

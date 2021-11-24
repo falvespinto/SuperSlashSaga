@@ -19,9 +19,11 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         public SharedBool onlyY;
         [Tooltip("The GameObject that the agent is rotating towards")]
         public SharedGameObject target;
+
         [Tooltip("If target is null then use the target rotation")]
         public SharedVector3 targetRotation;
 
+        public string targetTag;
         public override TaskStatus OnUpdate()
         {
             var rotation = Target();
@@ -40,7 +42,8 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
             if (target == null || target.Value == null) {
                 return Quaternion.Euler(targetRotation.Value);
             }
-            var position = target.Value.transform.position - transform.position;
+            
+            var position = GameObject.FindGameObjectWithTag(targetTag).transform.position - transform.position;
             if (onlyY.Value) {
                 position.y = 0;
             }

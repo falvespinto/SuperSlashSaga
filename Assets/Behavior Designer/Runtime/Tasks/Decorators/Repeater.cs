@@ -1,3 +1,6 @@
+
+using UnityEngine;
+
 namespace BehaviorDesigner.Runtime.Tasks
 {
     [TaskDescription(@"The repeater task will repeat execution of its child task until the child task has been run a specified number of times. " +
@@ -6,7 +9,7 @@ namespace BehaviorDesigner.Runtime.Tasks
     public class Repeater : Decorator
     {
         [Tooltip("The number of times to repeat the execution of its child task")]
-        public SharedInt count = 1;
+        public SharedInt count = 1;//Random.Range(2, 5);
         [Tooltip("Allows the repeater to repeat forever")]
         public SharedBool repeatForever;
         [Tooltip("Should the task return if the child task returns a failure")]
