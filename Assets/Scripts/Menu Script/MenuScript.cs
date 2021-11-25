@@ -135,7 +135,7 @@ public class MenuScript : MonoBehaviour
 
             else if (SelectedButton == 7)
             {
-                //Utilisation du bouton nouvelle campagne
+                //Utilisation du bouton continuer
                 Debug.Log("Continuer");
                 //SceneManager.LoadScene("CharacterSelection");
             }
@@ -144,6 +144,7 @@ public class MenuScript : MonoBehaviour
             {
                 Debug.Log("Nouvelle partie");
                 //utilisation du bouton nouvelle partie campagne
+                SceneManager.LoadScene("Dialogue");
             }
 
             else if (SelectedButton == 9)

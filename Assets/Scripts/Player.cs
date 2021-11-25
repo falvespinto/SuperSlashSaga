@@ -216,5 +216,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void LetsDance()
+    {
+        animator.SetTrigger("Dance");
+    }
 
 }

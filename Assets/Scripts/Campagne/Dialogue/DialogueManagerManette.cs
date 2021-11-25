@@ -161,7 +161,7 @@ public class DialogueManagerManette : MonoBehaviour
         Debug.Log("end");
         if(chapitre == 1)
         {
-            SceneManager.LoadScene("CharacterSelectionIA");
+            SceneManager.LoadScene("SceneCampagneDebut");
         }
     }
 }
