@@ -221,4 +221,11 @@ public class Player : MonoBehaviour
         animator.SetTrigger("Dance");
     }
 
+    public void bumped(float time)
+    {
+        StartCoroutine(ResetIsTakingDamage(time));
+        playerAttack.LookAtTarget();
+        animator.SetTrigger("Bumped");
+    }
+
 }

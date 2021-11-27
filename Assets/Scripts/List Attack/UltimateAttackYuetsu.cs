@@ -80,13 +80,14 @@ public class UltimateAttackYuetsu : MonoBehaviour, UltimateAttack
             //    }
             //}
         }
-
         if (isEngaging)
         {
             engageArea.gameObject.SetActive(true);
             Collider[] hit = Physics.OverlapBox(engageArea.bounds.center, engageArea.bounds.extents, engageArea.transform.rotation, gameObject.GetComponentInParent<PlayerData>().enemyLayer);
+            
             if (hit.Length > 0)
             {
+                Debug.Log("hastouched");
                 for (int i = 0; i < hit.Length; i++)
                 {
                     hit[i].GetComponentInParent<Player>().hurtTimeUltimate = hurtTime;
@@ -94,7 +95,6 @@ public class UltimateAttackYuetsu : MonoBehaviour, UltimateAttack
                     Debug.Log(hit[i].gameObject.layer);
                     hasTouched = true;
                     isEngaging = false;
-                    Debug.Log("Ultimate ENGAGE : touché");
                     engageArea.gameObject.SetActive(false);
                     break;
                 }
@@ -238,4 +238,15 @@ public class UltimateAttackYuetsu : MonoBehaviour, UltimateAttack
     {
         playerAttack.m_Animator.applyRootMotion = true;
     }
+
+    private void OnDrawGizmos()
+    {
+        if (engageArea.gameObject.activeSelf == true)
+        {
+            Gizmos.matrix = Matrix4x4.TRS(engageArea.bounds.center, engageArea.transform.rotation, engageArea.bounds.extents);
+            Gizmos.color = Color.red;
+            Gizmos.DrawCube(Vector3.zero, Vector3.one);
+        }
+    }
+
 }

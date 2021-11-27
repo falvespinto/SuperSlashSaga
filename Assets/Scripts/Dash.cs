@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Dash : MonoBehaviour
 {
-
     private Vector2 movementInput;
     private CharacterController controller;
     public float dashSpeed;
@@ -21,7 +20,10 @@ public class Dash : MonoBehaviour
     public float infuseTime = 1.5f;
     private UltimateAttack ultimateAttack;
     public bool isInfusing = false;
+    public bool hasTouched = false;
+    public bool isEngaging = false;
     public Player player;
+    public Collider engageArea;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,24 @@ public class Dash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDashing)
+        {
+            engageArea.gameObject.SetActive(true);
+            Collider[] hit = Physics.OverlapBox(engageArea.bounds.center, engageArea.bounds.extents, engageArea.transform.rotation, gameObject.GetComponentInParent<PlayerData>().enemyLayer);
+            if (hit.Length > 0)
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    hit[i].GetComponentInParent<Player>().bumped(0.8f);
+                    Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
+                    Debug.Log(hit[i].gameObject.layer);
+                    hasTouched = true;
+                    isDashing = false;
+                    engageArea.gameObject.SetActive(false);
+                    break;
+                }
+            }
+        }
     }
 
     public void dashButton(InputAction.CallbackContext ctx)
@@ -50,17 +70,32 @@ public class Dash : MonoBehaviour
 
     public IEnumerator DashMovement()
     {
+        // ANCIEN SAUT/DASH je garde pour l'instant FIX
+        //m_animator.SetBool("isDashing", true);
+        //isDashing = true;
+        //float startTime = Time.time;
+        //while (Time.time < startTime + dashDuration)
+        //{
+        //    Debug.Log("dashMovement");
+        //    controller.Move(transform.forward * dashSpeed * Time.deltaTime);
+        //    yield return null;
+        //}
+        ////yield return new WaitForSeconds(0.25f);
+        //isDashing = false;
+        //m_animator.SetBool("isDashing", false);
+
+        // Regarde vers l'adversaire
+        Vector3 direction = playerAttack.LookAtTarget();
         m_animator.SetBool("isDashing", true);
         isDashing = true;
-        float startTime = Time.time;
-        while (Time.time < startTime + dashDuration)
+        while (!hasTouched)
         {
-            Debug.Log("dashMovement");
             controller.Move(transform.forward * dashSpeed * Time.deltaTime);
             yield return null;
         }
         //yield return new WaitForSeconds(0.25f);
         isDashing = false;
+        hasTouched = false;
         m_animator.SetBool("isDashing", false);
     }
 
