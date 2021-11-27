@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     public float hurtTimeLight;
     public float hurtTimeUltimate;
     public Vector3 offSet;
+    private int count = 0;
 
     public Sprite faceSprite;
 
@@ -137,9 +138,11 @@ public class Player : MonoBehaviour
                     {
                         case "Heavy":
                             StartCoroutine(ResetIsTakingDamage(hurtTimeHeavy));
+                            count = 1;
                             break;
                         case "Light":
                             StartCoroutine(ResetIsTakingDamage(hurtTimeLight));
+                            count = 2;
                             break;
                         case "Engage":
                             StartCoroutine(ResetIsTakingDamage(hurtTimeUltimate));
@@ -147,6 +150,14 @@ public class Player : MonoBehaviour
 
                     }
                     currentHealth -= damage;
+                    if(currentHealth <= 0 && count == 1)
+                    {
+                        playerAudio.playSoundCoupFinalLourd();
+                    }
+                    else if(currentHealth <= 0 && count == 2)
+                    {
+                        playerAudio.playSoundCoupFinalLeger();
+                    }
                     healthBar.SetHealth(currentHealth);
                     if (currentHealth <= 0)
                     {
