@@ -73,8 +73,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);//Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f, targetAngle, 0f), rotationSpeed);
             moveDirection = direction.x * cam.right + direction.z * cam.forward;
             moveDirection.y = 0f;
-            moveDirection *= translationSpeed;
-
+            moveDirection *= translationSpeed * Time.deltaTime;
         }
         if (movementInputs.x != 0f || movementInputs.y != 0f)
         {

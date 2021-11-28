@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,7 +25,9 @@ public class Dash : MonoBehaviour
     public bool isEngaging = false;
     public Player player;
     public Collider engageArea;
-    // Start is called before the first frame update
+    public float maxTurnSpeed = 60f;
+    public static Action<int> OnDash;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -36,7 +39,7 @@ public class Dash : MonoBehaviour
     {
         if (isDashing)
         {
-            engageArea.gameObject.SetActive(true);
+            //engageArea.gameObject.SetActive(true);
             Collider[] hit = Physics.OverlapBox(engageArea.bounds.center, engageArea.bounds.extents, engageArea.transform.rotation, gameObject.GetComponentInParent<PlayerData>().enemyLayer);
             if (hit.Length > 0)
             {
@@ -47,7 +50,7 @@ public class Dash : MonoBehaviour
                     Debug.Log(hit[i].gameObject.layer);
                     hasTouched = true;
                     isDashing = false;
-                    engageArea.gameObject.SetActive(false);
+                    //engageArea.gameObject.SetActive(false);
                     break;
                 }
             }
@@ -60,6 +63,7 @@ public class Dash : MonoBehaviour
         {
             if (!isDashing && !playerAttack.isAttacking && !playerAttack.isParing && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
             {
+                OnDash?.Invoke(player.playerIndex);
                 StartCoroutine(DashMovement());
             }
         }
@@ -90,6 +94,10 @@ public class Dash : MonoBehaviour
         isDashing = true;
         while (!hasTouched)
         {
+            Vector3 directionToTarget = playerAttack.playerData.target.position - (transform.position);
+            Vector3 currentDirection = transform.forward;
+            Vector3 resultingDirection = Vector3.RotateTowards(currentDirection, directionToTarget.normalized, maxTurnSpeed * Mathf.Deg2Rad * Time.deltaTime, 1f);
+            transform.rotation = Quaternion.LookRotation(resultingDirection);
             controller.Move(transform.forward * dashSpeed * Time.deltaTime);
             yield return null;
         }
