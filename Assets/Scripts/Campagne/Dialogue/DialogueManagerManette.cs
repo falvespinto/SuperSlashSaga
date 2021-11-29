@@ -110,7 +110,7 @@ public class DialogueManagerManette : MonoBehaviour
             pereDaiki.SetActive(false);
             chapitre = 1;
         }
-        else if(sentence.Contains("Père1 de Daiki :"))
+        else if(sentence.Contains("Pï¿½re1 de Daiki :"))
         {
             sentence = sentence.Remove(0, 16);
             Debug.Log("a");
@@ -153,7 +153,7 @@ public class DialogueManagerManette : MonoBehaviour
             pereDaiki.SetActive(false);
             chapitre = 2;
         }
-        else if (sentence.Contains("Père2 de Daiki :"))
+        else if (sentence.Contains("Pï¿½re2 de Daiki :"))
         {
             sentence = sentence.Remove(0, 16);
             tNameText.SetActive(false);
@@ -184,7 +184,7 @@ public class DialogueManagerManette : MonoBehaviour
             daiki.SetActive(true);
             chapitre = 3;
         }
-        else if (sentence.Contains("Père3 de Daiki :"))
+        else if (sentence.Contains("Pï¿½re3 de Daiki :"))
         {
             sentence = sentence.Remove(0, 16);
             tNameText.SetActive(false);
@@ -213,7 +213,7 @@ public class DialogueManagerManette : MonoBehaviour
         Debug.Log("end");
         if(chapitre == 1)
         {
-            SceneManager.LoadScene("CharacterSelection IA");
+            SceneManager.LoadScene("SceneCampagneDebut");
         }
     }
 }

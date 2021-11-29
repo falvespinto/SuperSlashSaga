@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -35,11 +36,13 @@ public class Player : MonoBehaviour
     public float hurtTimeLight;
     public float hurtTimeUltimate;
     public Vector3 offSet;
-    private int count = 0;
+    public float hurtTime = 0;
 
     public Sprite faceSprite;
 
     public bool manaUp = false;
+
+    public static Action<int> OnDeath;
 
     void Awake()
     {
@@ -67,10 +70,25 @@ public class Player : MonoBehaviour
         {
             target = playerData.target;
         }
+        if (isTakingDamage)
+        {
+            if (hurtTime > 0)
+            {
+                hurtTime = hurtTime - Time.deltaTime;
+            }
+            if (hurtTime <= 0)
+            {
+                isTakingDamage = false;
+                hurtTime = 0;
+            }
+        }
+
     }
     private void FixedUpdate()
     {
         if (manaUp) manabar.SetMana(manabar.mana + 1);
+
+
     }
 
     public void TakeDamage(float damage, string attackType)
@@ -96,8 +114,9 @@ public class Player : MonoBehaviour
         {
             if (attackType == "Heavy")
             {
-                StartCoroutine(ResetIsTakingDamage(GuardBreakTime));
-                isTakingDamage = true;
+                //StopCoroutine(ResetIsTakingDamage(GuardBreakTime));
+                //StartCoroutine(ResetIsTakingDamage(GuardBreakTime));
+                stunTime(GuardBreakTime);
                 Invoke("ResetIsTakingDamage", GuardBreakTime);
                 animator.SetTrigger("Guard_Break");
                 parade.shield.SetActive(false);
@@ -106,6 +125,8 @@ public class Player : MonoBehaviour
                 healthBar.SetHealth(currentHealth);
                 if (currentHealth <= 0)
                 {
+                    OnDeath?.Invoke(playerIndex);
+                    isDead = true;
                     animator.SetTrigger("Dead");
                     Invoke("Die", 3f);
                 }
@@ -137,15 +158,19 @@ public class Player : MonoBehaviour
                     switch (attackType)
                     {
                         case "Heavy":
-                            StartCoroutine(ResetIsTakingDamage(hurtTimeHeavy));
-                            count = 1;
+                            //StopCoroutine(ResetIsTakingDamage(hurtTimeHeavy));
+                            //StartCoroutine(ResetIsTakingDamage(hurtTimeHeavy));
+                            stunTime(hurtTimeHeavy);
                             break;
                         case "Light":
-                            StartCoroutine(ResetIsTakingDamage(hurtTimeLight));
-                            count = 2;
+                            //StopCoroutine(ResetIsTakingDamage(hurtTimeLight));
+                            //StartCoroutine(ResetIsTakingDamage(hurtTimeLight));
+                            stunTime(hurtTimeLight);
                             break;
                         case "Engage":
-                            StartCoroutine(ResetIsTakingDamage(hurtTimeUltimate));
+                            //StopCoroutine(ResetIsTakingDamage(hurtTimeUltimate));
+                            //StartCoroutine(ResetIsTakingDamage(hurtTimeUltimate));
+                            stunTime(hurtTimeUltimate);
                             break;
 
                     }
@@ -161,6 +186,7 @@ public class Player : MonoBehaviour
                     healthBar.SetHealth(currentHealth);
                     if (currentHealth <= 0)
                     {
+                        OnDeath?.Invoke(playerIndex);
                         animator.SetTrigger("Dead");
                         isDead = true;
                         Invoke("Die", 3f);
@@ -238,5 +264,23 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void LetsDance()
+    {
+        animator.SetTrigger("Dance");
+    }
 
+    public void bumped(float time)
+    {
+        //StopCoroutine(ResetIsTakingDamage(time));
+        //StartCoroutine(ResetIsTakingDamage(time));
+        stunTime(time);
+        playerAttack.LookAtTarget();
+        animator.SetTrigger("Bumped");
+    }
+
+    public void stunTime(float time)
+    {
+        isTakingDamage = true;
+        hurtTime += time;
+    }
 }

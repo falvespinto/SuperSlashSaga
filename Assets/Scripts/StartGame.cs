@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
 using UnityEngine;
+using System;
+using System.IO;
 using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {
@@ -70,5 +72,4 @@ public class StartGame : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
 
     }
-
 }

@@ -9,4 +9,6 @@ public static class TwitchCommands
     public static readonly string CommandMessage = "msg";
 
     public static readonly string CommandDamage = "dmg";
+
+    public static readonly string CommandHype = "simulationHype";
 }

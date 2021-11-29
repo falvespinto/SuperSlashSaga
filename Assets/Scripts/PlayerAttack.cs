@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
-
+using System;
 public enum LightComboState
 {
     NONE,
@@ -42,6 +42,8 @@ public class PlayerAttack : MonoBehaviour
     public RunLightComboState runLightComboState;
     public BottomLightComboState bottomLightComboState;
     public RunBottomLightComboState runBottomLightComboState;
+
+    public Collider stopArea;
 
     private Rigidbody m_Rigidbody;
 
@@ -85,6 +87,12 @@ public class PlayerAttack : MonoBehaviour
     public UltimateAttack ultimateAttack;
     public CharacterController controller;
 
+    // Compteurs pour log
+    public static Action<int> OnLightAtk;
+    public static Action<int> OnHeavyAtk;
+    public static Action<int> OnUltimateAtk;
+    public static Action<int> OnParadeUsed;
+    public static Action<int> OnParadeTriggered;
     private bool heavyCanAutoCancel;
     private void Awake()
     {
@@ -126,6 +134,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void AttackedWhileParing()
     {
+        OnParadeTriggered?.Invoke(player.playerIndex);
         swordAttacks.damage = 30;
         swordAttacks.attackType = "Paring";
         isParing = false;
@@ -143,6 +152,7 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("pressedLight");
             if (!player.isInCombo && !player.isTakingDamage && !isAttacking && !isParing && !ultimateAttack.isPerformingUltimate)
             {
+                OnLightAtk?.Invoke(player.playerIndex);
                 lightAttack.PerformedLightAttack("normal");
             }
         }
@@ -155,6 +165,7 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("pressedHeavy");
             if (!isAttacking && !isParing && !player.isInCombo && !player.isTakingDamage && !ultimateAttack.isPerformingUltimate)
             {
+                OnHeavyAtk?.Invoke(player.playerIndex);
                 heavyAttack.PerformedHeavyAttack("normal");
             }
             
@@ -167,6 +178,7 @@ public class PlayerAttack : MonoBehaviour
         if (ctx.started)
         {
             Debug.Log("pressedParade");
+            OnParadeUsed?.Invoke(player.playerIndex);
             paradeButtonPressed = true;
             parade.InitializedParadeAttack();
         }
@@ -184,6 +196,7 @@ public class PlayerAttack : MonoBehaviour
             if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
             {
                 LookAtTarget();
+                OnUltimateAtk?.Invoke(player.playerIndex);
                 ultimateAttack.PerformUltimateAttack();
             }
 
@@ -231,5 +244,19 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
+    public bool isHeNearEnemy()
+    {
+        bool tempBool = false;
+        Collider[] hit = Physics.OverlapBox(stopArea.bounds.center, stopArea.bounds.extents, stopArea.transform.rotation, gameObject.GetComponentInParent<PlayerData>().enemyLayer);
+        if (hit.Length > 0)
+        {
+            for (int i = 0; i < hit.Length; i++)
+            {
+                tempBool = true;
+                break;
+            }
+        }
+        return tempBool;
+    }
 
 }
