@@ -175,14 +175,14 @@ public class Player : MonoBehaviour
 
                     }
                     currentHealth -= damage;
-                    if(currentHealth <= 0 && count == 1)
-                    {
-                        playerAudio.playSoundCoupFinalLourd();
-                    }
-                    else if(currentHealth <= 0 && count == 2)
-                    {
-                        playerAudio.playSoundCoupFinalLeger();
-                    }
+                    //if(currentHealth <= 0 && count == 1)
+                    //{
+                    //    playerAudio.playSoundCoupFinalLourd();
+                    //}
+                    //else if(currentHealth <= 0 && count == 2)
+                    //{
+                    //    playerAudio.playSoundCoupFinalLeger();
+                    //}
                     healthBar.SetHealth(currentHealth);
                     if (currentHealth <= 0)
                     {

@@ -37,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
 {
 
     public bool isAttacking;
-    public Attack swordAttacks;
+    public List<Attack> attacksPoints;
     public LightComboState lightComboState;
     public RunLightComboState runLightComboState;
     public BottomLightComboState bottomLightComboState;
@@ -135,8 +135,7 @@ public class PlayerAttack : MonoBehaviour
     public void AttackedWhileParing()
     {
         OnParadeTriggered?.Invoke(player.playerIndex);
-        swordAttacks.damage = 30;
-        swordAttacks.attackType = "Paring";
+        SetAttacksData(30,"Paring");
         isParing = false;
         parade.shield.SetActive(false);
         m_Animator.SetBool("IsParing", false);
@@ -259,4 +258,12 @@ public class PlayerAttack : MonoBehaviour
         return tempBool;
     }
 
+    public void SetAttacksData(int damage, string attackType)
+    {
+        foreach (var attackPoint in attacksPoints)
+        {
+            attackPoint.damage = damage;
+            attackPoint.attackType = attackType;
+        }
+    }
 }

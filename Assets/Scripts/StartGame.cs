@@ -54,7 +54,13 @@ public class StartGame : MonoBehaviour
         }
         else
         {
-            Debug.Log("bah y'a rien d'autre chakal, Molière");
+            if (P1.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Daiki")
+            {
+                PlayerPrefs.SetInt("selectedCharacterP1", 2);
+                P1User = P1.champSelect.GetComponent<PlayerInput>().user;
+                P1Device = P1.champSelect.GetComponent<PlayerInput>().devices[0];
+                Debug.Log("P1 Device Startgame : " + P1Device);
+            }
         }
         
         if (P2.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Yuetsu" && !managerIA.bIsIA)

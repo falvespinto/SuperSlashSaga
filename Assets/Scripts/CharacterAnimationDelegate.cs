@@ -6,6 +6,8 @@ public class CharacterAnimationDelegate : MonoBehaviour
 {
 
     public GameObject m_RightHandAttackPoint;
+    public GameObject m_LeftHandAttackPoint;
+    public GameObject m_RightLegAttackPoint;
 
     void RightHandAttackOn()
     {
@@ -18,6 +20,34 @@ public class CharacterAnimationDelegate : MonoBehaviour
         if (m_RightHandAttackPoint.activeInHierarchy)
         {
             m_RightHandAttackPoint.SetActive(false);
+        }
+    }
+
+    void LeftHandAttackOn()
+    {
+        Debug.Log("attack on");
+        m_LeftHandAttackPoint.SetActive(true);
+    }
+
+    void LeftHandAttackOff()
+    {
+        if (m_LeftHandAttackPoint.activeInHierarchy)
+        {
+            m_LeftHandAttackPoint.SetActive(false);
+        }
+    }
+
+    void RightLegAttackOn()
+    {
+        Debug.Log("attack on");
+        m_RightLegAttackPoint.SetActive(true);
+    }
+
+    void RightLegAttackOff()
+    {
+        if (m_RightLegAttackPoint.activeInHierarchy)
+        {
+            m_RightLegAttackPoint.SetActive(false);
         }
     }
 

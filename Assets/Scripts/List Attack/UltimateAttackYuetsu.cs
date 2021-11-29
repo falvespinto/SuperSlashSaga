@@ -116,8 +116,7 @@ public class UltimateAttackYuetsu : MonoBehaviour, UltimateAttack
             Vector3 direction = playerAttack.LookAtTarget();
             StartCoroutine(ForwardEngageAttack(attackTimeEngage, direction, attackSpeedEngage));
             playerAttack.m_Animator.applyRootMotion = false;
-            playerAttack.swordAttacks.damage = 0;
-            playerAttack.swordAttacks.attackType = ATTACK_TYPE;
+            playerAttack.SetAttacksData(0, ATTACK_TYPE);
             playerAttack.m_Animator.SetTrigger("EngageUltYuetsu");
             playerAttack.m_Animator.applyRootMotion = true;
             StartCoroutine(isPerformingUltimateAttackReset());
