@@ -1891,7 +1891,7 @@ GameObject:
   - component: {fileID: 307531728307995050}
   - component: {fileID: 7448213469119194529}
   - component: {fileID: 3915513039188577708}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DashStopArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11490,7 +11490,19 @@ MonoBehaviour:
     m_ActionId: 425d73c4-c162-4470-b01f-399a8dd9163d
     m_ActionName: Gameplay/BottomHeavyAttackPressed[/Keyboard/numpad5]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1498282575589081782}
+        m_TargetAssemblyTypeName: UltimateAttackYuetsu, Assembly-CSharp
+        m_MethodName: PerformUltimateAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 04fd6ece-39d7-4342-8211-cf6accd8df4b
     m_ActionName: Gameplay/Ultimate[/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
@@ -11510,19 +11522,7 @@ MonoBehaviour:
     m_ActionId: b781e722-57e0-410a-a976-2c1c51880a52
     m_ActionName: Gameplay/test[/Keyboard/u,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: testUltiVFX, Assembly-CSharp
-        m_MethodName: Flash
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 025eaf4f-8414-43b5-a50e-cf1169bdb56b
     m_ActionName: Gameplay/test2[/Keyboard/i,/XInputControllerWindows/leftShoulder]
   - m_PersistentCalls:
@@ -11779,6 +11779,7 @@ MonoBehaviour:
   timeBeforeCancelLight2: 0.5
   timeBeforeCancelLight3: 0.7
   timeBeforeCancelLight4: 0.7
+  timeOfCombo: 4.02
 --- !u!114 &7266148757124352407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11807,6 +11808,7 @@ MonoBehaviour:
   player: {fileID: 3661976246809478957}
   engageArea: {fileID: 3915513039188577708}
   maxTurnSpeed: 60
+  dashTime: 1
 --- !u!114 &2812597217123706708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11929,6 +11931,7 @@ MonoBehaviour:
   VFXPrefab: {fileID: 216313935524729590, guid: 712158b720027c34fbe6582bf9d8ab41, type: 3}
   offSet: {x: 0, y: 5, z: 0}
   backwardOffSet: 2
+  hasPermuted: 0
 --- !u!1 &6840588005767388474
 GameObject:
   m_ObjectHideFlags: 0

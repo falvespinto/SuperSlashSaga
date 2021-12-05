@@ -47,6 +47,7 @@ public class LightAttack : MonoBehaviour
     public float timeBeforeCancelLight2;
     public float timeBeforeCancelLight3;
     public float timeBeforeCancelLight4;
+    public float timeOfCombo;
 
     private void Awake()
     {
@@ -77,7 +78,7 @@ public class LightAttack : MonoBehaviour
         {
             if ((int)lightComboState >= 4 || lightComboState == null)
             {
-
+                Debug.Log("il est allez dans light combo state >= 4");
             }
             else
             {
@@ -131,20 +132,15 @@ public class LightAttack : MonoBehaviour
 
                 if (lightComboState == LightComboState.LIGHT_4)
                 {
+                    playerAttack.playerHit = null;
                     playerController.isRunning = false;
                     Vector3 direction = playerAttack.LookAtTarget();
                     playerAttack.m_Animator.SetTrigger("LightAttackCombo");
                     Invoke("AttackComplete", timeBeforeCancelLight4);
                     playerAttack.SetAttacksData(6, "Light");
                     //StartCoroutine(ComboWorkflow());
-
                     //Invoke("CheckPerformFullCombo", 0f);
                     player.playerAudio.playSoundLeger();
-                    StartCoroutine(CheckPerformFullCombo());
-                    
-
-
-
                 }
 
                 if (lightComboState == LightComboState.NONE)
@@ -175,6 +171,7 @@ public class LightAttack : MonoBehaviour
 
             if (current_Combo_Timer <= 0f)
             {
+                Debug.Log("combo reset");
                 lightComboState = LightComboState.NONE;
                 isLightAttacking = false;
                 current_Combo_Timer = default_Combo_Timer;
@@ -184,34 +181,51 @@ public class LightAttack : MonoBehaviour
     public IEnumerator InfuseSword(float time)
     {
         yield return new WaitForSeconds(time);
-        vfxSword.SetActive(true);
-    }
-    public IEnumerator CheckPerformFullCombo()
-    {
-        if (lightComboState == LightComboState.LIGHT_4 && playerAttack.playerHit != null)
+        try
         {
-            playerAttack.isAttacking = true;
-            playerController.isRunning = false;
-            playerAttack.playerHit.GetComponent<Player>().isInCombo = true;
-            player.isInCombo = true;
-            playerAttack.playerHit.GetComponent<CharacterController>().enabled = false;
-            controller.enabled = false;
-            Vector3 positionAtk = GameObject.Find("ReplacePointAtk").transform.position;
-            Quaternion rotationAtk = GameObject.Find("ReplacePointAtk").transform.rotation;
-            transform.position = positionAtk;
-            transform.rotation = rotationAtk;
-            Vector3 positionRcv = GameObject.Find("ReplacePointRcv").transform.position;
-            Quaternion rotationRcv = GameObject.Find("ReplacePointRcv").transform.rotation;
-            playerAttack.playerHit.transform.position = positionRcv;
-            playerAttack.playerHit.transform.rotation = rotationRcv;
-            controller.enabled = true;
-            playerAttack.playerHit.GetComponent<CharacterController>().enabled = true;
-            yield return new WaitForSeconds(0.3f);
-            StartCoroutine(InfuseSword(0.15f));
-            StartCoroutine(playerAttack.SwitchCamera(4.02f));
-            Invoke("AttackComplete", 4.02f);
-            StartCoroutine(playerAttack.playerHit.GetComponent<Player>().goInEnemyCombo(4.02f));
-            GetComponent<TimeLineController>().PerformFullCombo(playerAttack.m_Animator, playerAttack.playerHit.GetComponent<Animator>(), playerData.cam.GetComponent<CinemachineBrain>());
+            vfxSword.SetActive(true);
+        }
+        catch (System.Exception)
+        {
+            throw;
+        }
+    }
+    public void CheckPerformFullCombo()
+    {
+        if (playerAttack.playerHit != null)
+        {
+            StartCoroutine(PerformFullCombo());
+        }
+    }
+    public IEnumerator PerformFullCombo()
+    {
+         if (playerAttack.playerHit != null)
+         {
+            if (playerAttack.playerHit.GetComponent<Permutation>().hasPermuted == false)
+            {
+                playerAttack.isAttacking = true;
+                playerController.isRunning = false;
+                playerAttack.playerHit.GetComponent<Player>().isInCombo = true;
+                player.isInCombo = true;
+                playerAttack.playerHit.GetComponent<CharacterController>().enabled = false;
+                controller.enabled = false;
+                Vector3 positionAtk = GameObject.Find("ReplacePointAtk").transform.position;
+                Quaternion rotationAtk = GameObject.Find("ReplacePointAtk").transform.rotation;
+                transform.position = positionAtk;
+                transform.rotation = rotationAtk;
+                Vector3 positionRcv = GameObject.Find("ReplacePointRcv").transform.position;
+                Quaternion rotationRcv = GameObject.Find("ReplacePointRcv").transform.rotation;
+                playerAttack.playerHit.transform.position = positionRcv;
+                playerAttack.playerHit.transform.rotation = rotationRcv;
+                controller.enabled = true;
+                playerAttack.playerHit.GetComponent<CharacterController>().enabled = true;
+                yield return new WaitForSeconds(0.3f);
+                StartCoroutine(InfuseSword(0.15f));
+                StartCoroutine(playerAttack.SwitchCamera(timeOfCombo));
+                Invoke("AttackComplete", timeOfCombo);
+                StartCoroutine(playerAttack.playerHit.GetComponent<Player>().goInEnemyCombo(timeOfCombo));
+                GetComponent<TimeLineController>().PerformFullCombo(playerAttack.m_Animator, playerAttack.playerHit.GetComponent<Animator>(), playerData.cam.GetComponent<CinemachineBrain>());
+            }
         }
     }
     // A remplacer par une coroutine plus tard

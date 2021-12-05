@@ -115,7 +115,7 @@ public class TwitchChat : MonoBehaviour
 
     private void ReadChat()
     {
-        Debug.Log("Available : " + _twitchClient.Available);
+        //Debug.Log("Available : " + _twitchClient.Available);
         if (_twitchClient.Available > 0)
         {
             string message = _reader.ReadLine();

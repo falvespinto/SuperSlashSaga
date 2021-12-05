@@ -13,6 +13,7 @@ public class Permutation : MonoBehaviour
     public GameObject VFXPrefab;
     public Vector3 offSet;
     public float backwardOffSet;
+    public bool hasPermuted = false;
 
     private void Awake()
     {
@@ -42,6 +43,9 @@ public class Permutation : MonoBehaviour
         // Will permute
         if (playerData.permutationBar.remainingPermutation >= 1)
         {
+            StartCoroutine(HasPermuted());
+            player.isTakingDamage = false;
+            player.isInEnemyCombo = false;
             playerData.permutationBar.SetPermutation(playerData.permutationBar.remainingPermutation - 1);
             Instantiate(VFXPrefab, transform.position + offSet - transform.forward * backwardOffSet , transform.rotation);
             Debug.Log("Would have permuted");
@@ -68,5 +72,12 @@ public class Permutation : MonoBehaviour
         yield return new WaitForSeconds(15f);
         playerData.permutationBar.SetPermutation(playerData.permutationBar.remainingPermutation + 1);
         StartCoroutine(AddPermutation());
+    }
+
+    public IEnumerator HasPermuted()
+    {
+        hasPermuted = true;
+        yield return new WaitForSeconds(0.3f);
+        hasPermuted = false;
     }
 }

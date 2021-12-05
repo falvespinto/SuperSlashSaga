@@ -135,7 +135,6 @@ public class MultiTargetCamera : MonoBehaviour
             camState = SHORT_DISTANCE;
         }
         transform.position = Vector3.SmoothDamp(transform.position, finalPosition, ref velocity, smoothTime);
-        Debug.Log(smoothTime);
     }
 
     float GetGreatestDistance()
@@ -294,13 +293,11 @@ public class MultiTargetCamera : MonoBehaviour
         {
             float s = Vector3.Dot(crossVec3and2, crossVec1and2) / crossVec1and2.sqrMagnitude;
             intersection = point1 + (direction1 * s);
-            Debug.Log("true");
             return true;
         }
         else
         {
             intersection = Vector3.zero;
-            Debug.Log("false");
             return false;
         }
     }

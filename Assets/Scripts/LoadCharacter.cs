@@ -119,6 +119,10 @@ public class LoadCharacter : MonoBehaviour
             {
                 continue;
             }
+            if (child.name == "DashStopArea")
+            {
+                continue;
+            }
             SetLayerRecursively(child.gameObject, newLayer);
         }
     }

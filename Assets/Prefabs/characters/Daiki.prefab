@@ -1191,7 +1191,7 @@ MonoBehaviour:
   halfExtent: 0
   damage: 5
   attackType: 
-  player: {fileID: 0}
+  player: {fileID: 9082076705501439328}
   playerIA: {fileID: 0}
   isIA: 0
   stunTime: 0
@@ -1377,8 +1377,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2690108357832728157}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40.614468, y: -955.55066, z: 1588.328}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 628, y: 191, z: 172}
   m_LocalScale: {x: 13.333332, y: 13.333332, z: 13.333332}
   m_Children:
   - {fileID: 5724598354789469587}
@@ -1387,7 +1387,7 @@ Transform:
   - {fileID: 6784090423978397105}
   m_Father: {fileID: 6798019671577122242}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!81 &3021020236719521200
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2075,8 +2075,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 1299068672038843734}
   m_AABB:
-    m_Center: {x: 1.3240502, y: -1.8929179, z: 2.8841386}
-    m_Extent: {x: 1.2871776, y: 1.5318844, z: 1.912046}
+    m_Center: {x: 1.5004605, y: -2.01907, z: 3.2686899}
+    m_Extent: {x: 1.4587356, y: 1.6340334, z: 2.1669853}
   m_DirtyAABB: 0
 --- !u!183 &3350241895079716595
 Cloth:
@@ -3122,7 +3122,7 @@ MonoBehaviour:
   halfExtent: 0
   damage: 5
   attackType: 
-  player: {fileID: 0}
+  player: {fileID: 9082076705501439328}
   playerIA: {fileID: 0}
   isIA: 0
   stunTime: 0
@@ -3157,6 +3157,60 @@ Transform:
   m_Father: {fileID: 4243359689494303988}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4314690814771907973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707244270822398112}
+  - component: {fileID: 2292030627199843009}
+  m_Layer: 0
+  m_Name: DaikiCombo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &707244270822398112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4314690814771907973}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 295.19977, y: 189.08978, z: 758.67535}
+  m_LocalScale: {x: 11.764706, y: 12.5, z: 11.764706}
+  m_Children: []
+  m_Father: {fileID: 6798019671577122242}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &2292030627199843009
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4314690814771907973}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: a1106eebd0d03b948b1195dd50a9732f, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -6832450254042976563, guid: a1106eebd0d03b948b1195dd50a9732f, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1820649303345886825, guid: a1106eebd0d03b948b1195dd50a9732f, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4710905689064446167, guid: a1106eebd0d03b948b1195dd50a9732f, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &4436794032943042863
 GameObject:
   m_ObjectHideFlags: 0
@@ -3657,7 +3711,7 @@ MonoBehaviour:
   halfExtent: 0
   damage: 5
   attackType: 
-  player: {fileID: 0}
+  player: {fileID: 9082076705501439328}
   playerIA: {fileID: 0}
   isIA: 0
   stunTime: 0
@@ -4284,6 +4338,7 @@ Transform:
   - {fileID: 8869572211418673896}
   - {fileID: 4755018650900040752}
   - {fileID: 5120168503585507607}
+  - {fileID: 707244270822398112}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4718,7 +4773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1161f6466a3d8e64d8426c9df0bfdee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullCombo: {fileID: 0}
+  fullCombo: {fileID: 2292030627199843009}
   finalUlt: {fileID: 0}
 --- !u!114 &5051831975715977276
 MonoBehaviour:
@@ -4756,8 +4811,9 @@ MonoBehaviour:
   playerHitPositionOffSet: {x: 0, y: 0, z: 0}
   timeBeforeCancelLight1: 0.3
   timeBeforeCancelLight2: 0.5
-  timeBeforeCancelLight3: 0.7
+  timeBeforeCancelLight3: 0.5
   timeBeforeCancelLight4: 0.7
+  timeOfCombo: 2.5
 --- !u!114 &2504171134898793296
 MonoBehaviour:
   m_ObjectHideFlags: 0

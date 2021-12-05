@@ -27,6 +27,7 @@ public class Dash : MonoBehaviour
     public Collider engageArea;
     public float maxTurnSpeed = 60f;
     public static Action<int> OnDash;
+    public float dashTime = 1f;
 
     void Start()
     {
@@ -89,16 +90,18 @@ public class Dash : MonoBehaviour
         //m_animator.SetBool("isDashing", false);
 
         // Regarde vers l'adversaire
+        float timeElapsed = 0;
         Vector3 direction = playerAttack.LookAtTarget();
         m_animator.SetBool("isDashing", true);
         isDashing = true;
-        while (!hasTouched)
+        while (!hasTouched && timeElapsed < 1f)
         {
             Vector3 directionToTarget = playerAttack.playerData.target.position - (transform.position);
             Vector3 currentDirection = transform.forward;
             Vector3 resultingDirection = Vector3.RotateTowards(currentDirection, directionToTarget.normalized, maxTurnSpeed * Mathf.Deg2Rad * Time.deltaTime, 1f);
             transform.rotation = Quaternion.LookRotation(resultingDirection);
             controller.Move(transform.forward * dashSpeed * Time.deltaTime);
+            timeElapsed += Time.deltaTime;
             yield return null;
         }
         //yield return new WaitForSeconds(0.25f);
