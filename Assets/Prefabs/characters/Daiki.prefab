@@ -4574,10 +4574,10 @@ MonoBehaviour:
     m_ActionName: Gameplay/test[/Keyboard/u,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: testUltiVFX, Assembly-CSharp
-        m_MethodName: Flash
-        m_Mode: 0
+      - m_Target: {fileID: 2011470388513942028}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: AnimTest
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4589,19 +4589,7 @@ MonoBehaviour:
     m_ActionId: 025eaf4f-8414-43b5-a50e-cf1169bdb56b
     m_ActionName: Gameplay/test2[/Keyboard/i,/XInputControllerWindows/leftShoulder]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4972811008949476927}
-        m_TargetAssemblyTypeName: Projectile, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 461af858-ad79-4e7c-bb64-e5a4c1e4248c
     m_ActionName: Gameplay/Projectile[/XInputControllerWindows/leftShoulder]
   - m_PersistentCalls:
@@ -4794,15 +4782,15 @@ MonoBehaviour:
   m_RightLegAttackPoint: {fileID: 4670534072379123307}
   m_RightHandFlameAttackPoint: {fileID: 8789296358626966023}
   m_LeftHandFlameAttackPoint: {fileID: 8842919870942975685}
-  m_vfx: {fileID: 66284721022958715, guid: d4f0f0311d685a14ca88a7685deafd80, type: 3}
-  m_vfxFinal: {fileID: 0}
-  spawnPointFinalVfx: {fileID: 4469453887428483229}
-  vfxScale: 3
-  vfxSpeed: 50
+  m_vfx: {fileID: 8814055800632861990, guid: 7dab4a49bb0fe0e4dbbee632973b1317, type: 3}
+  m_vfxFinal: {fileID: 5385398341469899688, guid: df6ca5d4937c4e946bb3dda6e984fcea, type: 3}
+  spawnPointFinalVfx: {fileID: 4641099502867860961}
+  vfxScale: 2
+  vfxSpeed: 0
   vfxLifeTime: 0.5
   debugIsMoving: 1
-  finalVfxScale: 10
-  finalVfxSpeed: 20
+  finalVfxScale: 15
+  finalVfxSpeed: 0
   finalVfxLifeTime: 2
 --- !u!114 &7114668211165684194
 MonoBehaviour:

@@ -283,4 +283,10 @@ public class Player : MonoBehaviour
         isTakingDamage = true;
         hurtTime += time;
     }
+
+    public void AnimTest()
+    {
+        animator.SetTrigger("test");
+    }
+
 }
