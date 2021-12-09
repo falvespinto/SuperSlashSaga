@@ -14,7 +14,7 @@ public class TwitchChat : MonoBehaviour
     private string clientIdAPP = "v5wr5b8y0dfjouivn5b0t6tou0auhn";
     private string clientSecret = "1eocdpaksx61dsezqnm4za3ym0zwoy";
     private static TwitchChat _instance;
-    private CommandCollection _commands;
+    [SerializeField] private TwitchCommandCollection _commands;
     private TcpClient _twitchClient;
     private StreamReader _reader;
     private StreamWriter _writer;
@@ -26,10 +26,6 @@ public class TwitchChat : MonoBehaviour
     public EmotesSpawner emotesSpawner;
     public bool canSpawnEmote = true;
     public string json_folder;
-
-    //Scene
-    public PlayerData J1;
-    public PlayerData J2;
 
     public static TwitchChat Instance
     {
@@ -60,7 +56,7 @@ public class TwitchChat : MonoBehaviour
             Password = "oauth:kgtnyxxfzxz5qb7sivwc6oca526klc"
         };
         
-        Connect(credentials, new CommandCollection(J1,J2));
+        Connect(credentials);
     }
     // FIN FIX
 
@@ -84,7 +80,7 @@ public class TwitchChat : MonoBehaviour
         }
         else
         {
-            Connect(credentials, new CommandCollection(J1,J2));
+            Connect(credentials);
         }
 
         if (emoteQueue.Count >= 1 && canSpawnEmote)
@@ -99,9 +95,8 @@ public class TwitchChat : MonoBehaviour
         //}
     }
 
-    public void Connect(TwitchCredentials credentials, CommandCollection commands)
+    public void Connect(TwitchCredentials credentials)
     {
-        _commands = commands;
         _twitchClient = new TcpClient("irc.chat.twitch.tv", 6667);
         _reader = new StreamReader(_twitchClient.GetStream());
         _writer = new StreamWriter(_twitchClient.GetStream());

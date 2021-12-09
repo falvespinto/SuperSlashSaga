@@ -2699,7 +2699,9 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7045,7 +7047,19 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21949,8 +21963,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1390820472}
   - component: {fileID: 1390820473}
-  - component: {fileID: 1390820474}
+  - component: {fileID: 1390820477}
+  - component: {fileID: 1390820476}
   - component: {fileID: 1390820475}
+  - component: {fileID: 1390820474}
   m_Layer: 0
   m_Name: TwitchManager
   m_TagString: Untagged
@@ -21984,11 +22000,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f14daf8689c5a46a94f6a33b04149d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _commands: {fileID: 1390820477}
   emotesSpawner: {fileID: 1894990053}
   canSpawnEmote: 1
   json_folder: 
-  J1: {fileID: 1255808040}
-  J2: {fileID: 1735635068}
 --- !u!114 &1390820474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22013,6 +22028,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26578552b9a7c704f919e3a59159f7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  J1: {fileID: 1255808040}
+  J2: {fileID: 1735635068}
+--- !u!114 &1390820476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390820471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac3fa7ca4dad0db47aa94aa9cba03540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  J1: {fileID: 1255808040}
+  J2: {fileID: 1735635068}
+--- !u!114 &1390820477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390820471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02cfb53a8d5d154ea34df7fe2743544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  twitchDisplayMessageCommand: {fileID: 1390820474}
+  twitchDmgCommand: {fileID: 1390820475}
+  twitchHypeCommand: {fileID: 1390820476}
 --- !u!1 &1395374816
 GameObject:
   m_ObjectHideFlags: 0
