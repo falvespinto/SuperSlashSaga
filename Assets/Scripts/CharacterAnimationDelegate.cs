@@ -10,6 +10,8 @@ public class CharacterAnimationDelegate : MonoBehaviour
     public GameObject m_RightHandFlameAttackPoint;
     public GameObject m_LeftHandFlameAttackPoint;
     public GameObject m_vfx;
+    public GameObject m_vfxFinal;
+    public Transform spawnPointFinalVfx;
     public float vfxScale = 3f;
     public float vfxSpeed = 10f;
     public float vfxLifeTime = 0.5f;
@@ -90,12 +92,9 @@ public class CharacterAnimationDelegate : MonoBehaviour
     void RightHandFlameFinalAttackOn()
     {
         m_RightHandFlameAttackPoint.SetActive(true);
-        GameObject flame = Instantiate(m_vfx, m_RightHandFlameAttackPoint.transform.position, m_RightHandFlameAttackPoint.transform.rotation);
+        GameObject flame = Instantiate(m_vfxFinal, spawnPointFinalVfx.position, spawnPointFinalVfx.rotation * Quaternion.Euler(0,180,0));
         flame.transform.localScale = flame.transform.localScale * finalVfxScale;
-        if (debugIsMoving)
-        {
-            StartCoroutine(VfxMovement(flame, finalVfxSpeed, finalVfxLifeTime));
-        }
+        StartCoroutine(VfxMovementFinal(flame, finalVfxSpeed, finalVfxLifeTime));
     }
     void RightHandFlameFinalAttackOff()
     {
@@ -111,6 +110,18 @@ public class CharacterAnimationDelegate : MonoBehaviour
         while (timer < lifeTIme)
         {
             vfx.transform.Translate(vfx.transform.up * Time.deltaTime * speed, Space.World);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        Destroy(vfx);
+    }
+
+    IEnumerator VfxMovementFinal(GameObject vfx, float speed, float lifeTIme)
+    {
+        float timer = 0;
+        while (timer < lifeTIme)
+        {
+            vfx.transform.Translate(vfx.transform.forward * Time.deltaTime * speed, Space.World);
             timer += Time.deltaTime;
             yield return null;
         }

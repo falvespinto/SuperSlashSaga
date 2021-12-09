@@ -86,6 +86,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Transform\IsChildOf.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Math\SetFloat.cs" />
     <Compile Include="Assets\Behavior Designer Movement\Scripts\MovementUtility.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\JiggleBoneTentacle\SoxAtkCollider.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedFloat.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Composites\RandomSelector.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Transform\SetLocalPosition.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Assets\PostProcessingManager.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Light\GetCookieSize.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\AudioSource\PlayDelayed.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\JiggleBoneSimple\SoxAtkJiggleBoneSimple.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\GetPosition.cs" />
     <Compile Include="Assets\Scripts\Campagne\Dialogue\Dialogue.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\CapsuleCollider\GetHeight.cs" />
@@ -144,6 +146,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\AudioSource\GetVolume.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Transform\SetPosition.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\GameObject\SetActive.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\ConstraintTransform\ConstraintTransform.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Actions\RestartBehaviorTree.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Quaternion\AngleAxis.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\CapsuleCollider\GetCenter.cs" />
@@ -156,6 +159,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Transform\GetChild.cs" />
     <Compile Include="Assets\CorpsTexture.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\AddTorque.cs" />
+    <Compile Include="Assets\Ultimate Impact Fx\Script\ChangeFx.cs" />
     <Compile Include="Assets\Behavior Designer Movement\Scripts\Tasks\WithinDistance.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Conditionals\Physics\HasExitedCollision.cs" />
     <Compile Include="Assets\Behavior Designer Formations\Scripts\Tasks\Column.cs" />
@@ -211,6 +215,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\CapsuleCollider\SetCenter.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Vector3\GetXYZ.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\AudioSource\GetTimeSamples.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\DragTransform\SoxAtkDragTransform.cs" />
     <Compile Include="Assets\Behavior Designer Formations\Scripts\Tasks\FormationGroup.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Animation\Sample.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Math\FloatAbs.cs" />
@@ -267,6 +272,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Transform\SetLocalScale.cs" />
     <Compile Include="Assets\Behavior Designer Movement\Scripts\Tasks\Cover.cs" />
     <Compile Include="Assets\JoyconLib_scripts\HIDapi.cs" />
+    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Transform\GetEulerAngles.cs" />
     <Compile Include="Assets\Controls.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Transform\GetParent.cs" />
@@ -325,6 +331,7 @@
     <Compile Include="Assets\Behavior Designer Movement\Scripts\Tasks\Wander.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\Pause.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\AudioSource\SetVolume.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\JiggleBoneTentacle\SoxAtkTentacle.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\GetIsKinematic.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Conditionals\Physics\HasEnteredCollision.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\IsSleeping.cs" />
@@ -417,6 +424,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\SetSharedString.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\SetSharedRect.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedGameObjectList.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\LookAt\SoxAtkLookAt.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\GameObject\Instantiate.cs" />
     <Compile Include="Assets\Behavior Designer Movement\Scripts\BehaviorSelection.cs" />
     <Compile Include="Assets\Asstes\FightingUnityChan_Asset01\Scripts\CameraController1.cs" />
@@ -541,6 +549,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Conditionals\Physics\HasEnteredTrigger2D.cs" />
     <Compile Include="Assets\Scripts\IA\IAListAttack\PermutationIA.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Animator\SetApplyRootMotion.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\MotionPath\SoxAtkMotionPath.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\AddRelativeForce.cs" />
     <Compile Include="Assets\Scripts\StatusManager.cs" />
     <Compile Include="Assets\Scripts\List Attack\HeavyAttack.cs" />
@@ -609,6 +618,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\GameObject\ActiveInHierarchy.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Light\SetShadowStrength.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Quaternion\Angle.cs" />
+    <Compile Include="Assets\Thunder_Lightning_Electricity_Fx\Script\MagicAttack.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Animator\IsInTransition.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\CharacterController\GetStepOffset.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\CapsuleCollider\GetRadius.cs" />
@@ -616,6 +626,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\AudioSource\SetPan.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Math\Lerp.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Conditionals\Physics\HasEnteredTrigger.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\SampleResources\TestResources\FPSDisplay.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\CircleCollider2D\GetOffset.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\CompareSharedBool.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
@@ -671,6 +682,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\String\GetLength.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Light\GetShadowBias.cs" />
     <Compile Include="Assets\Asstes\FightingUnityChan_Asset04\Scripts\CameraController4.cs" />
+    <Compile Include="Assets\Ultimate Impact Fx\Script\SwitchBackground.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Composites\SelectorEvaluator.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\SetSharedColor.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Vector2\Dot.cs" />
@@ -701,6 +713,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Transform\SetForwardVector.cs" />
     <Compile Include="Assets\Behavior Designer Movement\Scripts\Tasks\Flee.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Animator\StartRecording.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\JiggleBoneTentacle\SoxAtkJiggleBone.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\SetFreezeRotation.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Animator\GetStringToHash.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Input\GetMousePosition.cs" />
@@ -746,6 +759,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Animation\Blend.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\Play.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Time\GetRealtimeSinceStartup.cs" />
+    <Compile Include="Assets\Thunder_Lightning_Electricity_Fx\Script\ElectricLine.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\AudioSource\GetMaxDistance.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Conditionals\Reflection\ComparePropertyValue.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Transform\GetLocalEulerAngles.cs" />
@@ -821,6 +835,7 @@
      <None Include="Assets\Log\LOG_202112071811291159.txt" />
      <None Include="Assets\KawaseBlur\KawaseBlur.shader" />
      <None Include="Assets\Log\LOG_202111291428433359.txt" />
+     <None Include="Assets\Log\LOG_202112090049400530.txt" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset03\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
      <None Include="Assets\Log\LOG_202111292019114347.txt" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset02\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
@@ -858,11 +873,13 @@
      <None Include="Assets\Log\LOG_202111291427301284.txt" />
      <None Include="Assets\Log\LOG_202112051944203889.txt" />
      <None Include="Assets\Log\LOG_202111292335350783.txt" />
+     <None Include="Assets\Thunder_Lightning_Electricity_Fx\Shader\ParticleDissolve.shader" />
      <None Include="Assets\Log\LOG_202111292037001207.txt" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
      <None Include="Assets\Log\LOG_202112042256145446.txt" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset02\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
      <None Include="Assets\Log\LOG_202112081417506019.txt" />
+     <None Include="Assets\Log\LOG_202112090035296065.txt" />
      <None Include="Assets\Frank_Slash_Pack\Documentation\Frank_Dual.txt" />
      <None Include="Assets\Log\LOG_202111292114579808.txt" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
@@ -938,6 +955,7 @@
      <None Include="Assets\Asstes\FightingUnityChan_Asset03\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
      <None Include="Assets\Log\LOG_202112042359037066.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\Log\LOG_202112090102012304.txt" />
      <None Include="Assets\Log\LOG_202111291546019275.txt" />
      <None Include="Assets\Log\LOG_202111292321192725.txt" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset04\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
@@ -946,6 +964,7 @@
      <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
      <None Include="Assets\Log\LOG_202112081458127134.txt" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
+     <None Include="Assets\Log\LOG_202112090119390262.txt" />
      <None Include="Assets\Log\LOG_202112071814397925.txt" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
      <None Include="Assets\Log\LOG_202111280039551088.txt" />
@@ -1067,6 +1086,7 @@
      <None Include="Assets\Log\LOG_202111291445437452.txt" />
      <None Include="Assets\Log\LOG_202111292113268657.txt" />
      <None Include="Assets\Log\LOG_202112041703255748.txt" />
+     <None Include="Assets\Log\LOG_202112090116323031.txt" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset06\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
      <None Include="Assets\Log\LOG_202111292300478581.txt" />
      <None Include="Assets\Log\LOG_202112052016214424.txt" />

@@ -57,9 +57,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Behavior Designer\Editor\BehaviorTreeInspector.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\JiggleBoneTentacle\Editor\SoxAtkTentacleEditor.cs" />
     <Compile Include="Assets\Behavior Designer\Editor\Object Drawers\FloatSliderDrawer.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\AnimPoseCopyPaste\Editor\SoxAtkAnimPoseCopyPaste.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\MotionPath\Editor\SoxAtkMotionPathMenu.cs" />
     <Compile Include="Assets\Behavior Designer\Editor\Object Drawers\IntSliderDrawer.cs" />
     <Compile Include="Assets\Behavior Designer\Editor\ExternalBehaviorTreeInspector.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\JiggleBoneTentacle\Editor\SoxAtkSphereColliderMenu.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\JiggleBoneTentacle\Editor\SoxAtkJiggleBoneEditor.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\JiggleBoneSimple\Editor\SoxAtkJiggleBoneSimpleEditor.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\DragTransform\Editor\SoxAtkDragTransformEditor.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\LookAt\Editor\SoxAtkLookAtEditor.cs" />
+    <Compile Include="Assets\SoxAnimationToolkit\MotionPath\Editor\SoxAtkMotionPathEditor.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Behavior Designer\Editor\BehaviorDesigner.Editor.dll" />
