@@ -1,580 +1,197 @@
-<<<<<<< refs/remotes/origin/Valentin
 Using pre-set license
 Built from '2020.2/release' branch; Version is '2020.2.2f1 (068178b99f32) revision 426360'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Enterprise; OS build 19043.1348; Version 2009; 64bit' Language: 'fr' Physical Memory: 16323 MB
+OS: 'Windows 10 Home; OS build 22000.318; Version 2009; 64bit' Language: 'fr' Physical Memory: 16224 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-D:\2020.2.2f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/Super Slash Saga/SuperSlashSaga
+C:/Users/flori/Documents/Projet Unity/SuperSlashSaga
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58542
-Successfully changed project path to: D:/Super Slash Saga/SuperSlashSaga
-D:/Super Slash Saga/SuperSlashSaga
+63651
+Successfully changed project path to: C:/Users/flori/Documents/Projet Unity/SuperSlashSaga
+C:/Users/flori/Documents/Projet Unity/SuperSlashSaga
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 120.05 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 174.65 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.2f1 (068178b99f32)
-[Subsystems] Discovering subsystems at path D:/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Super Slash Saga/SuperSlashSaga/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/flori/Documents/Projet Unity/SuperSlashSaga/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 2080 (ID=0x1e87)
+    Renderer: NVIDIA GeForce GTX 1050 with Max-Q Design (ID=0x1c92)
     Vendor:   
-    VRAM:     8010 MB
-    Driver:   30.0.14.7212
+    VRAM:     4021 MB
+    Driver:   30.0.14.9709
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
-Mono path[0] = 'D:/2020.2.2f1/Editor/Data/Managed'
-Mono path[1] = 'D:/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'D:/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56672
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56436
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000874 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003269 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 112.34 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 167.19 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.076 seconds
+- Completed reload, in  3.326 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002466 seconds.
+Registered in 0.014829 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 130.60 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 183.60 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.360 seconds
+- Completed reload, in  2.065 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.83 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 3.01 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4608 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 259.7 MB.
-System memory in use after: 260.0 MB.
+Unloading 4586 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 226.5 MB.
+System memory in use after: 226.8 MB.
 
-Unloading 144 unused Assets to reduce memory usage. Loaded Objects now: 5187.
-Total: 3.595800 ms (FindLiveObjects: 0.521800 ms CreateObjectMapping: 0.253200 ms MarkObjects: 2.519600 ms  DeleteObjects: 0.299400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  requireTextureImportCompression: false -> true
-========================================================================
-Received Import Request.
-  path: Assets/Prefabs/characters/Yuetsu 2.prefab
-  artifactKey: Guid(159e8553e72ce814d80d71140c35185f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Yuetsu 2.prefab using Guid(159e8553e72ce814d80d71140c35185f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22df1084855946595ae49494513f9c67') in 0.483798 seconds
-  Import took 0.494599 seconds .
+Unloading 145 unused Assets to reduce memory usage. Loaded Objects now: 5056.
+Total: 6.079100 ms (FindLiveObjects: 1.145100 ms CreateObjectMapping: 0.613500 ms MarkObjects: 4.029800 ms  DeleteObjects: 0.286700 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000284 seconds.
-  path: Assets/Prefabs/characters/YuetsuPlayer.prefab
-  artifactKey: Guid(c1b8d6da67c9ecc4c80195d64c63902b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/YuetsuPlayer.prefab using Guid(c1b8d6da67c9ecc4c80195d64c63902b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Yuetsu_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '921ee1b5083725c5854ffda7dd5c4ee5') in 1.490930 seconds
-  Import took 1.506300 seconds .
+  path: Assets/Materials/Terrain Mat/Plaine Mat/Materials/Sakura.mat
+  artifactKey: Guid(90940fa4614cc55408ebe3f4e7adb131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Materials/Sakura.mat using Guid(90940fa4614cc55408ebe3f4e7adb131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53c96c7078ad811fa22797c469534d17') in 0.402816 seconds
+  Import took 0.416325 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000293 seconds.
-  path: Assets/Prefabs/characters/Yuetsu.prefab
-  artifactKey: Guid(8edea63c9655fd547b2e5e294c70e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Yuetsu.prefab using Guid(8edea63c9655fd547b2e5e294c70e625) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Yuetsu_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '54c1e8efb2577eb5259140ab199a3e4e') in 1.070193 seconds
-  Import took 1.087183 seconds .
+  Time since last request: 0.000483 seconds.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/Materials/tree.mat
+  artifactKey: Guid(59510314d0820964bb536bbe937a3f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Materials/tree.mat using Guid(59510314d0820964bb536bbe937a3f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '937bcd3e3f5e4b6e90edf7e6c46442ed') in 0.052806 seconds
+  Import took 0.065353 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000223 seconds.
-  path: Assets/Prefabs/characters/Daiki.prefab
-  artifactKey: Guid(4f2f6848173e3414699c3ad5ab2fbffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki.prefab using Guid(4f2f6848173e3414699c3ad5ab2fbffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'aef1f3ced83b413289bdbef83e05fe52') in 0.846820 seconds
-  Import took 0.863662 seconds .
+  Time since last request: 0.000253 seconds.
+  path: Assets/Materials/Terrain Mat/Décors/Arbre.mat
+  artifactKey: Guid(b8fa76414cb2e084fa1f0afc34fac0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Décors/Arbre.mat using Guid(b8fa76414cb2e084fa1f0afc34fac0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '253c3f423bca107c93342254e8a81060') in 0.070422 seconds
+  Import took 0.081368 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000333 seconds.
-  path: Assets/Prefabs/characters/Yuetsu 1.prefab
-  artifactKey: Guid(a276f77faec753d49a3ae99b4f4ea614) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Yuetsu 1.prefab using Guid(a276f77faec753d49a3ae99b4f4ea614) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bff51f5b18efa07b628b9818fcec23de') in 0.061622 seconds
-  Import took 0.081810 seconds .
+  Time since last request: 0.000218 seconds.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/Materials
+  artifactKey: Guid(c4f297ee5c3a8aa4a9496bc8b7d5b82a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Materials using Guid(c4f297ee5c3a8aa4a9496bc8b7d5b82a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62f5f976babfa77e6181c6d3799e3b61') in 0.011358 seconds
+  Import took 0.025003 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000382 seconds.
-  path: Assets/Prefabs/characters/Yuetsu IA.prefab
-  artifactKey: Guid(2ae3b7279b681ca429d0bb80e1ba3288) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Yuetsu IA.prefab using Guid(2ae3b7279b681ca429d0bb80e1ba3288) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Yuetsu_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '93daf1261efea1b5e5b3090e702d1609') in 1.101047 seconds
-  Import took 1.113879 seconds .
+  Time since last request: 15.375807 seconds.
+  path: Assets/Prefabs/Models/Japanese_Arch_Low.FBX
+  artifactKey: Guid(b12aa8a70808405458fa7f4cad1ebe39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Japanese_Arch_Low.FBX using Guid(b12aa8a70808405458fa7f4cad1ebe39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6f205fcf8a704268bbe581e76ae92ad') in 0.127407 seconds
+  Import took 0.143280 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000286 seconds.
-  path: Assets/Prefabs/characters/YuetsuPlayer 1.prefab
-  artifactKey: Guid(31a1f5e854e53b04591e9778081bf6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/YuetsuPlayer 1.prefab using Guid(31a1f5e854e53b04591e9778081bf6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '042f296148018261cf6a7cdc073c9236') in 0.066078 seconds
-  Import took 0.076618 seconds .
+  Time since last request: 12.465577 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(ebf3f236972c079449df58dec9d003b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(ebf3f236972c079449df58dec9d003b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0980ed1003a9d46a1949a290eb9f6fae') in 0.015046 seconds
+  Import took 0.029199 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 41.030611 seconds.
-  path: Assets/Prefabs/characters/Daiki.prefab
-  artifactKey: Guid(4f2f6848173e3414699c3ad5ab2fbffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki.prefab using Guid(4f2f6848173e3414699c3ad5ab2fbffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'f307f8bcaeda06f69a6b9e83781c64ac') in 0.777936 seconds
-  Import took 0.827984 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003377 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.25 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.790 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.38 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4318 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 257.2 MB.
-System memory in use after: 257.5 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5239.
-Total: 4.492800 ms (FindLiveObjects: 0.676400 ms CreateObjectMapping: 0.363800 ms MarkObjects: 3.281000 ms  DeleteObjects: 0.169700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  requireTextureImportCompression: false -> true
-========================================================================
-Received Import Request.
-  Time since last request: 265.504492 seconds.
-  path: Assets/Dragon Shot/Prefab/Dragon_Shot.prefab
-  artifactKey: Guid(ce918d57156411541b82ab578aa89c31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Dragon Shot/Prefab/Dragon_Shot.prefab using Guid(ce918d57156411541b82ab578aa89c31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30f911b56e46b2baaeec9c6fe0cbe571') in 0.359025 seconds
-  Import took 0.578659 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002501 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.72 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.707 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.75 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4318 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 257.4 MB.
-System memory in use after: 257.7 MB.
-
-Unloading 138 unused Assets to reduce memory usage. Loaded Objects now: 5278.
-Total: 8.601800 ms (FindLiveObjects: 0.928000 ms CreateObjectMapping: 0.788900 ms MarkObjects: 6.724000 ms  DeleteObjects: 0.158800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  requireTextureImportCompression: false -> true
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004165 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.67 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.905 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.57 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4318 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 257.5 MB.
-System memory in use after: 257.7 MB.
-
-Unloading 138 unused Assets to reduce memory usage. Loaded Objects now: 5280.
-Total: 7.087000 ms (FindLiveObjects: 0.940100 ms CreateObjectMapping: 0.575600 ms MarkObjects: 5.415200 ms  DeleteObjects: 0.154400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  requireTextureImportCompression: false -> true
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002857 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.39 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.456 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.39 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4318 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 257.5 MB.
-System memory in use after: 257.8 MB.
-
-Unloading 138 unused Assets to reduce memory usage. Loaded Objects now: 5282.
-Total: 5.291800 ms (FindLiveObjects: 0.593500 ms CreateObjectMapping: 0.420500 ms MarkObjects: 4.092200 ms  DeleteObjects: 0.182400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  requireTextureImportCompression: false -> true
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002810 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.51 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.214 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.37 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4318 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 257.3 MB.
-System memory in use after: 257.6 MB.
-
-Unloading 138 unused Assets to reduce memory usage. Loaded Objects now: 5284.
-Total: 4.472700 ms (FindLiveObjects: 0.775500 ms CreateObjectMapping: 0.292200 ms MarkObjects: 3.253600 ms  DeleteObjects: 0.149100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  requireTextureImportCompression: false -> true
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
-=======
-Using pre-set license
-Built from '2020.2/release' branch; Version is '2020.2.2f1 (068178b99f32) revision 426360'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Education; OS build 19043.1237; Version 2009; 64bit' Language: 'fr' Physical Memory: 16289 MB
-BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
-
- COMMAND LINE ARGUMENTS:
-D:\Unity\2020.2.2f1\Editor\Unity.exe
--adb2
--batchMode
--noUpm
--name
-AssetImportWorker0
--projectPath
-C:/Users/X-trem/Documents/Unity/Depot Local/SuperSlashSaga
--logFile
-Logs/AssetImportWorker0.log
--srvPort
-52010
-Successfully changed project path to: C:/Users/X-trem/Documents/Unity/Depot Local/SuperSlashSaga
-C:/Users/X-trem/Documents/Unity/Depot Local/SuperSlashSaga
-Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 153.70 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 2020.2.2f1 (068178b99f32)
-[Subsystems] Discovering subsystems at path D:/Unity/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/X-trem/Documents/Unity/Depot Local/SuperSlashSaga/Assets
-GfxDevice: creating device client; threaded=0
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1070 (ID=0x1b81)
-    Vendor:   
-    VRAM:     8088 MB
-    Driver:   30.0.14.9613
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Initialize mono
-Mono path[0] = 'D:/Unity/2020.2.2f1/Editor/Data/Managed'
-Mono path[1] = 'D:/Unity/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'D:/Unity/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56412
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.031636 seconds.
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 242.58 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  7.443 seconds
-Platform modules already initialized, skipping
-Registering precompiled user dll's ...
-Registered in 0.052969 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 139.26 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.680 seconds
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 1.88 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4474 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 234.9 MB.
-System memory in use after: 235.1 MB.
-
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4988.
-Total: 4.102900 ms (FindLiveObjects: 0.581900 ms CreateObjectMapping: 0.440200 ms MarkObjects: 2.911100 ms  DeleteObjects: 0.168000 ms)
+  Time since last request: 163.673054 seconds.
+  path: Assets/Prefabs/Models/Arbor.fbx
+  artifactKey: Guid(032992441c27f7446a690424c011a1ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Arbor.fbx using Guid(032992441c27f7446a690424c011a1ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '448b17cab950967f504f67bd72b80672') in 0.866815 seconds
+  Import took 0.879484 seconds .
 
 ========================================================================
 Received Import Request.
-  path: Assets/Shaders/AnimeRender_Renderer.asset
-  artifactKey: Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/AnimeRender_Renderer.asset using Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58acff085152d09aa6d17001d95fa05b') in 0.082166 seconds
-  Import took 0.094438 seconds .
+  Time since last request: 3.343251 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.FBX
+  artifactKey: Guid(7d0186b5e0a55b14a84eaf0967d74de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.FBX using Guid(7d0186b5e0a55b14a84eaf0967d74de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3bb2999c055333d987a275f6c87fe00') in 2.735753 seconds
+  Import took 2.752966 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000303 seconds.
-  path: Assets/Shaders/Shield.mat
-  artifactKey: Guid(57acc3c1dfc021b4781a97a3a4c32bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/Shield.mat using Guid(57acc3c1dfc021b4781a97a3a4c32bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '904bc9607841cb430e963bb3145de7e6') in 0.322093 seconds
-  Import took 0.333166 seconds .
+  Time since last request: 0.016054 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.FBX
+  artifactKey: Guid(7d0186b5e0a55b14a84eaf0967d74de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.FBX using Guid(7d0186b5e0a55b14a84eaf0967d74de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3bb2999c055333d987a275f6c87fe00') in 2.380514 seconds
+  Import took 2.397115 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000194 seconds.
-  path: Assets/Shaders/AnimeRender.asset
-  artifactKey: Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/AnimeRender.asset using Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '864eccf9b5bdaf4bbd0282ba9fe1aebb') in 0.008813 seconds
-  Import took 0.017456 seconds .
+  Time since last request: 203.367410 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab
+  artifactKey: Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab using Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e322d119e4cb50a7e2794a6fc61b14a') in 0.053237 seconds
+  Import took 0.072589 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000237 seconds.
-  path: Assets/Shaders/Test.mat
-  artifactKey: Guid(6768a894c479a3b4aa93a3ebe174be61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/Test.mat using Guid(6768a894c479a3b4aa93a3ebe174be61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28a06b3a75ee573f8b85c7f6ccfc4566') in 0.020265 seconds
-  Import took 0.030008 seconds .
+  Time since last request: 0.011026 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab
+  artifactKey: Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab using Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e322d119e4cb50a7e2794a6fc61b14a') in 0.046975 seconds
+  Import took 0.064117 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000186 seconds.
-  path: Assets/Shaders/YuetsuSwordShader.mat
-  artifactKey: Guid(356e21ac3696a9b439508301326e8ca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/YuetsuSwordShader.mat using Guid(356e21ac3696a9b439508301326e8ca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32ae0031f7f6afc1ebfa887821fffcbc') in 0.015976 seconds
-  Import took 0.023606 seconds .
+  Time since last request: 50.040965 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.FBX
+  artifactKey: Guid(7d0186b5e0a55b14a84eaf0967d74de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.FBX using Guid(7d0186b5e0a55b14a84eaf0967d74de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19d4698e35d4eb9737cc59d5285d92ab') in 2.001621 seconds
+  Import took 2.023506 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000204 seconds.
-  path: Assets/Shaders/Test.mat
-  artifactKey: Guid(6768a894c479a3b4aa93a3ebe174be61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/Test.mat using Guid(6768a894c479a3b4aa93a3ebe174be61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28a06b3a75ee573f8b85c7f6ccfc4566') in 0.010429 seconds
-  Import took 0.020610 seconds .
+  Time since last request: 35.699284 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab
+  artifactKey: Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab using Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0418497bf603aa647bf01ba0e6c83b5') in 0.055832 seconds
+  Import took 0.071654 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000230 seconds.
-  path: Assets/Shaders/New Flare.flare
-  artifactKey: Guid(38a81ebd02afc864ba1ee82805513594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/New Flare.flare using Guid(38a81ebd02afc864ba1ee82805513594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45d89806f4dbc77131f677f405f593f9') in 0.013174 seconds
-  Import took 0.023681 seconds .
+  Time since last request: 0.015935 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab
+  artifactKey: Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab using Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0418497bf603aa647bf01ba0e6c83b5') in 0.046916 seconds
+  Import took 0.061869 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000183 seconds.
-  path: Assets/Shaders/MeteorMaterial.mat
-  artifactKey: Guid(e549a321174672247bf5001b9b73af30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/MeteorMaterial.mat using Guid(e549a321174672247bf5001b9b73af30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3c2237cefccae57bf732958fb5af69e') in 0.016404 seconds
-  Import took 0.026373 seconds .
-
-========================================================================
-Received Prepare
-Switching render pipeline 26bbf5833ffa0e24997df2926fc5406e -> 00000000000000000000000000000000
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 4.81 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 139.0 MB.
-System memory in use after: 139.2 MB.
-
-Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 5027.
-Total: 4.439100 ms (FindLiveObjects: 0.548800 ms CreateObjectMapping: 0.193400 ms MarkObjects: 3.557900 ms  DeleteObjects: 0.135900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.068160 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 119.56 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.917 seconds
-Platform modules already initialized, skipping
-Switching render pipeline 26bbf5833ffa0e24997df2926fc5406e -> 00000000000000000000000000000000
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.48 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4329 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 232.8 MB.
-System memory in use after: 233.0 MB.
-
-Unloading 133 unused Assets to reduce memory usage. Loaded Objects now: 5081.
-Total: 5.475800 ms (FindLiveObjects: 0.634400 ms CreateObjectMapping: 0.365900 ms MarkObjects: 4.195800 ms  DeleteObjects: 0.278200 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 1402.169565 seconds.
-  path: Assets/Shaders/Outline.shadersubgraph
-  artifactKey: Guid(739506a01f7ccd84db9180497708e1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/Outline.shadersubgraph using Guid(739506a01f7ccd84db9180497708e1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '518b4ce395e2b86b9aebb91cfca2193c') in 0.045131 seconds
-  Import took 0.056877 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2486.494394 seconds.
-  path: Assets/Shaders/AnimeRender_Renderer.asset
-  artifactKey: Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/AnimeRender_Renderer.asset using Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf5f68ab7da867bd53772df3f0996898') in 0.010943 seconds
-  Import took 0.029457 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.027554 seconds.
-  path: Assets/Shaders/AnimeRender_Renderer.asset
-  artifactKey: Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/AnimeRender_Renderer.asset using Guid(4402d4c178429db43803f4027829976f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf5f68ab7da867bd53772df3f0996898') in 0.008438 seconds
-  Import took 0.019976 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.745609 seconds.
-  path: Assets/Shaders/AnimeRender.asset
-  artifactKey: Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/AnimeRender.asset using Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '837aaeb2883d9f38b154d49860440ab0') in 0.008173 seconds
-  Import took 0.017324 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.019525 seconds.
-  path: Assets/Shaders/AnimeRender.asset
-  artifactKey: Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Shaders/AnimeRender.asset using Guid(26bbf5833ffa0e24997df2926fc5406e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '837aaeb2883d9f38b154d49860440ab0') in 0.005686 seconds
-  Import took 0.013939 seconds .
-
-========================================================================
-Received Prepare
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 4.87 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 11 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 146.8 MB.
-System memory in use after: 147.0 MB.
-
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 5084.
-Total: 9.364400 ms (FindLiveObjects: 0.895300 ms CreateObjectMapping: 0.453600 ms MarkObjects: 7.815600 ms  DeleteObjects: 0.197000 ms)
+  Time since last request: 306.081444 seconds.
+  path: Assets/Prefabs/Models/Texture Models
+  artifactKey: Guid(34bd0d33c419fab4c83081b8d51e9bd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Texture Models using Guid(34bd0d33c419fab4c83081b8d51e9bd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '290c4735dd67a61e508aac7f6aebba21') in 0.010843 seconds
+  Import took 0.021684 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
->>>>>>> Re-Import ALL
