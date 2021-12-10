@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-[RequireComponent(typeof(Camera))]
+using Cinemachine;
+[RequireComponent(typeof(CinemachineVirtualCamera))]
 public class MultiTargetCamera : MonoBehaviour
 {
     public List<Transform> playersTransforms;
@@ -12,7 +12,7 @@ public class MultiTargetCamera : MonoBehaviour
     public float shortSmoothTime = .5f;
     public float longSmoothTime = 5f;
     private GameObject[] allPlayers;
-    private Camera cam;
+    private CinemachineVirtualCamera cam;
     public Vector3 finalPosition;
     public Vector3 planarDirection;
     private float targetVerticalAngle;
@@ -49,7 +49,7 @@ public class MultiTargetCamera : MonoBehaviour
 
     private void Start()
     {
-        cam = GetComponent<Camera>();
+        cam = GetComponent<CinemachineVirtualCamera>();
         playersTransforms = GetAllPlayersTransforms(playersTransforms);
     }
 

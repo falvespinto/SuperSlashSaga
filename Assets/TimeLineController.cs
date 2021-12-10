@@ -34,7 +34,7 @@ public class TimeLineController : MonoBehaviour
             }
             if (track.name == "Camera")
             {
-                fullCombo.SetGenericBinding(track, camera);
+                fullCombo.SetGenericBinding(track, GameObject.Find("CameraBrain").GetComponent<CinemachineBrain>());
             }
         }
         fullCombo.Play();

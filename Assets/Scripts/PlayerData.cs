@@ -17,6 +17,7 @@ public class PlayerData : MonoBehaviour
     IAmanager iaManager;
     public GameObject blurPanel;
 
+
     // Start is called before the first frame update
     void Awake()
     {

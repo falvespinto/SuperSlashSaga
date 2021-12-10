@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     public float hurtTimeUltimate;
     public Vector3 offSet;
     public float hurtTime = 0;
-
+    public string characterName;
     public Sprite faceSprite;
 
     public bool manaUp = false;

@@ -103,7 +103,7 @@ public class PlayerAttack : MonoBehaviour
     }
     public void Start()
     {
-        comboCam.gameObject.SetActive(false);
+        //comboCam.gameObject.SetActive(false);
         default_Combo_Timer = light3AttackTime;
         default_Combo_Timer_Run = runLightAtkTime + runLightAtk2Time;
         default_BottomCombo_Timer = bottomLightAttackTime + bottomLight2AttackTime - 1.2f;
@@ -218,16 +218,11 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
-    public IEnumerator SwitchCamera(float time)
+    public IEnumerator ResetCombo(float time)
     {
-        playerData.cam.enabled = false;
-        comboCam.gameObject.SetActive(true); //comboCam.enabled = true;
         yield return new WaitForSeconds(time);
-        comboCam.gameObject.SetActive(false); //comboCam.enabled = false;
-        playerData.cam.enabled = true;
         player.isInCombo = false;
         playerHit.GetComponent<Player>().isInCombo = false;
-
     }
     public IEnumerator ForwardAttack(float attackTime, Vector3 direction, float attackSpeed)
     {
