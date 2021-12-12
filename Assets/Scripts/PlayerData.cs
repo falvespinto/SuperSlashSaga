@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerData : MonoBehaviour
 {
     public int playerIndex;
-    public Transform camera;
-    public Camera cam;
+    //public Transform camera;
+    public CinemachineVirtualCamera cam;
     public HealthBar healthBar;
     public ManaBar manabar;
     public PermutationBar permutationBar;
@@ -21,7 +22,7 @@ public class PlayerData : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        camera = cam.transform;
+        //camera = cam.transform;
     }
     private void Start()
     {

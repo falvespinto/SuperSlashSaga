@@ -208,11 +208,11 @@ public class UltimateAttackYuetsu : MonoBehaviour, UltimateAttack
 
     public IEnumerator SwitchCamera(float time)
     {
-        playerData.cam.enabled = false;
-        ultimateCam.gameObject.SetActive(true); //comboCam.enabled = true;
+       // playerData.cam.enabled = false;
+       // ultimateCam.gameObject.SetActive(true); //comboCam.enabled = true;
         yield return new WaitForSeconds(time);
-        ultimateCam.gameObject.SetActive(false); //comboCam.enabled = false;
-        playerData.cam.enabled = true;
+        //ultimateCam.gameObject.SetActive(false); //comboCam.enabled = false;
+        //playerData.cam.enabled = true;
     }
 
     public IEnumerator HasProcFullUlt(float time)

@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         firstTimeRunning = true;
-        cam = playerData.camera;
+        cam = playerData.cam.transform;
         isAttacking = false;
     }
     void Update()

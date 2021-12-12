@@ -2,7 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class LightAttack : MonoBehaviour
 {
     public enum LightComboState
@@ -48,6 +48,8 @@ public class LightAttack : MonoBehaviour
     public float timeBeforeCancelLight3;
     public float timeBeforeCancelLight4;
     public float timeOfCombo;
+    //Log
+    public static Action<int> onComboTriggered;
 
     private void Awake()
     {
@@ -204,6 +206,7 @@ public class LightAttack : MonoBehaviour
          {
             if (playerAttack.playerHit.GetComponent<Permutation>().hasPermuted == false)
             {
+                onComboTriggered?.Invoke(player.playerIndex);
                 playerAttack.isAttacking = true;
                 playerController.isRunning = false;
                 playerAttack.playerHit.GetComponent<Player>().isInCombo = true;
@@ -225,7 +228,7 @@ public class LightAttack : MonoBehaviour
                 StartCoroutine(playerAttack.ResetCombo(timeOfCombo));
                 Invoke("AttackComplete", timeOfCombo);
                 StartCoroutine(playerAttack.playerHit.GetComponent<Player>().goInEnemyCombo(timeOfCombo));
-                GetComponent<TimeLineController>().PerformFullCombo(playerAttack.m_Animator, playerAttack.playerHit.GetComponent<Animator>(), playerData.cam.GetComponent<CinemachineBrain>());
+                GetComponent<TimeLineController>().PerformFullCombo(playerAttack.m_Animator, playerAttack.playerHit.GetComponent<Animator>());
             }
         }
     }

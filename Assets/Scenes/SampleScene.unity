@@ -377,18 +377,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd0d20c83dab3945999e3e076663cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  J1: {fileID: 1255808040}
+  J2: {fileID: 1735635068}
   J1Light: 0
   J1Heavy: 0
   J1Ulti: 0
   J1Dash: 0
   J1ParadeUsed: 0
   J1ParadeTriggered: 0
+  J1ComboTriggered: 0
+  J1GuardBroke: 0
   J2Light: 0
   J2Heavy: 0
   J2Ulti: 0
   J2Dash: 0
   J2ParadeUsed: 0
   J2ParadeTriggered: 0
+  J2ComboTriggered: 0
+  J2GuardBroke: 0
 --- !u!4 &33388618
 Transform:
   m_ObjectHideFlags: 0
@@ -2699,7 +2705,9 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4343,7 +4351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344872657}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 3.64, y: 100.3, z: -166.8}
+  m_LocalPosition: {x: 2.57, y: 100.3, z: -166.8}
   m_LocalScale: {x: 9.526685, y: 9.526683, z: 9.526685}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7075,7 +7083,19 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17148,7 +17168,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 40
+    FieldOfView: 60
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -20821,8 +20841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 0
-  camera: {fileID: 0}
-  cam: {fileID: 0}
+  cam: {fileID: 975384285}
   healthBar: {fileID: 687181024}
   manabar: {fileID: 1630068475}
   permutationBar: {fileID: 442348193}
@@ -24973,7 +24992,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -26539,8 +26558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 1
-  camera: {fileID: 0}
-  cam: {fileID: 0}
+  cam: {fileID: 975384285}
   healthBar: {fileID: 861036794}
   manabar: {fileID: 2085790570}
   permutationBar: {fileID: 76083105}

@@ -228,25 +228,25 @@ public class PlayerAttackIA : MonoBehaviour
     }
     public IEnumerator SwitchCamera(float time)
     {
-        playerData.cam.enabled = false;
+        //playerData.cam.enabled = false;
         comboCam.gameObject.SetActive(true); //comboCam.enabled = true;
         lightAttackIA.isInCombo = true;
         yield return new WaitForSeconds(time);
         comboCam.gameObject.SetActive(false); //comboCam.enabled = false;
-        playerData.cam.enabled = true;
+        //playerData.cam.enabled = true;
         lightAttackIA.isInCombo = false;
 
     }
 
     public IEnumerator FullScreenCamera(float time)
     {
-        posCam = playerData.cam.rect;
-        posCamOpponent = playerData.target.GetComponentInParent<PlayerData>().cam.rect;
-        playerData.cam.rect = new Rect(0f, 0f, 1f, 1f);
-        playerData.target.GetComponentInParent<PlayerData>().cam.rect = new Rect(0f, 0f, 0f, 0f);
+       // posCam = playerData.cam.rect;
+       // posCamOpponent = playerData.target.GetComponentInParent<PlayerData>().cam.rect;
+       // playerData.cam.rect = new Rect(0f, 0f, 1f, 1f);
+      //  playerData.target.GetComponentInParent<PlayerData>().cam.rect = new Rect(0f, 0f, 0f, 0f);
         yield return new WaitForSeconds(time);
-        playerData.cam.rect = posCam;
-        playerData.target.GetComponentInParent<PlayerData>().cam.rect = posCamOpponent;
+      //  playerData.cam.rect = posCam;
+       // playerData.target.GetComponentInParent<PlayerData>().cam.rect = posCamOpponent;
     }
     public IEnumerator ForwardAttack(float attackTime, Vector3 direction, float attackSpeed)
     {

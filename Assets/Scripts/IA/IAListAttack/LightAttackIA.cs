@@ -283,7 +283,7 @@ public class LightAttackIA : MonoBehaviour
             StartCoroutine(playerAttackIA.SwitchCamera(7.5f));
             Invoke("AttackComplete", 7.5f);
             StartCoroutine(playerAttackIA.playerHit.GetComponent<Player>().goInEnemyCombo(7.5f));
-            GetComponent<TimeLineController>().PerformFullCombo(playerAttackIA.m_Animator, playerAttackIA.playerHit.GetComponent<Animator>(), playerData.cam.GetComponent<CinemachineBrain>());
+            //GetComponent<TimeLineController>().PerformFullCombo(playerAttackIA.m_Animator, playerAttackIA.playerHit.GetComponent<Animator>(), playerData.cam.GetComponent<CinemachineBrain>());
         }
     }
     // A remplacer par une coroutine plus tard

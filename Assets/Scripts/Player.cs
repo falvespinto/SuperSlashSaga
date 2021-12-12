@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     public bool manaUp = false;
 
     public static Action<int> OnDeath;
-
+    public static Action<int> onGuardBroke;
     void Awake()
     {
         isDead = false;
@@ -116,6 +116,7 @@ public class Player : MonoBehaviour
             {
                 //StopCoroutine(ResetIsTakingDamage(GuardBreakTime));
                 //StartCoroutine(ResetIsTakingDamage(GuardBreakTime));
+                onGuardBroke?.Invoke(playerIndex);
                 stunTime(GuardBreakTime);
                 Invoke("ResetIsTakingDamage", GuardBreakTime);
                 animator.SetTrigger("Guard_Break");
@@ -281,7 +282,7 @@ public class Player : MonoBehaviour
     public void stunTime(float time)
     {
         isTakingDamage = true;
-        hurtTime += time;
+        hurtTime = time;
     }
 
     public void AnimTest()

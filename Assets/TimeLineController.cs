@@ -19,7 +19,7 @@ public class TimeLineController : MonoBehaviour
         ultimateAttack = GetComponent<UltimateAttack>();
     }
 
-    public void PerformFullCombo(Animator attaquant, Animator defenseur, CinemachineBrain camera)
+    public void PerformFullCombo(Animator attaquant, Animator defenseur)
     {
         TimelineAsset timeline = (TimelineAsset)fullCombo.playableAsset;
         foreach (var track in timeline.GetOutputTracks())

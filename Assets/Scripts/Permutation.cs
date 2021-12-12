@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class Permutation : MonoBehaviour
 {
     public float timeAfterPermute;
@@ -14,6 +14,8 @@ public class Permutation : MonoBehaviour
     public Vector3 offSet;
     public float backwardOffSet;
     public bool hasPermuted = false;
+
+    public static Action<int> onPermutation;
 
     private void Awake()
     {
@@ -41,8 +43,9 @@ public class Permutation : MonoBehaviour
     public void Permute()
     {
         // Will permute
-        if (playerData.permutationBar.remainingPermutation >= 1)
+        if (playerData.permutationBar.remainingPermutation >= 1 && !player.isDead)
         {
+            onPermutation?.Invoke(player.playerIndex);
             StartCoroutine(HasPermuted());
             player.isTakingDamage = false;
             player.isInEnemyCombo = false;

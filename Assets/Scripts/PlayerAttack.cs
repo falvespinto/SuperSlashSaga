@@ -176,10 +176,13 @@ public class PlayerAttack : MonoBehaviour
     {
         if (ctx.started)
         {
-            Debug.Log("pressedParade");
-            OnParadeUsed?.Invoke(player.playerIndex);
-            paradeButtonPressed = true;
-            parade.InitializedParadeAttack();
+            if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
+            {
+                Debug.Log("pressedParade");
+                OnParadeUsed?.Invoke(player.playerIndex);
+                paradeButtonPressed = true;
+                parade.InitializedParadeAttack();
+            }
         }
         else if (ctx.canceled)
         {
