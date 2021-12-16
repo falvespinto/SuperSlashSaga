@@ -94,6 +94,8 @@ public class PlayerAttack : MonoBehaviour
     public static Action<int> OnParadeUsed;
     public static Action<int> OnParadeTriggered;
     private bool heavyCanAutoCancel;
+
+    public bool test = false;
     private void Awake()
     {
         //   m_Rigidbody = GetComponent<Rigidbody>();

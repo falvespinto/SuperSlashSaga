@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CharacterFresnel
-  m_Shader: {fileID: -6465566751694194690, guid: 7aa0b9ff478cea84fad83d5db9094c8c, type: 3}
+  m_Shader: {fileID: 4800000, guid: 5eaef0e79a5d5ca4d8e8850f959ad7a1, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -55,21 +55,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_26220ece1ad84917a69921969113a07e: 1.22
-    - Vector1_f10d36d072f94eb6b3e747cc4b9ef7bd: 1.55
     - _Amount: 1.22
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -91,11 +77,8 @@ Material:
     - _node_1950: 1.71
     - _node_635: 1.45
     m_Colors:
-    - Color_0a4507e7cf4b46eabbb020e43da6747d: {r: 1, g: 0, b: 0, a: 0}
-    - Color_645ae371e1cd429e8ce41861a405238f: {r: 0.2800049, g: 0.764151, b: 0.23429158, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffuseColor: {r: 0.066037714, g: 0.041472167, b: 0.0034264855, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 0.4324525, g: 0.754717, b: 0.08899963, a: 1}
     - _node_4277: {r: 0.8614693, g: 0.7311321, b: 1, a: 1}
-  m_BuildTextureStacks: []

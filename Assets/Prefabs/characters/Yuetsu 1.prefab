@@ -1146,8 +1146,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.030860424, y: -0.6796275, z: -0.3172245}
-    m_Extent: {x: 4.1381025, y: 0.71469265, z: 5.834996}
+    m_Center: {x: 0.037032127, y: -0.81555325, z: -0.38066864}
+    m_Extent: {x: 4.9657307, y: 0.85763115, z: 7.001998}
   m_DirtyAABB: 0
 --- !u!114 &1937568017947071363
 MonoBehaviour:
@@ -8263,9 +8263,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2430065138829903224}
   - component: {fileID: 6424907266442389020}
-  - component: {fileID: 1718854034453120485}
-  - component: {fileID: 5213051265402555225}
-  - component: {fileID: 2055994996855387593}
   m_Layer: 8
   m_Name: Yuetsu 1
   m_TagString: Untagged
@@ -8308,48 +8305,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1718854034453120485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6735330714013134415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fd156b62c726c142b6a1424927b091d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 0}
-  burn: 0
-  healthBarManager: {fileID: 0}
---- !u!114 &5213051265402555225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6735330714013134415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65fa4214279ffb94f8b75bb75b41b19b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RightHandAttackPoint: {fileID: 8864708881793054219}
---- !u!114 &2055994996855387593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6735330714013134415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1161f6466a3d8e64d8426c9df0bfdee9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fullCombo: {fileID: 0}
-  finalUlt: {fileID: 0}
 --- !u!1 &6985396922101395182
 GameObject:
   m_ObjectHideFlags: 0

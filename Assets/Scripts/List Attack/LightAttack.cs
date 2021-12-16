@@ -56,6 +56,7 @@ public class LightAttack : MonoBehaviour
         //   m_Rigidbody = GetComponent<Rigidbody>();
         playerData = GetComponentInParent<PlayerData>();
         playerController = GetComponent<PlayerController>();
+        controller = GetComponent<CharacterController>();
     }
     void Start()
     {
@@ -141,8 +142,6 @@ public class LightAttack : MonoBehaviour
                     Invoke("AttackComplete", timeBeforeCancelLight4);
                     playerAttack.SetAttacksData(6, "Light");
                     StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
-                    //StartCoroutine(ComboWorkflow());
-                    //Invoke("CheckPerformFullCombo", 0f);
                     player.playerAudio.playSoundLeger();
                 }
 
@@ -211,9 +210,10 @@ public class LightAttack : MonoBehaviour
                 playerController.isRunning = false;
                 playerAttack.playerHit.GetComponent<Player>().isInCombo = true;
                 player.isInCombo = true;
+                yield return new WaitForSeconds(0.3f);
                 playerAttack.playerHit.GetComponent<CharacterController>().enabled = false;
                 controller.enabled = false;
-                Vector3 positionAtk =  GameObject.Find("ReplacePointAtk").transform.position;
+                Vector3 positionAtk = GameObject.Find("ReplacePointAtk").transform.position;
                 Quaternion rotationAtk = GameObject.Find("ReplacePointAtk").transform.rotation;
                 transform.position = positionAtk;
                 transform.rotation = rotationAtk;
@@ -223,7 +223,6 @@ public class LightAttack : MonoBehaviour
                 playerAttack.playerHit.transform.rotation = rotationRcv;
                 controller.enabled = true;
                 playerAttack.playerHit.GetComponent<CharacterController>().enabled = true;
-                yield return new WaitForSeconds(0.3f);
                 //StartCoroutine(InfuseSword(0.15f));
                 StartCoroutine(playerAttack.ResetCombo(timeOfCombo));
                 Invoke("AttackComplete", timeOfCombo);
@@ -237,4 +236,5 @@ public class LightAttack : MonoBehaviour
     {
         playerAttack.isAttacking = false;
     }
+
 }

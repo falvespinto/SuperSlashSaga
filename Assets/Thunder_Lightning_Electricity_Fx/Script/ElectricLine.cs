@@ -10,6 +10,7 @@ public class ElectricLine : MonoBehaviour
     public Material electricMat;
     public int pointCount;
     public float randomValue;
+    public float widthMultiplier = 0.1f;
     private float timer;
     private float timerTimeout = 0.05f;
     Vector3 step;
@@ -19,7 +20,7 @@ public class ElectricLine : MonoBehaviour
     void Start()
     {
         line = gameObject.AddComponent<LineRenderer>();
-        line.widthMultiplier = 0.1f;
+        line.widthMultiplier = widthMultiplier;
         line.positionCount = pointCount;
         line.material = electricMat;
         
@@ -30,6 +31,8 @@ public class ElectricLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        line.widthMultiplier = widthMultiplier;
+        line.positionCount = pointCount;
         line.SetPosition(0, startPoint.transform.position);
         line.SetPosition(pointCount - 1, endPoint.transform.position);
         float offset = Time.time * scrollSpeed;
