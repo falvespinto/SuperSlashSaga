@@ -1,38 +1,47 @@
 Using pre-set license
 Built from '2020.2/release' branch; Version is '2020.2.2f1 (068178b99f32) revision 426360'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Enterprise; OS build 19043.1348; Version 2009; 64bit' Language: 'fr' Physical Memory: 16323 MB
+OS: 'Windows 10 Home; OS build 22000.318; Version 2009; 64bit' Language: 'fr' Physical Memory: 16224 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-D:\2020.2.2f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2020.2.2f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/Super Slash Saga/SuperSlashSaga
+C:/Users/flori/Documents/Projet Unity/SuperSlashSaga
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< HEAD
 52960
 Successfully changed project path to: D:/Super Slash Saga/SuperSlashSaga
 D:/Super Slash Saga/SuperSlashSaga
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 125.82 ms, found 1 plugins.
+=======
+63651
+Successfully changed project path to: C:/Users/flori/Documents/Projet Unity/SuperSlashSaga
+C:/Users/flori/Documents/Projet Unity/SuperSlashSaga
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 174.65 ms, found 1 plugins.
+>>>>>>> master
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.2f1 (068178b99f32)
-[Subsystems] Discovering subsystems at path D:/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Super Slash Saga/SuperSlashSaga/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/flori/Documents/Projet Unity/SuperSlashSaga/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 2080 (ID=0x1e87)
+    Renderer: NVIDIA GeForce GTX 1050 with Max-Q Design (ID=0x1c92)
     Vendor:   
-    VRAM:     8010 MB
-    Driver:   30.0.14.7212
+    VRAM:     4021 MB
+    Driver:   30.0.14.9709
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
+<<<<<<< HEAD
 Mono path[0] = 'D:/2020.2.2f1/Editor/Data/Managed'
 Mono path[1] = 'D:/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
@@ -43,11 +52,24 @@ Register platform support module: D:/2020.2.2f1/Editor/Data/PlaybackEngines/Wind
 Registered in 0.001146 seconds.
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 123.17 ms, found 1 plugins.
+=======
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56436
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003269 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 167.19 ms, found 1 plugins.
+>>>>>>> master
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  1.354 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
@@ -55,16 +77,30 @@ Registered in 0.002396 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 125.30 ms, found 1 plugins.
+=======
+- Completed reload, in  3.326 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.014829 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 183.60 ms, found 1 plugins.
+>>>>>>> master
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  1.382 seconds
+=======
+- Completed reload, in  2.065 seconds
+>>>>>>> master
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+<<<<<<< HEAD
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
 Refreshing native plugins compatible for Editor in 1.41 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
@@ -4884,3 +4920,135 @@ Total: 4.162500 ms (FindLiveObjects: 0.522000 ms CreateObjectMapping: 0.404900 m
 
 AssetImportParameters requested are different than current active one (requested -> active):
   requireTextureImportCompression: false -> true
+=======
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 3.01 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4586 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 226.5 MB.
+System memory in use after: 226.8 MB.
+
+Unloading 145 unused Assets to reduce memory usage. Loaded Objects now: 5056.
+Total: 6.079100 ms (FindLiveObjects: 1.145100 ms CreateObjectMapping: 0.613500 ms MarkObjects: 4.029800 ms  DeleteObjects: 0.286700 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/Materials/Sakura.mat
+  artifactKey: Guid(90940fa4614cc55408ebe3f4e7adb131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Materials/Sakura.mat using Guid(90940fa4614cc55408ebe3f4e7adb131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53c96c7078ad811fa22797c469534d17') in 0.402816 seconds
+  Import took 0.416325 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000483 seconds.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/Materials/tree.mat
+  artifactKey: Guid(59510314d0820964bb536bbe937a3f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Materials/tree.mat using Guid(59510314d0820964bb536bbe937a3f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '937bcd3e3f5e4b6e90edf7e6c46442ed') in 0.052806 seconds
+  Import took 0.065353 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Materials/Terrain Mat/Décors/Arbre.mat
+  artifactKey: Guid(b8fa76414cb2e084fa1f0afc34fac0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Décors/Arbre.mat using Guid(b8fa76414cb2e084fa1f0afc34fac0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '253c3f423bca107c93342254e8a81060') in 0.070422 seconds
+  Import took 0.081368 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Materials/Terrain Mat/Plaine Mat/Materials
+  artifactKey: Guid(c4f297ee5c3a8aa4a9496bc8b7d5b82a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Terrain Mat/Plaine Mat/Materials using Guid(c4f297ee5c3a8aa4a9496bc8b7d5b82a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62f5f976babfa77e6181c6d3799e3b61') in 0.011358 seconds
+  Import took 0.025003 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.375807 seconds.
+  path: Assets/Prefabs/Models/Japanese_Arch_Low.FBX
+  artifactKey: Guid(b12aa8a70808405458fa7f4cad1ebe39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Japanese_Arch_Low.FBX using Guid(b12aa8a70808405458fa7f4cad1ebe39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6f205fcf8a704268bbe581e76ae92ad') in 0.127407 seconds
+  Import took 0.143280 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.465577 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(ebf3f236972c079449df58dec9d003b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(ebf3f236972c079449df58dec9d003b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0980ed1003a9d46a1949a290eb9f6fae') in 0.015046 seconds
+  Import took 0.029199 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 163.673054 seconds.
+  path: Assets/Prefabs/Models/Arbor.fbx
+  artifactKey: Guid(032992441c27f7446a690424c011a1ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Arbor.fbx using Guid(032992441c27f7446a690424c011a1ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '448b17cab950967f504f67bd72b80672') in 0.866815 seconds
+  Import took 0.879484 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.343251 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.FBX
+  artifactKey: Guid(7d0186b5e0a55b14a84eaf0967d74de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.FBX using Guid(7d0186b5e0a55b14a84eaf0967d74de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3bb2999c055333d987a275f6c87fe00') in 2.735753 seconds
+  Import took 2.752966 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016054 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.FBX
+  artifactKey: Guid(7d0186b5e0a55b14a84eaf0967d74de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.FBX using Guid(7d0186b5e0a55b14a84eaf0967d74de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3bb2999c055333d987a275f6c87fe00') in 2.380514 seconds
+  Import took 2.397115 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 203.367410 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab
+  artifactKey: Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab using Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e322d119e4cb50a7e2794a6fc61b14a') in 0.053237 seconds
+  Import took 0.072589 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011026 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab
+  artifactKey: Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab using Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e322d119e4cb50a7e2794a6fc61b14a') in 0.046975 seconds
+  Import took 0.064117 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 50.040965 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.FBX
+  artifactKey: Guid(7d0186b5e0a55b14a84eaf0967d74de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.FBX using Guid(7d0186b5e0a55b14a84eaf0967d74de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19d4698e35d4eb9737cc59d5285d92ab') in 2.001621 seconds
+  Import took 2.023506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.699284 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab
+  artifactKey: Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab using Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0418497bf603aa647bf01ba0e6c83b5') in 0.055832 seconds
+  Import took 0.071654 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015935 seconds.
+  path: Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab
+  artifactKey: Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Ancient_architecture_in_Asia_and_Japan.prefab using Guid(f164fd21675f88749a87621bf153faa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0418497bf603aa647bf01ba0e6c83b5') in 0.046916 seconds
+  Import took 0.061869 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 306.081444 seconds.
+  path: Assets/Prefabs/Models/Texture Models
+  artifactKey: Guid(34bd0d33c419fab4c83081b8d51e9bd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Texture Models using Guid(34bd0d33c419fab4c83081b8d51e9bd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '290c4735dd67a61e508aac7f6aebba21') in 0.010843 seconds
+  Import took 0.021684 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+>>>>>>> master
