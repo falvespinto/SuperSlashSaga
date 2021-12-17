@@ -10,23 +10,15 @@ public class LogCreator : MonoBehaviour
     public static string logFilePath;
     void Start()
     {
-        if (File.Exists(Application.dataPath + "/Log/LOG_202112120154449049.sss"))
-        {
-            string data;
-            using (var stream = System.IO.File.OpenRead(Application.dataPath + "/Log/LOG_202112120154449049.sss"))
-            using (var reader = new System.IO.BinaryReader(stream))
-            {
-                data = reader.ReadString();
-            }
-
-            string decryptedData = SerializationAndEncryption.Decrypt(data);
-
-        }
         if (!LogCreated.logHasBeenCreated)
         {
             LogCreated.logHasBeenCreated = true;
             string timestamp = GetTimestamp(DateTime.Now);
-            logFilePath = Application.dataPath + "/Log/LOG_" + timestamp + ".txt";
+            if (!Directory.Exists(Application.persistentDataPath + "/Logs"))
+            {
+                Directory.CreateDirectory(Application.persistentDataPath + "/Logs");
+            }
+            logFilePath = Application.persistentDataPath + "/Logs/LOG_" + timestamp + ".txt";
             if (!File.Exists(logFilePath))
             {
                 File.WriteAllText(logFilePath, "Fichier de log \n");
