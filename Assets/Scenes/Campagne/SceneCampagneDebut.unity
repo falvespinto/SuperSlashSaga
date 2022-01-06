@@ -20662,6 +20662,7 @@ MonoBehaviour:
     m_Bits: 256
   playerTarget: {fileID: 1735635066}
   target: {fileID: 0}
+  blurPanel: {fileID: 0}
 --- !u!4 &1255808041
 Transform:
   m_ObjectHideFlags: 0
@@ -21843,6 +21844,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f14daf8689c5a46a94f6a33b04149d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _commands: {fileID: 0}
+  emotesSpawner: {fileID: 0}
+  canSpawnEmote: 1
+  json_folder: 
 --- !u!114 &1390820474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22083,6 +22088,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 84454796-9d58-457c-a726-bdf3e063596c
     m_ActionName: menu/A[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 75746d3b-dff6-4598-9f53-046e491c189d
+    m_ActionName: menu/JoyRight[/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1bcb5843-4092-4bf7-94af-9559b7f19b84
+    m_ActionName: menu/JoyLeft[/XInputControllerWindows/leftStick/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f6ec2831-99b8-4806-82a3-319476436376
+    m_ActionName: menu/JoyUp[/XInputControllerWindows/leftStick/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 09261068-6e8a-4847-ae95-ccfa54b50558
+    m_ActionName: menu/JoyDown[/XInputControllerWindows/leftStick/down]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1395374822}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Selecte
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6fac1f43-5461-44f8-91ab-75c4c62c2d2c
+    m_ActionName: menu/Select[/XInputControllerWindows/select]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: menu
@@ -26036,6 +26073,7 @@ MonoBehaviour:
     m_Bits: 512
   playerTarget: {fileID: 1255808039}
   target: {fileID: 0}
+  blurPanel: {fileID: 0}
 --- !u!1 &1743821785
 GameObject:
   m_ObjectHideFlags: 0
@@ -26157,6 +26195,7 @@ MonoBehaviour:
   corpsTexture: {fileID: 0}
   faceP1: {fileID: 612019605}
   faceP2: {fileID: 132703195}
+  prefabP2: {fileID: 0}
 --- !u!4 &1748704411
 Transform:
   m_ObjectHideFlags: 0

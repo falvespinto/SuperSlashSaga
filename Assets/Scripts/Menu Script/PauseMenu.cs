@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
 
     public static bool GameIsPaused = false;
     public bool cooldown = false;
+    private int chapitreCombat = 0;
 
 
     void Start()
@@ -197,4 +198,24 @@ public class PauseMenu : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.3f);
         cooldown = false;
     }
+
+    public void Selecte()
+    {
+        chapitreCombat++;
+        cooldown = true;
+        Time.timeScale = 1f;
+        if (chapitreCombat == 1)
+        {
+            Debug.Log(chapitreCombat);
+            SceneManager.LoadScene("SuiteManequin");
+            Debug.Log("Mannequin");
+        }
+        if (chapitreCombat == 2)
+        {
+            Debug.Log(chapitreCombat);
+            SceneManager.LoadScene("Flashback");
+            Debug.Log("flash");
+        }
+    }
+
 }

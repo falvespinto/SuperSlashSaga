@@ -11573,6 +11573,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7f25855d-d268-4b71-ba42-af78ac4a64f9
     m_ActionName: Gameplay/ManaUp[/Keyboard/numpad8]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 80532d2e-1a83-4f4e-a10b-4511293cbb61
+    m_ActionName: Gameplay/Next[/XInputControllerWindows/select]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -11727,6 +11743,18 @@ MonoBehaviour:
   m_RightHandAttackPoint: {fileID: 8864708881793054219}
   m_LeftHandAttackPoint: {fileID: 0}
   m_RightLegAttackPoint: {fileID: 0}
+  m_RightHandFlameAttackPoint: {fileID: 0}
+  m_LeftHandFlameAttackPoint: {fileID: 0}
+  m_vfx: {fileID: 0}
+  m_vfxFinal: {fileID: 0}
+  spawnPointFinalVfx: {fileID: 0}
+  vfxScale: 3
+  vfxSpeed: 10
+  vfxLifeTime: 0.5
+  debugIsMoving: 1
+  finalVfxScale: 10
+  finalVfxSpeed: 20
+  finalVfxLifeTime: 2
 --- !u!114 &2055994996855387593
 MonoBehaviour:
   m_ObjectHideFlags: 0

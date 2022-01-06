@@ -23,7 +23,7 @@ public class DialogueManagerManette : MonoBehaviour
     public GameObject daiki;
     public GameObject pereDaiki;
 
-    private int chapitre = 0;
+    public int chapitre = 0;
     private int i = 0;
     public Dialogue dialogue;
 
@@ -110,7 +110,7 @@ public class DialogueManagerManette : MonoBehaviour
             pereDaiki.SetActive(false);
             chapitre = 1;
         }
-        else if(sentence.Contains("P�re1 de Daiki :"))
+        else if(sentence.Contains("Père1 de Daiki :"))
         {
             sentence = sentence.Remove(0, 16);
             Debug.Log("a");
@@ -138,6 +138,7 @@ public class DialogueManagerManette : MonoBehaviour
             sentence = sentence.Remove(0, 9);
             dNameText.SetActive(false);
             tNameText.SetActive(true);
+            iNameText.SetActive(false);
             daiki.SetActive(false);
             yuestu.SetActive(true);
             chapitre = 2;
@@ -148,17 +149,19 @@ public class DialogueManagerManette : MonoBehaviour
             tNameText.SetActive(false);
             dNameText.SetActive(true);
             pNameText.SetActive(false);
+            iNameText.SetActive(false);
             yuestu.SetActive(false);
             daiki.SetActive(true);
             pereDaiki.SetActive(false);
             chapitre = 2;
         }
-        else if (sentence.Contains("P�re2 de Daiki :"))
+        else if (sentence.Contains("Père2 de Daiki :"))
         {
             sentence = sentence.Remove(0, 16);
             tNameText.SetActive(false);
             dNameText.SetActive(false);
             pNameText.SetActive(true);
+            iNameText.SetActive(false);
             daiki.SetActive(false);
             chapitre = 2;
         }
@@ -169,6 +172,7 @@ public class DialogueManagerManette : MonoBehaviour
             dNameText.SetActive(false);
             tNameText.SetActive(true);
             pereDaiki.SetActive(false);
+            iNameText.SetActive(false);
             daiki.SetActive(false);
             yuestu.SetActive(true);
             chapitre = 3;
@@ -179,16 +183,18 @@ public class DialogueManagerManette : MonoBehaviour
             tNameText.SetActive(false);
             dNameText.SetActive(true);
             pNameText.SetActive(false);
+            iNameText.SetActive(false);
             yuestu.SetActive(false);
             pereDaiki.SetActive(false);
             daiki.SetActive(true);
             chapitre = 3;
         }
-        else if (sentence.Contains("P�re3 de Daiki :"))
+        else if (sentence.Contains("Père3 de Daiki :"))
         {
             sentence = sentence.Remove(0, 16);
             tNameText.SetActive(false);
             dNameText.SetActive(false);
+            iNameText.SetActive(false);
             pNameText.SetActive(true);
             daiki.SetActive(false);
             pereDaiki.SetActive(true);
@@ -214,6 +220,14 @@ public class DialogueManagerManette : MonoBehaviour
         if(chapitre == 1)
         {
             SceneManager.LoadScene("SceneCampagneDebut");
+        }
+        if(chapitre == 2)
+        {
+            SceneManager.LoadScene("SceneCampagneYuetsuFirstCombat");
+        }
+        if(chapitre == 3)
+        {
+            SceneManager.LoadScene("SceneCampagneFlashbackCombat");
         }
     }
 }

@@ -105,6 +105,14 @@ public class @InputForMenu : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Button"",
+                    ""id"": ""6fac1f43-5461-44f8-91ab-75c4c62c2d2c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -250,6 +258,17 @@ public class @InputForMenu : IInputActionCollection, IDisposable
                     ""action"": ""JoyDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0b56df30-dfce-42db-bff6-cf0c9a7d7d03"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -269,6 +288,7 @@ public class @InputForMenu : IInputActionCollection, IDisposable
         m_menu_JoyLeft = m_menu.FindAction("JoyLeft", throwIfNotFound: true);
         m_menu_JoyUp = m_menu.FindAction("JoyUp", throwIfNotFound: true);
         m_menu_JoyDown = m_menu.FindAction("JoyDown", throwIfNotFound: true);
+        m_menu_Select = m_menu.FindAction("Select", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -329,6 +349,7 @@ public class @InputForMenu : IInputActionCollection, IDisposable
     private readonly InputAction m_menu_JoyLeft;
     private readonly InputAction m_menu_JoyUp;
     private readonly InputAction m_menu_JoyDown;
+    private readonly InputAction m_menu_Select;
     public struct MenuActions
     {
         private @InputForMenu m_Wrapper;
@@ -344,6 +365,7 @@ public class @InputForMenu : IInputActionCollection, IDisposable
         public InputAction @JoyLeft => m_Wrapper.m_menu_JoyLeft;
         public InputAction @JoyUp => m_Wrapper.m_menu_JoyUp;
         public InputAction @JoyDown => m_Wrapper.m_menu_JoyDown;
+        public InputAction @Select => m_Wrapper.m_menu_Select;
         public InputActionMap Get() { return m_Wrapper.m_menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -386,6 +408,9 @@ public class @InputForMenu : IInputActionCollection, IDisposable
                 @JoyDown.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyDown;
                 @JoyDown.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyDown;
                 @JoyDown.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnJoyDown;
+                @Select.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnSelect;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -423,6 +448,9 @@ public class @InputForMenu : IInputActionCollection, IDisposable
                 @JoyDown.started += instance.OnJoyDown;
                 @JoyDown.performed += instance.OnJoyDown;
                 @JoyDown.canceled += instance.OnJoyDown;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
             }
         }
     }
@@ -440,5 +468,6 @@ public class @InputForMenu : IInputActionCollection, IDisposable
         void OnJoyLeft(InputAction.CallbackContext context);
         void OnJoyUp(InputAction.CallbackContext context);
         void OnJoyDown(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
     }
 }
