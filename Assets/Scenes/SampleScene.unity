@@ -357,7 +357,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 33388618}
-  - component: {fileID: 33388617}
   m_Layer: 0
   m_Name: LogManager
   m_TagString: Untagged
@@ -365,39 +364,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &33388617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33388616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfd0d20c83dab3945999e3e076663cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  J1: {fileID: 1255808040}
-  J2: {fileID: 1735635068}
-  J1Light: 0
-  J1Heavy: 0
-  J1Ulti: 0
-  J1Dash: 0
-  J1ParadeUsed: 0
-  J1ParadeTriggered: 0
-  J1ComboTriggered: 0
-  J1GuardBroke: 0
-  J1PermutationTriggered: 0
-  J2Light: 0
-  J2Heavy: 0
-  J2Ulti: 0
-  J2Dash: 0
-  J2ParadeUsed: 0
-  J2ParadeTriggered: 0
-  J2ComboTriggered: 0
-  J2GuardBroke: 0
-  J2PermutationTriggered: 0
-  canCreateLog: 1
 --- !u!4 &33388618
 Transform:
   m_ObjectHideFlags: 0
@@ -4912,6 +4878,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &347627658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 347627659}
+  - component: {fileID: 347627660}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &347627659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347627658}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.828545, y: 115.866104, z: -157.46446}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 41
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &347627660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347627658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7866e1439639ccf4da657c94c7203a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P1Data: {fileID: 1255808040}
+  P2Data: {fileID: 1735635068}
 --- !u!1 &355596173
 GameObject:
   m_ObjectHideFlags: 0
@@ -7139,6 +7150,66 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &542521106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 542521107}
+  m_Layer: 0
+  m_Name: TwitchSpawn4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &542521107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542521106}
+  m_LocalRotation: {x: -0, y: 0.30177033, z: -0, w: 0.95338064}
+  m_LocalPosition: {x: -192.7, y: 3.72, z: -54.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 798088972}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 35.128, z: 0}
+--- !u!1 &548686203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 548686204}
+  m_Layer: 0
+  m_Name: TwitchSpawn10
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &548686204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548686203}
+  m_LocalRotation: {x: -0.021699795, y: 0.7745654, z: -0.043168936, w: -0.6306457}
+  m_LocalPosition: {x: 52.4, y: 14.3, z: 106.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 798088972}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 5.408, y: 258.361, z: 1.199}
 --- !u!1 &552906991
 GameObject:
   m_ObjectHideFlags: 0
@@ -9519,6 +9590,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &757205643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 757205644}
+  m_Layer: 0
+  m_Name: TwitchSpawn1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &757205644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757205643}
+  m_LocalRotation: {x: -0, y: -0.5132876, z: -0, w: 0.8582167}
+  m_LocalPosition: {x: 19.82, y: 3.72, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 798088972}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -61.766, z: 0}
 --- !u!1 &759214222
 GameObject:
   m_ObjectHideFlags: 0
@@ -9741,6 +9842,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ae6bc8b16bb94241a49027ff4dd07c5, type: 3}
   m_PrefabInstance: {fileID: 1338828679}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &787347399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 787347400}
+  m_Layer: 0
+  m_Name: TwitchSpawn7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &787347400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787347399}
+  m_LocalRotation: {x: -0.030241795, y: 0.9942014, z: -0.017598715, w: 0.101682775}
+  m_LocalPosition: {x: -146.7, y: 3.72, z: 221.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 798088972}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 1.653, y: 168.268, z: -3.654}
 --- !u!1 &790270813
 GameObject:
   m_ObjectHideFlags: 0
@@ -9823,6 +9954,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &798088971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 798088972}
+  m_Layer: 0
+  m_Name: ZoneSpawnTwitchCharacters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &798088972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798088971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 106.1, y: 100, z: -233.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 757205644}
+  - {fileID: 889258804}
+  - {fileID: 1971049094}
+  - {fileID: 542521107}
+  - {fileID: 1272127466}
+  - {fileID: 1205939145}
+  - {fileID: 787347400}
+  - {fileID: 1845149468}
+  - {fileID: 1896448598}
+  - {fileID: 548686204}
+  m_Father: {fileID: 0}
+  m_RootOrder: 40
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &802539129
 GameObject:
   m_ObjectHideFlags: 0
@@ -10874,6 +11045,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b1d164e3f306b9145b29f423ff9416d5, type: 3}
   m_PrefabInstance: {fileID: 415336748}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &889258803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889258804}
+  m_Layer: 0
+  m_Name: TwitchSpawn2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &889258804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889258803}
+  m_LocalRotation: {x: -0, y: -0.12545502, z: -0, w: 0.9920993}
+  m_LocalPosition: {x: -48, y: 3.72, z: -72.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 798088972}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -14.414, z: 0}
 --- !u!1 &893795313
 GameObject:
   m_ObjectHideFlags: 0
@@ -20720,6 +20921,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1205939144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1205939145}
+  m_Layer: 0
+  m_Name: TwitchSpawn6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1205939145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205939144}
+  m_LocalRotation: {x: -0, y: 0.8397268, z: -0, w: 0.54300916}
+  m_LocalPosition: {x: -223.5, y: 3.72, z: 136.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 798088972}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 114.223, z: 0}
 --- !u!1 &1207359794
 GameObject:
   m_ObjectHideFlags: 0
@@ -22263,6 +22494,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1272127465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1272127466}
+  m_Layer: 0
+  m_Name: TwitchSpawn5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1272127466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272127465}
+  m_LocalRotation: {x: -0, y: 0.71999174, z: -0, w: 0.6939827}
+  m_LocalPosition: {x: -240.8, y: 3.72, z: 69.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 798088972}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 92.108, z: 0}
 --- !u!1 &1287707169
 GameObject:
   m_ObjectHideFlags: 0
@@ -23401,6 +23662,7 @@ GameObject:
   - component: {fileID: 1390820475}
   - component: {fileID: 1390820474}
   - component: {fileID: 1390820478}
+  - component: {fileID: 1390820479}
   m_Layer: 0
   m_Name: TwitchManager
   m_TagString: Untagged
@@ -23494,6 +23756,7 @@ MonoBehaviour:
   twitchDmgCommand: {fileID: 1390820475}
   twitchHypeCommand: {fileID: 1390820476}
   twitchVoteCommand: {fileID: 1390820478}
+  twitchSubCommand: {fileID: 1390820479}
 --- !u!114 &1390820478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23507,6 +23770,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canVote: 1
+  currentVoteType: 
+  voteOnGoing: 0
+--- !u!114 &1390820479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390820471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c16a7e2c32fb944834e1b16eda6c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints:
+  - {fileID: 757205644}
+  - {fileID: 889258804}
+  - {fileID: 1971049094}
+  - {fileID: 542521107}
+  - {fileID: 1272127466}
+  - {fileID: 1205939145}
+  - {fileID: 787347400}
+  - {fileID: 1845149468}
+  - {fileID: 1896448598}
+  - {fileID: 548686204}
+  prefabsBosses:
+  - {fileID: 7997175022967525045, guid: 56d739a9eaf75154da93e2ae070e92ee, type: 3}
+  index: 0
 --- !u!1 &1395374816
 GameObject:
   m_ObjectHideFlags: 0
@@ -29663,6 +29954,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1845149467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1845149468}
+  m_Layer: 0
+  m_Name: TwitchSpawn8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1845149468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845149467}
+  m_LocalRotation: {x: -0.041759778, y: 0.9932943, z: -0.024301413, w: -0.105033435}
+  m_LocalPosition: {x: -69.2, y: 8.2, z: 223.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 798088972}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 3.27, y: 191.945, z: -4.473}
 --- !u!1 &1850356055
 GameObject:
   m_ObjectHideFlags: 0
@@ -30198,6 +30519,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emote: {fileID: 1196196213657628334, guid: db3ed7e8392be4647ac41f9eb088a803, type: 3}
+--- !u!1 &1896448597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1896448598}
+  m_Layer: 0
+  m_Name: TwitchSpawn9
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1896448598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896448597}
+  m_LocalRotation: {x: -0.03395218, y: 0.93126816, z: -0.034375682, w: -0.36111656}
+  m_LocalPosition: {x: 6.9, y: 13.8, z: 196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 798088972}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 5.08, y: 222.291, z: -2.21}
 --- !u!1 &1896858364
 GameObject:
   m_ObjectHideFlags: 0
@@ -31407,6 +31758,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1971049093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1971049094}
+  m_Layer: 0
+  m_Name: TwitchSpawn3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1971049094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971049093}
+  m_LocalRotation: {x: -0, y: 0.09423246, z: -0, w: 0.9955503}
+  m_LocalPosition: {x: -126.1, y: 3.72, z: -79.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 798088972}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 10.814, z: 0}
 --- !u!1 &1978132503
 GameObject:
   m_ObjectHideFlags: 0

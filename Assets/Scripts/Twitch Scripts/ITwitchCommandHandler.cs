@@ -12,6 +12,7 @@ public struct TwitchCommandData
     public string Author;
     public string Message;
     public string Argument;
+    public string Command;
 }
 
 public struct TwitchCredentials

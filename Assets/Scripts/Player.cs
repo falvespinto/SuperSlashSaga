@@ -39,11 +39,21 @@ public class Player : MonoBehaviour
     public float hurtTime = 0;
     public string characterName;
     public Sprite faceSprite;
-
     public bool manaUp = false;
+    private bool askedForHelp = false;
+    private int sendHelpState = 0;
 
+    public GameObject mousseObject;
+    public GameObject weapon;
     public static Action<int> OnDeath;
     public static Action<int> onGuardBroke;
+    public static Action<Dictionary<string, int>, float, Action<string>> onHelpAsked;
+    public Action<string> whenVoteStopped;
+    public Dictionary<string, int> choixHelp = new Dictionary<string, int>
+    {
+        {"oui", 0},
+        {"non", 0}
+    };
     void Awake()
     {
         isDead = false;
@@ -63,6 +73,14 @@ public class Player : MonoBehaviour
         isInCombo = false;
         canPermute = false;
         target = playerData.target;
+    }
+    private void OnEnable()
+    {
+        whenVoteStopped += OnVoteStopped;
+    }
+    private void OnDisable()
+    {
+        whenVoteStopped -= OnVoteStopped;
     }
     void Update()
     {
@@ -290,4 +308,40 @@ public class Player : MonoBehaviour
         animator.SetTrigger("test");
     }
 
+    public void AskForHelp()
+    {
+        if (!askedForHelp)
+        {
+            askedForHelp = true;
+            onHelpAsked?.Invoke(choixHelp, 60f, whenVoteStopped);
+            TwitchChat.Instance.SendIRCMessage("Le joueur " + (playerIndex + 1) + " vous demande de l'aide, mais le mérite-t-il ? Oui ou Non ?");
+        }
+    }
+    public void OnVoteStopped(string result)
+    {
+
+        choixHelp = new Dictionary<string, int>
+        {
+            {"oui", 0},
+            {"non", 0}
+        };
+        Debug.Log(result);
+        if (result == "oui")
+        {
+
+        }
+        else
+        {
+            StartCoroutine(StartMousseMalus());
+        }
+    }
+
+    public IEnumerator StartMousseMalus()
+    {
+        mousseObject.SetActive(true);
+        if (weapon != null) weapon.GetComponent<SkinnedMeshRenderer>().enabled = false;
+        yield return new WaitForSeconds(10f);
+        if (weapon != null) weapon.GetComponent<SkinnedMeshRenderer>().enabled = true;
+        mousseObject.SetActive(false);
+    }
 }

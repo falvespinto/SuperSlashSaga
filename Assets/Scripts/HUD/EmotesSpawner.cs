@@ -9,6 +9,7 @@ public class EmotesSpawner : MonoBehaviour
     Texture currentTexture;
     private bool goodPrivateTexture = false;
     public EmoteHandler emote;
+
     public async void LoadEmote(string emoteURL)
     {
         Debug.Log("Loading .....");

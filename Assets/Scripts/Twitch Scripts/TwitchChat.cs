@@ -13,6 +13,7 @@ public class TwitchChat : MonoBehaviour
 {
     private string clientIdAPP = "v5wr5b8y0dfjouivn5b0t6tou0auhn";
     private string clientSecret = "1eocdpaksx61dsezqnm4za3ym0zwoy";
+    private string oauthHelix = "qy18npi82duraimvu81c32adelt6i1";
     private static TwitchChat _instance;
     [SerializeField] private TwitchCommandCollection _commands;
     private TcpClient _twitchClient;
@@ -89,10 +90,6 @@ public class TwitchChat : MonoBehaviour
             emoteQueue.RemoveAt(0);
             StartCoroutine(WaitBeforeSpawnEmote());
         }
-        //else
-        // {
-        // FIX : Si les logs sont dans les playerprefs alors tenter une reconnexion.
-        //}
     }
 
     public void Connect(TwitchCredentials credentials)
@@ -105,6 +102,12 @@ public class TwitchChat : MonoBehaviour
         _writer.WriteLine("NICK " + credentials.Username.ToLower());
         _writer.WriteLine("USER " + credentials.Username + " 8 * :" + credentials.Username);
         _writer.WriteLine("JOIN #" + credentials.ChannelName.ToLower());
+        _writer.Flush();
+    }
+    
+    public void SendIRCMessage(string message)
+    {
+        _writer.WriteLine("PRIVMSG #" + credentials.ChannelName.ToLower() + " :" + message);
         _writer.Flush();
     }
 
@@ -143,7 +146,8 @@ public class TwitchChat : MonoBehaviour
                         {
                             Author = author,
                             Message = message,
-                            Argument = argument
+                            Argument = argument,
+                            Command = command
                         });
                 }
                 else
@@ -164,6 +168,28 @@ public class TwitchChat : MonoBehaviour
                         }
                     }
                 }
+
+                if (_commands.twitchVoteCommand.voteOnGoing)
+                {
+                    int index = message.IndexOf(" ");
+                    string command = index > -1 ? message.Substring(0, index) : message;
+                    command = command.ToLower();
+                    if (_commands.twitchVoteCommand.choix.ContainsKey(command))
+                    {
+                        _commands.twitchVoteCommand.HandleCommand(
+                            new TwitchCommandData
+                            {
+                                Author = author,
+                                Message = message,
+                                Argument = "none",
+                                Command = command
+                            }
+                            );
+                    }
+                    SendIRCMessage("Le viewver " + author + " a voté " + message);
+                }
+
+
                 //foreach (var emote in emotesData.data)
                 //{
                 //  if (message.Contains(emote.name))
@@ -186,7 +212,7 @@ public class TwitchChat : MonoBehaviour
 
     private IEnumerator GetGlobalsEmotes()
     {
-        string uri = "https://api.twitch.tv/helix/chat/emotes/global";
+        string uri = "https://api.twitch.tv/helix/chat/emotes/globa";
         StartCoroutine(GetOathToken());
         yield return new WaitForSeconds(0.5f);
         JSONNode authEmotes = JSON.Parse(authJson);
@@ -208,6 +234,8 @@ public class TwitchChat : MonoBehaviour
             }
         }
     }
+
+
 
     private IEnumerator GetOathToken()
     {
