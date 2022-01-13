@@ -201,6 +201,41 @@ public class DialogueManagerManette : MonoBehaviour
             chapitre = 3;
         }
 
+        if (sentence.Contains("Yuetsu4 :"))
+        {
+            sentence = sentence.Remove(0, 9);
+            dNameText.SetActive(false);
+            tNameText.SetActive(true);
+            pereDaiki.SetActive(false);
+            iNameText.SetActive(false);
+            daiki.SetActive(false);
+            yuestu.SetActive(true);
+            chapitre = 4;
+        }
+        else if (sentence.Contains("Daiki4 :"))
+        {
+            sentence = sentence.Remove(0, 8);
+            tNameText.SetActive(false);
+            dNameText.SetActive(true);
+            pNameText.SetActive(false);
+            iNameText.SetActive(false);
+            yuestu.SetActive(false);
+            pereDaiki.SetActive(false);
+            daiki.SetActive(true);
+            chapitre = 4;
+        }
+        else if (sentence.Contains("Père4 de Daiki :"))
+        {
+            sentence = sentence.Remove(0, 16);
+            tNameText.SetActive(false);
+            dNameText.SetActive(false);
+            iNameText.SetActive(false);
+            pNameText.SetActive(true);
+            daiki.SetActive(false);
+            pereDaiki.SetActive(true);
+            chapitre = 4;
+        }
+
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
@@ -228,6 +263,10 @@ public class DialogueManagerManette : MonoBehaviour
         if(chapitre == 3)
         {
             SceneManager.LoadScene("SceneCampagneFlashbackCombat");
+        }
+        if (chapitre == 4)
+        {
+            SceneManager.LoadScene("Menu Principal");
         }
     }
 }
