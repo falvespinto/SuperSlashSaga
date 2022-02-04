@@ -37,6 +37,7 @@ public class PlayerAttackIA : MonoBehaviour
 {
 
     public bool isAttacking;
+    public List<Attack> attacksPoints;
     public bool isRunAttacking;
     public Attack swordAttacks;
     public LightComboStateIA lightComboStateIA;
@@ -53,7 +54,7 @@ public class PlayerAttackIA : MonoBehaviour
     public Animator m_Animator;
     public bool isInCombo;
     public bool isParing;
-    private Player player;
+    public IA player;
     public Transform target;
     public PlayerData playerData;
     public float lightAttackTime;
@@ -72,6 +73,7 @@ public class PlayerAttackIA : MonoBehaviour
     public bool heavyAttackButtonPressed;
     public bool bottomLightAttackButtonPressed;
     public bool bottomHeavyAttackButtonPressed;
+    public PlayerAudioManager playerAudio;
     public bool paradeButtonPressed;
     private Rect posCam;
     private Rect posCamOpponent;
@@ -89,13 +91,12 @@ public class PlayerAttackIA : MonoBehaviour
     {
         //   m_Rigidbody = GetComponent<Rigidbody>();
         playerData = GetComponentInParent<PlayerData>();
-        player = GetComponent<Player>();
         ultimateAttack = GetComponent<UltimateAttack>();
         comboCam = GetComponentInChildren<ComboCamera>();
     }
     public void Start()
     {
-        comboCam.gameObject.SetActive(false);
+        //comboCam.gameObject.SetActive(false);
         default_Combo_Timer = light3AttackTime;
         default_Combo_Timer_Run = runLightAtkTime + runLightAtk2Time;
         default_BottomCombo_Timer = bottomLightAttackTime + bottomLight2AttackTime - 1.2f;
@@ -226,28 +227,7 @@ public class PlayerAttackIA : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(dir);
         return dir;
     }
-    public IEnumerator SwitchCamera(float time)
-    {
-        //playerData.cam.enabled = false;
-        comboCam.gameObject.SetActive(true); //comboCam.enabled = true;
-        lightAttackIA.isInCombo = true;
-        yield return new WaitForSeconds(time);
-        comboCam.gameObject.SetActive(false); //comboCam.enabled = false;
-        //playerData.cam.enabled = true;
-        lightAttackIA.isInCombo = false;
 
-    }
-
-    public IEnumerator FullScreenCamera(float time)
-    {
-       // posCam = playerData.cam.rect;
-       // posCamOpponent = playerData.target.GetComponentInParent<PlayerData>().cam.rect;
-       // playerData.cam.rect = new Rect(0f, 0f, 1f, 1f);
-      //  playerData.target.GetComponentInParent<PlayerData>().cam.rect = new Rect(0f, 0f, 0f, 0f);
-        yield return new WaitForSeconds(time);
-      //  playerData.cam.rect = posCam;
-       // playerData.target.GetComponentInParent<PlayerData>().cam.rect = posCamOpponent;
-    }
     public IEnumerator ForwardAttack(float attackTime, Vector3 direction, float attackSpeed)
     {
         float startTime = Time.time;
@@ -257,6 +237,18 @@ public class PlayerAttackIA : MonoBehaviour
             yield return null;
         }
     }
-
-
+    public IEnumerator ResetCombo(float time)
+    {
+        yield return new WaitForSeconds(time);
+        player.isInCombo = false;
+        playerHit.GetComponent<Player>().isInCombo = false;
+    }
+    public void SetAttacksData(int damage, string attackType)
+    {
+        foreach (var attackPoint in attacksPoints)
+        {
+            attackPoint.damage = damage;
+            attackPoint.attackType = attackType;
+        }
+    }
 }

@@ -9,6 +9,9 @@ public class IALight : Action
     private GameObject prevGameObject;
     public SharedGameObject targetGameObject;
     public LightAttackIA lightAttackIA;
+    public PlayerAudioManager playerAudio;
+    public IA ia;
+    public RangePermute rangeLightAttack;
     public override void OnStart()
     {
         var currentGameObject = GetDefaultGameObject(targetGameObject.Value);
@@ -20,15 +23,22 @@ public class IALight : Action
     }
     public override TaskStatus OnUpdate()
     {
-        if (lightAttackIA == null)
+        if (!lightAttackIA.playerAttackIA.isAttacking && !ia.isInCombo && rangeLightAttack.bIsInRange && !ia.isTakingDamage)
         {
-            Debug.LogWarning("Animator is null");
+
+            lightAttackIA.PerformedLightAttack("normal");      
+            Debug.Log(lightAttackIA.playerAttackIA.playerHit);
+            //playerAudio.playSoundLeger();
+            return TaskStatus.Success;
+        }
+        else
+        {
+            Debug.Log(lightAttackIA.playerAttackIA.playerHit);
             return TaskStatus.Failure;
         }
 
-        lightAttackIA.PerformedLightAttack("normal");
 
-        return TaskStatus.Success;
+
     }
 
     public override void OnReset()

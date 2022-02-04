@@ -36,24 +36,44 @@ public class LoadCharacter : MonoBehaviour
         faceP1.sprite = P1.GetComponent<Player>().faceSprite;
         prefabP2 = characterPrefabs[selectedCharacterP2];
         GameObject P2 = Instantiate(prefabP2, spawnPointP2.position, Quaternion.Euler(0f, 0f, 0f), player2);
-        faceP2.sprite = P2.GetComponent<Player>().faceSprite;
         //P2.GetComponentInChildren<Player>().healthBar = GameObject.FindObjectOfType<HealthP2>().GetComponentInChildren<HealthBar>();
         //Debug.Log(P2.GetComponentInChildren<Player>().hurtBox.value);
         //P2.GetComponentInChildren<Player>().playerIndex = 1;
         //P2.GetComponentInChildren<Player>().hurtBox = 1 << LayerMask.NameToLayer("HurtBox");
         //P2.GetComponentInChildren<PlayerController>().cam = GameObject.Find("P2 Camera").transform;
-        SetLayerRecursively(P2, 9);
+        if (!StartGame.managerIA.bIsIA)
+            SetLayerRecursively(P2, 9);
 
 
         if (StartGame.managerIA.bIsIA)
         {
-            //P1.GetComponent<PlayerAttack>().swordAttacks.gameObject.SetActive(true);
-            P2.GetComponent<PlayerAttackIA>().swordAttacks.gameObject.SetActive(true);
+            foreach (var attacks in P1.GetComponent<PlayerAttack>().attacksPoints)
+            {
+                attacks.gameObject.SetActive(true);
+            }
+            foreach (var attacks in P2.GetComponent<PlayerAttackIA>().attacksPoints)
+            {
+                attacks.gameObject.SetActive(true);
+            }
+            foreach (var attacks in P1.GetComponent<PlayerAttack>().attacksPoints)
+            {
+                attacks.isIA = true;
+            }
+            foreach (var attacks in P2.GetComponent<PlayerAttackIA>().attacksPoints)
+            {
+                attacks.isIA = true;
+            }
             P1.GetComponentInChildren<Attack>().isIA = true;
             P2.GetComponentInChildren<Attack>().isIA = true;
-            //P1.GetComponent<PlayerAttack>().swordAttacks.gameObject.SetActive(false);
-            P2.GetComponent<PlayerAttackIA>().swordAttacks.gameObject.SetActive(false);
-            P2.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
+            foreach (var attacks in P1.GetComponent<PlayerAttack>().attacksPoints)
+            {
+                attacks.gameObject.SetActive(false);
+            }
+            foreach (var attacks in P2.GetComponent<PlayerAttackIA>().attacksPoints)
+            {
+                attacks.gameObject.SetActive(false);
+            }
+            faceP2.sprite = P2.GetComponent<IA>().faceSprite;
         }
         else
         {
@@ -92,6 +112,7 @@ public class LoadCharacter : MonoBehaviour
             P2.GetComponentInChildren<PlayerInput>().user,
             InputUserPairingOptions.UnpairCurrentDevicesFromUser
             );
+            faceP2.sprite = P2.GetComponent<Player>().faceSprite;
         }
         
 

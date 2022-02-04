@@ -1748,8 +1748,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0.023517132, y: -0.5178897, z: -0.24173164}
-    m_Extent: {x: 3.1533182, y: 0.5446101, z: 4.446384}
+    m_Center: {x: 0.023017406, y: -0.40047473, z: -0.24143505}
+    m_Extent: {x: 3.1531606, y: 0.6668032, z: 4.446087}
   m_DirtyAABB: 0
 --- !u!114 &5815276694518363544
 MonoBehaviour:
@@ -2783,8 +2783,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0.9545655, z: -0.0007972121}
-    m_Extent: {x: 0.25795096, y: 4.5626693, z: 0.32816952}
+    m_Center: {x: 0, y: 0.9555211, z: -0.0007972121}
+    m_Extent: {x: 0.25795096, y: 4.5617137, z: 0.32816952}
   m_DirtyAABB: 0
 --- !u!183 &3658591606355092189
 Cloth:
@@ -10824,7 +10824,13 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig:LeftFoot'\n\tTransform 'mixamorig:LeftHandThumb2'\n\tTransform
+    'mixamorig:LeftHandIndex1'\n\tTransform 'mixamorig:LeftHandPinky2'\n\tTransform
+    'mixamorig:RightHandRing2'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform
+    'mixamorig:LeftHandThumb3'\n\tTransform 'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tand
+    more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -11178,6 +11184,7 @@ MonoBehaviour:
   playerHit: {fileID: 0}
   comboCam: {fileID: 0}
   controller: {fileID: 4576790369941818661}
+  test: 0
 --- !u!114 &1718854034453120485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18464,7 +18471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2710342198397900174, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2710342198397900174, guid: 976cad7663ab70448a7f8ba9e500ed30, type: 3}
       propertyPath: m_Materials.Array.data[0]

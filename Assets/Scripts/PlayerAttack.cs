@@ -226,8 +226,17 @@ public class PlayerAttack : MonoBehaviour
     public IEnumerator ResetCombo(float time)
     {
         yield return new WaitForSeconds(time);
-        player.isInCombo = false;
-        playerHit.GetComponent<Player>().isInCombo = false;
+        if (StartGame.managerIA.bIsIA)
+        {
+            player.isInCombo = false;
+            playerHit.GetComponent<IA>().isInCombo = false;
+        }
+        else
+        {
+            player.isInCombo = false;
+            playerHit.GetComponent<Player>().isInCombo = false;
+        }
+
     }
     public IEnumerator ForwardAttack(float attackTime, Vector3 direction, float attackSpeed)
     {

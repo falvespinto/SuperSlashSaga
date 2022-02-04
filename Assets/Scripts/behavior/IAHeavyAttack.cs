@@ -8,7 +8,9 @@ public class IAHeavy : Action
 
     private GameObject prevGameObject;
     public SharedGameObject targetGameObject;
+    public PlayerAudioManager playerAudio;
     public HeavyAttackIA heavyAttackIA;
+    public IA ia;
     public override void OnStart()
     {
         var currentGameObject = GetDefaultGameObject(targetGameObject.Value);
@@ -20,13 +22,16 @@ public class IAHeavy : Action
     }
     public override TaskStatus OnUpdate()
     {
-        if (heavyAttackIA == null)
+        if (ia.isTakingDamage)
         {
             Debug.LogWarning("Animator is null");
             return TaskStatus.Failure;
         }
+        if(!heavyAttackIA.playerAttackIA.isAttacking && !ia.isInCombo){
+            heavyAttackIA.PerformedHeavyAttack("normal");
+            //playerAudio.playSoundLourdMiss();
+        }
 
-        heavyAttackIA.PerformedHeavyAttack("normal");
 
         return TaskStatus.Success;
     }

@@ -203,7 +203,31 @@ public class LightAttack : MonoBehaviour
     {
          if (playerAttack.playerHit != null)
          {
-            if (playerAttack.playerHit.GetComponent<Permutation>().hasPermuted == false)
+            if (StartGame.managerIA.bIsIA && playerAttack.playerHit.GetComponent<PermutationIA>().hasPermuted == false)
+            {
+                onComboTriggered?.Invoke(player.playerIndex);
+                playerAttack.isAttacking = true;
+                playerController.isRunning = false;
+                playerAttack.playerHit.GetComponent<IA>().isInCombo = true;
+                player.isInCombo = true;
+                yield return new WaitForSeconds(0.3f);
+                controller.enabled = false;
+                Vector3 positionAtk = GameObject.Find("ReplacePointAtk").transform.position;
+                Quaternion rotationAtk = GameObject.Find("ReplacePointAtk").transform.rotation;
+                transform.position = positionAtk;
+                transform.rotation = rotationAtk;
+                Vector3 positionRcv = GameObject.Find("ReplacePointRcv" + player.characterName).transform.position;
+                Quaternion rotationRcv = GameObject.Find("ReplacePointRcv" + player.characterName).transform.rotation;
+                playerAttack.playerHit.transform.position = positionRcv;
+                playerAttack.playerHit.transform.rotation = rotationRcv;
+                controller.enabled = true;
+                //StartCoroutine(InfuseSword(0.15f));
+                StartCoroutine(playerAttack.ResetCombo(timeOfCombo));
+                Invoke("AttackComplete", timeOfCombo);
+                StartCoroutine(playerAttack.playerHit.GetComponent<IA>().goInEnemyCombo(timeOfCombo));
+                GetComponent<TimeLineController>().PerformFullCombo(playerAttack.m_Animator, playerAttack.playerHit.GetComponent<Animator>());
+            }
+            else if(!StartGame.managerIA.bIsIA && playerAttack.playerHit.GetComponent<Permutation>().hasPermuted == false)
             {
                 onComboTriggered?.Invoke(player.playerIndex);
                 playerAttack.isAttacking = true;

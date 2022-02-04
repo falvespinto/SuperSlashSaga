@@ -9,7 +9,7 @@ public class AttackIA : MonoBehaviour
     public string attackType;
     private Collider col;
     public PlayerAttackIA player;
-
+    public RangePermute range;
     private void Start()
     {
         col = GetComponent<Collider>();
@@ -36,7 +36,7 @@ public class AttackIA : MonoBehaviour
     {
         Collider[] hit = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, gameObject.GetComponentInParent<PlayerData>().enemyLayer);
         //Debug.Log(gameObject.GetComponentInParent<Player>().playerIndex);
-        if (hit.Length > 0)
+        if (hit.Length > 0 && range.bIsInRange)
         {
             for (int i = 0; i < hit.Length; i++)
             {

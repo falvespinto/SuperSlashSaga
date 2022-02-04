@@ -8,7 +8,7 @@ public class isDead : Conditional
 
     public override void OnStart()
     {
-        playerhealth = GetComponent<Player>();
+        playerhealth = GameObject.Find("Player1").GetComponentInChildren<Player>();
 
     }
     public override TaskStatus OnUpdate()

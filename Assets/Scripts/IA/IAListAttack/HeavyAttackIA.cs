@@ -10,7 +10,7 @@ public class HeavyAttackIA : MonoBehaviour
     public float heavyAttackTime;
     public PlayerData playerData;
     public Player player;
-    private PlayerAttackIA playerAttackIA;
+    public PlayerAttackIA playerAttackIA;
     public float lightAttackTime;
     public void Awake()
     {

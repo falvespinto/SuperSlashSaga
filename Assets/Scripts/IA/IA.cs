@@ -10,6 +10,7 @@ public class IA : MonoBehaviour
     public float currentHealth;
     public int playerIndex;
     public HealthBar healthBar;
+    public ManaBar manaBar;
     public PlayerAttackIA playerAttackIA;
     public static int winner;
     public float GuardBreakTime;
@@ -23,6 +24,12 @@ public class IA : MonoBehaviour
     public bool canPermute;
     public bool isInEnemyCombo;
     public bool isDead;
+    public Sprite faceSprite;
+    public GameObject HitVFXPrefab;
+    public GameObject HitHeavyPrefab;
+    public Vector3 offSet;
+    public PlayerAudioManager playerAudio;
+    public string characterName;
     void Awake()
     {
         isDead = false;
@@ -30,6 +37,7 @@ public class IA : MonoBehaviour
         playerData = GetComponentInParent<PlayerData>();
         playerAttackIA = GetComponent<PlayerAttackIA>();
         healthBar = playerData.healthBar;
+        manaBar = playerData.manabar;
         playerIndex = playerData.playerIndex;
         //GetComponentInParent<PlayerData>().target = GetComponentInParent<PlayerData>().playerTarget.GetComponentInChildren<Player>().transform;
         //m_rigidbody = GetComponent<Rigidbody>();
@@ -52,6 +60,17 @@ public class IA : MonoBehaviour
     }
     public void TakeDamage(float damage, string attackType)
     {
+
+        if (attackType == "Light")
+        {
+            Instantiate(HitVFXPrefab, transform.position + offSet, transform.rotation);
+            //playerAudio.playSoundImpact();
+        }
+        else if (attackType == "Heavy")
+        {
+            Instantiate(HitHeavyPrefab, transform.position + offSet, transform.rotation);
+            //playerAudio.playSoundLourd();
+        }
         Vector3 dir = target.position - transform.position;
         dir.Normalize();
         dir.y = 0;
