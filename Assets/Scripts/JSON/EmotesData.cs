@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class EmotesData
 {
-    public data[] data;
+    public dataEmote[] data;
 }
 [System.Serializable]
 public class ImagesData {
@@ -13,7 +13,7 @@ public class ImagesData {
     public string url_4x;
 }
 [System.Serializable]
-public class data {
+public class dataEmote {
     public string id;
     public string name;
     public ImagesData images;

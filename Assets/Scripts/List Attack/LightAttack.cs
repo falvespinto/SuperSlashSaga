@@ -25,8 +25,7 @@ public class LightAttack : MonoBehaviour
     public Player player;
     public PlayerAttack playerAttack;
     public PlayerData playerData;
-    public float default_Combo_Timer = 4f;
-    public float default_BottomCombo_Timer = 2f;
+    public float default_Combo_Timer = 1f;
     public float current_Combo_Timer;
     public bool isAttacking;
     public LightComboState lightComboState;
@@ -60,7 +59,6 @@ public class LightAttack : MonoBehaviour
     }
     void Start()
     {
-        default_BottomCombo_Timer = bottomLightAttackTime + bottomLight2AttackTime - 1.2f;
         isLightAttacking = false;
         isAttacking = false;
         lightComboState = LightComboState.NONE;
@@ -87,18 +85,15 @@ public class LightAttack : MonoBehaviour
             {
                 isLightAttacking = true;
                 playerAttack.isAttacking = true;
-                current_Combo_Timer = default_Combo_Timer;
                 lightComboState++;
                 Debug.Log(lightComboState);
                 if (lightComboState == LightComboState.LIGHT_1)
                 {
+                    current_Combo_Timer = default_Combo_Timer;
                     playerAttack.playerHit = null;
                     playerController.isRunning = false;
                     Vector3 direction = playerAttack.LookAtTarget();
-                    // Joue attaque 1 du combo de coup l�g�
-                    //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // d�placements horizontaux bloqu�s
                     playerAttack.SetAttacksData(7,"Light");
-                    // ChangeAnimationState(m_Punch);
                     playerAttack.m_Animator.SetTrigger("LightAttack");
                     if (!playerAttack.isHeNearEnemy()) StartCoroutine(playerAttack.ForwardAttack(lightAttackTime - 0.6f, direction, 0.05f));
                     Invoke("AttackComplete", timeBeforeCancelLight1);
@@ -107,6 +102,7 @@ public class LightAttack : MonoBehaviour
 
                 if (lightComboState == LightComboState.LIGHT_2)
                 {
+                    current_Combo_Timer = default_Combo_Timer;
                     playerAttack.playerHit = null;
                     playerController.isRunning = false;
                     Vector3 direction = playerAttack.LookAtTarget();
@@ -123,6 +119,7 @@ public class LightAttack : MonoBehaviour
 
                 if (lightComboState == LightComboState.LIGHT_3)
                 {
+                    current_Combo_Timer = default_Combo_Timer;
                     playerAttack.playerHit = null;
                     playerController.isRunning = false;
                     Vector3 direction = playerAttack.LookAtTarget();

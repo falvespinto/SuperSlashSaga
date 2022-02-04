@@ -13,4 +13,6 @@ public static class TwitchCommands
     public static readonly string CommandHype = "simulationHype";
 
     public static readonly string CommandVote = "vote";
+
+    public static readonly string CommandSub = "simulationSub";
 }
