@@ -212,6 +212,7 @@ public class Player : MonoBehaviour
                     }
                     else
                     {
+                        animator.SetInteger("RandomHit", UnityEngine.Random.Range(0,2));
                         animator.SetTrigger("GetHit");
                     }
                 }

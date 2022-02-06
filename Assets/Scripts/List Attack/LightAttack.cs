@@ -125,7 +125,7 @@ public class LightAttack : MonoBehaviour
                     Vector3 direction = playerAttack.LookAtTarget();
                     playerAttack.SetAttacksData(8, "Light");
                     playerAttack.m_Animator.SetTrigger("LightAttack3");
-                    if (!playerAttack.isHeNearEnemy()) StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
+                    if (!playerAttack.isHeNearEnemy()) StartCoroutine(playerAttack.ForwardAttack(light2AttackTime - 0.5f, direction, 0.05f));
                     Invoke("AttackComplete", timeBeforeCancelLight3);
                     player.playerAudio.playSoundLeger();
                 }
