@@ -70,7 +70,6 @@ public class LightAttackIA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ResetComboState();
     }
     public void PerformedLightAttack(string attackType)
     {
@@ -83,7 +82,7 @@ public class LightAttackIA : MonoBehaviour
             else
             {
 
-                playerAttackIA.isInCombo = true;
+
                 playerAttackIA.isAttacking = true;
                 current_Combo_Timer = default_Combo_Timer;
                 lightComboState++;
@@ -118,6 +117,8 @@ public class LightAttackIA : MonoBehaviour
                     //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
                     playerAttackIA.swordAttacks.damage = 8;
                     playerAttackIA.swordAttacks.attackType = "Light";
+                    //a retirer
+                    playerAttackIA.swordAttacks.attackName = "Light2";
                     // ChangeAnimationState(m_Punch);
                     playerAttackIA.m_Animator.SetTrigger("LightAttack2");
                     light2AttackTimeWait = light2AttackTime - 0.3f;
@@ -155,6 +156,7 @@ public class LightAttackIA : MonoBehaviour
                     playerAttackIA.swordAttacks.attackType = "Light";
                     //StartCoroutine(ComboWorkflow());
                     StartCoroutine("CheckPerformFullCombo");
+
                 }
 
                 if (lightComboState == LightComboState.NONE)
@@ -201,19 +203,9 @@ public class LightAttackIA : MonoBehaviour
             }
         }
     }
-    void ResetComboState()
+    public void ResetComboState()
     {
-        if (playerAttackIA.isInCombo)
-        {
-            current_Combo_Timer -= Time.deltaTime;
-
-            if (current_Combo_Timer <= 0f)
-            {
-                lightComboState = LightComboState.NONE;
-                playerAttackIA.isInCombo = false;
-                current_Combo_Timer = default_Combo_Timer;
-            }
-        }
+        lightComboState = LightComboState.NONE;
     }
 
     public IEnumerator InfuseSword(float time)
@@ -257,12 +249,13 @@ public class LightAttackIA : MonoBehaviour
                 Invoke("AttackComplete", timeOfCombo);
                 StartCoroutine(playerAttackIA.playerHit.GetComponent<Player>().goInEnemyCombo(timeOfCombo));
                 GetComponent<TimeLineController>().PerformFullCombo(playerAttackIA.m_Animator, playerAttackIA.playerHit.GetComponent<Animator>());
+                ResetComboState();
             }
         }
     }
 
-        // A remplacer par une coroutine plus tard
-        public void AttackComplete()
+    // A remplacer par une coroutine plus tard
+    public void AttackComplete()
     {
         playerAttackIA.isAttacking = false;
     }

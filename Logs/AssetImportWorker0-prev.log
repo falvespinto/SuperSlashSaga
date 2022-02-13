@@ -15,11 +15,11 @@ C:/Users/thoma/Desktop/Thomas/SuperSlashSaga/SuperSlashSaga
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-62328
+65381
 Successfully changed project path to: C:/Users/thoma/Desktop/Thomas/SuperSlashSaga/SuperSlashSaga
 C:/Users/thoma/Desktop/Thomas/SuperSlashSaga/SuperSlashSaga
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 135.81 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 118.60 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.2f1 (068178b99f32)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Resources/UnitySubsystems
@@ -36,1168 +36,160 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56376
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56888
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.2f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002651 seconds.
+Registered in 0.004747 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 121.57 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 121.29 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.709 seconds
+- Completed reload, in  2.571 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007317 seconds.
+Registered in 0.007504 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 307.78 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 130.25 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.531 seconds
+- Completed reload, in  1.519 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.34 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4613 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.8 MB.
-System memory in use after: 253.9 MB.
-
-Unloading 145 unused Assets to reduce memory usage. Loaded Objects now: 5137.
-Total: 3.613500 ms (FindLiveObjects: 0.934700 ms CreateObjectMapping: 0.379900 ms MarkObjects: 2.062200 ms  DeleteObjects: 0.235700 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Scripts/LoadCharacter.cs
-  artifactKey: Guid(1a223cbb1cf796c498ee3549371ee7c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/LoadCharacter.cs using Guid(1a223cbb1cf796c498ee3549371ee7c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24db49e37f3bee7376dce73bae389289') in 0.036887 seconds
-  Import took 0.045717 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.571580 seconds.
-  path: Assets/Scripts/StartGame.cs
-  artifactKey: Guid(8facf51f016ace84dac9a847c5ff8a84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/StartGame.cs using Guid(8facf51f016ace84dac9a847c5ff8a84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f7db24e9e3e0c20fdb9af0e2ce6f28b') in 0.013589 seconds
-  Import took 0.063651 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005328 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.72 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.571 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
 Refreshing native plugins compatible for Editor in 1.39 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 236.0 MB.
-System memory in use after: 236.3 MB.
+Unloading 4614 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 254.2 MB.
+System memory in use after: 254.4 MB.
 
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5139.
-Total: 3.488200 ms (FindLiveObjects: 0.423000 ms CreateObjectMapping: 0.249100 ms MarkObjects: 2.551500 ms  DeleteObjects: 0.262700 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 207.625692 seconds.
-  path: Assets/Scripts/PlayerData.cs
-  artifactKey: Guid(d6d63f93d6c88c24fa33a325a7a13323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PlayerData.cs using Guid(d6d63f93d6c88c24fa33a325a7a13323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50a0a881b94d8713f6817f6c6d7dc3c9') in 0.012358 seconds
-  Import took 0.022541 seconds .
+Unloading 145 unused Assets to reduce memory usage. Loaded Objects now: 5138.
+Total: 3.038500 ms (FindLiveObjects: 0.363400 ms CreateObjectMapping: 0.225300 ms MarkObjects: 2.200800 ms  DeleteObjects: 0.247400 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.012433 seconds.
-  path: Assets/Scripts/PlayerData.cs
-  artifactKey: Guid(d6d63f93d6c88c24fa33a325a7a13323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PlayerData.cs using Guid(d6d63f93d6c88c24fa33a325a7a13323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50a0a881b94d8713f6817f6c6d7dc3c9') in 0.001759 seconds
-  Import took 0.115153 seconds .
+  path: Assets/Scripts/PlayerAttack.cs
+  artifactKey: Guid(3052373d9396a434f91ac43047bdb433) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerAttack.cs using Guid(3052373d9396a434f91ac43047bdb433) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76a69bd5048a0998bc420d77e2893b4c') in 0.040170 seconds
+  Import took 0.049907 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.282407 seconds.
+  Time since last request: 0.000376 seconds.
+  path: Assets/Scripts/PlayerController.cs
+  artifactKey: Guid(63cb1e5de3d387049a4425f08d7ae846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerController.cs using Guid(63cb1e5de3d387049a4425f08d7ae846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50759014fa5f97a78413a2eb80766582') in 0.010050 seconds
+  Import took 0.018355 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
   path: Assets/Scripts/PlayerControls.cs
   artifactKey: Guid(8943298c4d1efa441b2f4f29bd02d4ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PlayerControls.cs using Guid(8943298c4d1efa441b2f4f29bd02d4ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23f87d9695b0e20d0331ee8227b24d44') in 0.007343 seconds
-  Import took 0.083844 seconds .
+Start importing Assets/Scripts/PlayerControls.cs using Guid(8943298c4d1efa441b2f4f29bd02d4ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36792246a150f7b0643affa5cfb6dffd') in 0.009515 seconds
+  Import took 0.018360 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 700.110140 seconds.
-  path: Assets/Scripts/PlayerControls.cs
-  artifactKey: Guid(8943298c4d1efa441b2f4f29bd02d4ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PlayerControls.cs using Guid(8943298c4d1efa441b2f4f29bd02d4ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '911e4394fc6b4aa3db1dacfd822c8849') in 0.006808 seconds
-  Import took 0.018518 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003530 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.26 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.252 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.27 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 236.1 MB.
-System memory in use after: 236.3 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5141.
-Total: 3.934300 ms (FindLiveObjects: 0.434600 ms CreateObjectMapping: 0.313600 ms MarkObjects: 2.746200 ms  DeleteObjects: 0.437900 ms)
+  Time since last request: 177.520254 seconds.
+  path: Assets/RapierAnimSet/Animation/humanoid/Materials/Material #12.mat
+  artifactKey: Guid(e4fb12bafe203974dbc7f829a79d6dac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RapierAnimSet/Animation/humanoid/Materials/Material #12.mat using Guid(e4fb12bafe203974dbc7f829a79d6dac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5525e0c51df7b0c6a620adf747586c71') in 0.238722 seconds
+  Import took 0.249025 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 318.643060 seconds.
-  path: Assets/Scripts/PlayerControls.cs
-  artifactKey: Guid(8943298c4d1efa441b2f4f29bd02d4ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/PlayerControls.cs using Guid(8943298c4d1efa441b2f4f29bd02d4ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3577abac41ede141826ff06e18000325') in 0.013717 seconds
-  Import took 0.024794 seconds .
+  Time since last request: 0.000161 seconds.
+  path: Assets/Prefabs/Models/Japanese House 1.fbx
+  artifactKey: Guid(c1781872bf21d16409825517808afac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Models/Japanese House 1.fbx using Guid(c1781872bf21d16409825517808afac4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47fa9a0f305635bbc84bac34a9fd35a2') in 0.257531 seconds
+  Import took 0.265710 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.282552 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(f8026d319446af04ab0fdc0cd48322b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(f8026d319446af04ab0fdc0cd48322b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '168921e6357bc7123a6ce27afaa6d8b4') in 0.323844 seconds
-  Import took 0.331991 seconds .
+  Time since last request: 0.000150 seconds.
+  path: Assets/RapierAnimSet/Animation/humanoid/Materials/Material #157.mat
+  artifactKey: Guid(3e4da88e0fdfd0043831e63f1363c776) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RapierAnimSet/Animation/humanoid/Materials/Material #157.mat using Guid(3e4da88e0fdfd0043831e63f1363c776) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7555cc6397a9b0b1d362534b5f612f1') in 0.016952 seconds
+  Import took 0.025701 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/PolyToots/Slashes/Content/SlashModel.fbx
+  artifactKey: Guid(9024d98b8fc63b54d98c01cacdc5eef1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolyToots/Slashes/Content/SlashModel.fbx using Guid(9024d98b8fc63b54d98c01cacdc5eef1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67eeda53a2002804f43d849bc96a12c0') in 0.038259 seconds
+  Import took 0.047322 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Materials/Perso Mat/Daiki Mat/Material Yuetsu 1.mat
+  artifactKey: Guid(4664dded492f6a54996f0cf1297e8b85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Perso Mat/Daiki Mat/Material Yuetsu 1.mat using Guid(4664dded492f6a54996f0cf1297e8b85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '144de9bb69a5e2dcfe88304122cc5390') in 0.019688 seconds
+  Import took 0.027450 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/RapierAnimSet/Animation/humanoid/Materials/Material #12.mat
+  artifactKey: Guid(e4fb12bafe203974dbc7f829a79d6dac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RapierAnimSet/Animation/humanoid/Materials/Material #12.mat using Guid(e4fb12bafe203974dbc7f829a79d6dac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5525e0c51df7b0c6a620adf747586c71') in 0.011774 seconds
+  Import took 0.018923 seconds .
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000137 seconds.
-  path: Assets/Prefabs/Selector.prefab
-  artifactKey: Guid(71773de1c00f5e346821c4aac08099cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Selector.prefab using Guid(71773de1c00f5e346821c4aac08099cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d21715e651e862ce8d73c75a056d773') in 0.046989 seconds
-  Import took 0.055785 seconds .
+  path: Assets/PolyToots/Slashes/Content/SlashModel.fbx
+  artifactKey: Guid(9024d98b8fc63b54d98c01cacdc5eef1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PolyToots/Slashes/Content/SlashModel.fbx using Guid(9024d98b8fc63b54d98c01cacdc5eef1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67eeda53a2002804f43d849bc96a12c0') in 0.020398 seconds
+  Import took 0.028441 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000151 seconds.
-  path: Assets/Prefabs/New Sprite.prefab
-  artifactKey: Guid(b67a0434da2be424090cdf75dde170e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/New Sprite.prefab using Guid(b67a0434da2be424090cdf75dde170e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1957e942cfe5ee4457d8e8ea76dbf48b') in 0.007828 seconds
-  Import took 0.015874 seconds .
+  Time since last request: 0.000146 seconds.
+  path: Assets/Models/Gant_supporter.fbx
+  artifactKey: Guid(37475ee7c3dfcf847ac10dbc3964f225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Gant_supporter.fbx using Guid(37475ee7c3dfcf847ac10dbc3964f225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e65a582f83ff879ed1cb645fff6d21c') in 0.030625 seconds
+  Import took 0.038218 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 143.739057 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'baa5d220964ef3fc639dc2c2e128281b') in 0.914223 seconds
-  Import took 0.927407 seconds .
+  Time since last request: 0.000193 seconds.
+  path: Assets/Models/Stade_SSS.fbx
+  artifactKey: Guid(a1857b192252c394ebdb8309dbf22202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Stade_SSS.fbx using Guid(a1857b192252c394ebdb8309dbf22202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77be956894623e8ba8cd5234b191916d') in 0.090802 seconds
+  Import took 0.101554 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.618489 seconds.
-  path: Assets/Prefabs/characters/Daiki 2.prefab
-  artifactKey: Guid(94a04af212ec22743b04e99ffc37bd32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 2.prefab using Guid(94a04af212ec22743b04e99ffc37bd32) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'add290983e764b018de523276a88e20e') in 0.777559 seconds
-  Import took 0.789355 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 32.468905 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'e2e0b24546493ba211e3972d9c9e1bf3') in 0.794120 seconds
-  Import took 0.812079 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.014859 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '938e34b3061bca45004810e8fc6094a3') in 0.790752 seconds
-  Import took 0.803777 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.824849 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '89a89bd92924c4e46772956044b6d94c') in 0.761834 seconds
-  Import took 0.774301 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.470696 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '423cf1e72b59e17407322bde9da77dff') in 0.758029 seconds
-  Import took 0.770111 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.401698 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '951092b59b43087aac62530895fa31e5') in 0.826831 seconds
-  Import took 0.839278 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.235731 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'a8d9bf3386bb8886faa9762d26d7428f') in 0.840756 seconds
-  Import took 0.851811 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.292432 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'a581b41b8d99776d54b914ccc700394c') in 0.868759 seconds
-  Import took 0.881220 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.454990 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '2a3b2f6b3392d247d19818258edeaef2') in 0.898268 seconds
-  Import took 0.911158 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.373566 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'e0a7a5da23c4d03c8b1c69b3a77d7b3c') in 0.863139 seconds
-  Import took 0.875583 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.985934 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'c92987363c2289a2e967da01aa3b43a8') in 0.789104 seconds
-  Import took 0.800361 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.867237 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'a20f63fbc4838a70ef195cbeca1d71a5') in 0.887502 seconds
-  Import took 0.898761 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.714366 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '8947cdb7c65c0a2142b1d52bf98b1fcd') in 0.857357 seconds
-  Import took 0.869934 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001845 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '8947cdb7c65c0a2142b1d52bf98b1fcd') in 0.934649 seconds
-  Import took 0.948020 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.532309 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '271ac29571a5ffa97a15de1d84a0da29') in 0.780650 seconds
-  Import took 0.794038 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.710231 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '58914d6e48990c4be5a8e52e7865e412') in 0.757198 seconds
-  Import took 0.768523 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 18.849751 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '0d87edfe33e7e2fa58750d8a43a9f71b') in 0.758397 seconds
-  Import took 0.772550 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.636876 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '0a394963b108d2bcc9fbb861a19af637') in 0.747964 seconds
-  Import took 0.760367 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.799372 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '8a444e2df55b70150950217ef6e5035c') in 0.617110 seconds
-  Import took 0.631172 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 14.510566 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'e4b73e42d320e70cf6c52c055c9be2c4') in 0.600377 seconds
-  Import took 0.612354 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 33.646858 seconds.
+  Time since last request: 11.007221 seconds.
   path: Assets/Prefabs/characters/Daiki 2.prefab
   artifactKey: Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 2.prefab using Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '626e5626d059400120599fcb78090b7e') in 0.800032 seconds
-  Import took 0.811971 seconds .
+Start importing Assets/Prefabs/characters/Daiki 2.prefab using Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e10dd56d561ea18706e610d3d6729d87') in 0.115836 seconds
+  Import took 0.128014 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 17.976285 seconds.
-  path: Assets/Prefabs/Selector.prefab
-  artifactKey: Guid(71773de1c00f5e346821c4aac08099cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Selector.prefab using Guid(71773de1c00f5e346821c4aac08099cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d1898eb64b0286bb4a74cb51fbced1d') in 0.041640 seconds
-  Import took 0.055001 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.303028 seconds.
-  path: Assets/Prefabs/Selector.prefab
-  artifactKey: Guid(71773de1c00f5e346821c4aac08099cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Selector.prefab using Guid(71773de1c00f5e346821c4aac08099cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d20f371f938e15863c0db5dfce494b0') in 0.039242 seconds
-  Import took 0.049263 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002730 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.21 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.555 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.54 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.2 MB.
-System memory in use after: 253.4 MB.
-
-Unloading 141 unused Assets to reduce memory usage. Loaded Objects now: 5193.
-Total: 5.839200 ms (FindLiveObjects: 0.454600 ms CreateObjectMapping: 1.000500 ms MarkObjects: 4.093600 ms  DeleteObjects: 0.289100 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 105.072981 seconds.
-  path: Assets/Animators/Daiki_Animator.controller
-  artifactKey: Guid(3f6401d4bd9e8c84180513388ab6012e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animators/Daiki_Animator.controller using Guid(3f6401d4bd9e8c84180513388ab6012e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e43db355fa55f1e569dcc43c2cbf1a6') in 0.625635 seconds
-  Import took 0.636258 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003427 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.25 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.283 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.15 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.2 MB.
-System memory in use after: 253.4 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5195.
-Total: 3.116000 ms (FindLiveObjects: 0.374200 ms CreateObjectMapping: 0.264300 ms MarkObjects: 2.269500 ms  DeleteObjects: 0.206800 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 21.332369 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5272892a51671348cbc0713150411c46') in 0.227709 seconds
-  Import took 0.237666 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 19.795734 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aeedcb651f69c303054a54a1636747c2') in 0.069906 seconds
-  Import took 0.080340 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.638261 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ded759492781ffeb80a33ea75a61cf62') in 0.051916 seconds
-  Import took 0.062510 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.097612 seconds.
+  Time since last request: 7.206558 seconds.
   path: Assets/Prefabs/characters/Daiki 2.prefab
   artifactKey: Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 2.prefab using Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: '0892eac1a8eecf560e2ee01c87fe8be7') in 0.703075 seconds
-  Import took 0.715709 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.646890 seconds.
-  path: Assets/Prefabs/characters/Daiki 2.prefab
-  artifactKey: Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 2.prefab using Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'Daiki_Animator': Transition 'GetHitFromYuetsu3 -> Idle' in state 'GetHitFromYuetsu3' doesn't have an Exit Time or any condition, transition will be ignored
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Editor/Src/Animation/StateMachine.cpp line 1847]
-
- -> (artifact id: 'd0a4b0c6118ff8a00ba41fd1a5ae6a06') in 0.730264 seconds
-  Import took 0.743617 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.428530 seconds.
-  path: Assets/Prefabs/characters/Daiki 2.prefab
-  artifactKey: Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 2.prefab using Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59769efcf5ed3229dbd67e3b476a0704') in 0.061379 seconds
-  Import took 0.073427 seconds .
+Start importing Assets/Prefabs/characters/Daiki 2.prefab using Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '494e22f723c781f373ab07d4fdbe3234') in 0.071220 seconds
+  Import took 0.081864 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003147 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.06 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.276 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 4.40 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.1 MB.
-System memory in use after: 253.3 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5233.
-Total: 8.938500 ms (FindLiveObjects: 0.896700 ms CreateObjectMapping: 0.872300 ms MarkObjects: 6.762300 ms  DeleteObjects: 0.405600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 332.834140 seconds.
-  path: Assets/Gizmos/Behavior Designer Hier Icon.png
-  artifactKey: Guid(f011c2328e41d994b83d3c757e68904c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gizmos/Behavior Designer Hier Icon.png using Guid(f011c2328e41d994b83d3c757e68904c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3924085af0fda07e009c2856cb8a382') in 0.100315 seconds
-  Import took 0.207812 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000219 seconds.
-  path: Assets/Gizmos/Behavior Designer Scene Icon.png
-  artifactKey: Guid(5b5f458971c6fd5459c51a7b8079bc3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gizmos/Behavior Designer Scene Icon.png using Guid(5b5f458971c6fd5459c51a7b8079bc3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3983690db860fad0aea959b4e68015a4') in 0.009488 seconds
-  Import took 0.020727 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.373755 seconds.
-  path: Assets/Gizmos/Behavior Designer Hier Icon.png
-  artifactKey: Guid(f011c2328e41d994b83d3c757e68904c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Gizmos/Behavior Designer Hier Icon.png using Guid(f011c2328e41d994b83d3c757e68904c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3924085af0fda07e009c2856cb8a382') in 0.011112 seconds
-  Import took 0.027878 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.167636 seconds.
-  path: Assets/Animation/M_Fighter
-  artifactKey: Guid(8ac7bdd54fe18974486a942b17b334db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/M_Fighter using Guid(8ac7bdd54fe18974486a942b17b334db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c4b9d175bb4758e2b3602d89a9628b3') in 0.015154 seconds
-  Import took 0.022677 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.355969 seconds.
-  path: Assets/Animations/xbot@Female Dynamic Pose.fbx
-  artifactKey: Guid(3bfc2677271b6764e9aefc93d6977c67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/xbot@Female Dynamic Pose.fbx using Guid(3bfc2677271b6764e9aefc93d6977c67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d99a22493e72b5e50f6f0cace2fea50') in 0.150284 seconds
-  Import took 0.170349 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000214 seconds.
-  path: Assets/Animations/Yuetsu_v4_no_cape@Clapping.fbx
-  artifactKey: Guid(4879c99388514a94e928143a0a9da3e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Yuetsu_v4_no_cape@Clapping.fbx using Guid(4879c99388514a94e928143a0a9da3e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59d64494b9a2750837c2998ec5dda87d') in 0.018413 seconds
-  Import took 0.032016 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000292 seconds.
-  path: Assets/Animations/Yuetsu_v4_no_cape@Victory Idle.fbx
-  artifactKey: Guid(66ac1e7ac95ba1e44b09f67b3217e8b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Yuetsu_v4_no_cape@Victory Idle.fbx using Guid(66ac1e7ac95ba1e44b09f67b3217e8b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11b6285b762d5238e0595d9414bf2e4f') in 0.015603 seconds
-  Import took 0.023975 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000151 seconds.
-  path: Assets/Animations/Yuetsu_v4_no_cape@Standing Thumbs Up.fbx
-  artifactKey: Guid(9fe889aca0d61254e8cebdc3056fa3a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Yuetsu_v4_no_cape@Standing Thumbs Up.fbx using Guid(9fe889aca0d61254e8cebdc3056fa3a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7214b52e535758330bcaabc05e0cbfcf') in 0.017217 seconds
-  Import took 0.028979 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.403702 seconds.
-  path: Assets/Animations/Daiki
-  artifactKey: Guid(e8aadf37a68442f48ae2dab328387fdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki using Guid(e8aadf37a68442f48ae2dab328387fdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87eeee58fc6ffc98bbd94f00678c8053') in 0.007107 seconds
-  Import took 0.024469 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.121884 seconds.
-  path: Assets/Animations/Daiki/WinDance.fbx
-  artifactKey: Guid(b5fb04fcaab9c8c439ca7e843715dc23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/WinDance.fbx using Guid(b5fb04fcaab9c8c439ca7e843715dc23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0607f80a8f314ccec29a1050f58ed46a') in 0.020650 seconds
-  Import took 0.061482 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.366728 seconds.
-  path: Assets/Animations/Daiki/Daiki Final 1@Punching.fbx
-  artifactKey: Guid(e7f32b083ad0f8f4e95759e7a861a3d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Daiki Final 1@Punching.fbx using Guid(e7f32b083ad0f8f4e95759e7a861a3d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e506f31febf49c6f9e7ab8e35bedae6c') in 0.014949 seconds
-  Import took 0.022888 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.007338 seconds.
-  path: Assets/Animations/Daiki/Daiki Final 1@Punching.fbx
-  artifactKey: Guid(e7f32b083ad0f8f4e95759e7a861a3d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Daiki Final 1@Punching.fbx using Guid(e7f32b083ad0f8f4e95759e7a861a3d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e506f31febf49c6f9e7ab8e35bedae6c') in 0.005967 seconds
-  Import took 0.018883 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.076544 seconds.
-  path: Assets/Animations/Daiki/Punching.anim
-  artifactKey: Guid(660d107da9c03b84ebc1c6a1faf8c4de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Punching.anim using Guid(660d107da9c03b84ebc1c6a1faf8c4de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66c5f59ea4cef95f1e0f2064f55bc06e') in 0.023906 seconds
-  Import took 0.046929 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.645319 seconds.
-  path: Assets/Animators/CharacterSelection.controller
-  artifactKey: Guid(d95c6d7a69991ee4a9cf960524571a2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animators/CharacterSelection.controller using Guid(d95c6d7a69991ee4a9cf960524571a2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30a333fe4ce0d27d01e95fe80b173d78') in 0.018669 seconds
-  Import took 0.035001 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.210200 seconds.
-  path: Assets/Animators/CharacterSelection 1.controller
-  artifactKey: Guid(0a86a92004a60074f9483b1ccb6367da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animators/CharacterSelection 1.controller using Guid(0a86a92004a60074f9483b1ccb6367da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38d8a7733eb7c3fedb78c9284a852fd6') in 0.016185 seconds
-  Import took 0.024712 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.327386 seconds.
-  path: Assets/Animators/CharacterSelection Daiki.controller
-  artifactKey: Guid(0a86a92004a60074f9483b1ccb6367da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animators/CharacterSelection Daiki.controller using Guid(0a86a92004a60074f9483b1ccb6367da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '792309bca064ffbb7ac05f5eb1055c88') in 0.017506 seconds
-  Import took 0.026695 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 34.597444 seconds.
-  path: Assets/Prefabs/characters/Daiki 1.prefab
-  artifactKey: Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 1.prefab using Guid(4e857d0f2a4781449810e319268a8e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de2bb06e169c3521bc12445157f0b496') in 0.233407 seconds
-  Import took 0.252153 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.711804 seconds.
-  path: Assets/Prefabs/characters/Daiki 2.prefab
-  artifactKey: Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/characters/Daiki 2.prefab using Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd08c14836099afe0186e3df5024cfe49') in 0.070125 seconds
-  Import took 0.095919 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003315 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.00 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.386 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.72 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.5 MB.
-System memory in use after: 253.7 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5273.
-Total: 4.463500 ms (FindLiveObjects: 0.590000 ms CreateObjectMapping: 0.354000 ms MarkObjects: 3.184400 ms  DeleteObjects: 0.333600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002788 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.08 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.354 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.05 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.5 MB.
-System memory in use after: 253.7 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5275.
-Total: 3.300100 ms (FindLiveObjects: 0.388800 ms CreateObjectMapping: 0.232800 ms MarkObjects: 2.430200 ms  DeleteObjects: 0.247100 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 311.454113 seconds.
-  path: Assets/Animations/Daiki/Daiki Final 1@Punching.fbx
-  artifactKey: Guid(e7f32b083ad0f8f4e95759e7a861a3d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Daiki Final 1@Punching.fbx using Guid(e7f32b083ad0f8f4e95759e7a861a3d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcd4290fbe3455c06085af507840c1ef') in 0.032424 seconds
-  Import took 0.040197 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.649741 seconds.
-  path: Assets/Animations/Daiki/Punching.anim
-  artifactKey: Guid(660d107da9c03b84ebc1c6a1faf8c4de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Punching.anim using Guid(660d107da9c03b84ebc1c6a1faf8c4de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02859c888124da7c41579312f441bc48') in 0.013161 seconds
-  Import took 0.026914 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003718 seconds.
-  path: Assets/Animations/Daiki/Punching.anim
-  artifactKey: Guid(660d107da9c03b84ebc1c6a1faf8c4de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Punching.anim using Guid(660d107da9c03b84ebc1c6a1faf8c4de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02859c888124da7c41579312f441bc48') in 0.014211 seconds
-  Import took 0.022603 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002795 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.35 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.391 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.55 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.5 MB.
-System memory in use after: 253.7 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5277.
-Total: 12.603300 ms (FindLiveObjects: 2.265100 ms CreateObjectMapping: 1.765600 ms MarkObjects: 8.272200 ms  DeleteObjects: 0.299100 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004073 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.21 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.540 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.34 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.5 MB.
-System memory in use after: 253.8 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5279.
-Total: 3.138100 ms (FindLiveObjects: 0.391200 ms CreateObjectMapping: 0.240600 ms MarkObjects: 2.305900 ms  DeleteObjects: 0.198600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 232.630680 seconds.
-  path: Assets/Animations/Daiki/Daiki Final 1@Salute.fbx
-  artifactKey: Guid(905edf5c1ef7dc1458f6d5fa1f78cc87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Daiki Final 1@Salute.fbx using Guid(905edf5c1ef7dc1458f6d5fa1f78cc87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdb02c5db0eeb02f620aa0ac397a3384') in 0.028884 seconds
-  Import took 0.046250 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.408922 seconds.
-  path: Assets/Animations/Daiki/Daiki Final 1@Salute.fbx
-  artifactKey: Guid(905edf5c1ef7dc1458f6d5fa1f78cc87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Daiki Final 1@Salute.fbx using Guid(905edf5c1ef7dc1458f6d5fa1f78cc87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '648a8990d55158ba19af62456568bfc6') in 0.005825 seconds
-  Import took 0.013733 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.005316 seconds.
-  path: Assets/Animations/Daiki/Daiki Final 1@Salute.fbx
-  artifactKey: Guid(905edf5c1ef7dc1458f6d5fa1f78cc87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Daiki Final 1@Salute.fbx using Guid(905edf5c1ef7dc1458f6d5fa1f78cc87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '648a8990d55158ba19af62456568bfc6') in 0.006239 seconds
-  Import took 0.016966 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.232305 seconds.
-  path: Assets/Animations/Daiki/Salute.anim
-  artifactKey: Guid(1fe2486b51ba60243ab3f9593c2e5a53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Salute.anim using Guid(1fe2486b51ba60243ab3f9593c2e5a53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3290190ce45de9d7029f064e56833412') in 0.019362 seconds
-  Import took 0.032492 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002935 seconds.
-  path: Assets/Animations/Daiki/Salute.anim
-  artifactKey: Guid(1fe2486b51ba60243ab3f9593c2e5a53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Salute.anim using Guid(1fe2486b51ba60243ab3f9593c2e5a53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3290190ce45de9d7029f064e56833412') in 0.017290 seconds
-  Import took 0.026002 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003338 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.16 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.812 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.03 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.4 MB.
-System memory in use after: 253.6 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5281.
-Total: 8.968300 ms (FindLiveObjects: 0.554000 ms CreateObjectMapping: 0.582700 ms MarkObjects: 7.579900 ms  DeleteObjects: 0.250600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 87.963962 seconds.
-  path: Assets/Animations/Daiki/Daiki Final 1@Fist Fight B.fbx
-  artifactKey: Guid(73f9c077d9a19e247b9522e1748a8f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Daiki Final 1@Fist Fight B.fbx using Guid(73f9c077d9a19e247b9522e1748a8f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8c6ce51d7baafc1a5dd1a5ebf7a47d2') in 0.039034 seconds
-  Import took 0.050628 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.782982 seconds.
-  path: Assets/Animations/Daiki/Daiki Final 1@Fist Fight B.fbx
-  artifactKey: Guid(73f9c077d9a19e247b9522e1748a8f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Daiki Final 1@Fist Fight B.fbx using Guid(73f9c077d9a19e247b9522e1748a8f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7e08d67d81cc5a215e776be58d621f6') in 0.008323 seconds
-  Import took 0.016125 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.004680 seconds.
-  path: Assets/Animations/Daiki/Daiki Final 1@Fist Fight B.fbx
-  artifactKey: Guid(73f9c077d9a19e247b9522e1748a8f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Daiki Final 1@Fist Fight B.fbx using Guid(73f9c077d9a19e247b9522e1748a8f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7e08d67d81cc5a215e776be58d621f6') in 0.007534 seconds
-  Import took 0.018042 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.006551 seconds.
-  path: Assets/Animations/Daiki/Fist Fight B.anim
-  artifactKey: Guid(c12acdfbbbb701e4a9edd2f664f77c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Fist Fight B.anim using Guid(c12acdfbbbb701e4a9edd2f664f77c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06bc280371e734bd0bfc0b342213d6b2') in 0.126583 seconds
-  Import took 0.168878 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002837 seconds.
+Registered in 0.003061 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 1.31 ms, found 1 plugins.
@@ -1206,545 +198,105 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.366 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.37 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.6 MB.
-System memory in use after: 253.8 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5283.
-Total: 5.598500 ms (FindLiveObjects: 1.752700 ms CreateObjectMapping: 0.415800 ms MarkObjects: 3.147800 ms  DeleteObjects: 0.280900 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 207.459039 seconds.
-  path: Assets/Animations/Daiki/Daiki Final 1@Arm Stretching.fbx
-  artifactKey: Guid(8625be611fbc3134aaddbd83ae1789f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Daiki Final 1@Arm Stretching.fbx using Guid(8625be611fbc3134aaddbd83ae1789f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb287715b75a8476795d25218fa3bb51') in 0.064451 seconds
-  Import took 0.075667 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.651269 seconds.
-  path: Assets/Animations/Daiki/Daiki Final 1@Arm Stretching.fbx
-  artifactKey: Guid(8625be611fbc3134aaddbd83ae1789f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Daiki Final 1@Arm Stretching.fbx using Guid(8625be611fbc3134aaddbd83ae1789f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82d466027c329da9491f22ab50ccc413') in 0.011108 seconds
-  Import took 0.018735 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003358 seconds.
-  path: Assets/Animations/Daiki/Daiki Final 1@Arm Stretching.fbx
-  artifactKey: Guid(8625be611fbc3134aaddbd83ae1789f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Daiki Final 1@Arm Stretching.fbx using Guid(8625be611fbc3134aaddbd83ae1789f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82d466027c329da9491f22ab50ccc413') in 0.007149 seconds
-  Import took 0.021315 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.281088 seconds.
-  path: Assets/Animations/Daiki/Arm Stretching.anim
-  artifactKey: Guid(352761db5dcecca4095a03b31ebb7e54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Daiki/Arm Stretching.anim using Guid(352761db5dcecca4095a03b31ebb7e54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31daf80912ecf9f2231acbe0c1983909') in 0.051982 seconds
-  Import took 0.060596 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003178 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.05 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.400 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.68 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.6 MB.
-System memory in use after: 253.8 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5285.
-Total: 3.041600 ms (FindLiveObjects: 0.425000 ms CreateObjectMapping: 0.243800 ms MarkObjects: 2.163600 ms  DeleteObjects: 0.208200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003030 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.27 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.240 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.37 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.6 MB.
-System memory in use after: 253.8 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5287.
-Total: 4.198100 ms (FindLiveObjects: 0.431700 ms CreateObjectMapping: 0.312400 ms MarkObjects: 3.151500 ms  DeleteObjects: 0.300400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002968 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.67 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.799 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.24 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.6 MB.
-System memory in use after: 253.8 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5289.
-Total: 8.931200 ms (FindLiveObjects: 0.617800 ms CreateObjectMapping: 0.349500 ms MarkObjects: 7.625200 ms  DeleteObjects: 0.337200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002753 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.13 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.368 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.36 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.4 MB.
-System memory in use after: 253.6 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5291.
-Total: 3.624600 ms (FindLiveObjects: 0.697000 ms CreateObjectMapping: 0.338000 ms MarkObjects: 2.359000 ms  DeleteObjects: 0.229500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003205 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.14 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.244 seconds
+- Completed reload, in  1.375 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Refreshing native plugins compatible for Editor in 1.59 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.6 MB.
-System memory in use after: 253.8 MB.
+System memory in use before: 253.4 MB.
+System memory in use after: 253.6 MB.
 
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5293.
-Total: 3.950900 ms (FindLiveObjects: 0.446900 ms CreateObjectMapping: 0.257000 ms MarkObjects: 3.024200 ms  DeleteObjects: 0.221600 ms)
+Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5226.
+Total: 4.961800 ms (FindLiveObjects: 0.654500 ms CreateObjectMapping: 0.451600 ms MarkObjects: 3.559000 ms  DeleteObjects: 0.291400 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002847 seconds.
+Registered in 0.002796 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.09 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.372 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Refreshing native plugins compatible for Editor in 1.15 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.424 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.29 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.6 MB.
-System memory in use after: 253.8 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5295.
-Total: 4.104500 ms (FindLiveObjects: 0.506300 ms CreateObjectMapping: 0.386200 ms MarkObjects: 2.982100 ms  DeleteObjects: 0.228800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003659 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.11 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.240 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.06 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.6 MB.
-System memory in use after: 253.9 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5297.
-Total: 3.399900 ms (FindLiveObjects: 0.414700 ms CreateObjectMapping: 0.244300 ms MarkObjects: 2.518900 ms  DeleteObjects: 0.220700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003135 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.26 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.563 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 2.06 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.6 MB.
-System memory in use after: 253.9 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5299.
-Total: 5.410100 ms (FindLiveObjects: 0.617600 ms CreateObjectMapping: 0.385200 ms MarkObjects: 4.171300 ms  DeleteObjects: 0.234400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003405 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.16 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.519 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.17 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 253.4 MB.
 System memory in use after: 253.7 MB.
 
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5301.
-Total: 7.903700 ms (FindLiveObjects: 0.419200 ms CreateObjectMapping: 0.319600 ms MarkObjects: 6.864300 ms  DeleteObjects: 0.298600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002962 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.04 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.679 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.18 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.6 MB.
-System memory in use after: 253.9 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5303.
-Total: 4.488500 ms (FindLiveObjects: 0.626100 ms CreateObjectMapping: 0.344500 ms MarkObjects: 3.230000 ms  DeleteObjects: 0.286600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002874 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.06 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.561 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.85 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.6 MB.
-System memory in use after: 253.9 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5305.
-Total: 5.692300 ms (FindLiveObjects: 1.203500 ms CreateObjectMapping: 0.691300 ms MarkObjects: 2.733400 ms  DeleteObjects: 1.062800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003484 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.07 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.464 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.37 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.7 MB.
-System memory in use after: 253.9 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5307.
-Total: 3.683700 ms (FindLiveObjects: 0.379700 ms CreateObjectMapping: 0.274600 ms MarkObjects: 2.822200 ms  DeleteObjects: 0.206200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002879 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.22 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.504 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.37 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.7 MB.
-System memory in use after: 253.9 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5309.
-Total: 7.168400 ms (FindLiveObjects: 1.613300 ms CreateObjectMapping: 0.471900 ms MarkObjects: 4.798900 ms  DeleteObjects: 0.282100 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004550 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.18 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.578 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.69 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.5 MB.
-System memory in use after: 253.7 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5311.
-Total: 5.019400 ms (FindLiveObjects: 0.563100 ms CreateObjectMapping: 0.372100 ms MarkObjects: 3.420100 ms  DeleteObjects: 0.662400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005619 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 3.10 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.612 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.29 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.7 MB.
-System memory in use after: 253.9 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5313.
-Total: 3.402100 ms (FindLiveObjects: 0.380800 ms CreateObjectMapping: 0.221300 ms MarkObjects: 2.581000 ms  DeleteObjects: 0.217700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002792 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.08 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.638 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 3.58 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.7 MB.
-System memory in use after: 253.9 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5315.
-Total: 6.316600 ms (FindLiveObjects: 0.481900 ms CreateObjectMapping: 0.660200 ms MarkObjects: 4.516000 ms  DeleteObjects: 0.657200 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004551 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.18 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.520 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.15 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.7 MB.
-System memory in use after: 253.9 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5317.
-Total: 3.627800 ms (FindLiveObjects: 0.444100 ms CreateObjectMapping: 0.271700 ms MarkObjects: 2.688000 ms  DeleteObjects: 0.222600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003500 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.28 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.528 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.45 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.7 MB.
-System memory in use after: 253.9 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5319.
-Total: 3.460400 ms (FindLiveObjects: 0.513800 ms CreateObjectMapping: 0.289000 ms MarkObjects: 2.430500 ms  DeleteObjects: 0.225900 ms)
+Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5228.
+Total: 3.804000 ms (FindLiveObjects: 0.665700 ms CreateObjectMapping: 0.392300 ms MarkObjects: 2.511800 ms  DeleteObjects: 0.232300 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3163.363370 seconds.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(ebf3f236972c079449df58dec9d003b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene.unity using Guid(ebf3f236972c079449df58dec9d003b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '600da0994a6e8770847db3e29a83ad41') in 0.020842 seconds
-  Import took 0.033784 seconds .
+  Time since last request: 209.216544 seconds.
+  path: Assets/Prefabs/characters/Daiki 2.prefab
+  artifactKey: Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/characters/Daiki 2.prefab using Guid(65f590c9edf879f46a13b002ae6dfc16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2774f1839502dd920593a767aabdbd1') in 0.262127 seconds
+  Import took 0.274573 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002973 seconds.
+Registered in 0.002819 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.85 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.10 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.602 seconds
+- Completed reload, in  1.453 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.13 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.7 MB.
-System memory in use after: 253.9 MB.
+System memory in use before: 253.6 MB.
+System memory in use after: 253.8 MB.
 
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5321.
-Total: 3.773600 ms (FindLiveObjects: 0.585400 ms CreateObjectMapping: 0.615600 ms MarkObjects: 2.354400 ms  DeleteObjects: 0.216900 ms)
+Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5266.
+Total: 3.512000 ms (FindLiveObjects: 0.553000 ms CreateObjectMapping: 0.316100 ms MarkObjects: 2.424500 ms  DeleteObjects: 0.217200 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005744 seconds.
+Registered in 0.002818 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.40 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.75 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.273 seconds
+- Completed reload, in  1.425 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.08 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.55 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.9 MB.
-System memory in use after: 254.1 MB.
+System memory in use before: 253.6 MB.
+System memory in use after: 253.8 MB.
 
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5323.
-Total: 4.104300 ms (FindLiveObjects: 0.756400 ms CreateObjectMapping: 0.375400 ms MarkObjects: 2.698300 ms  DeleteObjects: 0.272100 ms)
+Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5268.
+Total: 3.224600 ms (FindLiveObjects: 0.387300 ms CreateObjectMapping: 0.240700 ms MarkObjects: 2.382500 ms  DeleteObjects: 0.212800 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003276 seconds.
+Registered in 0.002959 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.14 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.39 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
@@ -1753,109 +305,37 @@ Mono: successfully reloaded assembly
 - Completed reload, in  1.543 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.11 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 254.0 MB.
-System memory in use after: 254.2 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5325.
-Total: 11.472600 ms (FindLiveObjects: 5.177400 ms CreateObjectMapping: 0.993900 ms MarkObjects: 4.931200 ms  DeleteObjects: 0.368900 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002948 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.81 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.634 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.18 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 254.0 MB.
-System memory in use after: 254.4 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5327.
-Total: 4.382500 ms (FindLiveObjects: 0.534900 ms CreateObjectMapping: 0.475000 ms MarkObjects: 3.139900 ms  DeleteObjects: 0.231400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003173 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 3.76 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.449 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.36 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 254.0 MB.
-System memory in use after: 254.4 MB.
-
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5329.
-Total: 5.909100 ms (FindLiveObjects: 1.306900 ms CreateObjectMapping: 0.794200 ms MarkObjects: 3.542700 ms  DeleteObjects: 0.263700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003034 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 1.37 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.666 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.06 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 253.8 MB.
-System memory in use after: 254.2 MB.
+System memory in use before: 253.5 MB.
+System memory in use after: 253.7 MB.
 
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5331.
-Total: 3.255500 ms (FindLiveObjects: 0.431800 ms CreateObjectMapping: 0.250700 ms MarkObjects: 2.366000 ms  DeleteObjects: 0.206000 ms)
+Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5270.
+Total: 4.352400 ms (FindLiveObjects: 0.733300 ms CreateObjectMapping: 0.432500 ms MarkObjects: 2.963300 ms  DeleteObjects: 0.221800 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003550 seconds.
+Registered in 0.003158 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.52 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.27 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.636 seconds
+- Completed reload, in  1.559 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.49 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 1.75 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4341 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 254.0 MB.
-System memory in use after: 254.4 MB.
+System memory in use before: 253.7 MB.
+System memory in use after: 253.9 MB.
 
-Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5333.
-Total: 6.775800 ms (FindLiveObjects: 0.591100 ms CreateObjectMapping: 2.412700 ms MarkObjects: 3.016100 ms  DeleteObjects: 0.754200 ms)
+Unloading 139 unused Assets to reduce memory usage. Loaded Objects now: 5272.
+Total: 3.436800 ms (FindLiveObjects: 0.432900 ms CreateObjectMapping: 0.275800 ms MarkObjects: 2.506800 ms  DeleteObjects: 0.219700 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

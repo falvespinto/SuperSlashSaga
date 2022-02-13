@@ -13,7 +13,7 @@ public class isInCombo : Conditional
     }
     public override TaskStatus OnUpdate()
     {
-        if (ia.playerAttackIA.isInCombo)
+        if (ia.isInCombo)
         {
             return TaskStatus.Success;
         }

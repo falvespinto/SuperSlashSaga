@@ -7,6 +7,7 @@ public class Attack : MonoBehaviour
     public float halfExtent;
     public int damage;
     public string attackType;
+    public string attackName;
     private Collider col;
     public PlayerAttack player;
     public PlayerAttackIA playerIA;
@@ -42,6 +43,8 @@ public class Attack : MonoBehaviour
         //Debug.Log(gameObject.GetComponentInParent<Player>().playerIndex);
         if (hit.Length > 0)
         {
+            Debug.Log(attackName);
+            attackName = "null";
             for (int i = 0; i < hit.Length; i++)
             {
                 if (isIA && GetComponentInParent<PlayerData>().playerIndex == 0)
