@@ -10,6 +10,7 @@ public class IAHeavy : Action
     public SharedGameObject targetGameObject;
     public PlayerAudioManager playerAudio;
     public HeavyAttackIA heavyAttackIA;
+    public RangePermute rangeHeavyAttack;
     public IA ia;
     public override void OnStart()
     {
@@ -22,18 +23,15 @@ public class IAHeavy : Action
     }
     public override TaskStatus OnUpdate()
     {
-        if (ia.isTakingDamage)
+        if(!heavyAttackIA.playerAttackIA.isAttacking && !ia.isInCombo && rangeHeavyAttack.bIsInRange && !ia.isTakingDamage)
         {
-            Debug.LogWarning("Animator is null");
+            heavyAttackIA.PerformedHeavyAttack("normal");
+            return TaskStatus.Success;
+        }
+        else
+        {
             return TaskStatus.Failure;
         }
-        if(!heavyAttackIA.playerAttackIA.isAttacking && !ia.isInCombo){
-            heavyAttackIA.PerformedHeavyAttack("normal");
-            //playerAudio.playSoundLourdMiss();
-        }
-
-
-        return TaskStatus.Success;
     }
 
     public override void OnReset()

@@ -44,34 +44,62 @@ public class StartGame : MonoBehaviour
 
     void InitGame()
     {
-        Debug.Log("change scene");
-        if (P1.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Yuetsu")
+        if (!managerIA.bIsIA)
         {
-            PlayerPrefs.SetInt("selectedCharacterP1", 0);
-            P1User = P1.champSelect.GetComponent<PlayerInput>().user;
-            P1Device = P1.champSelect.GetComponent<PlayerInput>().devices[0];
-            Debug.Log("P1 Device Startgame : " + P1Device);
-        }
-        else
-        {
-            if (P1.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Daiki")
+            Debug.Log("change scene");
+            if (P1.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Yuetsu")
             {
-                PlayerPrefs.SetInt("selectedCharacterP1", 2);
+                PlayerPrefs.SetInt("selectedCharacterP1", 0);
                 P1User = P1.champSelect.GetComponent<PlayerInput>().user;
                 P1Device = P1.champSelect.GetComponent<PlayerInput>().devices[0];
                 Debug.Log("P1 Device Startgame : " + P1Device);
             }
+            else
+            {
+                if (P1.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Daiki")
+                {
+                    PlayerPrefs.SetInt("selectedCharacterP1", 2);
+                    P1User = P1.champSelect.GetComponent<PlayerInput>().user;
+                    P1Device = P1.champSelect.GetComponent<PlayerInput>().devices[0];
+                    Debug.Log("P1 Device Startgame : " + P1Device);
+                }
+            }
+
+            if (P2.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Yuetsu")
+            {
+                PlayerPrefs.SetInt("selectedCharacterP2", 0);
+                P2User = P2.champSelect.GetComponent<PlayerInput>().user;
+                P2Device = P2.champSelect.GetComponent<PlayerInput>().devices[0];
+                Debug.Log("P2 Device Startgame : " + P2Device);
+            }
+            if (P2.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Daiki")
+            {
+                PlayerPrefs.SetInt("selectedCharacterP2", 2);
+                P2User = P2.champSelect.GetComponent<PlayerInput>().user;
+                P2Device = P2.champSelect.GetComponent<PlayerInput>().devices[0];
+                Debug.Log("P2 Device Startgame : " + P2Device);
+            }
         }
-        
-        if (P2.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Yuetsu" && !managerIA.bIsIA)
-        {
-            PlayerPrefs.SetInt("selectedCharacterP2", 0);
-            P2User = P2.champSelect.GetComponent<PlayerInput>().user;
-            P2Device = P2.champSelect.GetComponent<PlayerInput>().devices[0];
-            Debug.Log("P2 Device Startgame : " + P2Device);
-        }
+       
         else
         {
+            if (P1.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Yuetsu")
+            {
+                PlayerPrefs.SetInt("selectedCharacterP1", 0);
+                P1User = P1.champSelect.GetComponent<PlayerInput>().user;
+                P1Device = P1.champSelect.GetComponent<PlayerInput>().devices[0];
+                Debug.Log("P1 Device Startgame : " + P1Device);
+            }
+            else
+            {
+                if (P1.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Daiki")
+                {
+                    PlayerPrefs.SetInt("selectedCharacterP1", 2);
+                    P1User = P1.champSelect.GetComponent<PlayerInput>().user;
+                    P1Device = P1.champSelect.GetComponent<PlayerInput>().devices[0];
+                    Debug.Log("P1 Device Startgame : " + P1Device);
+                }
+            }
             PlayerPrefs.SetInt("selectedCharacterP2", 1);
         }
 

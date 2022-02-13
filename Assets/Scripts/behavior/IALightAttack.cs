@@ -26,7 +26,7 @@ public class IALight : Action
         if (!lightAttackIA.playerAttackIA.isAttacking && !ia.isInCombo && rangeLightAttack.bIsInRange && !ia.isTakingDamage)
         {
 
-            lightAttackIA.PerformedLightAttack("normal");      
+            lightAttackIA.PerformedLightAttack("normal");
             Debug.Log(lightAttackIA.playerAttackIA.playerHit);
             //playerAudio.playSoundLeger();
             return TaskStatus.Success;

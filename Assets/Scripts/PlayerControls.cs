@@ -31,7 +31,9 @@ public class PlayerControls : MonoBehaviour
     public GameObject spawnValidationJ1;
     public GameObject spawnValidationJ2;
     public GameObject yuetsuPrefab;
+    public GameObject daikiPrefab;
     public GameObject yuetsuPrefabJ2;
+    public GameObject daikiPrefabJ2;
     public GameObject startPlayer1;
     public GameObject startPlayer2;
     private GameObject currentPrefabSpawn;
@@ -45,7 +47,7 @@ public class PlayerControls : MonoBehaviour
     private int indexJ2;
     private int indexIA;
     private GameObject ia;
-
+    private int afficherPrefab = 0;
 
 
     private void Awake()
@@ -88,7 +90,8 @@ public class PlayerControls : MonoBehaviour
                 gameObject.GetComponentInChildren<Image>().sprite = playersIcons[2];
                 gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             }
-            else{
+            else
+            {
                 index = 1;
                 indexJ2 = 1;
                 gameObject.GetComponentInChildren<Image>().sprite = playersIcons[1];
@@ -109,10 +112,12 @@ public class PlayerControls : MonoBehaviour
             if (movementInput.x > 0)
             {
                 champSelect.MoveSelector("right");
+                afficherPrefab += 1;
             }
             else if (movementInput.x < 0)
             {
                 champSelect.MoveSelector("left");
+                afficherPrefab -= 1;
             }
             /*else if (movementInput.y > 0)
             {
@@ -127,7 +132,7 @@ public class PlayerControls : MonoBehaviour
         {
             if (movementInput.x > 0)
             {
-                ia.GetComponent<PlayerControls>().champSelect.MoveSelector("right"); 
+                ia.GetComponent<PlayerControls>().champSelect.MoveSelector("right");
             }
             else if (movementInput.x < 0)
             {
@@ -145,14 +150,18 @@ public class PlayerControls : MonoBehaviour
     }
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
 
-    public void OnSelect(InputAction.CallbackContext ctx) {
-        
+    public void OnSelect(InputAction.CallbackContext ctx)
+    {
+
         if (isInit && !hasSelected)
         {
-            
+
             if (indexJ1 == 1 && isSpawnableJ1 == true)
             {
-                InstanciateJ1(yuetsuPrefab);
+                if (afficherPrefab <= 0)
+                    InstanciateJ1(yuetsuPrefab);
+                if (afficherPrefab >= 1)
+                    InstanciateJ1(daikiPrefab);
                 initialisationBandeau.validationJ1.SetActive(true);
                 if (currentPrefabSpawn != characterSpawn)
                 {
@@ -162,7 +171,10 @@ public class PlayerControls : MonoBehaviour
             }
             else if (indexJ2 == 1 && isSpawnableJ2 == true)
             {
-                InstanciateJ2(yuetsuPrefabJ2);
+                if (afficherPrefab <= 0)
+                    InstanciateJ2(yuetsuPrefabJ2);
+                if (afficherPrefab >= 1)
+                    InstanciateJ2(daikiPrefabJ2);
                 initialisationBandeau.validationJ2.SetActive(true);
                 if (currentPrefabSpawn != characterSpawn)
                 {
@@ -186,37 +198,37 @@ public class PlayerControls : MonoBehaviour
             }
 
             Debug.Log(isInit);
-        if (ctx.canceled && isInit)
-        {
-            hasSelected = true;
-            Debug.Log("perso a été select" + champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name);
+            if (ctx.canceled && isInit)
+            {
+                hasSelected = true;
+                Debug.Log("perso a été select" + champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name);
 
-            if (index == 0)
-            {
-                GameObject.FindObjectOfType<StartGame>().P1 = this;
-                if (managerIA.bIsIA)
+                if (index == 0)
                 {
-                       ia = Instantiate(managerIA.selector);
+                    GameObject.FindObjectOfType<StartGame>().P1 = this;
+                    if (managerIA.bIsIA)
+                    {
+                        ia = Instantiate(managerIA.selector);
+                    }
                 }
-            } 
-                    
-            
-            else if (index == 1)
-            {
-                GameObject.FindObjectOfType<StartGame>().P2 = this;
+
+
+                else if (index == 1)
+                {
+                    GameObject.FindObjectOfType<StartGame>().P2 = this;
+                }
+                FindObjectOfType<AudioManager>().Play("ajoutJoueur");
             }
-            FindObjectOfType<AudioManager>().Play("ajoutJoueur");
-        }
         }
         else if (isInit && hasSelected && managerIA.bIsIA && ia != null)
         {
             ia.GetComponent<PlayerControls>().SelectIA();
         }
     }
-    
+
     public void OnTriggerEnter2D(Collider2D collider)
     {
-            if(collider.GetComponent<PlayerControls>() != null)
+        if (collider.GetComponent<PlayerControls>() != null)
         {
             button = collider.gameObject;
         }
@@ -242,7 +254,7 @@ public class PlayerControls : MonoBehaviour
     }
     public GameObject InstanciateJ2(GameObject character)
     {
-         characterSpawn = Instantiate(character) as GameObject;
+        characterSpawn = Instantiate(character) as GameObject;
         characterSpawn.transform.position = spawnPositionJ2.transform.position;
         characterSpawn.transform.rotation = spawnPositionJ2.transform.rotation;
         characterSpawn.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);

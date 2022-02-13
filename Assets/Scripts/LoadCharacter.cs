@@ -26,7 +26,7 @@ public class LoadCharacter : MonoBehaviour
         //P1.GetComponentInChildren<Player>().playerIndex = 0;
         //P1.GetComponentInChildren<Player>().hurtBox = 1 << LayerMask.NameToLayer("HurtBox2");
         //P1.GetComponentInChildren<PlayerController>().cam = GameObject.Find("P1 Camera").transform;
-        SetLayerRecursively(P1,8);
+        SetLayerRecursively(P1, 8);
         //P1.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P1Cam");
         InputUser.PerformPairingWithDevice(
             StartGame.P1Device,
@@ -103,9 +103,18 @@ public class LoadCharacter : MonoBehaviour
             {
                 attacks.gameObject.SetActive(false);
             }
-            //P2.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
-            P2.GetComponentInChildren<CorpsTexture>().GetComponent<Renderer>().material = P2.GetComponentInChildren<CorpsTexture>().materialYuetsu;
-            P2.GetComponentInChildren<Cape>().GetComponentInChildren<test>().GetComponentInChildren<test1>().GetComponentInChildren<test2>().GetComponentInChildren<test3>().GetComponentInChildren<CapeMat>().GetComponent<Renderer>().material = P2.GetComponentInChildren<Cape>().material;
+            string p2String = P2.ToString();
+            if (p2String.Contains("Yuetsu"))
+            {
+                //P2.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
+                P2.GetComponentInChildren<CorpsTexture>().GetComponent<Renderer>().material = P2.GetComponentInChildren<CorpsTexture>().materialYuetsu;
+                P2.GetComponentInChildren<Cape>().GetComponentInChildren<test>().GetComponentInChildren<test1>().GetComponentInChildren<test2>().GetComponentInChildren<test3>().GetComponentInChildren<CapeMat>().GetComponent<Renderer>().material = P2.GetComponentInChildren<Cape>().material;
+            }
+            if (p2String.Contains("Daiki"))
+            {
+
+            }
+            //
             Debug.Log(StartGame.P2Device);
             InputUser.PerformPairingWithDevice(
             StartGame.P2Device,
@@ -114,7 +123,7 @@ public class LoadCharacter : MonoBehaviour
             );
             faceP2.sprite = P2.GetComponent<Player>().faceSprite;
         }
-        
+
 
         //P1.GetComponentInChildren<Player>().target = P2.GetComponentInChildren<Player>().transform;
         //P1.GetComponentInChildren<PlayerAttack>().target = P2.GetComponentInChildren<Player>().transform;

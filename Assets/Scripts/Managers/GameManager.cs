@@ -7,8 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public PlayerData P1Data;
     public PlayerData P2Data;
+    public PlayerData IAData;
     private Player P1;
     private Player P2;
+    private IA IA;
     private Player playerToHelp;
     private int sendHelpState = 0;
     public Action<string> whenVoteStopped;
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
     {
         P1 = P1Data.GetComponentInChildren<Player>();
         P2 = P2Data.GetComponentInChildren<Player>();
+        IA = IAData.GetComponentInChildren<IA>();
     }
     private void OnEnable()
     {
@@ -39,18 +42,41 @@ public class GameManager : MonoBehaviour
     {
         if (P1 == null) P1 = P1Data.GetComponentInChildren<Player>();
         if (P2 == null) P2 = P2Data.GetComponentInChildren<Player>();
-        if (sendHelpState == 0 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 30))
+        if (IA == null) IA = IAData.GetComponentInChildren<IA>();
+        //SANS IA
+        if (!StartGame.managerIA.bIsIA)
         {
-            AskForHelpToTwitch();
-        }
-        else if (sendHelpState == 1 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 40))
+            if (sendHelpState == 0 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 30))
+            {
+                AskForHelpToTwitch();
+            }
+            else if (sendHelpState == 1 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 40))
+            {
+                AskForHelpToTwitch();
+            }
+            else if (sendHelpState == 2 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 50))
+            {
+                AskForHelpToTwitch();
+            }
+        } 
+        //AVEC IA
+        else
         {
-            AskForHelpToTwitch();
+           
+            if (sendHelpState == 0 && (Mathf.Abs(P1.currentHealth - IA.currentHealth) >= 30) && !StartGame.managerIA.bIsIA)
+            {
+                AskForHelpToTwitch();
+            }
+            else if (sendHelpState == 1 && (Mathf.Abs(P1.currentHealth - IA.currentHealth) >= 40) && !StartGame.managerIA.bIsIA)
+            {
+                AskForHelpToTwitch();
+            }
+            else if (sendHelpState == 2 && (Mathf.Abs(P1.currentHealth - IA.currentHealth) >= 50) && !StartGame.managerIA.bIsIA)
+            {
+                AskForHelpToTwitch();
+            }
         }
-        else if (sendHelpState == 2 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 50))
-        {
-            AskForHelpToTwitch();
-        }
+        
     }
 
     private void AskForHelpToTwitch()
@@ -107,7 +133,14 @@ public class GameManager : MonoBehaviour
 
     private void StartHelp()
     {
-        playerToHelp = P1.currentHealth < P2.currentHealth ? P1 : P2;
+        if (!StartGame.managerIA.bIsIA)
+        {
+            playerToHelp = P1.currentHealth < P2.currentHealth ? P1 : P2;
+        }
+        else
+        {
+            playerToHelp = P1;
+        }
         onHelpAsked?.Invoke(choixHelp, 30, whenVoteStopped);
         TwitchChat.Instance.SendIRCMessage("Voulez-vous aidez le joueur" + (playerToHelp.playerIndex + 1) + "?" +
             "heal: soigne le joueur" +

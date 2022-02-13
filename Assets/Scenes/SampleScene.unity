@@ -4923,6 +4923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   P1Data: {fileID: 1255808040}
   P2Data: {fileID: 1735635068}
+  IAData: {fileID: 1735635068}
 --- !u!1 &355596173
 GameObject:
   m_ObjectHideFlags: 0
@@ -7916,19 +7917,7 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -22119,7 +22108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1255808041}
   - component: {fileID: 1255808040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
