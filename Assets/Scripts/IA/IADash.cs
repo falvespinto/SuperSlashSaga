@@ -26,7 +26,8 @@ public class IADash : MonoBehaviour
     public bool isDashingOn = false;
     public IA ia;
     public Collider engageArea;
-    public GameObject gameObjectIA;
+    public float maxTurnSpeed = 60f;
+    public float dashTime = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,29 +38,12 @@ public class IADash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    public void DashOn()
-    {
-
-        engageArea.gameObject.SetActive(true);
-        Collider[] hit = Physics.OverlapBox(engageArea.bounds.center, engageArea.bounds.extents, engageArea.transform.rotation, gameObject.GetComponentInParent<PlayerData>().enemyLayer);
-        if (hit.Length > 0)
+        if (isDashing)
         {
-            for (int i = 0; i < hit.Length; i++)
-            {
-                hit[i].GetComponentInParent<Player>().bumped(0.8f);
-                Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
-                Debug.Log(hit[i].gameObject.layer);
-                hasTouched = true;
-                isDashing = false;
-                engageArea.gameObject.SetActive(false);
-                break;
-            }
+            //engageArea.gameObject.SetActive(true);
+
         }
     }
-    public void ControllerDirection(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
 
     public void DashMovement()
     {
@@ -78,18 +62,41 @@ public class IADash : MonoBehaviour
         //m_animator.SetBool("isDashing", false);
 
         // Regarde vers l'adversaire
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        Vector3 direction = playerAttack.LookAtTarget();
-        m_animator.SetBool("isDashing", true);
-        isDashing = true;
-        while (!hasTouched)
+        Collider[] hit = Physics.OverlapBox(engageArea.bounds.center, engageArea.bounds.extents, engageArea.transform.rotation, gameObject.GetComponentInParent<PlayerData>().enemyLayer);
+        if (hit.Length > 0)
         {
-            agent.Move(transform.forward * dashSpeed * Time.deltaTime);
+            for (int i = 0; i < hit.Length; i++)
+            {
+                hit[i].GetComponentInParent<Player>().bumped(0.8f);
+                Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
+                Debug.Log(hit[i].gameObject.layer);
+                hasTouched = true;
+                isDashing = false;
+                //engageArea.gameObject.SetActive(false);
+                break;
+            }
         }
-        //yield return new WaitForSeconds(0.25f);
-        isDashing = false;
-        hasTouched = false;
-        m_animator.SetBool("isDashing", false);
+        else
+        {
+            float timeElapsed = 0;
+            NavMeshAgent agent = GetComponent<NavMeshAgent>();
+            m_animator.SetBool("isDashing", true);
+            isDashing = true;
+            while (!hasTouched && timeElapsed < 1f)
+            {
+                Vector3 directionToTarget = playerAttack.playerData.target.position - (transform.position);
+                Vector3 currentDirection = transform.forward;
+                Vector3 resultingDirection = Vector3.RotateTowards(currentDirection, directionToTarget.normalized, maxTurnSpeed * Mathf.Deg2Rad * Time.deltaTime, 1f);
+                transform.rotation = Quaternion.LookRotation(resultingDirection);
+                agent.Move(transform.forward * dashSpeed * Time.deltaTime);
+                timeElapsed += Time.deltaTime;
+            }
+            //yield return new WaitForSeconds(0.25f);
+            isDashing = false;
+            hasTouched = false;
+            m_animator.SetBool("isDashing", false);
+        }
+
     }
 
     public IEnumerator Infuse()

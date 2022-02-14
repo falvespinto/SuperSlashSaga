@@ -4,12 +4,12 @@ using BehaviorDesigner.Runtime;
 
 public class isInCombo : Conditional
 {
-    public LightAttackIA ia;
+    public IA ia;
     public bool isInComboBehavior;
 
     public override void OnStart()
     {
-        isInComboBehavior = ia.isInCombo;
+
     }
     public override TaskStatus OnUpdate()
     {

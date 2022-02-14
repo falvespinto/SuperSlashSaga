@@ -14,6 +14,7 @@ public class ParadeIA : MonoBehaviour
     public PlayerData playerData;
     private Player player;
     private bool neverPared;
+    public GameObject shield;
     public void Awake()
     {
         playerData = GetComponentInParent<PlayerData>();
@@ -39,6 +40,7 @@ public class ParadeIA : MonoBehaviour
     {
         if (!playerAttackIA.isAttacking && !playerAttackIA.isParing && !playerAttackIA.isRunAttacking)
         {
+            shield.SetActive(true);
             playerAttackIA.LookAtTarget();
             playerAttackIA.isParing = true;
             Debug.Log("is Paring");
@@ -50,6 +52,7 @@ public class ParadeIA : MonoBehaviour
     {
         if (!playerAttackIA.isAttacking && playerAttackIA.isParing && !playerAttackIA.isRunAttacking)
         {
+            shield.SetActive(false);
             playerAttackIA.isParing = false;
             Debug.Log("has stopped paring");
             playerAttackIA.m_Animator.SetBool("IsParing", false);
