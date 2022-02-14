@@ -8,8 +8,7 @@ public class TwitchCommandCollection : MonoBehaviour
     public TwitchDisplayMessageCommand twitchDisplayMessageCommand;
     public TwitchDmgCommand twitchDmgCommand;
     public TwitchHypeCommand twitchHypeCommand;
-    public TwitchVoteCommand twitchVoteCommand;
-    public TwitchSubCommand twitchSubCommand;
+    public TwitchVote twitchVoteCommand;
     public void Awake()
     {
         _commands = new Dictionary<string, ITwitchCommandHandler>();
@@ -17,7 +16,6 @@ public class TwitchCommandCollection : MonoBehaviour
         _commands.Add(TwitchCommands.CommandDamage, twitchDmgCommand);
         _commands.Add(TwitchCommands.CommandHype, twitchHypeCommand);
         _commands.Add(TwitchCommands.CommandVote, twitchVoteCommand);
-        _commands.Add(TwitchCommands.CommandSub, twitchSubCommand);
     }
     public bool HasCommand(string command)
     {
@@ -26,7 +24,7 @@ public class TwitchCommandCollection : MonoBehaviour
 
     public void ExecuteCommand(string command, TwitchCommandData data)
     {
-        command = command.Substring(1); // retire le préfix
+        command = command.Substring(1); // retire le prï¿½fix
         if (HasCommand(command))
         {
             _commands[command].HandleCommand(data);

@@ -23662,7 +23662,6 @@ GameObject:
   - component: {fileID: 1390820475}
   - component: {fileID: 1390820474}
   - component: {fileID: 1390820478}
-  - component: {fileID: 1390820479}
   m_Layer: 0
   m_Name: TwitchManager
   m_TagString: Untagged
@@ -23755,8 +23754,6 @@ MonoBehaviour:
   twitchDisplayMessageCommand: {fileID: 1390820474}
   twitchDmgCommand: {fileID: 1390820475}
   twitchHypeCommand: {fileID: 1390820476}
-  twitchVoteCommand: {fileID: 1390820478}
-  twitchSubCommand: {fileID: 1390820479}
 --- !u!114 &1390820478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23766,38 +23763,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1390820471}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f32f7c87c73c940b0f0a624595c76e, type: 3}
+  m_Script: {fileID: 11500000, guid: ef00dba87f44b1e46adcca88642bb8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canVote: 1
-  currentVoteType: 
-  voteOnGoing: 0
---- !u!114 &1390820479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1390820471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47c16a7e2c32fb944834e1b16eda6c1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 757205644}
-  - {fileID: 889258804}
-  - {fileID: 1971049094}
-  - {fileID: 542521107}
-  - {fileID: 1272127466}
-  - {fileID: 1205939145}
-  - {fileID: 787347400}
-  - {fileID: 1845149468}
-  - {fileID: 1896448598}
-  - {fileID: 548686204}
-  prefabsBosses:
-  - {fileID: 7997175022967525045, guid: 56d739a9eaf75154da93e2ae070e92ee, type: 3}
-  index: 0
+  twitchchat: {fileID: 1390820473}
 --- !u!1 &1395374816
 GameObject:
   m_ObjectHideFlags: 0
