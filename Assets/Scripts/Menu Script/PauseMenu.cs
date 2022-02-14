@@ -197,4 +197,13 @@ public class PauseMenu : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.3f);
         cooldown = false;
     }
+
+    public void Selecte(InputAction.CallbackContext ctx)
+    {
+        if(ctx.started)
+        {
+            ChapitreManager.instance.chapitre();
+        }
+    }
+
 }
