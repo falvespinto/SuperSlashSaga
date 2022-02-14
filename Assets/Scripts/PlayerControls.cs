@@ -190,7 +190,6 @@ public class PlayerControls : MonoBehaviour
         {
             hasSelected = true;
             Debug.Log("perso a été select" + champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name);
-
             if (index == 0)
             {
                 GameObject.FindObjectOfType<StartGame>().P1 = this;
@@ -198,9 +197,7 @@ public class PlayerControls : MonoBehaviour
                 {
                        ia = Instantiate(managerIA.selector);
                 }
-            } 
-                    
-            
+            }
             else if (index == 1)
             {
                 GameObject.FindObjectOfType<StartGame>().P2 = this;

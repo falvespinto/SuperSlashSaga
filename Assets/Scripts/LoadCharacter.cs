@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class LoadCharacter : MonoBehaviour
 {
@@ -16,8 +18,23 @@ public class LoadCharacter : MonoBehaviour
     public Image faceP1;
     public Image faceP2;
     public GameObject prefabP2;
+    public Volume volume;
+    public VolumeProfile volumeProfileDay;
+    public VolumeProfile volumeProfileNight;
+
+    public 
     void Start()
     {
+
+        if (StartGame.choixMap == "nuit")
+        {
+            volume.profile = volumeProfileNight;
+        }
+        else
+        {
+            volume.profile = volumeProfileDay;
+        }
+
         int selectedCharacterP1 = PlayerPrefs.GetInt("selectedCharacterP1");
         int selectedCharacterP2 = PlayerPrefs.GetInt("selectedCharacterP2");
         GameObject prefabP1 = characterPrefabs[selectedCharacterP1];

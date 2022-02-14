@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         {"heal", 0},
         {"rien", 0}
     };
-    public static Action<Dictionary<string, int>, float, Action<string>> onHelpAsked;
+    public static Action<Dictionary<string, int>, float, Action<string>, Action<string, int>> onHelpAsked;
 
     private void Start()
     {
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
     private void StartHelp()
     {
         playerToHelp = P1.currentHealth < P2.currentHealth ? P1 : P2;
-        onHelpAsked?.Invoke(choixHelp, 30, whenVoteStopped);
+        onHelpAsked?.Invoke(choixHelp, 30, whenVoteStopped, null);
         TwitchChat.Instance.SendIRCMessage("Voulez-vous aidez le joueur" + (playerToHelp.playerIndex + 1) + "?" +
             "heal: soigne le joueur" +
             "rien : refuser d'aider le joueur");

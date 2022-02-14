@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Net.Sockets;
 using System.IO;
 using System.Net;
+using System.Linq;
 using UnityEngine.Networking;
 using SimpleJSON;
 using System.Text.RegularExpressions;
@@ -23,7 +24,7 @@ public class TwitchChat : MonoBehaviour
     private string authJson;
     private EmotesData emotesData;
     private TwitchCredentials credentials;
-    private List<string> emoteQueue =  new List<string>();
+    private List<string> emoteQueue = new List<string>();
     public EmotesSpawner emotesSpawner;
     public bool canSpawnEmote = true;
     public string json_folder;
@@ -43,7 +44,7 @@ public class TwitchChat : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     // DEBUT FIX : A bouger vers une classe TwitchConnectUI qui contiendra une interface de connexion, pour l'instant on le fait en dure.
@@ -56,7 +57,7 @@ public class TwitchChat : MonoBehaviour
             Username = "Ellixyy",
             Password = "oauth:kgtnyxxfzxz5qb7sivwc6oca526klc"
         };
-        
+
         Connect(credentials);
     }
     // FIN FIX
@@ -104,7 +105,7 @@ public class TwitchChat : MonoBehaviour
         _writer.WriteLine("JOIN #" + credentials.ChannelName.ToLower());
         _writer.Flush();
     }
-    
+
     public void SendIRCMessage(string message)
     {
         _writer.WriteLine("PRIVMSG #" + credentials.ChannelName.ToLower() + " :" + message);
@@ -116,6 +117,7 @@ public class TwitchChat : MonoBehaviour
         //Debug.Log("Available : " + _twitchClient.Available);
         if (_twitchClient.Available > 0)
         {
+            Debug.Log(_twitchClient.Available);
             string message = _reader.ReadLine();
             Debug.Log(message);
             if (message.Contains("PING"))
@@ -133,63 +135,82 @@ public class TwitchChat : MonoBehaviour
 
                 splitPoint = message.IndexOf(":", 1);
                 message = message.Substring(splitPoint + 1);
-                if (message.StartsWith(TwitchCommands.CommandPrefix))
+                if (author != credentials.Username.ToLower())
                 {
-                    int index = message.IndexOf(" ");
-                    string command = index > -1 ? message.Substring(0, index) : message;
-                    string argument = index > -1 ? message.Split(' ')[1] : "none";
-                    Debug.Log("Twitch : argument : " + argument);
-                    Debug.Log("Twitch : Command : " + command);
-                    _commands.ExecuteCommand(
-                        command,
-                        new TwitchCommandData
-                        {
-                            Author = author,
-                            Message = message,
-                            Argument = argument,
-                            Command = command
-                        });
-                }
-                else
-                {
-                    MatchCollection words = Regex.Matches(message, @"\b[\w']*\b");
-                    foreach (var word in words)
+                    if (message.StartsWith(TwitchCommands.CommandPrefix))
                     {
-                        foreach (var emote in emotesData.data)
-                        {
-                            if (emote.name == word.ToString())
-                            {
-                                string resultUrl = getEmoteImage(emote.name);
-                                if (resultUrl != "none")
-                                {
-                                    emoteQueue.Add(resultUrl);
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (_commands.twitchVoteCommand.voteOnGoing)
-                {
-                    int index = message.IndexOf(" ");
-                    string command = index > -1 ? message.Substring(0, index) : message;
-                    command = command.ToLower();
-                    if (_commands.twitchVoteCommand.choix.ContainsKey(command))
-                    {
-                        _commands.twitchVoteCommand.HandleCommand(
+                        int index = message.IndexOf(" ");
+                        string command = index > -1 ? message.Substring(0, index) : message;
+                        string argument = index > -1 ? message.Split(' ')[1] : "none";
+                        Debug.Log("Twitch : argument : " + argument);
+                        Debug.Log("Twitch : Command : " + command);
+                        _commands.ExecuteCommand(
+                            command,
                             new TwitchCommandData
                             {
                                 Author = author,
                                 Message = message,
-                                Argument = "none",
+                                Argument = argument,
                                 Command = command
-                            }
-                            );
+                            });
                     }
-                    SendIRCMessage("Le viewver " + author + " a voté " + message);
+                    else
+                    {
+                        MatchCollection words = Regex.Matches(message, @"\b[\w']*\b");
+                        foreach (var word in words)
+                        {
+                            foreach (var emote in emotesData.data)
+                            {
+                                if (emote.name == word.ToString())
+                                {
+                                    string resultUrl = getEmoteImage(emote.name);
+                                    if (resultUrl != "none")
+                                    {
+                                        emoteQueue.Add(resultUrl);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if (_commands.twitchVoteCommand.voteOnGoing)
+                    {
+                        int index = message.IndexOf(" ");
+                        string command = index > -1 ? message.Substring(0, index) : message;
+                        command = command.ToLower();
+
+                        string[] words = message.Split(' ');
+
+                        bool wordMatch = false;
+                        string match = "";
+
+                        //string[] words = _commands.twitchVoteCommand.choix.Keys.ToArray();
+                        foreach (string word in words)
+                        {
+                            if (_commands.twitchVoteCommand.choix.ContainsKey(word))
+                            {
+                                match = word;
+                                wordMatch = true;
+                                Instance.SendIRCMessage("Le viewver " + author + " a voté " + message);
+                                break;
+                            }
+                            wordMatch = false;
+                        }
+                        if (wordMatch)
+                        {
+                            _commands.twitchVoteCommand.HandleCommand(
+                                new TwitchCommandData
+                                {
+                                    Author = author,
+                                    Message = message,
+                                    Argument = match,
+                                    Command = command
+                                }
+                                );
+                        }
+                    }
+
                 }
-
-
                 //foreach (var emote in emotesData.data)
                 //{
                 //  if (message.Contains(emote.name))

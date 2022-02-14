@@ -11,19 +11,35 @@ public class StartGame : MonoBehaviour
     public bool P1HasSelected;
     public bool P2HasSelected;
     public bool hasStartedGame;
+    public bool isTwitchActivated;
     public PlayerControls P1;
     public PlayerControls P2;
+    public static string choixMap;
+    public static string choixModifier;
     public static InputUser P1User;
     public static InputUser P2User;
     public static InputDevice P1Device;
     public static InputDevice P2Device;
     public static IAmanager managerIA;
+    public static Action onCharactersSelected;
+
+
+    private void OnEnable()
+    {
+        TwitchMenuManager.onVoteGlobalEnd += FinalInitGame;
+    }
+
+    private void OnDisable()
+    {
+        TwitchMenuManager.onVoteGlobalEnd -= FinalInitGame;
+    }
     void Start()
     {
         P1HasSelected = false;
         P2HasSelected = false;
         hasStartedGame = false;
         managerIA = FindObjectOfType<IAmanager>();
+        //FIX donner une valeure a isTwitchActivated en fonction de si twitch est activé, pour l'instant il est forcément activé donc pas encore
     }
 
     // Update is called once per frame
@@ -35,7 +51,7 @@ public class StartGame : MonoBehaviour
             {
                 if (P1.hasSelected && P2.hasSelected)
                 {
-                    Invoke("InitGame", 3f);
+                    InitGame();
                     hasStartedGame = true;
                 }
             }
@@ -44,7 +60,21 @@ public class StartGame : MonoBehaviour
 
     void InitGame()
     {
-        Debug.Log("change scene");
+        if (isTwitchActivated)
+        {
+
+        }
+        else
+        {
+
+        }
+
+        onCharactersSelected?.Invoke();
+    }
+
+    void FinalInitGame(string map, string modifier)
+    {
+        choixMap = map;
         if (P1.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Yuetsu")
         {
             PlayerPrefs.SetInt("selectedCharacterP1", 0);
@@ -62,7 +92,7 @@ public class StartGame : MonoBehaviour
                 Debug.Log("P1 Device Startgame : " + P1Device);
             }
         }
-        
+
         if (P2.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Yuetsu" && !managerIA.bIsIA)
         {
             PlayerPrefs.SetInt("selectedCharacterP2", 0);
@@ -76,6 +106,5 @@ public class StartGame : MonoBehaviour
         }
 
         SceneManager.LoadScene("SampleScene");
-
     }
 }
