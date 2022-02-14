@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class GameManager : MonoBehaviour
+public class TwitchGameManager : MonoBehaviour
 {
     public PlayerData P1Data;
     public PlayerData P2Data;

@@ -178,7 +178,7 @@ public class TwitchChat : MonoBehaviour
                         int index = message.IndexOf(" ");
                         string command = index > -1 ? message.Substring(0, index) : message;
                         command = command.ToLower();
-
+                        message = message.ToLower();
                         string[] words = message.Split(' ');
 
                         bool wordMatch = false;

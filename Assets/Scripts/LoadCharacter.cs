@@ -17,6 +17,7 @@ public class LoadCharacter : MonoBehaviour
     public CorpsTexture corpsTexture;
     public Image faceP1;
     public Image faceP2;
+    public float frenesieSpeed;
     public GameObject prefabP2;
     public Volume volume;
     public VolumeProfile volumeProfileDay;
@@ -34,6 +35,8 @@ public class LoadCharacter : MonoBehaviour
         {
             volume.profile = volumeProfileDay;
         }
+
+
 
         int selectedCharacterP1 = PlayerPrefs.GetInt("selectedCharacterP1");
         int selectedCharacterP2 = PlayerPrefs.GetInt("selectedCharacterP2");
@@ -61,6 +64,11 @@ public class LoadCharacter : MonoBehaviour
         //P2.GetComponentInChildren<PlayerController>().cam = GameObject.Find("P2 Camera").transform;
         SetLayerRecursively(P2, 9);
 
+        if (StartGame.choixModifier == "frénésie")
+        {
+            P1.GetComponent<PlayerController>().translationSpeed = frenesieSpeed;
+            P2.GetComponent<PlayerController>().translationSpeed = frenesieSpeed;
+        }
 
         if (StartGame.managerIA.bIsIA)
         {

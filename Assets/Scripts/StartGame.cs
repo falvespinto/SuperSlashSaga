@@ -75,6 +75,7 @@ public class StartGame : MonoBehaviour
     void FinalInitGame(string map, string modifier)
     {
         choixMap = map;
+        choixModifier = modifier;
         if (P1.champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name == "Yuetsu")
         {
             PlayerPrefs.SetInt("selectedCharacterP1", 0);

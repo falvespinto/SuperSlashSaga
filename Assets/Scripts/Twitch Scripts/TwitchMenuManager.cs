@@ -15,8 +15,8 @@ public class TwitchMenuManager : MonoBehaviour
     };
     public Dictionary<string, int> choixModifier = new Dictionary<string, int>
     {
-        {"un", 0},
-        {"deux", 0}
+        {"frénésie", 0},
+        {"aucun", 0}
     };
     public static Action<Dictionary<string, int>, float, Action<string>, Action<string, int>> onMapChoiceStart;
     public static Action<string> onMapChoiceEnd;

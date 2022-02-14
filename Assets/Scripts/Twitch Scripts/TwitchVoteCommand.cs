@@ -14,13 +14,14 @@ public class TwitchVoteCommand : MonoBehaviour, ITwitchCommandHandler
     private void OnEnable()
     {
         Player.onHelpAsked += StartVote;
-        GameManager.onHelpAsked += StartVote;
+        TwitchGameManager.onHelpAsked += StartVote;
         TwitchMenuManager.onMapChoiceStart += StartVote;
     }
     private void OnDisable()
     {
         Player.onHelpAsked -= StartVote;
-        GameManager.onHelpAsked -= StartVote;
+        TwitchGameManager.onHelpAsked -= StartVote;
+        TwitchMenuManager.onMapChoiceStart -= StartVote;
     }
     public void HandleCommand(TwitchCommandData data)
     {
