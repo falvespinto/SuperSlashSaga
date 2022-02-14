@@ -8,7 +8,7 @@ public class TwitchCommandCollection : MonoBehaviour
     public TwitchDisplayMessageCommand twitchDisplayMessageCommand;
     public TwitchDmgCommand twitchDmgCommand;
     public TwitchHypeCommand twitchHypeCommand;
-    public TwitchVote twitchVoteCommand;
+    public TwitchVoteCommand twitchVoteCommand;
     public void Awake()
     {
         _commands = new Dictionary<string, ITwitchCommandHandler>();
