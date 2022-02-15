@@ -27,6 +27,7 @@ public class Dash : MonoBehaviour
     public Collider engageArea;
     public float maxTurnSpeed = 60f;
     public static Action<int> OnDash;
+    public PlayerAudioManager playerAudio;
     public float dashTime = 1f;
 
     void Start()
@@ -93,6 +94,7 @@ public class Dash : MonoBehaviour
         float timeElapsed = 0;
         Vector3 direction = playerAttack.LookAtTarget();
         m_animator.SetBool("isDashing", true);
+        playerAudio.playSoundDash();
         isDashing = true;
         while (!hasTouched && timeElapsed < 1f)
         {
