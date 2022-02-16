@@ -49,7 +49,7 @@ public class LightAttack : MonoBehaviour
     public float timeOfCombo;
     //Log
     public static Action<int> onComboTriggered;
-
+    public static Action<int> onComboReset;
     private void Awake()
     {
         //   m_Rigidbody = GetComponent<Rigidbody>();
@@ -108,7 +108,7 @@ public class LightAttack : MonoBehaviour
                     Vector3 direction = playerAttack.LookAtTarget();
                     // Joue attaque 1 du combo de coup léger
                     //m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // déplacements horizontaux
-                    playerAttack.SetAttacksData(8, "Light");
+                    playerAttack.SetAttacksData(7, "Light");
                     // ChangeAnimationState(m_Punch);
                     playerAttack.m_Animator.SetTrigger("LightAttack2");
                     if (!playerAttack.isHeNearEnemy()) StartCoroutine(playerAttack.ForwardAttack(light2AttackTime - 0.5f, direction, 0.05f));
@@ -123,7 +123,7 @@ public class LightAttack : MonoBehaviour
                     playerAttack.playerHit = null;
                     playerController.isRunning = false;
                     Vector3 direction = playerAttack.LookAtTarget();
-                    playerAttack.SetAttacksData(8, "Light");
+                    playerAttack.SetAttacksData(7, "Light");
                     playerAttack.m_Animator.SetTrigger("LightAttack3");
                     if (!playerAttack.isHeNearEnemy()) StartCoroutine(playerAttack.ForwardAttack(light2AttackTime - 0.5f, direction, 0.05f));
                     Invoke("AttackComplete", timeBeforeCancelLight3);
@@ -137,7 +137,7 @@ public class LightAttack : MonoBehaviour
                     Vector3 direction = playerAttack.LookAtTarget();
                     playerAttack.m_Animator.SetTrigger("LightAttackCombo");
                     Invoke("AttackComplete", timeBeforeCancelLight4);
-                    playerAttack.SetAttacksData(6, "Light");
+                    playerAttack.SetAttacksData(7, "Light");
                     StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
                     player.playerAudio.playSoundLeger();
                 }
@@ -171,6 +171,7 @@ public class LightAttack : MonoBehaviour
             if (current_Combo_Timer <= 0f)
             {
                 Debug.Log("combo reset");
+                onComboReset?.Invoke(player.playerIndex);
                 lightComboState = LightComboState.NONE;
                 isLightAttacking = false;
                 current_Combo_Timer = default_Combo_Timer;
@@ -224,6 +225,7 @@ public class LightAttack : MonoBehaviour
                 StartCoroutine(playerAttack.ResetCombo(timeOfCombo));
                 Invoke("AttackComplete", timeOfCombo);
                 StartCoroutine(playerAttack.playerHit.GetComponent<Player>().goInEnemyCombo(timeOfCombo));
+                playerAttack.SetAttacksData(10, "Combo");
                 GetComponent<TimeLineController>().PerformFullCombo(playerAttack.m_Animator, playerAttack.playerHit.GetComponent<Animator>());
             }
         }
