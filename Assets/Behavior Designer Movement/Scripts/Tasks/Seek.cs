@@ -13,12 +13,15 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         [Tooltip("If target is null then use the target position")]
         public SharedVector3 targetPosition;
         public string targetTag;
+        public RangeCollider rangeCollider;
+        public bool bIsInRange;
         public override void OnAwake()
         {
             
         }
         public override void OnStart()
         {
+            bIsInRange = rangeCollider.bIsInRange;
             target.Value = GameObject.FindGameObjectWithTag(targetTag);
             base.OnStart();
             SetDestination(Target());
@@ -29,7 +32,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         // Return running if the agent hasn't reached the destination yet
         public override TaskStatus OnUpdate()
         {
-            if (HasArrived()) {
+            if (HasArrived() && bIsInRange) {
                 return TaskStatus.Success;
             }
 

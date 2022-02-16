@@ -30,6 +30,7 @@ public class IA : MonoBehaviour
     public Vector3 offSet;
     public PlayerAudioManager playerAudio;
     public string characterName;
+    public ParadeIA paradeIA;
     void Awake()
     {
         isDead = false;
@@ -82,6 +83,7 @@ public class IA : MonoBehaviour
                 isTakingDamage = true;
                 Invoke("ResetIsTakingDamage", GuardBreakTime);
                 animator.SetTrigger("Guard_Break");
+                paradeIA.shield.SetActive(false);
                 // m_rigidbody.velocity = new Vector2(0f, m_rigidbody.velocity.y); // déplacements horizontaux bloqués
                 currentHealth -= damage * 1.1f;
                 healthBar.SetHealth(currentHealth);

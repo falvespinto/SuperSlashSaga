@@ -33,6 +33,7 @@ public class DashIA : Action
     {
          timeElapsed = 0;
         m_animator.SetBool("isDashing", true);
+        hasTouched = false;
     }
     public override TaskStatus OnUpdate()
     {
@@ -57,7 +58,6 @@ public class DashIA : Action
          if (!hasTouched && timeElapsed < 1f)
         {
             Vector3 directionToTarget = playerAttack.playerData.target.position - (transform.position);
-            Debug.Log(directionToTarget + "direction to target");
             Vector3 currentDirection = transform.forward;
             Vector3 resultingDirection = Vector3.RotateTowards(currentDirection, directionToTarget.normalized, maxTurnSpeed * Mathf.Deg2Rad * Time.deltaTime, 1f);
             transform.rotation = Quaternion.LookRotation(resultingDirection);
