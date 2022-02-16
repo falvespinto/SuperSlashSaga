@@ -140,6 +140,10 @@ public class LightAttack : MonoBehaviour
                     playerAttack.SetAttacksData(6, "Light");
                     StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
                     player.playerAudio.playSoundLeger();
+                    if (StartGame.managerIA.bIsIA)
+                        CheckPerformFullCombo();
+
+
                 }
 
                 if (lightComboState == LightComboState.NONE)

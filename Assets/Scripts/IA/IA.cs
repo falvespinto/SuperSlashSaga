@@ -31,6 +31,7 @@ public class IA : MonoBehaviour
     public PlayerAudioManager playerAudio;
     public string characterName;
     public ParadeIA paradeIA;
+    public float hurtTime = 0;
     void Awake()
     {
         isDead = false;
@@ -57,6 +58,18 @@ public class IA : MonoBehaviour
         if (target == null)
         {
             target = playerData.target;
+        }
+        if (isTakingDamage)
+        {
+            if (hurtTime > 0)
+            {
+                hurtTime = hurtTime - Time.deltaTime;
+            }
+            if (hurtTime <= 0)
+            {
+                isTakingDamage = false;
+                hurtTime = 0;
+            }
         }
     }
     public void TakeDamage(float damage, string attackType)
@@ -177,5 +190,17 @@ public class IA : MonoBehaviour
         isInEnemyCombo = false;
 
     }
-
+    public void bumped(float time)
+    {
+        //StopCoroutine(ResetIsTakingDamage(time));
+        //StartCoroutine(ResetIsTakingDamage(time));
+        stunTime(time);
+        playerAttackIA.LookAtTarget();
+        animator.SetTrigger("Bumped");
+    }
+    public void stunTime(float time)
+    {
+        isTakingDamage = true;
+        hurtTime = time;
+    }
 }

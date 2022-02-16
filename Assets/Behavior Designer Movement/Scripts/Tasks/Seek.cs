@@ -21,7 +21,6 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         }
         public override void OnStart()
         {
-            bIsInRange = rangeCollider.bIsInRange;
             target.Value = GameObject.FindGameObjectWithTag(targetTag);
             base.OnStart();
             SetDestination(Target());
@@ -32,13 +31,19 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         // Return running if the agent hasn't reached the destination yet
         public override TaskStatus OnUpdate()
         {
-            if (HasArrived() && bIsInRange) {
+            bIsInRange = rangeCollider.bIsInRange;
+            if (HasArrived()) {
                 return TaskStatus.Success;
             }
+            if (bIsInRange)
+            {
+                SetDestination(Target());
+                return TaskStatus.Running;
+            }
+            else
+                return TaskStatus.Failure;
+            
 
-            SetDestination(Target());
-
-            return TaskStatus.Running;
         }
         
         // Return targetPosition if target is null

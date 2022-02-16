@@ -42,13 +42,24 @@ public class Dash : MonoBehaviour
         {
             //engageArea.gameObject.SetActive(true);
             Collider[] hit = Physics.OverlapBox(engageArea.bounds.center, engageArea.bounds.extents, engageArea.transform.rotation, gameObject.GetComponentInParent<PlayerData>().enemyLayer);
-            if (hit.Length > 0)
+            if (hit.Length > 0 && !StartGame.managerIA.bIsIA)
             {
                 for (int i = 0; i < hit.Length; i++)
                 {
                     hit[i].GetComponentInParent<Player>().bumped(0.8f);
                     Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
                     Debug.Log(hit[i].gameObject.layer);
+                    hasTouched = true;
+                    isDashing = false;
+                    //engageArea.gameObject.SetActive(false);
+                    break;
+                }
+            }
+            else if(hit.Length > 0 && StartGame.managerIA.bIsIA)
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    hit[i].GetComponentInParent<IA>().bumped(0.8f);
                     hasTouched = true;
                     isDashing = false;
                     //engageArea.gameObject.SetActive(false);
