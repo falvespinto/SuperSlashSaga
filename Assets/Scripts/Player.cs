@@ -114,12 +114,14 @@ public class Player : MonoBehaviour
 
         if (attackType == "Light")
         {
-            Instantiate(HitVFXPrefab, transform.position + offSet, transform.rotation);
+            Vector3 newPos = transform.position + offSet;
+            Instantiate(HitVFXPrefab, newPos, transform.rotation);
             playerAudio.playSoundImpact();
         }
         else if(attackType == "Heavy")
         {
-            Instantiate(HitHeavyPrefab, transform.position + offSet, transform.rotation);
+            Vector3 newPos = transform.position + offSet;
+            Instantiate(HitHeavyPrefab, newPos, transform.rotation);
             playerAudio.playSoundLourd();
         }
 

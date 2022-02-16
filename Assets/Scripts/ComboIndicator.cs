@@ -21,8 +21,8 @@ public class ComboIndicator : MonoBehaviour
         }
         textUnder.text = "X" + comboState;
         textOver.text = "X" + comboState;
-        LeanTween.rotateZ(comboIndicator, 360, 0.3f).setEaseInCirc();
-        Vector3 newScale = comboIndicator.transform.localScale * 1.1f;
+        LeanTween.rotateAround(comboIndicator, transform.forward , -360f, 0.2f).setEaseInSine();
+        Vector3 newScale = comboIndicator.transform.localScale * 1.2f;
         LeanTween.scale(comboIndicator, newScale, 0.3f).setEaseInBounce();
     }
 

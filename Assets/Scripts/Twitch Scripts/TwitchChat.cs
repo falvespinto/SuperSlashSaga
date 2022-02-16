@@ -102,13 +102,13 @@ public class TwitchChat : MonoBehaviour
         _writer.WriteLine("PASS " + credentials.Password);
         _writer.WriteLine("NICK " + credentials.Username.ToLower());
         _writer.WriteLine("USER " + credentials.Username + " 8 * :" + credentials.Username);
-        _writer.WriteLine("JOIN #" + credentials.ChannelName.ToLower());
+        _writer.WriteLine("JOIN #" + MenuScript.nomDeChaine.ToLower());
         _writer.Flush();
     }
 
     public void SendIRCMessage(string message)
     {
-        _writer.WriteLine("PRIVMSG #" + credentials.ChannelName.ToLower() + " :" + message);
+        _writer.WriteLine("PRIVMSG #" + MenuScript.nomDeChaine.ToLower() + " :" + message);
         _writer.Flush();
     }
 

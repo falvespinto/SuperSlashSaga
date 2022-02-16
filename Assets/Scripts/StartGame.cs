@@ -60,16 +60,16 @@ public class StartGame : MonoBehaviour
 
     void InitGame()
     {
-        if (isTwitchActivated)
+        if (!MenuScript.chatSelectMap || MenuScript.nomDeChaine == null)
         {
-
+            FinalInitGame("jour", "aucun");
         }
         else
         {
-
+            onCharactersSelected?.Invoke();
         }
 
-        onCharactersSelected?.Invoke();
+        
     }
 
     void FinalInitGame(string map, string modifier)
