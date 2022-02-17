@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{350AC6FC-5B2E-A067-C43D-C4C91ABD9DF0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -298,11 +297,8 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Animator\StartPlayback.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Vector3\Dot.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\SetAngularDrag.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\Scripts\IA\IADash.cs" />
-=======
     <Compile Include="Assets\Scripts\Twitch Scripts\UI\TwitchNodeName.cs" />
->>>>>>> Valentin
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\AudioSource\SetMute.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\GetGravtyScale.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\AudioSource\Pause.cs" />
@@ -558,6 +554,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Math\BoolOperator.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Actions\PerformInterruption.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Physics2D\Linecast.cs" />
+    <Compile Include="Assets\Scripts\ComboIndicatorManager.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\CapsuleCollider\SetDirection.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Animation\SetWrapMode.cs" />
     <Compile Include="Assets\Scripts\IA\RangePermute.cs" />
@@ -702,6 +699,7 @@
     <Compile Include="Assets\EZ Camera Shake\Scripts\CameraShakeInstance.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Animator\GetSpeed.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Math\RandomInt.cs" />
+    <Compile Include="Assets\Scripts\ComboIndicator.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\String\Format.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Input\IsButtonDown.cs" />
@@ -717,11 +715,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\AudioSource\IsPlaying.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\SharedVariables\SharedGameObjectsToGameObjectList.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Animation\IsPlaying.cs" />
-<<<<<<< HEAD
-    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
-=======
     <Compile Include="Assets\Scripts\Managers\TwitchGameManager.cs" />
->>>>>>> Valentin
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\GetIsKinematic.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Decorators\Repeater.cs" />
     <Compile Include="Assets\Behavior Designer Formations\Scripts\Tasks\Arc.cs" />
@@ -740,6 +734,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\SetCenterOfMass.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\String\IsNullOrEmpty.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Decorators\UntilFailure.cs" />
+    <Compile Include="Assets\Scripts\HUD\Timer.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\String\GetLength.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Light\GetShadowBias.cs" />
     <Compile Include="Assets\Asstes\FightingUnityChan_Asset04\Scripts\CameraController4.cs" />
@@ -854,7 +849,6 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Vector2\ClampMagnitude.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\NavMeshAgent\IsStopped.cs" />
-<<<<<<< HEAD
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Asstes\FightingUnityChan_Asset01\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
@@ -881,6 +875,7 @@
      <None Include="Assets\Asstes\FightingUnityChan_Asset05\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\Log\LOG_202112162018546309.txt" />
+     <None Include="Assets\LeanTween\ReadMe.txt" />
      <None Include="Assets\Log\LOG_202112161534287394.txt" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset01\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
      <None Include="Assets\Log\LOG_202112161604302613.txt" />
@@ -903,6 +898,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset06\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+     <None Include="Assets\LeanTween\License.txt" />
      <None Include="Assets\Log\LOG_202112091654591738.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\Log\LOG_202112150934427756.txt" />
@@ -1003,6 +999,7 @@
      <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset02\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
+     <None Include="Assets\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset03\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset06\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset01\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
@@ -1054,212 +1051,6 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <None Include="Assets\Log\LOG_202112161438503425.txt" />
      <None Include="Assets\Asstes\FightingUnityChan_Asset10\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
-=======
-    <Compile Include="Assets\Scripts\ComboIndicator.cs" />
-    <Compile Include="Assets\Scripts\ComboIndicatorManager.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Asstes\FightingUnityChan_Asset01\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset10\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
-    <None Include="Assets\PolyToots\Slashes\Shaders\ASE_PreMulSlash_URP.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset02\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
-    <None Include="Assets\Log\LOG_202112151450148828.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset08\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
-    <None Include="Assets\Frank_Slash_Pack\Documentation\Frank_Assassin.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset04\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\Log\LOG_202112160119547659.txt" />
-    <None Include="Assets\Log\LOG_202112161521132985.txt" />
-    <None Include="Assets\Log\LOG_202112141219364730.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset06\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
-    <None Include="Assets\Log\LOG_202112161608436955.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset08\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-    <None Include="Assets\JoyconLib_plugins\win64\hidapi.dll" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset08\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
-    <None Include="Assets\Log\LOG_202112162015597559.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset05\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
-    <None Include="Assets\Log\LOG_202112162018546309.txt" />
-    <None Include="Assets\LeanTween\ReadMe.txt" />
-    <None Include="Assets\Log\LOG_202112161534287394.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset01\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
-    <None Include="Assets\Log\LOG_202112161604302613.txt" />
-    <None Include="Assets\_www.unityassetcollection.com.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset08\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset06\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset04\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-    <None Include="Assets\KawaseBlur\KawaseBlur.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset03\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset02\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset01\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
-    <None Include="Assets\Log\LOG_202112161955341202.txt" />
-    <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
-    <None Include="Assets\Frank_Slash_Pack\Documentation\Frank_Warrior.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset03\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset01\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset04\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset06\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
-    <None Include="Assets\LeanTween\License.txt" />
-    <None Include="Assets\Log\LOG_202112091654591738.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\Log\LOG_202112150934427756.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset08\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
-    <None Include="Assets\Log\LOG_202112160112041954.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset10\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
-    <None Include="Assets\Log\LOG_202112101727116267.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
-    <None Include="Assets\Thunder_Lightning_Electricity_Fx\Shader\ParticleDissolve.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
-    <None Include="Assets\Log\LOG_202112101657239237.txt" />
-    <None Include="Assets\Log\LOG_202112160057457736.txt" />
-    <None Include="Assets\Log\LOG_202112161506500435.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset02\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-    <None Include="Assets\Frank_Slash_Pack\Documentation\Frank_Dual.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Frank_Slash_Pack\Documentation\Frank_Katana.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset05\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset04\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
-    <None Include="Assets\Log\LOG_202112161514153286.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset02\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset03\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset10\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset03\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset01\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset01\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
-    <None Include="Assets\Log\LOG_202112160121342856.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
-    <None Include="Assets\Log\LOG_202112161345203045.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
-    <None Include="Assets\Log\LOG_202112122102346262.txt" />
-    <None Include="Assets\Log\LOG_202112101654333426.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset06\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-    <None Include="Assets\Asstes\About\license.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset02\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset02\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset05\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset05\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
-    <None Include="Assets\Log\LOG_202112091710308678.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\Log\LOG_202112160103084582.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset03\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset10\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
-    <None Include="Assets\Log\LOG_202112151236043782.txt" />
-    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\Log\LOG_202112101650200829.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset05\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
-    <None Include="Assets\Log\LOG_202112161517045725.txt" />
-    <None Include="Assets\Log\LOG_202112161602316001.txt" />
-    <None Include="Assets\Log\LOG_202112161633454441.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
-    <None Include="Assets\Log\LOG_202112122107075335.txt" />
-    <None Include="Assets\Log\LOG_202112151010392140.txt" />
-    <None Include="Assets\Frank_Slash_Pack\Documentation\Frank_Spear.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\Log\LOG_202112122025493521.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset03\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\Log\LOG_202112162012563324.txt" />
-    <None Include="Assets\Log\LOG_202112161636015670.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset04\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
-    <None Include="Assets\Shaders\Outline.hlsl" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset08\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
-    <None Include="Assets\Log\LOG_202112161417274223.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\Log\LOG_202112161627269347.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset02\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset10\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
-    <None Include="Assets\Log\LOG_202112161549594417.txt" />
-    <None Include="Assets\Log\LOG_202112091703325841.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset05\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset06\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset01\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-    <None Include="Assets\Log\LOG_202112161456283651.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset10\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset08\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset03\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset04\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
-    <None Include="Assets\Behavior Designer\Runtime\BehaviorDesigner.Runtime.dll" />
-    <None Include="Assets\Log\LOG_202112160106074059.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset03\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\Log\LOG_202112162002089602.txt" />
-    <None Include="Assets\Log\LOG_202112122205326558.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset08\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset02\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset02\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset07\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset02\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
-    <None Include="Assets\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset03\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset06\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset01\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset05\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset04\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset10\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-    <None Include="Assets\Log\LOG_202112091659243504.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset10\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
-    <None Include="Assets\Frank_Slash_Pack\Documentation\Frank_2Handed.txt" />
-    <None Include="Assets\Scripts\CustomLighting.hlsl" />
-    <None Include="Assets\Log\LOG_202112160112437369.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset09\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset10\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
-    <None Include="Assets\Log\LOG_202112101644493480.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset05\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\Log\LOG_202112161638186104.txt" />
-    <None Include="Assets\Log\LOG_202112162015291175.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset04\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset05\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset08\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
-    <None Include="Assets\Log\LOG_202112161454120186.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset04\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\Log\LOG_202112162007341553.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset05\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
-    <None Include="Assets\Log\LOG_202112142345589324.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset08\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
-    <None Include="Assets\Log\LOG_202112161451180844.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset06\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset06\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
-    <None Include="Assets\Log\LOG_202112161953160006.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset06\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
-    <None Include="Assets\Thunder_Lightning_Electricity_Fx\Shader\Fresnel.shader" />
-    <None Include="Assets\Log\LOG_202112122050000647.txt" />
-    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset04\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
-    <None Include="Assets\Log\LOG_202112162011298271.txt" />
-    <None Include="Assets\Log\LOG_202112121921247023.txt" />
-    <None Include="Assets\JoyconLib_plugins\win32\hidapi.dll" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset01\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\Fantasy_Kingdom_Pack_Lite\Demo\Read me01.txt" />
-    <None Include="Assets\Log\LOG_202112161429259653.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset06\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset03\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset01\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\Log\LOG_202112161438503425.txt" />
-    <None Include="Assets\Asstes\FightingUnityChan_Asset10\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
->>>>>>> Valentin
     <Reference Include="UnityEngine">
       <HintPath>C:\Users\ESIEE-IT\Documents\Unity\2020.2.2f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\Variations\mono\Managed\UnityEngine.dll</HintPath>
     </Reference>

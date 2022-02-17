@@ -196,7 +196,7 @@ public class PlayerControls : MonoBehaviour
                 }
 
             }
-
+        }
             Debug.Log(isInit);
         if (ctx.canceled && isInit)
         {
