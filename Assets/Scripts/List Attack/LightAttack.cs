@@ -50,6 +50,7 @@ public class LightAttack : MonoBehaviour
     //Log
     public static Action<int> onComboTriggered;
     public static Action<int> onComboReset;
+    public static Action<string> OnLightAtk;
     private void Awake()
     {
         //   m_Rigidbody = GetComponent<Rigidbody>();
@@ -83,6 +84,7 @@ public class LightAttack : MonoBehaviour
             }
             else
             {
+                OnLightAtk?.Invoke("Light");
                 isLightAttacking = true;
                 playerAttack.isAttacking = true;
                 lightComboState++;

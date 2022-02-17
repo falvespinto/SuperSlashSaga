@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Parade : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Parade : MonoBehaviour
     private bool neverPared;
     public UltimateAttack ultimateAttack;
     public GameObject shield;
+    public static Action<string> OnParadeUsed;
     public void Awake()
     {
         playerData = GetComponentInParent<PlayerData>();
@@ -41,6 +43,7 @@ public class Parade : MonoBehaviour
 
     public void InitializedParadeAttack()
     {
+        OnParadeUsed?.Invoke("Parade");
         shield.SetActive(true);
         playerAttack.LookAtTarget();
         playerAttack.isParing = true;

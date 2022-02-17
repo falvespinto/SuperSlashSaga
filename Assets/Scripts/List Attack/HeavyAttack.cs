@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class HeavyAttack : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class HeavyAttack : MonoBehaviour
 
     private bool cooldown = false;
 
-
+    public static Action<string> OnHeavyAtk;
     public void Awake()
     {
         playerData = GetComponentInParent<PlayerData>();
@@ -33,9 +34,10 @@ public class HeavyAttack : MonoBehaviour
     }
     public void PerformedHeavyAttack(string attackType)
     {
-        // A revoir (constante)(attackType)(vite)(stp)
+        // A revoir (constante)(attackType)(vite)(stp)(non flemme en vrai)
         if (!playerAttack.isAttacking && !playerAttack.isParing && attackType == "normal" && !player.isInCombo)
         {
+            OnHeavyAtk?.Invoke("Heavy");
             playerController.isRunning = false;
             Vector3 direction = playerAttack.LookAtTarget();
             playerAttack.isAttacking = true;

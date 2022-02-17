@@ -88,10 +88,6 @@ public class PlayerAttack : MonoBehaviour
     public CharacterController controller;
 
     // Compteurs pour log
-    public static Action<int> OnLightAtk;
-    public static Action<int> OnHeavyAtk;
-    public static Action<int> OnUltimateAtk;
-    public static Action<int> OnParadeUsed;
     public static Action<int> OnParadeTriggered;
     private bool heavyCanAutoCancel;
 
@@ -153,7 +149,6 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("pressedLight");
             if (!player.isInCombo && !player.isTakingDamage && !isAttacking && !isParing && !ultimateAttack.isPerformingUltimate)
             {
-                OnLightAtk?.Invoke(player.playerIndex);
                 lightAttack.PerformedLightAttack("normal");
             }
         }
@@ -166,7 +161,6 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("pressedHeavy");
             if (!isAttacking && !isParing && !player.isInCombo && !player.isTakingDamage && !ultimateAttack.isPerformingUltimate)
             {
-                OnHeavyAtk?.Invoke(player.playerIndex);
                 heavyAttack.PerformedHeavyAttack("normal");
             }
             
@@ -181,7 +175,6 @@ public class PlayerAttack : MonoBehaviour
             if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
             {
                 Debug.Log("pressedParade");
-                OnParadeUsed?.Invoke(player.playerIndex);
                 paradeButtonPressed = true;
                 parade.InitializedParadeAttack();
             }
@@ -200,7 +193,6 @@ public class PlayerAttack : MonoBehaviour
             if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
             {
                 LookAtTarget();
-                OnUltimateAtk?.Invoke(player.playerIndex);
                 ultimateAttack.PerformUltimateAttack();
             }
 

@@ -38,10 +38,6 @@ public class LogManager : MonoBehaviour
     private void OnEnable()
     {
         Dash.OnDash += AddDash;
-        PlayerAttack.OnLightAtk += AddLightAtk;
-        PlayerAttack.OnHeavyAtk += AddHeavyAtk;
-        PlayerAttack.OnUltimateAtk += AddUltimateAtk;
-        PlayerAttack.OnParadeUsed += AddParadeUsed;
         PlayerAttack.OnParadeTriggered += AddParadeTriggered;
         Player.onGuardBroke += AddGuardBroke;
         Player.OnDeath += AddDeath;
@@ -51,10 +47,6 @@ public class LogManager : MonoBehaviour
     private void OnDisable()
     {
         Dash.OnDash -= AddDash;
-        PlayerAttack.OnLightAtk -= AddLightAtk;
-        PlayerAttack.OnHeavyAtk -= AddHeavyAtk;
-        PlayerAttack.OnUltimateAtk -= AddUltimateAtk;
-        PlayerAttack.OnParadeUsed -= AddParadeUsed;
         PlayerAttack.OnParadeTriggered -= AddParadeTriggered;
         Player.onGuardBroke += AddGuardBroke;
         Player.OnDeath -= AddDeath;

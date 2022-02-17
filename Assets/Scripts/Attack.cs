@@ -44,11 +44,18 @@ public class Attack : MonoBehaviour
         //Debug.Log(gameObject.GetComponentInParent<Player>().playerIndex);
         if (hit.Length > 0)
         {
-            if (attackType == "Light")
+            if (attackType == "Light" && !StartGame.managerIA.bIsIA)
             {
                 onComboIncrease?.Invoke(playerAttack.player.playerIndex);
             }
-            
+            if (attackType == "Light" && StartGame.managerIA.bIsIA && GetComponentInParent<PlayerData>().playerIndex == 0)
+            {
+                onComboIncrease?.Invoke(playerAttack.player.playerIndex);
+            }
+            if (attackType == "Light" && StartGame.managerIA.bIsIA && GetComponentInParent<PlayerData>().playerIndex == 1)
+            {
+                onComboIncrease?.Invoke(playerIA.player.playerIndex);
+            }
             for (int i = 0; i < hit.Length; i++)
             {
                 if (isIA && GetComponentInParent<PlayerData>().playerIndex == 0)
