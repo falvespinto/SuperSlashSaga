@@ -10,32 +10,35 @@ public class TwitchVoteCommand : MonoBehaviour, ITwitchCommandHandler
     public bool voteOnGoing = false;
     private List<string> voters = new List<string>();
     public Dictionary<string, int> choix = new Dictionary<string, int>();
-
-
+    public Action<string, int> onVote;
     private void OnEnable()
     {
         Player.onHelpAsked += StartVote;
-        GameManager.onHelpAsked += StartVote;
+        TwitchGameManager.onHelpAsked += StartVote;
+        TwitchMenuManager.onMapChoiceStart += StartVote;
     }
     private void OnDisable()
     {
         Player.onHelpAsked -= StartVote;
-        GameManager.onHelpAsked -= StartVote;
+        TwitchGameManager.onHelpAsked -= StartVote;
+        TwitchMenuManager.onMapChoiceStart -= StartVote;
     }
     public void HandleCommand(TwitchCommandData data)
     {
         if (voteOnGoing)
         {
-            if (choix.ContainsKey(data.Command))
+            if (choix.ContainsKey(data.Argument))
             {
-                choix[data.Command]++;
+                choix[data.Argument]++;
+                onVote?.Invoke(data.Argument, choix[data.Argument]);
             }
         }
     }
-    public void StartVote(Dictionary<string, int> choix, float time, Action<string> whenVoteStopped)
+    public void StartVote(Dictionary<string, int> choix, float time, Action<string> whenVoteStopped, Action<string, int> onVote)
     {
         if (!voteOnGoing)
         {
+            this.onVote = onVote;
             StartCoroutine(Timer(time, whenVoteStopped));
             this.choix = choix;
             voteOnGoing = true;

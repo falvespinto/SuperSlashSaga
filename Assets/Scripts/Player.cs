@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
     public GameObject weapon;
     public static Action<int> OnDeath;
     public static Action<int> onGuardBroke;
-    public static Action<Dictionary<string, int>, float, Action<string>> onHelpAsked;
+    public static Action<Dictionary<string, int>, float, Action<string>, Action<string,int>> onHelpAsked;
     public Action<string> whenVoteStopped;
     public Dictionary<string, int> choixHelp = new Dictionary<string, int>
     {
@@ -114,12 +114,14 @@ public class Player : MonoBehaviour
 
         if (attackType == "Light")
         {
-            Instantiate(HitVFXPrefab, transform.position + offSet, transform.rotation);
+            Vector3 newPos = transform.position + offSet;
+            Instantiate(HitVFXPrefab, newPos, transform.rotation);
             playerAudio.playSoundImpact();
         }
         else if(attackType == "Heavy")
         {
-            Instantiate(HitHeavyPrefab, transform.position + offSet, transform.rotation);
+            Vector3 newPos = transform.position + offSet;
+            Instantiate(HitHeavyPrefab, newPos, transform.rotation);
             playerAudio.playSoundLourd();
         }
 
@@ -314,13 +316,12 @@ public class Player : MonoBehaviour
         if (!askedForHelp)
         {
             askedForHelp = true;
-            onHelpAsked?.Invoke(choixHelp, 60f, whenVoteStopped);
+            onHelpAsked?.Invoke(choixHelp, 60f, whenVoteStopped, null);
             TwitchChat.Instance.SendIRCMessage("Le joueur " + (playerIndex + 1) + " vous demande de l'aide, mais le mérite-t-il ? Oui ou Non ?");
         }
     }
     public void OnVoteStopped(string result)
     {
-
         choixHelp = new Dictionary<string, int>
         {
             {"oui", 0},

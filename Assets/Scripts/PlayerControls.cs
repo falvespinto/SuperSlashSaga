@@ -198,12 +198,14 @@ public class PlayerControls : MonoBehaviour
             }
 
             Debug.Log(isInit);
-            if (ctx.canceled && isInit)
+        if (ctx.canceled && isInit)
+        {
+            hasSelected = true;
+            Debug.Log("perso a été select" + champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name);
+            if (index == 0)
             {
-                hasSelected = true;
-                Debug.Log("perso a été select" + champSelect.currentSlot.GetComponent<LevelSelectItemScript>().name);
-
-                if (index == 0)
+                GameObject.FindObjectOfType<StartGame>().P1 = this;
+                if (managerIA.bIsIA)
                 {
                     GameObject.FindObjectOfType<StartGame>().P1 = this;
                     if (managerIA.bIsIA)
@@ -211,13 +213,10 @@ public class PlayerControls : MonoBehaviour
                         ia = Instantiate(managerIA.selector);
                     }
                 }
-
-
-                else if (index == 1)
-                {
-                    GameObject.FindObjectOfType<StartGame>().P2 = this;
-                }
-                FindObjectOfType<AudioManager>().Play("ajoutJoueur");
+            }
+            else if (index == 1)
+            {
+                GameObject.FindObjectOfType<StartGame>().P2 = this;
             }
         }
         else if (isInit && hasSelected && managerIA.bIsIA && ia != null)

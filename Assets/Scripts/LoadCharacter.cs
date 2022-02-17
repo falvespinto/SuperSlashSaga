@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class LoadCharacter : MonoBehaviour
 {
@@ -15,9 +17,27 @@ public class LoadCharacter : MonoBehaviour
     public CorpsTexture corpsTexture;
     public Image faceP1;
     public Image faceP2;
+    public float frenesieSpeed;
     public GameObject prefabP2;
+    public Volume volume;
+    public VolumeProfile volumeProfileDay;
+    public VolumeProfile volumeProfileNight;
+
+    public 
     void Start()
     {
+
+        if (StartGame.choixMap == "nuit")
+        {
+            volume.profile = volumeProfileNight;
+        }
+        else
+        {
+            volume.profile = volumeProfileDay;
+        }
+
+
+
         int selectedCharacterP1 = PlayerPrefs.GetInt("selectedCharacterP1");
         int selectedCharacterP2 = PlayerPrefs.GetInt("selectedCharacterP2");
         GameObject prefabP1 = characterPrefabs[selectedCharacterP1];
@@ -44,6 +64,11 @@ public class LoadCharacter : MonoBehaviour
         if (!StartGame.managerIA.bIsIA)
             SetLayerRecursively(P2, 9);
 
+        if (StartGame.choixModifier == "frénésie")
+        {
+            P1.GetComponent<PlayerController>().translationSpeed = frenesieSpeed;
+            P2.GetComponent<PlayerController>().translationSpeed = frenesieSpeed;
+        }
 
         if (StartGame.managerIA.bIsIA)
         {

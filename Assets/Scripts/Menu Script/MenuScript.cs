@@ -16,6 +16,7 @@ public class MenuScript : MonoBehaviour
     private int NumberOfButtons;
     public MenuAudioManager menuAudio;
 
+    public static bool chatSelectMap = false;
 
     public Transform ButtonPosition1;
     public Transform ButtonPosition2;
@@ -41,13 +42,19 @@ public class MenuScript : MonoBehaviour
     public bool optionActive = false;
     private bool droite = false;
 
+    public GameObject pointerTwitchCoche;
 
+    public static string nomDeChaine;
 
     void Start()
     {
         //FindObjectOfType<AudioManager>().Play("MusiqueMenu");
     }
 
+    public void fillChannelName(string channelName)
+    {
+        nomDeChaine = channelName;
+    }
 
     public void Play()
     {
@@ -107,14 +114,12 @@ public class MenuScript : MonoBehaviour
                 optionActive = true;
                 droite = true;
             }
-
             else if (SelectedButton == 5)
             {
                 // utilisation du bouton Quitter
                 Application.Quit();
                 Debug.Log("Quit");
             }
-
             else if (SelectedButton == 6)
             {
                 //Utilisation du bouton back des options
@@ -163,7 +168,7 @@ public class MenuScript : MonoBehaviour
             else if (SelectedButton == 10)
             {
                 //utilisation du bouton jcj
-                SceneManager.LoadScene("CharacterSelection");      
+                SceneManager.LoadScene("CharacterSelection");
             }
 
             else if (SelectedButton == 11)
@@ -199,20 +204,24 @@ public class MenuScript : MonoBehaviour
             {
                 //utilisation du bouton nom de chaine
                 Debug.Log("nom Chaine");
+
             }
 
             else if (SelectedButton == 15)
             {
-                //utilisation du bouton nom user
-                Debug.Log("nom user");
+                //utilisation du bouton a cocher selection joueur
+                Debug.Log("bouton selec joueur");
+                pointerTwitchCoche.transform.position = ButtonPosition12.position;
+                chatSelectMap = false;
             }
 
             else if (SelectedButton == 16)
             {
-                //utilisation du bouton clé
-                Debug.Log("clé");
+                //utilisation du bouton a cocher selection chat
+                Debug.Log("bouton selec chat");
+                pointerTwitchCoche.transform.position = ButtonPosition13.position;
+                chatSelectMap = true;
             }
-
             else if (SelectedButton == 17)
             {
                 //utilisation du bouton back

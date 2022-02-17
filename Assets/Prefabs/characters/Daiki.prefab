@@ -939,7 +939,7 @@ MonoBehaviour:
   halfExtent: 0
   damage: 5
   attackType: 
-  player: {fileID: 9082076705501439328}
+  playerAttack: {fileID: 9082076705501439328}
   playerIA: {fileID: 0}
   isIA: 0
   stunTime: 0
@@ -2852,7 +2852,7 @@ MonoBehaviour:
   halfExtent: 0
   damage: 5
   attackType: 
-  player: {fileID: 9082076705501439328}
+  playerAttack: {fileID: 9082076705501439328}
   playerIA: {fileID: 0}
   isIA: 0
   stunTime: 0
@@ -3745,7 +3745,7 @@ MonoBehaviour:
   halfExtent: 0
   damage: 5
   attackType: 
-  player: {fileID: 9082076705501439328}
+  playerAttack: {fileID: 9082076705501439328}
   playerIA: {fileID: 0}
   isIA: 0
   stunTime: 0
@@ -4566,10 +4566,14 @@ MonoBehaviour:
     m_ActionId: b781e722-57e0-410a-a976-2c1c51880a52
     m_ActionName: Gameplay/test[/Keyboard/u,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 025eaf4f-8414-43b5-a50e-cf1169bdb56b
+    m_ActionName: Gameplay/test2[/Keyboard/i,/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2011470388513942028}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: AnimTest
+        m_MethodName: AskForHelp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4579,10 +4583,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 025eaf4f-8414-43b5-a50e-cf1169bdb56b
-    m_ActionName: Gameplay/test2[/Keyboard/i,/XInputControllerWindows/leftShoulder]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 461af858-ad79-4e7c-bb64-e5a4c1e4248c
     m_ActionName: Gameplay/Projectile[/XInputControllerWindows/leftShoulder]
   - m_PersistentCalls:
@@ -6069,7 +6069,7 @@ MonoBehaviour:
   halfExtent: 0
   damage: 5
   attackType: 
-  player: {fileID: 9082076705501439328}
+  playerAttack: {fileID: 9082076705501439328}
   playerIA: {fileID: 0}
   isIA: 0
   stunTime: 0
@@ -6215,7 +6215,7 @@ MonoBehaviour:
   halfExtent: 0
   damage: 5
   attackType: 
-  player: {fileID: 9082076705501439328}
+  playerAttack: {fileID: 9082076705501439328}
   playerIA: {fileID: 0}
   isIA: 0
   stunTime: 0
