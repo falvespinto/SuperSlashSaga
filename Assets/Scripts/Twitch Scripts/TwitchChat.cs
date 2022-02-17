@@ -14,7 +14,7 @@ public class TwitchChat : MonoBehaviour
 {
     private string clientIdAPP = "v5wr5b8y0dfjouivn5b0t6tou0auhn";
     private string clientSecret = "1eocdpaksx61dsezqnm4za3ym0zwoy";
-    private string oauthHelix = "qy18npi82duraimvu81c32adelt6i1";
+    private string oauthHelix = "ipxxf91uyb82ehtzddxiwzvm3wksr8";
     private static TwitchChat _instance;
     [SerializeField] private TwitchCommandCollection _commands;
     private TcpClient _twitchClient;
@@ -28,6 +28,7 @@ public class TwitchChat : MonoBehaviour
     public EmotesSpawner emotesSpawner;
     public bool canSpawnEmote = true;
     public string json_folder;
+    public bool userExist = false;
 
     public static TwitchChat Instance
     {
@@ -58,7 +59,7 @@ public class TwitchChat : MonoBehaviour
             Password = "oauth:kgtnyxxfzxz5qb7sivwc6oca526klc"
         };
 
-        Connect(credentials);
+        StartCoroutine(CheckIfUserExist(MenuScript.nomDeChaine));
     }
     // FIN FIX
 
@@ -82,7 +83,10 @@ public class TwitchChat : MonoBehaviour
         }
         else
         {
-            Connect(credentials);
+            if (userExist)
+            {
+                Connect(credentials);
+            }
         }
 
         if (emoteQueue.Count >= 1 && canSpawnEmote)
@@ -233,7 +237,7 @@ public class TwitchChat : MonoBehaviour
 
     private IEnumerator GetGlobalsEmotes()
     {
-        string uri = "https://api.twitch.tv/helix/chat/emotes/globa";
+        string uri = "https://api.twitch.tv/helix/chat/emotes/global";
         StartCoroutine(GetOathToken());
         yield return new WaitForSeconds(0.5f);
         JSONNode authEmotes = JSON.Parse(authJson);
@@ -246,12 +250,11 @@ public class TwitchChat : MonoBehaviour
             yield return request.SendWebRequest();
             if (request.isNetworkError || request.isHttpError)
             {
-                gotEmotes = false;
+                userExist = false;
             }
             else
             {
-                emotesData = ParseGlobalsEmotes(request.downloadHandler.text);
-                gotEmotes = true;
+                userExist = ParseUserExist(request.downloadHandler.text);
             }
         }
     }
@@ -276,13 +279,18 @@ public class TwitchChat : MonoBehaviour
                 authJson = request.downloadHandler.text;
             }
         }
-
     }
 
     private EmotesData ParseGlobalsEmotes(string json)
     {
         EmotesData emotesData = JsonUtility.FromJson<EmotesData>(json);
         return emotesData;
+    }
+
+    private bool ParseUserExist(string json)
+    {
+        UserData usersData = JsonUtility.FromJson<UserData>(json);
+        return usersData.data.id != null ? true : false;
     }
 
     private string getEmoteImage(string emoteName)
@@ -315,6 +323,25 @@ public class TwitchChat : MonoBehaviour
         canSpawnEmote = true;
     }
 
+    private IEnumerator CheckIfUserExist(string name)
+    {
+        string uri = "https://api.twitch.tv/helix/users?login=" + name;
+        string bearer = "Bearer " + oauthHelix;
+        using (UnityWebRequest request = UnityWebRequest.Get(uri))
+        {
+            request.SetRequestHeader("Authorization", bearer);
+            request.SetRequestHeader("Client-ID", clientIdAPP);
+            yield return request.SendWebRequest();
+            if (request.isNetworkError || request.isHttpError)
+            {
+
+            }
+            else
+            {
+                userExist = ParseUserExist(request.downloadHandler.text);
+            }
+        }
+    }
 
 }
 

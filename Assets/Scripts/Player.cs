@@ -313,7 +313,7 @@ public class Player : MonoBehaviour
 
     public void AskForHelp()
     {
-        if (!askedForHelp)
+        if (!askedForHelp && MenuScript.nomDeChaine != null && TwitchChat.Instance.userExist)
         {
             askedForHelp = true;
             onHelpAsked?.Invoke(choixHelp, 60f, whenVoteStopped, null);

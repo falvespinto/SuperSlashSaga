@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using UnityEngine.Audio;
-
+using TMPro;
 
 public class MenuScript : MonoBehaviour
 {
@@ -45,15 +45,22 @@ public class MenuScript : MonoBehaviour
     public GameObject pointerTwitchCoche;
 
     public static string nomDeChaine;
+    public TMP_InputField textNomDeChaine;
 
     void Start()
     {
-        //FindObjectOfType<AudioManager>().Play("MusiqueMenu");
+        nomDeChaine = PlayerPrefs.GetString("channelName");
+        if (nomDeChaine != null)
+        {
+            textNomDeChaine.text = nomDeChaine;
+        }
     }
 
     public void fillChannelName(string channelName)
     {
         nomDeChaine = channelName;
+        PlayerPrefs.SetString("channelName",channelName);
+        PlayerPrefs.Save();
     }
 
     public void Play()

@@ -37,19 +37,22 @@ public class TwitchGameManager : MonoBehaviour
 
     private void Update()
     {
-        if (P1 == null) P1 = P1Data.GetComponentInChildren<Player>();
-        if (P2 == null) P2 = P2Data.GetComponentInChildren<Player>();
-        if (sendHelpState == 0 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 30))
+        if (MenuScript.nomDeChaine != null && TwitchChat.Instance.userExist)
         {
-            AskForHelpToTwitch();
-        }
-        else if (sendHelpState == 1 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 40))
-        {
-            AskForHelpToTwitch();
-        }
-        else if (sendHelpState == 2 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 50))
-        {
-            AskForHelpToTwitch();
+            if (P1 == null) P1 = P1Data.GetComponentInChildren<Player>();
+            if (P2 == null) P2 = P2Data.GetComponentInChildren<Player>();
+            if (sendHelpState == 0 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 30))
+            {
+                AskForHelpToTwitch();
+            }
+            else if (sendHelpState == 1 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 40))
+            {
+                AskForHelpToTwitch();
+            }
+            else if (sendHelpState == 2 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 50))
+            {
+                AskForHelpToTwitch();
+            }
         }
     }
 

@@ -14,6 +14,7 @@ public class Permutation : MonoBehaviour
     public Vector3 offSet;
     public float backwardOffSet;
     public bool hasPermuted = false;
+    public Collider[] mapColliders;
 
     public static Action<int> onPermutation;
 
@@ -54,6 +55,13 @@ public class Permutation : MonoBehaviour
             Debug.Log("Would have permuted");
             characterController.enabled = false;
             Vector3 newPos = playerData.target.position - playerData.target.forward * permutationOffSet;
+            //foreach (Collider coll in mapColliders)
+            //{
+            //    if (coll.bounds.Contains(newPos))
+            //    {
+            //        newPos = playerData.target.position + playerData.target.forward * permutationOffSet;
+            //    }
+            //}
             transform.position = newPos;
             characterController.enabled = true;
         }
