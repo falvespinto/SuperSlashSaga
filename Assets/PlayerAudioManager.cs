@@ -13,11 +13,13 @@ public class PlayerAudioManager : MonoBehaviour
     [SerializeField]
     private OneShotAudio parade;
     [SerializeField]
-    private OneShotAudio kunai;
+    private OneShotAudio dash;
     [SerializeField]
     private OneShotAudio ultimate;
     [SerializeField]
     private OneShotAudio impact;
+    [SerializeField]
+    private OneShotAudio mort;
     [SerializeField]
     private OneShotAudio coupFinalLourd;
     [SerializeField]
@@ -33,9 +35,9 @@ public class PlayerAudioManager : MonoBehaviour
     {
         coupLourd.PlayTheSound();
     }
-    public void playSoundKunai()
+    public void playSoundDash()
     {
-        kunai.PlayTheSound();
+        dash.PlayTheSound();
     }
     public void playSoundParade()
     {
@@ -59,6 +61,11 @@ public class PlayerAudioManager : MonoBehaviour
     public void playSoundCoupFinalLeger()
     {
         coupFinalLeger.PlayTheSound();
+    }
+
+    public void playSoundMort()
+    {
+        mort.PlayTheSound();
     }
 
     void Start()
