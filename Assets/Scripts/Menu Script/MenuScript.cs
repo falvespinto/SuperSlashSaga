@@ -141,14 +141,14 @@ public class MenuScript : MonoBehaviour
             {
                 //Utilisation du bouton continuer
                 Debug.Log("Continuer");
-                //SceneManager.LoadScene("CharacterSelection");
+                SceneManager.LoadScene("DebutHistoire");
             }
 
             else if (SelectedButton == 8)
             {
                 Debug.Log("Nouvelle partie");
                 //utilisation du bouton nouvelle partie campagne
-                SceneManager.LoadScene("Dialogue");
+                SceneManager.LoadScene("DebutHistoire");
             }
 
             else if (SelectedButton == 9)

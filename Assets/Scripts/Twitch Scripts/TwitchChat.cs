@@ -127,6 +127,7 @@ public class TwitchChat : MonoBehaviour
                 return;
             }
 
+
             if (message.Contains("PRIVMSG"))
             {
                 var splitPoint = message.IndexOf("!", 1);
@@ -229,6 +230,7 @@ public class TwitchChat : MonoBehaviour
         {
 
         }
+
     }
 
     private IEnumerator GetGlobalsEmotes()
@@ -307,6 +309,7 @@ public class TwitchChat : MonoBehaviour
         }
 
     }
+
 
     private IEnumerator WaitBeforeSpawnEmote()
     {

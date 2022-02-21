@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
         if (attackType == "Light")
         {
             Vector3 newPos = transform.position + offSet;
-            Instantiate(HitVFXPrefab, newPos, transform.rotation);
+            Instantiate(HitVFXPrefab, newPos , transform.rotation);
             playerAudio.playSoundImpact();
         }
         else if(attackType == "Heavy")
@@ -149,6 +149,7 @@ public class Player : MonoBehaviour
                     OnDeath?.Invoke(playerIndex);
                     isDead = true;
                     animator.SetTrigger("Dead");
+                    playerAudio.playSoundMort();
                     Invoke("Die", 3f);
                 }
             }
@@ -209,6 +210,7 @@ public class Player : MonoBehaviour
                     {
                         OnDeath?.Invoke(playerIndex);
                         animator.SetTrigger("Dead");
+                        playerAudio.playSoundMort();
                         isDead = true;
                         Invoke("Die", 3f);
                     }
