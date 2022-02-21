@@ -5,15 +5,16 @@ using BehaviorDesigner.Runtime;
 
 public class IARandomParade : Action
 {
-    public float randomParade = Random.Range(0, 100);
-    public RandomAttack percentParade;
+    public float randomParade;
+    public RandomAttack percentLight;
     public override void OnStart()
     {
 
     }
     public override TaskStatus OnUpdate()
     {
-        if (randomParade < percentParade.CalculatePercentParade())
+        randomParade = Random.Range(0, 100);
+        if (randomParade < percentLight.CalculatePercentLight())
             return TaskStatus.Success;
         else
             return TaskStatus.Failure;

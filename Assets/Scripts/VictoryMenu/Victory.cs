@@ -15,39 +15,139 @@ public class Victory : MonoBehaviour
     private int winner;
     public Transform positionWinner;
     public Transform positionLooser;
-    public GameObject winnerJ1;
-    public GameObject winnerJ2;
-    public GameObject looserJ1;
-    public GameObject looserJ2;
+    public List<GameObject> listPrefab;
     private Animator animatorWinner;
     private Animator animatorLooser;
 
     void Start()
     {
         winner = Player.winner;
-        if(winner == 1)
+        //debut yuetsu contre yuetsu sans IA
+        if (winner == 1 && LoadCharacter.selectedCharacterP1 == 0 && LoadCharacter.selectedCharacterP2 == 0)
         {
             GameObject.Find("joueur2").SetActive(false);
-            winnerJ1.transform.position = positionWinner.position;
-            winnerJ1.transform.rotation = positionWinner.rotation;
-            winnerJ1.transform.localScale = positionWinner.localScale;
-            Instantiate(winnerJ1);
-            looserJ2.transform.position = positionLooser.position;
-            looserJ2.transform.rotation = positionLooser.rotation;
-            looserJ2.transform.localScale = positionLooser.localScale;
-            Instantiate(looserJ2);
+            listPrefab[0].transform.position = positionWinner.position;
+            listPrefab[0].transform.rotation = positionWinner.rotation;
+            listPrefab[0].transform.localScale = positionWinner.localScale;
+            Instantiate(listPrefab[0]);
+            listPrefab[5].transform.position = positionLooser.position;
+            listPrefab[5].transform.rotation = positionLooser.rotation;
+            listPrefab[5].transform.localScale = positionLooser.localScale;
+            Instantiate(listPrefab[5]);
         }
-        else
+        if (winner == 2 && LoadCharacter.selectedCharacterP1 == 0 && LoadCharacter.selectedCharacterP2 == 0)
         {
             GameObject.Find("joueur1").SetActive(false);
-            winnerJ2.transform.position = positionWinner.position;
-            winnerJ2.transform.rotation = positionWinner.rotation;
-            winnerJ2.transform.localScale = positionWinner.localScale;
-            Instantiate(winnerJ2);
-            looserJ1.transform.position = positionLooser.position;
-            looserJ1.transform.rotation = positionLooser.rotation;
-            looserJ1.transform.localScale = positionLooser.localScale;
-            Instantiate(looserJ1);
+            listPrefab[4].transform.position = positionWinner.position;
+            listPrefab[4].transform.rotation = positionWinner.rotation;
+            listPrefab[4].transform.localScale = positionWinner.localScale;
+            Instantiate(listPrefab[4]);
+            listPrefab[1].transform.position = positionLooser.position;
+            listPrefab[1].transform.rotation = positionLooser.rotation;
+            listPrefab[1].transform.localScale = positionLooser.localScale;
+            Instantiate(listPrefab[1]);
+        }
+        //Fin
+        //debut yuetsu contre yuetsu avec IA
+        if (winner == 1 && LoadCharacter.selectedCharacterP1 == 0 && LoadCharacter.selectedCharacterP2 == 1)
+        {
+            GameObject.Find("joueur2").SetActive(false);
+            listPrefab[0].transform.position = positionWinner.position;
+            listPrefab[0].transform.rotation = positionWinner.rotation;
+            listPrefab[0].transform.localScale = positionWinner.localScale;
+            Instantiate(listPrefab[0]);
+            listPrefab[5].transform.position = positionLooser.position;
+            listPrefab[5].transform.rotation = positionLooser.rotation;
+            listPrefab[5].transform.localScale = positionLooser.localScale;
+            Instantiate(listPrefab[5]);
+        }
+        if (winner == 2 && LoadCharacter.selectedCharacterP1 == 0 && LoadCharacter.selectedCharacterP2 == 1)
+        {
+            GameObject.Find("joueur1").SetActive(false);
+            listPrefab[4].transform.position = positionWinner.position;
+            listPrefab[4].transform.rotation = positionWinner.rotation;
+            listPrefab[4].transform.localScale = positionWinner.localScale;
+            Instantiate(listPrefab[4]);
+            listPrefab[1].transform.position = positionLooser.position;
+            listPrefab[1].transform.rotation = positionLooser.rotation;
+            listPrefab[1].transform.localScale = positionLooser.localScale;
+            Instantiate(listPrefab[1]);
+        }
+        //Fin
+        //debut yuetsu contre daiki
+        if (winner == 1 && LoadCharacter.selectedCharacterP1 == 0 && LoadCharacter.selectedCharacterP2 == 2)
+        {
+            GameObject.Find("joueur2").SetActive(false);
+            listPrefab[0].transform.position = positionWinner.position;
+            listPrefab[0].transform.rotation = positionWinner.rotation;
+            listPrefab[0].transform.localScale = positionWinner.localScale;
+            Instantiate(listPrefab[0]);
+            listPrefab[7].transform.position = positionLooser.position;
+            listPrefab[7].transform.rotation = positionLooser.rotation;
+            listPrefab[7].transform.localScale = positionLooser.localScale;
+            Instantiate(listPrefab[7]);
+        }
+        if (winner == 2 && LoadCharacter.selectedCharacterP1 == 0 && LoadCharacter.selectedCharacterP2 == 2)
+        {
+            GameObject.Find("joueur1").SetActive(false);
+            listPrefab[6].transform.position = positionWinner.position;
+            listPrefab[6].transform.rotation = positionWinner.rotation;
+            listPrefab[6].transform.localScale = positionWinner.localScale;
+            Instantiate(listPrefab[6]);
+            listPrefab[1].transform.position = positionLooser.position;
+            listPrefab[1].transform.rotation = positionLooser.rotation;
+            listPrefab[1].transform.localScale = positionLooser.localScale;
+            Instantiate(listPrefab[1]);
+        }
+        if (winner == 1 && LoadCharacter.selectedCharacterP1 == 2 && LoadCharacter.selectedCharacterP2 == 0)
+        {
+            GameObject.Find("joueur2").SetActive(false);
+            listPrefab[6].transform.position = positionWinner.position;
+            listPrefab[6].transform.rotation = positionWinner.rotation;
+            listPrefab[6].transform.localScale = positionWinner.localScale;
+            Instantiate(listPrefab[6]);
+            listPrefab[1].transform.position = positionLooser.position;
+            listPrefab[1].transform.rotation = positionLooser.rotation;
+            listPrefab[1].transform.localScale = positionLooser.localScale;
+            Instantiate(listPrefab[1]);
+        }
+        if (winner == 2 && LoadCharacter.selectedCharacterP1 == 2 && LoadCharacter.selectedCharacterP2 == 0)
+        {
+            GameObject.Find("joueur1").SetActive(false);
+            listPrefab[0].transform.position = positionWinner.position;
+            listPrefab[0].transform.rotation = positionWinner.rotation;
+            listPrefab[0].transform.localScale = positionWinner.localScale;
+            Instantiate(listPrefab[0]);
+            listPrefab[7].transform.position = positionLooser.position;
+            listPrefab[7].transform.rotation = positionLooser.rotation;
+            listPrefab[7].transform.localScale = positionLooser.localScale;
+            Instantiate(listPrefab[7]);
+        }
+        //Fin
+        //debut daiki contre daiki
+        if (winner == 1 && LoadCharacter.selectedCharacterP1 == 2 && LoadCharacter.selectedCharacterP2 == 2)
+        {
+            GameObject.Find("joueur2").SetActive(false);
+            listPrefab[2].transform.position = positionWinner.position;
+            listPrefab[2].transform.rotation = positionWinner.rotation;
+            listPrefab[2].transform.localScale = positionWinner.localScale;
+            Instantiate(listPrefab[2]);
+            listPrefab[7].transform.position = positionLooser.position;
+            listPrefab[7].transform.rotation = positionLooser.rotation;
+            listPrefab[7].transform.localScale = positionLooser.localScale;
+            Instantiate(listPrefab[7]);
+        }
+        if (winner == 2 && LoadCharacter.selectedCharacterP1 == 2 && LoadCharacter.selectedCharacterP2 == 2)
+        {
+            GameObject.Find("joueur1").SetActive(false);
+            listPrefab[6].transform.position = positionWinner.position;
+            listPrefab[6].transform.rotation = positionWinner.rotation;
+            listPrefab[6].transform.localScale = positionWinner.localScale;
+            Instantiate(listPrefab[6]);
+            listPrefab[3].transform.position = positionLooser.position;
+            listPrefab[3].transform.rotation = positionLooser.rotation;
+            listPrefab[3].transform.localScale = positionLooser.localScale;
+            Instantiate(listPrefab[3]);
         }
     }
 

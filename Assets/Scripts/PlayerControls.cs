@@ -47,7 +47,7 @@ public class PlayerControls : MonoBehaviour
     private int indexJ2;
     private int indexIA;
     private GameObject ia;
-    private int afficherPrefab = 0;
+    public int afficherPrefab = 0;
 
 
     private void Awake()
@@ -112,12 +112,12 @@ public class PlayerControls : MonoBehaviour
             if (movementInput.x > 0)
             {
                 champSelect.MoveSelector("right");
-                afficherPrefab += 1;
+                afficherPrefab = 1;
             }
             else if (movementInput.x < 0)
             {
                 champSelect.MoveSelector("left");
-                afficherPrefab -= 1;
+                afficherPrefab = 0;
             }
             /*else if (movementInput.y > 0)
             {

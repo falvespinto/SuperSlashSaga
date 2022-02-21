@@ -1199,10 +1199,15 @@ MonoBehaviour:
   NumberOfButtons: 1
   positionWinner: {fileID: 479846564}
   positionLooser: {fileID: 1793419343}
-  winnerJ1: {fileID: 6735330714013134415, guid: a16337b95a98bff4a8d796a367d8a128, type: 3}
-  winnerJ2: {fileID: 6735330714013134415, guid: 3da5b794e3e698c49ba6b202babff918, type: 3}
-  looserJ1: {fileID: 6735330714013134415, guid: 0cdabeab37d2e494e8c9aaf224d88def, type: 3}
-  looserJ2: {fileID: 6735330714013134415, guid: b4f0496a2c40edb4782a01401f661499, type: 3}
+  listPrefab:
+  - {fileID: 6735330714013134415, guid: a16337b95a98bff4a8d796a367d8a128, type: 3}
+  - {fileID: 6735330714013134415, guid: 0cdabeab37d2e494e8c9aaf224d88def, type: 3}
+  - {fileID: 6132981796440674168, guid: 0dcf9b0d5bcdafa44812d01facb48a7b, type: 3}
+  - {fileID: 6132981796440674168, guid: ef93796f9eef3954eb1b3549b59e2123, type: 3}
+  - {fileID: 6735330714013134415, guid: 3da5b794e3e698c49ba6b202babff918, type: 3}
+  - {fileID: 6735330714013134415, guid: b4f0496a2c40edb4782a01401f661499, type: 3}
+  - {fileID: 6132981796440674168, guid: 401a68837d211394382e1f83c3d119af, type: 3}
+  - {fileID: 6132981796440674168, guid: 8fd64b1131e5de740b547b1241dba8b8, type: 3}
 --- !u!114 &1591221851
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -33,7 +33,6 @@ public class IALight : Action
         }
         else
         {
-            Debug.Log(lightAttackIA.playerAttackIA.playerHit);
             lightAttackIA.ResetComboState();
             return TaskStatus.Failure;
         }

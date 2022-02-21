@@ -23,7 +23,8 @@ public class LoadCharacter : MonoBehaviour
     public VolumeProfile volumeProfileDay;
     public VolumeProfile volumeProfileNight;
 
-    public 
+    public static int selectedCharacterP1;
+    public static int selectedCharacterP2;
     void Start()
     {
 
@@ -38,8 +39,8 @@ public class LoadCharacter : MonoBehaviour
 
 
 
-        int selectedCharacterP1 = PlayerPrefs.GetInt("selectedCharacterP1");
-        int selectedCharacterP2 = PlayerPrefs.GetInt("selectedCharacterP2");
+        selectedCharacterP1 = PlayerPrefs.GetInt("selectedCharacterP1");
+        selectedCharacterP2 = PlayerPrefs.GetInt("selectedCharacterP2");
         GameObject prefabP1 = characterPrefabs[selectedCharacterP1];
         GameObject P1 = Instantiate(prefabP1, spawnPointP1.position, Quaternion.Euler(0f, 0f, 0f), player1);
         //P1.GetComponentInChildren<Player>().healthBar = GameObject.FindObjectOfType<HealthP1>().GetComponentInChildren<HealthBar>();
