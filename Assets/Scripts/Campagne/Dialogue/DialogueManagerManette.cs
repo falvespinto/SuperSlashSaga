@@ -129,6 +129,7 @@ public class DialogueManagerManette : MonoBehaviour
             daiki.SetActive(true);
             pereDaiki.SetActive(false);
             daikiOmbre.SetActive(false);
+            pereDaiki.SetActive(true);
             chapitre = 1;
         }
         else if(sentence.Contains("Père1 de Daiki :"))
@@ -153,6 +154,7 @@ public class DialogueManagerManette : MonoBehaviour
             pereDaiki.SetActive(true);
             daiki.SetActive(false);
             daikiOmbre.SetActive(true);
+            yuestu.SetActive(false);
             chapitre = 1;
         }
 
@@ -217,6 +219,7 @@ public class DialogueManagerManette : MonoBehaviour
             pereDaiki.SetActive(false);
             daiki.SetActive(true);
             daikiOmbre.SetActive(false);
+            yuestuOmbre.SetActive(true);
             chapitre = 3;
         }
         else if (sentence.Contains("Père3 de Daiki :"))
@@ -300,7 +303,7 @@ public class DialogueManagerManette : MonoBehaviour
         }
         if (chapitre == 4)
         {
-            SceneManager.LoadScene("Menu Principal");
+            SceneManager.LoadScene("Crédit");
         }
     }
 }
