@@ -116,6 +116,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "AskForHelp",
+                    "type": "Button",
+                    "id": "25f71125-103f-4e18-82f9-3c2af7bc25c6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -452,11 +460,22 @@
                 {
                     "name": "",
                     "id": "381f7928-ac89-4748-b406-da7d690a77b3",
-                    "path": "<Gamepad>/leftShoulder",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Projectile",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "30095179-8bb1-4aa2-b344-289be7cc7aee",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AskForHelp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

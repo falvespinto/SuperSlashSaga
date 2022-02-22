@@ -29,6 +29,7 @@ public class Dash : MonoBehaviour
     public static Action<int> OnDash;
     public PlayerAudioManager playerAudio;
     public float dashTime = 1f;
+    public float manaCost = 25f; 
 
     void Start()
     {
@@ -76,8 +77,12 @@ public class Dash : MonoBehaviour
         {
             if (!isDashing && !playerAttack.isAttacking && !playerAttack.isParing && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
             {
-                OnDash?.Invoke(player.playerIndex);
-                StartCoroutine(DashMovement());
+                if (player.manabar.mana >= 25 )
+                {
+                    player.manabar.SetMana(player.manabar.mana - 25);
+                    OnDash?.Invoke(player.playerIndex);
+                    StartCoroutine(DashMovement());
+                }
             }
         }
     }

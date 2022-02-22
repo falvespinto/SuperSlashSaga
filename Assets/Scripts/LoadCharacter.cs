@@ -180,7 +180,7 @@ public class LoadCharacter : MonoBehaviour
             {
                 continue;
             }
-            if (child.name == "DashStopArea")
+            if (child.name == "DashStopArea" || child.name == "CollisionBlocker")
             {
                 continue;
             }

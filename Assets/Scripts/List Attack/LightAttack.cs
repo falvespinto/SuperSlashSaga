@@ -97,7 +97,8 @@ public class LightAttack : MonoBehaviour
                     Vector3 direction = playerAttack.LookAtTarget();
                     playerAttack.SetAttacksData(7,"Light");
                     playerAttack.m_Animator.SetTrigger("LightAttack");
-                    if (!playerAttack.isHeNearEnemy()) StartCoroutine(playerAttack.ForwardAttack(lightAttackTime - 0.6f, direction, 0.05f));
+                    //if (!playerAttack.isHeNearEnemy()) 
+                    StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
                     Invoke("AttackComplete", timeBeforeCancelLight1);
                     player.playerAudio.playSoundLeger();
                 }
@@ -113,7 +114,8 @@ public class LightAttack : MonoBehaviour
                     playerAttack.SetAttacksData(7, "Light");
                     // ChangeAnimationState(m_Punch);
                     playerAttack.m_Animator.SetTrigger("LightAttack2");
-                    if (!playerAttack.isHeNearEnemy()) StartCoroutine(playerAttack.ForwardAttack(light2AttackTime - 0.5f, direction, 0.05f));
+                    //if (!playerAttack.isHeNearEnemy()) 
+                    StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
                     Invoke("AttackComplete", timeBeforeCancelLight2);
                     player.playerAudio.playSoundLeger();
                     //m_Animator.GetCurrentAnimatorStateInfo(0).length ; recup temps de l'anim
@@ -127,7 +129,8 @@ public class LightAttack : MonoBehaviour
                     Vector3 direction = playerAttack.LookAtTarget();
                     playerAttack.SetAttacksData(7, "Light");
                     playerAttack.m_Animator.SetTrigger("LightAttack3");
-                    if (!playerAttack.isHeNearEnemy()) StartCoroutine(playerAttack.ForwardAttack(light2AttackTime - 0.5f, direction, 0.05f));
+                    //if (!playerAttack.isHeNearEnemy()) 
+                    StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
                     Invoke("AttackComplete", timeBeforeCancelLight3);
                     player.playerAudio.playSoundLeger();
                 }

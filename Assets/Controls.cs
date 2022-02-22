@@ -129,6 +129,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""AskForHelp"",
+                    ""type"": ""Button"",
+                    ""id"": ""25f71125-103f-4e18-82f9-3c2af7bc25c6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -465,11 +473,22 @@ public class @Controls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""381f7928-ac89-4748-b406-da7d690a77b3"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Projectile"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""30095179-8bb1-4aa2-b344-289be7cc7aee"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AskForHelp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -494,6 +513,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Gameplay_Projectile = m_Gameplay.FindAction("Projectile", throwIfNotFound: true);
         m_Gameplay_Permutation = m_Gameplay.FindAction("Permutation", throwIfNotFound: true);
         m_Gameplay_ManaUp = m_Gameplay.FindAction("ManaUp", throwIfNotFound: true);
+        m_Gameplay_AskForHelp = m_Gameplay.FindAction("AskForHelp", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -557,6 +577,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_Projectile;
     private readonly InputAction m_Gameplay_Permutation;
     private readonly InputAction m_Gameplay_ManaUp;
+    private readonly InputAction m_Gameplay_AskForHelp;
     public struct GameplayActions
     {
         private @Controls m_Wrapper;
@@ -575,6 +596,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @Projectile => m_Wrapper.m_Gameplay_Projectile;
         public InputAction @Permutation => m_Wrapper.m_Gameplay_Permutation;
         public InputAction @ManaUp => m_Wrapper.m_Gameplay_ManaUp;
+        public InputAction @AskForHelp => m_Wrapper.m_Gameplay_AskForHelp;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -626,6 +648,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @ManaUp.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnManaUp;
                 @ManaUp.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnManaUp;
                 @ManaUp.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnManaUp;
+                @AskForHelp.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAskForHelp;
+                @AskForHelp.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAskForHelp;
+                @AskForHelp.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnAskForHelp;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -672,6 +697,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @ManaUp.started += instance.OnManaUp;
                 @ManaUp.performed += instance.OnManaUp;
                 @ManaUp.canceled += instance.OnManaUp;
+                @AskForHelp.started += instance.OnAskForHelp;
+                @AskForHelp.performed += instance.OnAskForHelp;
+                @AskForHelp.canceled += instance.OnAskForHelp;
             }
         }
     }
@@ -692,5 +720,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnProjectile(InputAction.CallbackContext context);
         void OnPermutation(InputAction.CallbackContext context);
         void OnManaUp(InputAction.CallbackContext context);
+        void OnAskForHelp(InputAction.CallbackContext context);
     }
 }

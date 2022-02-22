@@ -123,10 +123,10 @@ public class TwitchGameManager : MonoBehaviour
             case "heal":
                 playerToHelp.currentHealth += 25;
                 playerToHelp.healthBar.SetHealth(playerToHelp.currentHealth);
-                TwitchChat.Instance.SendIRCMessage("Le joueur " + (playerToHelp.playerIndex + 1) + "a été soigné.");
+                TwitchChat.Instance.SendIRCMessage("Le joueur " + (playerToHelp.playerIndex + 1) + "a ï¿½tï¿½ soignï¿½.");
                 break;
             case "rien":
-                TwitchChat.Instance.SendIRCMessage("Le joueur " + (playerToHelp.playerIndex + 1) + "n'a pas reçu de bonus.");
+                TwitchChat.Instance.SendIRCMessage("Le joueur " + (playerToHelp.playerIndex + 1) + "n'a pas reï¿½u de bonus.");
                 break;
         }
     }

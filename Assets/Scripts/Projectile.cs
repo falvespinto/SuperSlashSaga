@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public ProjectileBehavior projectilePrefab;
     public Transform projectileSpawnPoint;
-    public float projectileSpeed = 20f;
+    public float projectileSpeed = 120f;
     public float lifeTime = 3;
     private PlayerData playerData;
     public PlayerAttack playerAttack;
@@ -38,12 +38,15 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        FollowTarget();
+        if (currentProjectiles.Count > 0)
+        {
+            //FollowTarget(); 
+        }
     }
     
     public void PrepareFire()
     {
-        if (canShoot && !player.isInCombo && !playerAttack.isAttacking && !ultimateAttack.isPerformingUltimate)
+        if (canShoot && !player.isInCombo && !playerAttack.isAttacking)
         {
             m_animator.SetBool("projectile", true);
             playerAttack.LookAtTarget();
@@ -57,6 +60,11 @@ public class Projectile : MonoBehaviour
     public IEnumerator Fire()
     {
         yield return new WaitForSeconds(timeBeforeShoot);
+        projectilePrefab.maxTurnSpeed = maxTurnSpeed;
+        projectilePrefab.projectileSpeed = projectileSpeed;
+        projectilePrefab.lifeTime = lifeTime;
+        projectilePrefab.hauteurTarget = hauteurTarget;
+
         ProjectileBehavior projectile = Instantiate(projectilePrefab);
         projectile.playerData = playerData;
         Physics.IgnoreCollision(projectile.GetComponent<Collider>(),
@@ -67,25 +75,17 @@ public class Projectile : MonoBehaviour
 
         projectile.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
 
-        currentProjectiles.Add(projectile);
-        StartCoroutine(DestroyBulletAfterTime(projectile));
-    }
-    private IEnumerator DestroyBulletAfterTime(ProjectileBehavior projectile)
-    {
-        yield return new WaitForSeconds(lifeTime);
-        currentProjectiles.Remove(projectile);
-        Destroy(projectile);
+        //currentProjectiles.Add(projectile);
+        //StartCoroutine(DestroyBulletAfterTime(projectile));
     }
 
     private IEnumerator IsShooting()
     {
-        
         isShooting = true;
         yield return new WaitForSeconds(isShootingCooldown);
         isShooting = false;
         m_animator.SetBool("projectile", false);
     }
-
     private IEnumerator Cooldown()
     {
         canShoot = false;
@@ -97,13 +97,15 @@ public class Projectile : MonoBehaviour
     {
         foreach (var projectile in currentProjectiles)
         {
-            projectile.transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
-            Vector3 directionToTarget = playerData.target.position - (projectile.transform.position + hauteurTarget);
-            Vector3 newdirectionToTarget = new Vector3(directionToTarget.x, projectile.transform.position.y, directionToTarget.z);
-            Vector3 currentDirection = projectile.transform.forward;
-            Vector3 resultingDirection = Vector3.RotateTowards(currentDirection, directionToTarget.normalized, maxTurnSpeed * Mathf.Deg2Rad * Time.deltaTime, 1f);
-            projectile.transform.rotation = Quaternion.LookRotation(resultingDirection);
+            if (projectile.gameObject.activeSelf == true)
+            {
+                projectile.transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
+                Vector3 directionToTarget = playerData.target.position - (projectile.transform.position + hauteurTarget);
+                Vector3 newdirectionToTarget = new Vector3(directionToTarget.x, projectile.transform.position.y, directionToTarget.z);
+                Vector3 currentDirection = projectile.transform.forward;
+                Vector3 resultingDirection = Vector3.RotateTowards(currentDirection, directionToTarget.normalized, maxTurnSpeed * Mathf.Deg2Rad * Time.deltaTime, 1f);
+                projectile.transform.rotation = Quaternion.LookRotation(resultingDirection);
+            }
         }
-        
     }
 }
