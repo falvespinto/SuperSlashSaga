@@ -48,7 +48,6 @@ public class Attack : MonoBehaviour
             {
                 onComboIncrease?.Invoke(playerAttack.player.playerIndex);
             }
-            
             for (int i = 0; i < hit.Length; i++)
             {
                 if (isIA && GetComponentInParent<PlayerData>().playerIndex == 0)
@@ -78,7 +77,6 @@ public class Attack : MonoBehaviour
             }
         }
     }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;

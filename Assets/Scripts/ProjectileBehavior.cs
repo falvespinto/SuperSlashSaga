@@ -7,6 +7,10 @@ public class ProjectileBehavior : MonoBehaviour
     public PlayerData playerData;
     public float projectileDamage;
     public string attackType;
+    public float lifeTime = 3;
+    public Vector3 hauteurTarget = new Vector3(0,-5,0);
+    public float maxTurnSpeed = 60f;
+    public float projectileSpeed = 20f;
     private void OnTriggerEnter(Collider col)
     {
         //Implement Behavior
@@ -20,8 +24,34 @@ public class ProjectileBehavior : MonoBehaviour
         }
         
     }
+
+    private void Start()
+    {
+        StartCoroutine(DestroyBulletAfterTime());
+    }
+
     void OnDisable()
     {
         Destroy(gameObject);
     }
+
+    private void Update()
+    {
+        transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
+        Vector3 directionToTarget = playerData.target.position - (transform.position + hauteurTarget);
+        Vector3 newdirectionToTarget = new Vector3(directionToTarget.x, transform.position.y, directionToTarget.z);
+        Vector3 currentDirection = transform.forward;
+        Vector3 resultingDirection = Vector3.RotateTowards(currentDirection, directionToTarget.normalized, maxTurnSpeed * Mathf.Deg2Rad * Time.deltaTime, 1f);
+        transform.rotation = Quaternion.LookRotation(resultingDirection);
+    }
+
+    private IEnumerator DestroyBulletAfterTime()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        //currentProjectiles.Remove(projectile);
+        //Destroy(projectile);
+        gameObject.SetActive(false);
+    }
+
 }
+

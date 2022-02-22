@@ -28,6 +28,7 @@ public class Dash : MonoBehaviour
     public float maxTurnSpeed = 60f;
     public static Action<int> OnDash;
     public float dashTime = 1f;
+    public float manaCost = 25f; 
 
     void Start()
     {
@@ -75,8 +76,12 @@ public class Dash : MonoBehaviour
         {
             if (!isDashing && !playerAttack.isAttacking && !playerAttack.isParing && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
             {
-                OnDash?.Invoke(player.playerIndex);
-                StartCoroutine(DashMovement());
+                if (player.manabar.mana >= 25 )
+                {
+                    player.manabar.SetMana(player.manabar.mana - 25);
+                    OnDash?.Invoke(player.playerIndex);
+                    StartCoroutine(DashMovement());
+                }
             }
         }
     }
