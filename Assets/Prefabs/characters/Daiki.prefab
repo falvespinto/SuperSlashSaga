@@ -1173,7 +1173,7 @@ GameObject:
   - component: {fileID: 7992323009788895323}
   - component: {fileID: 4675118088401817850}
   m_Layer: 0
-  m_Name: Ultimate
+  m_Name: Combo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1303,7 +1303,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playOnEnable: 0
   source: {fileID: 7992323009788895323}
-  audioClips: []
+  audioClips:
+  - {fileID: 8300000, guid: bb61b13980245d34c91d1a669d1ee03a, type: 3}
   pitchBounds: {x: 1, y: 1}
 --- !u!1 &3193030114159737530
 GameObject:
@@ -3570,7 +3571,7 @@ MonoBehaviour:
   coupLourd: {fileID: 8603947642747598898}
   parade: {fileID: 0}
   dash: {fileID: 8536119881544950208}
-  ultimate: {fileID: 0}
+  combo: {fileID: 4675118088401817850}
   impact: {fileID: 6774357516809328149}
   mort: {fileID: 2908294321854933334}
   coupFinalLourd: {fileID: 0}

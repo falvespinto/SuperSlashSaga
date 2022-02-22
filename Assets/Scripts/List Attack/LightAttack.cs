@@ -225,6 +225,7 @@ public class LightAttack : MonoBehaviour
                 Invoke("AttackComplete", timeOfCombo);
                 StartCoroutine(playerAttack.playerHit.GetComponent<Player>().goInEnemyCombo(timeOfCombo));
                 GetComponent<TimeLineController>().PerformFullCombo(playerAttack.m_Animator, playerAttack.playerHit.GetComponent<Animator>());
+                player.playerAudio.playSoundCombo();
             }
         }
     }

@@ -55,6 +55,7 @@ public class PauseMenu : MonoBehaviour
                 // When the button with the pointer is clicked, this piece of script is activated
                 Debug.Log("Commande");
                 pauseMenu.SetActive(false);
+                Time.timeScale = 0f;
                 commandeMenu.SetActive(true);
                 SelectedButton = 7;
                 
@@ -64,6 +65,7 @@ public class PauseMenu : MonoBehaviour
                 // When the button with the pointer is clicked, this piece of script is activated
                 Debug.Log("Option");
                 Menu.SetActive(true);
+                Time.timeScale = 0f;
                 pauseMenu.SetActive(false);
                 Point.SetActive(false);
                 PointMenu.SetActive(true);
@@ -81,6 +83,7 @@ public class PauseMenu : MonoBehaviour
             {
                 // When the button with the pointer is clicked, this piece of script is activated
                 Debug.Log("Retour");
+                Time.timeScale = 0f;
                 Menu.SetActive(false);
                 pauseMenu.SetActive(true);
                 Point.SetActive(true);
@@ -92,6 +95,7 @@ public class PauseMenu : MonoBehaviour
             {
                 // When the button with the pointer is clicked, this piece of script is activated
                 Debug.Log("Retour");
+                Time.timeScale = 0f;
                 commandeMenu.SetActive(false);
                 pauseMenu.SetActive(true);
                 Point.SetActive(true);
