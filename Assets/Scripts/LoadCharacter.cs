@@ -129,17 +129,23 @@ public class LoadCharacter : MonoBehaviour
             {
                 attacks.gameObject.SetActive(false);
             }
+            string p1String = P1.ToString();
             string p2String = P2.ToString();
-            if (p2String.Contains("Yuetsu"))
+            if(p1String == p2String)
             {
-                //P2.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
-                P2.GetComponentInChildren<CorpsTexture>().GetComponent<Renderer>().material = P2.GetComponentInChildren<CorpsTexture>().materialYuetsu;
-                P2.GetComponentInChildren<Cape>().GetComponentInChildren<test>().GetComponentInChildren<test1>().GetComponentInChildren<test2>().GetComponentInChildren<test3>().GetComponentInChildren<CapeMat>().GetComponent<Renderer>().material = P2.GetComponentInChildren<Cape>().material;
-            }
-            if (p2String.Contains("Daiki"))
-            {
+                if (p2String.Contains("Yuetsu"))
+                {
+                    //P2.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
+                    P2.GetComponentInChildren<CorpsTexture>().GetComponent<Renderer>().material = P2.GetComponentInChildren<CorpsTexture>().materialYuetsu;
+                    P2.GetComponentInChildren<Cape>().GetComponentInChildren<test>().GetComponentInChildren<test1>().GetComponentInChildren<test2>().GetComponentInChildren<test3>().GetComponentInChildren<CapeMat>().GetComponent<Renderer>().material = P2.GetComponentInChildren<Cape>().material;
+                }
+                if (p2String.Contains("Daiki"))
+                {
+                    P2.GetComponentInChildren<CorpsTexture>().GetComponent<Renderer>().material = P2.GetComponentInChildren<CorpsTexture>().materialYuetsu;
 
+                }
             }
+           
             //
             Debug.Log(StartGame.P2Device);
             InputUser.PerformPairingWithDevice(

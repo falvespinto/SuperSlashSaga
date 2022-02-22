@@ -939,6 +939,7 @@ MonoBehaviour:
   halfExtent: 0
   damage: 5
   attackType: 
+  attackName: 
   playerAttack: {fileID: 9082076705501439328}
   playerIA: {fileID: 0}
   isIA: 0
@@ -2852,6 +2853,7 @@ MonoBehaviour:
   halfExtent: 0
   damage: 5
   attackType: 
+  attackName: 
   playerAttack: {fileID: 9082076705501439328}
   playerIA: {fileID: 0}
   isIA: 0
@@ -3748,6 +3750,7 @@ MonoBehaviour:
   halfExtent: 0
   damage: 5
   attackType: 
+  attackName: 
   playerAttack: {fileID: 9082076705501439328}
   playerIA: {fileID: 0}
   isIA: 0
@@ -4190,6 +4193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8354465917008635246}
   - component: {fileID: 532283912512098380}
+  - component: {fileID: 8273536277731788120}
   m_Layer: 0
   m_Name: Corps
   m_TagString: Untagged
@@ -4317,6 +4321,20 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.14852524, y: -18.897453, z: 2.9220524}
     m_Extent: {x: 61.392643, y: 80.63038, z: 22.926392}
   m_DirtyAABB: 0
+--- !u!114 &8273536277731788120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5930393527922181163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0af9cc274a347b409272078a2957a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialYuetsu: {fileID: 2100000, guid: bfdc20594e448f642b03a817855be7da, type: 2}
+  textureYuetsu: {fileID: 0}
 --- !u!1 &6132981796440674168
 GameObject:
   m_ObjectHideFlags: 0
@@ -6218,6 +6236,7 @@ MonoBehaviour:
   halfExtent: 0
   damage: 5
   attackType: 
+  attackName: 
   playerAttack: {fileID: 9082076705501439328}
   playerIA: {fileID: 0}
   isIA: 0
@@ -6364,6 +6383,7 @@ MonoBehaviour:
   halfExtent: 0
   damage: 5
   attackType: 
+  attackName: 
   playerAttack: {fileID: 9082076705501439328}
   playerIA: {fileID: 0}
   isIA: 0
