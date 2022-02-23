@@ -17,7 +17,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         public bool bIsInRange;
         public override void OnAwake()
         {
-            
+
         }
         public override void OnStart()
         {
@@ -32,20 +32,21 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         public override TaskStatus OnUpdate()
         {
             bIsInRange = rangeCollider.bIsInRange;
-            if (HasArrived()) {
-                return TaskStatus.Success;
-            }
-            if (bIsInRange)
+            if (HasArrived())
             {
-                SetDestination(Target());
-                return TaskStatus.Running;
+                return TaskStatus.Success;
             }
             else
                 return TaskStatus.Failure;
-            
+
+            SetDestination(Target());
+            return TaskStatus.Running;
+
+
+
 
         }
-        
+
         // Return targetPosition if target is null
         private Vector3 Target()
         {

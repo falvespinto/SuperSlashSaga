@@ -15,7 +15,6 @@ public class IAManaRange : Conditional
         isInRange = range.bIsInRange;
         playerData = ia.playerData;
         manabar = playerData.manabar;
-        Debug.Log(manabar);
     }
     public override TaskStatus OnUpdate()
     {

@@ -7,7 +7,7 @@ public class RandomAttack : MonoBehaviour
     public int randomNumber;
     public Dictionary<string, float> nbAttacks;
     public Dictionary<string, float> percentAttacks;
-
+    public float NbAttacks { get { return nbAttacks.Values.Sum(); } }
     private void Start()
     {
         randomNumber = Random.Range(0, 100);

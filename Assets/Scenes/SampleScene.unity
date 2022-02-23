@@ -4976,6 +4976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   P1Data: {fileID: 1255808040}
   P2Data: {fileID: 1735635068}
+  IAData: {fileID: 1735635068}
 --- !u!1 &355596173
 GameObject:
   m_ObjectHideFlags: 0
@@ -8241,19 +8242,7 @@ VFXRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24449,6 +24438,7 @@ MonoBehaviour:
   twitchDisplayMessageCommand: {fileID: 1390820474}
   twitchDmgCommand: {fileID: 1390820475}
   twitchHypeCommand: {fileID: 1390820476}
+  twitchVoteCommand: {fileID: 0}
 --- !u!114 &1390820478
 MonoBehaviour:
   m_ObjectHideFlags: 0

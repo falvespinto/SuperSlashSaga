@@ -5,10 +5,11 @@ using System.Collections;
 using System.Collections.Generic;
 public class RandomIA : Action
 {
-    public int randNum = UnityEngine.Random.Range(0, 100);
+    public int randNum;
     public int chance;
     public override TaskStatus OnUpdate()
     {
+        randNum = UnityEngine.Random.Range(0, 100);
         if (randNum <= chance)
         {
            return TaskStatus.Success;

@@ -40,42 +40,47 @@ public class TwitchGameManager : MonoBehaviour
 
     private void Update()
     {
-        if (P1 == null) P1 = P1Data.GetComponentInChildren<Player>();
-        if (P2 == null) P2 = P2Data.GetComponentInChildren<Player>();
-        if (IA == null) IA = IAData.GetComponentInChildren<IA>();
-        //SANS IA
-        if (!StartGame.managerIA.bIsIA)
+        if (MenuScript.nomDeChaine != null && TwitchChat.Instance.userExist)
         {
-            if (sendHelpState == 0 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 30))
+            if (P1 == null) P1 = P1Data.GetComponentInChildren<Player>();
+            if (P2 == null) P2 = P2Data.GetComponentInChildren<Player>();
+            if (IA == null) IA = IAData.GetComponentInChildren<IA>();
+            //SANS IA
+            if (!StartGame.managerIA.bIsIA)
             {
-                AskForHelpToTwitch();
+                if (sendHelpState == 0 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 30))
+                {
+                    AskForHelpToTwitch();
+                }
+                else if (sendHelpState == 1 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 40))
+                {
+                    AskForHelpToTwitch();
+                }
+                else if (sendHelpState == 2 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 50))
+                {
+                    AskForHelpToTwitch();
+                }
             }
-            else if (sendHelpState == 1 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 40))
+            //AVEC IA
+            else
             {
-                AskForHelpToTwitch();
-            }
-            else if (sendHelpState == 2 && (Mathf.Abs(P1.currentHealth - P2.currentHealth) >= 50))
-            {
-                AskForHelpToTwitch();
-            }
-        }
-        //AVEC IA
-        else
-        {
 
-            if (sendHelpState == 0 && (Mathf.Abs(P1.currentHealth - IA.currentHealth) >= 30) && StartGame.managerIA.bIsIA)
-            {
-                AskForHelpToTwitch();
-            }
-            else if (sendHelpState == 1 && (Mathf.Abs(P1.currentHealth - IA.currentHealth) >= 40) && StartGame.managerIA.bIsIA)
-            {
-                AskForHelpToTwitch();
-            }
-            else if (sendHelpState == 2 && (Mathf.Abs(P1.currentHealth - IA.currentHealth) >= 50) && StartGame.managerIA.bIsIA)
-            {
-                AskForHelpToTwitch();
+                if (sendHelpState == 0 && (Mathf.Abs(P1.currentHealth - IA.currentHealth) >= 30) && StartGame.managerIA.bIsIA)
+                {
+                    AskForHelpToTwitch();
+                }
+                else if (sendHelpState == 1 && (Mathf.Abs(P1.currentHealth - IA.currentHealth) >= 40) && StartGame.managerIA.bIsIA)
+                {
+                    AskForHelpToTwitch();
+                }
+                else if (sendHelpState == 2 && (Mathf.Abs(P1.currentHealth - IA.currentHealth) >= 50) && StartGame.managerIA.bIsIA)
+                {
+                    AskForHelpToTwitch();
+                }
             }
         }
+            
+
 
     }
 
