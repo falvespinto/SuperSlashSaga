@@ -151,7 +151,7 @@ public class PlayerAttack : MonoBehaviour
         if (ctx.started)
         {
             Debug.Log("pressedLight");
-            if (!player.isInCombo && !player.isTakingDamage && !isAttacking && !isParing && !ultimateAttack.isPerformingUltimate)
+            if (!player.isInCombo && !player.isTakingDamage && !isAttacking && !isParing && !ultimateAttack.isPerformingUltimate && !GameManager.instance.IsLocked)
             {
                 OnLightAtk?.Invoke(player.playerIndex);
                 lightAttack.PerformedLightAttack("normal");
@@ -164,7 +164,7 @@ public class PlayerAttack : MonoBehaviour
         if (ctx.started)
         {
             Debug.Log("pressedHeavy");
-            if (!isAttacking && !isParing && !player.isInCombo && !player.isTakingDamage && !ultimateAttack.isPerformingUltimate)
+            if (!isAttacking && !isParing && !player.isInCombo && !player.isTakingDamage && !ultimateAttack.isPerformingUltimate && !GameManager.instance.IsLocked)
             {
                 OnHeavyAtk?.Invoke(player.playerIndex);
                 heavyAttack.PerformedHeavyAttack("normal");
@@ -178,7 +178,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
+            if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo && !GameManager.instance.IsLocked)
             {
                 Debug.Log("pressedParade");
                 OnParadeUsed?.Invoke(player.playerIndex);
@@ -197,7 +197,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
+            if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo && !GameManager.instance.IsLocked)
             {
                 LookAtTarget();
                 OnUltimateAtk?.Invoke(player.playerIndex);

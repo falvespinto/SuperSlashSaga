@@ -24,7 +24,7 @@ public class Victory : MonoBehaviour
 
     void Start()
     {
-        winner = Player.winner;
+        winner = GameManager.winner;
         if(winner == 1)
         {
             GameObject.Find("joueur2").SetActive(false);
