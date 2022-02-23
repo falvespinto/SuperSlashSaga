@@ -36,15 +36,13 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
             {
                 return TaskStatus.Success;
             }
+            if (bIsInRange)
+            {
+                SetDestination(Target());
+                return TaskStatus.Running;
+            }
             else
                 return TaskStatus.Failure;
-
-            SetDestination(Target());
-            return TaskStatus.Running;
-
-
-
-
         }
 
         // Return targetPosition if target is null

@@ -54,32 +54,22 @@ public class DashIA : Action
         }
 
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        if (ia.manaBar.mana <= 25)
+        isDashing = true;
+        if (!hasTouched && timeElapsed < 1f)
         {
-            ia.manaBar.SetMana(ia.manaBar.mana - 25);
-            isDashing = true;
-            if (!hasTouched && timeElapsed < 1f)
-            {
-                Vector3 directionToTarget = playerAttack.playerData.target.position - (transform.position);
-                Vector3 currentDirection = transform.forward;
-                Vector3 resultingDirection = Vector3.RotateTowards(currentDirection, directionToTarget.normalized, maxTurnSpeed * Mathf.Deg2Rad * Time.deltaTime, 1f);
-                transform.rotation = Quaternion.LookRotation(resultingDirection);
-                agent.Move(transform.forward * dashSpeed * Time.deltaTime);
-                timeElapsed += Time.deltaTime;
-                return TaskStatus.Running;
-            }
-            else
-            {
-                m_animator.SetBool("isDashing", false);
-                return TaskStatus.Success;
-            }
+            Vector3 directionToTarget = playerAttack.playerData.target.position - (transform.position);
+            Vector3 currentDirection = transform.forward;
+            Vector3 resultingDirection = Vector3.RotateTowards(currentDirection, directionToTarget.normalized, maxTurnSpeed * Mathf.Deg2Rad * Time.deltaTime, 1f);
+            transform.rotation = Quaternion.LookRotation(resultingDirection);
+            agent.Move(transform.forward * dashSpeed * Time.deltaTime);
+            timeElapsed += Time.deltaTime;
+            return TaskStatus.Running;
         }
         else
         {
-            return TaskStatus.Failure;
+            m_animator.SetBool("isDashing", false);
+            return TaskStatus.Success;
         }
-
     }
-
 }
 
