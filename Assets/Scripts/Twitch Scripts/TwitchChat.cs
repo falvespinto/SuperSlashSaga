@@ -83,9 +83,13 @@ public class TwitchChat : MonoBehaviour
         }
         else
         {
-            if (userExist)
+            if (true)
             {
                 Connect(credentials);
+            }
+            else
+            {
+                StartCoroutine(CheckIfUserExist(MenuScript.nomDeChaine));
             }
         }
 

@@ -15,7 +15,7 @@ public class EmoteHandler : MonoBehaviour
     private float frequence = 15f;
     private float magnitude = 10f;
     private float speed = 400f;
-    private float lifeTime = 2.1f;
+    private float lifeTime = 1.5f;
     private float startY;
     public void Awake()
     {
