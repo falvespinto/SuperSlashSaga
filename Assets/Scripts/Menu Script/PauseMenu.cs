@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject Point, PointMenu, pauseMenu, Menu;
+    public GameObject Point, PointMenu, PointCommande, pauseMenu, Menu, commandeMenu;
     private int SelectedButton = 1;
     [SerializeField]
     private int NumberOfButtons;
@@ -20,6 +20,7 @@ public class PauseMenu : MonoBehaviour
     public Transform ButtonPosition4;
     public Transform ButtonPosition5;
     public Transform ButtonPosition6;
+    public Transform ButtonPosition7;
 
     public static bool GameIsPaused = false;
     public bool cooldown = false;
@@ -53,13 +54,18 @@ public class PauseMenu : MonoBehaviour
             {
                 // When the button with the pointer is clicked, this piece of script is activated
                 Debug.Log("Commande");
-                Time.timeScale = 1f;
+                pauseMenu.SetActive(false);
+                Time.timeScale = 0f;
+                commandeMenu.SetActive(true);
+                SelectedButton = 7;
+                
             }
             else if (SelectedButton == 4)
             {
                 // When the button with the pointer is clicked, this piece of script is activated
                 Debug.Log("Option");
                 Menu.SetActive(true);
+                Time.timeScale = 0f;
                 pauseMenu.SetActive(false);
                 Point.SetActive(false);
                 PointMenu.SetActive(true);
@@ -77,8 +83,20 @@ public class PauseMenu : MonoBehaviour
             {
                 // When the button with the pointer is clicked, this piece of script is activated
                 Debug.Log("Retour");
-                Time.timeScale = 1f;
+                Time.timeScale = 0f;
                 Menu.SetActive(false);
+                pauseMenu.SetActive(true);
+                Point.SetActive(true);
+                PointMenu.SetActive(false);
+                SelectedButton = 1;
+                Point.transform.position = ButtonPosition1.position;
+            }
+            else if (SelectedButton == 7)
+            {
+                // When the button with the pointer is clicked, this piece of script is activated
+                Debug.Log("Retour");
+                Time.timeScale = 0f;
+                commandeMenu.SetActive(false);
                 pauseMenu.SetActive(true);
                 Point.SetActive(true);
                 PointMenu.SetActive(false);

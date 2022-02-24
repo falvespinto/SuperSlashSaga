@@ -15,11 +15,13 @@ public class PlayerAudioManager : MonoBehaviour
     [SerializeField]
     private OneShotAudio dash;
     [SerializeField]
-    private OneShotAudio ultimate;
+    private OneShotAudio combo;
     [SerializeField]
     private OneShotAudio impact;
     [SerializeField]
     private OneShotAudio mort;
+    [SerializeField]
+    private OneShotAudio permutation;
     [SerializeField]
     private OneShotAudio coupFinalLourd;
     [SerializeField]
@@ -44,13 +46,18 @@ public class PlayerAudioManager : MonoBehaviour
         parade.PlayTheSound();
     }
 
-    public void playSoundUltimate()
+    public void playSoundCombo()
     {
-        ultimate.PlayTheSound();
+        combo.PlayTheSound();
     }
     public void playSoundImpact()
     {
         impact.PlayTheSound();
+    }
+
+    public void playSoundPermutation()
+    {
+        permutation.PlayTheSound();
     }
 
     public void playSoundCoupFinalLourd()
