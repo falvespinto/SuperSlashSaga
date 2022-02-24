@@ -3076,7 +3076,6 @@ MonoBehaviour:
   twitchDmgCommand: {fileID: 0}
   twitchHypeCommand: {fileID: 0}
   twitchVoteCommand: {fileID: 1229139406}
-  twitchSubCommand: {fileID: 0}
 --- !u!114 &1229139408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3093,6 +3092,7 @@ MonoBehaviour:
   emotesSpawner: {fileID: 0}
   canSpawnEmote: 1
   json_folder: 
+  userExist: 0
 --- !u!114 &1229139409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5203,6 +5203,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5046832037328770242, guid: 6f01bf3c4d7e1ab458ccac89c8dd6445, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5046832037328770242, guid: 6f01bf3c4d7e1ab458ccac89c8dd6445, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.9

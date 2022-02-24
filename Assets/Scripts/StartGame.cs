@@ -23,7 +23,6 @@ public class StartGame : MonoBehaviour
     public static IAmanager managerIA;
     public static Action onCharactersSelected;
 
-
     private void OnEnable()
     {
         TwitchMenuManager.onVoteGlobalEnd += FinalInitGame;
@@ -128,6 +127,7 @@ public class StartGame : MonoBehaviour
             }
         }
 
-        SceneManager.LoadScene("SampleScene");
+        LoadingData.sceneToLoad = 6;
+        SceneManager.LoadScene("LoadingScene");
     }
 }
