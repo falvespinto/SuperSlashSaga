@@ -15,7 +15,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         public SharedBool stopOnTaskEnd = true;
         [Tooltip("Should the NavMeshAgent rotation be updated when the task ends?")]
         public SharedBool updateRotation = true;
-
+        public SharedFloat acceleration = 60f;
         // Component references
         protected NavMeshAgent navMeshAgent;
         private bool startUpdateRotation;
@@ -36,6 +36,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
             navMeshAgent = GetComponent<NavMeshAgent>();
             navMeshAgent.speed = speed.Value;
             navMeshAgent.angularSpeed = angularSpeed.Value;
+            navMeshAgent.acceleration = acceleration.Value;
             navMeshAgent.isStopped = false;
             startUpdateRotation = navMeshAgent.updateRotation;
             UpdateRotation(updateRotation.Value);

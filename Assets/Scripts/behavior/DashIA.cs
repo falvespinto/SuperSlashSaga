@@ -37,7 +37,7 @@ public class DashIA : Action
     }
     public override TaskStatus OnUpdate()
     {
-
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
         Collider[] hit = Physics.OverlapBox(engageArea.bounds.center, engageArea.bounds.extents, engageArea.transform.rotation, gameObject.GetComponentInParent<PlayerData>().enemyLayer);
         if (hit.Length > 0)
         {
@@ -48,15 +48,17 @@ public class DashIA : Action
                 Debug.Log(hit[i].gameObject.layer);
                 hasTouched = true;
                 isDashing = false;
+                agent.acceleration = 0;
                 //engageArea.gameObject.SetActive(false);
                 break;
             }
         }
 
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        
         isDashing = true;
         if (!hasTouched && timeElapsed < 1f)
         {
+            
             Vector3 directionToTarget = playerAttack.playerData.target.position - (transform.position);
             Vector3 currentDirection = transform.forward;
             Vector3 resultingDirection = Vector3.RotateTowards(currentDirection, directionToTarget.normalized, maxTurnSpeed * Mathf.Deg2Rad * Time.deltaTime, 1f);
