@@ -22,7 +22,8 @@ public class StartGame : MonoBehaviour
     public static InputDevice P2Device;
     public static IAmanager managerIA;
     public static Action onCharactersSelected;
-
+    public static bool noDevice;
+    public static bool isCampagne;
     private void OnEnable()
     {
         TwitchMenuManager.onVoteGlobalEnd += FinalInitGame;
@@ -37,6 +38,7 @@ public class StartGame : MonoBehaviour
         P1HasSelected = false;
         P2HasSelected = false;
         hasStartedGame = false;
+        noDevice = false;
         managerIA = FindObjectOfType<IAmanager>();
         //FIX donner une valeure a isTwitchActivated en fonction de si twitch est activé, pour l'instant il est forcément activé donc pas encore
     }
@@ -128,6 +130,7 @@ public class StartGame : MonoBehaviour
         }
 
         LoadingData.sceneToLoad = 6;
+        isCampagne = false;
         SceneManager.LoadScene("LoadingScene");
     }
 }

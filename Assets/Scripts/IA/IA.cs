@@ -143,7 +143,7 @@ public class IA : MonoBehaviour
     }
     void Die()
     {
-        SceneManager.LoadScene("MenuVictoire");
+        
         Debug.Log("arg je suis mor PLAYER");
         if (playerIndex == 1)
         {
@@ -153,6 +153,7 @@ public class IA : MonoBehaviour
         {
             winner = 2;
         }
+        GameManager.instance.EndGame(winner);
     }
     void ResetIsTakingDamage()
     {

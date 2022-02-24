@@ -288,17 +288,30 @@ public class DialogueManagerManette : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("end");
-        if(chapitre == 1)
+        StartGame.managerIA = new IAmanager();
+        StartGame.managerIA.bIsIA = true;
+        StartGame.isCampagne = true;
+        StartGame.noDevice = true;
+        if (chapitre == 1)
         {
-            SceneManager.LoadScene("SceneCampagneDebut");
+            StartGame.choixMap = "nuit";
+            PlayerPrefs.SetInt("selectedCharacterP1", 0);
+            PlayerPrefs.SetInt("selectedCharacterP2", 1);
+            SceneManager.LoadScene("SampleScene");
         }
         if(chapitre == 2)
         {
-            SceneManager.LoadScene("SceneCampagneYuetsuFirstCombat");
+            StartGame.choixMap = "jour";
+            PlayerPrefs.SetInt("selectedCharacterP1", 2);
+            PlayerPrefs.SetInt("selectedCharacterP2", 1);
+            SceneManager.LoadScene("SampleScene");
         }
         if(chapitre == 3)
         {
-            SceneManager.LoadScene("SceneCampagneFlashbackCombat");
+            StartGame.choixMap = "nuit";
+            PlayerPrefs.SetInt("selectedCharacterP1", 0);
+            PlayerPrefs.SetInt("selectedCharacterP2", 1);
+            SceneManager.LoadScene("SampleScene");
         }
         if (chapitre == 4)
         {

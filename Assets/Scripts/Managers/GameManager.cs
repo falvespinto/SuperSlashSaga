@@ -31,8 +31,24 @@ public class GameManager : MonoBehaviour
 
     public void EndGame(int w)
     {
+        
         winner = w;
-        SceneManager.LoadScene("MenuVictoire");
+        if (StartGame.isCampagne)
+        {
+           if(winner == 1)
+            {
+                ChapitreManager.instance.chapitre();
+            }
+            else
+            {
+                SceneManager.LoadScene("Menu Principal");
+            }
+        }
+        else
+        {
+           SceneManager.LoadScene("MenuVictoire");
+        }
+
     }
 
 

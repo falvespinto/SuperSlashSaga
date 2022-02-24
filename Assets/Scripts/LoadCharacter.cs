@@ -49,11 +49,23 @@ public class LoadCharacter : MonoBehaviour
         //P1.GetComponentInChildren<PlayerController>().cam = GameObject.Find("P1 Camera").transform;
         SetLayerRecursively(P1, 8);
         //P1.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P1Cam");
-        InputUser.PerformPairingWithDevice(
+        if (!StartGame.noDevice)
+        {
+            InputUser.PerformPairingWithDevice(
             StartGame.P1Device,
             P1.GetComponentInChildren<PlayerInput>().user,
             InputUserPairingOptions.UnpairCurrentDevicesFromUser
             );
+        }
+        else
+        {
+            InputUser.PerformPairingWithDevice(
+            Gamepad.current,
+            P1.GetComponentInChildren<PlayerInput>().user,
+            InputUserPairingOptions.UnpairCurrentDevicesFromUser
+            );
+        }
+
         faceP1.sprite = P1.GetComponent<Player>().faceSprite;
         prefabP2 = characterPrefabs[selectedCharacterP2];
         GameObject P2 = Instantiate(prefabP2, spawnPointP2.position, Quaternion.Euler(0f, 0f, 0f), player2);
@@ -131,7 +143,7 @@ public class LoadCharacter : MonoBehaviour
             }
             string p1String = P1.ToString();
             string p2String = P2.ToString();
-            if(p1String == p2String)
+            if (p1String == p2String)
             {
                 if (p2String.Contains("Yuetsu"))
                 {
@@ -145,14 +157,18 @@ public class LoadCharacter : MonoBehaviour
 
                 }
             }
-           
+
             //
             Debug.Log(StartGame.P2Device);
-            InputUser.PerformPairingWithDevice(
-            StartGame.P2Device,
-            P2.GetComponentInChildren<PlayerInput>().user,
-            InputUserPairingOptions.UnpairCurrentDevicesFromUser
-            );
+            if (!StartGame.noDevice)
+            {
+                InputUser.PerformPairingWithDevice(
+                StartGame.P2Device,
+                P2.GetComponentInChildren<PlayerInput>().user,
+                InputUserPairingOptions.UnpairCurrentDevicesFromUser
+                );
+            }
+
             faceP2.sprite = P2.GetComponent<Player>().faceSprite;
         }
 
