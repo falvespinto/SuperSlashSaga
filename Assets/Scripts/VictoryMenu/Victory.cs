@@ -59,6 +59,5 @@ public class Victory : MonoBehaviour
             // When the button with the pointer is clicked, this piece of script is activated
             SceneManager.LoadScene("Menu Principal");
         }
-
     }
 }

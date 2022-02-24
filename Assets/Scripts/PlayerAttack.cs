@@ -164,7 +164,7 @@ public class PlayerAttack : MonoBehaviour
         if (ctx.started)
         {
             Debug.Log("pressedHeavy");
-            if (!isAttacking && !isParing && !player.isInCombo && !player.isTakingDamage && !ultimateAttack.isPerformingUltimate && !GameManager.instance.IsLocked)
+            if (!isAttacking && !player.manaUp && !isParing && !player.isInCombo && !player.isTakingDamage && !ultimateAttack.isPerformingUltimate && !GameManager.instance.IsLocked)
             {
                 OnHeavyAtk?.Invoke(player.playerIndex);
                 heavyAttack.PerformedHeavyAttack("normal");
@@ -178,7 +178,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo && !GameManager.instance.IsLocked)
+            if (!player.isTakingDamage && !isAttacking && !player.manaUp && !isParing && !ultimateAttack.isPerformingUltimate && !player.isInCombo && !GameManager.instance.IsLocked)
             {
                 Debug.Log("pressedParade");
                 OnParadeUsed?.Invoke(player.playerIndex);
@@ -197,13 +197,12 @@ public class PlayerAttack : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo && !GameManager.instance.IsLocked)
+            if (!player.isTakingDamage && !isAttacking && !player.manaUp && !isParing && !ultimateAttack.isPerformingUltimate && !player.isInCombo && !GameManager.instance.IsLocked)
             {
                 LookAtTarget();
                 OnUltimateAtk?.Invoke(player.playerIndex);
                 ultimateAttack.PerformUltimateAttack();
             }
-
         }
     }
     //IEnumerator AttackAutoCancel(float time, bool canAuto)

@@ -33,12 +33,6 @@ public class Parade : MonoBehaviour
         neverPared = true;
     }
 
-    void Update()
-    {
-
-
-    }
-
     public void InitializedParadeAttack()
     {
         shield.SetActive(true);

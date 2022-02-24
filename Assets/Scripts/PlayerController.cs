@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         isParing = playerAttack.isParing;
         moveDirection = new Vector3();
 
-        if (!isAttacking && !isParing && !player.isTakingDamage && !player.isInCombo && !ultimate.isPerformingUltimate && !dashState.isDashing && !projectile.isShooting && !player.isInEnemyCombo && !player.isDead && !GameManager.instance.IsLocked)
+        if (!isAttacking && !player.manaUp && !isParing && !player.isTakingDamage && !player.isInCombo && !ultimate.isPerformingUltimate && !dashState.isDashing && !projectile.isShooting && !player.isInEnemyCombo && !player.isDead && !GameManager.instance.IsLocked)
         {
             Movement(movementInput);
         }

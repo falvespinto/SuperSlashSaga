@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class UserData
 {
-    public DataUser data;
+    public DataUser[] data;
 }
 [System.Serializable]
 public class DataUser

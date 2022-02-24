@@ -201,7 +201,10 @@ public class LightAttack : MonoBehaviour
     {
         if (playerAttack.playerHit != null)
         {
-            StartCoroutine(PerformFullCombo());
+            if (playerAttack.playerHit.GetComponent<Player>().currentHealth > 0)
+            {
+                StartCoroutine(PerformFullCombo());
+            }
         }
     }
     public IEnumerator PerformFullCombo()

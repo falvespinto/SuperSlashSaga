@@ -48,7 +48,6 @@ public class TwitchChat : MonoBehaviour
         //DontDestroyOnLoad(this);
     }
 
-    // DEBUT FIX : A bouger vers une classe TwitchConnectUI qui contiendra une interface de connexion, pour l'instant on le fait en dure.
     private void Start()
     {
         json_folder = Path.JSON_FOLDER;
@@ -83,7 +82,7 @@ public class TwitchChat : MonoBehaviour
         }
         else
         {
-            if (true)
+            if (userExist)
             {
                 Connect(credentials);
             }
@@ -122,7 +121,6 @@ public class TwitchChat : MonoBehaviour
 
     private void ReadChat()
     {
-        //Debug.Log("Available : " + _twitchClient.Available);
         if (_twitchClient.Available > 0)
         {
             Debug.Log(_twitchClient.Available);
@@ -294,7 +292,7 @@ public class TwitchChat : MonoBehaviour
     private bool ParseUserExist(string json)
     {
         UserData usersData = JsonUtility.FromJson<UserData>(json);
-        return usersData.data.id != null ? true : false;
+        return usersData.data[0].id != null ? true : false;
     }
 
     private string getEmoteImage(string emoteName)
