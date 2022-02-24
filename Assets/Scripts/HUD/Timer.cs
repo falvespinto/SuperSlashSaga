@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,9 @@ public class Timer : MonoBehaviour
     [SerializeField] float time;
     public TextMeshProUGUI timerTextOver;
     public TextMeshProUGUI timerTextUnder;
+    public PlayerData P1Data;
+    public PlayerData P2Data;
+
     void Start()
     {
         StartCoroutine(StartTimer(time));
@@ -28,5 +32,22 @@ public class Timer : MonoBehaviour
             }   
             yield return null;
         }
+        GameManager.instance.LockPlayers();
+        StartCoroutine(EndTimerMovement());
+    }
+
+    int DetermineWinner()
+    {
+        float healthP1 = P1Data.GetComponentInChildren<Player>().currentHealth;
+        float healthP2 = P2Data.GetComponentInChildren<Player>().currentHealth;
+
+        return healthP1 < healthP2 ? 2 : 1;
+    }
+
+    IEnumerator EndTimerMovement()
+    {
+        LeanTween.scale(gameObject, transform.localScale*1.1f, 1f).setEaseInBounce();
+        yield return new WaitForSeconds(1f);
+        GameManager.instance.EndGame(DetermineWinner());
     }
 }

@@ -147,7 +147,7 @@ public class PlayerAttack : MonoBehaviour
         if (ctx.started)
         {
             Debug.Log("pressedLight");
-            if (!player.isInCombo && !player.isTakingDamage && !isAttacking && !isParing && !ultimateAttack.isPerformingUltimate)
+            if (!player.isInCombo && !player.isTakingDamage && !isAttacking && !isParing && !ultimateAttack.isPerformingUltimate && !GameManager.instance.IsLocked)
             {
                 lightAttack.PerformedLightAttack("normal");
             }
@@ -159,7 +159,7 @@ public class PlayerAttack : MonoBehaviour
         if (ctx.started)
         {
             Debug.Log("pressedHeavy");
-            if (!isAttacking && !isParing && !player.isInCombo && !player.isTakingDamage && !ultimateAttack.isPerformingUltimate)
+            if (!isAttacking && !player.manaUp && !isParing && !player.isInCombo && !player.isTakingDamage && !ultimateAttack.isPerformingUltimate && !GameManager.instance.IsLocked)
             {
                 heavyAttack.PerformedHeavyAttack("normal");
             }
@@ -172,7 +172,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
+            if (!player.isTakingDamage && !isAttacking && !player.manaUp && !isParing && !ultimateAttack.isPerformingUltimate && !player.isInCombo && !GameManager.instance.IsLocked)
             {
                 Debug.Log("pressedParade");
                 paradeButtonPressed = true;
@@ -190,12 +190,11 @@ public class PlayerAttack : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!player.isTakingDamage && !isAttacking && !isParing && !playerController.isRunning && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
+            if (!player.isTakingDamage && !isAttacking && !player.manaUp && !isParing && !ultimateAttack.isPerformingUltimate && !player.isInCombo && !GameManager.instance.IsLocked)
             {
                 LookAtTarget();
                 ultimateAttack.PerformUltimateAttack();
             }
-
         }
     }
     //IEnumerator AttackAutoCancel(float time, bool canAuto)

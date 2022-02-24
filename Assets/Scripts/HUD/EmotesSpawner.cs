@@ -9,7 +9,8 @@ public class EmotesSpawner : MonoBehaviour
     Texture currentTexture;
     private bool goodPrivateTexture = false;
     public EmoteHandler emote;
-
+    public GameObject emoteSpawner2;
+    public static int currentSpawner = 0;
     public async void LoadEmote(string emoteURL)
     {
         Debug.Log("Loading .....");
@@ -46,8 +47,20 @@ public class EmotesSpawner : MonoBehaviour
         {
             emote.thisRawImage.texture = currentTexture;
         }
-        EmoteHandler newEmote = Instantiate(emote, transform.position, transform.rotation) as EmoteHandler;
-        newEmote.transform.SetParent(this.transform,false);
+        if (currentSpawner == 0)
+        {
+            EmoteHandler newEmote = Instantiate(emote, transform.position, transform.rotation) as EmoteHandler;
+            newEmote.transform.SetParent(this.transform, false);
+        }
+        else
+        {
+            EmoteHandler newEmote = Instantiate(emote, emoteSpawner2.transform.position, emoteSpawner2.transform.rotation) as EmoteHandler;
+            newEmote.transform.SetParent(emoteSpawner2.transform, false);
+        }
+        currentSpawner = 1 - currentSpawner;
+
+        
+        
         currentTexture = null;
         goodPrivateTexture = false;
     }

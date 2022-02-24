@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     public ManaBar manabar;
     public PlayerAttack playerAttack;
     public PlayerController playerController;
-    public static int winner;
     public float GuardBreakTime;
     public bool isTakingDamage;
     public float GetHitTime;
@@ -54,6 +53,9 @@ public class Player : MonoBehaviour
         {"oui", 0},
         {"non", 0}
     };
+
+    public GameObject[] vfxManaUp;
+
     void Awake()
     {
         isDead = false;
@@ -105,8 +107,6 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         if (manaUp) manabar.SetMana(manabar.mana + 1);
-
-
     }
 
     public void TakeDamage(float damage, string attackType)
@@ -225,17 +225,8 @@ public class Player : MonoBehaviour
     }
     void Die()
     {
-        SceneManager.LoadScene("MenuVictoire");
-        Debug.Log("arg je suis mor PLAYER");
-        winner = playerIndex == 1 ? 1 : 2;
-        //if (playerIndex == 1)
-        //{
-        //    winner = 1;
-        //}
-        //else
-        //{
-        //    winner = 2;
-        //}
+        //SceneManager.LoadScene("MenuVictoire");
+        GameManager.instance.EndGame(playerIndex == 1 ? 1 : 2);
     }
     public IEnumerator ResetIsTakingDamage(float hurtTime)
     {
@@ -278,13 +269,26 @@ public class Player : MonoBehaviour
 
     public void ChargeUpMana(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed)
+        if (!isTakingDamage && !playerAttack.isAttacking && !playerAttack.isParing && !isInCombo && !GameManager.instance.IsLocked)
         {
-            manaUp = true;
-        }
-        if (ctx.canceled)
-        {
-            manaUp = false;
+            if (ctx.performed)
+            {
+                manaUp = true;
+                foreach (GameObject vfx in vfxManaUp)
+                {
+                    vfx.SetActive(true);
+                }
+                //animator.SetBool("ManaUp", true);
+            }
+            if (ctx.canceled)
+            {
+                manaUp = false;
+                foreach (GameObject vfx in vfxManaUp)
+                {
+                    vfx.SetActive(false);
+                }
+                //animator.SetBool("ManaUp", false);
+            }
         }
     }
 

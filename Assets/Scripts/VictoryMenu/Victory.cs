@@ -21,9 +21,8 @@ public class Victory : MonoBehaviour
 
     void Start()
     {
-        winner = Player.winner;
-        //debut yuetsu contre yuetsu sans IA
-        if (winner == 1 && LoadCharacter.selectedCharacterP1 == 0 && LoadCharacter.selectedCharacterP2 == 0)
+        winner = GameManager.winner;
+        if(winner == 1)
         {
             GameObject.Find("joueur2").SetActive(false);
             listPrefab[0].transform.position = positionWinner.position;
@@ -159,6 +158,5 @@ public class Victory : MonoBehaviour
             // When the button with the pointer is clicked, this piece of script is activated
             SceneManager.LoadScene("Menu Principal");
         }
-
     }
 }
