@@ -105,7 +105,6 @@ public class DialogueManagerManette : MonoBehaviour
         if (qSentences.Count == 0)
         {
             EndDialogue();
-            // RAF changer de scene car fin du dialogue
             return;
         }
         string sentence = qSentences.Dequeue();
@@ -283,7 +282,7 @@ public class DialogueManagerManette : MonoBehaviour
         {
             tDialogueText.text += letter;
             
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
     void EndDialogue()

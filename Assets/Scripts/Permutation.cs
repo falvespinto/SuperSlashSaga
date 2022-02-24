@@ -52,6 +52,7 @@ public class Permutation : MonoBehaviour
             playerData.permutationBar.SetPermutation(playerData.permutationBar.remainingPermutation - 1);
             Instantiate(VFXPrefab, transform.position + offSet - transform.forward * backwardOffSet , transform.rotation);
             Debug.Log("Would have permuted");
+            player.playerAudio.playSoundPermutation();
             characterController.enabled = false;
             Vector3 newPos = playerData.target.position - playerData.target.forward * permutationOffSet;
             transform.position = newPos;

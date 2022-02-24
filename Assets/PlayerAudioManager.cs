@@ -21,6 +21,8 @@ public class PlayerAudioManager : MonoBehaviour
     [SerializeField]
     private OneShotAudio mort;
     [SerializeField]
+    private OneShotAudio permutation;
+    [SerializeField]
     private OneShotAudio coupFinalLourd;
     [SerializeField]
     private OneShotAudio coupFinalLeger;
@@ -51,6 +53,11 @@ public class PlayerAudioManager : MonoBehaviour
     public void playSoundImpact()
     {
         impact.PlayTheSound();
+    }
+
+    public void playSoundPermutation()
+    {
+        permutation.PlayTheSound();
     }
 
     public void playSoundCoupFinalLourd()
