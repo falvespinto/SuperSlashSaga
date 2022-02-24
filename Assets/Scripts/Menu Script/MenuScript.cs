@@ -155,7 +155,7 @@ public class MenuScript : MonoBehaviour
             {
                 Debug.Log("Nouvelle partie");
                 //utilisation du bouton nouvelle partie campagne
-                SceneManager.LoadScene("DebutHistoire");
+                SceneManager.LoadScene("intro");
             }
 
             else if (SelectedButton == 9)
