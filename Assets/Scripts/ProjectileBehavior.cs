@@ -6,7 +6,7 @@ public class ProjectileBehavior : MonoBehaviour
 {
     public PlayerData playerData;
     public float projectileDamage;
-    public string attackType;
+    public string attackType = "Light";
     public float lifeTime = 3;
     public Vector3 hauteurTarget = new Vector3(0,-5,0);
     public float maxTurnSpeed = 60f;

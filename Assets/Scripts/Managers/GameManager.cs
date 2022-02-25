@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public static int winner;
-
+    public GameObject popUpDeath;
+    public RetryMenu retryMenu;
     bool m_IsLocked = false;
     public bool IsLocked { get { return m_IsLocked; } }
 
@@ -41,7 +42,8 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("Menu Principal");
+                popUpDeath.SetActive(true);
+                retryMenu.isOpen = true;
             }
         }
         else

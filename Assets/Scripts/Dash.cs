@@ -112,7 +112,7 @@ public class Dash : MonoBehaviour
         m_animator.SetBool("isDashing", true);
         playerAudio.playSoundDash();
         isDashing = true;
-        while (!hasTouched && timeElapsed < 1f)
+        while (!hasTouched && timeElapsed < 1f && !player.isTakingDamage)
         {
             Vector3 directionToTarget = playerAttack.playerData.target.position - (transform.position);
             Vector3 currentDirection = transform.forward;
@@ -122,6 +122,7 @@ public class Dash : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+        controller.Move(Vector3.zero);
         //yield return new WaitForSeconds(0.25f);
         isDashing = false;
         hasTouched = false;

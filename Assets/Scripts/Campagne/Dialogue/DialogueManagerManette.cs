@@ -315,6 +315,7 @@ public class DialogueManagerManette : MonoBehaviour
         }
         if (chapitre == 4)
         {
+            PlayerPrefs.SetInt("LastChapterFinished", 0);
             SceneManager.LoadScene("Crédit");
         }
     }

@@ -9,7 +9,6 @@ public class ChapitreManager : MonoBehaviour
 
     public static ChapitreManager instance;
     public int chapitreCombat = 0;
-
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -18,6 +17,7 @@ public class ChapitreManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            instance.chapitreCombat = PlayerPrefs.GetInt("LastChapterFinished");
         }
     }
 
@@ -39,18 +39,47 @@ public class ChapitreManager : MonoBehaviour
         Time.timeScale = 1f;
         if (instance.chapitreCombat == 1)
         {
+            PlayerPrefs.SetInt("LastChapterFinished", instance.chapitreCombat);
             Debug.Log(instance.chapitreCombat);
             SceneManager.LoadScene("SuiteManequin");
             Debug.Log("Mannequin");
         }
         if (instance.chapitreCombat == 2)
         {
+            PlayerPrefs.SetInt("LastChapterFinished", instance.chapitreCombat);
             Debug.Log(instance.chapitreCombat);
             SceneManager.LoadScene("Flashback");
             Debug.Log("flash");
         }
         if (instance.chapitreCombat == 3)
         {
+            PlayerPrefs.SetInt("LastChapterFinished", instance.chapitreCombat);
+            Debug.Log(instance.chapitreCombat);
+            SceneManager.LoadScene("Pouvoir");
+            Debug.Log("pouvoir");
+        }
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        if (instance.chapitreCombat == 1)
+        {
+            PlayerPrefs.SetInt("LastChapterFinished", instance.chapitreCombat);
+            Debug.Log(instance.chapitreCombat);
+            SceneManager.LoadScene("SuiteManequin");
+            Debug.Log("Mannequin");
+        }
+        if (instance.chapitreCombat == 2)
+        {
+            PlayerPrefs.SetInt("LastChapterFinished", instance.chapitreCombat);
+            Debug.Log(instance.chapitreCombat);
+            SceneManager.LoadScene("Flashback");
+            Debug.Log("flash");
+        }
+        if (instance.chapitreCombat == 3)
+        {
+            PlayerPrefs.SetInt("LastChapterFinished", instance.chapitreCombat);
             Debug.Log(instance.chapitreCombat);
             SceneManager.LoadScene("Pouvoir");
             Debug.Log("pouvoir");

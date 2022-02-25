@@ -22,6 +22,11 @@ public class Introduction : MonoBehaviour
     {
         if (ctx.started)
         {
+            PlayerPrefs.SetInt("LastChapterFinished",0);
+            if (ChapitreManager.instance != null)
+            {
+                ChapitreManager.instance.chapitreCombat = 0;
+            }
             SceneManager.LoadScene("DebutHistoire");
         }
     }

@@ -4989,7 +4989,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 0}
   projectileDamage: 5
-  attackType: Projectile
+  attackType: Light
+  lifeTime: 3
+  hauteurTarget: {x: 0, y: -5, z: 0}
+  maxTurnSpeed: 60
+  projectileSpeed: 20
 --- !u!54 &3825648699393291985
 Rigidbody:
   m_ObjectHideFlags: 0

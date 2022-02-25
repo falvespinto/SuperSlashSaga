@@ -128,10 +128,10 @@ public class TwitchGameManager : MonoBehaviour
             case "heal":
                 playerToHelp.currentHealth += 25;
                 playerToHelp.healthBar.SetHealth(playerToHelp.currentHealth);
-                TwitchChat.Instance.SendIRCMessage("Le joueur " + (playerToHelp.playerIndex + 1) + "a �t� soign�.");
+                TwitchChat.Instance.SendIRCMessage("Le joueur " + (playerToHelp.playerIndex + 1) + " a été soigné.");
                 break;
             case "rien":
-                TwitchChat.Instance.SendIRCMessage("Le joueur " + (playerToHelp.playerIndex + 1) + "n'a pas re�u de bonus.");
+                TwitchChat.Instance.SendIRCMessage("Le joueur " + (playerToHelp.playerIndex + 1) + " n'a pas reçu de bonus.");
                 break;
         }
     }
@@ -147,8 +147,8 @@ public class TwitchGameManager : MonoBehaviour
             playerToHelp = P1;
         }
         onHelpAsked?.Invoke(choixHelp, 30, whenVoteStopped, null);
-        TwitchChat.Instance.SendIRCMessage("Voulez-vous aidez le joueur" + (playerToHelp.playerIndex + 1) + "?" +
+        TwitchChat.Instance.SendIRCMessage("Voulez-vous aidez le joueur " + (playerToHelp.playerIndex + 1) + " ? " +
             "heal: soigne le joueur" +
-            "rien : refuser d'aider le joueur");
+            " non : refuser d'aider le joueur");
     }
 }
