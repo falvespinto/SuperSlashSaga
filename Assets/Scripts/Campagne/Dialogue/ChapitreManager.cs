@@ -63,6 +63,13 @@ public class ChapitreManager : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f;
+        if (instance.chapitreCombat == 0)
+        {
+            PlayerPrefs.SetInt("LastChapterFinished", instance.chapitreCombat);
+            Debug.Log(instance.chapitreCombat);
+            SceneManager.LoadScene("DebutHistoire");
+            Debug.Log("Mannequin");
+        }
         if (instance.chapitreCombat == 1)
         {
             PlayerPrefs.SetInt("LastChapterFinished", instance.chapitreCombat);

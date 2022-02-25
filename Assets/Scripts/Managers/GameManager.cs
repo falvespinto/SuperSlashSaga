@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                Time.timeScale = 0f;
                 popUpDeath.SetActive(true);
                 retryMenu.isOpen = true;
             }

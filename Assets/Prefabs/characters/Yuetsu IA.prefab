@@ -542,7 +542,7 @@ MonoBehaviour:
   canPermute: 0
   isInEnemyCombo: 0
   isDead: 0
-  faceSprite: {fileID: 0}
+  faceSprite: {fileID: 21300000, guid: fa04051b2c276d549b268999e0c75f6e, type: 3}
   HitVFXPrefab: {fileID: 9064097463333477275, guid: a5401dfe0c9352e4d9ba9bedb72dd721, type: 3}
   HitHeavyPrefab: {fileID: 7244635080645601573, guid: 6cb6994c1fe86b946a369a6c803144d0, type: 3}
   offSet: {x: 0, y: 0, z: 0}
@@ -632,7 +632,7 @@ MonoBehaviour:
   lifeTime: 3
   playerAttack: {fileID: 8355645919196295441}
   isShooting: 0
-  hauteurTarget: {x: 0, y: 0, z: 0}
+  hauteurTarget: {x: 0, y: -6, z: 0}
   maxTurnSpeed: 60
   coolDown: 4
   m_animator: {fileID: 2905337152002480426}
@@ -19445,8 +19445,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.27091408, y: -1.7074766, z: -0.17476177}
-    m_Extent: {x: 2.730345, y: 1.9342711, z: 4.3794146}
+    m_Center: {x: 0.023517132, y: -0.5178897, z: -0.24173164}
+    m_Extent: {x: 3.1533182, y: 0.5446101, z: 4.446384}
   m_DirtyAABB: 0
 --- !u!1 &6179534313505172412
 GameObject:
@@ -25876,8 +25876,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.23703688, y: 1.746187, z: 0.06216246}
-    m_Extent: {x: 0.49498785, y: 3.7710478, z: 0.3911292}
+    m_Center: {x: 0, y: 0.9545655, z: -0.0007972121}
+    m_Extent: {x: 0.25795096, y: 4.5626693, z: 0.32816952}
   m_DirtyAABB: 0
 --- !u!183 &1673320101172871738
 Cloth:
