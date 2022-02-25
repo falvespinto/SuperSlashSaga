@@ -21,7 +21,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
     public float finalVfxLifeTime = 2f;
     void RightHandFlameAttackOn()
     {
-        m_RightHandFlameAttackPoint.SetActive(true);
+        //m_RightHandFlameAttackPoint.SetActive(true);
         GameObject flame = Instantiate(m_vfx, m_RightHandFlameAttackPoint.transform.position,m_RightHandFlameAttackPoint.transform.rotation);
         flame.transform.localScale = flame.transform.localScale * vfxScale;
         if (debugIsMoving)
@@ -31,14 +31,14 @@ public class CharacterAnimationDelegate : MonoBehaviour
     }
     void RightHandFlameAttackOff()
     {
-        if (m_RightHandFlameAttackPoint.activeInHierarchy)
+        /*if (m_RightHandFlameAttackPoint.activeInHierarchy)
         {
             m_RightHandFlameAttackPoint.SetActive(false);
-        }
+        }*/
     }
     void LeftHandFlameAttackOn()
     {
-        m_RightHandFlameAttackPoint.SetActive(true);
+        //m_RightHandFlameAttackPoint.SetActive(true);
         GameObject flame = Instantiate(m_vfx, m_LeftHandFlameAttackPoint.transform.position, m_LeftHandFlameAttackPoint.transform.rotation);
         flame.transform.localScale = flame.transform.localScale * vfxScale;
         if (debugIsMoving)
@@ -48,10 +48,10 @@ public class CharacterAnimationDelegate : MonoBehaviour
     }
     void LeftHandFlameAttackOff()
     {
-        if (m_RightHandFlameAttackPoint.activeInHierarchy)
+        /*if (m_RightHandFlameAttackPoint.activeInHierarchy)
         {
             m_RightHandFlameAttackPoint.SetActive(false);
-        }
+        }*/
     }
     void RightHandAttackOn()
     {
