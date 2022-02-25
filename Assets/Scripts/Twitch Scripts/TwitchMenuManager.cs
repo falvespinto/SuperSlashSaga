@@ -15,7 +15,7 @@ public class TwitchMenuManager : MonoBehaviour
     };
     public Dictionary<string, int> choixModifier = new Dictionary<string, int>
     {
-        {"frénésie", 0},
+        {"célérité", 0},
         {"aucun", 0}
     };
     public static Action<Dictionary<string, int>, float, Action<string>, Action<string, int>> onMapChoiceStart;
@@ -39,7 +39,7 @@ public class TwitchMenuManager : MonoBehaviour
         // affiche un écran de pop up avec les images des maps
         twitchChoicesCanvas.gameObject.SetActive(true);
         // Lance le vote 
-        TwitchChat.Instance.SendIRCMessage("Choisissez la map ^^ hihi uwu");
+        TwitchChat.Instance.SendIRCMessage("Choisissez la map ^^ : Jour ou Nuit ?");
         onMapChoiceStart?.Invoke(choixMap, 20, onMapChoiceEnd, onVoteIncrease);
     }
 
@@ -48,7 +48,7 @@ public class TwitchMenuManager : MonoBehaviour
         resultatChoixMap = choix;
         TwitchChat.Instance.SendIRCMessage("Vous avez choisi la map : " + choix);
         // Lance le vote 
-        TwitchChat.Instance.SendIRCMessage("Veuillez choisir le modificateur de gameplay de ce combat");
+        TwitchChat.Instance.SendIRCMessage("Veuillez choisir le modificateur de gameplay de ce combat : 'Aucun' ou 'Célérité'");
         onMapChoiceStart?.Invoke(choixModifier, 20, onModifierChoiceEnd, onVoteIncrease);
         // attend le résultat
 

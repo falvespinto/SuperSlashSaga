@@ -22,7 +22,7 @@ public class LoadCharacter : MonoBehaviour
     public Volume volume;
     public VolumeProfile volumeProfileDay;
     public VolumeProfile volumeProfileNight;
-
+    GameObject P1;
     public static int selectedCharacterP1;
     public static int selectedCharacterP2;
     void Start()
@@ -42,7 +42,7 @@ public class LoadCharacter : MonoBehaviour
         selectedCharacterP1 = PlayerPrefs.GetInt("selectedCharacterP1");
         selectedCharacterP2 = PlayerPrefs.GetInt("selectedCharacterP2");
         GameObject prefabP1 = characterPrefabs[selectedCharacterP1];
-        GameObject P1 = Instantiate(prefabP1, spawnPointP1.position, Quaternion.Euler(0f, 0f, 0f), player1);
+        P1 = Instantiate(prefabP1, spawnPointP1.position, Quaternion.Euler(0f, 0f, 0f), player1);
         //P1.GetComponentInChildren<Player>().healthBar = GameObject.FindObjectOfType<HealthP1>().GetComponentInChildren<HealthBar>();
         //P1.GetComponentInChildren<Player>().playerIndex = 0;
         //P1.GetComponentInChildren<Player>().hurtBox = 1 << LayerMask.NameToLayer("HurtBox2");
@@ -203,4 +203,17 @@ public class LoadCharacter : MonoBehaviour
             SetLayerRecursively(child.gameObject, newLayer);
         }
     }
+
+    //private void Update()
+    //{
+    //    if (StartGame.isCampagne)
+    //    {
+    //        InputUser.PerformPairingWithDevice(
+    //        Gamepad.current,
+    //        P1.GetComponentInChildren<PlayerInput>().user,
+    //        InputUserPairingOptions.UnpairCurrentDevicesFromUser
+    //        );
+    //    }
+    //}
+
 }

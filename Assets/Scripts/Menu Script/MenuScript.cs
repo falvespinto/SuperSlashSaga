@@ -148,13 +148,36 @@ public class MenuScript : MonoBehaviour
             {
                 //Utilisation du bouton continuer
                 Debug.Log("Continuer");
-                SceneManager.LoadScene("DebutHistoire");
+                if (PlayerPrefs.GetInt("LastChapterFinished") != 0)
+                {
+                    if (ChapitreManager.instance != null)
+                    {
+                        ChapitreManager.instance.chapitreCombat = PlayerPrefs.GetInt("LastChapterFinished");
+                    }
+                    int i = PlayerPrefs.GetInt("LastChapterFinished");
+                    if (i == 1)
+                    {
+                        SceneManager.LoadScene("SuiteManequin");
+                    }
+                    else if(i == 2)
+                    {
+                        SceneManager.LoadScene("Flashback");
+                    }
+                    else if (i == 3)
+                    {
+                        SceneManager.LoadScene("Pouvoir");
+                    }
+                    else
+                    {
+                        PlayerPrefs.SetInt("LastChapterFinished", 0);
+                    }
+                }
+                
             }
-
             else if (SelectedButton == 8)
             {
                 Debug.Log("Nouvelle partie");
-                //utilisation du bouton nouvelle partie campagne
+                PlayerPrefs.SetInt("LastChapterFinished", 0);
                 SceneManager.LoadScene("intro");
             }
 

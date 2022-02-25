@@ -7,8 +7,6 @@ using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public GameObject Point, PointMenu, PointCommande, pauseMenu, Menu, commandeMenu;
     private int SelectedButton = 1;
     [SerializeField]

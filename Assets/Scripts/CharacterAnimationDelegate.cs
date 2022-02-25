@@ -104,6 +104,21 @@ public class CharacterAnimationDelegate : MonoBehaviour
         }
     }
 
+    void RightHandFinalElectricOn()
+    {
+        Debug.Log("attack on");
+        m_vfxFinal.SetActive(true);
+        m_RightHandAttackPoint.SetActive(true);
+    }
+
+    void RightHandFinalElectricOff()
+    {
+        if (m_RightHandAttackPoint.activeInHierarchy)
+        {
+            m_RightHandAttackPoint.SetActive(false);
+        }
+    }
+
     IEnumerator VfxMovement(GameObject vfx, float speed, float lifeTIme)
     {
         float timer = 0;

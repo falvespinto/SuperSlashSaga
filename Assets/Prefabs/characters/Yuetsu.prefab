@@ -9744,7 +9744,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5494451512981566795}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -10923,7 +10923,13 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig:LeftFoot'\n\tTransform 'mixamorig:LeftHandThumb2'\n\tTransform
+    'mixamorig:LeftHandIndex1'\n\tTransform 'mixamorig:LeftHandPinky2'\n\tTransform
+    'mixamorig:RightHandRing2'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform
+    'mixamorig:LeftHandThumb3'\n\tTransform 'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tand
+    more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -11320,7 +11326,7 @@ MonoBehaviour:
   m_RightHandFlameAttackPoint: {fileID: 0}
   m_LeftHandFlameAttackPoint: {fileID: 0}
   m_vfx: {fileID: 0}
-  m_vfxFinal: {fileID: 0}
+  m_vfxFinal: {fileID: 5494451512981566795}
   spawnPointFinalVfx: {fileID: 0}
   vfxScale: 3
   vfxSpeed: 10
@@ -18172,14 +18178,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
---- !u!1 &8983980246677935597 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7603208177342239128, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
-  m_PrefabInstance: {fileID: 1524899356451865717}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9720066872501008 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1516322998706628453, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
+  m_PrefabInstance: {fileID: 1524899356451865717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8983980246677935597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7603208177342239128, guid: bdec0ba365ec3c84ebf6ddcd507f21f3, type: 3}
   m_PrefabInstance: {fileID: 1524899356451865717}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2496960756166090293
@@ -19207,11 +19213,11 @@ PrefabInstance:
     - target: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
       propertyPath: m_SceneBindings.Array.data[11].key
       value: 
-      objectReference: {fileID: 2766968511536091432, guid: 0d918cb00a10f484e9b432eb11cba0b8, type: 2}
+      objectReference: {fileID: -7518475159148764117, guid: 0d918cb00a10f484e9b432eb11cba0b8, type: 2}
     - target: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
       propertyPath: m_SceneBindings.Array.data[12].key
       value: 
-      objectReference: {fileID: -7518475159148764117, guid: 0d918cb00a10f484e9b432eb11cba0b8, type: 2}
+      objectReference: {fileID: -6094703170667224354, guid: 0d918cb00a10f484e9b432eb11cba0b8, type: 2}
     - target: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
       propertyPath: m_SceneBindings.Array.data[4].value
       value: 
@@ -19239,11 +19245,11 @@ PrefabInstance:
     - target: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
       propertyPath: m_SceneBindings.Array.data[11].value
       value: 
-      objectReference: {fileID: 5494451512981566795}
+      objectReference: {fileID: 5866170471648547686}
     - target: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
       propertyPath: m_SceneBindings.Array.data[12].value
       value: 
-      objectReference: {fileID: 5866170471648547686}
+      objectReference: {fileID: 5494451512981566795}
     - target: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
       propertyPath: m_ExposedReferences.m_References.Array.size
       value: 5
@@ -19290,6 +19296,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
+--- !u!1 &5866170471648547686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2247852219198785106, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
+  m_PrefabInstance: {fileID: 5645591272268076340}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5866170471648547684 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2247852219198785104, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
@@ -19298,11 +19309,6 @@ Transform:
 --- !u!320 &5866170471648547685 stripped
 PlayableDirector:
   m_CorrespondingSourceObject: {fileID: 2247852219198785105, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
-  m_PrefabInstance: {fileID: 5645591272268076340}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5866170471648547686 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2247852219198785106, guid: fa642a2cbf9644249ad4654cecb0acdb, type: 3}
   m_PrefabInstance: {fileID: 5645591272268076340}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7722674952235933242

@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timerTextUnder;
     public PlayerData P1Data;
     public PlayerData P2Data;
-
+    public GameObject timePopUpText;
     void Start()
     {
         StartCoroutine(StartTimer(time));
@@ -47,6 +47,8 @@ public class Timer : MonoBehaviour
     IEnumerator EndTimerMovement()
     {
         LeanTween.scale(gameObject, transform.localScale*1.1f, 1f).setEaseInBounce();
+        timePopUpText.SetActive(true);
+        LeanTween.scale(timePopUpText, new Vector3(5, 5, 5), 1f).setEaseInOutCirc();
         yield return new WaitForSeconds(1f);
         GameManager.instance.EndGame(DetermineWinner());
     }
