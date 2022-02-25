@@ -12,6 +12,7 @@ public class IALight : Action
     public PlayerAudioManager playerAudio;
     public IA ia;
     public RangePermute rangeLightAttack;
+    public static bool dashFirst = true;
     public override void OnStart()
     {
         var currentGameObject = GetDefaultGameObject(targetGameObject.Value);
@@ -23,7 +24,7 @@ public class IALight : Action
     }
     public override TaskStatus OnUpdate()
     {
-        if (!lightAttackIA.playerAttackIA.isAttacking && !ia.isInCombo && rangeLightAttack.bIsInRange && !ia.isTakingDamage)
+        if (!lightAttackIA.playerAttackIA.isAttacking && !ia.isInCombo && rangeLightAttack.bIsInRange && !ia.isTakingDamage && !dashFirst)
         {
 
             lightAttackIA.PerformedLightAttack("normal");

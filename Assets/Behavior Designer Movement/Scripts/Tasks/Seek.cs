@@ -15,6 +15,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         public string targetTag;
         public RangeCollider rangeCollider;
         public bool bIsInRange;
+        public IA ia;
         public override void OnAwake()
         {
 
@@ -36,7 +37,7 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
             {
                 return TaskStatus.Success;
             }
-            if (bIsInRange)
+            if (bIsInRange && !ia.isInCombo)
             {
                 SetDestination(Target());
                 return TaskStatus.Running;

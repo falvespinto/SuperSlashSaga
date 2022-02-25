@@ -12,12 +12,14 @@ public class ComboIndicatorManager : MonoBehaviour
     {
         Attack.onComboIncrease += IncreaseCombo;
         LightAttack.onComboReset += ResetCombo;
+        LightAttackIA.onComboReset += ResetCombo;
     }
 
     private void OnDisable()
     {
         Attack.onComboIncrease -= IncreaseCombo;
         LightAttack.onComboReset -= ResetCombo;
+        LightAttackIA.onComboReset -= ResetCombo;
     }
 
     public void IncreaseCombo(int playerIndex)

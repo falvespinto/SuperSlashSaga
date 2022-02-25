@@ -4,16 +4,16 @@ using BehaviorDesigner.Runtime;
 
 public class isDead : Conditional
 {
-    public Player playerhealth;
-
+    public Player player;
+    public IA ia;
     public override void OnStart()
     {
-        playerhealth = GameObject.Find("Player1").GetComponentInChildren<Player>();
+        player = GameObject.Find("Player1").GetComponentInChildren<Player>();
 
     }
     public override TaskStatus OnUpdate()
     {
-        if (playerhealth.currentHealth > 0)
+        if (player.currentHealth > 0 && ia.currentHealth > 0)
         {
             return TaskStatus.Success;
         }

@@ -25,6 +25,7 @@ public class IAHeavy : Action
     {
         if(!heavyAttackIA.playerAttackIA.isAttacking && !ia.isInCombo && rangeHeavyAttack.bIsInRange && !ia.isTakingDamage)
         {
+            IALight.dashFirst = false;
             heavyAttackIA.PerformedHeavyAttack("normal");
             return TaskStatus.Success;
         }

@@ -48,14 +48,11 @@ public class DashIA : Action
                 Debug.Log(hit[i].gameObject.layer);
                 hasTouched = true;
                 isDashing = false;
-                agent.acceleration = 0;
+                agent.isStopped = true;
                 //engageArea.gameObject.SetActive(false);
                 break;
             }
         }
-
-        
-        isDashing = true;
         if (!hasTouched && timeElapsed < 1f)
         {
             
@@ -69,6 +66,7 @@ public class DashIA : Action
         }
         else
         {
+            agent.isStopped = true;
             m_animator.SetBool("isDashing", false);
             return TaskStatus.Success;
         }

@@ -18,7 +18,16 @@ public class ProjectileBehavior : MonoBehaviour
         {
             if (col.GetComponentInParent<PlayerData>().playerLayer == playerData.enemyLayer)
             {
-                col.GetComponentInParent<Player>().TakeDamage(projectileDamage, attackType);
+                if (StartGame.managerIA.bIsIA)
+                {
+                    if(col.GetComponentInParent<PlayerData>().playerIndex == 0)
+                        col.GetComponentInParent<Player>().TakeDamage(projectileDamage, attackType);
+                    if (col.GetComponentInParent<PlayerData>().playerIndex == 1)
+                        col.GetComponentInParent<IA>().TakeDamage(projectileDamage, attackType);
+                }
+
+                else
+                    col.GetComponentInParent<Player>().TakeDamage(projectileDamage, attackType);
                 gameObject.SetActive(false);
             }  
         }

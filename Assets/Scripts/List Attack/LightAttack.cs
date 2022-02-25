@@ -146,7 +146,7 @@ public class LightAttack : MonoBehaviour
                     StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.3f));
                     player.playerAudio.playSoundLeger();
                     if (StartGame.managerIA.bIsIA)
-                        CheckPerformFullCombo();
+                        PerformFullCombo();
 
 
                 }
@@ -203,7 +203,11 @@ public class LightAttack : MonoBehaviour
     {
         if (playerAttack.playerHit != null)
         {
-            if (playerAttack.playerHit.GetComponent<Player>().currentHealth > 0)
+            if (!StartGame.managerIA.bIsIA && playerAttack.playerHit.GetComponent<Player>().currentHealth > 0)
+            {
+                StartCoroutine(PerformFullCombo());
+            }
+            if (StartGame.managerIA.bIsIA && playerAttack.playerHit.GetComponent<IA>().currentHealth > 0)
             {
                 StartCoroutine(PerformFullCombo());
             }

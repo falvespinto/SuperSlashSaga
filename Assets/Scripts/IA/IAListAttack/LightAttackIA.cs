@@ -38,7 +38,7 @@ public class LightAttackIA : MonoBehaviour
     public float default_Combo_Timer = 2f;
     public float default_BottomCombo_Timer = 2f;
     public float current_Combo_Timer;
-    public bool isAttacking;
+    public bool isLightAttacking;
     public LightComboState lightComboState;
     public BottomLightComboState bottomLightComboState;
     public bool isParing;
@@ -47,6 +47,7 @@ public class LightAttackIA : MonoBehaviour
     private Rect posCam;
     private Rect posCamOpponent;
     public static Action<int> onComboTriggered;
+    public static Action<int> onComboReset;
     public float timeOfCombo;
     private void Awake()
     {
@@ -61,7 +62,7 @@ public class LightAttackIA : MonoBehaviour
         default_Combo_Timer = light3AttackTime;
         default_BottomCombo_Timer = bottomLightAttackTime + bottomLight2AttackTime - 1.2f;
         isInCombo = false;
-        isAttacking = false;
+        isLightAttacking = false;
         lightComboState = LightComboState.NONE;
         bottomLightComboState = BottomLightComboState.NONE;
         current_Combo_Timer = default_Combo_Timer;
@@ -70,6 +71,7 @@ public class LightAttackIA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ResetComboState();
     }
     public void PerformedLightAttack(string attackType)
     {
@@ -85,6 +87,7 @@ public class LightAttackIA : MonoBehaviour
 
                 playerAttackIA.isAttacking = true;
                 current_Combo_Timer = default_Combo_Timer;
+                isLightAttacking = true;
                 lightComboState++;
                 light1AttackTimeWait = light1AttackTime - 0.7f;
                 light2AttackTimeWait = light2AttackTime - 0.3f;
@@ -205,7 +208,19 @@ public class LightAttackIA : MonoBehaviour
     }
     public void ResetComboState()
     {
-        lightComboState = LightComboState.NONE;
+        if (isLightAttacking)
+        {
+            current_Combo_Timer -= Time.deltaTime;
+
+            if (current_Combo_Timer <= 0f)
+            {
+                Debug.Log("combo reset");
+                onComboReset?.Invoke(ia.playerIndex);
+                lightComboState = LightComboState.NONE;
+                isLightAttacking = false;
+                current_Combo_Timer = default_Combo_Timer;
+            }
+        }
     }
 
     public IEnumerator InfuseSword(float time)
@@ -249,7 +264,6 @@ public class LightAttackIA : MonoBehaviour
                 Invoke("AttackComplete", timeOfCombo);
                 StartCoroutine(playerAttackIA.playerHit.GetComponent<Player>().goInEnemyCombo(timeOfCombo));
                 GetComponent<TimeLineController>().PerformFullCombo(playerAttackIA.m_Animator, playerAttackIA.playerHit.GetComponent<Animator>());
-                ResetComboState();
             }
         }
     }
