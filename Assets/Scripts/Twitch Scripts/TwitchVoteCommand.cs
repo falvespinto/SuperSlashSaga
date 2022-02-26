@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
+using System.IO;
+
 public class TwitchVoteCommand : MonoBehaviour, ITwitchCommandHandler
 {
     public bool canVote = true;

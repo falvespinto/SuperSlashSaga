@@ -53,7 +53,8 @@ public class Player : MonoBehaviour
         {"oui", 0},
         {"non", 0}
     };
-
+    public GameObject healVFX;
+    public GameObject strengthVFX;
     public GameObject[] vfxManaUp;
 
     void Awake()
@@ -171,6 +172,14 @@ public class Player : MonoBehaviour
             {
                 currentHealth -= damage;
                 healthBar.SetHealth(currentHealth);
+                if (currentHealth <= 0)
+                {
+                    OnDeath?.Invoke(playerIndex);
+                    animator.SetTrigger("Dead");
+                    playerAudio.playSoundMort();
+                    isDead = true;
+                    Invoke("Die", 3f);
+                }
             }
             else
             {
@@ -322,7 +331,7 @@ public class Player : MonoBehaviour
         if (!askedForHelp && MenuScript.nomDeChaine != null && TwitchChat.Instance.userExist)
         {
             askedForHelp = true;
-            onHelpAsked?.Invoke(choixHelp, 60f, whenVoteStopped, null);
+            onHelpAsked?.Invoke(choixHelp, 10f, whenVoteStopped, null);
             TwitchChat.Instance.SendIRCMessage("Le joueur " + (playerIndex + 1) + " vous demande de l'aide, mais le mérite-t-il ? Oui ou Non ?");
         }
     }
@@ -336,10 +345,16 @@ public class Player : MonoBehaviour
         Debug.Log(result);
         if (result == "oui")
         {
-
+            StrengthVFX();
+            foreach (Attack attack in playerAttack.attacksPoints)
+            {
+                attack.SetDamageMultiplier(1.1f);
+            }
+            TwitchChat.Instance.SendIRCMessage("Vous avez accepté d'aider le joueur " + (playerIndex + 1));
         }
         else
         {
+            TwitchChat.Instance.SendIRCMessage("Vous avez refusé d'aider le joueur " + (playerIndex + 1));
             StartCoroutine(StartMousseMalus());
         }
     }
@@ -347,9 +362,27 @@ public class Player : MonoBehaviour
     public IEnumerator StartMousseMalus()
     {
         mousseObject.SetActive(true);
+        foreach (Attack attack in playerAttack.attacksPoints)
+        {
+            attack.SetDamageMultiplier(0.1f);
+        }
         if (weapon != null) weapon.GetComponent<SkinnedMeshRenderer>().enabled = false;
         yield return new WaitForSeconds(10f);
         if (weapon != null) weapon.GetComponent<SkinnedMeshRenderer>().enabled = true;
         mousseObject.SetActive(false);
+        foreach (Attack attack in playerAttack.attacksPoints)
+        {
+            attack.SetDamageMultiplier(1f);
+        }
+    }
+
+    public void HealVFX()
+    {
+        Instantiate(healVFX, gameObject.transform);
+    }
+
+    public void StrengthVFX()
+    {
+        Instantiate(strengthVFX, gameObject.transform);
     }
 }

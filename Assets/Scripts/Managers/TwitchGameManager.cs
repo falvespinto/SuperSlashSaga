@@ -27,7 +27,7 @@ public class TwitchGameManager : MonoBehaviour
     {
         P1 = P1Data.GetComponentInChildren<Player>();
         P2 = P2Data.GetComponentInChildren<Player>();
-        IA = IAData.GetComponentInChildren<IA>();
+        if(StartGame.managerIA.bIsIA) IA = IAData.GetComponentInChildren<IA>();
     }
     private void OnEnable()
     {
@@ -44,7 +44,7 @@ public class TwitchGameManager : MonoBehaviour
         {
             if (P1 == null) P1 = P1Data.GetComponentInChildren<Player>();
             if (P2 == null) P2 = P2Data.GetComponentInChildren<Player>();
-            if (IA == null) IA = IAData.GetComponentInChildren<IA>();
+            if (IA == null && StartGame.managerIA.bIsIA) IA = IAData.GetComponentInChildren<IA>();
             //SANS IA
             if (!StartGame.managerIA.bIsIA)
             {
@@ -128,6 +128,7 @@ public class TwitchGameManager : MonoBehaviour
             case "heal":
                 playerToHelp.currentHealth += 25;
                 playerToHelp.healthBar.SetHealth(playerToHelp.currentHealth);
+                playerToHelp.HealVFX();
                 TwitchChat.Instance.SendIRCMessage("Le joueur " + (playerToHelp.playerIndex + 1) + " a été soigné.");
                 break;
             case "rien":
@@ -146,7 +147,7 @@ public class TwitchGameManager : MonoBehaviour
         {
             playerToHelp = P1;
         }
-        onHelpAsked?.Invoke(choixHelp, 30, whenVoteStopped, null);
+        onHelpAsked?.Invoke(choixHelp, 10, whenVoteStopped, null);
         TwitchChat.Instance.SendIRCMessage("Voulez-vous aidez le joueur " + (playerToHelp.playerIndex + 1) + " ? " +
             "heal: soigne le joueur" +
             " non : refuser d'aider le joueur");

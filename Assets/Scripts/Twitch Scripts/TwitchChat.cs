@@ -29,7 +29,6 @@ public class TwitchChat : MonoBehaviour
     public bool canSpawnEmote = true;
     public string json_folder;
     public bool userExist = false;
-
     public static TwitchChat Instance
     {
         get
@@ -45,20 +44,18 @@ public class TwitchChat : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-        //DontDestroyOnLoad(this);
     }
 
     private void Start()
     {
-        json_folder = Path.JSON_FOLDER;
         credentials = new TwitchCredentials
         {
             ChannelName = "Ellixyy",
             Username = "Ellixyy",
             Password = "oauth:kgtnyxxfzxz5qb7sivwc6oca526klc"
         };
-
         StartCoroutine(CheckIfUserExist(MenuScript.nomDeChaine));
+
     }
     // FIN FIX
 
@@ -66,19 +63,20 @@ public class TwitchChat : MonoBehaviour
     {
         if (_twitchClient != null && _twitchClient.Connected)
         {
-            ReadChat();
             if (emotesData == null)
             {
                 string emotesJson = "";
-                if (File.Exists(json_folder + "emotes.json"))
+                if (File.Exists(Application.streamingAssetsPath + "/emotes.json"))
                 {
-                    emotesJson = File.ReadAllText(json_folder + "emotes.json");
+                    emotesJson = File.ReadAllText(Application.streamingAssetsPath + "/emotes.json");
                 }
                 if (emotesJson != "")
                 {
                     emotesData = ParseGlobalsEmotes(emotesJson);
                 }
             }
+            ReadChat();
+
         }
         else
         {
@@ -123,6 +121,7 @@ public class TwitchChat : MonoBehaviour
     {
         if (_twitchClient.Available > 0)
         {
+            Debug.Log("debut avail");
             Debug.Log(_twitchClient.Available);
             string message = _reader.ReadLine();
             Debug.Log(message);
@@ -132,10 +131,11 @@ public class TwitchChat : MonoBehaviour
                 _writer.Flush();
                 return;
             }
-
+            Debug.Log("apres ping");
 
             if (message.Contains("PRIVMSG"))
             {
+                Debug.Log("privmsg");
                 var splitPoint = message.IndexOf("!", 1);
                 var author = message.Substring(0, splitPoint);
                 author = author.Substring(1);
@@ -144,13 +144,17 @@ public class TwitchChat : MonoBehaviour
                 message = message.Substring(splitPoint + 1);
                 if (author != credentials.Username.ToLower())
                 {
+                    Debug.Log("author");
+                    Debug.Log(TwitchCommands.CommandPrefix);
                     if (message.StartsWith(TwitchCommands.CommandPrefix))
                     {
+                        Debug.Log("if startwith");
                         int index = message.IndexOf(" ");
                         string command = index > -1 ? message.Substring(0, index) : message;
                         string argument = index > -1 ? message.Split(' ')[1] : "none";
                         Debug.Log("Twitch : argument : " + argument);
                         Debug.Log("Twitch : Command : " + command);
+                        Debug.Log(_commands);
                         _commands.ExecuteCommand(
                             command,
                             new TwitchCommandData
@@ -163,6 +167,7 @@ public class TwitchChat : MonoBehaviour
                     }
                     else
                     {
+                        Debug.Log("else");
                         MatchCollection words = Regex.Matches(message, @"\b[\w']*\b");
                         foreach (var word in words)
                         {
@@ -179,7 +184,6 @@ public class TwitchChat : MonoBehaviour
                             }
                         }
                     }
-
                     if (_commands.twitchVoteCommand.voteOnGoing)
                     {
                         int index = message.IndexOf(" ");
@@ -348,9 +352,4 @@ public class TwitchChat : MonoBehaviour
         }
     }
 
-}
-
-public static class Path
-{
-    public static readonly string JSON_FOLDER = Application.dataPath + "/json/";
 }

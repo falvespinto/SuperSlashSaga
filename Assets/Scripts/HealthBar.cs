@@ -28,9 +28,9 @@ public class HealthBar : MonoBehaviour
         frontHealthBarfill = frontHealthBar.fillAmount;
         backHealthBarfill = backHealthBar.fillAmount;
         float hFraction = health / maxHealth;
+        frontHealthBar.fillAmount = hFraction;
         if (backHealthBarfill >= frontHealthBarfill)
         {
-            frontHealthBar.fillAmount = hFraction;
             backHealthBar.color = Color.red;
             lerpTimer = Time.deltaTime;
             backHealthBar.fillAmount = Mathf.Lerp(backHealthBarfill, hFraction, lerpTimer);

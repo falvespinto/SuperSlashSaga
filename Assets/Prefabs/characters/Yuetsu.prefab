@@ -10923,13 +10923,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig:LeftFoot'\n\tTransform 'mixamorig:LeftHandThumb2'\n\tTransform
-    'mixamorig:LeftHandIndex1'\n\tTransform 'mixamorig:LeftHandPinky2'\n\tTransform
-    'mixamorig:RightHandRing2'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform
-    'mixamorig:LeftHandThumb3'\n\tTransform 'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tand
-    more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -11238,6 +11232,8 @@ MonoBehaviour:
   manaUp: 0
   mousseObject: {fileID: 3409983259894936787}
   weapon: {fileID: 3919603241095953885}
+  healVFX: {fileID: 458944814119384842, guid: a62c5fb8c117993418ec8f2b1dce753f, type: 3}
+  strengthVFX: {fileID: 7088605170460548229, guid: 710fc8efc2b81284a9aa1e74400ca89f, type: 3}
   vfxManaUp:
   - {fileID: 2659242675319965246}
   - {fileID: 5510303811833538282}
