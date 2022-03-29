@@ -46,7 +46,11 @@ public class MenuScript : MonoBehaviour
 
     public static string nomDeChaine;
     public TMP_InputField textNomDeChaine;
-
+    private void Awake()
+    {
+        cooldown = true;
+        Invoke("setCooldown", 0.5f);
+    }
     void Start()
     {
         nomDeChaine = PlayerPrefs.GetString("channelName");

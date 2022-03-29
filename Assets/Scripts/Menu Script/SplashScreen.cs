@@ -8,21 +8,12 @@ public class SplashScreen : MonoBehaviour
 
     public GameObject boutton;
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(clignotement());
-
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-       
-        
-    }
+
 
     public void OnStart()
     {

@@ -28,7 +28,6 @@ public class Parade : MonoBehaviour
     }
     public void Start()
     {
-
         target = playerData.target;
         paradeButtonPressed = false;
         paradeButtonReleased = false;
