@@ -19,13 +19,11 @@ public class SerializationAndEncryption : MonoBehaviour
         log = Utils.EncryptAES(log);
 
         string encrypted = log;
-        Debug.Log("Encrypted: " + encrypted);
         return encrypted;
     }
     public static string Decrypt(string log)
     {
         log = Utils.DecryptAES(log);
-        Debug.Log("Decrypted: " + log);
         return log;
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class VolumeController : MonoBehaviour
 {
-
+    const string previousVolumeParameter = "previousVolumeParameter";
     [SerializeField] string volumeParameter = "MasterVolume";
     [SerializeField] AudioMixer mixer;
     [SerializeField] Slider slider;
@@ -31,14 +31,17 @@ public class VolumeController : MonoBehaviour
         if(disableToggleEvent)
         {
             return;
-        }    
+        }
         if (enableSound)
         {
-            slider.value = slider.maxValue;
+            slider.value = PlayerPrefs.GetFloat(previousVolumeParameter, slider.maxValue);
+        }
+        else
+        {
+            PlayerPrefs.SetFloat(previousVolumeParameter, slider.value);
+            slider.value = slider.minValue;
         }
 
-        else
-            slider.value = slider.minValue;
     }
 
     private void HandleSliderValueChanged(float value)
