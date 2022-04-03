@@ -11,7 +11,7 @@ public class MenuScript : MonoBehaviour
 {
     public GameObject pointMenu, pointOption, pointCampagne, pointVersus, pointStream, optionsMenu, mainMenu ,campagneMenu, versusMenu, streamMenu;
 
-    private int SelectedButton = 1;
+    public int SelectedButton = 1;
     [SerializeField]
     private int NumberOfButtons;
     public MenuAudioManager menuAudio;
@@ -40,7 +40,7 @@ public class MenuScript : MonoBehaviour
     private bool verifMenuDown = false;
     private bool verifMenuUp = false;
     public bool optionActive = false;
-    private bool droite = false;
+    public bool droite = false;
 
     public GameObject pointerTwitchCoche;
 
