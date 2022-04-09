@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -79,6 +80,73 @@ public class TwitchChat : MonoBehaviour
 
         }
         else
+=======
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Net.Sockets;
+using System.IO;
+using System.Net;
+using System.Linq;
+using UnityEngine.Networking;
+using SimpleJSON;
+using System.Text.RegularExpressions;
+
+
+public class TwitchChat : MonoBehaviour
+{
+    private string clientIdAPP = "v5wr5b8y0dfjouivn5b0t6tou0auhn";
+    private string clientSecret = "1eocdpaksx61dsezqnm4za3ym0zwoy";
+    private string oauthHelix = "ipxxf91uyb82ehtzddxiwzvm3wksr8";
+    private static TwitchChat _instance;
+    [SerializeField] private TwitchCommandCollection _commands;
+    private TcpClient _twitchClient;
+    private StreamReader _reader;
+    private StreamWriter _writer;
+    private bool gotEmotes = false;
+    private string authJson;
+    private EmotesData emotesData;
+    private TwitchCredentials credentials;
+    private List<string> emoteQueue = new List<string>();
+    public EmotesSpawner emotesSpawner;
+    public bool canSpawnEmote = true;
+    public string json_folder;
+    public bool userExist = false;
+    public static TwitchChat Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new TwitchChat();
+            }
+            return _instance;
+        }
+    }
+
+    private void Awake()
+    {
+        _instance = this;
+    }
+
+    private void Start()
+    {
+        // logs du bot
+        credentials = new TwitchCredentials
+        {
+            ChannelName = "Ellixyy",
+            Username = "Ellixyy",
+            Password = "oauth:kgtnyxxfzxz5qb7sivwc6oca526klc"
+        };
+        StartCoroutine(CheckIfUserExist(MenuScript.nomDeChaine)); //Vérification du nom d'user
+
+    }
+    // FIN FIX
+
+    void Update()
+    {
+        if (_twitchClient != null && _twitchClient.Connected)
+>>>>>>> Stashed changes
         {
             if (userExist)
             {
@@ -87,6 +155,7 @@ public class TwitchChat : MonoBehaviour
             else
             {
                 StartCoroutine(CheckIfUserExist(MenuScript.nomDeChaine));
+<<<<<<< Updated upstream
             }
         }
 
@@ -147,6 +216,87 @@ public class TwitchChat : MonoBehaviour
                     Debug.Log("author");
                     Debug.Log(TwitchCommands.CommandPrefix);
                     if (message.StartsWith(TwitchCommands.CommandPrefix))
+=======
+            }
+        }
+
+        if (emoteQueue.Count >= 1 && canSpawnEmote)
+        {
+            emotesSpawner.StartInstantiate(emoteQueue[0]);
+            emoteQueue.RemoveAt(0);
+            StartCoroutine(WaitBeforeSpawnEmote());
+        }
+    }
+
+    public void Connect(TwitchCredentials credentials)
+    {
+        _twitchClient = new TcpClient("irc.chat.twitch.tv", 6667);
+        _reader = new StreamReader(_twitchClient.GetStream());
+        _writer = new StreamWriter(_twitchClient.GetStream());
+
+        _writer.WriteLine("PASS " + credentials.Password);
+        _writer.WriteLine("NICK " + credentials.Username.ToLower());
+        _writer.WriteLine("USER " + credentials.Username + " 8 * :" + credentials.Username);
+        _writer.WriteLine("JOIN #" + MenuScript.nomDeChaine.ToLower()); // nom de chaine = chaine de l'utilisateurs vers lequel on se connecte
+        _writer.Flush();
+    }
+
+    public void SendIRCMessage(string message)
+    {
+        _writer.WriteLine("PRIVMSG #" + MenuScript.nomDeChaine.ToLower() + " :" + message);
+        _writer.Flush();
+    }
+
+    private void ReadChat()
+    {
+        if (_twitchClient.Available > 0)
+        {
+            Debug.Log("debut avail");
+            Debug.Log(_twitchClient.Available);
+            string message = _reader.ReadLine();
+            Debug.Log(message);
+            if (message.Contains("PING"))
+            {
+                _writer.WriteLine("PONG");
+                _writer.Flush();
+                return;
+            }
+            Debug.Log("apres ping");
+
+            if (message.Contains("PRIVMSG"))
+            {
+                Debug.Log("privmsg");
+                var splitPoint = message.IndexOf("!", 1);
+                var author = message.Substring(0, splitPoint);
+                author = author.Substring(1);
+
+                splitPoint = message.IndexOf(":", 1);
+                message = message.Substring(splitPoint + 1);
+                if (author != credentials.Username.ToLower())
+                {
+                    Debug.Log("author");
+                    Debug.Log(TwitchCommands.CommandPrefix);
+                    if (message.StartsWith(TwitchCommands.CommandPrefix))
+                    {
+                        Debug.Log("if startwith");
+                        int index = message.IndexOf(" ");
+                        string command = index > -1 ? message.Substring(0, index) : message;
+                        string argument = index > -1 ? message.Split(' ')[1] : "none";
+                        Debug.Log("Twitch : argument : " + argument);
+                        Debug.Log("Twitch : Command : " + command);
+                        Debug.Log(_commands);
+                        _commands.ExecuteCommand(
+                            command,
+                            new TwitchCommandData
+                            {
+                                Author = author,
+                                Message = message,
+                                Argument = argument,
+                                Command = command
+                            });
+                    }
+                    else
+>>>>>>> Stashed changes
                     {
                         Debug.Log("if startwith");
                         int index = message.IndexOf(" ");
