@@ -11,12 +11,10 @@ public class TimeLineController : MonoBehaviour
     public PlayableDirector fullCombo;
     public PlayableDirector finalUlt;
     private PlayerAttack playerAttack;
-    private UltimateAttack ultimateAttack;
 
     private void Awake()
     {
         playerAttack = GetComponent<PlayerAttack>();
-        ultimateAttack = GetComponent<UltimateAttack>();
     }
 
     public void PerformFullCombo(Animator attaquant, Animator defenseur)
@@ -43,8 +41,6 @@ public class TimeLineController : MonoBehaviour
     public void PerformFinalUlt(Animator def)
     {
         TimelineAsset timeline = (TimelineAsset)finalUlt.playableAsset;
-        StartCoroutine(ultimateAttack.SwitchCamera((float)timeline.duration));
-        StartCoroutine(ultimateAttack.HasProcFullUlt((float)timeline.duration));
         foreach (var track in timeline.GetOutputTracks())
         {
             if (track.name == "Def")

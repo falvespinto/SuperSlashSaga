@@ -84,14 +84,12 @@ public class PlayerAttackIA : MonoBehaviour
     private bool canParade;
 
     private bool neverPared;
-    private UltimateAttack ultimateAttack;
     private ComboCamera comboCam;
     private bool heavyCanAutoCancel;
     private void Awake()
     {
         //   m_Rigidbody = GetComponent<Rigidbody>();
         playerData = GetComponentInParent<PlayerData>();
-        ultimateAttack = GetComponent<UltimateAttack>();
         comboCam = GetComponentInChildren<ComboCamera>();
     }
     public void Start()
@@ -204,11 +202,10 @@ public class PlayerAttackIA : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!player.isTakingDamage && !isAttacking && !isParing && !isRunAttacking && /*!playerController.isRunning &&*/ !ultimateAttack.isPerformingUltimate)
+            if (!player.isTakingDamage && !isAttacking && !isParing && !isRunAttacking)
             {
                 FindObjectOfType<AudioManager>().Play("ultimate");
                 LookAtTarget();
-                GetComponent<UltimateAttack>().PerformUltimateAttack();
             }
 
         }

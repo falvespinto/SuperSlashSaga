@@ -16,7 +16,6 @@ public class Parade : MonoBehaviour
     public PlayerData playerData;
     public Player player;
     private bool neverPared;
-    public UltimateAttack ultimateAttack;
     public GameObject shield;
     public static Action<string> OnParadeUsed;
     public void Awake()

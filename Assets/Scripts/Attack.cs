@@ -13,14 +13,12 @@ public class Attack : MonoBehaviour
     private Collider col;
     public PlayerAttack playerAttack;
     public PlayerAttackIA playerIA;
-    public UltimateAttack ultimateAttack;
     public bool isIA = false;
     public float stunTime;
     public static Action<int> onComboIncrease;
     private void Awake()
     {
         col = GetComponent<Collider>();
-        ultimateAttack = GetComponentInParent<UltimateAttack>();
     }
 
     public void SetDamageMultiplier(float multiplier)
@@ -68,7 +66,6 @@ public class Attack : MonoBehaviour
                     Debug.Log(hit[i].GetComponentInParent<Player>().playerIndex);
                     Debug.Log(hit[i].gameObject.layer);
                     playerAttack.playerHit = hit[i].GetComponentInParent<Player>().gameObject;
-                    if (attackType == "Engage") ultimateAttack.HandleFullUlt();
                     gameObject.SetActive(false);
                     break;
                 }

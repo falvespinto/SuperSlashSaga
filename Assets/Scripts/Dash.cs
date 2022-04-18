@@ -19,7 +19,6 @@ public class Dash : MonoBehaviour
     public Animator m_animator;
     public PlayerAttack playerAttack;
     public float infuseTime = 1.5f;
-    private UltimateAttack ultimateAttack;
     public bool isInfusing = false;
     public bool hasTouched = false;
     public bool isEngaging = false;
@@ -34,7 +33,6 @@ public class Dash : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        ultimateAttack = GetComponent<UltimateAttack>();
     }
 
     // Update is called once per frame
@@ -75,7 +73,7 @@ public class Dash : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!isDashing && !playerAttack.isAttacking && !playerAttack.isParing && !ultimateAttack.isPerformingUltimate && !player.isInCombo)
+            if (!isDashing && !playerAttack.isAttacking && !playerAttack.isParing && !player.isInCombo)
             {
                 if (player.manabar.mana >= 25 )
                 {

@@ -19,7 +19,6 @@ public class IADash : MonoBehaviour
     public Animator m_animator;
     public PlayerAttackIA playerAttack;
     public float infuseTime = 1.5f;
-    private UltimateAttack ultimateAttack;
     public bool isInfusing = false;
     public bool hasTouched = false;
     public bool isEngaging = false;
@@ -32,7 +31,6 @@ public class IADash : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        ultimateAttack = GetComponent<UltimateAttack>();
     }
 
     // Update is called once per frame

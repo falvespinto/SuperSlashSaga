@@ -20,7 +20,6 @@ public class Projectile : MonoBehaviour
     public float isShootingCooldown;
     public List<ProjectileBehavior> currentProjectiles = new List<ProjectileBehavior>();
     public Player player;
-    public UltimateAttack ultimateAttack;
 
 
     private void Awake()

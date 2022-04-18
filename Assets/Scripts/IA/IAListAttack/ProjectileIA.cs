@@ -20,7 +20,6 @@ public class ProjectileIA : MonoBehaviour
     public float isShootingCooldown;
     public List<ProjectileBehavior> currentProjectiles = new List<ProjectileBehavior>();
     public IA player;
-    public UltimateAttack ultimateAttack;
 
 
     private void Awake()

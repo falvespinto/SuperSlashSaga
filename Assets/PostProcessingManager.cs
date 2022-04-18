@@ -22,13 +22,11 @@ public class PostProcessingManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        UltimateAttackYuetsu.OnYuetsuUltimate += SetPostProcessingToYuetsu;
-        UltimateAttackYuetsu.OnUltimateEnd += SetPostProcessingToNormal;
+
     }
     private void OnDisable()
     {
-        UltimateAttackYuetsu.OnYuetsuUltimate -= SetPostProcessingToYuetsu;
-        UltimateAttackYuetsu.OnUltimateEnd -= SetPostProcessingToNormal;
+
     }
     private void SetPostProcessingToYuetsu()
     {

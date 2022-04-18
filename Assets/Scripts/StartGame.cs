@@ -57,6 +57,12 @@ public class StartGame : MonoBehaviour
                 }
             }
         }
+
+        if (Keyboard.current.backspaceKey.isPressed || Gamepad.current.buttonEast.isPressed)
+        {
+            SceneManager.LoadScene("Menu Principal");
+        }
+
     }
 
     void InitGame()

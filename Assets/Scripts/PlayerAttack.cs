@@ -84,7 +84,6 @@ public class PlayerAttack : MonoBehaviour
     private bool canParade;
     public ComboCamera comboCam;
     private bool neverPared;
-    public UltimateAttack ultimateAttack;
     public CharacterController controller;
 
     // Compteurs pour log
@@ -97,7 +96,6 @@ public class PlayerAttack : MonoBehaviour
         //   m_Rigidbody = GetComponent<Rigidbody>();
         playerData = GetComponentInParent<PlayerData>();
         playerController = GetComponent<PlayerController>();
-        ultimateAttack = GetComponent<UltimateAttack>();
     }
     public void Start()
     {
@@ -147,7 +145,7 @@ public class PlayerAttack : MonoBehaviour
         if (ctx.started)
         {
             Debug.Log("pressedLight");
-            if (!player.isInCombo && !player.isTakingDamage && !isAttacking && !isParing && !ultimateAttack.isPerformingUltimate && !GameManager.instance.IsLocked)
+            if (!player.isInCombo && !player.isTakingDamage && !isAttacking && !isParing && !GameManager.instance.IsLocked)
             {
                 lightAttack.PerformedLightAttack("normal");
             }
@@ -159,7 +157,7 @@ public class PlayerAttack : MonoBehaviour
         if (ctx.started)
         {
             Debug.Log("pressedHeavy");
-            if (!isAttacking && !player.manaUp && !isParing && !player.isInCombo && !player.isTakingDamage && !ultimateAttack.isPerformingUltimate && !GameManager.instance.IsLocked)
+            if (!isAttacking && !player.manaUp && !isParing && !player.isInCombo && !player.isTakingDamage && !GameManager.instance.IsLocked)
             {
                 heavyAttack.PerformedHeavyAttack("normal");
             }
@@ -172,7 +170,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!player.isTakingDamage && !isAttacking && !player.manaUp && !isParing && !ultimateAttack.isPerformingUltimate && !player.isInCombo && !GameManager.instance.IsLocked)
+            if (!player.isTakingDamage && !isAttacking && !player.manaUp && !isParing && !player.isInCombo && !GameManager.instance.IsLocked)
             {
                 Debug.Log("pressedParade");
                 paradeButtonPressed = true;
@@ -190,10 +188,9 @@ public class PlayerAttack : MonoBehaviour
     {
         if (ctx.started)
         {
-            if (!player.isTakingDamage && !isAttacking && !player.manaUp && !isParing && !ultimateAttack.isPerformingUltimate && !player.isInCombo && !GameManager.instance.IsLocked)
+            if (!player.isTakingDamage && !isAttacking && !player.manaUp && !isParing && !player.isInCombo && !GameManager.instance.IsLocked)
             {
                 LookAtTarget();
-                ultimateAttack.PerformUltimateAttack();
             }
         }
     }
@@ -231,14 +228,11 @@ public class PlayerAttack : MonoBehaviour
     }
     public IEnumerator ForwardAttack(float attackTime, Vector3 direction, float attackSpeed)
     {
-        if (!ultimateAttack.isPerformingUltimate)
+        float startTime = Time.time;
+        while (Time.time < startTime + attackTime)
         {
-            float startTime = Time.time;
-            while (Time.time < startTime + attackTime)
-            {
-                controller.Move(direction * attackSpeed);
-                yield return null;
-            }
+            controller.Move(direction * attackSpeed);
+            yield return null;
         }
 
     }

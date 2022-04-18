@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 direction;
     public Vector3 moveDirection;
     public float gravity;
-    public UltimateAttack ultimate;
     public Dash dashState;
     public Projectile projectile;
     public float rotationSpeed;
@@ -31,7 +30,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         playerData = GetComponentInParent<PlayerData>();
-        ultimate = GetComponent<UltimateAttack>();
     }
     void Start()
     {
@@ -45,7 +43,7 @@ public class PlayerController : MonoBehaviour
         isParing = playerAttack.isParing;
         moveDirection = new Vector3();
 
-        if (!isAttacking && !player.manaUp && !isParing && !player.isTakingDamage && !player.isInCombo && !ultimate.isPerformingUltimate && !dashState.isDashing && !projectile.isShooting && !player.isInEnemyCombo && !player.isDead && !GameManager.instance.IsLocked)
+        if (!isAttacking && !player.manaUp && !isParing && !player.isTakingDamage && !player.isInCombo && !dashState.isDashing && !projectile.isShooting && !player.isInEnemyCombo && !player.isDead && !GameManager.instance.IsLocked)
         {
             Movement(movementInput);
         }
