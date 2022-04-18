@@ -11,8 +11,8 @@ public class LevelSelectScreenScript : MonoBehaviour
 
     public List<GameObject> row2;
 
-    const int cols = 3;
-    const int rows = 3;
+    const int cols = 2;
+    const int rows = 2;
 
     Vector2 positionIndex;
     public GameObject currentSlot;
@@ -26,7 +26,7 @@ public class LevelSelectScreenScript : MonoBehaviour
     {
         row1.Add(GameObject.Find("Row1_1"));
         row1.Add(GameObject.Find("Row1_2"));
-        row1.Add(GameObject.Find("Row1_3"));
+        //row1.Add(GameObject.Find("Row1_3"));
         AddRowToGrid(0, row1);
 
         positionIndex = new Vector2(0, 0);
@@ -35,7 +35,7 @@ public class LevelSelectScreenScript : MonoBehaviour
 
     void AddRowToGrid(int index, List<GameObject> row)
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
         {
             grid[index, i] = row[i];
         }

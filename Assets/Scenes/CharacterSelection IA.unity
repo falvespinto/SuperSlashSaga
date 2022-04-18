@@ -232,6 +232,7 @@ MonoBehaviour:
   P1HasSelected: 0
   P2HasSelected: 0
   hasStartedGame: 0
+  isTwitchActivated: 0
   P1: {fileID: 0}
   P2: {fileID: 0}
 --- !u!4 &61262581
@@ -1651,7 +1652,6 @@ GameObject:
   - component: {fileID: 1328751375}
   - component: {fileID: 1328751378}
   - component: {fileID: 1328751377}
-  - component: {fileID: 1328751376}
   m_Layer: 5
   m_Name: Row1_3
   m_TagString: Untagged
@@ -1679,20 +1679,6 @@ RectTransform:
   m_AnchoredPosition: {x: 348, y: 0}
   m_SizeDelta: {x: 800, y: 1600}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1328751376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328751374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc247f6ebe0570429b7ea6f53b3b41f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Daiki
-  prefab: {fileID: 0}
 --- !u!114 &1328751377
 MonoBehaviour:
   m_ObjectHideFlags: 0
