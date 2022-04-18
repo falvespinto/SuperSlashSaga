@@ -112,6 +112,10 @@ public class LoadCharacter : MonoBehaviour
                 attacks.gameObject.SetActive(false);
             }
             faceP2.sprite = P2.GetComponent<IA>().faceSprite;
+            if(prefabP2.name.Contains("Yuetsu") && prefabP1.name.Contains("Yuetsu"))
+            {
+                P2.GetComponentInChildren<CorpsTexture>().GetComponent<Renderer>().material = P2.GetComponentInChildren<CorpsTexture>().materialYuetsu;
+            }
         }
         else
         {
@@ -149,7 +153,6 @@ public class LoadCharacter : MonoBehaviour
                 {
                     //P2.GetComponentInChildren<ComboCamera>().gameObject.layer = LayerMask.NameToLayer("P2Cam");
                     P2.GetComponentInChildren<CorpsTexture>().GetComponent<Renderer>().material = P2.GetComponentInChildren<CorpsTexture>().materialYuetsu;
-                    P2.GetComponentInChildren<Cape>().GetComponentInChildren<test>().GetComponentInChildren<test1>().GetComponentInChildren<test2>().GetComponentInChildren<test3>().GetComponentInChildren<CapeMat>().GetComponent<Renderer>().material = P2.GetComponentInChildren<Cape>().material;
                 }
                 if (p2String.Contains("Daiki"))
                 {

@@ -44,7 +44,7 @@ public class HeavyAttack : MonoBehaviour
             // Cela retirerait le fait de pouvoir choisir frame par frame si on applique un coup mais serait peut �tre plus performant ?
             Debug.Log("is attacking heavy");
             // m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y); // bloque les d�placements horizontaux
-            playerAttack.SetAttacksData(15,"Heavy");
+            playerAttack.SetAttacksData(12,"Heavy");
             // ChangeAnimationState(m_Punch);
             playerAttack.m_Animator.SetTrigger("HeavyAttack");
             StartCoroutine(playerAttack.ForwardAttack(0.2f, direction, 0.30f));

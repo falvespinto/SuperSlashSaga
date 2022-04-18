@@ -131,7 +131,7 @@ public class PlayerAttack : MonoBehaviour
     public void AttackedWhileParing()
     {
         OnParadeTriggered?.Invoke(player.playerIndex);
-        SetAttacksData(30,"Paring");
+        SetAttacksData(15,"Paring");
         isParing = false;
         parade.shield.SetActive(false);
         m_Animator.SetBool("IsParing", false);

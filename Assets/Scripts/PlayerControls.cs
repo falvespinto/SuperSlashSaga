@@ -130,22 +130,6 @@ public class PlayerControls : MonoBehaviour
         }
         if (hasSelected && isInit && index == 0 && managerIA.bIsIA && ia != null && !ia.GetComponent<PlayerControls>().hasSelected)
         {
-            if (movementInput.x > 0)
-            {
-                ia.GetComponent<PlayerControls>().champSelect.MoveSelector("right");
-            }
-            else if (movementInput.x < 0)
-            {
-                ia.GetComponent<PlayerControls>().champSelect.MoveSelector("left");
-            }
-            /*else if (movementInput.y > 0)
-            {
-                ia.GetComponent<PlayerControls>().champSelect.MoveSelector("up");
-            }
-            else if (movementInput.y < 0)
-            {
-                ia.GetComponent<PlayerControls>().champSelect.MoveSelector("down");
-            }*/
         }
     }
     public void OnMove(InputAction.CallbackContext ctx) => movementInput = ctx.ReadValue<Vector2>();
